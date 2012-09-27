@@ -157,6 +157,12 @@ form {
 	white-space: inherit;
 }
 
+.hidden {
+  display: inherit;
+  visibility: inherit;
+}
+
+
 .navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container
 	{
 	width: 100%;

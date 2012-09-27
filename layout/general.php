@@ -71,6 +71,7 @@ echo $OUTPUT->doctype() ?>
 <div id="page-content-wrapper" class="wrapper clearfix">
 <div id="page-content" class="row-fluid">
 
+
 <?php if ($hassidepre) { ?>
 	<div class="span3">
 	<?php echo $OUTPUT->blocks_for_region('side-pre') ?>
