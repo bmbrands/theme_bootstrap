@@ -157,7 +157,7 @@ form {
 	white-space: inherit;
 }
 
-.hidden {
+.hidden , .invisible{
   display: inherit;
   visibility: inherit;
 }
