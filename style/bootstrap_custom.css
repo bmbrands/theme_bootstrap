@@ -1,0 +1,374 @@
+/*!
+ * Moodle CSS meets Bootstrap
+ *
+ * Some code to make bootstrap work with Moodle
+ * 
+ */
+#page-header {
+	margin: 2% 0;
+}
+
+.mform fieldset,.generalbox,.mod_introbox {
+	border: 0px !important;
+}
+
+/* Course styling */
+.course-content ul li.section.main {
+	border-bottom: 2px solid #eee;
+	margin-top: 0px;
+}
+
+.course-content ul.topics li.section .content,.course-content ul.weeks li.section .content
+	{
+	margin-right: 20px;
+	margin-left: 20px;
+	padding: 0;
+}
+
+.course-content {
+	margin-top: 0px;
+}
+
+.course-content ul.topics li.section {
+	padding-bottom: 20px;
+}
+
+.course-content ul.topics li.section .summary {
+	margin-left: 25px;
+}
+
+.path-course-view .completionprogress {
+	margin-left: 25px
+}
+
+form {
+	margin-bottom: 0px;
+}
+
+.path-course-view .completionprogress {
+	display: block;
+	float: right;
+	height: 20px;
+	position: relative;
+	z-index: 1000;
+}
+
+/* Footer styling */
+#page-footer {
+	text-align: left;
+	font-size: 1em;
+	padding: 1em 0;
+	border-top: 2px solid #eee;
+}
+
+#page-footer .logininfo,#page-footer .sitelink,#page-footer .helplink {
+	margin: 0;
+	padding: 0;
+}
+
+/* Login menu in top nav */
+.logininfo,.langmenu {
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+}
+
+.logininfo {
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+.logininfo a {
+	color: #0088CC;
+}
+
+.langmenu form {
+	margin: 0px;
+}
+
+/* Positioned 45 px below nav */
+#page-header {
+	margin-top: 45px;
+}
+
+#page-content-wrapper,#page-header-wrapper {
+	margin-top: 10px;
+}
+
+#dndupload-status {
+	margin-top: 45px;
+}
+
+.breadcrumb-fixed-top {
+	position: fixed;
+	top: 40px;
+	z-index: 1030;
+}
+
+.headermain {
+	float: left;
+	font-size: 2.3em;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.navbar {
+	margin-bottom: 0px;
+	overflow: visible;
+	width: 100%;
+}
+
+.navbar-fixed-top {
+	margin: 0px;
+}
+
+.navbar .nav {
+	width: 100%;
+}
+
+.navbar .nav .nav {
+	width: 100%;
+}
+
+.breadcrumb {
+	border: 1px solid #e3e3e3;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+}
+
+/*icon sprite*/
+[class ^="icon-"],[class *=" icon-"] {
+	background-image: url([[pix:theme|glyphicons-halflings]]);
+}
+
+/*disabled bootstrap stuff (stuff that does not work with Moodle's html)*/
+.label,.badge {
+	background-color: inherit;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	text-shadow: inherit;
+	vertical-align: inherit;
+	white-space: inherit;
+}
+
+.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container
+	{
+	width: 100%;
+}
+
+.navbar-static-top .container .nav-collapse,.navbar-fixed-top .container .nav-collapse,.navbar-fixed-bottom .container .nav-collapse
+	{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+/* Typografie */
+h1 {
+	font-size: 26px;
+	line-height: 40px;
+}
+
+h2 {
+	font-size: 24px;
+	line-height: 40px;
+}
+
+h3 {
+	font-size: 22px;
+	line-height: 40px;
+}
+
+/*forms */
+input#adminsearchquery {
+	width: 90%;
+}
+
+input {
+	height: 20px;
+}
+
+/*margins for bigger screen */
+@media ( min-width : 768px) {
+	#page-content-wrapper,#page-header-wrapper {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+@media ( min-width : 768px) {
+	.logininfo,.langmenu {
+		display: inline-block;
+		float: right;
+	}
+	.logininfo,.langmenu {
+		display: inline-block;
+		float: right;
+	}
+	.navbar .nav .nav {
+		width: auto;
+	}
+}
+
+/* block styling */
+.block {
+	min-height: 20px;
+	padding: 19px;
+	margin-bottom: 20px;
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+	padding-bottom: 8px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 8px;
+}
+
+.block .content {
+	padding-bottom: 4px;
+	padding-left: 14px;
+	padding-right: 14px;
+	padding-top: 4px;
+}
+
+.block_navigation .content,.block_settings .content {
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+}
+
+.block li hr {
+	border: none;
+	margin: 5px;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #fff;
+}
+
+.block_settings .block_tree .tree_item {
+	padding-left: 0;
+}
+
+.block_tree .tree_item a:before,.block_tree .tree_item span:before {
+	content: "▼ ";
+}
+
+.block_tree .collapsed  .tree_item a:before,.block_tree .collapsed  .tree_item span:before
+	{
+	content: "► ";
+}
+
+.block_tree .collapsed  .tree_item.emptybranch a:before,.block_tree .collapsed  .tree_item.emptybranch span:before
+	{
+	content: "► ";
+	color: #ccc;
+}
+
+.block_tree .tree_item.leaf a:before,.block_tree .tree_item.leaf span:before,.tree_item.navigation_node a:before,.tree_item.navigation_node span:before
+	{
+	content: "";
+	cursor: normal;
+}
+
+.block_tree li.item_with_icon.contains_branch .tree_item {
+	padding-left: 15px;
+}
+
+.block_settings .block_tree .tree_item,.block_navigation .block_tree .tree_item
+	{
+	padding-left: 0px;
+}
+
+.jsenabled .block_settings .block_tree .collapsed .tree_item.branch,.jsenabled .block_navigation .block_tree .collapsed .tree_item.branch,.block_navigation .block_tree .tree_item.branch,.block_settings .block_tree .tree_item.branch,.jsenabled .block_navigation .block_tree .tree_item.emptybranch
+	{
+	background: none;
+}
+
+.block_navigation .content,.block_settings .content {
+	padding: 0;
+}
+
+.block .header .title h2,.block h3.main {
+	display: block;
+	padding: 3px 15px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #999;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+}
+
+.block .header .title .commands,.block_adminblock .content,.block .footer,.block .block_tree li>p>a,.block .block_tree li>p>span
+	{
+	display: block;
+	padding: 3px 15px;
+}
+
+.block .block_tree li>p>a:hover {
+	text-decoration: none;
+	background-color: #eee;
+}
+
+.block .header .title h2 {
+	margin: 0;
+}
+
+.block_tree>li>p>a,.block_tree>li>p>span,.block_tree .nav-header {
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.block_tree li p.active_tree_node a,.block_tree li p.active_tree_node a:hover
+	{
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+	background-color: #08c;
+}
+
+select.menubui_addblock {
+	width: 100%;
+}
+
+.block li p a i {
+	display: none;
+}
+
+.block_settings .block_tree li ul,.block_settings .block_tree li.depth_2 ul,.block_navigation .block_tree li ul,.block_navigation .block_tree li.depth_2 ul
+	{
+	padding-left: 0;
+}
+
+.block_settings ul.block_tree.list li ul li a,.block_settings ul.block_tree.list li ul li span,.block_navigation ul.block_tree.list li ul li ul li a,.block_navigation ul.block_tree.list li ul li ul li span
+	{
+	padding-left: 33px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li a,.block_settings ul.block_tree.list li ul li ul li span,.block_navigation ul.block_tree.list li ul li ul li ul li a,.block_navigation ul.block_tree.list li ul li ul li ul li span
+	{
+	padding-left: 49.5px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li ul li a,.block_settings ul.block_tree.list li ul li ul li ul li span,.block_navigation ul.block_tree.list li ul li ul li ul li ul li a,.block_navigation ul.block_tree.list li ul li ul li ul li ul li span
+	{
+	padding-left: 66px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li ul li ul li a,.block_settings ul.block_tree.list li ul li ul li ul li ul li span,.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li a,.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li span
+	{
+	padding-left: 83.5px;
+}
+
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li ul li a,.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li ul li span
+	{
+	padding-left: 99px;
+}

@@ -1,0 +1,133 @@
+
+body#page-login-index,html {
+	height: 100%;
+	background-color: #f5f5f5;
+}
+
+
+#page-login-index #page-header {
+	background-image: none;
+	margin-left: 5%;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.loginbox .loginform .form-input {
+    float: left;
+    width: 100%;
+}
+
+.loginbox .loginform .form-label {
+    direction: rtl;
+    float: left;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.loginbox {
+	margin-top: 40px;
+}
+
+.loginbox.twocolumns .signuppanel {
+    padding-left: 1%;
+    width: 38%;
+}
+
+
+.loginbox.twocolumns .loginpanel ,.loginbox.twocolumns .signuppanel {
+
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+}
+
+.loginbox.twocolumns .loginpanel {
+    width: 59.5%;
+}
+
+#page-login-index input#loginbtn, .guestform input{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fbb800), color-stop(1, #ff8800) );
+	background:-moz-linear-gradient( center top, #fbb800 5%, #ff8800 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb800', endColorstr='#ff8800');
+	background-color:#fbb800;
+	border:1px solid #db7500;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:0px 10px;
+	text-decoration:none;
+}
+
+#page-login-index input#loginbtn:hover, .guestform input:hover{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff8800), color-stop(1, #fbb800) );
+	background:-moz-linear-gradient( center top, #ff8800 5%, #fbb800 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8800', endColorstr='#fbb800');
+	background-color:#ff8800;
+}
+
+#page-login-index a {
+	color: #0099ff;
+	font-size: 14px;
+}
+
+#page-login-index a:hover {
+	color: #0099ff;
+}
+
+#page-login-index input#loginbtn:active {
+	position:relative;
+	top:1px;
+}
+
+#page-login-index label {
+    margin-left: 0em;
+    font-size: 14px;
+}
+
+.loginbox .loginform {
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 90%;
+}
+
+.loginbox h2, .loginbox .subcontent {
+    text-align: left;
+    
+}
+
+.loginbox .loginpanel .desc  {
+	 margin-left: 0px;
+	 font-weight: bold;
+	 color: #000;
+}
+
+.loginbox .loginform .form-input #username, .loginbox .loginform .form-input #password {
+    clear: both;
+    color: #000000;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.loginbox h2, .loginbox .subcontent {
+    text-align: left;
+    color: #000;
+}
+
+
+.loginbox h2, .loginbox .subcontent {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+#page-login-index #page-header-wrapper {
+    border-bottom: 1px solid #CCC;
+    height: 77px;
+    background: #FFFFFF;
+
+}
