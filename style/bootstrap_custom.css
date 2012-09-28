@@ -132,6 +132,14 @@ form {
 	width: 100%;
 }
 
+.ie .navbar nav, .navbar .nav .nav {
+	width: none;
+}
+
+.ie .logininfo {
+	float: right;
+}
+
 .navbar .nav .nav {
 	width: 100%;
 }
