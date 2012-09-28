@@ -132,7 +132,7 @@ form {
 	width: 100%;
 }
 
-.ie .navbar nav, .navbar .nav .nav {
+.ie .navbar nav, .ie .navbar .nav .nav {
 	width: none;
 }
 
