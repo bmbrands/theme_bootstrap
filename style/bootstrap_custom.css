@@ -171,6 +171,11 @@ form {
 	white-space: inherit;
 }
 
+
+input, textarea, .uneditable-input {
+    width: auto;
+}
+
 .hidden , .invisible{
   display: inherit;
   visibility: inherit;
