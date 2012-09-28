@@ -86,6 +86,12 @@ form {
 	margin: 0px;
 }
 
+.loginbox.twocolumns .loginpanel {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	border-right: 1px solid #EEEEEE;
+}
+
 /* Positioned 45 px below nav */
 #page-header {
 	margin-top: 45px;

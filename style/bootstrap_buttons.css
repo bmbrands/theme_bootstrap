@@ -38,7 +38,35 @@ button {
   *margin-left: .3em;
   height: 30px;
  }
+ 
+ /*exception for the login button (it gets doubled)*/
+.btn input[type="submit"] {
+   box-shadow: none;
+   background-image:none;
+   background-color: transparent;
+   text-shadow: none;
+   height: inherit;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   color: inherit;
+   border-radius: 0;
+ }
 
+.btn input[type="submit"]:hover {
+   box-shadow: none;
+   background-image:none;
+   background-color: transparent;
+   text-shadow: none;
+   height: inherit;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   color: inherit;
+   border-radius: 0;
+ }
+ 
+ 
 
 .btn:hover,
 .btn:active,
