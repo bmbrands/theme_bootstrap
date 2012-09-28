@@ -185,7 +185,7 @@ $THEME->layouts = array(
 // Moodle
 ////////////////////////////////////////////////////
 
-$THEME->rarrow = '&nbsp;/ ';
+//$THEME->rarrow = '&nbsp;/ ';
 
 ////////////////////////////////////////////////////
 // Overrides the right arrow image used throughout Moodle

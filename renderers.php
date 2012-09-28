@@ -14,7 +14,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $htmlblocks = array();
         // Iterate the navarray and display each node
         $itemcount = count($items);
-        $separator = get_separator();
+        $separator =  '&nbsp;/ ';
         for ($i=0;$i < $itemcount;$i++) {     
             $item = $items[$i];
             if ($item->type == "0" || $item->type == "30") {

@@ -53,6 +53,12 @@ form {
 	z-index: 1000;
 }
 
+/* Other Moodle elements */
+
+.calendartable th, .calendartable td {
+	border: 0px;
+}
+
 /* Footer styling */
 #page-footer {
 	text-align: left;
@@ -133,7 +139,7 @@ form {
 	float: right;
 }
 
-.gecko .navbar .nav {
+.gecko .navbar .nav, .safari .navbar .nav {
         width: 100%;
 }
 
@@ -153,6 +159,7 @@ form {
 }
 
 /*disabled bootstrap stuff (stuff that does not work with Moodle's html)*/
+
 .label,.badge {
 	background-color: inherit;
 	color: inherit;
