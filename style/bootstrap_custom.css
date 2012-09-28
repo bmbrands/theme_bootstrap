@@ -128,20 +128,13 @@ form {
 	margin: 0px;
 }
 
-.navbar .nav {
-	width: 100%;
-}
-
-.ie .navbar nav, .ie .navbar .nav .nav {
-	width: none;
-}
 
 .ie .logininfo {
 	float: right;
 }
 
-.navbar .nav .nav {
-	width: 100%;
+.gecko .navbar .nav {
+        width: 100%;
 }
 
 .breadcrumb {
