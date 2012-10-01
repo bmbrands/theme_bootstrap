@@ -4,6 +4,27 @@
 class theme_bootstrap_core_renderer extends core_renderer {
      
     /*
+     * Course layouts show the type of layout on top of the course page
+     * Using this renderer I hide these headings
+     */
+	public function heading($text, $level = 2, $classes = 'main', $id = null) {
+		global $COURSE;
+		 
+		$topicoutline = get_string('topicoutline');
+
+		if ($text == $topicoutline) {
+			$text = '';
+		}
+		
+		if ($text == get_string('weeklyoutline')) {
+			$text = '';
+		}
+
+		$content = parent::heading($text, $level, $classes, $id);
+
+		return $content;
+	}
+    /*
      * The standard navigation bar (breadcrumb)
      * shows the course category
      * For this theme the course category has been removed
