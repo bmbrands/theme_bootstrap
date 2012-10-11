@@ -190,13 +190,13 @@ class theme_bootstrap_core_renderer extends core_renderer {
             't/down' => 'arrow-down',
             't/edit' => 'edit',
             't/editstring' => 'tag',
-            't/copy' => 'duplicate',
+            't/copy' => 'repeat',
             't/delete' => 'remove',
             'i/edit' => 'pencil',
             'i/settings' => 'list-alt',
             'i/grades' => 'grades',
             'i/group' => 'user',
-            //'t/groupn' => '?',
+            't/groupn' => 'share-alt',
             //'t/groupv' => '?',
             't/switch_plus' => 'plus-sign',
             't/switch_minus' => 'minus-sign',
@@ -278,7 +278,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
             //return parent::render_pix_icon($icon);
             return '<i class=icon-not-assigned data-debug-icon="'.$icon->pix.'"></i>';
         }
-
 
     }
 
