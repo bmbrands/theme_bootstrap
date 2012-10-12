@@ -35,7 +35,7 @@ $THEME->parents_exclude_sheets = array('base'=>array('pagelayout'));
 
 
 $THEME->sheets = array(
-    'bootstrap_buttons','bootstrap-min','bootstrap-responsive-min','bootstrap_custom','ie7'
+    'bootstrap_buttons','bootstrap-min','bootstrap-responsive-min','bootstrap_custom','ie7','extra'
 );
 
 
@@ -156,7 +156,7 @@ $THEME->layouts = array(
 // specific page.
 ///////////////////////////////////////////////////////////////
 
-// $THEME->csspostprocess
+$THEME->csspostprocess = 'bootstrap_user_settings';
 
 ////////////////////////////////////////////////////
 // Allows the user to provide the name of a function

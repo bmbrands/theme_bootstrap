@@ -49,7 +49,12 @@ echo $OUTPUT->doctype() ?>
 <!-- START OF HEADER -->
     <div id="page-header">
 		<div id="page-header-wrapper" class="wrapper clearfix">
+		    <?php if (empty($PAGE->theme->settings->logo_url)) {?>
 	        <h1 class="headermain"><?php echo $PAGE->heading ?></h1>
+	        <?php } else { ?>
+	        <img src="<?php echo $PAGE->theme->settings->logo_url; ?>">
+	        <?php }?>
+    	    
     	    <div class="headermenu">
         		<?php
 	        	    echo $PAGE->headingmenu;
@@ -114,5 +119,15 @@ echo $OUTPUT->doctype() ?>
 
 </div>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
+<?php if (!empty($PAGE->theme->settings->enablejquery)) {?>
+
+<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/jquery.js"></script>
+<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/bootstrap-dropdown.js"></script>
+
+
+<?php }?>
+
+
 </body>
 </html>

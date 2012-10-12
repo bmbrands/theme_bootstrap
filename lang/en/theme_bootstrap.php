@@ -11,6 +11,14 @@ $string['pluginname'] = 'Bootstrap';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 $string['purgecaches'] = 'Purge caches';
+$string['notes'] =  'Bootstrap Configuration page';
+$string['notesdesc'] = 'Configure your theme';
+$string['enablejquery'] = 'Enable jquery';
+$string['enablejquerydesc'] = 'Jquery is used in Bootstrap to enable the custom menu dropdown';
+$string['logo_url'] = 'Logo URL';
+$string['logo_urldesc'] = 'Enter the full URL of your custom logo, make sure it is of a proper size';
+$string['customcss'] = 'Custom CSS';
+$string['customcssdesc'] = 'Add your extra CSS in this box, use it to customize your theme with a little css';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap</h2>
