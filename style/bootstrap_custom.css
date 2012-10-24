@@ -248,6 +248,10 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 	margin-right: 2px;
 }
 
+.choosercontainer #chooseform .option label {
+    font-size: 12px;
+}
+
 /* Typografie */
 h1 {
 	font-size: 26px;
