@@ -45,6 +45,11 @@ form {
 	margin-bottom: 0px;
 }
 
+.form-label .form-shortname {
+    color: #777777;
+    font-size: 0.8em;
+}
+
 .path-course-view .completionprogress {
 	display: block;
 	float: right;
