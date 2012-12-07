@@ -54,6 +54,10 @@ echo $OUTPUT->doctype() ?>
 	        <?php } else { ?>
 	        <img src="<?php echo $PAGE->theme->settings->logo_url; ?>">
 	        <?php }?>
+	        
+	        <?php 
+	                echo $OUTPUT->login_info();
+	        ?>
     	    
     	    <div class="headermenu">
         		<?php

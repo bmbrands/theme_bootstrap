@@ -35,7 +35,7 @@ $THEME->parents_exclude_sheets = array('base'=>array('pagelayout'));
 
 
 $THEME->sheets = array(
-    'bootstrap_buttons','bootstrap-min','bootstrap-responsive-min','bootstrap_custom','ie7','extra'
+    'bootstrap_buttons','bootstrap-min','bootstrap-responsive-min','bootstrap_custom','ie7','extra','editor-styling'
 );
 
 

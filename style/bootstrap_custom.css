@@ -155,6 +155,19 @@ margin-top: 0px;
 	margin-top: 45px;
 }
 
+@media (min-width: 768px) and (max-width: 979px) {
+  .navbar-fixed-bottom {
+    margin-top: 0px;
+  }
+  
+  .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+    padding: 0px;
+  }
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    position: absolute;
+}
+}
+
 #page-content-wrapper,#page-header-wrapper {
 	margin-top: 10px;
 }
@@ -305,6 +318,13 @@ input {
 }
 
 /* block styling */
+#settingsnav .leaf img {
+	display: none;
+}
+.block_navigation .hasicon img {
+	display: none;
+}
+
 .block {
 	min-height: 20px;
 	padding: 19px;

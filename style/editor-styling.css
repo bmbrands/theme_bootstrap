@@ -1,6 +1,4 @@
-body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input,textarea {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+
 
 .path-course .o2k7Skin table,.path-course .o2k7Skin tbody,.path-course .o2k7Skin a,.path-course .o2k7Skin img,.path-course .o2k7Skin tr,.path-course .o2k7Skin div,.path-course .o2k7Skin td,.path-course .o2k7Skin iframe,.path-course .o2k7Skin span,.path-course .o2k7Skin *,.path-course .o2k7Skin .mceText
 	{
@@ -345,7 +343,7 @@ body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input,textarea {
 
 .path-course .o2k7Skin span.mce_undo,.path-course .o2k7Skin span.mce_redo,.path-course .o2k7Skin span.mce_bullist,.path-course .o2k7Skin span.mce_numlist,.path-course .o2k7Skin span.mce_blockquote,.path-course .o2k7Skin span.mce_charmap,.path-course .o2k7Skin span.mce_bold,.path-course .o2k7Skin span.mce_italic,.path-course .o2k7Skin span.mce_underline,.path-course .o2k7Skin span.mce_justifyleft,.path-course .o2k7Skin span.mce_justifyright,.path-course .o2k7Skin span.mce_justifycenter,.path-course .o2k7Skin span.mce_justifyfull,.path-course .o2k7Skin span.mce_indent,.path-course .o2k7Skin span.mce_outdent,.path-course .o2k7Skin span.mce_link,.path-course .o2k7Skin span.mce_unlink,.path-course .o2k7Skin span.mce_help,.path-course .o2k7Skin span.mce_removeformat,.path-course .o2k7Skin span.mce_fullscreen,.path-course .o2k7Skin span.mce_wp_fullscreen,.path-course .o2k7Skin span.mce_media,.path-course .o2k7Skin span.mce_pastetext,.path-course .o2k7Skin span.mce_pasteword,.path-course .o2k7Skin span.mce_wp_help,.path-course .o2k7Skin span.mce_wp_adv,.path-course .o2k7Skin span.mce_wp_more,.path-course .o2k7Skin span.mce_strikethrough,.path-course .o2k7Skin span.mce_spellchecker,.path-course .o2k7Skin span.mce_forecolor,.path-course .o2k7Skin .mce_forecolorpicker,.path-course .o2k7Skin .mceSplitButton .mce_spellchecker span.mce_spellchecker,.path-course .o2k7Skin .mceSplitButton .mce_forecolor span.mce_forecolor,.path-course .o2k7Skin .mceSplitButton span.mce_numlist,.path-course .o2k7Skin .mceSplitButton span.mce_bullist
 	{
-	background-image: url(../images/wpicons.png)
+	background-image: url([[pix:theme|wpicons]]);
 }
 
 .path-course .o2k7Skin div.mceColorSplitMenu table {

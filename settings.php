@@ -21,6 +21,13 @@ if ($ADMIN->fulltree) {
     $default = '1';
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $settings->add($setting);
+    
+    $name = 'theme_bootstrap/enableglyphicons';
+    $title = get_string('enableglyphicons','theme_bootstrap');
+    $description = get_string('enableglyphiconsdesc', 'theme_bootstrap');
+    $default = '0';
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $settings->add($setting);
 	
 	$name = 'theme_bootstrap/logo_url';
     $title = get_string('logo_url','theme_bootstrap');
