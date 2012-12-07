@@ -215,15 +215,20 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
 
     public function block_controls($controls) {
-        if (empty($controls)) {
-            return '';
+        if($this->page->theme->settings->enableglyphicons) {
+            if (empty($controls)) {
+                return '';
+            }
+            $controlshtml = array();
+            foreach ($controls as $control) {
+                $controlshtml[] = self::a(array('href'=>$control['url'], 'title'=>$control['caption']), self::moodle_icon($control['icon']));
+            }
+            return self::div(array('class'=>'commands'), implode($controlshtml));
+        } else {
+            return parent::block_controls($controls);
         }
-        $controlshtml = array();
-        foreach ($controls as $control) {
-            $controlshtml[] = self::a(array('href'=>$control['url'], 'title'=>$control['caption']), self::moodle_icon($control['icon']));
-        }
-        return self::div(array('class'=>'commands'), implode($controlshtml));
     }
+
 
     protected static function a($attributes, $content) {
         return html_writer::tag('a', $content, $attributes);
@@ -249,34 +254,40 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     public function action_icon($url, pix_icon $pixicon, component_action $action = null, array $attributes = null, $linktext=false) {
-        if (!($url instanceof moodle_url)) {
-            $url = new moodle_url($url);
-        }
-        $attributes = (array)$attributes;
+        if($this->page->theme->settings->enableglyphicons) {
+             
+            if (!($url instanceof moodle_url)) {
+                $url = new moodle_url($url);
+            }
+            $attributes = (array)$attributes;
 
-        if (empty($attributes['class'])) {
-            // let ppl override the class via $options
-            $attributes['class'] = 'action-icon';
-        }
+            if (empty($attributes['class'])) {
+                // let ppl override the class via $options
+                $attributes['class'] = 'action-icon';
+            }
 
-        $icon = $this->render($pixicon);
+            $icon = $this->render($pixicon);
 
-        if ($linktext) {
-            $text = $pixicon->attributes['alt'];
+            if ($linktext) {
+                $text = $pixicon->attributes['alt'];
+            } else {
+                $text = '';
+            }
+
+            return $this->action_link($url, $text.$icon, $action, $attributes);
         } else {
-            $text = '';
+             return parent::action_icon($url, $pixicon, $action, $attributes , $linktext);
         }
-
-        return $this->action_link($url, $text.$icon, $action, $attributes);
     }
+     
 
     protected function render_pix_icon(pix_icon $icon) {
         if($this->page->theme->settings->enableglyphicons) {
             if (isset(self::$icons[$icon->pix])) {
                 return self::icon(self::$icons[$icon->pix]);
             } else {
-                //return parent::render_pix_icon($icon);
-                return '<i class=icon-not-assigned data-debug-icon="'.$icon->pix.'"></i>';
+                return parent::render_pix_icon($icon);
+                //return '<i class=icon-not-assigned data-debug-icon="'.$icon->pix.'"></i>';
             }
         } else {
             return parent::render_pix_icon($icon);
