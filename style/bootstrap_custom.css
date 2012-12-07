@@ -410,10 +410,10 @@ input {
 .block .header .title h2,.block h3.main {
 	display: block;
 	padding: 3px 15px;
-	font-size: 11px;
+	font-size: 1.1em;
 	font-weight: bold;
 	line-height: 20px;
-	color: #999;
+	color: #000;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 	text-transform: uppercase;
 }
