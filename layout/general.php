@@ -26,11 +26,15 @@ if ($hascustommenu) {
     $bodyclasses[] = 'has_custom_menu';
 }
 
-echo $OUTPUT->doctype() ?>
+//echo $OUTPUT->doctype() ?>
+<!DOCTYPE html>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
     <title><?php echo $PAGE->title ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <?php include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php"); ?>
@@ -107,8 +111,6 @@ echo $OUTPUT->doctype() ?>
 <?php }; ?>          
 </div>
 <!--  END BOOTSTRAP RESPONSIVE -->
-
-
 
 <!-- START OF FOOTER -->
     <div id="page-footer" class="wrapper">

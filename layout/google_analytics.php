@@ -1,6 +1,18 @@
 <?php
-$trackurl = '';
+/* This code modifies the URL's send to Google analytics
+ * A standard moodle url looks like:
+ * http://www.someurl.com/course/view.php?id=5
+ * 
+ * This code changes these URL into something like
+ * http://www.someurl.com/Starters+Course
+ * 
+ * This makes analyzing your Google analytics stats much more fun!
+ * 
+ * author: Bas Brands, Sonsbeekmedia.nl bmbrands@gmail.com
+ */
 
+
+$trackurl = '';
 
 global $DB;
 if ($COURSE->id != 1 ){
