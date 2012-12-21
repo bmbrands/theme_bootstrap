@@ -46,8 +46,8 @@ form {
 }
 
 .form-label .form-shortname {
-    color: #777777;
-    font-size: 0.8em;
+	color: #777777;
+	font-size: 0.8em;
 }
 
 .path-course-view .completionprogress {
@@ -59,8 +59,7 @@ form {
 }
 
 /* Other Moodle elements */
-
-.calendartable th, .calendartable td {
+.calendartable th,.calendartable td {
 	border: 0px;
 }
 
@@ -68,22 +67,22 @@ form {
 	border: 1px solid #EEEEEE;
 }
 
-.path-mod-forum .forumheaderlist, .forumpost {
-    background-color: #f5f5f5;
-    border: 1px solid #e3e3e3;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+.path-mod-forum .forumheaderlist,.forumpost {
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
 }
 
 .forumpost .row .left {
-    float: left;
-    width: 43px;
-    overflow: hidden;
-    margin-left: 20px;
+	float: left;
+	width: 43px;
+	overflow: hidden;
+	margin-left: 20px;
 }
 
 .forumpost .subject {
@@ -95,20 +94,19 @@ form {
 }
 
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol {
-    width: inherit;
-    float: left;
+	width: inherit;
+	float: left;
 }
 
 /*quiz */
-
 .que label {
-    display: inline-block;
-    margin-left: 5px;
+	display: inline-block;
+	margin-left: 5px;
 }
 
-.que input[type="checkbox"], .que input[type="radio"] {
-margin-right: 7px;
-margin-top: 0px;
+.que input[type="checkbox"],.que input[type="radio"] {
+	margin-right: 7px;
+	margin-top: 0px;
 }
 
 /* Footer styling */
@@ -150,22 +148,160 @@ margin-top: 0px;
 	border-right: 1px solid #EEEEEE;
 }
 
+/* login page */
+.loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
+	border: 0;
+	margin: 0px;
+	padding: 0px;
+	float: none;
+	width: none;
+	-moz-box-sizing: border-box;
+	display: block;
+	float: left;
+	margin-left: 2.76243%;
+	min-height: 30px;
+}
+
+@media ( min-width : 1200px) {
+	.loginbox.twocolumns .loginpanel {
+		margin-left: 0px;
+	}
+	.loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
+		width: 48.717948717948715%;
+		*width: 48.664757228587014%;
+	}
+}
+
+@media ( min-width : 980px) {
+	.loginbox.twocolumns .loginpanel {
+		margin-left: 0px;
+	}
+	.loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
+		width: 48.617948717948715%;
+		*width: 48.664757228587014%;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 979px) {
+	.loginbox.twocolumns .loginpanel {
+		margin-left: 0px;
+	}
+	.loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
+		width: 48.61878453038674%;
+		*width: 48.56559304102504%;
+	}
+}
+@media (max-width: 767px) {
+	.loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+/* Course list */
+
+.coursebox {
+	border-color: #DDDDDD;
+    border-style: dotted;
+    border-width: 1px;
+    -webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+
+.coursebox h3.name {
+	margin: 0px;
+}
+
+
+
+.coursebox .info, .coursebox .summary {
+	border: 0;
+	margin: 0px;
+	padding: 0px;
+	float: none;
+	width: none;
+	-moz-box-sizing: border-box;
+	display: block;
+	float: left;
+	margin-left: 2.76243%;
+	min-height: 30px;
+	
+}
+
+.coursebox .summary {
+	margin-top: 5px;
+}
+
+.coursebox .info {
+		margin-left: 0px;
+}
+
+@media ( min-width : 1200px) {
+
+	.coursebox .info, .coursebox .summary {
+		width: 48.717948717948715%;
+		*width: 48.664757228587014%;
+	}
+}
+
+@media ( min-width : 980px) {
+	.coursebox .info, .coursebox .summary  {
+		width: 48.617948717948715%;
+		*width: 48.664757228587014%;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 979px) {
+
+	.coursebox .info, .coursebox .summary  {
+		width: 48.61878453038674%;
+		*width: 48.56559304102504%;
+	}
+}
+@media (max-width: 767px) {
+	.coursebox .info, .coursebox .summary  {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+
+/* Calendar full view */
+
+.maincalendar .calendarmonth td, .maincalendar .calendarmonth th {
+    border-color: #DDDDDD;
+    border-style: dotted;
+    border-width: 1px;
+}
+
 /* Positioned 45 px below nav */
 #page-header {
 	margin-top: 45px;
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
-  .navbar-fixed-bottom {
-    margin-top: 0px;
-  }
-  
-  .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
-    padding: 0px;
-  }
-  .navbar-fixed-top, .navbar-fixed-bottom {
-    position: absolute;
-}
+@media ( min-width : 768px) and (max-width: 979px) {
+	.navbar-fixed-bottom {
+		margin-top: 0px;
+	}
+	.navbar-fixed-top .navbar-inner,.navbar-fixed-bottom .navbar-inner {
+		padding: 0px;
+	}
+	.navbar-fixed-top,.navbar-fixed-bottom {
+		position: absolute;
+	}
 }
 
 #page-content-wrapper,#page-header-wrapper {
@@ -199,13 +335,12 @@ margin-top: 0px;
 	margin: 0px;
 }
 
-
 .ie .logininfo {
 	float: right;
 }
 
-.gecko .navbar .nav, .safari .navbar .nav {
-        width: 100%;
+.gecko .navbar .nav,.safari .navbar .nav {
+	width: 100%;
 }
 
 .breadcrumb {
@@ -218,13 +353,9 @@ margin-top: 0px;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
 }
 
-/*icon sprite*/
-[class ^="icon-"],[class *=" icon-"] {
-	background-image: url([[pix:theme|glyphicons-halflings]]);
-}
+
 
 /*disabled bootstrap stuff (stuff that does not work with Moodle's html)*/
-
 .label,.badge {
 	background-color: inherit;
 	color: inherit;
@@ -237,18 +368,17 @@ margin-top: 0px;
 }
 
 img.hide {
-    display: inherit;
+	display: inherit;
 }
 
-input, textarea, .uneditable-input {
-    width: auto;
+input,textarea,.uneditable-input {
+	width: auto;
 }
 
-.hidden , .invisible{
-  display: inherit;
-  visibility: inherit;
+.hidden,.invisible {
+	display: inherit;
+	visibility: inherit;
 }
-
 
 .navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container
 	{
@@ -261,13 +391,14 @@ input, textarea, .uneditable-input {
 	padding-right: 30px;
 }
 
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+select,textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input
+	{
 	margin-bottom: 0px;
 	margin-right: 2px;
 }
 
 .choosercontainer #chooseform .option label {
-    font-size: 12px;
+	font-size: 12px;
 }
 
 /* Typografie */
@@ -321,6 +452,7 @@ input {
 #settingsnav .leaf img {
 	display: none;
 }
+
 .block_navigation .hasicon img {
 	display: none;
 }

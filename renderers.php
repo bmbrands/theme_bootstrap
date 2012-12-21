@@ -183,6 +183,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             'i/hide' => 'eye-open',
             't/show' => 'eye-close',
             'i/show' => 'eye-close',
+            't/assignroles' => 'icon-glass',
             't/add' => 'plus',
             't/right' => 'arrow-right',
             't/left' => 'arrow-left',

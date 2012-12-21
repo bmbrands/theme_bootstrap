@@ -26,7 +26,7 @@ if ($hascustommenu) {
     $bodyclasses[] = 'has_custom_menu';
 }
 
-//echo $OUTPUT->doctype() ?>
+$doctype = $OUTPUT->doctype() ?>
 <!DOCTYPE html>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
