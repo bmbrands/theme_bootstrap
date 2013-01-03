@@ -96,8 +96,12 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $content = html_writer::start_tag('div',array('class'=>"navbar navbar-fixed-top"));
         $content .= html_writer::start_tag('div',array('class'=>"navbar-inner"));
         $content .= html_writer::start_tag('div',array('class'=>"container"));
-
-        $content .= html_writer::start_tag('div', array('class'=>'nav'));
+        $content .= html_writer::start_tag('a',array('class'=>"btn btn-navbar",'data-toggle'=>"collapse",'data-target'=>".nav-collapse"));
+        $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
+        $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
+        $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
+        $content .= html_writer::end_tag('a');
+        $content .= html_writer::start_tag('div', array('class'=>'nav-collapse'));
         $content .= html_writer::start_tag('ul', array('class'=>'nav'));
         // Render each child
 
@@ -107,8 +111,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
 
         // Close the open tags
-        $content .= html_writer::end_tag('ul');
         $content .= $this->lang_menu();
+        $content .= html_writer::end_tag('ul');
+        
         //$content .= $this->login_info();
 
         $content .= html_writer::end_tag('div');

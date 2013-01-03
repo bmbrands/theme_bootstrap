@@ -77,11 +77,22 @@ form {
 }
 
 select {
-	width: inherit;
+	width: auto;
 }
 
 label {
 	display: inline;
+	margin: 6px 0 0 4px;
+}
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+	width: auto;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+    line-height: normal;
+    margin: 0px;
 }
 
 .filemanager input[type="text"],.file-picker input[type="text"] {
@@ -176,7 +187,7 @@ label {
 /* Login menu in top nav */
 .logininfo,.langmenu {
 	display: inline-block;
-	float: left;
+	float: right;
 	margin-left: 10px;
 }
 
@@ -375,8 +386,17 @@ label {
 	width: 100%;
 }
 
+.navbar .btn-navbar {
+	height: 15px;
+}
+
 .navbar-fixed-top {
 	margin: 0px;
+}
+
+.nav-collapse.in .langmenu {
+	float: left;
+	margin-bottom: 5px;
 }
 
 .ie .logininfo {
@@ -484,10 +504,32 @@ input {
 	.logininfo,.langmenu {
 		display: inline-block;
 		float: right;
+		margin-top: 2px;
 	}
 	.navbar .nav .nav {
 		width: auto;
 	}
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  #page {
+  padding-right: 20px;
+  padding-left: 20px;
+  }
+  #page-header {
+  margin-top: 0px;
+  }
+}
+
+/*gradebook tooltip*/
+div.yui3-overlay-content.yui3-widget-stdmod {
+    border: 1px solid #DDDDDD;
+    background:#FFF url([[pix:theme|alert-overlay]]) repeat-x;
+    padding: 3px;
 }
 
 /* block styling */
@@ -498,6 +540,11 @@ input {
 .block_navigation .hasicon img {
 	display: none;
 }
+
+.block .block-hider-show, .block .block-hider-hide {
+    padding-right: 5px;
+}
+
 
 .block {
 	min-height: 20px;

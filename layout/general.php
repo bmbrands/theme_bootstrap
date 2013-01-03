@@ -131,6 +131,8 @@ $doctype = $OUTPUT->doctype() ?>
 
 <script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/jquery.js"></script>
 <script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/bootstrap-collapse.js"></script>
+
 
 
 <?php }?>
