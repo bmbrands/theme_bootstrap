@@ -14,6 +14,17 @@ $showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
+
+$courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
+if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
+    $courseheader = $OUTPUT->course_header();
+    $coursecontentheader = $OUTPUT->course_content_header();
+    if (empty($PAGE->layout_options['nocoursefooter'])) {
+        $coursecontentfooter = $OUTPUT->course_content_footer();
+        $coursefooter = $OUTPUT->course_footer();
+    }
+}
+
 $bodyclasses = array();
 if ($showsidepre && !$showsidepost) {
     $bodyclasses[] = 'side-pre-only';
@@ -37,7 +48,10 @@ $doctype = $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
-    <?php include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php"); ?>
+    <?php 
+    if (!empty($PAGE->theme->settings->gakey)) {
+    include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php"); 
+    };?>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
@@ -75,6 +89,9 @@ $doctype = $OUTPUT->doctype() ?>
                 <div class="navbutton"> <?php echo $PAGE->button; ?></div>
             </div>
             <?php } ?>
+                    <?php if (!empty($courseheader)) { ?>
+            <div id="course-header"><?php echo $courseheader; ?></div>
+        <?php } ?>
 	    </div>
     </div>
 
@@ -100,8 +117,9 @@ $doctype = $OUTPUT->doctype() ?>
 <?php } else { ?>
     <div class="span12">
 <?php };?>
-
+    <?php echo $coursecontentheader; ?>
 	<?php echo $OUTPUT->main_content() ?>
+	<?php echo $coursecontentfooter; ?>
 	</div>
              
 <?php if ($hassidepost) { ?>                

@@ -40,9 +40,9 @@ $THEME->sheets = array(
     'bootstrap-responsive-min', //original bootstrap css unmodified
     'bootstrap_custom', //fixes to make bootstrap work with moodle
     'ie7',//ie7 fixes for moodle 2.3 and newer. make is usable in ie7, not pretty
-    'extra',//contains custom css from the theme user settings
     'quiz',//quiz module styling
-    'moddata'//data module styling
+    'moddata',//data module styling
+    'extra',//contains custom css from the theme user settings
 );
 
 //the sheet editor-styling is disabled untill it fully supports all editor options
