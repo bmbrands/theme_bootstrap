@@ -100,6 +100,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
         $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
         $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
+        $content .= html_writer::end_tag('a');
 
         $content .= html_writer::start_tag('div', array('class'=>'nav-collapse'));
         $content .= html_writer::start_tag('ul', array('class'=>'nav'));

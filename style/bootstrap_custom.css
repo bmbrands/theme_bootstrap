@@ -74,6 +74,7 @@ form {
 	opacity: inherit;
 	padding: inherit;
 	position: relative;
+	z-index: 1029;
 }
 
 select {
