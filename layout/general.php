@@ -148,14 +148,9 @@ $doctype = $OUTPUT->doctype() ?>
 <?php if (!empty($PAGE->theme->settings->enablejquery)) {?>
 
 <script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/jquery.js"></script>
-<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/bootstrap-dropdown.js"></script>
-<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/bootstrap-collapse.js"></script>
-<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/bootstrap-tab.js"></script>
-
-
+<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/bootstrap.min.js"></script>
 
 <?php }?>
-
 
 </body>
 </html>

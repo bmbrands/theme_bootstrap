@@ -85,14 +85,15 @@ label {
 	margin: 6px 0 0 4px;
 }
 
-.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+.container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container
+	{
 	width: auto;
 }
 
-input[type="radio"], input[type="checkbox"] {
-    cursor: pointer;
-    line-height: normal;
-    margin: 0px;
+input[type="radio"],input[type="checkbox"] {
+	cursor: pointer;
+	line-height: normal;
+	margin: 0px;
 }
 
 .filemanager input[type="text"],.file-picker input[type="text"] {
@@ -335,6 +336,15 @@ input[type="radio"], input[type="checkbox"] {
 	}
 }
 
+@media ( max-width : 480px) {
+	.course-content ul.topics li.section .content,.course-content ul.weeks li.section .content
+		{
+		margin-right: 0px;
+		margin-left: 0px;
+		padding: 0;
+	}
+}
+
 /* Calendar full view */
 .maincalendar .calendarmonth td,.maincalendar .calendarmonth th {
 	border-color: #DDDDDD;
@@ -384,6 +394,10 @@ input[type="radio"], input[type="checkbox"] {
 	margin-bottom: 0px;
 	overflow: visible;
 	width: 100%;
+}
+
+.navbar .brand {
+	padding: 2px 0px 2px 20px;
 }
 
 .navbar .btn-navbar {
@@ -511,25 +525,25 @@ input {
 	}
 }
 
-@media (max-width: 767px) {
-  body {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  #page {
-  padding-right: 20px;
-  padding-left: 20px;
-  }
-  #page-header {
-  margin-top: 0px;
-  }
+@media ( max-width : 767px) {
+	body {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	#page {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	#page-header {
+		margin-top: 0px;
+	}
 }
 
 /*gradebook tooltip*/
 div.yui3-overlay-content.yui3-widget-stdmod {
-    border: 1px solid #DDDDDD;
-    background:#FFF url([[pix:theme|alert-overlay]]) repeat-x;
-    padding: 3px;
+	border: 1px solid #DDDDDD;
+	background: #FFF url([[pix:theme|alert-overlay]]) repeat-x;
+	padding: 3px;
 }
 
 /* block styling */
@@ -541,10 +555,9 @@ div.yui3-overlay-content.yui3-widget-stdmod {
 	display: none;
 }
 
-.block .block-hider-show, .block .block-hider-hide {
-    padding-right: 5px;
+.block .block-hider-show,.block .block-hider-hide {
+	padding-right: 5px;
 }
-
 
 .block {
 	min-height: 20px;
