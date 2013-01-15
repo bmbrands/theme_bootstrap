@@ -25,6 +25,8 @@ $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Add your extra CSS in this box, use it to customize your theme with a little css';
 $string['gakey'] = 'Google analytics key';
 $string['gakeydesc'] = 'Please enter you Google Analytics key';
+$string['bootswatch_theme'] = 'BoostWatch theme URL';
+$string['bootswatch_themedesc'] = 'Type complete url of your CSS file boostwatch theme.';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap</h2>
