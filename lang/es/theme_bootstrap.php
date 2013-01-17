@@ -26,7 +26,7 @@ $string['gakeydesc'] = 'Por favor, introduce tu clave de Google Analytics';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap</h2>
-<img src="leatherbound/pix/screenshot.jpg" />
+<img src="bootstrap/pix/screenshot.jpg" />
 <h3>Foro de discusión del Tema:</h3><p><a href="http://moodle.org/mod/forum/discuss.php?d=208162#p925155">http://moodle.org/mod/forum/view.php?id=46</a></p>
 <h3>Créditos del Tema</h3><p>
 Este tema es el resultado del trabajo colaborativo de:<br>
