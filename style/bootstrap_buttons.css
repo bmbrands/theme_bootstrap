@@ -36,7 +36,7 @@ button {
   cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   *margin-left: .3em;
-  
+  height: 30px;
  }
  
  /*exception for the login button (it gets doubled)*/
