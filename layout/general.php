@@ -52,6 +52,9 @@ $doctype = $OUTPUT->doctype() ?>
     if (!empty($PAGE->theme->settings->gakey)) {
     include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php"); 
     };?>
+    <?php if (!empty($PAGE->theme->settings->bootswatch_theme)) {?>
+        <link rel="stylesheet" type="text/css" href="<?php echo $PAGE->theme->settings->bootswatch_theme; ?>">
+    <?php }; ?>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">

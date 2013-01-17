@@ -23,6 +23,8 @@ $string['customcss'] = 'CSS personalizada';
 $string['customcssdesc'] = 'Añade en este campo las configuraciones extras de tu CSS, hazlo para personalizar tu tema con un poco de CSS';
 $string['gakey'] = 'Clave de Google Analytics';
 $string['gakeydesc'] = 'Por favor, introduce tu clave de Google Analytics';
+$string['bootswatch_theme'] = 'URL del tema de BoostWatch';
+$string['bootswatch_themedesc'] = 'Teclea la URL completa del archivo CSS del tema de boostwatch.';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap</h2>

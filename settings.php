@@ -54,4 +54,11 @@ if ($ADMIN->fulltree) {
 	$setting = new admin_setting_configtext($name, $title, $description, '');
 	$settings->add($setting);
 
+    $name= 'theme_bootstrap/bootswatch_theme';
+    $title = get_string('bootswatch_theme', 'theme_bootstrap');
+    $description = get_string('bootswatch_themedesc', 'theme_bootstrap');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $settings->add($setting);
+
 }
