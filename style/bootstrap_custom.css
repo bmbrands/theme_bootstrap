@@ -13,6 +13,16 @@
 }
 
 /* Course styling */
+
+.coursebox .enrolmenticons {
+    border: 1px dotted #DDDDDD;
+    border-radius: 3px 3px 3px 3px;
+    margin-top: 0.3em;
+    padding: 3px;
+}
+.course-content ul.weeks .content .summary ul, .course-content ul.topics .content .summary ul {
+    list-style: none outside none;
+}
 .course-content ul li.section.main {
 	border-bottom: 2px solid #eee;
 	margin-top: 0px;
