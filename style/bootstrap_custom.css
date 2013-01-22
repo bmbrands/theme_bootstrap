@@ -730,3 +730,7 @@ select.menubui_addblock {
 	{
 	padding-left: 99px;
 }
+.block_navigation .block_tree li.item_with_icon > p {
+	position:relative; 
+	padding-left: 0px;
+}
