@@ -102,15 +102,17 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
         $content .= html_writer::end_tag('a');
 
+        
+        if (!empty($this->page->theme->settings->navlogo_url)) {
+            $content .= html_writer::start_tag('a',array('class'=>"brand"));
+            $content .= html_writer::tag('img', '',array('src'=>$this->page->theme->settings->navlogo_url,'height'=>'40px','width'=>'40px','class'=>'brand'));
+            $content .= html_writer::end_tag('a');
+        }
+        
         $content .= html_writer::start_tag('div', array('class'=>'nav-collapse'));
         $content .= html_writer::start_tag('ul', array('class'=>'nav'));
 
-        $content .= html_writer::end_tag('a');
-        if (!empty($this->page->theme->settings->navlogo_url)) {
-            $content .= html_writer::start_tag('a',array('class'=>"brand"));
-            $content .= html_writer::tag('img', '',array('src'=>$this->page->theme->settings->navlogo_url,'height'=>'40px','width'=>'40px'));
-            $content .= html_writer::end_tag('a');
-        }
+
 
         // Render each child
         foreach ($menu->get_children() as $item) {

@@ -419,6 +419,7 @@ input[type="radio"],input[type="checkbox"] {
 	height: 15px;
 }
 
+
 .navbar-fixed-top {
 	margin: 0px;
 }
@@ -491,6 +492,8 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 .choosercontainer #chooseform .option label {
 	font-size: 12px;
 }
+
+
 
 /* Typografie */
 h1 {

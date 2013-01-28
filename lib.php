@@ -19,6 +19,18 @@ function bootstrap_user_settings($css, $theme) {
         [class ^="icon-"],[class *=" icon-"] { background-image: url("'.$CFG->wwwroot.'/theme/image.php?theme=bootstrap&component=theme&image=glyphicons-halflings"); }';
         $css .= $bootstrapicons;
     }
+    
+    if (!empty($theme->settings->navlogo_url)) {
+        $css .= '
+    @media ( min-width : 980px) {
+	  .navbar .brand {
+		padding-left: 40px;
+	  }
+	  .navbar-static-top .container .nav-collapse, .navbar-fixed-top .container .nav-collapse, .navbar-fixed-bottom .container .nav-collapse {
+	  padding-left: 80px;
+	  }
+    }';
+    }
 
     return $css;
 }
