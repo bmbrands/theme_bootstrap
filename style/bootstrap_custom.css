@@ -157,11 +157,11 @@ input[type="radio"],input[type="checkbox"] {
 	float: left;
 	width: 43px;
 	overflow: hidden;
-	margin-left: 20px;
+	margin-left: 3px;
 }
 
 .forumpost .row {
-	margin-left: -19px;
+	margin-left: 0px;
 }
 
 .forumpost .subject {
