@@ -97,7 +97,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $menupos = 3;
         if ($this->page->theme->settings->showpurgecaches) {
             if (is_siteadmin($USER)) {
-                $menu->add(get_string('purgecaches', 'theme_bootstrap'), new moodle_url('/admin/purgecaches.php', array('sesskey' =>  sesskey(), 'confirm' => '1')), null, $menupos++);
+                $menu->add(get_string('purgecaches', 'admin'), new moodle_url('/admin/purgecaches.php', array('sesskey' =>  sesskey(), 'confirm' => '1')), null, $menupos++);
             }
         }
         // Initialise this custom menu

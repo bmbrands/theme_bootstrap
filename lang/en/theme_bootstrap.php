@@ -10,7 +10,6 @@
 $string['pluginname'] = 'Bootstrap';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
-$string['purgecaches'] = 'Purge caches';
 $string['notes'] =  'Bootstrap Configuration page';
 $string['notesdesc'] = 'Configure your theme';
 $string['enableglyphicons'] = 'Enable Glyphicons';
