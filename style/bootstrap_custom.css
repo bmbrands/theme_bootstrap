@@ -4,6 +4,13 @@
  * Some code to make bootstrap work with Moodle
  * 
  */
+ 
+ 
+/* contributed by Paul Hibbitts, see http://msdn.microsoft.com/en-us/library/ie/jj583807(v=vs.85).aspx*/
+canvas {
+    -ms-touch-action: auto;
+}
+ 
 #page-header {
 	margin: 2% 0;
 }

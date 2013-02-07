@@ -21,8 +21,16 @@ $string['logo_url'] = 'Logo URL';
 $string['logo_urldesc'] = 'Enter the full URL of your custom logo, make sure it is of a proper size';
 $string['navlogo_url'] = 'Navigation Logo URL';
 $string['navlogo_urldesc'] = 'Enter the full URL of your navigation logo, it will be rendered inside the top menu';
+$string['navlogo_width'] = 'Navigation Logo width in px';
+$string['navlogo_widthdesc'] = 'Enter the width of the navlogo in pixels (default 40), this is used to make sure the theme menu renders okay';
+$string['navlogo_height'] = 'Navigation Logo height';
+$string['navlogo_heightdesc'] = 'Enter the height of your navigation logo in pixels (default 40), use a height of max 40px';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Add your extra CSS in this box, use it to customize your theme with a little css';
+$string['shortennavbar'] = 'Shorten breadcrumb navbar';
+$string['shortennavbardesc'] = 'Enabling this setting shortens the navigation breadcrumb hiding the course category and submodule info';
+$string['showpurgecaches'] = 'Show purge caches option';
+$string['showpurgecachesdesc'] = 'Enable purging of caches link in navbar, this is only availble for admins and is used for Moodle development';
 $string['gakey'] = 'Google analytics key';
 $string['gakeydesc'] = 'Please enter you Google Analytics key';
 

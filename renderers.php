@@ -28,6 +28,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
      * The standard navigation bar (breadcrumb)
      * shows the course category
      * For this theme the course category has been removed
+     * This is now a optional setting
      */
     public function navbar() {
         $items = $this->page->navbar->get_items();
@@ -38,8 +39,10 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $separator =  '&nbsp;/ ';
         for ($i=0;$i < $itemcount;$i++) {
             $item = $items[$i];
-            if ($item->type == "0" || $item->type == "30") {
-                continue;
+            if($this->page->theme->settings->shortennavbar) {
+                if ($item->type == "0" || $item->type == "30") {
+                    continue;
+                }
             }
             $item->hideicon = true;
             if ($i===0) {
@@ -54,6 +57,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $navbarcontent .= html_writer::tag('ul', join('', $htmlblocks));
         // XHTML
         return $navbarcontent;
+         
     }
 
     /*
@@ -78,6 +82,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
     /*
      * this renders the bootstrap top menu
+     * 
+     * This renderer is needed to enable the Bootstrap style navigation
+     * 
      */
 
     protected function render_custom_menu(custom_menu $menu) {
@@ -87,10 +94,11 @@ class theme_bootstrap_core_renderer extends core_renderer {
             return '';
         }
 
-
         $menupos = 3;
-        if (is_siteadmin($USER)) {
-            $menu->add(get_string('purgecaches', 'theme_bootstrap'), new moodle_url('/admin/purgecaches.php', array('sesskey' =>  sesskey(), 'confirm' => '1')), null, $menupos++);
+        if ($this->page->theme->settings->showpurgecaches) {
+            if (is_siteadmin($USER)) {
+                $menu->add(get_string('purgecaches', 'theme_bootstrap'), new moodle_url('/admin/purgecaches.php', array('sesskey' =>  sesskey(), 'confirm' => '1')), null, $menupos++);
+            }
         }
         // Initialise this custom menu
         $content = html_writer::start_tag('div',array('class'=>"navbar navbar-fixed-top"));
@@ -102,27 +110,37 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
         $content .= html_writer::end_tag('a');
 
-        
+
         if (!empty($this->page->theme->settings->navlogo_url)) {
+
+            $navlogowidth = 40;
+            $navlogoheight = 40;
+
+            if (!empty($this->page->theme->settings->navlogo_height)) {
+                $navlogoheight = $this->page->theme->settings->navlogo_height;
+            }
+             
+            if (!empty($this->page->theme->settings->navlogo_width)) {
+                $navlogowidth = $this->page->theme->settings->navlogo_width;
+            }
+
             $content .= html_writer::start_tag('a',array('class'=>"brand"));
-            $content .= html_writer::tag('img', '',array('src'=>$this->page->theme->settings->navlogo_url,'height'=>'40px','width'=>'40px','class'=>'brand'));
+            $content .= html_writer::tag('img', '',array('src'=>$this->page->theme->settings->navlogo_url,'height'=>$navlogoheight.'px','width'=>$navlogowidth.'px','class'=>'brand','style'=>'width:'.$navlogowidth.'px;height:'.$navlogoheight.'px;'));
             $content .= html_writer::end_tag('a');
         }
-        
+
         $content .= html_writer::start_tag('div', array('class'=>'nav-collapse'));
         $content .= html_writer::start_tag('ul', array('class'=>'nav'));
 
-
-
         // Render each child
         foreach ($menu->get_children() as $item) {
-            $content .= $this->render_custom_menu_item($item);
+            $content .= $this->render_custom_menu_item($item,1);
         }
 
         // Close the open tags
         $content .= $this->lang_menu();
         $content .= html_writer::end_tag('ul');
-        
+
         //$content .= $this->login_info();
 
         $content .= html_writer::end_tag('div');
@@ -138,12 +156,19 @@ class theme_bootstrap_core_renderer extends core_renderer {
      * bootstrap dropdown menu
      */
 
-    protected function render_custom_menu_item(custom_menu_item $menunode) {
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         // Required to ensure we get unique trackable id's
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
-            $content = html_writer::start_tag('li', array('class'=>'dropdown'));
+
+            if ($level == 1) {
+                $dropdowntype = 'dropdown';
+            } else {
+                $dropdowntype = 'dropdown-submenu';
+            }
+
+            $content = html_writer::start_tag('li', array('class'=>$dropdowntype));
             // If the child has menus render it as a sub menu
             $submenucount++;
             if ($menunode->get_url() !== null) {
@@ -155,12 +180,14 @@ class theme_bootstrap_core_renderer extends core_renderer {
             //$content .= html_writer::link($url, $menunode->get_text(), array('title'=>,));
             $content .= html_writer::start_tag('a', array('href'=>$url,'class'=>'dropdown-toggle','data-toggle'=>'dropdown'));
             $content .= $menunode->get_title();
-            $content .= html_writer::start_tag('b', array('class'=>'caret'));
-            $content .= html_writer::end_tag('b');
+            if ($level == 1) {
+                $content .= html_writer::start_tag('b', array('class'=>'caret'));
+                $content .= html_writer::end_tag('b');
+            }
             $content .= html_writer::end_tag('a');
             $content .= html_writer::start_tag('ul', array('class'=>'dropdown-menu'));
             foreach ($menunode->get_children() as $menunode) {
-                $content .= $this->render_custom_menu_item($menunode);
+                $content .= $this->render_custom_menu_item($menunode, 0);
             }
             $content .= html_writer::end_tag('ul');
         } else {
@@ -244,7 +271,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
     }
 
-
     protected static function a($attributes, $content) {
         return html_writer::tag('a', $content, $attributes);
     }
@@ -291,7 +317,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
             return $this->action_link($url, $text.$icon, $action, $attributes);
         } else {
-             return parent::action_icon($url, $pixicon, $action, $attributes , $linktext);
+            return parent::action_icon($url, $pixicon, $action, $attributes , $linktext);
         }
     }
      

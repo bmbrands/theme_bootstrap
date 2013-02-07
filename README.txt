@@ -1,5 +1,9 @@
 This theme is Based on the Bootstrap CSS framework
 
+Latest bugfixes:
+
+Enabled submenu navigation to Moodles submenu items
+
 Release notes version Version 2.0
 
 - Now really resonsive on mobile devices

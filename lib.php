@@ -19,7 +19,18 @@ function bootstrap_user_settings($css, $theme) {
         [class ^="icon-"],[class *=" icon-"] { background-image: url("'.$CFG->wwwroot.'/theme/image.php?theme=bootstrap&component=theme&image=glyphicons-halflings"); }';
         $css .= $bootstrapicons;
     }
+
+    $navlogowidth = 40;
+    $navlogoheight = 40;
     
+    if (!empty($theme->settings->navlogo_height)) {
+        $navlogoheight = $theme->settings->navlogo_height;
+    }
+     
+    if (!empty($theme->settings->navlogo_width)) {
+        $navlogowidth = $theme->settings->navlogo_width;
+    }
+    $extrapadding = 40 + $navlogowidth;
     if (!empty($theme->settings->navlogo_url)) {
         $css .= '
     @media ( min-width : 980px) {
@@ -27,7 +38,7 @@ function bootstrap_user_settings($css, $theme) {
 		padding-left: 40px;
 	  }
 	  .navbar-static-top .container .nav-collapse, .navbar-fixed-top .container .nav-collapse, .navbar-fixed-bottom .container .nav-collapse {
-	  padding-left: 80px;
+	  padding-left: '.$extrapadding.'px;
 	  }
     }';
     }

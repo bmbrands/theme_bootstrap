@@ -28,6 +28,20 @@ if ($ADMIN->fulltree) {
     $default = '0';
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $settings->add($setting);
+    
+    $name = 'theme_bootstrap/shortennavbar';
+    $title = get_string('shortennavbar','theme_bootstrap');
+    $description = get_string('shortennavbardesc', 'theme_bootstrap');
+    $default = '0';
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bootstrap/showpurgecaches';
+    $title = get_string('showpurgecaches','theme_bootstrap');
+    $description = get_string('showpurgecachesdesc', 'theme_bootstrap');
+    $default = '0';
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $settings->add($setting);
 	
 	$name = 'theme_bootstrap/logo_url';
     $title = get_string('logo_url','theme_bootstrap');
@@ -39,6 +53,20 @@ if ($ADMIN->fulltree) {
     $title = get_string('navlogo_url','theme_bootstrap');
     $description = get_string('navlogo_urldesc', 'theme_bootstrap');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $settings->add($setting);
+    
+    $name = 'theme_bootstrap/navlogo_width';
+    $title = get_string('navlogo_width','theme_bootstrap');
+    $description = get_string('navlogo_widthdesc', 'theme_bootstrap');
+    $default = 40;
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bootstrap/navlogo_height';
+    $title = get_string('navlogo_height','theme_bootstrap');
+    $description = get_string('navlogo_heightdesc', 'theme_bootstrap');
+    $default = 40;
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
     $settings->add($setting);
     
     $name = 'theme_bootstrap/customcss';
