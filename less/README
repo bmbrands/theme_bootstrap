@@ -1,0 +1,17 @@
+If you want to make changes to the .css generated from these .less files then you
+need to install recess (https://github.com/twitter/recess) to compile the .less files,
+then run these commands in the bootstrap/less/ folder:
+
+recess --compile --compress moodle.less > ../style/bootstrap.css
+
+You can add --watch to make sure it updates every time you make a change.
+
+If you're making changes/additions to the responsive stuff (not currently done) then something like this:
+
+recess --compile --compress moodle-responsive.less >  ../style/bootstrap-responsive.css
+
+And for the subset of styles of interest to the TinyMCE editor:
+
+recess --compile --compress editor.less >  ../style/editor.css
+
+Non-command line options for .less compilation are available, see their github for more info.
