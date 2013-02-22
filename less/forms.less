@@ -3,9 +3,6 @@
  * .less file imports styles from the bootstrap @variables file and 
  * adds them to the existing Moodle form CSS ids and classes.
  *
- * Which exact files are imported is controlled by setting the 
- * directory search path before calling this file allowing
- * bootswatches or your own less variables to affect dispay.
  */
 
 .fitem {
@@ -57,22 +54,26 @@ div.backup-section + form,
     margin-top: 5px; // Push down checkboxes to align.
     display: inline-block; // So above style sticks.
 }
+
+#adminsettings h3.main {
+    // Copied from bootstrap/forms.less tag legend
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: @baseLineHeight;
+    font-size: @baseFontSize * 1.5;
+    line-height: @baseLineHeight * 2;
+    color: @grayDark;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
 // Things to cancel inherit styles. Better to copy the whole file into the them
 // and then simply delete the lines original lines instead of having one line of 
 // CSS to add it and another to take it away again.
 .form-buttons {
     margin: 0; // Delete theme/base/style/admin.css:210 
 }
-
-#adminsettings h3.main {
-    // Copied from bootstrap/forms.less tag legend
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: @baseLineHeight;
-  font-size: @baseFontSize * 1.5;
-  line-height: @baseLineHeight * 2;
-  color: @grayDark;
-  border: 0;
-  border-bottom: 1px solid #e5e5e5;
+#adminsettings .form-item {
+    margin: 0;
 }
