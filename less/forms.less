@@ -1,0 +1,39 @@
+/**
+ * Moodle forms HTML isn't changeable via renderers (yet?) so this
+ * .less file imports styles from the bootstrap @variables file and 
+ * adds them to the existing Moodle form CSS ids and classes.
+ *
+ * Which exact files are imported is controlled by setting the 
+ * directory search path before calling this file allowing
+ * bootswatches or your own less variables to affect dispay.
+ */
+
+.fitem {
+    .form-horizontal .control-group
+}
+.form-label,
+.mform .fitem div.fitemtitle {
+    .form-horizontal .control-label
+}
+div.form-defaultinfo,
+.form-label span.form-shortname {
+    .muted;
+}
+.form-setting,
+.mform .fitem .felement,
+.form-item .form-description,
+#page-mod-forum-search .c1 {
+    .form-horizontal .controls;
+}
+
+.formsettingheading {
+    .form-horizontal .help-block
+}
+// Moodle doesn't differentiate between what Bootstrap calls 
+// .uneditable-inputs and form help text. Styling them both as
+// uneditable looks ugly, styling both as form help is fairly
+// subtle in it's impact. Going for the latter as the best option.
+.felement.fstatic {
+    .help-block;
+    padding-top: 5px;
+}
