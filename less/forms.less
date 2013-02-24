@@ -1,0 +1,79 @@
+/**
+ * Moodle forms HTML isn't changeable via renderers (yet?) so this
+ * .less file imports styles from the bootstrap @variables file and 
+ * adds them to the existing Moodle form CSS ids and classes.
+ *
+ */
+
+.mform .fitem {
+    .form-horizontal .control-group
+}
+#adminsettings .form-item .form-label,
+.mform .fitem div.fitemtitle {
+    .form-horizontal .control-label
+}
+div.form-defaultinfo,
+.form-label span.form-shortname {
+    .muted;
+}
+#adminsettings .form-item .form-setting,
+#adminsettings .form-item .form-description,
+.mform .fitem .felement,
+#page-mod-forum-search .c1 {
+    .form-horizontal .controls
+}
+
+.formsettingheading {
+    .form-horizontal .help-block
+}
+// Moodle doesn't differentiate between what Bootstrap calls 
+// .uneditable-inputs and form help text. Styling them both as
+// uneditable looks ugly, styling both as form help is fairly
+// subtle in it's impact. Going for the latter as the best option.
+#adminsettings .form-item .form-description,
+.felement.fstatic {
+    .help-block;
+    padding-top: 5px;
+}
+
+// Pale grey container for submit buttons.
+table#form td.submit,
+.form-buttons,
+#fitem_id_submitbutton,
+.fp-content-center form + div,
+div.backup-section + form,
+#fgroup_id_buttonar {
+    .form-actions;
+    padding-left: 0;
+}
+.form-buttons {
+    padding-left: @horizontalComponentOffset; // add back the padding it would usually get from being inside a .form-horizontal
+}
+
+#adminsettings .form-item .form-setting .form-checkbox {
+    margin-top: 5px; // Push down checkboxes to align.
+    display: inline-block; // So above style sticks.
+}
+
+#adminsettings h3.main {
+    // Copied from bootstrap/forms.less tag legend
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: @baseLineHeight;
+    font-size: @baseFontSize * 1.5;
+    line-height: @baseLineHeight * 2;
+    color: @grayDark;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+// Things to cancel inherit styles. Better to copy the whole file into the them
+// and then simply delete the lines original lines instead of having one line of 
+// CSS to add it and another to take it away again.
+.form-buttons {
+    margin: 0; // Delete theme/base/style/admin.css:210 
+}
+#adminsettings .form-item {
+    margin: 0;
+}

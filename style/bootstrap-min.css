@@ -6162,28 +6162,25 @@ a.badge:focus {
  * .less file imports styles from the bootstrap @variables file and 
  * adds them to the existing Moodle form CSS ids and classes.
  *
- * Which exact files are imported is controlled by setting the 
- * directory search path before calling this file allowing
- * bootswatches or your own less variables to affect dispay.
  */
 
-.fitem {
+.mform .fitem {
   margin-bottom: 20px;
   *zoom: 1;
 }
 
-.fitem:before,
-.fitem:after {
+.mform .fitem:before,
+.mform .fitem:after {
   display: table;
   line-height: 0;
   content: "";
 }
 
-.fitem:after {
+.mform .fitem:after {
   clear: both;
 }
 
-.form-label,
+#adminsettings .form-item .form-label,
 .mform .fitem div.fitemtitle {
   float: left;
   width: 160px;
@@ -6196,9 +6193,9 @@ div.form-defaultinfo,
   color: #999999;
 }
 
-.form-setting,
+#adminsettings .form-item .form-setting,
+#adminsettings .form-item .form-description,
 .mform .fitem .felement,
-.form-item .form-description,
 #page-mod-forum-search .c1 {
   *display: inline-block;
   *padding-left: 20px;
@@ -6206,19 +6203,23 @@ div.form-defaultinfo,
   *margin-left: 0;
 }
 
-.form-setting:first-child,
+#adminsettings .form-item .form-setting:first-child,
+#adminsettings .form-item .form-description:first-child,
 .mform .fitem .felement:first-child,
-.form-item .form-description:first-child,
 #page-mod-forum-search .c1:first-child {
   *padding-left: 180px;
 }
 
-.mform .fitem .felement.fstatic {
-  margin-left: 20px;
-}
-
 .formsettingheading {
   margin-bottom: 0;
+}
+
+#adminsettings .form-item .form-description,
+.felement.fstatic {
+  display: block;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  color: #595959;
 }
 
 table#form td.submit,
@@ -6228,7 +6229,7 @@ table#form td.submit,
 div.backup-section + form,
 #fgroup_id_buttonar {
   padding: 19px 20px 20px;
-  padding-left: 180px;
+  padding-left: 0;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
@@ -6262,642 +6263,31 @@ div.backup-section + form:after,
   clear: both;
 }
 
-table#form td.submit div.fitemtitle,
-.form-buttons div.fitemtitle,
-#fitem_id_submitbutton div.fitemtitle,
-.fp-content-center form + div div.fitemtitle,
-div.backup-section + form div.fitemtitle,
-#fgroup_id_buttonar div.fitemtitle {
-  width: 0;
+.form-buttons {
+  padding-left: 180px;
 }
 
-table#form td.submit fieldset.felement.fgroup,
-.form-buttons fieldset.felement.fgroup,
-#fitem_id_submitbutton fieldset.felement.fgroup,
-.fp-content-center form + div fieldset.felement.fgroup,
-div.backup-section + form fieldset.felement.fgroup,
-#fgroup_id_buttonar fieldset.felement.fgroup {
-  margin-left: 0;
-}
-
-.fitem_fsubmit .felement.fsubmit {
-  margin-left: 0;
-}
-
-.mform .fitem.fitem_fsubmit .fitemtitle {
-  width: 0;
-}
-
-input[type="password"],
-input[type="text"] {
-  /* Corrects some YUI settings. */
-
-  width: 206px;
-}
-
-.form-checkbox,
-.fcheckbox span,
-.fradio,
-div.felement.fcheckbox,
-#defineroletable td.inherit label,
-#defineroletable td.allow label,
-#defineroletable td.prevent label,
-#defineroletable td.prohibit label,
-.mform fieldset .unmask,
-.fduration span,
-.fgroup span,
-.fdate_time_selector span,
-form#adminsettings .form-item .form-setting .form-password .unmask,
-.form-multicheckbox li {
-  min-height: 20px;
-  padding-left: 20px;
-}
-
-fieldset.felement.fgroup label,
-.fp-content-center td.mdl-right label,
-input[type="checkbox"] + label {
+#adminsettings .form-item .form-setting .form-checkbox {
   display: inline-block;
+  margin-top: 5px;
 }
 
-#defineroletable td.inherit label input[type="checkbox"],
-#defineroletable td.inherit label input[type="radio"],
-#defineroletable td.allow label input[type="checkbox"],
-#defineroletable td.allow label input[type="radio"],
-#defineroletable td.prevent label input[type="checkbox"],
-#defineroletable td.prevent label input[type="radio"],
-#defineroletable td.prohibit label input[type="checkbox"],
-#defineroletable td.prohibit label input[type="radio"],
-.form-checkbox input[type="checkbox"],
-.fcheckbox input[type="checkbox"],
-.form-multicheckbox input[type="checkbox"],
-.fradio input[type="radio"],
-.radio input[type="radio"],
-.unmask input[type="checkbox"],
-.fdate_time_selector span > input[type="checkbox"],
-.fgroup span > input[type="checkbox"],
-.fduration span > input[type="checkbox"] {
-  float: left;
-  margin-left: -18px;
-}
-
-select + label.accesshide + select[id$="_hour"],
-table#form select + label + select.menufromhour,
-table#form select + label + select.menutohour {
-  margin-left: 61px;
-}
-
-#fgroup_id_firstaccess_grp span,
-#fgroup_id_lastaccess_grp span,
-#fgroup_id_timemodified_grp span {
-  display: inline-block;
-  width: 73px;
-}
-
-.path-backup .mform .grouped_settings {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-
-.path-backup .mform .grouped_settings blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
-}
-
-.path-admin .roleassigntable #buttonscell #add,
-.path-admin .roleassigntable #buttonscell #remove input,
-input[id$="_clearbutton"],
-button,
-input.form-submit,
-input#id_submitbutton,
-input#id_submitbutton2,
-input#id_previous,
-input#id_cancel {
-  display: inline-block;
-  *display: inline;
-  padding: 4px 12px;
-  margin-bottom: 0;
-  *margin-left: .3em;
-  font-size: 14px;
-  line-height: 20px;
-  color: #333333;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  vertical-align: middle;
-  cursor: pointer;
-  background-color: #f5f5f5;
-  *background-color: #e6e6e6;
-  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
-  background-repeat: repeat-x;
-  border: 1px solid #cccccc;
-  *border: 0;
-  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  border-bottom-color: #b3b3b3;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-  *zoom: 1;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.path-admin .roleassigntable #buttonscell #add:hover,
-.path-admin .roleassigntable #buttonscell #remove input:hover,
-input[id$="_clearbutton"]:hover,
-button:hover,
-input.form-submit:hover,
-input#id_submitbutton:hover,
-input#id_submitbutton2:hover,
-input#id_previous:hover,
-input#id_cancel:hover,
-.path-admin .roleassigntable #buttonscell #add:focus,
-.path-admin .roleassigntable #buttonscell #remove input:focus,
-input[id$="_clearbutton"]:focus,
-button:focus,
-input.form-submit:focus,
-input#id_submitbutton:focus,
-input#id_submitbutton2:focus,
-input#id_previous:focus,
-input#id_cancel:focus,
-.path-admin .roleassigntable #buttonscell #add:active,
-.path-admin .roleassigntable #buttonscell #remove input:active,
-input[id$="_clearbutton"]:active,
-button:active,
-input.form-submit:active,
-input#id_submitbutton:active,
-input#id_submitbutton2:active,
-input#id_previous:active,
-input#id_cancel:active,
-.path-admin .roleassigntable #buttonscell #add.active,
-.path-admin .roleassigntable #buttonscell #remove input.active,
-input[id$="_clearbutton"].active,
-button.active,
-input.form-submit.active,
-input#id_submitbutton.active,
-input#id_submitbutton2.active,
-input#id_previous.active,
-input#id_cancel.active,
-.path-admin .roleassigntable #buttonscell #add.disabled,
-.path-admin .roleassigntable #buttonscell #remove input.disabled,
-input[id$="_clearbutton"].disabled,
-button.disabled,
-input.form-submit.disabled,
-input#id_submitbutton.disabled,
-input#id_submitbutton2.disabled,
-input#id_previous.disabled,
-input#id_cancel.disabled,
-.path-admin .roleassigntable #buttonscell #add[disabled],
-.path-admin .roleassigntable #buttonscell #remove input[disabled],
-input[id$="_clearbutton"][disabled],
-button[disabled],
-input.form-submit[disabled],
-input#id_submitbutton[disabled],
-input#id_submitbutton2[disabled],
-input#id_previous[disabled],
-input#id_cancel[disabled] {
-  color: #333333;
-  background-color: #e6e6e6;
-  *background-color: #d9d9d9;
-}
-
-.path-admin .roleassigntable #buttonscell #add:active,
-.path-admin .roleassigntable #buttonscell #remove input:active,
-input[id$="_clearbutton"]:active,
-button:active,
-input.form-submit:active,
-input#id_submitbutton:active,
-input#id_submitbutton2:active,
-input#id_previous:active,
-input#id_cancel:active,
-.path-admin .roleassigntable #buttonscell #add.active,
-.path-admin .roleassigntable #buttonscell #remove input.active,
-input[id$="_clearbutton"].active,
-button.active,
-input.form-submit.active,
-input#id_submitbutton.active,
-input#id_submitbutton2.active,
-input#id_previous.active,
-input#id_cancel.active {
-  background-color: #cccccc \9;
-}
-
-.path-admin .roleassigntable #buttonscell #add:first-child,
-.path-admin .roleassigntable #buttonscell #remove input:first-child,
-input[id$="_clearbutton"]:first-child,
-button:first-child,
-input.form-submit:first-child,
-input#id_submitbutton:first-child,
-input#id_submitbutton2:first-child,
-input#id_previous:first-child,
-input#id_cancel:first-child {
-  *margin-left: 0;
-}
-
-.path-admin .roleassigntable #buttonscell #add:hover,
-.path-admin .roleassigntable #buttonscell #remove input:hover,
-input[id$="_clearbutton"]:hover,
-button:hover,
-input.form-submit:hover,
-input#id_submitbutton:hover,
-input#id_submitbutton2:hover,
-input#id_previous:hover,
-input#id_cancel:hover,
-.path-admin .roleassigntable #buttonscell #add:focus,
-.path-admin .roleassigntable #buttonscell #remove input:focus,
-input[id$="_clearbutton"]:focus,
-button:focus,
-input.form-submit:focus,
-input#id_submitbutton:focus,
-input#id_submitbutton2:focus,
-input#id_previous:focus,
-input#id_cancel:focus {
-  color: #333333;
-  text-decoration: none;
-  background-position: 0 -15px;
-  -webkit-transition: background-position 0.1s linear;
-     -moz-transition: background-position 0.1s linear;
-       -o-transition: background-position 0.1s linear;
-          transition: background-position 0.1s linear;
-}
-
-.path-admin .roleassigntable #buttonscell #add:focus,
-.path-admin .roleassigntable #buttonscell #remove input:focus,
-input[id$="_clearbutton"]:focus,
-button:focus,
-input.form-submit:focus,
-input#id_submitbutton:focus,
-input#id_submitbutton2:focus,
-input#id_previous:focus,
-input#id_cancel:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
-.path-admin .roleassigntable #buttonscell #add.active,
-.path-admin .roleassigntable #buttonscell #remove input.active,
-input[id$="_clearbutton"].active,
-button.active,
-input.form-submit.active,
-input#id_submitbutton.active,
-input#id_submitbutton2.active,
-input#id_previous.active,
-input#id_cancel.active,
-.path-admin .roleassigntable #buttonscell #add:active,
-.path-admin .roleassigntable #buttonscell #remove input:active,
-input[id$="_clearbutton"]:active,
-button:active,
-input.form-submit:active,
-input#id_submitbutton:active,
-input#id_submitbutton2:active,
-input#id_previous:active,
-input#id_cancel:active {
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.path-admin .roleassigntable #buttonscell #add.disabled,
-.path-admin .roleassigntable #buttonscell #remove input.disabled,
-input[id$="_clearbutton"].disabled,
-button.disabled,
-input.form-submit.disabled,
-input#id_submitbutton.disabled,
-input#id_submitbutton2.disabled,
-input#id_previous.disabled,
-input#id_cancel.disabled,
-.path-admin .roleassigntable #buttonscell #add[disabled],
-.path-admin .roleassigntable #buttonscell #remove input[disabled],
-input[id$="_clearbutton"][disabled],
-button[disabled],
-input.form-submit[disabled],
-input#id_submitbutton[disabled],
-input#id_submitbutton2[disabled],
-input#id_previous[disabled],
-input#id_cancel[disabled] {
-  cursor: default;
-  background-image: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-}
-
-.path-admin .roleassigntable #buttonscell #add .label,
-.path-admin .roleassigntable #buttonscell #remove input .label,
-input[id$="_clearbutton"] .label,
-button .label,
-input.form-submit .label,
-input#id_submitbutton .label,
-input#id_submitbutton2 .label,
-input#id_previous .label,
-input#id_cancel .label,
-.path-admin .roleassigntable #buttonscell #add .badge,
-.path-admin .roleassigntable #buttonscell #remove input .badge,
-input[id$="_clearbutton"] .badge,
-button .badge,
-input.form-submit .badge,
-input#id_submitbutton .badge,
-input#id_submitbutton2 .badge,
-input#id_previous .badge,
-input#id_cancel .badge {
-  position: relative;
-  top: -1px;
-}
-
-input.form-submit,
-input#id_submitbutton,
-input#id_submitbutton2,
-td.submit input {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #006dcc;
-  *background-color: #0044cc;
-  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-  background-repeat: repeat-x;
-  border-color: #0044cc #0044cc #002a80;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-
-input.form-submit:hover,
-input#id_submitbutton:hover,
-input#id_submitbutton2:hover,
-td.submit input:hover,
-input.form-submit:focus,
-input#id_submitbutton:focus,
-input#id_submitbutton2:focus,
-td.submit input:focus,
-input.form-submit:active,
-input#id_submitbutton:active,
-input#id_submitbutton2:active,
-td.submit input:active,
-input.form-submit.active,
-input#id_submitbutton.active,
-input#id_submitbutton2.active,
-td.submit input.active,
-input.form-submit.disabled,
-input#id_submitbutton.disabled,
-input#id_submitbutton2.disabled,
-td.submit input.disabled,
-input.form-submit[disabled],
-input#id_submitbutton[disabled],
-input#id_submitbutton2[disabled],
-td.submit input[disabled] {
-  color: #ffffff;
-  background-color: #0044cc;
-  *background-color: #003bb3;
-}
-
-input.form-submit:active,
-input#id_submitbutton:active,
-input#id_submitbutton2:active,
-td.submit input:active,
-input.form-submit.active,
-input#id_submitbutton.active,
-input#id_submitbutton2.active,
-td.submit input.active {
-  background-color: #003399 \9;
-}
-
-input.form-submit .caret,
-input#id_submitbutton .caret,
-input#id_submitbutton2 .caret,
-td.submit input .caret {
-  border-top-color: #ffffff;
-  border-bottom-color: #ffffff;
-}
-
-input[id$="_clearbutton"]:active,
-td.submit input:active {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-input[id$="_clearbutton"],
-input#id_cancel {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #faa732;
-  *background-color: #f89406;
-  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
-  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
-  background-image: -o-linear-gradient(top, #fbb450, #f89406);
-  background-image: linear-gradient(to bottom, #fbb450, #f89406);
-  background-repeat: repeat-x;
-  border-color: #f89406 #f89406 #ad6704;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-
-input[id$="_clearbutton"]:hover,
-input#id_cancel:hover,
-input[id$="_clearbutton"]:focus,
-input#id_cancel:focus,
-input[id$="_clearbutton"]:active,
-input#id_cancel:active,
-input[id$="_clearbutton"].active,
-input#id_cancel.active,
-input[id$="_clearbutton"].disabled,
-input#id_cancel.disabled,
-input[id$="_clearbutton"][disabled],
-input#id_cancel[disabled] {
-  color: #ffffff;
-  background-color: #f89406;
-  *background-color: #df8505;
-}
-
-input[id$="_clearbutton"]:active,
-input#id_cancel:active,
-input[id$="_clearbutton"].active,
-input#id_cancel.active {
-  background-color: #c67605 \9;
-}
-
-input[id$="_clearbutton"] .caret,
-input#id_cancel .caret {
-  border-top-color: #ffffff;
-  border-bottom-color: #ffffff;
-}
-
-.user-enroller-panel .uep-search-results .user .options .enrol {
-  padding: 0 6px;
-  font-size: 10.5px;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-}
-
-.user-enroller-panel .uep-search-results .user .options .enrol .label,
-.user-enroller-panel .uep-search-results .user .options .enrol .badge {
-  top: 0;
-}
-
-.fduration input,
-.fduration select,
-.fduration span,
-.fdate_selector select,
-.fdate_selector select:focus,
-#fgroup_id_firstaccess_grp select,
-#fgroup_id_firstaccess_grp select:focus,
-#fgroup_id_lastaccess_grp select,
-#fgroup_id_lastaccess_grp select:focus,
-#fgroup_id_timemodified_grp select,
-#fgroup_id_timemodified_grp select:focus,
-#fgroup_id_enableopengroup select,
-#fgroup_id_enableopengroup select:focus,
-#fgroup_id_enableclosegroup select,
-#fgroup_id_enableclosegroup select:focus,
-select.menufromday,
-select.menufromday:hover,
-select.menutoday,
-select.menutoday:hover,
-#turnitintool_style select#id_dtstart_day,
-#turnitintool_style select#id_dtdue_day,
-#turnitintool_style select#id_dtpost_day,
-select.menufrommonth,
-select.menufrommonth:hover,
-select.menutomonth,
-select.menutomonth:hover,
-#turnitintool_style select#id_dtstart_month,
-#turnitintool_style select#id_dtdue_month,
-#turnitintool_style select#id_dtpost_month,
-#turnitintool_style select#id_dtstart_year,
-select.menufromyear,
-select.menufromyear:hover,
-select.menutoyear,
-select.menutoyear:hover,
-#turnitintool_style select#id_dtdue_year,
-#turnitintool_style select#id_dtpost_year,
-#turnitintool_style select#id_dtstart_minute,
-select.menufromminute,
-select.menufromminute:hover,
-select.menutominute,
-select.menutominute:hover,
-#turnitintool_style select#id_dtdue_minute,
-#turnitintool_style select#id_dtpost_minute,
-select.menufromhour,
-select.menufromhour:hover,
-select.menutohour,
-select.menutohour:hover,
-#turnitintool_style select#id_dtstart_hour,
-#turnitintool_style select#id_dtdue_hour,
-#turnitintool_style select#id_dtpost_hour,
-.form-time select,
-.form-time select:focus,
-.fdate_time_selector select,
-.fdate_time_selector select:focus {
-  width: 71px !important;
-  min-width: 60px !important;
-}
-
-.mform div.fdescription.required {
-  margin-left: 180px;
-  text-align: left;
-}
-
-.fdescription.required img,
-img.req {
-  display: none;
-}
-
-.fdescription.required:after,
-.fitem.required .fitemtitle label:before {
-  color: #b94a48;
-  content: "*";
-}
-
-.mform .advancedbutton {
-  float: right;
-}
-
-.felement.fstatic {
-  display: inline-block;
-  width: 206px;
-  width: auto;
-  height: 20px;
-  min-width: 206px;
-  padding: 4px 6px;
-  margin-bottom: 10px;
-  margin-left: 0;
-  overflow: hidden;
-  font-size: 14px;
-  line-height: 20px;
-  color: #555555;
-  color: #999999;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: not-allowed;
-  background-color: #ffffff;
-  background-color: #fcfcfc;
-  border: 1px solid #cccccc;
-  border-color: #cccccc;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-          transition: border linear 0.2s, box-shadow linear 0.2s;
-}
-
-.felement.fstatic:focus {
-  border-color: rgba(82, 168, 236, 0.8);
-  outline: 0;
-  outline: thin dotted \9;
-  /* IE6-9 */
-
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-}
-
-.felement.error span.error {
-  color: #b94a48;
-}
-
-select#id_category,
-form#switchcategory select,
-#page-course-editcategory #id_parent select,
-#fitem_id_parent select {
+#adminsettings h3.main {
+  display: block;
   width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-input#id_fullname,
-input#id_name,
-input#id_externalurl,
-input#id_setting_root_filename,
-textarea {
-  width: 420px !important;
+.form-buttons {
+  margin: 0;
+}
+
+#adminsettings .form-item {
+  margin: 0;
 }
