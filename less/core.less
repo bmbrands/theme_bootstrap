@@ -40,12 +40,10 @@ a.dimmed_text:visited,
 .usersuspended a:visited,
 .dimmed_category,
 .dimmed_category a {
-    color: #AAA;
+    .muted
 }
 .activity.label .dimmed_text {
-    opacity: 0.5;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    filter: alpha(opacity=50);
+    .opacity(50)
 }
 .unlist,
 .unlist li,
@@ -67,9 +65,9 @@ a.dimmed_text:visited,
 .notifytiny li,
 .notifytiny td {font-size:100%;}
 .red,
-.notifyproblem {color:#660000;}
+.notifyproblem {color:@errorText;}
 .green,
-.notifysuccess {color:#006600;}
+.notifysuccess {color:@successText;}
 .reportlink {text-align:right;}
 a.autolink.glossary:hover {cursor: help;}
 /* Block which is hidden if javascript enabled, prevents fickering visible when JS from footer used! */
@@ -225,29 +223,18 @@ a.skip:active {position: static;display: block;}
 /**
  * Mforms
  */
-.mform fieldset {border:1px solid;}
-.mform fieldset fieldset {border-width:0px;}
-.mform fieldset legend {font-weight:bold;margin-left:0.5em;}
-.mform fieldset div {margin:10px;margin-top:0;}
-.mform fieldset div div {margin:0;}
 .mform fieldset .advancedbutton {text-align:right;}
-.mform fieldset.hidden {border-width:0;}
 .mform fieldset.group {margin-bottom: 0}
-.mform fieldset.error {border: 1px solid #A00;}
+.mform fieldset.error {border: 1px solid @errorText;}
 .mform fieldset.collapsible legend a.fheader {padding: 0 5px 0 20px; background: url([[pix:t/expanded]]) 2px center no-repeat;}
 .mform fieldset.collapsed legend a.fheader {background: url([[pix:t/collapsed]]) 2px center no-repeat;}
 .mform fieldset.collapsed.jsprocessed {border-width: 1px 0 0 0; padding: 0;}
 .mform fieldset.collapsed.jsprocessed div.fcontainer {display: none;}
-.mform .fitem {width:100%;overflow:hidden;margin-top:5px;margin-bottom:1px;clear:right;}
-.mform .fitem .fitemtitle {width:15%;text-align:right;float:left;}
 .mform .fitem .fitemtitle div {display: inline;}
-.mform .fitem .felement {border-width: 0;width:80%;margin-left:16%;}
-.mform .fitem fieldset.felement {margin-left:15%;padding-left:1%;margin-bottom:0}
-.dir-rtl .mform .fitem fieldset.felement {padding-right: 1%;margin-right: 15%;}
 .mform .error,
-.mform .required {color:#A00;}
+.mform .required {color: @errorText;}
 .mform .required .fgroup span label {color:#000;}
-.mform .fdescription.required {color:#A00;text-align:right;}
+.mform .fdescription.required {color:@errorText;text-align:right;}
 .mform .fpassword .unmask {display:inline;margin-left:0.5em;}
 .mform .ftextarea #id_alltext {width: 100%;}
 .mform ul.file-list {padding:0;margin:0;list-style:none;}
@@ -269,10 +256,6 @@ a.skip:active {position: static;display: block;}
 
 input#id_externalurl {direction:ltr;}
 
-/** Browser corrections for mforms **/
-.ie .mform .fitem .felement {margin-left:0;text-align:left;float:left;}
-/** Fix IE double margin + float bugs **/
-.ie .mform .fitem .fitemtitle {padding-right:1em;}
 #portfolio-add-button {display:inline;}
 
 /**
