@@ -31,10 +31,8 @@ $THEME->parents = array('');
 
 
 $THEME->sheets = array(
-    'bootstrap_buttons', // colored buttons for forms
-    'bootstrap-min', // bootstrap less compilation output
-    'bootstrap-responsive-min', // original bootstrap css unmodified
-    'bootstrap_custom', //fixes to make bootstrap work with moodle
+    'bootstrap-min', //original bootstrap css unmodified
+    'bootstrap-responsive-min', //original bootstrap css unmodified
     'ie7',//ie7 fixes for moodle 2.3 and newer. make is usable in ie7, not pretty
     'quiz',//quiz module styling
     'moddata',//data module styling
