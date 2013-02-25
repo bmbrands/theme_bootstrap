@@ -6157,220 +6157,164 @@ a.badge:focus {
   position: fixed;
 }
 
-/**
- * Moodle forms HTML isn't changeable via renderers (yet?) so this
- * .less file imports styles from the bootstrap @variables file and 
- * adds them to the existing Moodle form CSS ids and classes.
+/* some very targetted corrections to roll back nameclashes between
+ * Moodle and Bootstrap like .row, .label, .content, .controls
  *
- * Which exact files are imported is controlled by setting the 
- * directory search path before calling this file allowing
- * bootswatches or your own less variables to affect dispay.
+ * Mostly relies on these styles being more specific than the Bootstrap
+ * ones in order to overule them.
  */
 
-.fitem {
-  margin-bottom: 20px;
-  *zoom: 1;
+/* YUI vs tables
+ * 
+ * It seems a bit crazy but YUI appears to be adding ugly borders to
+ * all table cells,.
+ * 
+ * YUI gets included before user styles so this has precedence,
+ * might make some YUI things look funny though if they expect padding.
+ */
+
+th,
+td {
+  padding: 0;
+  border: none;
 }
 
-.fitem:before,
-.fitem:after {
-  display: table;
-  line-height: 0;
-  content: "";
+/* Not sure why I need to set this, min-height is already set but
+ * seems to be getting ignored.
+ */
+
+html {
+  height: 100%;
 }
 
-.fitem:after {
-  clear: both;
+body {
+  min-height: 100%;
 }
 
-.form-label,
-.mform .fitem div.fitemtitle {
-  float: left;
-  width: 160px;
-  padding-top: 5px;
+/* .label vs .label
+ */
+
+li.activity.label,
+.file-picker td.label,
+.userprofile th.label {
+  display: table-cell;
+  padding: 4px 8px;
+  color: inherit;
+  text-shadow: none;
+  white-space: normal;
+  background: inherit;
+  border: inherit;
+}
+
+.file-picker td.label,
+.userprofile table.list tr th.label {
   text-align: right;
 }
 
-div.form-defaultinfo,
-.form-label span.form-shortname {
-  color: #999999;
+.choosercontainer #chooseform .option label {
+  font-size: 12px;
 }
 
-.form-setting,
-.mform .fitem .felement,
-.form-item .form-description,
-#page-mod-forum-search .c1 {
-  *display: inline-block;
-  *padding-left: 20px;
-  margin-left: 180px;
-  *margin-left: 0;
+/* block.invisible vs .invisible
+ * block.hidden vs .invisible
+ *
+ * uses .invisible where the rest of Moodle uses .dimmed
+ * fixible in block renderer?
+ *
+ * There's seems to be even more naming confusion here since,
+ * blocks can be actually 'visible' (or not) to students,
+ * marked 'visible' but really just dimmed to indicate to editors
+ * that students can't see them or  'visible' to the user who 
+ * collapses them, 'visible' if you have the right role and in 
+ * different circumstances different sections of a block can
+ * be 'visible' or not.
+ *
+ * currently worked around in renderers.php function block{}
+ * by rewriting the class name "invisible" to "dimmed",
+ * though the blocks don't look particularly different apart
+ * from their contents disappearing. Maybe try .muted? or
+ * dimming all the edit icons apart from unhide, might be a 
+ * nice effect, though they'd still be active. Maybe reverse
+ * it to white?
+ */
+
+li.section.hidden,
+.block.hidden,
+.block.invisible {
+  display: block;
+  visibility: visible;
 }
 
-.form-setting:first-child,
-.mform .fitem .felement:first-child,
-.form-item .form-description:first-child,
-#page-mod-forum-search .c1:first-child {
-  *padding-left: 180px;
+/* .row vs .row
+ * 
+ * very tricky to track down this when it goes wrong,
+ * since the styles are applied to generated content
+ *
+ * basically if you see things shifted left or right compared
+ * with where they should be check for a .row
+ */
+
+#turnitintool_style .row,
+.forumpost .row {
+  margin-left: 0 !important;
 }
 
-.mform .fitem .felement.fstatic {
-  margin-left: 20px;
+#turnitintool_style .row:before,
+#turnitintool_style .row:after,
+.forumpost .row:before,
+.forumpost .row:after {
+  content: none;
 }
 
-.formsettingheading {
+/* fieldset.hidden vs .hidden
+ *
+ * Moodle uses fieldset.hidden for mforms, to signify a collection of
+ * form elements that don't have a box drawn round them. Bootstrap
+ * uses hidden for stuff that is hidden in various responsive modes.
+ */
+
+fieldset.hidden {
+  display: block;
+  visibility: visible;
+}
+
+/* .controls vs .controls
+ *
+ * in expanding course list, can be fixed in renderer though
+ */
+
+/* .btn vs .btn
+ *
+ * links, inputs and buttons are commonly styled with .btn in
+ * bootstrap but it seems that some buttons in Moodle are
+ * wrapped in div.btn e.g. the login block's "login" button
+ */
+
+div.c1.btn {
+  display: block;
+  padding: 0;
   margin-bottom: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-shadow: inherit;
+  vertical-align: inherit;
+  cursor: normal;
+  background-color: inherit;
+  background-image: none;
+  background-repeat: none;
+  border: none;
+  border-radius: none;
+  box-shadow: none;
 }
 
-table#form td.submit,
-.form-buttons,
-#fitem_id_submitbutton,
-.fp-content-center form + div,
-div.backup-section + form,
-#fgroup_id_buttonar {
-  padding: 19px 20px 20px;
-  padding-left: 180px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #e5e5e5;
-  *zoom: 1;
-}
-
-table#form td.submit:before,
-.form-buttons:before,
-#fitem_id_submitbutton:before,
-.fp-content-center form + div:before,
-div.backup-section + form:before,
-#fgroup_id_buttonar:before,
-table#form td.submit:after,
-.form-buttons:after,
-#fitem_id_submitbutton:after,
-.fp-content-center form + div:after,
-div.backup-section + form:after,
-#fgroup_id_buttonar:after {
-  display: table;
-  line-height: 0;
-  content: "";
-}
-
-table#form td.submit:after,
-.form-buttons:after,
-#fitem_id_submitbutton:after,
-.fp-content-center form + div:after,
-div.backup-section + form:after,
-#fgroup_id_buttonar:after {
-  clear: both;
-}
-
-table#form td.submit div.fitemtitle,
-.form-buttons div.fitemtitle,
-#fitem_id_submitbutton div.fitemtitle,
-.fp-content-center form + div div.fitemtitle,
-div.backup-section + form div.fitemtitle,
-#fgroup_id_buttonar div.fitemtitle {
-  width: 0;
-}
-
-table#form td.submit fieldset.felement.fgroup,
-.form-buttons fieldset.felement.fgroup,
-#fitem_id_submitbutton fieldset.felement.fgroup,
-.fp-content-center form + div fieldset.felement.fgroup,
-div.backup-section + form fieldset.felement.fgroup,
-#fgroup_id_buttonar fieldset.felement.fgroup {
-  margin-left: 0;
-}
-
-.fitem_fsubmit .felement.fsubmit {
-  margin-left: 0;
-}
-
-.mform .fitem.fitem_fsubmit .fitemtitle {
-  width: 0;
-}
-
-input[type="password"],
-input[type="text"] {
-  /* Corrects some YUI settings. */
-
-  width: 206px;
-}
-
-.form-checkbox,
-.fcheckbox span,
-.fradio,
-div.felement.fcheckbox,
-#defineroletable td.inherit label,
-#defineroletable td.allow label,
-#defineroletable td.prevent label,
-#defineroletable td.prohibit label,
-.mform fieldset .unmask,
-.fduration span,
-.fgroup span,
-.fdate_time_selector span,
-form#adminsettings .form-item .form-setting .form-password .unmask,
-.form-multicheckbox li {
-  min-height: 20px;
-  padding-left: 20px;
-}
-
-fieldset.felement.fgroup label,
-.fp-content-center td.mdl-right label,
-input[type="checkbox"] + label {
-  display: inline-block;
-}
-
-#defineroletable td.inherit label input[type="checkbox"],
-#defineroletable td.inherit label input[type="radio"],
-#defineroletable td.allow label input[type="checkbox"],
-#defineroletable td.allow label input[type="radio"],
-#defineroletable td.prevent label input[type="checkbox"],
-#defineroletable td.prevent label input[type="radio"],
-#defineroletable td.prohibit label input[type="checkbox"],
-#defineroletable td.prohibit label input[type="radio"],
-.form-checkbox input[type="checkbox"],
-.fcheckbox input[type="checkbox"],
-.form-multicheckbox input[type="checkbox"],
-.fradio input[type="radio"],
-.radio input[type="radio"],
-.unmask input[type="checkbox"],
-.fdate_time_selector span > input[type="checkbox"],
-.fgroup span > input[type="checkbox"],
-.fduration span > input[type="checkbox"] {
-  float: left;
-  margin-left: -18px;
-}
-
-select + label.accesshide + select[id$="_hour"],
-table#form select + label + select.menufromhour,
-table#form select + label + select.menutohour {
-  margin-left: 61px;
-}
-
-#fgroup_id_firstaccess_grp span,
-#fgroup_id_lastaccess_grp span,
-#fgroup_id_timemodified_grp span {
-  display: inline-block;
-  width: 73px;
-}
-
-.path-backup .mform .grouped_settings {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-
-.path-backup .mform .grouped_settings blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
-}
+/* .container vs .container
+ *
+ * bootstrap uses .container to set the width of the layout at 960px or so, Moodle uses it
+ * in the Quiz to contain the questions to add. If you don't overule the Bootstrap code,
+ * it becomes near unuseable. 
+ */
 
 .path-admin .roleassigntable #buttonscell #add,
 .path-admin .roleassigntable #buttonscell #remove input,
@@ -6758,146 +6702,834 @@ input#id_cancel .caret {
   top: 0;
 }
 
-.fduration input,
-.fduration select,
-.fduration span,
-.fdate_selector select,
-.fdate_selector select:focus,
-#fgroup_id_firstaccess_grp select,
-#fgroup_id_firstaccess_grp select:focus,
-#fgroup_id_lastaccess_grp select,
-#fgroup_id_lastaccess_grp select:focus,
-#fgroup_id_timemodified_grp select,
-#fgroup_id_timemodified_grp select:focus,
-#fgroup_id_enableopengroup select,
-#fgroup_id_enableopengroup select:focus,
-#fgroup_id_enableclosegroup select,
-#fgroup_id_enableclosegroup select:focus,
-select.menufromday,
-select.menufromday:hover,
-select.menutoday,
-select.menutoday:hover,
-#turnitintool_style select#id_dtstart_day,
-#turnitintool_style select#id_dtdue_day,
-#turnitintool_style select#id_dtpost_day,
-select.menufrommonth,
-select.menufrommonth:hover,
-select.menutomonth,
-select.menutomonth:hover,
-#turnitintool_style select#id_dtstart_month,
-#turnitintool_style select#id_dtdue_month,
-#turnitintool_style select#id_dtpost_month,
-#turnitintool_style select#id_dtstart_year,
-select.menufromyear,
-select.menufromyear:hover,
-select.menutoyear,
-select.menutoyear:hover,
-#turnitintool_style select#id_dtdue_year,
-#turnitintool_style select#id_dtpost_year,
-#turnitintool_style select#id_dtstart_minute,
-select.menufromminute,
-select.menufromminute:hover,
-select.menutominute,
-select.menutominute:hover,
-#turnitintool_style select#id_dtdue_minute,
-#turnitintool_style select#id_dtpost_minute,
-select.menufromhour,
-select.menufromhour:hover,
-select.menutohour,
-select.menutohour:hover,
-#turnitintool_style select#id_dtstart_hour,
-#turnitintool_style select#id_dtdue_hour,
-#turnitintool_style select#id_dtpost_hour,
-.form-time select,
-.form-time select:focus,
-.fdate_time_selector select,
-.fdate_time_selector select:focus {
-  width: 71px !important;
-  min-width: 60px !important;
+/*!
+ * Moodle CSS meets Bootstrap
+ *
+ * Some code to make bootstrap work with Moodle
+ * 
+ */
+
+/* contributed by Paul Hibbitts, see http://msdn.microsoft.com/en-us/library/ie/jj583807(v=vs.85).aspx*/
+
+canvas {
+  -ms-touch-action: auto;
 }
 
-.mform div.fdescription.required {
-  margin-left: 180px;
-  text-align: left;
+#page-header {
+  margin: 2% 0;
 }
 
-.fdescription.required img,
-img.req {
-  display: none;
+.mform fieldset,
+.generalbox,
+.mod_introbox {
+  border: 0 !important;
 }
 
-.fdescription.required:after,
-.fitem.required .fitemtitle label:before {
-  color: #b94a48;
-  content: "*";
-}
+/* Course styling */
 
-.mform .advancedbutton {
-  float: right;
-}
-
-.felement.fstatic {
-  display: inline-block;
-  width: 206px;
-  width: auto;
-  height: 20px;
-  min-width: 206px;
-  padding: 4px 6px;
-  margin-bottom: 10px;
-  margin-left: 0;
-  overflow: hidden;
-  font-size: 14px;
-  line-height: 20px;
-  color: #555555;
-  color: #999999;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: not-allowed;
-  background-color: #ffffff;
-  background-color: #fcfcfc;
-  border: 1px solid #cccccc;
-  border-color: #cccccc;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-          transition: border linear 0.2s, box-shadow linear 0.2s;
-}
-
-.felement.fstatic:focus {
-  border-color: rgba(82, 168, 236, 0.8);
-  outline: 0;
-  outline: thin dotted \9;
-  /* IE6-9 */
-
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-}
-
-.felement.error span.error {
-  color: #b94a48;
-}
-
-select#id_category,
-form#switchcategory select,
-#page-course-editcategory #id_parent select,
-#fitem_id_parent select {
+.block_navigation .block_tree li {
   width: 100%;
 }
 
-input#id_fullname,
-input#id_name,
-input#id_externalurl,
-input#id_setting_root_filename,
-textarea {
-  width: 420px !important;
+.coursebox .enrolmenticons {
+  padding: 3px;
+  margin-top: 0.3em;
+  border: 1px dotted #DDDDDD;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.nav-tabs > li {
+  list-style: none outside none;
+}
+
+.course-content ul li.section.main {
+  margin-top: 0;
+  border-bottom: 2px solid #eee;
+}
+
+.course-content ul.topics li.section .content,
+.course-content ul.weeks li.section .content {
+  padding: 0;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.course-content {
+  margin-top: 0;
+}
+
+.course-content ul.topics li.section {
+  padding-bottom: 20px;
+}
+
+.course-content ul.topics li.section .summary {
+  margin-left: 25px;
+}
+
+.path-course-view .completionprogress {
+  margin-left: 25px;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+.form-label .form-shortname {
+  font-size: 0.8em;
+  color: #777777;
+}
+
+.path-course-view .completionprogress {
+  position: relative;
+  z-index: 1000;
+  display: block;
+  float: right;
+  height: 20px;
+}
+
+/* Other Moodle elements */
+
+.calendartable th,
+.calendartable td {
+  border: 0;
+}
+
+.jsenabled .block_navigation .block_tree .type_activity > .tree_item.branch {
+  background-image: none;
+}
+
+.tooltip {
+  position: relative;
+  z-index: 1029;
+  display: inherit;
+  padding: inherit;
+  font-size: inherit;
+  opacity: inherit;
+}
+
+select {
+  width: auto;
+}
+
+label {
+  display: inline;
+  margin: 6px 0 0 4px;
+}
+
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: auto;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.filemanager input[type="text"],
+.file-picker input[type="text"] {
+  width: inherit;
+  height: inherit;
+  padding: inherit;
+  border: 1px solid #CCCCCC;
+}
+
+.filemanager select,
+.file-picker select {
+  height: inherit;
+  padding: inherit;
+}
+
+#page-enrol-users .user-enroller-panel .uep-search-results .user .details {
+  width: 237px;
+}
+
+.userenrolment tbody tr:nth-child(odd) td,
+.userenrolment tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+
+.userenrolment .col_role .addrole {
+  background-color: #DDDDDD;
+  border: 1px outset #EEEEEE;
+}
+
+.path-mod-forum .forumheaderlist td {
+  border: 1px solid #EEEEEE;
+}
+
+.path-mod-forum .forumheaderlist,
+.forumpost {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+}
+
+.forumpost .row .left {
+  float: left;
+  width: 43px;
+  margin-left: 3px;
+  overflow: hidden;
+}
+
+.forumpost .row {
+  margin-left: 0;
+}
+
+.forumpost .subject {
+  font-weight: bold;
+}
+
+#page-mod-forum-discuss .discussioncontrol.displaymode {
+  text-align: left;
+}
+
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol {
+  float: left;
+}
+
+/*quiz */
+
+.que label {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.que input[type="checkbox"],
+.que input[type="radio"] {
+  margin-top: 0;
+  margin-right: 7px;
+}
+
+/* Footer styling */
+
+#page-footer {
+  padding: 1em 0;
+  font-size: 1em;
+  text-align: left;
+  border-top: 2px solid #eee;
+}
+
+#page-footer .logininfo,
+#page-footer .sitelink,
+#page-footer .helplink {
+  padding: 0;
+  margin: 0;
+}
+
+/* Login menu in top nav */
+
+.logininfo,
+.langmenu {
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
+}
+
+.logininfo {
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.logininfo a {
+  color: #0088CC;
+}
+
+.langmenu form {
+  margin: 0;
+}
+
+.loginbox.twocolumns .loginpanel {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-right: 1px solid #EEEEEE;
+}
+
+/* login page */
+
+.loginbox.twocolumns .loginpanel,
+.loginbox.twocolumns .signuppanel {
+  display: block;
+  float: none;
+  float: left;
+  width: none;
+  min-height: 30px;
+  padding: 0;
+  margin: 0;
+  margin-left: 2.76243%;
+  border: 0;
+  -moz-box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  .loginbox.twocolumns .loginpanel {
+    margin-left: 0;
+  }
+  .loginbox.twocolumns .loginpanel,
+  .loginbox.twocolumns .signuppanel {
+    width: 48.717948717948715%;
+    *width: 48.664757228587014%;
+  }
+}
+
+@media (min-width: 980px) {
+  .loginbox.twocolumns .loginpanel {
+    margin-left: 0;
+  }
+  .loginbox.twocolumns .loginpanel,
+  .loginbox.twocolumns .signuppanel {
+    width: 48.617948717948715%;
+    *width: 48.664757228587014%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .loginbox.twocolumns .loginpanel {
+    margin-left: 0;
+  }
+  .loginbox.twocolumns .loginpanel,
+  .loginbox.twocolumns .signuppanel {
+    width: 48.61878453038674%;
+    *width: 48.56559304102504%;
+  }
+}
+
+@media (max-width: 767px) {
+  .loginbox.twocolumns .loginpanel,
+  .loginbox.twocolumns .signuppanel {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+/* Course list */
+
+.coursebox {
+  padding: 5px;
+  border-color: #DDDDDD;
+  border-style: dotted;
+  border-width: 1px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+.coursebox h3.name {
+  margin: 0;
+}
+
+.coursebox .info,
+.coursebox .summary {
+  display: block;
+  float: none;
+  float: left;
+  width: none;
+  min-height: 30px;
+  padding: 0;
+  margin: 0;
+  margin-left: 2.76243%;
+  border: 0;
+  -moz-box-sizing: border-box;
+}
+
+.coursebox .summary {
+  margin-top: 5px;
+}
+
+.coursebox .info {
+  margin-left: 0;
+}
+
+@media (min-width: 1200px) {
+  .coursebox .info,
+  .coursebox .summary {
+    width: 48.717948717948715%;
+    *width: 48.664757228587014%;
+  }
+}
+
+@media (min-width: 980px) {
+  .coursebox .info,
+  .coursebox .summary {
+    width: 48.617948717948715%;
+    *width: 48.664757228587014%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .coursebox .info,
+  .coursebox .summary {
+    width: 48.61878453038674%;
+    *width: 48.56559304102504%;
+  }
+}
+
+@media (max-width: 767px) {
+  .coursebox .info,
+  .coursebox .summary {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-content ul.topics li.section .content,
+  .course-content ul.weeks li.section .content {
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+/* Calendar full view */
+
+.maincalendar .calendarmonth td,
+.maincalendar .calendarmonth th {
+  border-color: #DDDDDD;
+  border-style: dotted;
+  border-width: 1px;
+}
+
+/* Positioned 45 px below nav */
+
+#page-header {
+  margin-top: 45px;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .navbar-fixed-bottom {
+    margin-top: 0;
+  }
+  .navbar-fixed-top .navbar-inner,
+  .navbar-fixed-bottom .navbar-inner {
+    padding: 0;
+  }
+  .navbar-fixed-top,
+  .navbar-fixed-bottom {
+    position: absolute;
+  }
+}
+
+#page-content-wrapper,
+#page-header-wrapper {
+  margin-top: 10px;
+}
+
+#dndupload-status {
+  margin-top: 45px;
+}
+
+.breadcrumb-fixed-top {
+  position: fixed;
+  top: 40px;
+  z-index: 1030;
+}
+
+.headermain {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 2.3em;
+}
+
+.navbar {
+  width: 100%;
+  margin-bottom: 0;
+  overflow: visible;
+}
+
+.navbar .brand {
+  padding: 2px 0 2px 20px;
+}
+
+.navbar .btn-navbar {
+  height: 15px;
+}
+
+.navbar-fixed-top {
+  margin: 0;
+}
+
+.nav-collapse.in .langmenu {
+  float: left;
+  margin-bottom: 5px;
+}
+
+.ie .logininfo {
+  float: right;
+}
+
+.gecko .navbar .nav,
+.safari .navbar .nav {
+  width: 100%;
+}
+
+.breadcrumb {
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+}
+
+/*disabled bootstrap stuff (stuff that does not work with Moodle's html)*/
+
+.label,
+.badge {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-shadow: inherit;
+  white-space: inherit;
+  vertical-align: inherit;
+  background-color: inherit;
+}
+
+img.hide {
+  display: inherit;
+}
+
+input,
+textarea,
+.uneditable-input {
+  width: auto;
+}
+
+.hidden,
+.invisible {
+  display: inherit;
+  visibility: inherit;
+}
+
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 100%;
+}
+
+.navbar-static-top .container .nav-collapse,
+.navbar-fixed-top .container .nav-collapse,
+.navbar-fixed-bottom .container .nav-collapse {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  margin-right: 2px;
+  margin-bottom: 0;
+}
+
+.choosercontainer #chooseform .option label {
+  font-size: 12px;
+}
+
+/* Typografie */
+
+h1 {
+  font-size: 26px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 40px;
+}
+
+/*forms */
+
+input#adminsearchquery {
+  width: 90%;
+}
+
+/*margins for bigger screen */
+
+@media (min-width: 768px) {
+  #page-content-wrapper,
+  #page-header-wrapper {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .logininfo,
+  .langmenu {
+    display: inline-block;
+    float: right;
+  }
+  .logininfo,
+  .langmenu {
+    display: inline-block;
+    float: right;
+    margin-top: 2px;
+  }
+  .navbar .nav .nav {
+    width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  #page {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  #page-header {
+    margin-top: 0;
+  }
+}
+
+/*gradebook tooltip*/
+
+div.yui3-overlay-content.yui3-widget-stdmod {
+  padding: 3px;
+  background: #ffffff url([[pix:theme|alert-overlay]]) repeat-x;
+  border: 1px solid #DDDDDD;
+}
+
+/* block styling */
+
+#settingsnav .leaf img {
+  display: none;
+}
+
+.block_navigation .hasicon img {
+  display: none;
+}
+
+.block .block-hider-show,
+.block .block-hider-hide {
+  padding-right: 5px;
+}
+
+.block {
+  min-height: 20px;
+  padding: 19px;
+  padding-top: 8px;
+  padding-right: 0;
+  padding-bottom: 8px;
+  padding-left: 0;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05) X;
+}
+
+.block .content {
+  padding-top: 4px;
+  padding-right: 14px;
+  padding-bottom: 4px;
+  padding-left: 14px;
+}
+
+.block_navigation .content,
+.block_settings .content {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.block li hr {
+  margin: 5px;
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #fff;
+}
+
+.block_settings .block_tree .tree_item {
+  padding-left: 0;
+}
+
+.block_tree .tree_item a:before,
+.block_tree .tree_item span:before {
+  content: "▼ ";
+}
+
+.block_tree .collapsed .tree_item a:before,
+.block_tree .collapsed .tree_item span:before {
+  content: "► ";
+}
+
+.block_tree .collapsed .tree_item.emptybranch a:before,
+.block_tree .collapsed .tree_item.emptybranch span:before {
+  color: #ccc;
+  content: "► ";
+}
+
+.block_tree .tree_item.leaf a:before,
+.block_tree .tree_item.leaf span:before,
+.tree_item.navigation_node a:before,
+.tree_item.navigation_node span:before {
+  cursor: normal;
+  content: "";
+}
+
+.block_tree li.item_with_icon.contains_branch .tree_item {
+  padding-left: 15px;
+}
+
+.block_settings .block_tree .tree_item,
+.block_navigation .block_tree .tree_item {
+  padding-left: 0;
+}
+
+.jsenabled .block_settings .block_tree .collapsed .tree_item.branch,
+.jsenabled .block_navigation .block_tree .collapsed .tree_item.branch,
+.block_navigation .block_tree .tree_item.branch,
+.block_settings .block_tree .tree_item.branch,
+.jsenabled .block_navigation .block_tree .tree_item.emptybranch {
+  background: none;
+}
+
+.block_navigation .content,
+.block_settings .content {
+  padding: 0;
+}
+
+.block .header .title h2,
+.block h3.main {
+  display: block;
+  padding: 3px 15px;
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.block .header .title .commands,
+.block_adminblock .content,
+.block .footer,
+.block .block_tree li > p > a,
+.block .block_tree li > p > span {
+  display: block;
+  padding: 3px 15px;
+}
+
+.block .block_tree li > p > a:hover {
+  text-decoration: none;
+  background-color: #eee;
+}
+
+.block .header .title h2 {
+  margin: 0;
+}
+
+.block_tree > li > p > a,
+.block_tree > li > p > span,
+.block_tree .nav-header {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.block_tree li p.active_tree_node a,
+.block_tree li p.active_tree_node a:hover {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #08c;
+}
+
+select.menubui_addblock {
+  width: 100%;
+}
+
+.block li p a i {
+  display: none;
+}
+
+.block_settings .block_tree li ul,
+.block_settings .block_tree li.depth_2 ul,
+.block_navigation .block_tree li ul,
+.block_navigation .block_tree li.depth_2 ul {
+  padding-left: 0;
+}
+
+.block_settings ul.block_tree.list li ul li a,
+.block_settings ul.block_tree.list li ul li span,
+.block_navigation ul.block_tree.list li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li span {
+  padding-left: 33px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li a,
+.block_settings ul.block_tree.list li ul li ul li span,
+.block_navigation ul.block_tree.list li ul li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li ul li span {
+  padding-left: 49.5px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li ul li a,
+.block_settings ul.block_tree.list li ul li ul li ul li span,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li span {
+  padding-left: 66px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li ul li ul li a,
+.block_settings ul.block_tree.list li ul li ul li ul li ul li span,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li span {
+  padding-left: 83.5px;
+}
+
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li ul li span {
+  padding-left: 99px;
+}
+
+.block_navigation .block_tree li.item_with_icon > p {
+  position: relative;
+  padding-left: 0;
 }
