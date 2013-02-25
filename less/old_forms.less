@@ -1,0 +1,265 @@
+/**
+ * Moodle forms HTML isn't changeable via renderers (yet?) so this
+ * .less file imports styles from the bootstrap @variables file and 
+ * adds them to the existing Moodle form CSS ids and classes.
+ *
+ * Which exact files are imported is controlled by setting the 
+ * directory search path before calling this file allowing
+ * bootswatches or your own less variables to affect dispay.
+ */
+
+.fitem {
+    .form-horizontal .control-group
+}
+.form-label,
+.mform .fitem div.fitemtitle {
+    .form-horizontal .control-label
+}
+div.form-defaultinfo,
+.form-label span.form-shortname {
+    //small;
+    .muted;
+}
+.form-setting,
+.mform .fitem .felement,
+.form-item .form-description,
+#page-mod-forum-search .c1 {
+    .form-horizontal .controls;
+}
+
+.formsettingheading {
+    .form-horizontal .help-block
+}
+// Moodle doesn't differentiate between what Bootstrap calls 
+// .uneditable-inputs and form help text. Styling them both as
+// uneditable looks ugly, styling both as form help is fairly
+// subtle in it's impact. Going for the latter as the best option.
+.felement.fstatic {
+    .help-block;
+    padding-top: 5px;
+}
+/*
+table#form td.submit,
+.form-buttons,
+#fitem_id_submitbutton,
+.fp-content-center form + div,
+div.backup-section + form,
+#fgroup_id_buttonar {
+    .form-actions;
+    padding-left: @horizontalComponentOffset; // add back the padding it would usually get from being inside a .form-horizontal
+    div.fitemtitle {
+        width: 0;
+    }
+    fieldset.felement.fgroup {
+        margin-left: 0; // remove double margin
+    }
+}
+
+.fitem_fsubmit .felement.fsubmit {
+    margin-left: 0;
+}
+.mform .fitem.fitem_fsubmit .fitemtitle {
+    width: 0;
+}
+
+
+input[type="password"],
+input[type="text"] {
+    /* Corrects some YUI settings. */
+    width: 206px;
+}
+.form-checkbox,
+.fcheckbox span,
+.fradio,
+div.felement.fcheckbox,
+#defineroletable td.inherit label,
+#defineroletable td.allow label,
+#defineroletable td.prevent label,
+#defineroletable td.prohibit label,
+.mform fieldset .unmask,
+.fduration span,
+.fgroup span,
+.fdate_time_selector span,
+form#adminsettings .form-item .form-setting .form-password .unmask,
+.form-multicheckbox li { // containers for checkboxes
+    .checkbox
+}
+
+fieldset.felement.fgroup label, // labels round completion targets
+.fp-content-center td.mdl-right label, // labels in tables in file-picker
+input[type="checkbox"] + label { // labels just sitting after a checkbox
+    display: inline-block;
+}
+
+#defineroletable td.inherit label input[type="checkbox"],
+#defineroletable td.inherit label input[type="radio"],
+#defineroletable td.allow label input[type="checkbox"],
+#defineroletable td.allow label input[type="radio"],
+#defineroletable td.prevent label input[type="checkbox"],
+#defineroletable td.prevent label input[type="radio"],
+#defineroletable td.prohibit label input[type="checkbox"],
+#defineroletable td.prohibit label input[type="radio"],
+.form-checkbox input[type="checkbox"],
+.fcheckbox input[type="checkbox"],
+.form-multicheckbox input[type="checkbox"],
+.fradio input[type="radio"],
+.radio input[type="radio"],
+.unmask input[type="checkbox"],
+.fdate_time_selector span > input[type="checkbox"],
+.fgroup span > input[type="checkbox"],
+.fduration span > input[type="checkbox"] { 
+    // copied from .checkbox input[type="checkbox"] 
+    float: left;
+    margin-left: -18px;
+}
+
+.fcheckbox,
+.fradio,
+div.felement.fcheckbox,
+.form-checkbox,
+.form-multicheckbox {
+    //.controls > .checkbox
+}
+input[type="checkbox"] + label + input[type="checkbox"],
+input[type="checkbox"] + input[type="checkbox"] {
+    //.checkbox.inline + .checkbox.inline;
+}
+
+
+
+.form-multicheckbox ul {
+    //ul.unstyled
+}
+#adminsettings h3.main,
+.backup-section h2.header,
+.backup-restore .backup-section .backup-sub-section h3.subheader {
+    //legend
+}
+select + label.accesshide + select[id$="_hour"],
+table#form select + label + select.menufromhour,
+table#form select + label + select.menutohour {
+    margin-left: 61px; // space between date and time
+}
+
+#fgroup_id_firstaccess_grp span,
+#fgroup_id_lastaccess_grp span,
+#fgroup_id_timemodified_grp span {
+    display: inline-block;
+    width: 73px;
+}
+
+// backup
+
+.path-backup .mform .grouped_settings {
+    .well
+}
+
+// buttons
+
+.path-admin .roleassigntable #buttonscell #add,
+.path-admin .roleassigntable #buttonscell #remove input,
+input[id$="_clearbutton"],
+button,
+input.form-submit,
+input#id_submitbutton,
+input#id_submitbutton2,
+input#id_previous,
+input#id_cancel {
+    .btn
+}
+
+input.form-submit,
+input#id_submitbutton,
+input#id_submitbutton2,
+td.submit input {
+    .btn-primary
+}
+input[id$="_clearbutton"]:active,
+td.submit input:active {
+    .btn-info.active
+}
+input[id$="_clearbutton"],
+input#id_cancel {
+    .btn-warning
+}
+.user-enroller-panel .uep-search-results .user .options .enrol {
+    .btn-mini
+}
+
+.fduration input, .fduration select, .fduration span,
+.fdate_selector select, .fdate_selector select:focus,
+#fgroup_id_firstaccess_grp select, #fgroup_id_firstaccess_grp select:focus,
+#fgroup_id_lastaccess_grp select, #fgroup_id_lastaccess_grp select:focus,
+#fgroup_id_timemodified_grp select, #fgroup_id_timemodified_grp select:focus,
+#fgroup_id_enableopengroup select, #fgroup_id_enableopengroup select:focus,
+#fgroup_id_enableclosegroup select, #fgroup_id_enableclosegroup select:focus,
+select.menufromday, select.menufromday:hover,
+select.menutoday, select.menutoday:hover,
+#turnitintool_style select#id_dtstart_day,
+#turnitintool_style select#id_dtdue_day,
+#turnitintool_style select#id_dtpost_day,
+select.menufrommonth, select.menufrommonth:hover,
+select.menutomonth, select.menutomonth:hover,
+#turnitintool_style select#id_dtstart_month,
+#turnitintool_style select#id_dtdue_month,
+#turnitintool_style select#id_dtpost_month,
+#turnitintool_style select#id_dtstart_year,
+select.menufromyear, select.menufromyear:hover,
+select.menutoyear, select.menutoyear:hover,
+#turnitintool_style select#id_dtdue_year,
+#turnitintool_style select#id_dtpost_year,
+#turnitintool_style select#id_dtstart_minute,
+select.menufromminute, select.menufromminute:hover,
+select.menutominute, select.menutominute:hover,
+#turnitintool_style select#id_dtdue_minute,
+#turnitintool_style select#id_dtpost_minute,
+select.menufromhour, select.menufromhour:hover,
+select.menutohour, select.menutohour:hover,
+#turnitintool_style select#id_dtstart_hour,
+#turnitintool_style select#id_dtdue_hour,
+#turnitintool_style select#id_dtpost_hour,
+.form-time select, .form-time select:focus,
+.fdate_time_selector select, .fdate_time_selector select:focus {
+    min-width: 60px !important; // !important to override turnitin style
+    width: 71px !important; // !important to override turnitin style
+}
+
+
+.mform div.fdescription.required {
+    text-align: left;
+    margin-left: @horizontalComponentOffset;
+}
+
+// replace required asterisk image with real asterisk
+// This looks better against dark-backgrounds.
+// TODO: check accessability
+.fdescription.required img,
+img.req{
+    display: none;
+}
+.fdescription.required:after,
+.fitem.required .fitemtitle label:before {
+    content: "*";
+    color: @errorText;
+}
+.mform .advancedbutton {float:right;}
+
+.felement.error span.error {
+    color: @errorText;
+    // probably need more than just color
+}
+select#id_category,
+form#switchcategory select,
+#page-course-editcategory #id_parent select,
+#fitem_id_parent select {
+    width: 100%;
+}
+
+input#id_fullname,
+input#id_name,
+input#id_externalurl,
+input#id_setting_root_filename,
+textarea {
+    width: 420px !important;
+}
+
