@@ -17,11 +17,7 @@ $THEME->name = 'bootstrap';
 ////////////////////////////////////////////////////
 
 
-$THEME->parents = array(
-    'base',
-);
-
-$THEME->parents_exclude_sheets = array('base'=>array('pagelayout'));
+$THEME->parents = array('');
 
 /////////////////////////////////////////////////////
 // Which existing theme(s) in the /theme/ directory
@@ -35,10 +31,8 @@ $THEME->parents_exclude_sheets = array('base'=>array('pagelayout'));
 
 
 $THEME->sheets = array(
-    'bootstrap_buttons', // colored buttons for forms
     'bootstrap-min', //original bootstrap css unmodified
     'bootstrap-responsive-min', //original bootstrap css unmodified
-    'bootstrap_custom', //fixes to make bootstrap work with moodle
     'ie7',//ie7 fixes for moodle 2.3 and newer. make is usable in ie7, not pretty
     'quiz',//quiz module styling
     'moddata',//data module styling
