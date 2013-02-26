@@ -1,0 +1,26 @@
+// Old Moodle stuff from base theme.
+@import "admin";
+@import "blocks";
+@import "calendar";
+@import "course";
+@import "dock";
+@import "filemanager";
+@import "grade";
+@import "message";
+@import "question";
+@import "user";
+
+// Bootstrap
+@import "bootstrap/bootstrap";
+
+// Old Moodle stuff converted to use some @variables
+@import "core";
+
+// Roll back nameclashes
+@import "undo";
+
+// New Moodle stuff that builds on Bootstrap, uses @variables etc.
+@import "forms";
+@import "tables";
+@import "buttons";
+@import "custom";
