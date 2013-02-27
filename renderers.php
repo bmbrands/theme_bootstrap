@@ -103,7 +103,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         // Initialise this custom menu
         $content = html_writer::start_tag('div',array('class'=>"navbar navbar-fixed-top"));
         $content .= html_writer::start_tag('div',array('class'=>"navbar-inner"));
-        $content .= html_writer::start_tag('div',array('class'=>"container"));
+        $content .= html_writer::start_tag('div',array('class'=>"container-fluid"));
         $content .= html_writer::start_tag('a',array('class'=>"btn btn-navbar",'data-toggle'=>"collapse",'data-target'=>".nav-collapse"));
         $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
         $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));

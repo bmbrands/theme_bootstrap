@@ -48,106 +48,88 @@ $doctype = $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
-    <?php 
+<?php
     if (!empty($PAGE->theme->settings->gakey)) {
-    include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php"); 
-    };?>
+        include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php"); 
+    }?>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
+
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-
 <?php if ($hascustommenu) { ?>
-<div id="custommenuwrap"><div id="custommenu"><?php echo $custommenu; ?></div></div>
+    <div id="custommenuwrap"><div id="custommenu"><?php echo $custommenu; ?></div></div>
 <?php } ?>
 
-<div id="page">
+<div id=page class=container-fluid>
 
 <?php if ($hasheader) { ?>
-<!-- START OF HEADER -->
-    <div id="page-header">
-		<div id="page-header-wrapper" class="wrapper clearfix">
-		    <?php if (empty($PAGE->theme->settings->logo_url)) {?>
-	        <h1 class="headermain"><?php echo $PAGE->heading ?></h1>
-	        <?php } else { ?>
-	        <img src="<?php echo $PAGE->theme->settings->logo_url; ?>">
-	        <?php }?>
-	        
-	        <?php 
-	                echo $OUTPUT->login_info();
-	        ?>
-    	    
-    	    <div class="headermenu">
-        		<?php
-	        	    echo $PAGE->headingmenu;
-		        ?>
-	    	</div>
-	    	<?php if ($hasnavbar) { ?>
+    <header id=page-header class=clearfix>
+            <?php if (empty($PAGE->theme->settings->logo_url)) { ?>
+                <h1 class="headermain"><?php echo $PAGE->heading ?></h1>
+            <?php } else { ?>
+                <img src="<?php echo $PAGE->theme->settings->logo_url; ?>">
+            <?php } ?>
+
+            <?php echo $OUTPUT->login_info(); ?>
+
+            <div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
+            <?php if ($hasnavbar) { ?>
             <div class="navbar clearfix">
                 <div class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></div>
                 <div class="navbutton"> <?php echo $PAGE->button; ?></div>
             </div>
             <?php } ?>
-                    <?php if (!empty($courseheader)) { ?>
-            <div id="course-header"><?php echo $courseheader; ?></div>
-        <?php } ?>
-	    </div>
-    </div>
-
-<!-- END OF HEADER -->
+            <?php if (!empty($courseheader)) { ?>
+                <div id="course-header"><?php echo $courseheader; ?></div>
+            <?php } ?>
+    </header>
 <?php } ?>
 
-<!--  BOOTSTRAP RESPONSIVE -->
-<div id="page-content-wrapper" class="wrapper clearfix">
 <div id="page-content" class="row-fluid">
 
-
-<?php if ($hassidepre) { ?>
-	<div id=region-pre class="span3 block-region">
-    <div class=region-content>
-	<?php echo $OUTPUT->blocks_for_region('side-pre') ?>
-    </div>
-	</div>
+<?php if ($hassidepre && $hassidepost) { ?>
+    <div class=span9>
+        <div class=row-fluid>
+            <section class=span8>
+<?php } elseif ($hassidepre || $hassidepost) { ?>
+    <section class="span9">
+<?php } else { ?>
+    <section class="span12">
+<?php }?>
+    <?php echo $coursecontentheader; ?>
+    <?php echo $OUTPUT->main_content() ?>
+    <?php echo $coursecontentfooter; ?>
+    </section>
+<?php if ($hassidepre) {
+          if ($hassidepost) { ?>
+            <aside id=region-pre class="span4 block-region">
+    <?php } else { ?>
+            <aside id=region-pre class="span3 block-region">
+          <?php } ?>
+            <div class=region-content>
+                <?php echo $OUTPUT->blocks_for_region('side-pre') ?>
+            </div>
+            </aside>
+      <?php if ($hassidepost) { ?></div></div><?php } // close row-fluid & span9 ?>
 <?php } ?>
 
-
-<?php if ($hassidepre && $hassidepost) { ?>
-	<div class="span6">
-<?php } elseif ($hassidepre || $hassidepost) { ?>
-	<div class="span9">
-<?php } else { ?>
-    <div class="span12">
-<?php };?>
-    <?php echo $coursecontentheader; ?>
-	<?php echo $OUTPUT->main_content() ?>
-	<?php echo $coursecontentfooter; ?>
-	</div>
-             
-<?php if ($hassidepost) { ?>                
-	<div id=region-post class="span3 block-region">
+<?php if ($hassidepost) { ?>
+    <aside id=region-post class="span3 block-region">
     <div class=region-content>
-	<?php echo $OUTPUT->blocks_for_region('side-post') ?>
+    <?php echo $OUTPUT->blocks_for_region('side-post') ?>
     </div>
-    </div>
-<?php }; ?>          
+    </aside>
+<?php } ?>
 </div>
-<!--  END BOOTSTRAP RESPONSIVE -->
 
-<!-- START OF FOOTER -->
-    <div id="page-footer" class="wrapper">
-        <p class="helplink">
-        <?php echo page_doc_link(get_string('moodledocslink')) ?>
-        </p>
-
-        <?php
-        echo $OUTPUT->standard_footer_html();
-        ?>
-    </div>
-<!-- END OF FOOTER -->
-
-</div>
+<footer id="page-footer">
+    <p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')) ?></p>
+    <?php echo $OUTPUT->standard_footer_html(); ?>
+</footer>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+</div>
 
 <?php if (!empty($PAGE->theme->settings->enablejquery)) {?>
 
