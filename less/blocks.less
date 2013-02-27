@@ -1,39 +1,286 @@
-.block {border:1px solid;margin-bottom:1em;}
-.block .header h2 { padding: .2em 0 0 .2em; margin: 0;}
-.block .header .block_action {float:right;margin:4px 0 3px 0;vertical-align:top;}
-.block .header .block_action img,
-.block .header .block_action input {margin:0 3px; width: 12px; height: 12px;}
-.block .header .commands { text-align: right; clear: both;}
-.block .header .commands > a { margin:0 3px; }
-.block .header .commands .icon img {width:12px;height:12px;}
-.block .content {padding:4px;}
-.block.hidden .content {display: none;}
-.block .content .userpicture {width:16px;height:16px;margin-right:6px;}
-.block .content .list li.listentry {clear:both;}
-.block .content .list .c0 {display:inline;}
-.block .content .list .c1 {margin-left:5px;display:inline;}
-.block .footer {margin-bottom: 4px;}
-.block .blockannotation {font-size:0.75em;margin: -1em 0 1em;}
-.block_navigation .block_tree li {overflow:hidden;}
-.block_calendar_upcoming .footer { margin-top: .5em; }
+.block {
+    .well;
+    padding: 8px 0px;
+}
 
-/** block_list blocks need column stuffs **/
-.block.list_block .unlist > li > .column {display:inline-block;}
-.ie6 .block.list_block .unlist .column {display:inline;}
+.block .header h2 {
+    padding: .2em 0 0 .2em;
+    margin: 0;
+}
+.block .header .title h2,
+.block h3.main {
+    display: block;
+    padding: 3px 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
 
-.block.beingmoved {border-width: 2px;border-style: dashed;}
-.blockmovetarget {display: block;height: 1em;margin-bottom: 1em;border-width: 2px;border-style: dashed;}
+.block .header .title .commands,
+.block_adminblock .content,
+.block .footer,
+.block .block_tree li>p>a,
+.block .block_tree li>p>span
+{
+    display: block;
+    padding: 3px 15px;
+}
+.block .header .block_action {
+    float: right;
+    margin: 4px 0 3px 0;
+    vertical-align: top;
+    img,
+    input {
+        margin: 0 3px;
+        width: 12px;
+        height: 12px;
+    }
+}
+.block .header .commands {
+    clear: both;
+    text-align: right;
+}
+.block .header .commands > a {
+    margin: 0 3px;
+}
+.block .header .commands .icon img {
+    width:12px;
+    height:12px;
+}
 
-.block-region .invisible {opacity: 0.5;filter: alpha(opacity=50);}
+.block .content {
+    padding: 4px 14px;
+}
+
+.block.hidden .content {
+    display: none;
+}
+
+.block .content .userpicture {
+    width:16px;
+    height:16px;
+    margin-right:6px;
+}
+.block .content .list li.listentry {
+    clear:both;
+}
+.block .content .list .c0 {
+    display:inline;
+}
+.block .content .list .c1 {
+    margin-left:5px;display:inline;
+}
+
+.block .footer {
+    margin-bottom: 4px;
+}
+
+.block .blockannotation {
+    font-size: 0.75em;
+    margin: -1em 0 1em;
+}
+
+//
+.block.list_block .unlist > li > .column {
+    display:inline-block;
+}
+
+.blockmovetarget,
+.block.beingmoved {
+    border-width: 2px;
+    border-style: dashed;
+}
+.blockmovetarget {
+    display: block;
+    height: 1em;
+    margin-bottom: 1em;
+}
+
+.block.invisible {
+    .opacity(50);
+}
 
 .block .block-hider-show,
 .block .block-hider-hide {cursor:pointer;}
 .block .block-hider-show,
 .block.hidden .block-hider-hide {display:none;}
 .block.hidden .block-hider-show {display:inline;}
+.block .block-hider-show,
+.block .block-hider-hide {
+    padding-right: 5px;
+}
 
-/** Overide for RTL layout **/
-.dir-rtl .block .header,
-.dir-rtl .block h2.header {text-align:right;}
-.dir-rtl .block .header .commands { text-align: left;}
-.dir-rtl .block .header .block_action { float: left; margin-left: 4px; margin-left: 0;}
+// Individual block styles
+.block_navigation .content,
+.block_settings .content {
+    padding: 0;
+}
+
+.block_navigation .block_tree li {
+    overflow:hidden;
+}
+.block_navigation .block_tree li {
+    width: 100%;
+}
+#settingsnav .leaf img {
+    display: none;
+}
+
+.block_navigation .hasicon img {
+    display: none;
+}
+.jsenabled .block_navigation .block_tree .type_activity>.tree_item.branch {
+    background-image: none;
+}
+.block_calendar_upcoming .footer {
+    margin-top: .5em;
+}
+.block_adminblock select {
+    width: 100%;
+}
+
+// Overide for RTL layout.
+.dir-rtl {
+    .block .header,
+    .block h2.header {
+        text-align:right;
+    }
+    .block .header .commands {
+        text-align: left;
+    }
+    .block .header .block_action {
+        float: left;
+    }
+}
+
+// the rest is block settings and nav stuff, can stil be tidied up a great deal
+
+.block_settings .block_tree .tree_item {
+    padding-left: 0;
+}
+
+.block_tree .tree_item a:before,
+.block_tree .tree_item span:before {
+    content: "▼ ";
+}
+
+.block_tree .collapsed  .tree_item a:before,
+.block_tree .collapsed  .tree_item span:before
+{
+    content: "► ";
+}
+
+.block_tree .collapsed  .tree_item.emptybranch a:before,
+.block_tree .collapsed  .tree_item.emptybranch span:before
+{
+    content: "► ";
+    color: #ccc;
+}
+
+.block_tree .tree_item.leaf a:before,
+.block_tree .tree_item.leaf span:before,
+.tree_item.navigation_node a:before,
+.tree_item.navigation_node span:before
+{
+    content: "";
+    cursor: normal;
+}
+
+.block_tree li.item_with_icon.contains_branch .tree_item {
+    padding-left: 15px;
+}
+
+.block_settings .block_tree .tree_item,
+.block_navigation .block_tree .tree_item
+{
+    padding-left: 0px;
+}
+
+.jsenabled .block_settings .block_tree .collapsed .tree_item.branch,
+.jsenabled .block_navigation .block_tree .collapsed .tree_item.branch,
+.block_navigation .block_tree .tree_item.branch,
+.block_settings .block_tree .tree_item.branch,
+.jsenabled .block_navigation .block_tree .tree_item.emptybranch
+{
+    background: none;
+}
+
+.block .block_tree li>p>a:hover {
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.block .header .title h2 {
+    margin: 0;
+}
+
+.block_tree>li>p>a,
+.block_tree>li>p>span,
+.block_tree .nav-header {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.block_tree li p.active_tree_node a,
+.block_tree li p.active_tree_node a:hover
+{
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    background-color: #08c;
+}
+
+.block li p a i {
+    display: none;
+}
+
+.block_settings .block_tree li ul,
+.block_settings .block_tree li.depth_2 ul,
+.block_navigation .block_tree li ul,
+.block_navigation .block_tree li.depth_2 ul
+{
+    padding-left: 0;
+}
+
+.block_settings ul.block_tree.list li ul li a,
+.block_settings ul.block_tree.list li ul li span,
+.block_navigation ul.block_tree.list li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li span
+{
+    padding-left: 33px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li a,
+.block_settings ul.block_tree.list li ul li ul li span,
+.block_navigation ul.block_tree.list li ul li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li ul li span
+{
+    padding-left: 49.5px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li ul li a,
+.block_settings ul.block_tree.list li ul li ul li ul li span,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li span
+{
+    padding-left: 66px;
+}
+
+.block_settings ul.block_tree.list li ul li ul li ul li ul li a,
+.block_settings ul.block_tree.list li ul li ul li ul li ul li span,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li span
+{
+    padding-left: 83.5px;
+}
+
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li ul li a,
+.block_navigation ul.block_tree.list li ul li ul li ul li ul li ul li ul li span
+{
+    padding-left: 99px;
+}
+.block_navigation .block_tree li.item_with_icon > p {
+    position:relative;
+    padding-left: 0px;
+}
