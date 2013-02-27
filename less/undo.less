@@ -5,31 +5,7 @@
  * ones in order to overule them.
  */
 
-/* YUI vs tables
- * 
- * It seems a bit crazy but YUI appears to be adding ugly borders to
- * all table cells,.
- * 
- * YUI gets included before user styles so this has precedence,
- * might make some YUI things look funny though if they expect padding.
- */
-th,td {
-    border: none;
-    padding: 0;
-}
-
-/* Not sure why I need to set this, min-height is already set but
- * seems to be getting ignored.
- */
-html {
-    height: 100%;
-}
-body {
-    min-height: 100%;
-}
-
-/* .label vs .label
- */
+// .label vs .label
 
 li.activity.label,
 .file-picker td.label,
