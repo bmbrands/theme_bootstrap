@@ -43,7 +43,9 @@ $THEME->csspostprocess = 'bootstrap_user_settings';
 
 $THEME->plugins_exclude_sheets = array(
     'block' => array(
-        'settings'));
+        'settings',
+        'navigation',
+    ));
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 

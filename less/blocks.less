@@ -112,6 +112,20 @@
     padding-right: 5px;
 }
 
+.jsenabled .block_tree .tree_item.branch {
+    cursor: pointer;
+}
+.jsenabled .block_tree .collapsed ul {
+    display: none;
+}
+.jsenabled .dock_on_load,
+.block_tree_box .requiresjs {
+    display: none;
+}
+.jsenabled .block_tree_box .requiresjs {
+    display: inline;
+}
+
 // Individual block styles
 .block_navigation .content,
 .block_settings .content {
@@ -119,28 +133,13 @@
 }
 
 .block_settings li > hr {
-    margin: 7px 0;
-}
-.jsenabled .block_settings .block_tree .tree_item.branch {
-    cursor:pointer;
-}
-.jsenabled .block_settings .block_tree .collapsed ul {
-    display: none;
-}
-.jsenabled .block_settings.dock_on_load,
-.block_settings .block_tree_box .requiresjs {
-    display: none;
-}
-.jsenabled .block_settings .block_tree_box .requiresjs {
-    display: inline;
+    margin: 4px 0;
 }
 
 .block_navigation .block_tree li {
     overflow: hidden;
 }
-.block_navigation .block_tree li {
-    width: 100%;
-}
+
 #settingsnav .leaf img {
     display: none;
 }
@@ -198,6 +197,10 @@ ul.block_tree ul {
     .block_tree .collapsed  .tree_item.emptybranch span:before {
         content: " ◄";
     }
+}
+
+.block_navigation .block_tree .tree_item.branch.navigation_node a:before {
+    content: none;
 }
 
 .block_tree .collapsed  .tree_item.emptybranch a:before,
