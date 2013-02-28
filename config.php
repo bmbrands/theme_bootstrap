@@ -1,4 +1,18 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Configuration for the Bootstrap theme
@@ -10,57 +24,28 @@
  */
 
 $THEME->name = 'bootstrap';
-
-////////////////////////////////////////////////////
-// Name of the theme. Most likely the name of
-// the directory in which this file resides.
-////////////////////////////////////////////////////
-
-
 $THEME->parents = array('');
 
-/////////////////////////////////////////////////////
-// Which existing theme(s) in the /theme/ directory
-// do you want this theme to extend. A theme can
-// extend any number of themes. Rather than
-// creating an entirely new theme and copying all
-// of the CSS, you can simply create a new theme,
-// extend the theme you like and just add the
-// changes you want to your theme.
-////////////////////////////////////////////////////
-
-
 $THEME->sheets = array(
-    'bootstrap-min', //original bootstrap css unmodified
-    'bootstrap-responsive-min', //original bootstrap css unmodified
-    'ie7',//ie7 fixes for moodle 2.3 and newer. make is usable in ie7, not pretty
-    'quiz',//quiz module styling
-    'moddata',//data module styling
-    'extra',//contains custom css from the theme user settings
+    'bootstrap-min', // Compiled, compressed output of LESS compilation.
+    'bootstrap-responsive-min', // (Currently) riginal bootstrap responsive css unmodified.
+    'ie7', // IE7 fixes for moodle 2.3 and newer. Make it usable in ie7, but not pretty.
+    'quiz', // quiz module styling
+    'moddata', // data module styling
+    'extra', // Contains custom css from the theme user settings.
 );
-
-//the sheet editor-styling is disabled untill it fully supports all editor options
-
-
-
-////////////////////////////////////////////////////
-// Name of the stylesheet(s) you've including in
-// this theme's /styles/ directory.
-////////////////////////////////////////////////////
-
-$THEME->enable_dock = false;
-
-////////////////////////////////////////////////////
-// Do you want to use the new navigation dock?
-////////////////////////////////////////////////////
-
 
 $THEME->editor_sheets = array('editor');
 
-////////////////////////////////////////////////////
-// An array of stylesheets to include within the
-// body of the editor.
-////////////////////////////////////////////////////
+$THEME->enable_dock = false;
+
+$THEME->csspostprocess = 'bootstrap_user_settings';
+
+$THEME->plugins_exclude_sheets = array(
+    'block' => array(
+        'settings'));
+
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->layouts = array(
     'base' => array(
@@ -114,7 +99,7 @@ $THEME->layouts = array(
         'file' => 'general.php',
         'regions' => array(),
         'options' => array('langmenu'=>true),
-        'options' => array('nonavbar'=>true,'noheader'=>true),
+        'options' => array('nonavbar'=>true, 'noheader'=>true),
     ),
     'popup' => array(
         'file' => 'general.php',
@@ -149,84 +134,3 @@ $THEME->layouts = array(
         'defaultregion' => 'side-pre',
     ),
 );
-
-///////////////////////////////////////////////////////////////
-// These are all of the possible layouts in Moodle. The
-// simplest way to do this is to keep the theme and file
-// variables the same for every layout. Including them
-// all in this way allows some flexibility down the road
-// if you want to add a different layout template to a
-// specific page.
-///////////////////////////////////////////////////////////////
-
-$THEME->csspostprocess = 'bootstrap_user_settings';
-
-////////////////////////////////////////////////////
-// Allows the user to provide the name of a function
-// that all CSS should be passed to before being
-// delivered.
-////////////////////////////////////////////////////
-
-// $THEME->javascripts
-
-////////////////////////////////////////////////////
-// An array containing the names of JavaScript files
-// located in /javascript/ to include in the theme.
-// (gets included in the head)
-////////////////////////////////////////////////////
-
-// $THEME->javascripts_footer
-
-////////////////////////////////////////////////////
-// As above but will be included in the page footer.
-////////////////////////////////////////////////////
-
-// $THEME->larrow
-
-////////////////////////////////////////////////////
-// Overrides the left arrow image used throughout
-// Moodle
-////////////////////////////////////////////////////
-
-//$THEME->rarrow = '&nbsp;/ ';
-
-////////////////////////////////////////////////////
-// Overrides the right arrow image used throughout Moodle
-////////////////////////////////////////////////////
-
-// $THEME->layouts
-
-////////////////////////////////////////////////////
-// An array setting the layouts for the theme
-////////////////////////////////////////////////////
-
-// $THEME->parents_exclude_javascripts
-
-////////////////////////////////////////////////////
-// An array of JavaScript files NOT to inherit from
-// the themes parents
-////////////////////////////////////////////////////
-
-// $THEME->parents_exclude_sheets
-
-////////////////////////////////////////////////////
-// An array of stylesheets not to inherit from the
-// themes parents
-////////////////////////////////////////////////////
-
-// $THEME->plugins_exclude_sheets
-
-////////////////////////////////////////////////////
-// An array of plugin sheets to ignore and not
-// include.
-////////////////////////////////////////////////////
-
-// $THEME->rendererfactory
-$THEME->rendererfactory = 'theme_overridden_renderer_factory';
-
-
-////////////////////////////////////////////////////
-// Sets a custom render factory to use with the
-// theme, used when working with custom renderers.
-////////////////////////////////////////////////////
-
