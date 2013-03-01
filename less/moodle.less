@@ -2,6 +2,7 @@
 @import "yui_fixes";
 
 // Old Moodle stuff from base theme.
+@import "core"; // Massive, needs broken up
 @import "admin";
 @import "calendar";
 @import "course";
@@ -15,13 +16,15 @@
 // Bootstrap
 @import "bootstrap/bootstrap";
 
-// Old Moodle stuff converted to use some @variables
-@import "core";
-
 // Roll back nameclashes
 @import "undo";
 
-// New Moodle stuff that builds on Bootstrap, uses @variables etc.
+// Uncomment to override theme variables
+// @import "bootswatch/variables";
+// @import "bootswatch/bootswatch";
+// @import "bootstrap/utilities";
+
+// New Moodle stuff that builds on Bootstrap
 @import "forms";
 @import "tables";
 @import "buttons";
