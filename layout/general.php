@@ -71,10 +71,6 @@ $doctype = $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
-<?php
-if (!empty($PAGE->theme->settings->gakey)) {
-    include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php");
-}?>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
