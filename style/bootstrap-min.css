@@ -9,9 +9,7 @@ td {
   border: 0px solid #fff;
 }
 
-/**
- * Admin
- **/
+/* admin.less */
 
 .formtable tbody th {
   font-weight: normal;
@@ -1079,7 +1077,7 @@ td {
   padding-bottom: 0;
 }
 
-/** Calendar **/
+/* calendar.less */
 
 .calendartable {
   width: 100%;
@@ -1888,8 +1886,8 @@ li.section.hidden span.commands a.editing_show {
 }
 
 /**
-* Overide for RTL layout
-*/
+ * Overide for RTL layout
+ */
 
 .dir-rtl .coursebox .info {
   float: right;
@@ -2064,18 +2062,11 @@ input.titleeditor {
   display: none;
 }
 
-/**
- * Whilst the dock isn't supported by the base theme this CSS is here so that those
- * themes that do want to use the dock will have a starting point at least
- */
-
-/* Put a margin on the body if the dock is shown */
+/* dock.less */
 
 body.has_dock {
   margin-left: 30px;
 }
-
-/** For the dock itself */
 
 #dock {
   position: fixed;
@@ -2123,8 +2114,6 @@ body.has_dock {
 #dock .controls img {
   cursor: pointer;
 }
-
-/** For the panel the docked blocks are shown in */
 
 #dockeditempanel {
   position: relative;
@@ -2187,15 +2176,6 @@ body.has_dock {
   cursor: pointer;
 }
 
-/** IE 6 doesn't support fixed pos elements **/
-
-.ie6 #dockeditempanel {
-  position: absolute;
-}
-
-/* right align the DOCK panel
-------------------------------*/
-
 .dir-rtl #dockeditempanel .dockeditempanel_hd .commands {
   text-align: left;
 }
@@ -2221,16 +2201,10 @@ body.dir-rtl.has_dock {
   margin-left: 0;
 }
 
-/* Test span used to calculate positioning of docked item labels */
-
 .transform-test-node {
   position: absolute;
   line-height: normal;
 }
-
-/**
- * File Picker and File Manager
- */
 
 .filemanager,
 .filepicker,
@@ -2288,10 +2262,6 @@ body.dir-rtl.has_dock {
   visibility: hidden;
 }
 
-/*
- * Dialogue (File Picker and File Manager)
- */
-
 .yui3-panel-focused {
   outline: none;
 }
@@ -2344,10 +2314,6 @@ body.dir-rtl.has_dock {
      -moz-box-shadow: 2px 2px 3px 0.1px #999999;
           box-shadow: 2px 2px 3px 0.1px #999999;
 }
-
-/*
- * File Picker layout
- */
 
 #filesskin .file-picker.fp-generallayout {
   position: relative;
@@ -2450,17 +2416,9 @@ body.dir-rtl.has_dock {
   left: 0;
 }
 
-/**
- * File Manager
- */
-
 .dir-rtl .filemanager-toolbar a {
   padding: 0;
 }
-
-/*
- * Repositories on fp-repo-area (File Picker only)
- */
 
 .file-picker .fp-list {
   float: left;
@@ -2487,10 +2445,6 @@ body.dir-rtl.has_dock {
 .file-picker .fp-list .fp-repo-icon {
   padding: 0 7px 0px 5px;
 }
-
-/*
- * Tools, Path & View on fp-navbar (File Picker and File Manager)
- */
 
 .fp-toolbar {
   display: table-row;
@@ -2647,8 +2601,6 @@ body.dir-rtl.has_dock {
   clear: left;
 }
 
-/* over ride hover rule from core.css*/
-
 .dir-rtl .filemanager-toolbar .fp-vb-icons a:hover {
   background: url('[[pix:theme|fp/view_icon_selected]]');
 }
@@ -2715,10 +2667,6 @@ body.dir-rtl.has_dock {
   line-height: 20px;
 }
 
-/*
- * Icon view (File Picker and File Manager)
- */
-
 .fp-iconview .fp-file {
   position: relative;
   float: left;
@@ -2775,10 +2723,6 @@ body.dir-rtl.has_dock {
   float: right;
 }
 
-/*
- * Table view (File Picker only)
- */
-
 .file-picker .yui3-datatable table {
   width: 100%;
   border: 0px solid #BBBBBB;
@@ -2805,14 +2749,6 @@ body.dir-rtl.has_dock {
   text-align: right;
 }
 
-/*
- * Tree view (File Manager only)
- */
-
-/*.file-picker .fp-treeview .fp-folder .fp-icon, .filemanager .fp-treeview .fp-folder .fp-icon {}*/
-
-/* first or middle sibling, no children */
-
 .file-picker .ygtvtn,
 .filemanager .ygtvtn {
   width: 17px;
@@ -2826,8 +2762,6 @@ body.dir-rtl.has_dock {
   background: url('[[pix:moodle|y/tn_rtl]]') 0 0px no-repeat;
 }
 
-/* first or middle sibling, collapsable */
-
 .file-picker .ygtvtm,
 .filemanager .ygtvtm {
   width: 13px;
@@ -2836,8 +2770,6 @@ body.dir-rtl.has_dock {
   background: url('[[pix:moodle|y/tm]]') 0 10px no-repeat;
 }
 
-/* first or middle sibling, collapsable, hover */
-
 .file-picker .ygtvtmh,
 .filemanager .ygtvtmh {
   width: 13px;
@@ -2845,8 +2777,6 @@ body.dir-rtl.has_dock {
   cursor: pointer;
   background: url('[[pix:moodle|y/tm]]') 0 10px no-repeat;
 }
-
-/* first or middle sibling, expandable */
 
 .file-picker .ygtvtp,
 .filemanager .ygtvtp {
@@ -2863,8 +2793,6 @@ body.dir-rtl.has_dock {
   background: url('[[pix:moodle|y/tp_rtl]]') 0 10px no-repeat;
 }
 
-/* first or middle sibling, expandable, hover */
-
 .file-picker .ygtvtph,
 .filemanager .ygtvtph {
   width: 13px;
@@ -2880,8 +2808,6 @@ body.dir-rtl.has_dock {
   background: url('[[pix:moodle|y/tp_rtl]]') 0 10px no-repeat;
 }
 
-/* last sibling, no children */
-
 .file-picker .ygtvln,
 .filemanager .ygtvln {
   width: 17px;
@@ -2895,8 +2821,6 @@ body.dir-rtl.has_dock {
   background: url('[[pix:moodle|y/ln_rtl]]') 0 0px no-repeat;
 }
 
-/* Last sibling, collapsable */
-
 .file-picker .ygtvlm,
 .filemanager .ygtvlm {
   width: 13px;
@@ -2905,8 +2829,6 @@ body.dir-rtl.has_dock {
   background: url('[[pix:moodle|y/lm]]') 0 10px no-repeat;
 }
 
-/* Last sibling, collapsable, hover */
-
 .file-picker .ygtvlmh,
 .filemanager .ygtvlmh {
   width: 13px;
@@ -2914,8 +2836,6 @@ body.dir-rtl.has_dock {
   cursor: pointer;
   background: url('[[pix:moodle|y/lm]]') 0 10px no-repeat;
 }
-
-/* Last sibling, expandable */
 
 .file-picker .ygtvlp,
 .filemanager .ygtvlp {
@@ -2932,8 +2852,6 @@ body.dir-rtl.has_dock {
   background: url('[[pix:moodle|y/lp_rtl]]') 0 10px no-repeat;
 }
 
-/* Last sibling, expandable, hover */
-
 .file-picker .ygtvlph,
 .filemanager .ygtvlph {
   width: 13px;
@@ -2949,8 +2867,6 @@ body.dir-rtl.has_dock {
   background: url('[[pix:moodle|y/lp_rtl]]') 0 10px no-repeat;
 }
 
-/* Loading icon */
-
 .file-picker .ygtvloading,
 .filemanager .ygtvloading {
   width: 16px;
@@ -2958,12 +2874,10 @@ body.dir-rtl.has_dock {
   background: transparent url('[[pix:moodle|y/loading]]') 0 0 no-repeat;
 }
 
-/* the style for the empty cells that are used for rendering the depth* of the node */
-
 .file-picker .ygtvdepthcell,
 .filemanager .ygtvdepthcell {
   width: 17px;
-  height: /*22px;*/ 32px;
+  height: 32px;
   background: url('[[pix:moodle|y/vline]]') 0 0 no-repeat;
 }
 
@@ -2972,21 +2886,6 @@ body.dir-rtl.has_dock {
   width: 17px;
   height: 22px;
 }
-
-/* the style of the div around each node */
-
-/*.file-picker .ygtvitem  table, .filemanager .ygtvitem  table{margin-bottom:0;}*/
-
-/*.file-picker .ygtvitem  td, .filemanager .ygtvitem  td {border:none;padding:0;}*/
-
-/* the style of the div around each node's collection of children */
-
-/** html .file-picker .ygtvchildren, * html .filemanager .ygtvchildren {height:1%;}*/
-
-/* the style of the text label in ygTextNode */
-
-/*.file-picker .ygtvlabel,.file-picker .ygtvlabel:link,.file-picker .ygtvlabel:visited,.file-picker .ygtvlabel:hover,
-.filemanager .ygtvlabel,.filemanager .ygtvlabel:link,.filemanager .ygtvlabel:visited,.filemanager .ygtvlabel:hover {margin-left:2px;text-decoration: none;}*/
 
 a.ygtvspacer:hover {
   color: transparent;
@@ -3042,10 +2941,6 @@ a.ygtvspacer:hover {
   padding-left: 10px;
 }
 
-/*
- * Repositories Login on fp-content (File Picker only)
- */
-
 .file-picker .fp-login-form {
   display: table;
   width: 100%;
@@ -3075,10 +2970,6 @@ a.ygtvspacer:hover {
   height: 15px;
 }
 
-/*
- * Upload on fp-content (File Picker only)
- */
-
 .file-picker .fp-upload-form {
   display: table;
   width: 100%;
@@ -3093,10 +2984,6 @@ a.ygtvspacer:hover {
   margin: 2em;
 }
 
-/*
- * File exists dialogue on Upload (File Picker only)
- */
-
 .file-picker.fp-dlg {
   text-align: center;
 }
@@ -3109,10 +2996,6 @@ a.ygtvspacer:hover {
 .file-picker.fp-dlg .fp-dlg-buttons {
   margin: 0 20px;
 }
-
-/*
- * Error dialogue on Upload (File Picker only)
- */
 
 .file-picker.fp-msg {
   text-align: center;
@@ -3132,10 +3015,6 @@ a.ygtvspacer:hover {
   font-size: 12px;
 }
 
-/*
- * Error on fp-content (File Picker only)
- */
-
 .file-picker .fp-content-error {
   display: table;
   width: 100%;
@@ -3151,10 +3030,6 @@ a.ygtvspacer:hover {
   font-size: 12px;
   vertical-align: middle;
 }
-
-/*
- * Lazy loading on fp-content (File Picker only)
- */
 
 .file-picker .fp-nextpage {
   clear: both;
@@ -3174,10 +3049,6 @@ a.ygtvspacer:hover {
   padding-top: 50px;
   text-align: center;
 }
-
-/*
- * Select Dialogue (File Picker and File Manager)
- */
 
 .file-picker.fp-select {
   width: 420px;
@@ -3277,10 +3148,6 @@ a.ygtvspacer:hover {
   display: none;
 }
 
-/*
- * File Manager
- */
-
 .filemanager-loading {
   display: none;
 }
@@ -3345,10 +3212,6 @@ a.ygtvspacer:hover {
   display: none;
 }
 
-/*
- * File Manager layout
- */
-
 .fp-restrictions {
   text-align: right;
 }
@@ -3385,10 +3248,6 @@ a.ygtvspacer:hover {
   border: 1px solid #BBBBBB;
 }
 
-/*.filemanager-container ul{margin:0;padding:0;}
-.filemanager-container ul li{white-space:nowrap;list-style-type:none;}
-.filemanager-container ul li a{padding:0}*/
-
 .filemanager .fp-content {
   max-height: 472px;
   min-height: 157px;
@@ -3412,10 +3271,6 @@ a.ygtvspacer:hover {
 .fitem.disabled .filepicker-filelist .filepicker-filename {
   display: none;
 }
-
-/*
- * Icon view (File Manager only)
- */
 
 .fp-iconview .fp-reficons1 {
   position: absolute;
@@ -3453,10 +3308,6 @@ a.ygtvspacer:hover {
   background: url([[pix:s/dead]]) no-repeat;
   background-position: center center;
 }
-
-/*
- * Table view (File Manager only)
- */
 
 .filemanager .yui3-datatable table {
   width: 100%;
@@ -3500,10 +3351,6 @@ a.ygtvspacer:hover {
   background: url('[[pix:theme|fp/alias_sm]]') no-repeat 0 0;
 }
 
-/*
- * Folder Context Menu (File Manager only)
- */
-
 .filemanager .fp-contextmenu {
   display: none;
 }
@@ -3524,10 +3371,6 @@ a.ygtvspacer:hover {
   display: inline;
   margin-right: -20px;
 }
-
-/*
- * Drag and drop support (filemanager and filepicker form elements)
- */
 
 .filepicker-filelist .filepicker-container,
 .filemanager.fm-noitems .fm-empty-container {
@@ -3646,10 +3489,6 @@ a.ygtvspacer:hover {
   display: none;
 }
 
-/*
- * Select Dialogue (File Manager only)
- */
-
 .filemanager.fp-select .fp-select-loading {
   display: none;
 }
@@ -3661,10 +3500,6 @@ a.ygtvspacer:hover {
 .filemanager.fp-select.loading form {
   display: none;
 }
-
-/* disable unavailable actions: */
-
-/*.filemanager.fp-select.fp-zip .fp-license,*/
 
 .filemanager.fp-select.fp-folder .fp-license,
 .filemanager.fp-select.fp-folder .fp-author,
@@ -3690,8 +3525,6 @@ a.ygtvspacer:hover {
 .filemanager.fp-select.fp-folder .fp-file-download {
   display: none;
 }
-
-/* to be implemented */
 
 .fm-operation {
   font-weight: bold;
@@ -3739,10 +3572,6 @@ a.ygtvspacer:hover {
   padding-bottom: 7px;
 }
 
-/*
- * Create folder dialogue (File Manager only)
- */
-
 .filemanager.fp-mkdir-dlg {
   text-align: center;
 }
@@ -3755,10 +3584,6 @@ a.ygtvspacer:hover {
 .dir-rtl .filemanager .fp-mkdir-dlg p {
   text-align: right;
 }
-
-/*
- * Confirm dialogue for delete (File Manager only)
- */
 
 .filemanager.fp-dlg {
   text-align: center;
@@ -3775,16 +3600,9 @@ a.ygtvspacer:hover {
   line-height: 22px;
 }
 
-/*
- *file picker search dialog
- */
-
 .file-picker div.bd {
   text-align: left;
 }
-
-/* RTL Overrides
--------------------------*/
 
 .dir-rtl .file-picker div.bd {
   text-align: right;
@@ -3814,7 +3632,7 @@ a.ygtvspacer:hover {
   text-align: right;
 }
 
-/* Grades */
+/* grades.less */
 
 .allcoursegrades {
   width: 100%;
@@ -4306,8 +4124,6 @@ table.message .searchresults td {
   display: none;
 }
 
-/** not just using hidden as mform adds that class to its fieldset */
-
 .message .visible {
   display: inline;
 }
@@ -4729,7 +4545,7 @@ table.message .searchresults td {
   padding-right: 0.3em;
 }
 
-/*$$$$$$$$$$$$$$$$$ User $$$$$$$$$$$$$$$$$$$$*/
+/* user.less */
 
 .userprofile .fullprofilelink {
   margin: 10px;
@@ -11120,6 +10936,8 @@ a.badge:focus {
   position: fixed;
 }
 
+/* core.less */
+
 .dir-ltr,
 .mdl-left,
 .dir-rtl .mdl-right {
@@ -11506,8 +11324,8 @@ h6.main img {
 }
 
 /**
- * Accessibility features
- */
+* Accessibility features
+*/
 
 /*Accessibility: text 'seen' by screen readers but not visual users. */
 
@@ -11559,7 +11377,8 @@ a.skip:active {
   overflow: hidden;
 }
 
-/* Accessibility: only certain fonts support Unicode chars like &#x25BA; in IE6 */
+/* Accessibility: only certain fonts support Unicode chars like &#x25BA;
+in IE6 */
 
 .arrow,
 .arrow_button input {
@@ -11567,8 +11386,8 @@ a.skip:active {
 }
 
 /**
- * Header
- */
+* Header
+*/
 
 .headermain {
   float: left;
@@ -11588,8 +11407,8 @@ a.skip:active {
 }
 
 /**
- * Navbar
- */
+* Navbar
+*/
 
 .navbar {
   overflow: hidden;
@@ -11627,8 +11446,8 @@ a.skip:active {
 }
 
 /**
- * Footer
- */
+* Footer
+*/
 
 #page-footer {
   font-size: 0.9em;
@@ -11706,8 +11525,8 @@ a.skip:active {
 }
 
 /**
- * Tabs
- */
+* Tabs
+*/
 
 .tabtree {
   position: relative;
@@ -11733,8 +11552,8 @@ a.skip:active {
 }
 
 /**
- * Mforms
- */
+* Mforms
+*/
 
 .mform fieldset .advancedbutton {
   text-align: right;
@@ -11863,8 +11682,8 @@ input#id_externalurl {
 }
 
 /**
- * phpinfo styles
- */
+* phpinfo styles
+*/
 
 .phpinfo .center {
   text-align: center;
@@ -11902,8 +11721,8 @@ input#id_externalurl {
 }
 
 /**
- * Blogs
- */
+* Blogs
+*/
 
 .addbloglink {
   text-align: center;
@@ -11928,8 +11747,8 @@ input#id_externalurl {
 }
 
 /**
- * Group
- */
+* Group
+*/
 
 #page-group-index #groupeditform {
   text-align: center;
@@ -11990,8 +11809,8 @@ input#id_externalurl {
 }
 
 /**
- * Login
- */
+* Login
+*/
 
 .loginbox {
   margin: 15px;
@@ -12098,8 +11917,8 @@ input#id_externalurl {
 }
 
 /**
- * Notes
- */
+* Notes
+*/
 
 .notepost {
   margin-bottom: 1em;
@@ -12120,8 +11939,8 @@ input#id_externalurl {
 }
 
 /**
- * My Moodle
- */
+* My Moodle
+*/
 
 .path-my .coursebox .overview {
   margin: 15px 30px 10px 30px;
@@ -12133,16 +11952,16 @@ input#id_externalurl {
 }
 
 /**
- * Logs
- */
+* Logs
+*/
 
 .logtable th {
   text-align: left;
 }
 
 /**
- * Modules
- */
+* Modules
+*/
 
 .mod_introbox {
   padding: 10px;
@@ -12153,8 +11972,8 @@ table.mod_index {
 }
 
 /**
- * Comments
- */
+* Comments
+*/
 
 .comment-ctrl {
   display: none;
@@ -12289,8 +12108,8 @@ table.mod_index {
 }
 
 /**
- * Completion progress report
- */
+* Completion progress report
+*/
 
 .completion-expired {
   background: #FFDDDD;
@@ -12315,8 +12134,8 @@ table.mod_index {
 }
 
 /**
- * Tags
- */
+* Tags
+*/
 
 #page-tag-coursetags_edit .coursetag_edit_centered {
   position: relative;
@@ -12593,10 +12412,6 @@ body.tag .managelink {
   font-size: 0.8em;
 }
 
-/*
- * Backup and Restore CSS
- */
-
 .path-backup .mform .grouped_settings.section_level {
   clear: both;
 }
@@ -12634,12 +12449,6 @@ body.tag .managelink {
 .path-backup.dir-rtl .mform .grouped_settings.section_level .include_setting {
   float: right;
   clear: right;
-}
-
-.path-backup .mform .grouped_settings.section_level .normal_setting {
-  width: 50%;
-  margin: 0;
-  margin-left: 50%;
 }
 
 .path-backup.dir-rtl .mform .grouped_settings.section_level .normal_setting {
@@ -12708,8 +12517,8 @@ body.tag .managelink {
 }
 
 /**
- * Web Service
- */
+* Web Service
+*/
 
 #webservice-doc-generator td {
   text-align: left;
@@ -12717,8 +12526,8 @@ body.tag .managelink {
 }
 
 /**
- * Custom menu
- */
+* Custom menu
+*/
 
 #custommenu {
   clear: both;
@@ -12801,8 +12610,8 @@ body.tag .managelink {
 }
 
 /**
- * Fix for broken YUI images in the menunav component
- */
+* Fix for broken YUI images in the menunav component
+*/
 
 #custommenu .yui3-menu-label,
 #custommenu .yui3-menuitem-content {
@@ -12833,8 +12642,8 @@ body.tag .managelink {
 }
 
 /**
- * Smart Select Element
- */
+* Smart Select Element
+*/
 
 .smartselect {
   position: absolute;
@@ -12939,16 +12748,16 @@ body.tag .managelink {
 }
 
 /**
- * Registration
- */
+* Registration
+*/
 
 #page-admin-registration-register .registration_textfield {
   width: 300px;
 }
 
 /**
- * Enrol
- */
+* Enrol
+*/
 
 .userenrolment {
   width: 100%;
@@ -13124,8 +12933,8 @@ body.tag .managelink {
 }
 
 /**
- * Backup
- */
+* Backup
+*/
 
 .backup-restore .backup-section {
   margin-bottom: 1em;
@@ -13923,11 +13732,11 @@ audio.mediaplugin_html5audio {
 }
 
 /**
- * Chooser Dialogues (moodle-core-chooserdialogue)
- *
- * This CSS belong to the chooser dialogue which should work both with, and
- * without javascript enabled
- */
+* Chooser Dialogues (moodle-core-chooserdialogue)
+*
+* This CSS belong to the chooser dialogue which should work both with, and
+* without javascript enabled
+*/
 
 /* Hide the dialog and it's title */
 
