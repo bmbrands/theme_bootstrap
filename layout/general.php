@@ -1,5 +1,20 @@
 <?php
 
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 $hasheading = ($PAGE->heading);
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
@@ -27,9 +42,17 @@ if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
 
 $bodyclasses = array();
 if ($showsidepre && !$showsidepost) {
-    $bodyclasses[] = 'side-pre-only';
+    if (!right_to_left()) {
+        $bodyclasses[] = 'side-pre-only';
+    } else {
+        $bodyclasses[] = 'side-post-only';
+    }
 } else if ($showsidepost && !$showsidepre) {
-    $bodyclasses[] = 'side-post-only';
+    if (!right_to_left()) {
+        $bodyclasses[] = 'side-post-only';
+    } else {
+        $bodyclasses[] = 'side-pre-only';
+    }
 } else if (!$showsidepost && !$showsidepre) {
     $bodyclasses[] = 'content-only';
 }
@@ -49,9 +72,9 @@ $doctype = $OUTPUT->doctype() ?>
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
 <?php
-    if (!empty($PAGE->theme->settings->gakey)) {
-        include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php"); 
-    }?>
+if (!empty($PAGE->theme->settings->gakey)) {
+    include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php");
+}?>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
@@ -97,30 +120,42 @@ $doctype = $OUTPUT->doctype() ?>
     <section class="span9">
 <?php } else { ?>
     <section class="span12">
-<?php }?>
+<?php } ?>
     <?php echo $coursecontentheader; ?>
     <?php echo $OUTPUT->main_content() ?>
     <?php echo $coursecontentfooter; ?>
     </section>
-<?php if ($hassidepre) {
-          if ($hassidepost) { ?>
+<?php if ((!right_to_left() AND $hassidepre) OR (right_to_left() AND $hassidepost)) {
+          if ((!right_to_left() AND $hassidepost) OR (right_to_left() AND $hassidepre)) { ?>
             <aside id=region-pre class="span4 block-region">
     <?php } else { ?>
             <aside id=region-pre class="span3 block-region">
-          <?php } ?>
-            <div class=region-content>
-                <?php echo $OUTPUT->blocks_for_region('side-pre') ?>
+    <?php } ?>
+          <div class=region-content>
+          <?php
+                if (!right_to_left()) {
+                    echo $OUTPUT->blocks_for_region('side-pre');
+                } else if ($hassidepost) {
+                    echo $OUTPUT->blocks_for_region('side-post');
+                }
+            ?>
             </div>
             </aside>
-      <?php if ($hassidepost) { ?></div></div><?php } // close row-fluid & span9 ?>
-<?php } ?>
+      <?php if ($hassidepost && $hassidepre) {
+          ?></div></div><?php // close row-fluid & span9
+        }
+    }
 
-<?php if ($hassidepost) { ?>
-    <aside id=region-post class="span3 block-region">
-    <div class=region-content>
-    <?php echo $OUTPUT->blocks_for_region('side-post') ?>
-    </div>
-    </aside>
+    if ($hassidepost OR (right_to_left() AND $hassidepre)) { ?>
+        <aside id=region-post class="span3 block-region">
+        <div class=region-content>
+        <?php if (!right_to_left()) {
+                  echo $OUTPUT->blocks_for_region('side-post');
+              } else {
+                  echo $OUTPUT->blocks_for_region('side-pre');
+              } ?>
+        </div>
+        </aside>
 <?php } ?>
 </div>
 
