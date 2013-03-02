@@ -73,7 +73,7 @@ $doctype = $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-<script src="<?php echo new moodle_url($CFG->httpswwwroot."/theme/bootstrap/html5shiv.js")?>"></script>
+<script src="<?php echo new moodle_url($CFG->httpswwwroot."/theme/bootstrap/js/html5shiv.js")?>"></script>
     <![endif]-->
 <?php
 if (!empty($PAGE->theme->settings->gakey)) {
