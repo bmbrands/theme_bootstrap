@@ -29,7 +29,6 @@ $THEME->parents = array('');
 $THEME->sheets = array(
     'bootstrap-min', // Compiled, compressed output of LESS compilation.
     'bootstrap-responsive-min', // (Currently) riginal bootstrap responsive css unmodified.
-    'ie7', // IE7 fixes for moodle 2.3 and newer. Make it usable in ie7, but not pretty.
     'quiz', // quiz module styling
     'moddata', // data module styling
     'extra', // Contains custom css from the theme user settings.
