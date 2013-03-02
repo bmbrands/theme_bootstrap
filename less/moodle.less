@@ -1,23 +1,24 @@
 // Fixes for the YUI reset and Base
-@import "yui_fixes";
+// Not needed if 2.5 upgrades YUI
+@import "moodle/yui_fixes";
 
 // Old Moodle stuff from base theme.
-@import "core"; // Massive, needs broken up
-@import "admin";
-@import "calendar";
-@import "course";
-@import "dock";
-@import "filemanager";
-@import "grade";
-@import "message";
-@import "question";
-@import "user";
+@import "moodle/core"; // Massive, needs broken up
+@import "moodle/admin";
+@import "moodle/calendar";
+@import "moodle/course";
+@import "moodle/dock";
+@import "moodle/filemanager";
+@import "moodle/grade";
+@import "moodle/message";
+@import "moodle/question";
+@import "moodle/user";
 
 // Bootstrap
 @import "bootstrap/bootstrap";
 
 // Roll back nameclashes
-@import "undo";
+@import "moodle/undo";
 
 // Uncomment to override theme variables
 // @import "bootswatch/variables";
@@ -25,8 +26,8 @@
 // @import "bootstrap/utilities";
 
 // New Moodle stuff that builds on Bootstrap
-@import "forms";
-@import "tables";
-@import "buttons";
-@import "custom";
-@import "blocks";
+@import "moodle/forms";
+@import "moodle/tables";
+@import "moodle/buttons";
+@import "moodle/custom";
+@import "moodle/blocks";
