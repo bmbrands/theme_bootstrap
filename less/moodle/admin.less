@@ -212,20 +212,20 @@
 
 #page-admin-report-backups-index .backup-error,
 #page-admin-report-backups-index .backup-unfinished {
-    color: #f00000;
+    color: @errorText;
 }
 
 #page-admin-report-backups-index .backup-skipped,
 #page-admin-report-backups-index .backup-ok {
-    color: #006400;
+    color: @successText;
 }
 
 #page-admin-report-backups-index .backup-warning {
-    color: #ff9900;
+    color: @warningText;
 }
 
 #page-admin-qbehaviours .disabled {
-    color: gray;
+    .muted;
 }
 
 #page-admin-qbehaviours th {
@@ -255,7 +255,7 @@
 }
 
 #page-admin-qtypes .disabled {
-    color: gray;
+    .muted
 }
 
 #page-admin-qtypes th {
@@ -349,12 +349,12 @@
 }
 
 #page-admin-index .adminwarning.maturityinfo.maturity50 {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index .adminwarning.maturityinfo.maturity100,
 #page-admin-index .adminwarning.maturityinfo.maturity150 {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo {
@@ -370,17 +370,17 @@
     .border-radius(10px);
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release {
-    background-color: #ffd3d9;
+#page-admin-index .admin9warning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release {
+    background-color: @errorBackground;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity100 .info.release,
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity150 .info.release {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity200 .info.release {
-    background-color: #d2ebff;
+    background-color: @infoBackground;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo span,
@@ -400,8 +400,8 @@
 #page-admin-index .updateplugin .updatepluginconfirmexternal,
 #page-admin-plugins .updateplugin .updatepluginconfirmexternal {
     padding: 1em;
-    background-color: #ffd3d9;
-    border: 1px solid #EEAAAA
+    background-color: @errorBackground;
+    border: 1px solid @errorBorder; 
 }
 
 #page-admin-user-user_bulk #users .fgroup {
@@ -577,10 +577,6 @@
     width: auto;
 }
 
-.form-buttons {
-    margin: 10px 0 0 13em;
-}
-
 #adminsettings fieldset {
     margin-top: 1em;
     padding: 1em 0.5em;
@@ -597,11 +593,6 @@
 
 #adminsettings fieldset.error legend {
     display: block;
-}
-
-#adminsettings .form-item {
-    clear: both;
-    margin: 1em 0 2em 0;
 }
 
 #adminsettings .form-item .form-label {
@@ -787,7 +778,7 @@
 }
 
 #page-admin-index #plugins-check .missingfromdisk .displayname {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .standard .source {
@@ -795,7 +786,7 @@
 }
 
 #page-admin-index #plugins-check .extension .source {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-index #plugins-check .msg td {
@@ -803,15 +794,15 @@
 }
 
 #page-admin-index #plugins-check .status-downgrade .status {
-    background-color: #ffd3d9;
+    background-color: @warningBackground;
 }
 
 #page-admin-index #plugins-check .status-missing .status {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .status-new .status {
-    background-color: #e7f1c3;
+    background-color: @successBackground;
 }
 
 #page-admin-index #plugins-check .status-nodb .status {
@@ -819,11 +810,11 @@
 }
 
 #page-admin-index #plugins-check .status-delete .status {
-    background-color: #d2ebff;
+    background-color: @infoBackground;
 }
 
 #page-admin-index #plugins-check .status-upgrade .status {
-    background-color: #d2ebff;
+    background-color: @infoBackground;
 }
 
 #page-admin-index #plugins-check .status-uptodate .status {
@@ -831,7 +822,7 @@
 }
 
 #page-admin-index #plugins-check .requires ul {
-    font-size: 0.7em;
+    font-size: @fontSizeMini;
     margin: 0;
 }
 
@@ -844,23 +835,23 @@
 }
 
 #page-admin-index #plugins-check .requires-failed {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo {
     padding: 5px 10px;
     margin: 10px;
-    background-color: #d2ebff;
+    background-color: @infoBackground;
     .border-radius(10px);
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo.maturity50 {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo.maturity100,
 #page-admin-index #plugins-check .status .pluginupdateinfo.maturity150 {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo span,
@@ -898,11 +889,11 @@
 }
 
 #page-admin-plugins #plugins-control-panel .missingfromdisk .pluginname {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .disabled .availability {
-    background-color: #eee;
+    background-color: @inputDisabledBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .actions a {
@@ -914,7 +905,7 @@
 }
 
 #page-admin-plugins #plugins-control-panel .extension .source {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .msg td {
@@ -941,7 +932,7 @@
 
 #page-admin-plugins #plugins-overview-panel .info.updatable {
     margin-left: 10px;
-    background-color: #d2ebff;
+    background-color: @infoBackground;
     font-weight: bold;
     .border-radius(10px);
 }
@@ -975,17 +966,17 @@
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo {
     padding: 5px 10px;
     margin: 10px;
-    background-color: #d2ebff;
+    background-color: @infoBackground;
     .border-radius(10px);
 }
 
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity50 {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity100,
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity150 {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo span,
@@ -1019,8 +1010,8 @@
 }
 
 #page-admin-mnet-peers .mform .deletedhostinfo {
-    background-color: #ffd3d9;
-    border: 2px solid #eeaaaa;
+    background-color: @errorBackground;
+    border: 2px solid @errorBorder;
     padding: 4px;
     margin-bottom: 5px;
 }

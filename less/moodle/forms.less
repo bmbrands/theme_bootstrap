@@ -5,6 +5,110 @@
  *
  */
 
+/**
+* This Mforms section was moved from core.less
+*/
+.mform fieldset .advancedbutton {
+    text-align: right;
+}
+.mform fieldset.group {
+    margin-bottom: 0
+}
+.mform fieldset.error {
+    border: 1px solid @errorText;
+}
+.mform fieldset.collapsible legend a.fheader {
+    padding: 0 5px 0 20px;
+    background: url([[pix:t/expanded]]) 2px center no-repeat;
+}
+.mform fieldset.collapsed legend a.fheader {
+    background: url([[pix:t/collapsed]]) 2px center no-repeat;
+}
+.mform fieldset.collapsed.jsprocessed {
+    border-width: 1px 0 0 0;
+    padding: 0;
+}
+.mform fieldset.collapsed.jsprocessed div.fcontainer {
+    display: none;
+}
+.mform .fitem .fitemtitle div {
+    display: inline;
+}
+.mform .error,
+.mform .required {
+    color: @errorText;
+}
+.mform .required .fgroup span label {
+    color: @textColor;
+}
+.mform .fdescription.required {
+    color: @errorText;
+    text-align: right;
+}
+.mform .fpassword .unmask {
+    display: inline;
+    margin-left: 0.5em;
+}
+.mform .ftextarea #id_alltext {
+    width: 100%;
+}
+.mform ul.file-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.mform label .req,
+.mform label .adv {
+    cursor: help;
+}
+.mform .fcheckbox input {
+    margin-left: 0;
+}
+.mform .fitem fieldset.fgroup label,
+.mform .fradio label,
+.mform .fcheckbox label,
+.mform fieldset.fdate_selector label {
+    display: inline;
+    float: none;
+    width: auto;
+}
+.mform .ftags label.accesshide {
+    display: block;
+    position: static;
+}
+.mform .ftags select {
+    margin-bottom: 0.7em;
+    min-width: 22em;
+}
+.mform .helplink img {
+    margin: 0 0 0 .45em;
+    padding: 0;
+}
+.dir-rtl .mform .helplink img {
+    margin: 0 .45em 0 0;
+    padding: 0;
+}
+.mform legend .helplink img {
+    margin-right: .2em;
+}
+.dir-rtl .mform legend .helplink img {
+    margin: 0 .45em 0 .2em;
+}
+.singleselect label {
+    margin-right: .3em;
+}
+.dir-rtl .singleselect label {
+    margin-left: .3em;
+    margin-right: 0;
+}
+input#id_externalurl {
+    direction: ltr;
+}
+#portfolio-add-button {
+    display: inline;
+}
+
+// copying in Bootstrap styles
 .mform .fitem {
     .form-horizontal .control-group
 }
@@ -17,7 +121,7 @@ div.form-defaultinfo,
     .muted;
 }
 .form-label span.form-shortname {
-    font-size: 85%; // copied from bootstrap/type.less <small>
+    font-size: @fontSizeMini;
 }
 #adminsettings .form-item .form-setting,
 #adminsettings .form-item .form-description,
@@ -50,7 +154,8 @@ div.backup-section + form,
     padding-left: 0;
 }
 .form-buttons {
-    padding-left: @horizontalComponentOffset; // add back the padding it would usually get from being inside a .form-horizontal
+    padding-left: @horizontalComponentOffset;
+    // add back the padding it would usually get from being inside a .form-horizontal
 }
 
 #adminsettings .form-item .form-setting .form-checkbox {
@@ -69,14 +174,4 @@ div.backup-section + form,
     color: @grayDark;
     border: 0;
     border-bottom: 1px solid #e5e5e5;
-}
-
-// Things to cancel inherit styles. Better to copy the whole file into the them
-// and then simply delete the lines original lines instead of having one line of 
-// CSS to add it and another to take it away again.
-.form-buttons {
-    margin: 0; // Delete theme/base/style/admin.css:210 
-}
-#adminsettings .form-item {
-    margin: 0;
 }

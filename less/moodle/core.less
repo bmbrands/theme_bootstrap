@@ -52,14 +52,14 @@ a.dimmed_text:visited,
     padding: 0;
 }
 .course-content .current {
-    background: #E3E3E3;
+    background: @graylighter;
 }
 .inline,
 .inline-list li {
     display: inline;
 }
 .notifytiny {
-    font-size: 0.7em;
+    font-size: @fontSizeMini;
 }
 .notifytiny li,
 .notifytiny td {
@@ -221,14 +221,6 @@ img.icon-post, .dir-rtl img.icon-pre {
 .boxwidthwide {
     width: 80%;
 }
-.buttons .singlebutton,
-.buttons .singlebutton form,
-.buttons .singlebutton div {
-    display: inline;
-}
-.buttons .singlebutton input {
-    margin: 20px 5px;
-}
 .headermain {
     font-weight: bold;
 }
@@ -274,12 +266,7 @@ form.popupform div {
     margin-right: .45em;
     margin-left: 0;
 }
-h1.main img,
-h2.main img,
-h3.main img,
-h4.main img,
-h5.main img,
-h6.main img {
+.main > img {
     vertical-align: middle;
 }
 /** The 1-pixel padding is there to avoid phantom scroll bars on OS X (FF, Safari and Chrome)**/
@@ -292,14 +279,6 @@ h6.main img {
 }
 .no-overflow > .generaltable {
     margin-bottom: 0;
-}
-.ie6 .no-overflow {
-    width: 100%;
-}
-/** IE6 float + background bug solution **/
-.ie6 li.section {
-    line-height: 1.2em;
-    width: 100%;
 }
 /**
 * Accessibility features
@@ -345,12 +324,6 @@ a.skip:active {
     height: 1px;
     overflow: hidden;
 }
-/* Accessibility: only certain fonts support Unicode chars like &#x25BA;
-in IE6 */
-.arrow,
-.arrow_button input {
-    font-family: Arial,Helvetica,Courier,sans-serif;
-}
 /**
 * Header
 */
@@ -374,10 +347,6 @@ in IE6 */
 .navbar {
     clear: both;
     overflow: hidden;
-}
-.ie6 .navbar {
-    overflow: hidden;
-    height: 100%;
 }
 .breadcrumb {
     float: left;
