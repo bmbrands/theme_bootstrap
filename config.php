@@ -28,9 +28,8 @@ $THEME->parents = array('');
 
 $THEME->sheets = array(
     'bootstrap-min', // Compiled, compressed output of LESS compilation.
-    'bootstrap-responsive-min', // (Currently) riginal bootstrap responsive css unmodified.
+    'bootstrap-responsive-min', // (Currently) original bootstrap responsive css unmodified.
     'quiz', // quiz module styling
-    'moddata', // data module styling
     'extra', // Contains custom css from the theme user settings.
 );
 
