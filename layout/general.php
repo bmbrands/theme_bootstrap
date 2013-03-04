@@ -104,7 +104,7 @@ if (!empty($PAGE->theme->settings->gakey)) {
             <div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
             <?php if ($hasnavbar) { ?>
             <div class="navbar clearfix">
-                <div class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></div>
+                <?php echo $OUTPUT->navbar(); ?>
                 <div class="navbutton"> <?php echo $PAGE->button; ?></div>
             </div>
             <?php } ?>
