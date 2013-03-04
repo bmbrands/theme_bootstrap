@@ -29,6 +29,15 @@
     width: 10%;
     white-space: nowrap;
 }
+.environmenttable .error {
+    background-color : @errorBackground;
+}
+.environmenttable .warn {
+    background-color : @warningBackground;
+}
+.environmenttable .ok {
+    background-color : @successBackground;
+}
 
 .path-admin #cohorts .admintable .name {
     width: 20%;
@@ -794,7 +803,7 @@
 }
 
 #page-admin-index #plugins-check .status-downgrade .status {
-    background-color: @warningBackground;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .status-missing .status {
