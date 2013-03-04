@@ -46,8 +46,14 @@
     text-align: right;
 }
 .mform .fpassword .unmask {
-    display: inline;
+    display: inline-block;
     margin-left: 0.5em;
+    & > input {
+        margin: 0;
+    }
+    & > label {
+        display: inline-block;
+    }
 }
 .mform .ftextarea #id_alltext {
     width: 100%;
@@ -110,7 +116,10 @@ input#id_externalurl {
 
 // copying in Bootstrap styles
 .mform .fitem {
-    .form-horizontal .control-group
+    .form-horizontal .control-group;
+    margin-bottom: 10px;
+    // Theres's a mysterious extra 10px inside this item,
+    // so reduce margin by 10px from 20px standard to compensate; 
 }
 #adminsettings .form-item .form-label,
 .mform .fitem div.fitemtitle {
@@ -175,3 +184,91 @@ div.backup-section + form,
     border: 0;
     border-bottom: 1px solid #e5e5e5;
 }
+.dir-rtl .mform .fitem .fitemtitle {
+    float: right;
+}
+
+.dir-rtl .mform .fitem .felement {
+    margin-right: 16%;
+    margin-left: auto;
+    text-align: right;
+}
+.dir-rtl .mform .fitem .felement input[name=email],
+.dir-rtl .mform .fitem .felement input[name=email2],
+.dir-rtl .mform .fitem .felement input[name=url],
+.dir-rtl .mform .fitem .felement input[name=idnumber],
+.dir-rtl .mform .fitem .felement input[name=phone1],
+.dir-rtl .mform .fitem .felement input[name=phone2] {
+    text-align: left;
+    direction: ltr;
+}
+.dir-rtl #adminsettings #id_s__pathtodu,
+.dir-rtl #adminsettings #id_s__aspellpath,
+.dir-rtl #adminsettings #id_s__pathtodot,
+.dir-rtl #adminsettings #id_s__supportemail,
+.dir-rtl #adminsettings #id_s__supportpage,
+.dir-rtl #adminsettings #id_s__sessioncookie,
+.dir-rtl #adminsettings #id_s__sessioncookiepath,
+.dir-rtl #adminsettings #id_s__sessioncookiedomain,
+.dir-rtl #adminsettings #id_s__proxyhost,
+.dir-rtl #adminsettings #id_s__proxyuser,
+.dir-rtl #adminsettings #id_s__proxypassword,
+.dir-rtl #adminsettings #id_s__proxybypass,
+.dir-rtl #adminsettings #id_s__jabberhost,
+.dir-rtl #adminsettings #id_s__jabberserver,
+.dir-rtl #adminsettings #id_s__jabberusername,
+.dir-rtl #adminsettings #id_s__jabberpassword,
+.dir-rtl #adminsettings #id_s__additionalhtmlhead,
+.dir-rtl #adminsettings #id_s__additionalhtmltopofbody,
+.dir-rtl #adminsettings #id_s__additionalhtmlfooter,
+.dir-rtl #adminsettings #id_s__docroot,
+.dir-rtl #adminsettings #id_s__filter_tex_latexpreamble,
+.dir-rtl #adminsettings #id_s__filter_tex_latexbackground,
+.dir-rtl #adminsettings #id_s__filter_tex_pathlatex,
+.dir-rtl #adminsettings #id_s__filter_tex_pathdvips,
+.dir-rtl #adminsettings #id_s__filter_tex_pathconvert,
+.dir-rtl #adminsettings #id_s__blockedip,
+.dir-rtl #adminsettings #id_s__pathtoclam,
+.dir-rtl #adminsettings #id_s__quarantinedir,
+.dir-rtl #adminsettings #id_s__sitepolicy,
+.dir-rtl #adminsettings #id_s__sitepolicyguest,
+.dir-rtl #adminsettings #id_s__cronremotepassword,
+.dir-rtl #adminsettings #id_s__allowedip,
+.dir-rtl #adminsettings #id_s__blockedip,
+.dir-rtl #adminsettings #id_s_enrol_meta_nosyncroleids,
+.dir-rtl #adminsettings #id_s_enrol_ldap_host_url,
+.dir-rtl #adminsettings #id_s_enrol_ldap_ldapencoding,
+.dir-rtl #adminsettings #id_s_enrol_ldap_bind_dn,
+.dir-rtl #adminsettings #id_s_enrol_ldap_bind_pw,
+.dir-rtl #adminsettings #admin-emoticons .form-text,
+.dir-rtl #adminsettings #admin-role_mapping input[type=text],
+.dir-rtl #adminsettings #id_s_enrol_paypal_paypalbusiness,
+.dir-rtl #adminsettings #id_s_enrol_flatfile_location,
+#page-admin-setting-enrolsettingsflatfile.dir-rtl input[type=text],
+#page-admin-setting-enrolsettingsdatabase.dir-rtl input[type=text],
+#page-admin-auth-db.dir-rtl input[type=text] {
+    direction: ltr;
+}
+#page-admin-setting-enrolsettingsflatfile.dir-rtl .informationbox {
+    direction: ltr;
+    text-align: left;
+}
+#page-admin-grade-edit-scale-edit.dir-rtl .error input#id_name {
+    margin-right: 170px;
+}
+/* Install Process' text fields Forms, should always be justified to the left */
+form#installform #id_wwwroot,form#installform #id_dirroot ,form#installform #id_dataroot,
+form#installform #id_dbhost, form#installform #id_dbname, form#installform #id_dbuser,
+form#installform #id_dbpass, form#installform #id_prefix {
+    direction: ltr;
+}
+html[dir=rtl] .formrow label.formlabel {
+    float: right;
+}
+
+.mdl-right > label {
+    // Workaround for repository pop-up because the : are outside the label,
+    // can/should be fixed in filemanager renderers
+    display: inline-block;
+}
+
