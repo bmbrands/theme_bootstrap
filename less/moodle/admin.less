@@ -30,13 +30,19 @@
     white-space: nowrap;
 }
 .environmenttable .error {
-    background-color : @errorBackground;
+    .label;
+    background-color : @errorText;
 }
-.environmenttable .warn {
+.environmenttable p.warn {
     background-color : @warningBackground;
 }
+.environmenttable span.warn {
+    .label;
+    background-color : @orange;
+}
 .environmenttable .ok {
-    background-color : @successBackground;
+    .label;
+    background-color: @successText;
 }
 
 .path-admin #cohorts .admintable .name {
