@@ -5,11 +5,130 @@
 // Quiz
 
 @media (max-width: 480px) {
-.que .info {
-    float: none;
-    width: 100%;
+    .que .info {
+        float: none;
+        width: 100%;
+    }
+    .que .content {
+        margin: 0;
+    }
 }
-.que .content {
-    margin: 0;
+
+// login page
+@media (min-width: 1200px) {
+    .loginbox.twocolumns .loginpanel {
+        margin-left: 0px;
+    }
+    .loginbox.twocolumns .loginpanel,
+    .loginbox.twocolumns .signuppanel {
+        width: 48.717948717948715%;
+       *width: 48.664757228587014%;
+   }
 }
+
+@media (min-width: 980px) {
+    .loginbox.twocolumns .loginpanel {
+        margin-left: 0px;
+    }
+    .loginbox.twocolumns .loginpanel,
+    .loginbox.twocolumns .signuppanel {
+        width: 48.617948717948715%;
+       *width: 48.664757228587014%;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .loginbox.twocolumns .loginpanel {
+          margin-left: 0px;
+    }
+    .loginbox.twocolumns .loginpanel,
+    .loginbox.twocolumns .signuppanel {
+        width: 48.61878453038674%;
+        *width: 48.56559304102504%;
+    }
+}
+
+@media (max-width: 767px) {
+     .loginbox.twocolumns .loginpanel,
+     .loginbox.twocolumns .signuppanel {
+         display: block;
+         float: none;
+         width: 100%;
+         margin-left: 0;
+         .box-sizing(border-box);
+     }
+ }
+ // Course
+ @media (min-width: 1200px) {
+    .coursebox .info,
+    .coursebox .summary {
+        width: 48.717948717948715%;
+        *width: 48.664757228587014%;
+    }
+}
+
+@media (min-width: 980px) {
+    .coursebox .info,
+    .coursebox .summary {
+        width: 48.617948717948715%;
+        *width: 48.664757228587014%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .coursebox .info,
+    .coursebox .summary {
+        width: 48.61878453038674%;
+        *width: 48.56559304102504%;
+    }
+}
+
+@media ( max-width : 767px) {
+    .coursebox .info,
+    .coursebox .summary {
+        display: block;
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        .box-sizing(border-box);
+    }
+}
+
+@media (max-width: 480px) {
+  .course-content .topics .section .content,
+  .course-content .weeks .section .content
+  {
+      margin-right: 0px;
+      margin-left: 0px;
+      padding: 0;
+  }
+}
+// Navbar
+@media (min-width: 768px) {
+  .logininfo,
+  .langmenu {
+      display: inline-block;
+      float: right;
+  }
+  .logininfo,
+  .langmenu {
+      display: inline-block;
+      float: right;
+      margin-top: 2px;
+  }
+  .navbar .nav .nav {
+      width: auto;
+  }
+}
+
+// Stuart's 2,1,3 layout
+
+@media (min-width : 768px) {
+  #region-pre {
+      margin-left: 0;
+  }
+  .dir-ltr #page-content.row-fluid > section.span9,
+  #page-content.row-fluid > div.span9 > .row-fluid > section.span8 {
+      float: right;
+  }
 }

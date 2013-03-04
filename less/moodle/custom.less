@@ -195,47 +195,7 @@ select {
     min-height: 30px;
 }
 
-@media (min-width : 1200px) {
-    .loginbox.twocolumns .loginpanel {
-        margin-left: 0px;
-    }
-    .loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
-        width: 48.717948717948715%;
-       *width: 48.664757228587014%;
-   }
-}
-
-@media ( min-width : 980px) {
-    .loginbox.twocolumns .loginpanel {
-        margin-left: 0px;
-    }
-    .loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
-        width: 48.617948717948715%;
-       *width: 48.664757228587014%;
-   }
-}
-
-@media ( min-width : 768px) and (max-width: 979px) {
-    .loginbox.twocolumns .loginpanel {
-          margin-left: 0px;
-    }
-    .loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
-        width: 48.61878453038674%;
-        *width: 48.56559304102504%;
-    }
-}
-
- @media ( max-width : 767px) {
-     .loginbox.twocolumns .loginpanel,.loginbox.twocolumns .signuppanel {
-         display: block;
-         float: none;
-         width: 100%;
-         margin-left: 0;
-         .box-sizing(border-box);
-     }
- }
-
- /* Course list */
+// Course list
  .coursebox {
      border-color: #ddd;
      border-style: dotted;
@@ -269,51 +229,10 @@ select {
      margin-left: 0px;
  }
 
- @media ( min-width : 1200px) {
-     .coursebox .info,.coursebox .summary {
-         width: 48.717948717948715%;
-                *width: 48.664757228587014%;
-            }
-        }
-
-@media ( min-width : 980px) {
-    .coursebox .info,.coursebox .summary {
-        width: 48.617948717948715%;
-               *width: 48.664757228587014%;
-           }
-       }
-
-@media ( min-width : 768px) and (max-width: 979px) {
-.coursebox .info,.coursebox .summary {
-   width: 48.61878453038674%;
-          *width: 48.56559304102504%;
-      }
-  }
-
-  @media ( max-width : 767px) {
-      .coursebox .info,.coursebox .summary {
-          display: block;
-          float: none;
-          width: 100%;
-          margin-left: 0;
-          .box-sizing(border-box);
-      }
-  }
-
-@media ( max-width : 480px) {
-  .course-content ul.topics li.section .content,.course-content ul.weeks li.section .content
-  {
-      margin-right: 0px;
-      margin-left: 0px;
-      padding: 0;
-  }
-}
 
 /* Calendar full view */
 .maincalendar .calendarmonth td,.maincalendar .calendarmonth th {
-    border-color: #DDDDDD;
-    border-style: dotted;
-    border-width: 1px;
+    border: 1px dotted #ddd;
 }
 
 /* Positioned 45 px below nav */
@@ -332,56 +251,16 @@ select {
     margin-top: 10px;
 }
 
-.navbar-fixed-top {
-    margin: 0px;
-}
-
 .nav-collapse.in .langmenu {
     float: left;
     margin-bottom: 5px;
 }
 
-
-@media ( min-width : 768px) {
-  .logininfo,.langmenu {
-      display: inline-block;
-      float: right;
-  }
-  .logininfo,.langmenu {
-      display: inline-block;
-      float: right;
-      margin-top: 2px;
-  }
-  .navbar .nav .nav {
-      width: auto;
-  }
-}
-
-
 // gradebook tooltip
 div.yui3-overlay-content.yui3-widget-stdmod {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #ddd;
   background: #FFF url([[pix:theme|alert-overlay]]) repeat-x;
   padding: 3px;
-}
-
-
-// Stuart's 2,1,3 layout
-
-@media (min-width : 768px) {
-  #region-pre {
-      margin-left: 0;
-  }
-  .dir-ltr #page-content.row-fluid > section.span9,
-  #page-content.row-fluid > div.span9 > .row-fluid > section.span8 {
-      float: right;
-  }
-}
-
-// from ie7.css
-
-.ie7 .tabtree .tabrow0 a {
-    .ie7-inline-block();
 }
 
 // from moddata.css
