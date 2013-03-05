@@ -52,14 +52,14 @@ a.dimmed_text:visited,
     padding: 0;
 }
 .course-content .current {
-    background: #E3E3E3;
+    background-color: @grayLighter;
 }
 .inline,
 .inline-list li {
     display: inline;
 }
 .notifytiny {
-    font-size: 0.7em;
+    font-size: @fontSizeMini;
 }
 .notifytiny li,
 .notifytiny td {
@@ -120,14 +120,6 @@ a.autolink.glossary:hover {
     height: 1px;
     margin: 0;
     padding: 0;
-}
-.clearfix:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    min-width: 0;
-    visibility: hidden;
 }
 .bold,
 .warning,
@@ -229,14 +221,6 @@ img.icon-post, .dir-rtl img.icon-pre {
 .boxwidthwide {
     width: 80%;
 }
-.buttons .singlebutton,
-.buttons .singlebutton form,
-.buttons .singlebutton div {
-    display: inline;
-}
-.buttons .singlebutton input {
-    margin: 20px 5px;
-}
 .headermain {
     font-weight: bold;
 }
@@ -252,15 +236,8 @@ img.uihint {
     margin-left: auto;
     margin-right: auto;
 }
-.formtable tbody th,
-.generaltable th.header {
-    vertical-align: top;
-}
 .flexible th {
     white-space: nowrap;
-}
-.cell {
-    vertical-align: top;
 }
 img.emoticon {
     vertical-align: middle;
@@ -282,12 +259,7 @@ form.popupform div {
     margin-right: .45em;
     margin-left: 0;
 }
-h1.main img,
-h2.main img,
-h3.main img,
-h4.main img,
-h5.main img,
-h6.main img {
+.main img {
     vertical-align: middle;
 }
 /** The 1-pixel padding is there to avoid phantom scroll bars on OS X (FF, Safari and Chrome)**/
@@ -300,14 +272,6 @@ h6.main img {
 }
 .no-overflow > .generaltable {
     margin-bottom: 0;
-}
-.ie6 .no-overflow {
-    width: 100%;
-}
-/** IE6 float + background bug solution **/
-.ie6 li.section {
-    line-height: 1.2em;
-    width: 100%;
 }
 /**
 * Accessibility features
@@ -353,12 +317,6 @@ a.skip:active {
     height: 1px;
     overflow: hidden;
 }
-/* Accessibility: only certain fonts support Unicode chars like &#x25BA;
-in IE6 */
-.arrow,
-.arrow_button input {
-    font-family: Arial,Helvetica,Courier,sans-serif;
-}
 /**
 * Header
 */
@@ -383,247 +341,16 @@ in IE6 */
     clear: both;
     overflow: hidden;
 }
-.ie6 .navbar {
-    overflow: hidden;
-    height: 100%;
-}
 .breadcrumb {
     float: left;
 }
 .navbutton {
     text-align: right;
-}
-.breadcrumb ul {
-    padding: 0;
-    margin: 0;
-    text-indent: 0;
-    list-style: none;
-}
-.navbutton {
     float: right;
 }
-.breadcrumb li,
 .navbutton div,
 .navbutton form {
     display: inline;
-}
-/**
-* Footer
-*/
-#page-footer {
-    text-align: center;
-    font-size: 0.9em;
-}
-#page-footer .homelink {
-    margin: 1em 0;
-}
-#page-footer .homelink a {
-    padding-left: 1em;
-    padding-right: 1em;
-}
-#page-footer .logininfo,
-#page-footer .sitelink,
-#page-footer .helplink {
-    margin: 0px 10px;
-}
-#page-footer .performanceinfo {
-    text-align: center;
-    margin: 10px 20%;
-}
-#page-footer .performanceinfo span {
-    display: block;
-}
-#page-footer .validators {
-    margin-top: 40px;
-    padding-top: 5px;
-    border-top: 1px dotted gray;
-}
-#page-footer .validators ul {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-}
-#page-footer .validators ul li {
-    display: inline;
-    margin-right: 10px;
-    margin-left: 10px;
-}
-.performanceinfo .cachesused {
-    margin-top: 1em;
-}
-.performanceinfo .cachesused .cache-stats-heading {
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 110%;
-}
-.performanceinfo .cachesused .cache-definition-stats {
-    font-weight: bold;
-    margin-top: 0.3em;
-}
-.performanceinfo .cachesused .cache-store-stats {
-    text-indent: 1em;
-}
-.performanceinfo .cachesused .cache-total-stats {
-    font-weight: bold;
-    margin-top: 0.3em;
-}
-#course-footer {
-    clear: both;
-}
-/**
-* Tabs
-*/
-.tabtree {
-    position: relative;
-    margin-bottom: 3.5em;
-}
-.tabtree li {
-    display: inline;
-}
-.tabtree ul {
-    margin: 5px;
-}
-.tabtree ul li.here ul {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-}
-.tabtree ul li.here .empty {
-    display: none;
-}
-/**
-* Mforms
-*/
-.mform fieldset .advancedbutton {
-    text-align: right;
-}
-.mform fieldset.group {
-    margin-bottom: 0
-}
-.mform fieldset.error {
-    border: 1px solid @errorText;
-}
-.mform fieldset.collapsible legend a.fheader {
-    padding: 0 5px 0 20px;
-    background: url([[pix:t/expanded]]) 2px center no-repeat;
-}
-.mform fieldset.collapsed legend a.fheader {
-    background: url([[pix:t/collapsed]]) 2px center no-repeat;
-}
-.mform fieldset.collapsed.jsprocessed {
-    border-width: 1px 0 0 0;
-    padding: 0;
-}
-.mform fieldset.collapsed.jsprocessed div.fcontainer {
-    display: none;
-}
-.mform .fitem .fitemtitle div {
-    display: inline;
-}
-.mform .error,
-.mform .required {
-    color: @errorText;
-}
-.mform .required .fgroup span label {
-    color: #000;
-}
-.mform .fdescription.required {
-    color: @errorText;
-    text-align: right;
-}
-.mform .fpassword .unmask {
-    display: inline;
-    margin-left: 0.5em;
-}
-.mform .ftextarea #id_alltext {
-    width: 100%;
-}
-.mform ul.file-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.mform label .req,
-.mform label .adv {
-    cursor: help;
-}
-.mform .fcheckbox input {
-    margin-left: 0;
-}
-.mform .fitem fieldset.fgroup label,
-.mform .fradio label,
-.mform .fcheckbox label,
-.mform fieldset.fdate_selector label {
-    display: inline;
-    float: none;
-    width: auto;
-}
-.mform .ftags label.accesshide {
-    display: block;
-    position: static;
-}
-.mform .ftags select {
-    margin-bottom: 0.7em;
-    min-width: 22em;
-}
-.mform .helplink img {
-    margin: 0 0 0 .45em;
-    padding: 0;
-}
-.dir-rtl .mform .helplink img {
-    margin: 0 .45em 0 0;
-    padding: 0;
-}
-.mform legend .helplink img {
-    margin-right: .2em;
-}
-.dir-rtl .mform legend .helplink img {
-    margin: 0 .45em 0 .2em;
-}
-.singleselect label {
-    margin-right: .3em;
-}
-.dir-rtl .singleselect label {
-    margin-left: .3em;
-    margin-right: 0;
-}
-input#id_externalurl {
-    direction: ltr;
-}
-#portfolio-add-button {
-    display: inline;
-}
-/**
-* phpinfo styles
-*/
-.phpinfo .center {
-    text-align: center;
-}
-.phpinfo .center table {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-    border-collapse: collapse;
-}
-.phpinfo .center th {
-    text-align: center;
-}
-.phpinfo .e,
-.phpinfo .v,
-.phpinfo .h {
-    border: 1px solid #000000;
-    font-size: 0.8em;
-    vertical-align: baseline;
-    color: #000000;
-    background-color: #cccccc;
-}
-.phpinfo .e {
-    background-color: #ccccff;
-    font-weight: bold;
-}
-.phpinfo .h {
-    background-color: #9999cc;
-    font-weight: bold;
 }
 /**
 * Blogs
@@ -809,12 +536,6 @@ input#id_externalurl {
     margin: 0;
 }
 /**
-* Logs
-*/
-.logtable th {
-    text-align: left;
-}
-/**
 * Modules
 */
 .mod_introbox {
@@ -936,14 +657,14 @@ table.mod_index {
 * Completion progress report
 */
 .completion-expired {
-    background: #FFDDDD;
+    background: @errorBackground;
 }
 .completion-expected {
-    font-size: 0.75em;
+    font-size: @fontSizeMini;
 }
 .completion-sortchoice,
 .completion-identifyfield {
-    font-size: 0.75em;
+    font-size: @fontSizeMini;
     vertical-align: bottom;
 }
 .completion-progresscell {
@@ -996,13 +717,8 @@ table.mod_index {
     clear: both;
     width: 100%;
 }
-#tag-user-table:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
+#tag-user-table {
+    .clearfix
 }
 img.user-image {
     height: 100px;
@@ -1053,7 +769,7 @@ ul#tag-cloud-list li {
 }
 span.flagged-tag,
 span.flagged-tag a {
-    color: #FF0000;
+    color: @errorText;
 }
 table#tag-management-list {
     text-align: left;
@@ -1180,90 +896,6 @@ body.tag .managelink {
 }
 .tag_cloud .s0 {
     font-size: 0.8em;
-}
-.path-backup .mform .grouped_settings.section_level {
-    clear: both;
-}
-.path-backup .mform .grouped_settings {
-    clear: both;
-    overflow: hidden;
-}
-.path-backup .mform .grouped_settings .fitem .fitemtitle {
-    width: 40%;
-    padding-right: 10px;
-}
-.path-backup.dir-rtl .mform .grouped_settings .fitem .fitemtitle {
-    width: 60%;
-}
-.path-backup .mform .grouped_settings .fitem .felement {
-    width: 50%;
-}
-.path-backup.dir-rtl .mform .grouped_settings .fitem .felement {
-    width: 99%;
-}
-.path-backup .mform .grouped_settings.section_level .include_setting {
-    width: 50%;
-    margin: 0;
-    float: left;
-    clear: left;
-    font-weight: bold;
-}
-.path-backup.dir-rtl  .mform .grouped_settings.section_level .include_setting {
-    float: right;
-    clear: right;
-}
-.path-backup.dir-rtl  .mform .grouped_settings.section_level .normal_setting {
-    margin: 0;
-}
-.path-backup .mform .grouped_settings.activity_level .include_setting label {
-    font-weight: normal;
-}
-.path-backup.dir-rtl .mform .grouped_settings.activity_level .include_setting label img {
-    float: right;
-}
-.path-backup .mform .fitem fieldset.felement {
-    margin-left: 0;
-    width: auto;
-    padding-left: 0;
-}
-.path-backup .notification.dependencies_enforced {
-    text-align: center;
-    color: #A00;
-    font-weight: bold;
-}
-.path-backup .backup_progress {
-    text-align: center;
-}
-.path-backup .backup_progress span.backup_stage {
-    color: #999;
-}
-.path-backup .backup_progress .backup_stage.backup_stage_current {
-    font-weight: bold;
-    color: inherit;
-}
-.path-backup .backup_progress .backup_stage.backup_stage_next {
-}
-.path-backup .backup_progress span.backup_stage.backup_stage_complete {
-    color: inherit;
-}
-#page-backup-restore .filealiasesfailures {
-    background-color: #ffd3d9
-}
-#page-backup-restore .filealiasesfailures .aliaseslist {
-    width: 90%;
-    margin: 0.8em auto;
-    background-color: white;
-    border: 1px dotted #666;
-}
-.path-backup .fitemtitle .iconlarge.icon-post {
-    padding-left: 6px;
-}
-.path-backup.dir-rtl .fitemtitle .iconlarge.icon-post {
-    padding-right: 6px;
-    padding-right: 0;
-}
-.path-backup .fitem .smallicon {
-    vertical-align: text-bottom;
 }
 /**
 * Web Service
@@ -1576,9 +1208,6 @@ body.tag .managelink {
     float: right;
     margin-left: 5px;
 }
-.dir-rtl .mform .fitem .fitemtitle {
-    float: right;
-}
 .dir-rtl .loginbox .loginform .form-label {
     float: right;
     text-align: left;
@@ -1594,135 +1223,6 @@ body.tag .managelink {
 }
 #page-message-edit.dir-rtl table.generaltable th.c0 {
     text-align: right;
-}
-/**
-* Backup
-*/
-.backup-restore .backup-section {
-    clear: both;
-    border: 1px solid #ddd;
-    background-color: #f6f6f6;
-    margin-bottom: 1em;
-}
-.backup-restore .backup-section > h2.header {
-    padding: 5px 6px;
-    margin: 0;
-    border-bottom: 1px solid #ddd;
-}
-.backup-restore .backup-section .noticebox {
-    margin: 1em auto;
-    width: 60%;
-    text-align: center;
-}
-.backup-restore .backup-section .backup-sub-section {
-    margin: 0 25px;
-    background-color: #f9f9f9;
-    border: 1px solid #f3f3f3;
-    margin-bottom: 1em;
-}
-.backup-restore .backup-section .backup-sub-section h3 {
-    text-align: right;
-    border-bottom: 1px solid #DDD;
-    padding: 5px 86% 5px 6px;
-    margin: 0;
-    background-color: #e9e9e9;
-}
-.backup-restore .backup-section.settings-section .detail-pair {
-    margin: 0;
-    padding: 0;
-    width: 50%;
-    display: inline-block;
-}
-.backup-restore .backup-section.settings-section .detail-pair .detail-pair-label {
-    width: 65%;
-}
-.backup-restore .backup-section.settings-section .detail-pair .detail-pair-value {
-    width: 25%;
-}
-.backup-restore .activitytable {
-    width: 60%;
-    min-width: 500px;
-}
-.backup-restore .activitytable .modulename {
-    width: 100px;
-}
-.backup-restore .activitytable .moduleincluded {
-    width: 50px;
-}
-.backup-restore .activitytable .userinfoincluded {
-    width: 50px;
-}
-.backup-restore .detail-pair {
-}
-.backup-restore .detail-pair-label {
-    display: inline-block;
-    width: 25%;
-    padding: 8px;
-    margin: 0;
-    text-align: right;
-    font-weight: bold;
-    color: #444;
-    vertical-align: top;
-}
-.backup-restore .detail-pair-value {
-    display: inline-block;
-    width: 65%;
-    padding: 8px;
-    margin: 0;
-}
-.backup-restore .detail-pair-value > .sub-detail {
-    display: block;
-    color: #1580B6;
-    margin-left: 2em;
-    font-size: 90%;
-    font-style: italic;
-}
-.backup-restore > .singlebutton {
-    text-align: right;
-}
-.path-backup .mform .fgroup .proceedbutton {
-    float: right;
-    margin-right: 1%;
-}
-.restore-course-search .rcs-results {
-    width: 70%;
-    min-width: 400px;
-    border: 1px solid #ddd;
-    margin: 5px 0;
-}
-.restore-course-search .rcs-results table {
-    width: 100%;
-    margin: 0;
-    border-width: 0;
-}
-.restore-course-search .rcs-results table .no-overflow {
-    max-width: 600px;
-}
-.restore-course-search .rcs-results .paging {
-    text-align: left;
-    margin: 0;
-    background-color: #eee;
-    padding: 3px;
-}
-.restore-course-category .rcs-results {
-    width: 70%;
-    min-width: 400px;
-    border: 1px solid #ddd;
-    margin: 5px 0;
-}
-.restore-course-category .rcs-results table {
-    width: 100%;
-    margin: 0;
-    border-width: 0;
-}
-.restore-course-category .rcs-results table .no-overflow {
-    max-width: 600px;
-}
-.restore-course-category .rcs-results .paging {
-    text-align: left;
-    margin: 0;
-    background-color: #eee;
-    padding: 3px;
 }
 .corelightbox {
     background-color: #CCC;
@@ -1844,20 +1344,6 @@ body.tag .managelink {
 .dir-rtl .mod-indent-huge {
     margin-right: 420px;
     margin-left: 0;
-}
-.dir-rtl .mform .fitem .felement {
-    margin-right: 16%;
-    margin-left: auto;
-    text-align: right;
-}
-.dir-rtl .mform .fitem .felement input[name=email],
-.dir-rtl .mform .fitem .felement input[name=email2],
-.dir-rtl .mform .fitem .felement input[name=url],
-.dir-rtl .mform .fitem .felement input[name=idnumber],
-.dir-rtl .mform .fitem .felement input[name=phone1],
-.dir-rtl .mform .fitem .felement input[name=phone2] {
-    text-align: left;
-    direction: ltr;
 }
 /* Audio player size in 'block' mode (can only change width, height is hardcoded in JS) */
 .resourcecontent .mediaplugin_mp3 object {
@@ -2000,69 +1486,6 @@ audio.mediaplugin_html5audio {
     white-space: nowrap;
     text-align: center;
 }
-/* Fix for ordered and unordered list in course topic summary & course weekly summary */
-.course-content ul.weeks .content .summary ul,
-.course-content ul.topics .content .summary ul {
-    list-style: disc outside none;
-}
-.course-content ul.weeks .content .summary ol,
-.course-content ul.topics .content .summary ol {
-    list-style: decimal outside none;
-}
-.dir-rtl #adminsettings #id_s__pathtodu,
-.dir-rtl #adminsettings #id_s__aspellpath,
-.dir-rtl #adminsettings #id_s__pathtodot,
-.dir-rtl #adminsettings #id_s__supportemail,
-.dir-rtl #adminsettings #id_s__supportpage,
-.dir-rtl #adminsettings #id_s__sessioncookie,
-.dir-rtl #adminsettings #id_s__sessioncookiepath,
-.dir-rtl #adminsettings #id_s__sessioncookiedomain,
-.dir-rtl #adminsettings #id_s__proxyhost,
-.dir-rtl #adminsettings #id_s__proxyuser,
-.dir-rtl #adminsettings #id_s__proxypassword,
-.dir-rtl #adminsettings #id_s__proxybypass,
-.dir-rtl #adminsettings #id_s__jabberhost,
-.dir-rtl #adminsettings #id_s__jabberserver,
-.dir-rtl #adminsettings #id_s__jabberusername,
-.dir-rtl #adminsettings #id_s__jabberpassword,
-.dir-rtl #adminsettings #id_s__additionalhtmlhead,
-.dir-rtl #adminsettings #id_s__additionalhtmltopofbody,
-.dir-rtl #adminsettings #id_s__additionalhtmlfooter,
-.dir-rtl #adminsettings #id_s__docroot,
-.dir-rtl #adminsettings #id_s__filter_tex_latexpreamble,
-.dir-rtl #adminsettings #id_s__filter_tex_latexbackground,
-.dir-rtl #adminsettings #id_s__filter_tex_pathlatex,
-.dir-rtl #adminsettings #id_s__filter_tex_pathdvips,
-.dir-rtl #adminsettings #id_s__filter_tex_pathconvert,
-.dir-rtl #adminsettings #id_s__blockedip,
-.dir-rtl #adminsettings #id_s__pathtoclam,
-.dir-rtl #adminsettings #id_s__quarantinedir,
-.dir-rtl #adminsettings #id_s__sitepolicy,
-.dir-rtl #adminsettings #id_s__sitepolicyguest,
-.dir-rtl #adminsettings #id_s__cronremotepassword,
-.dir-rtl #adminsettings #id_s__allowedip,
-.dir-rtl #adminsettings #id_s__blockedip,
-.dir-rtl #adminsettings #id_s_enrol_meta_nosyncroleids,
-.dir-rtl #adminsettings #id_s_enrol_ldap_host_url,
-.dir-rtl #adminsettings #id_s_enrol_ldap_ldapencoding,
-.dir-rtl #adminsettings #id_s_enrol_ldap_bind_dn,
-.dir-rtl #adminsettings #id_s_enrol_ldap_bind_pw,
-.dir-rtl #adminsettings #admin-emoticons .form-text,
-.dir-rtl #adminsettings #admin-role_mapping input[type=text],
-.dir-rtl #adminsettings #id_s_enrol_paypal_paypalbusiness,
-.dir-rtl #adminsettings #id_s_enrol_flatfile_location,
-#page-admin-setting-enrolsettingsflatfile.dir-rtl input[type=text],
-#page-admin-setting-enrolsettingsdatabase.dir-rtl input[type=text],
-#page-admin-auth-db.dir-rtl input[type=text] {
-    direction: ltr;
-}
-#page-admin-setting-enrolsettingsflatfile.dir-rtl .informationbox {
-    direction: ltr;
-    text-align: left;
-}
-#page-admin-grade-edit-scale-edit.dir-rtl .error input#id_name {
-    margin-right: 170px;
-}
 .initialbar a {
     padding-right: 2px;
 }
@@ -2165,11 +1588,11 @@ audio.mediaplugin_html5audio {
 }
 .moodle-dialogue-exception .param-stacktrace .stacktrace-file {
     color: navy;
-    font-size: 80%;
+    font-size: @fontSizeSmall;
 }
 .moodle-dialogue-exception .param-stacktrace .stacktrace-line {
-    color: #AA0000;
-    font-size: 80%;
+    color: @errorText;
+    font-size: @fontSizeSmall;
 }
 .moodle-dialogue-exception .param-stacktrace .stacktrace-call {
     color: #333;
@@ -2382,21 +1805,6 @@ audio.mediaplugin_html5audio {
 .dir-rtl .section-modchooser-link img.smallicon {
     padding-left: 3px;
     padding-right: 0;
-}
-/* Install Process' text fields Forms, should always be justified to the left */
-form#installform #id_wwwroot,form#installform #id_dirroot ,form#installform #id_dataroot,
-form#installform #id_dbhost, form#installform #id_dbname, form#installform #id_dbuser,
-form#installform #id_dbpass, form#installform #id_prefix
-{
-    direction: ltr;
-}
-html[dir=rtl] .breadcrumb,
-html[dir=rtl] .headermain,
-html[dir=rtl] #page-header {
-    float: right;
-}
-html[dir=rtl] .formrow label.formlabel {
-    float: right;
 }
 html[dir=rtl] .configphp {
     direction: ltr;

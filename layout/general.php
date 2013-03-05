@@ -71,6 +71,14 @@ $doctype = $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+<script src="<?php echo new moodle_url($CFG->httpswwwroot."/theme/bootstrap/js/html5shiv.js")?>"></script>
+    <![endif]-->
+<?php
+if (!empty($PAGE->theme->settings->gakey)) {
+    include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php");
+}?>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
@@ -96,7 +104,7 @@ $doctype = $OUTPUT->doctype() ?>
             <div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
             <?php if ($hasnavbar) { ?>
             <div class="navbar clearfix">
-                <div class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></div>
+                <?php echo $OUTPUT->navbar(); ?>
                 <div class="navbutton"> <?php echo $PAGE->button; ?></div>
             </div>
             <?php } ?>

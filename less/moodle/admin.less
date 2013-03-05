@@ -4,11 +4,6 @@
     text-align: right;
 }
 
-.path-admin #manageauthtable,
-.path-admin .admintable {
-    width: 100%;
-}
-
 .path-admin #assignrole {
     width: 60%;
     margin-left: auto;
@@ -19,15 +14,26 @@
     text-align: left;
 }
 
-.path-admin .admintable .centeralign {
-    text-align: center;
-}
-
 .path-admin .admintable.environmenttable .name,
 .path-admin .admintable.environmenttable .status,
 .path-admin .admintable.environmenttable .info {
     width: 10%;
     white-space: nowrap;
+}
+.environmenttable .error {
+    .label;
+    background-color : @errorText;
+}
+.environmenttable p.warn {
+    background-color : @warningBackground;
+}
+.environmenttable span.warn {
+    .label;
+    background-color : @orange;
+}
+.environmenttable .ok {
+    .label;
+    background-color: @successText;
 }
 
 .path-admin #cohorts .admintable .name {
@@ -84,69 +90,6 @@
     white-space: nowrap;
 }
 
-.path-admin .admintable.environmenttable .report {
-    width: 100%;
-}
-
-.path-admin #configchanges .admintable .date {
-    width: 30%;
-}
-
-.path-admin #configchanges .admintable .name,
-.path-admin #configchanges .admintable .plugin,
-.path-admin #configchanges .admintable .setting {
-    width: 10%;
-}
-
-.path-admin #configchanges .admintable .newvalue,
-.path-admin #configchanges .admintable .originalvalue {
-    width: 20%;
-}
-
-.path-admin .securityreport.admintable .issue {
-    width: 30%;
-}
-
-.path-admin .securityreport.admintable .status {
-    width: 10%;
-}
-
-.path-admin .securityreport.admintable .desc {
-    width: 50%;
-}
-
-.path-admin .securityreport.admintable .config {
-    width: 10%;
-}
-
-.path-admin #securityreporttable .admintable  .desc {
-    width: 60%;
-}
-
-#page-admin-index .c0 {
-    vertical-align: top;
-}
-
-#page-admin-index .c1 {
-    vertical-align: middle;
-}
-
-#page-admin-blocks .generaltable th,
-#page-admin-filters .generaltable th,
-#page-admin-auth .generaltable th,
-#page-admin-modules .generaltable th,
-#page-admin-modules .generaltable td.c0 {
-    white-space: nowrap;
-    padding: 4px;
-}
-
-#page-admin-blocks .generaltable td.cell,
-#page-admin-filters .generaltable td.cell,
-#page-admin-modules .generaltable td.cell,
-#page-admin-auth .generaltable td.cell{
-    padding: 4px;
-}
-
 .path-admin .incompatibleblockstable td.c0 {
     font-weight: bold;
 }
@@ -182,20 +125,32 @@
     text-align: left;
 }
 
-#page-admin-report-security-index .timewarninghidden {
+//#page-admin-report-security-index
+.timewarninghidden {
     display: none;
 }
+//#page-admin-report-security-index
+.statusok {
+    .label;
+    background-color : @successText;
 
-#page-admin-report-security-index .statuswarning {
-    background-color: #f0e000;
+}
+//#page-admin-report-security-index
+.statuswarning {
+    .label;
+    background-color : @warningText;
+
+}
+//#page-admin-report-security-index
+.statusserious {
+    .label;
+    background-color : @orange;
 }
 
-#page-admin-report-security-index .statusserious {
-    background-color: #f07000;
-}
-
-#page-admin-report-security-index .statuscritical {
-    background-color: #f00000;
+//#page-admin-report-security-index
+.statuscritical {
+    .label;
+    background-color : @errorText;
 }
 
 #page-admin-report-capability-index .rolecaps th {
@@ -212,77 +167,63 @@
 
 #page-admin-report-backups-index .backup-error,
 #page-admin-report-backups-index .backup-unfinished {
-    color: #f00000;
+    color: @errorText;
 }
 
 #page-admin-report-backups-index .backup-skipped,
 #page-admin-report-backups-index .backup-ok {
-    color: #006400;
+    color: @successText;
 }
 
 #page-admin-report-backups-index .backup-warning {
-    color: #ff9900;
+    color: @warningText;
 }
 
+#page-admin-qtypes .disabled,
 #page-admin-qbehaviours .disabled {
-    color: gray;
+    .muted;
 }
 
-#page-admin-qbehaviours th {
-    white-space: normal;
-}
-
-#page-admin-qbehaviours .cell.c1,
-#page-admin-qbehaviours .cell.c2 {
-    text-align: right;
-}
-
-#page-admin-qbehaviours .cell.c3 {
-    font-size: 0.7em;
-}
-
+#page-admin-qtypes #qtypes div,
+#page-admin-qtypes #qtypes form,
 #page-admin-qbehaviours #qbehaviours div,
 #page-admin-qbehaviours #qbehaviours form {
     display: inline;
 }
 
+#page-admin-qtypes #qtypes img.spacer,
 #page-admin-qbehaviours #qbehaviours img.spacer {
     width: 16px;
 }
 
-#page-admin-qbehaviours #qbehaviours img {
-    padding-right: .45em;
+// make them more finger friendly
+img.iconsmall {
+    margin: 0;
+    padding: 0.3em;
 }
 
-#page-admin-qtypes .disabled {
-    color: gray;
-}
 
-#page-admin-qtypes th {
-    white-space: normal;
-}
-
-#page-admin-qtypes .cell.c1,
-#page-admin-qtypes .cell.c2 {
-    text-align: right;
-}
-
+#page-admin-qbehaviours .cell.c3,
 #page-admin-qtypes .cell.c3 {
-    font-size: 0.7em;
+    font-size: @fontSizeMini;
 }
 
-#page-admin-qtypes #qtypes div,
-#page-admin-qtypes #qtypes form {
-    display: inline;
-}
-
-#page-admin-qtypes #qtypes img.spacer {
-    width: 16px;
-}
-
-#page-admin-qtypes #qtypes img {
-    padding-right: .45em;
-    vertical-align: text-bottom;
+#page-admin-lang .generalbox,
+#page-admin-course-index .singlebutton,
+#page-admin-course-index .addcategory,
+#page-admin-course-category .addcategory,
+#page-admin-stickyblocks .generalbox,
+#page-admin-maintenance .buttons,
+#page-admin-course-index .buttons,
+#page-admin-course-category .buttons,
+#page-admin-index .copyright,
+#page-admin-index .copyrightnotice,
+#page-admin-index .adminerror,
+#page-admin-index .availableupdatesinfo,
+#page-admin-index .adminerror .singlebutton,
+#page-admin-index .adminwarning .singlebutton,
+#page-admin-index #layout-table .singlebutton {
+    text-align: center;
 }
 
 .path-admin-roles .buttons .singlebutton,
@@ -342,19 +283,24 @@
     text-align: left;
 }
 
-#page-admin-index .adminerror .singlebutton,
-#page-admin-index .adminwarning .singlebutton,
-#page-admin-index #layout-table .singlebutton {
-    margin: 20px;
+#notice,
+#page-admin-index .releasenoteslink,
+#page-admin-index .adminwarning,
+#page-admin-index .maturityinfo {
+    .alert;
+    width: 60%;
+    margin: auto
 }
-
 #page-admin-index .adminwarning.maturityinfo.maturity50 {
-    background-color: #ffd3d9;
+    .alert-error;
 }
 
 #page-admin-index .adminwarning.maturityinfo.maturity100,
 #page-admin-index .adminwarning.maturityinfo.maturity150 {
-    background-color: #f3f2aa;
+    // default alert is warning level (yellow/amber)
+}
+#page-admin-index .releasenoteslink {
+    .alert-info;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo {
@@ -370,17 +316,17 @@
     .border-radius(10px);
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release {
-    background-color: #ffd3d9;
+#page-admin-index .admin9warning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release {
+    background-color: @errorBackground;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity100 .info.release,
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity150 .info.release {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity200 .info.release {
-    background-color: #d2ebff;
+    background-color: @infoBackground;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo span,
@@ -400,8 +346,8 @@
 #page-admin-index .updateplugin .updatepluginconfirmexternal,
 #page-admin-plugins .updateplugin .updatepluginconfirmexternal {
     padding: 1em;
-    background-color: #ffd3d9;
-    border: 1px solid #EEAAAA
+    background-color: @errorBackground;
+    border: 1px solid @errorBorder; 
 }
 
 #page-admin-user-user_bulk #users .fgroup {
@@ -532,16 +478,13 @@
     min-height: 2.5em;
 }
 
-#page-admin-enrol .enrolplugintable {
-    width: 100%;
-}
 
 .plugincheckwrapper {
     width: 100%;
 }
 
 .adminsearchform {
-    padding-top: 10px;
+    margin: 0;
 }
 
 .environmentbox {
@@ -577,62 +520,30 @@
     width: auto;
 }
 
-.form-buttons {
-    margin: 10px 0 0 13em;
-}
-
-#adminsettings fieldset {
-    margin-top: 1em;
-    padding: 1em 0.5em;
-}
-
+// This usage of legend is a bit weird,
+// seems to be using them as error text
+// that's only sometimes visible. Should
+// look into sorting it
 #adminsettings legend {
     display: none;
 }
 
 #adminsettings fieldset.error {
     margin: 0.2em 0 0.5em 0;
-    padding: 0.5em 0 0 0;
 }
 
 #adminsettings fieldset.error legend {
     display: block;
 }
 
-#adminsettings .form-item {
-    clear: both;
-    margin: 1em 0 2em 0;
-}
 
-#adminsettings .form-item .form-label {
+.form-label .form-shortname {
     display: block;
-    float: left;
-    width: 12.5em;
-    text-align: right;
+    .muted;
+    font-size: @fontSizeMini;
 }
-
-.dir-rtl #adminsettings .form-item .form-label {
-    float: right;
-}
-
-#adminsettings .form-item .form-label .form-shortname {
-    display: block;
-}
-
-.dir-rtl #adminsettings .form-item .form-label .form-shortname {
+.dir-rtl .form-label .form-shortname {
     text-align: left;
-}
-
-#adminsettings .form-item .form-setting {
-    display: block;
-    margin-left: 13.5em;
-    text-align: left;
-}
-
-.dir-rtl #adminsettings .form-item .form-setting {
-    margin-right: 13.5em;
-    margin-left: auto;
-    text-align: right;
 }
 
 .dir-rtl #admin-spelllanguagelist textarea,
@@ -641,67 +552,62 @@
     direction: ltr;
 }
 
-#adminsettings .form-item .form-setting .form-htmlarea {
+.form-item .form-setting .form-htmlarea {
     width: 640px;
     display: inline;
 }
 
-#adminsettings .form-item .form-setting .form-htmlarea .htmlarea {
+.form-item .form-setting .form-htmlarea .htmlarea {
     width: 640px;
     display: block;
 }
 
-#adminsettings .form-item .form-setting .form-multicheckbox li {
+.form-item .form-setting .form-multicheckbox li {
     list-style: none;
 }
 
-#adminsettings .form-item .form-setting .form-multicheckbox ul {
+.form-item .form-setting .form-multicheckbox ul {
     padding: 0;
     margin: 0;
 }
 
-#adminsettings .form-item .form-setting .defaultsnext {
+.form-item .form-setting .defaultsnext {
     margin-right: 0.5em;
     display: inline;
 }
 
-#adminsettings .form-item .form-setting .locked-checkbox {
+.form-item .form-setting .locked-checkbox {
     margin-right: 0.2em;
     margin-left: 0.5em;
     display: inline;
 }
 
-.dir-rtl #adminsettings .form-item .form-setting .locked-checkbox {
+.dir-rtl .form-item .form-setting .locked-checkbox {
     margin-right: 0.5em;
     margin-left: 0.2em;
     display: inline;
 }
 
-#adminsettings .form-item .form-setting .form-password .unmask,
-#adminsettings .form-item .form-setting .form-defaultinfo {
+.form-item .form-setting .form-password .unmask,
+.form-item .form-setting .form-defaultinfo {
     display: inline;
 }
 
-#adminsettings .form-item .form-description {
+.form-item .form-description {
     display: block;
-    margin: 0.5em 0 0em 14.25em;
     text-align: left;
 }
 
-.dir-rtl #adminsettings .form-item .form-description {
-    margin: 0.5em 14.25em 0em 0em;
-}
-
-#adminsettings .form-item .pathok,
-#adminsettings .form-item .patherror {
+.form-item .pathok,
+.form-item .patherror {
     margin-left: 0.5em;
 }
 
-#adminsettings #admin-emoticons table td input {
+#admin-emoticons table td input {
     width: 8em;
 }
 
-#adminsettings #admin-emoticons table td.c0 input {
+#admin-emoticons table td.c0 input {
     width: 4em;
 }
 
@@ -753,15 +659,16 @@
 }
 
 /** Overide for RTL layout **/
-.dir-rtl #adminsettings .form-item  .form-setting,
-.dir-rtl #adminsettings .form-item  .form-label,
-.dir-rtl #adminsettings .form-item .form-description {
+.dir-rtl .form-item  .form-setting,
+.dir-rtl .form-item  .form-label,
+.dir-rtl .form-item .form-description {
     text-align: right
 }
 
 .dir-rtl.path-admin .roleassigntable p {
     text-align: right;
 }
+
 
 /** Plugins check */
 #page-admin-index #notice .checkforupdates {
@@ -787,7 +694,7 @@
 }
 
 #page-admin-index #plugins-check .missingfromdisk .displayname {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .standard .source {
@@ -795,7 +702,7 @@
 }
 
 #page-admin-index #plugins-check .extension .source {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-index #plugins-check .msg td {
@@ -803,15 +710,15 @@
 }
 
 #page-admin-index #plugins-check .status-downgrade .status {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .status-missing .status {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .status-new .status {
-    background-color: #e7f1c3;
+    background-color: @successBackground;
 }
 
 #page-admin-index #plugins-check .status-nodb .status {
@@ -819,11 +726,11 @@
 }
 
 #page-admin-index #plugins-check .status-delete .status {
-    background-color: #d2ebff;
+    background-color: @infoBackground;
 }
 
 #page-admin-index #plugins-check .status-upgrade .status {
-    background-color: #d2ebff;
+    background-color: @infoBackground;
 }
 
 #page-admin-index #plugins-check .status-uptodate .status {
@@ -831,7 +738,7 @@
 }
 
 #page-admin-index #plugins-check .requires ul {
-    font-size: 0.7em;
+    font-size: @fontSizeMini;
     margin: 0;
 }
 
@@ -844,23 +751,23 @@
 }
 
 #page-admin-index #plugins-check .requires-failed {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo {
     padding: 5px 10px;
     margin: 10px;
-    background-color: #d2ebff;
+    background-color: @infoBackground;
     .border-radius(10px);
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo.maturity50 {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo.maturity100,
 #page-admin-index #plugins-check .status .pluginupdateinfo.maturity150 {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo span,
@@ -898,11 +805,11 @@
 }
 
 #page-admin-plugins #plugins-control-panel .missingfromdisk .pluginname {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .disabled .availability {
-    background-color: #eee;
+    background-color: @inputDisabledBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .actions a {
@@ -914,7 +821,7 @@
 }
 
 #page-admin-plugins #plugins-control-panel .extension .source {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .msg td {
@@ -941,7 +848,7 @@
 
 #page-admin-plugins #plugins-overview-panel .info.updatable {
     margin-left: 10px;
-    background-color: #d2ebff;
+    background-color: @infoBackground;
     font-weight: bold;
     .border-radius(10px);
 }
@@ -975,17 +882,17 @@
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo {
     padding: 5px 10px;
     margin: 10px;
-    background-color: #d2ebff;
+    background-color: @infoBackground;
     .border-radius(10px);
 }
 
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity50 {
-    background-color: #ffd3d9;
+    background-color: @errorBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity100,
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity150 {
-    background-color: #f3f2aa;
+    background-color: @warningBackground;
 }
 
 #page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo span,
@@ -1019,8 +926,8 @@
 }
 
 #page-admin-mnet-peers .mform .deletedhostinfo {
-    background-color: #ffd3d9;
-    border: 2px solid #eeaaaa;
+    background-color: @errorBackground;
+    border: 2px solid @errorBorder;
     padding: 4px;
     margin-bottom: 5px;
 }
