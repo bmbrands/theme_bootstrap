@@ -15,3 +15,9 @@ And for the subset of styles of interest to the TinyMCE editor:
 recess --compile --compress editor.less >  ../style/editor.css
 
 Non-command line options for .less compilation are available, see their github for more info.
+
+If the compilation is failing and you're not getting any useful error message, try using lessc instead i.e.:
+
+lessc moodle.less
+
+This is the same tool that's getting called by recess, but the errors seems better if you go direct.

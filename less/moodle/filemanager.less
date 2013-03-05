@@ -55,8 +55,9 @@
     padding-bottom: 20px;
     background: #F2F2F2;
     .border-radius(8px);
-    border: 1px solid #FFFFFF;
+    border: 1px solid #fff;
     display: inline-block;
+    .ie7-inline-block();
     .box-shadow(5px 5px 20px 0px #666);
 }
 #filesskin .yui3-widget-hd {
@@ -68,19 +69,18 @@
     letter-spacing: 1px;
     color: #333;
     text-shadow: 1px 1px 1px #fff;
-    filter: dropshadow(color=#FFFFFF,
-    offx=1,
-    offy=1);
+    filter: dropshadow(color=#FFFFFF, offx=1, offy=1);
     #gradient > .vertical (#fff,
     #ccc);
 }
 .fp-panel-button {
-    background: #FFFFFF;
+    background: #fff;
     padding: 3px 20px 2px 20px;
     text-align: center;
     margin: 10px;
     .border-radius(10px);
     display: inline-block;
+    .ie7-inline-block();
     .box-shadow(2px 2px 3px .1px #999);
 }
 // File Picker layout
@@ -95,6 +95,7 @@
     width: 180px;
     overflow: auto;
     display: inline-block;
+    .ie7-inline-block();
     border-right: 1px solid #BBBBBB;
     position: absolute;
     top: 26px;
@@ -107,6 +108,7 @@
 .file-picker .fp-repo-items {
     vertical-align: top;
     display: inline-block;
+    .ie7-inline-block();
     margin-left: 181px;
 }
 .file-picker .fp-navbar {
@@ -208,6 +210,7 @@
 }
 .fp-toolbar div {
     display: inline-block;
+    .ie7-inline-block();
     padding: 0px 2px;
     padding-right: 10px;
 }
@@ -247,6 +250,7 @@
     width: 22px;
     height: 22px;
     display: inline-block;
+    .ie7-inline-block();
 }
 .dir-rtl .fp-vb-icons {
     background: url('[[pix:theme|fp/view_icon_active]]') no-repeat 0 0;
@@ -271,6 +275,7 @@
     width: 23px;
     height: 22px;
     display: inline-block;
+    .ie7-inline-block();
     margin-left: -4px;
 }
 .dir-rtl .fp-vb-details {
@@ -296,6 +301,7 @@
     width: 23px;
     height: 22px;
     display: inline-block;
+    .ie7-inline-block();
     margin-left: -4px;
 }
 .dir-rtl .fp-vb-tree {
@@ -358,6 +364,7 @@ border: 50px solid black}
 }
 .dir-rtl .fp-pathbar span {
     display: inline-block;
+    .ie7-inline-block();
     float: right;
     margin-left: 32px;
 }
@@ -646,9 +653,6 @@ display: block}
 .file-picker .fp-upload-form table {
     margin: 0 auto;
 }
-.file-picker .fp-upload-btn {
-    margin: 2em;
-}
 // File exists dialogue on Upload (File Picker only)
 .file-picker.fp-dlg {
     text-align: center;
@@ -762,6 +766,7 @@ display: block}
 }
 .fp-select .fp-fileinfo {
     display: inline-block;
+    .ie7-inline-block();
     margin-top: 10px;
 }
 .file-picker.fp-select .fp-fileinfo {
@@ -1093,6 +1098,7 @@ display: none}
 }
 .filemanager.fp-select.fp-cansetmain .fp-file-setmain {
     display: inline-block;
+    .ie7-inline-block();
 }
 .filemanager .fp-mainfile .fp-filename {
     font-weight: bold;

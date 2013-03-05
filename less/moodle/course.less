@@ -53,16 +53,14 @@
 .course-content .section .activity .activityinstance,
 .sitetopic .section .activity .activityinstance div,
 .course-content .section .activity .activityinstance div {
-    display: inline;
+    display: inline-block;
 }
 .sitetopic .section .activity .activityinstance,
 .course-content .section .activity .activityinstance {
-    padding-right: 3em;
+    min-width: 40%;
 }
-.dir-rtl .sitetopic .section .activity .activityinstance,
-.dir-rtl .course-content .section .activity .activityinstance {
-    padding-right: 0;
-    padding-left: 3em;
+.editing_hide + .editing_assign {
+    margin-left: 20px;
 }
 .sitetopic .section .activity .commands,
 .course-content .section .activity .commands {
@@ -73,6 +71,14 @@
 .course-content .section .activity .commands img {
     vertical-align: baseline;
     padding: 0 2px;
+}
+.sitetopic .section .activity.mod_label .commands,
+.sitetopic .section .activity.modtype_label .commands,
+.course-content .section .activity.mod_label .commands,
+.course-content .section .activity.modtype_label .commands {
+    display: block;
+    margin-left: 40%;
+    padding-left: 22px;
 }
 .sitetopic .section li.activity,
 .course-content .section li.activity {
@@ -100,7 +106,7 @@
 }
 .sitetopic .section .activity:hover,
 .course-content .section .activity:hover {
-    background-color: #EEE;
+    background-color: @grayLighter;
 }
 .course-content .section-summary {
     border: 1px solid #DDD;
@@ -602,6 +608,7 @@ input.titleeditor {
     .border-radius(4px);
     height: 10px;
     display: inline-block;
+    .ie7-inline-block();
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -612,6 +619,7 @@ input.titleeditor {
     height: 100%;
     background-color: green;
     display: inline-block;
+    .ie7-inline-block();
     margin: 0;
     padding: 0;
     float: left;
