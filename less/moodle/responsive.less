@@ -164,7 +164,7 @@
 // Forms
 @media (max-width: 767px) {
   // Remove the horizontal form styles
-    .form-label,
+    .form-item .form-label,
     .mform .fitem div.fitemtitle {
     // copied from .control-label {
       float: none;
@@ -172,10 +172,17 @@
       padding-top: 0;
       text-align: left;
     }
-    .form-label span.form-shortname,
-    div.form-defaultinfo {
-        display: none;
+    .form-item .form-label label{
+        display: inline-block;
     }
+    .form-item .form-setting .form-checkbox {
+        margin-top: 0;
+    }
+    .form-label span.form-shortname {
+        display: inline-block;
+        margin-left: 2em;
+    }
+    .form-item .form-setting,
     .mform .fitem .felement,
     .mform .fdescription.required,
     .form-item .form-description {

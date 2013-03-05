@@ -34,6 +34,7 @@
 .mform .fitem .fitemtitle div {
     display: inline;
 }
+.loginpanel .error,
 .mform .error {
     color: @errorText;
 }
@@ -110,13 +111,14 @@ input#id_externalurl {
 }
 
 // copying in Bootstrap styles
+.form-item,
 .mform .fitem {
     .form-horizontal .control-group;
     margin-bottom: 10px;
     // Theres's a mysterious extra 10px inside this item,
     // so reduce margin by 10px from 20px standard to compensate; 
 }
-#adminsettings .form-item .form-label,
+.form-item .form-label,
 .mform .fitem div.fitemtitle {
     .form-horizontal .control-label
 }
@@ -127,12 +129,13 @@ div.form-defaultinfo,
 .form-label span.form-shortname {
     font-size: @fontSizeMini;
 }
-#adminsettings .form-item .form-setting,
-#adminsettings .form-item .form-description,
+.form-item .form-setting,
+.form-item .form-description,
 .mform .fitem .felement,
 #page-mod-forum-search .c1 {
     .form-horizontal .controls
 }
+
 
 .formsettingheading {
     .form-horizontal .help-block
@@ -141,10 +144,13 @@ div.form-defaultinfo,
 // .uneditable-inputs and form help text. Styling them both as
 // uneditable looks ugly, styling both as form help is fairly
 // subtle in it's impact. Going for the latter as the best option.
-#adminsettings .form-item .form-description,
+.form-item .form-description,
 .felement.fstatic {
     .help-block;
     padding-top: 5px;
+}
+.form-item .form-description {
+    padding-top: 0;
 }
 
 // Pale grey container for submit buttons.
@@ -162,7 +168,7 @@ div.backup-section + form,
     // add back the padding it would usually get from being inside a .form-horizontal
 }
 
-#adminsettings .form-item .form-setting .form-checkbox {
+.form-item .form-setting .form-checkbox {
     margin-top: 5px; // Push down checkboxes to align.
     display: inline-block; // So above style sticks.
 }
@@ -267,3 +273,19 @@ html[dir=rtl] .formrow label.formlabel {
     display: inline-block;
 }
 
+// checkbox labels. Bootstrap puts the associated checkbox inside the label
+// Moodle puts it beside the label, so wee need to make it inline-block
+// to keep it on the same horizontal level
+input[type="checkbox"] + label {
+    display: inline-block;
+}
+input[type="checkbox"] {
+    margin-top: -4px; // dodgy hack, must be better way
+}
+.singleselect {
+    display: inline-block;
+    form,
+    select{
+        margin: 0;
+    }
+}
