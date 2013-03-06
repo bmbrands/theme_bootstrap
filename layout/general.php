@@ -117,13 +117,13 @@ if (!empty($PAGE->theme->settings->gakey)) {
 <div id="page-content" class="row-fluid">
 
 <?php if ($hassidepre && $hassidepost) { ?>
-    <div class=span9>
+    <div id="region-bs-main-and-pre" class=span9>
         <div class=row-fluid>
-            <section class=span8>
+            <section id="region-bs-main" class=span8>
 <?php } elseif ($hassidepre || $hassidepost) { ?>
-    <section class="span9">
+    <section id="region-bs-main" class="span9">
 <?php } else { ?>
-    <section class="span12">
+    <section id="region-bs-main" class="span12">
 <?php } ?>
     <?php echo $coursecontentheader; ?>
     <?php echo $OUTPUT->main_content() ?>
