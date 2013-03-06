@@ -270,13 +270,19 @@ img.iconsmall {
     text-align: left;
 }
 
-#notice,
+#notice {
+    // would like te use the alert stuff below for this,
+    // but the way buttons are used makes it tricky
+    width: 60%;
+    margin: auto;
+}
+
 #page-admin-index .releasenoteslink,
 #page-admin-index .adminwarning,
 #page-admin-index .maturityinfo {
     .alert;
     width: 60%;
-    margin: auto
+    margin: auto;
 }
 #page-admin-index .adminwarning.maturityinfo.maturity50 {
     .alert-error;
@@ -413,10 +419,6 @@ img.iconsmall {
     font-weight: bold;
 }
 
-.path-admin .roleassigntable #buttonscell #addcontrols {
-    margin-top: 3em;
-    height: 13em;
-}
 
 .path-admin .roleassigntable #removeselect_wrapper,
 .path-admin .roleassigntable #addselect_wrapper {
@@ -446,23 +448,32 @@ img.iconsmall {
     display: none;
 }
 
-.path-admin .rolecap .inherit,
-.path-admin .rolecap .allow,
-.path-admin .rolecap .prevent,
-.path-admin .rolecap .prohibit {
-    text-align: center;
+.path-admin #defineroletable {
+    .rolecap {
+        .inherit,
+        .allow,
+        .prevent,
+        .prohibit {
+            text-align: center;
+            padding: 0;
+            min-width: 3.5em;
+        }
+    }
 }
 
 .path-admin .rolecap .cap-name,
 .path-admin .rolecap .note {
     display: block;
-    padding: 0 0.5em;
+    font-size: @fontSizeMini;
+    white-space: nowrap;
+    font-weight: normal;
 }
 
 .path-admin .rolecap label {
     display: block;
-    width: 100%;
-    min-height: 2.5em;
+    text-align: center;
+    padding: 0.5em;
+    margin: 0;
 }
 
 
@@ -523,7 +534,6 @@ img.iconsmall {
     display: block;
 }
 
-
 .form-label .form-shortname {
     display: block;
     .muted;
@@ -577,14 +587,14 @@ img.iconsmall {
     display: inline;
 }
 
-.form-item .form-description {
-    display: block;
-    text-align: left;
-}
-
 .form-item .pathok,
 .form-item .patherror {
     margin-left: 0.5em;
+}
+
+#admin-devicedetectregex table {
+    border: none;
+    // override a table border=1 in the HTML
 }
 
 #admin-emoticons table td input {
@@ -941,5 +951,37 @@ img.iconsmall {
 .tinymcesubplugins img.icon {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+// hacks for badly marked up admin warnings
+#page-admin-roles-assign div.box.generalbox {
+    .alert;
+    .alert-danger;
+}
+
+// language editing progress bar
+// copied in because the styles are set on the HTML
+div[id^="bar_pbar_"] {
+  overflow: hidden !important;
+  height: @baseLineHeight !important;
+  margin-bottom: @baseLineHeight !important;
+  #gradient > .vertical(#f5f5f5, #f9f9f9) !important;
+  .box-shadow(inset 0 1px 2px rgba(0,0,0,.1)) !important;
+  .border-radius(@baseBorderRadius) !important;
+  border: none !important;
+}
+div[id^="progress_pbar_"] {
+  height: 100% !important;
+  color: @white !important;
+  float: left !important;
+  font-size: 12px !important;
+  text-align: center !important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25) !important;
+  #gradient > .vertical(#149bdf, #0480be) !important;
+  .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15)) !important;
+  .box-sizing(border-box) !important;
+  .transition(width .6s ease) !important;
+  padding-top: 0 !important;
+  border: none !important;
 }
 

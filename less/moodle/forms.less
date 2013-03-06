@@ -65,10 +65,9 @@
 }
 .mform .fcheckbox input {
     margin-left: 0;
+    margin-top: 5px;
 }
 .mform .fitem fieldset.fgroup label,
-.mform .fradio label,
-.mform .fcheckbox label,
 .mform fieldset.fdate_selector label {
     display: inline;
     float: none;
@@ -156,6 +155,7 @@ div.form-defaultinfo,
 // Pale grey container for submit buttons.
 table#form td.submit,
 .form-buttons,
+.path-admin .buttons,
 #fitem_id_submitbutton,
 .fp-content-center form + div,
 div.backup-section + form,
@@ -163,12 +163,16 @@ div.backup-section + form,
     .form-actions;
     padding-left: 0;
 }
+.path-admin .buttons,
 .form-buttons {
     padding-left: @horizontalComponentOffset;
     // add back the padding it would usually get from being inside a .form-horizontal
 }
 
-.form-item .form-setting .form-checkbox {
+.form-item .form-setting .form-checkbox.defaultsnext {
+    // need to specify .defaultsnext and the .form-checkbox class
+    // is somewhat randomly re-used on various actual checkboxes
+    // throughout the admin forms, instead of on the wrapper div
     margin-top: 5px; // Push down checkboxes to align.
     display: inline-block; // So above style sticks.
 }

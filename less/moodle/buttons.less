@@ -6,9 +6,12 @@
 .singlebutton form {
     margin: 0;
 }
-.buttons .singlebutton input {
-    margin: 20px 5px;
+// two singlebuttons right next to each other
+// is suprisingly common
+.singlebutton + .singlebutton {
+    margin-left: 10px;
 }
+
 .path-admin .roleassigntable #buttonscell #add,
 .path-admin .roleassigntable #buttonscell #remove input,
 .felement.fbutton input[type="button"],
@@ -37,8 +40,14 @@ button.yui3-button.closebutton:hover {
 input.form-submit,
 input#id_submitbutton,
 input#id_submitbutton2,
+.path-admin .buttons input[type="submit"],
 td.submit input {
     .btn-primary
+}
+// override .btn-primary
+#notice .singlebutton + .singlebutton input,
+.submit.buttons input[name="cancel"] {
+    .btn;
 }
 input[id$="_clearbutton"]:active,
 td.submit input:active {
@@ -57,8 +66,25 @@ input.fp-btn-choose {
 .continuebutton {
     text-align: center;
 }
+select + input[type="submit"],
 input[type="text"] + input[type="button"],
 input[type="text"] + button,
 input[type="text"] + input[type="submit"] {
     margin: 0 0 10px 5px;
 }
+p.arrow_button {
+    margin-top: 5em;
+    text-align: center;
+    #remove {
+        margin: 3em auto 5em;
+    }
+    input {
+        .btn-block;
+    }
+}
+#addcontrols {
+    margin-top: 5em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
