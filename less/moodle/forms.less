@@ -276,10 +276,12 @@ html[dir=rtl] .formrow label.formlabel {
 // checkbox labels. Bootstrap puts the associated checkbox inside the label
 // Moodle puts it beside the label, so wee need to make it inline-block
 // to keep it on the same horizontal level
+input[type="radio"] + label,
 input[type="checkbox"] + label {
-    display: inline-block;
+    display: inline;
     padding-left: 0.2em;
 }
+input[type="radio"],
 input[type="checkbox"] {
     margin-top: -4px; // dodgy hack, must be better way
 }
@@ -292,4 +294,7 @@ input[type="checkbox"] {
 }
 .form-item .form-label label {
     margin-bottom: 0;
+}
+.felement.ffilepicker {
+    margin-top: 5px;
 }
