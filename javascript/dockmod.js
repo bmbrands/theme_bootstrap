@@ -2,13 +2,22 @@ function customise_dock_for_theme() {
     var dock = M.core_dock;
 
     dock.on('dock:itemschanged', theme_dockmod_handle_spans);
+    dock.on('dock:panelgenerated', theme_dockmod_blockstyle);
 }
+function theme_dockmod_blockstyle() {
+    this.Y.all('.dockeditempanel_content').each(function(dockblock){
+    	dockblock.addClass('block');
+    });
+}
+
 
 function theme_dockmod_handle_spans() {
     if (this.Y.all('.block.dock_on_load').size()>0) {
         // Do not resize during initial load
         return;
     }
+    
+
     var blockregions = [];
     var populatedblockregions = 0;
     var hasregionpost = 0;
