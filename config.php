@@ -35,7 +35,7 @@ $THEME->sheets = array(
 
 $THEME->editor_sheets = array('editor');
 
-$THEME->enable_dock = false;
+$THEME->enable_dock = true;
 
 $THEME->csspostprocess = 'bootstrap_user_settings';
 
@@ -134,3 +134,5 @@ $THEME->layouts = array(
         'defaultregion' => 'side-pre',
     ),
 );
+
+$THEME->javascripts = array('dockmod');

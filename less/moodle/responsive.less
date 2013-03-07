@@ -160,6 +160,9 @@
   #page-content.row-fluid > div.span9 > .row-fluid > section.span8 {
       float: right;
   }
+  #page-content.row-fluid > div.span12 > .row-fluid > section.span8 {
+      float: right;
+  }
 }
 // Forms
 @media (max-width: 767px) {
@@ -209,4 +212,29 @@
         padding-left: 0;
         padding-right: 0;
     }
+}
+@media (min-width : 768px) and (max-width: 979px) {
+	.navbar-fixed-bottom {
+		margin-top: 0px;
+	}
+	.navbar-fixed-top .navbar-inner,.navbar-fixed-bottom .navbar-inner {
+		padding: 0px;
+	}
+	.navbar-fixed-top,.navbar-fixed-bottom {
+		position: absolute;
+	}
+}
+
+@media (max-width: 768px) {
+  .navbar-fixed-top {
+    margin-bottom: 0px;
+  }
+    #page {
+      padding-top: 0px;
+  }
+}
+@media (min-width: 1200px) {
+  #page {
+      padding-top: 45px;
+  }
 }
