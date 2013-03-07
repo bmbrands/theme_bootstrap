@@ -82,31 +82,25 @@ if (!empty($PAGE->theme->settings->gakey)) {
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php if ($hascustommenu) { ?>
-    <div id="custommenuwrap"><div id="custommenu"><?php echo $custommenu; ?></div></div>
-<?php } ?>
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Site (short?) name</a>
+          <p class="navbar-text pull-left"><?php echo $PAGE->heading ?></p>
+          <p class="navbar-text pull-right"><?php echo $OUTPUT->login_info(); ?></p>
+        </div>
+      </div>
+</div>
+
 
 <div id=page class=container-fluid>
+<?php echo $OUTPUT->navbar(); ?>
 
 <?php if ($hasheader) { ?>
-    <header id=page-header class=clearfix>
-            <?php if (empty($PAGE->theme->settings->logo_url)) { ?>
-                <h1 class="headermain"><?php echo $PAGE->heading ?></h1>
-            <?php } else { ?>
-                <img src="<?php echo $PAGE->theme->settings->logo_url; ?>">
-            <?php } ?>
-
-            <?php echo $OUTPUT->login_info(); ?>
-
+    <header id=page-header>
             <div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
             <?php if ($hasnavbar) { ?>
-            <div class="navbar clearfix">
-                <?php echo $OUTPUT->navbar(); ?>
                 <div class="navbutton"> <?php echo $PAGE->button; ?></div>
-            </div>
-            <?php } ?>
-            <?php if (!empty($courseheader)) { ?>
-                <div id="course-header"><?php echo $courseheader; ?></div>
             <?php } ?>
     </header>
 <?php } ?>
