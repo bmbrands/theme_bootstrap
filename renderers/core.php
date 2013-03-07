@@ -25,16 +25,10 @@
 
 class theme_bootstrap_core_renderer extends core_renderer {
 
-    public function doctype() {
-        $this->contenttype = 'text/html; charset=utf-8';
-        return "<!DOCTYPE html>\n";
-    }
-
     public function htmlattributes() {
         $parts = explode(' ', trim(get_html_lang(true)));
         return $parts[0] . ' ' . $parts[1]; // Ditch xml:lang part.
     }
-
 
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
@@ -56,27 +50,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $type = ' alert-block alert-info';
         }
         return '<div class="alert'.$type.'">'.$message.'</div>';
-    }
-    /*
-     * Course layouts show the type of layout on top of the course page
-     * Using this renderer I hide these headings
-     */
-    public function heading($text, $level = 2, $classes = 'main', $id = null) {
-        global $COURSE;
-         
-        $topicoutline = get_string('topicoutline');
-
-        if ($text == $topicoutline) {
-            $text = '';
-        }
-
-        if ($text == get_string('weeklyoutline')) {
-            $text = '';
-        }
-
-        $content = parent::heading($text, $level, $classes, $id);
-
-        return $content;
     }
     /*
      * The standard navigation bar (breadcrumb)

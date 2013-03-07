@@ -23,13 +23,13 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$THEME->doctype = 'html5';
 $THEME->name = 'bootstrap';
 $THEME->parents = array('');
 
 $THEME->sheets = array(
     'bootstrap-min', // Compiled, compressed output of LESS compilation.
     'bootstrap-responsive-min', // (Currently) original bootstrap responsive css unmodified.
-    'quiz', // quiz module styling
     'extra', // Contains custom css from the theme user settings.
 );
 
