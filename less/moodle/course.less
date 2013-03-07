@@ -1,6 +1,4 @@
-/**
- * CSS for displaying courses and everything in them
- */
+/* course.less */
 .section_add_menus {
     text-align: right;
 }
@@ -59,18 +57,15 @@
 .course-content .section .activity .activityinstance {
     min-width: 40%;
 }
+.editing_show + .editing_assign,
 .editing_hide + .editing_assign {
+    // if roles icon missing, add space
     margin-left: 20px;
 }
 .sitetopic .section .activity .commands,
 .course-content .section .activity .commands {
     white-space: nowrap;
     display: inline;
-}
-.sitetopic .section .activity .commands img,
-.course-content .section .activity .commands img {
-    vertical-align: baseline;
-    padding: 0 2px;
 }
 .sitetopic .section .activity.mod_label .commands,
 .sitetopic .section .activity.modtype_label .commands,
@@ -120,10 +115,9 @@
     margin: 2px 5px 2px 5px;
 }
 .course-content .section-summary .section-summary-activities .activity-count {
-    margin-right: 10px;
-    color: #AAA;
-    font-size: 12px;
-    margin-right: 15px;
+    .muted;
+    font-size: @fontSizeSmall;
+    margin-left: 10px;
 }
 .course-content .section-summary .summary {
     margin-top: 5px;
@@ -437,7 +431,8 @@ li.section.hidden span.commands a.editing_show {
 .dir-rtl .course_category_tree .category .course_info {
     position: static;
 }
-.dir-rtl .course_category_tree .category .course_info a, .dir-rtl .course_category_tree .category .course_info div {
+.dir-rtl .course_category_tree .category .course_info a,
+.dir-rtl .course_category_tree .category .course_info div {
     float: right;
 }
 .dir-rtl .course_category_tree .controls div {
@@ -482,7 +477,7 @@ li.section.hidden span.commands a.editing_show {
 .dir-rtl .coursebox .summary {
     text-align: right;
 }
-.dir-rtl .course_category_tree .category.with_children> .category_label {
+.dir-rtl .course_category_tree .category.with_children > .category_label {
     background-position: center right;
     padding-right: 18px;
 }
@@ -537,35 +532,20 @@ table.category_subcategories td {
     vertical-align: bottom;
 }
 span.editinstructions {
-
     position: absolute;
-
     top: 0px;
-
     left: 0px;
-
     margin-top: -22px;
-
     margin-left: 30px;
-
     line-height: 16px;
-
-    font-size: .85em;
-
+    font-size: @fontSizeSmall;
     padding: .1em .4em;
-
-    background-color: #ffc;
-
-    color: #000;
-
+    background-color: @infoBackground;
+    color: @infoText;
     text-decoration: none;
-
     z-index: 9999;
-
     .box-shadow(2px 2px 5px 1px #ccc);
-
-    border: 1px solid #ddd;
-
+    border: 1px solid @infoBorder;
 }
 .dir-rtl span.editinstructions {
     left: auto;
@@ -581,13 +561,14 @@ input.titleeditor {
     width: 40%;
     margin: 0 30%;
     padding: 6px;
-    border: 1px solid #ddd;
+    border: 1px solid @infoBorder;
     text-align: center;
-    background: #ffc;
+    background: @infoBackground;
+    color: @infoText;
     position: absolute;
     z-index: 9999;
     .box-shadow(2px 2px 5px 1px #ccc);
-    .border-radius(0px 0px 8px 8px);
+    .border-bottom-radius(8px);
     z-index: 0;
 }
 .dndupload-preview {
@@ -596,38 +577,17 @@ input.titleeditor {
     list-style: none;
     margin-top: .2em;
     padding: .3em;
-    line-height: 16px;
 }
 .dndupload-preview img.icon {
     vertical-align: text-bottom;
     padding: 0;
 }
 .dndupload-progress-outer {
-    width: 70px;
-    border: 1px solid black;
-    .border-radius(4px);
-    height: 10px;
-    display: inline-block;
-    .ie7-inline-block();
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: relative;
+    .progress;
 }
 .dndupload-progress-inner {
-    width: 0%;
-    height: 100%;
-    background-color: green;
-    display: inline-block;
-    .ie7-inline-block();
-    margin: 0;
-    padding: 0;
-    float: left;
-    .box-shadow(0 0 4px #229b15);
-    .border-radius(2px);
-    background-repeat: repeat-x;
-    background-position: top;
-background-image: url([[pix:theme_base|progress]])}
+    .progress .bar;
+}
 .dndupload-hidden {
     display: none;
 }

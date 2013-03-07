@@ -116,9 +116,9 @@ if (!empty($PAGE->theme->settings->gakey)) {
 <?php if ($hassidepre && $hassidepost) { ?>
     <div id="region-bs-main-and-pre" class=span9>
         <div class=row-fluid>
-            <section id="region-bs-main" class=span8>
+            <section id="region-bs-main" class="span8 pull-right">
 <?php } elseif ($hassidepre || $hassidepost) { ?>
-    <section id="region-bs-main" class="span9">
+    <section id="region-bs-main" class="span9 pull-right">
 <?php } else { ?>
     <section id="region-bs-main" class="span12">
 <?php } ?>
@@ -128,9 +128,9 @@ if (!empty($PAGE->theme->settings->gakey)) {
     </section>
 <?php if ((!right_to_left() AND $hassidepre) OR (right_to_left() AND $hassidepost)) {
           if ((!right_to_left() AND $hassidepost) OR (right_to_left() AND $hassidepre)) { ?>
-            <aside id=region-pre class="span4 block-region">
+            <aside id=region-pre class="span4 block-region desktop-first-column">
     <?php } else { ?>
-            <aside id=region-pre class="span3 block-region">
+            <aside id=region-pre class="span3 block-region desktop-first-column">
     <?php } ?>
           <div class=region-content>
           <?php
