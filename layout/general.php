@@ -87,6 +87,7 @@ if (!empty($PAGE->theme->settings->gakey)) {
         <div class="container-fluid">
           <a class="brand" href="#">Site (short?) name</a>
           <p class="navbar-text pull-left"><?php echo $PAGE->heading ?></p>
+          <img src="https://moodle.org/pluginfile.php/1724/user/icon/moodleofficial/f2?rev=531848" class="img-circle pull-right">
           <p class="navbar-text pull-right"><?php echo $OUTPUT->login_info(); ?></p>
         </div>
       </div>
@@ -94,14 +95,12 @@ if (!empty($PAGE->theme->settings->gakey)) {
 
 
 <div id=page class=container-fluid>
+<?php echo $PAGE->headingmenu; ?>
 <?php echo $OUTPUT->navbar(); ?>
+<?php echo $PAGE->button; ?>
 
 <?php if ($hasheader) { ?>
     <header id=page-header>
-            <div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
-            <?php if ($hasnavbar) { ?>
-                <div class="navbutton"> <?php echo $PAGE->button; ?></div>
-            <?php } ?>
     </header>
 <?php } ?>
 
