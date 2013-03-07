@@ -25,11 +25,6 @@
 
 class theme_bootstrap_core_renderer extends core_renderer {
 
-    public function doctype() {
-        $this->contenttype = 'text/html; charset=utf-8';
-        return "<!DOCTYPE html>\n";
-    }
-
     public function htmlattributes() {
         $parts = explode(' ', trim(get_html_lang(true)));
         return $parts[0] . ' ' . $parts[1]; // Ditch xml:lang part.
@@ -60,29 +55,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
     /*
      * Course layouts show the type of layout on top of the course page
      * Using this renderer I hide these headings
-     */
-    public function heading($text, $level = 2, $classes = 'main', $id = null) {
-        global $COURSE;
-         
-        $topicoutline = get_string('topicoutline');
-
-        if ($text == $topicoutline) {
-            $text = '';
-        }
-
-        if ($text == get_string('weeklyoutline')) {
-            $text = '';
-        }
-
-        $content = parent::heading($text, $level, $classes, $id);
-
-        return $content;
-    }
-    /*
-     * The standard navigation bar (breadcrumb)
-     * shows the course category
-     * For this theme the course category has been removed
-     * This is now a optional setting
      */
     public function navbar() {
         $items = $this->page->navbar->get_items();
