@@ -262,3 +262,33 @@ div.yui3-overlay-content.yui3-widget-stdmod {
 .template_heading {
     margin-top: 10px;
 }
+
+// for static navbar prototype hack
+
+.breadcrumb {
+    float: none;
+    margin-top: 15px;
+}
+.navbutton {
+    float: none;
+    margin-bottom: 20px;
+}
+.navbar .logininfo {
+    .navbar-inverse .navbar-text;
+    a {
+        .navbar-inverse .navbar-link;
+    }
+}
+@media (max-width: 480px) {
+.navbar .navbar-text.pull-left {
+    display: none;
+}
+.navbar .logininfo {
+    .hide-text;
+}
+}
+@media (min-width: 767px) {
+.navbutton {
+    margin-top: -53px;
+}
+}
