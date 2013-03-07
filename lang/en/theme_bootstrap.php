@@ -30,8 +30,6 @@ $string['shortennavbar'] = 'Shorten breadcrumb navbar';
 $string['shortennavbardesc'] = 'Enabling this setting shortens the navigation breadcrumb hiding the course category and submodule info';
 $string['showpurgecaches'] = 'Show purge caches option';
 $string['showpurgecachesdesc'] = 'Enable purging of caches link in navbar, this is only availble for admins and is used for Moodle development';
-$string['gakey'] = 'Google analytics key';
-$string['gakeydesc'] = 'Please enter you Google Analytics key';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap</h2>
