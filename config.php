@@ -128,6 +128,11 @@ $THEME->layouts = array(
         'regions' => array(),
         'options' => array('nofooter'=>true, 'nonavbar'=>false, 'noblocks'=>true),
     ),
+    'redirect' => array(
+        'file' => 'general.php',
+        'regions' => array(),
+        'options' => array('nofooter'=>true, 'nonavbar'=>false, 'noblocks'=>true),
+    ),
     'report' => array(
         'file' => 'general.php',
         'regions' => array('side-pre'),
