@@ -64,15 +64,6 @@ select {
     width: auto;
 }
 
-
-.filemanager input[type="text"],
-.file-picker input[type="text"] {
-    border: 1px solid #CCCCCC;
-    height: inherit;
-    padding: inherit;
-    width: inherit;
-}
-
 .filemanager select,
 .file-picker select {
     height: inherit;
@@ -82,12 +73,6 @@ select {
 #page-enrol-users .user-enroller-panel .uep-search-results .user .details
 {
     width: 237px;
-}
-
-.userenrolment tbody tr:nth-child(odd) td,
-.userenrolment tbody tr:nth-child(odd) th
-{
-    background-color: #f9f9f9;
 }
 
 .userenrolment .col_role .addrole {
@@ -253,8 +238,19 @@ div.yui3-overlay-content.yui3-widget-stdmod {
   padding: 3px;
 }
 
-// from moddata.css
+.navbar {
+    overflow: visible;
+}
 
+.navbar-fixed-top {
+    margin: 0px;
+}
+
+#page-mod-chat-gui_basic input#message {
+    max-width: 100%;
+}
+
+// from moddata.css
 #page-mod-data-view #singleimage {
     width: auto;
 }
@@ -265,18 +261,4 @@ div.yui3-overlay-content.yui3-widget-stdmod {
 
 .template_heading {
     margin-top: 10px;
-}
-
-.navbar {
-    overflow: visible;
-}
-
-.navbar-fixed-top {
-	margin: 0px;
-}
-
-
-//Breadcrumb styling
-.breadcrumb {
-    border: 1px solid #E3E3E3;
 }
