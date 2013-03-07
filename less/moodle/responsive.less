@@ -153,9 +153,13 @@
 // Stuart's 2,1,3 layout
 
 @media (min-width : 768px) {
-  .desktop-first-column {
+  .row-fluid .desktop-first-column {
       margin-left: 0;
-      clear: left;
+  }
+}
+@media (max-width : 767px) {
+  .row-fluid .desktop-first-column {
+      clear: right;
   }
 }
 // Forms
@@ -242,3 +246,4 @@
     .editing_move {
         display: none;
     }
+}
