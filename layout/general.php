@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -59,9 +58,7 @@ if ($showsidepre && !$showsidepost) {
 if ($hascustommenu) {
     $bodyclasses[] = 'has_custom_menu';
 }
-
-$doctype = $OUTPUT->doctype() ?>
-<!DOCTYPE html>
+echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
     <title><?php echo $PAGE->title ?></title>
