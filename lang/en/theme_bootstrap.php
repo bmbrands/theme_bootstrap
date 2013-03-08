@@ -1,4 +1,18 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
  * Strings for component 'theme_bootstrap', language 'en', branch 'MOODLE_23_STABLE'
  *
@@ -10,47 +24,20 @@
 $string['pluginname'] = 'Bootstrap';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
-$string['notes'] =  'Bootstrap Configuration page';
-$string['notesdesc'] = 'Configure your theme';
-$string['enableglyphicons'] = 'Enable Glyphicons';
-$string['enableglyphiconsdesc'] = 'Enable Glyphicons, use with Moodle 2.3 or older';
-$string['enablejquery'] = 'Enable jquery';
-$string['enablejquerydesc'] = 'Jquery is used in Bootstrap to enable the custom menu dropdown';
-$string['logo_url'] = 'Logo URL';
-$string['logo_urldesc'] = 'Enter the full URL of your custom logo, make sure it is of a proper size';
-$string['navlogo_url'] = 'Navigation Logo URL';
-$string['navlogo_urldesc'] = 'Enter the full URL of your navigation logo, it will be rendered inside the top menu';
-$string['navlogo_width'] = 'Navigation Logo width in px';
-$string['navlogo_widthdesc'] = 'Enter the width of the navlogo in pixels (default 40), this is used to make sure the theme menu renders okay';
-$string['navlogo_height'] = 'Navigation Logo height';
-$string['navlogo_heightdesc'] = 'Enter the height of your navigation logo in pixels (default 40), use a height of max 40px';
-$string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Add your extra CSS in this box, use it to customize your theme with a little css';
-$string['shortennavbar'] = 'Shorten breadcrumb navbar';
-$string['shortennavbardesc'] = 'Enabling this setting shortens the navigation breadcrumb hiding the course category and submodule info';
-$string['showpurgecaches'] = 'Show purge caches option';
-$string['showpurgecachesdesc'] = 'Enable purging of caches link in navbar, this is only availble for admins and is used for Moodle development';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap</h2>
-<img src="bootstrap/pix/screenshot.jpg" />
-<h3>Theme Discussion Forum:</h3><p><a href="http://moodle.org/mod/forum/discuss.php?d=208162#p925155">http://moodle.org/mod/forum/view.php?id=46</a></p>
-<h3>Theme Credits</h3><p>
-This theme is a collaboration work from:<br>
+<img class=img-polaroid src="bootstrap/pix/screenshot.jpg" />
+<h3>Theme Credits</h3>
+<p>
+This theme is a collaborative work from:<br>
 Stuart Lamour, <br>
 David Scotson, <br>
-Bas Brands <br>
-
+Bas Brands
 </p>
-<h3>Theme Documentation:</h3><p> To be done </p>
-<h3>Report a bug:</h3><p> Send a email to bmbrands@gmail.com</p></div>
 
-<div class="theme_description">
-<h2>About</h2><p>Bootstrap is a responsive theme that is focussed on Usability.
-<h2>Tweaks</h2><p>This theme is built upon both Base and Canvas, two parent themes included in the Moodle core. 
-If you want to modify this theme, we recommend that you first duplicate it then rename it before making your changes. 
-This will prevent your customized theme from being overwritten by future Moodle upgrades, 
-and you\'ll still have the original files if you make a mess. 
-.</p>
-
-<h2>License</h2><p>This theme is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.</div></div>';
+<h3>About</h3>
+<p>Bootstrap is a responsive theme for mobile and desktop that is focused on usability and a clean, minimal look ideal for customising.</p>
+<h3>License</h3>
+<p>This theme is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.</p>
+';

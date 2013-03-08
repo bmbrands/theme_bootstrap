@@ -198,6 +198,8 @@ div.backup-section + form,
     margin-left: auto;
     text-align: right;
 }
+// I think this could be avoided (or at least tidied up) ifr
+// we used HTML5 input types like url, phone, email, number etc.
 .dir-rtl .mform .fitem .felement input[name=email],
 .dir-rtl .mform .fitem .felement input[name=email2],
 .dir-rtl .mform .fitem .felement input[name=url],
@@ -266,9 +268,6 @@ form#installform #id_wwwroot,form#installform #id_dirroot ,form#installform #id_
 form#installform #id_dbhost, form#installform #id_dbname, form#installform #id_dbuser,
 form#installform #id_dbpass, form#installform #id_prefix {
     direction: ltr;
-}
-html[dir=rtl] .formrow label.formlabel {
-    float: right;
 }
 
 .mdl-right > label {

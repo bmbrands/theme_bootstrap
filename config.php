@@ -28,16 +28,11 @@ $THEME->name = 'bootstrap';
 $THEME->parents = array('');
 
 $THEME->sheets = array(
-    'bootstrap-min', // Compiled, compressed output of LESS compilation.
-    'bootstrap-responsive-min', // (Currently) original bootstrap responsive css unmodified.
-    'extra', // Contains custom css from the theme user settings.
+    'bootstrap-min',
+    'bootstrap-responsive-min',
 );
 
 $THEME->editor_sheets = array('editor');
-
-$THEME->enable_dock = true;
-
-$THEME->csspostprocess = 'bootstrap_user_settings';
 
 $THEME->plugins_exclude_sheets = array(
     'block' => array(
@@ -122,7 +117,6 @@ $THEME->layouts = array(
         'regions' => array(),
         'options' => array('nofooter'=>true, 'nonavbar'=>true),
     ),
-    // Should display the content and basic headers only.
     'print' => array(
         'file' => 'general.php',
         'regions' => array(),
@@ -139,5 +133,3 @@ $THEME->layouts = array(
         'defaultregion' => 'side-pre',
     ),
 );
-
-$THEME->javascripts = array('dockmod');

@@ -14,16 +14,15 @@
 @import "moodle/question";
 @import "moodle/user";
 
-// Bootstrap
+// Set image location
+@iconSpritePath:          ~"[[pix:theme|glyphicons-halflings]]";
+@iconWhiteSpritePath:     ~"[[pix:theme|glyphicons-halflings-white]]";
+
+// Upstream Bootstrap
 @import "bootstrap/bootstrap";
 
 // Roll back nameclashes
 @import "moodle/undo";
-
-// Uncomment to override theme variables
-// @import "bootswatch/variables";
-// @import "bootswatch/bootswatch";
-// @import "bootstrap/utilities";
 
 // New Moodle stuff that builds on Bootstrap
 @import "moodle/forms";

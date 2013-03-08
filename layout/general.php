@@ -19,17 +19,14 @@ $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 $hasheader = (empty($PAGE->layout_options['noheader']));
 
-
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
 
 $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
 $showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
-$custommenu = $OUTPUT->custom_menu();
-$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
-
 
 $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
+
 if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
     $courseheader = $OUTPUT->course_header();
     $coursecontentheader = $OUTPUT->course_content_header();
@@ -39,25 +36,29 @@ if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
     }
 }
 
-$bodyclasses = array();
+$layout = 'pre-and-post';
 if ($showsidepre && !$showsidepost) {
     if (!right_to_left()) {
-        $bodyclasses[] = 'side-pre-only';
+        $layout = 'side-pre-only';
     } else {
-        $bodyclasses[] = 'side-post-only';
+        $layout = 'side-post-only';
     }
 } else if ($showsidepost && !$showsidepre) {
     if (!right_to_left()) {
-        $bodyclasses[] = 'side-post-only';
+        $layout = 'side-post-only';
     } else {
-        $bodyclasses[] = 'side-pre-only';
+        $layout = 'side-pre-only';
     }
 } else if (!$showsidepost && !$showsidepre) {
-    $bodyclasses[] = 'content-only';
+    $layout = 'content-only';
 }
-if ($hascustommenu) {
-    $bodyclasses[] = 'has_custom_menu';
-}
+    $bodyclasses[] = $layout;
+
+// Create protocol relative URL for potential use with https.
+$html5shiv_url = substr(new moodle_url($CFG->themewww."/bootstrap/js/html5shiv.js"), 5);
+$html5shiv = "<!--[if lt IE 9]><script src=\"$html5shiv_url\"></script><![endif]-->";
+
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
@@ -68,36 +69,28 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-<script src="<?php echo new moodle_url($CFG->httpswwwroot."/theme/bootstrap/js/html5shiv.js")?>"></script>
-    <![endif]-->
-<?php
-if (!empty($PAGE->theme->settings->gakey)) {
-    include($CFG->dirroot . "/theme/bootstrap/layout/google_analytics.php");
-}?>
+    <?php echo $html5shiv ?>
 </head>
 
-<body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
+<body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join($bodyclasses)) ?>">
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-
-<?php if ($hascustommenu) { ?>
-    <div id="custommenuwrap"><div id="custommenu"><?php echo $custommenu; ?></div></div>
-<?php } ?>
-
+   <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Project name</a>
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
+        </div>
+      </div>
+    </div>
 <div id=page class=container-fluid>
 
 <?php if ($hasheader) { ?>
     <header id=page-header class=clearfix>
-            <?php if (empty($PAGE->theme->settings->logo_url)) { ?>
-                <h1 class="headermain"><?php echo $PAGE->heading ?></h1>
-            <?php } else { ?>
-                <img src="<?php echo $PAGE->theme->settings->logo_url; ?>">
-            <?php } ?>
-
+            <h1 class="headermain"><?php echo $PAGE->heading ?></h1>
             <?php echo $OUTPUT->login_info(); ?>
-
             <div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
             <?php if ($hasnavbar) { ?>
             <div class="navbar clearfix">
@@ -113,11 +106,11 @@ if (!empty($PAGE->theme->settings->gakey)) {
 
 <div id="page-content" class="row-fluid">
 
-<?php if ($hassidepre && $hassidepost) { ?>
+<?php if ($layout === 'pre-and-post') { ?>
     <div id="region-bs-main-and-pre" class=span9>
-        <div class=row-fluid>
-            <section id="region-bs-main" class="span8 pull-right">
-<?php } elseif ($hassidepre || $hassidepost) { ?>
+    <div class=row-fluid>
+    <section id="region-bs-main" class="span8 pull-right">
+<?php } else if ($layout !== 'content-only') { ?>
     <section id="region-bs-main" class="span9 pull-right">
 <?php } else { ?>
     <section id="region-bs-main" class="span12">
@@ -126,8 +119,8 @@ if (!empty($PAGE->theme->settings->gakey)) {
     <?php echo $OUTPUT->main_content() ?>
     <?php echo $coursecontentfooter; ?>
     </section>
-<?php if ((!right_to_left() AND $hassidepre) OR (right_to_left() AND $hassidepost)) {
-          if ((!right_to_left() AND $hassidepost) OR (right_to_left() AND $hassidepre)) { ?>
+<?php if ($layout !== 'content-only') {
+          if ($layout === 'pre-and-post') { ?>
             <aside id=region-pre class="span4 block-region desktop-first-column">
     <?php } else { ?>
             <aside id=region-pre class="span3 block-region desktop-first-column">
@@ -142,12 +135,12 @@ if (!empty($PAGE->theme->settings->gakey)) {
             ?>
             </div>
             </aside>
-      <?php if ($hassidepost && $hassidepre) {
+      <?php if ($layout === 'post-and-pre') {
           ?></div></div><?php // close row-fluid & span9
         }
     }
 
-    if ($hassidepost OR (right_to_left() AND $hassidepre)) { ?>
+    if ($layout === 'side-post-only' OR $layout === 'post-and-pre') { ?>
         <aside id=region-post class="span3 block-region">
         <div class=region-content>
         <?php if (!right_to_left()) {
@@ -164,15 +157,9 @@ if (!empty($PAGE->theme->settings->gakey)) {
     <p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')) ?></p>
     <?php echo $OUTPUT->standard_footer_html(); ?>
 </footer>
+
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
 </div>
-
-<?php if (!empty($PAGE->theme->settings->enablejquery)) {?>
-
-<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/jquery.js"></script>
-<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/js/bootstrap.min.js"></script>
-
-<?php }?>
-
 </body>
 </html>
