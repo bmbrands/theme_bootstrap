@@ -82,7 +82,7 @@ echo $OUTPUT->doctype() ?>
     <a class="brand" href="<?php echo $CFG->httpswwwroot ?>"><span class="hidden-phone"><?php echo $SITE->fullname ?></span>
     <span class="visible-phone"><?php echo $SITE->shortname ?></span></a>
         <img class="img-circle pull-right" src="https://moodle.org/pix/u/f2.png">
-            <?php echo $OUTPUT->login_info(); ?>
+        <div class="navbar-text pull-right"><?php echo $OUTPUT->login_info(); ?></div>
     </div>
   </div>
 </div>
