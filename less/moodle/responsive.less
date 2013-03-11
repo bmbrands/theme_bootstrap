@@ -92,17 +92,20 @@
 }
 
 @media (max-width: 480px) {
+  .course-content ul.topics li.section,
   .course-content ul.topics li.section .content,
-  .course-content ul.weeks li.section .content
+  .course-content ul.weeks li.section,
+  .course-content ul.weeks li.section .content,
+  .course-content ul.section,
   {
-      margin-right: 0px;
-      margin-left: 0px;
+      margin-right: 0;
+      margin-left: 0;
       padding: 0;
   }
   .activityinstance {
       display: block;
   }
-  .course-content .section .activity {
+  .editing .course-content .section .activity {
       margin-bottom: 0.2em;
       padding-bottom: 0.2em;
       border-bottom: thin solid #eee;
@@ -198,7 +201,7 @@
 // and a resized window on a netbook could be smaller, but best
 // we can do with CSS. Might be a JS-based solution.
 @media (max-width: 767px) {
-    .section-handle,
+    .section .left.side,
     .editing_move {
         display: none;
     }

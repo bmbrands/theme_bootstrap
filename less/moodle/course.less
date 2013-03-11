@@ -118,6 +118,8 @@
     .muted;
     font-size: @fontSizeSmall;
     margin-left: 10px;
+    white-space: nowrap;
+    display: inline-block;
 }
 .course-content .section-summary .summary {
     margin-top: 5px;
@@ -158,6 +160,41 @@
 }
 .course-content .single-section .section-navigation .mdl-bottom {
     margin-top: 0;
+}
+.course-content ul li.section.main {
+    border-bottom: 2px solid #eee;
+    margin-top: 0px;
+}
+
+.course-content ul.topics li.section .content,
+.course-content ul.weeks li.section .content {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.course-content {
+    margin-top: 0px;
+}
+
+.course-content ul.topics li.section {
+    padding-bottom: 20px;
+}
+
+.course-content ul.topics li.section .summary {
+    margin-left: 25px;
+}
+
+.path-course-view .completionprogress {
+    margin-left: 25px
+}
+
+.path-course-view .completionprogress {
+    display: block;
+    float: right;
+    height: 20px;
+    position: relative;
+    z-index: 1000;
 }
 
 #page-site-index .subscribelink {
@@ -244,6 +281,12 @@ li.section.hidden span.commands a.editing_hide,
 li.section.hidden span.commands a.editing_show {
     cursor: default;
 }
+ul.weeks h3.sectionname {
+    white-space: nowrap;
+}
+.editing ul.weeks h3.sectionname {
+    white-space: normal;
+}
 
 .section img.movetarget {
     height: 16px;
@@ -301,16 +344,9 @@ li.section.hidden span.commands a.editing_show {
 .coursebox {
     width: 100%;
     margin-bottom: 15px;
-}
-.coursebox .info {
-    float: left;
-    text-align: left;
-    width: 40%;
-}
-.coursebox .summary {
-    float: right;
-    text-align: left;
-    width: 55%;
+     border: 1px dotted #ddd;
+     .border-radius(4px);
+     padding: 5px;
 }
 .coursebox .summary .category {
     text-align: right;
@@ -325,6 +361,32 @@ li.section.hidden span.commands a.editing_show {
 }
 .coursebox .enrolmenticons img {
     margin-right: .45em;
+}
+
+.coursebox h3.name {
+ margin: 0px;
+}
+
+.coursebox .info,
+.coursebox .summary {
+ border: 0;
+ margin: 0px;
+ padding: 0px;
+ float: none;
+ width: none;
+ .box-sizing(border-box);
+ display: block;
+ float: left;
+ margin-left: 2.76243%;
+ min-height: 30px;
+}
+
+ .coursebox .summary {
+     margin-top: 5px;
+ }
+
+.coursebox .info {
+     margin-left: 0px;
 }
 
 .categorylist {
