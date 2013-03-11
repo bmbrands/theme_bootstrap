@@ -75,40 +75,42 @@ echo $OUTPUT->doctype() ?>
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join($bodyclasses)) ?>">
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-   <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="brand" href="#">Project name</a>
-            <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
-        </div>
-      </div>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+        <a class="brand" href="<?php echo $CFG->httpswwwroot ?>"><span class="hidden-phone">The long name of the Moodle High School</span>
+        <span class="visible-phone">Moodle High</span></a>
+        <img class="img-circle pull-right" src="https://moodle.org/pix/u/f2.png">
+            <?php echo $OUTPUT->login_info(); ?>
     </div>
-<div id=page class=container-fluid>
+  </div>
+</div>
+
+<div id="page" class="container-fluid">
 
 <?php if ($hasheader) { ?>
-    <header id=page-header class=clearfix>
-            <h1 class="headermain"><?php echo $PAGE->heading ?></h1>
-            <?php echo $OUTPUT->login_info(); ?>
-            <div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
-            <?php if ($hasnavbar) { ?>
-            <div class="navbar clearfix">
-                <?php echo $OUTPUT->navbar(); ?>
-                <div class="navbutton"> <?php echo $PAGE->button; ?></div>
-            </div>
-            <?php } ?>
-            <?php if (!empty($courseheader)) { ?>
-                <div id="course-header"><?php echo $courseheader; ?></div>
-            <?php } ?>
-    </header>
+<header id="page-header" class="clearfix">
+<?php if ($hasnavbar) { ?>
+    <div class="breadcrumb-button"><?php echo $PAGE->button; ?></div>
+    <?php echo $OUTPUT->navbar(); ?>
+<?php } ?>
+
+<h1><?php echo $PAGE->heading ?></h1>
+<div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
+
+<?php if (!empty($courseheader)) { ?>
+    <div id="course-header"><?php echo $courseheader; ?></div>
+<?php } ?>
+
+</header>
 <?php } ?>
 
 <div id="page-content" class="row-fluid">
 
 <?php if ($layout === 'pre-and-post') { ?>
-    <div id="region-bs-main-and-pre" class=span9>
-    <div class=row-fluid>
+    <div id="region-bs-main-and-pre" class="span9">
+    <div class="row-fluid">
     <section id="region-bs-main" class="span8 pull-right">
 <?php } else if ($layout !== 'content-only') { ?>
     <section id="region-bs-main" class="span9 pull-right">
@@ -121,11 +123,11 @@ echo $OUTPUT->doctype() ?>
     </section>
 <?php if ($layout !== 'content-only') {
           if ($layout === 'pre-and-post') { ?>
-            <aside id=region-pre class="span4 block-region desktop-first-column">
+            <aside id="region-pre" class="span4 block-region desktop-first-column">
     <?php } else { ?>
-            <aside id=region-pre class="span3 block-region desktop-first-column">
+            <aside id="region-pre" class="span3 block-region desktop-first-column">
     <?php } ?>
-          <div class=region-content>
+          <div class="region-content">
           <?php
                 if (!right_to_left()) {
                     echo $OUTPUT->blocks_for_region('side-pre');
@@ -135,14 +137,14 @@ echo $OUTPUT->doctype() ?>
             ?>
             </div>
             </aside>
-      <?php if ($layout === 'post-and-pre') {
+      <?php if ($layout === 'pre-and-post') {
           ?></div></div><?php // close row-fluid & span9
         }
     }
 
-    if ($layout === 'side-post-only' OR $layout === 'post-and-pre') { ?>
-        <aside id=region-post class="span3 block-region">
-        <div class=region-content>
+    if ($layout === 'side-post-only' OR $layout === 'pre-and-post') { ?>
+        <aside id="region-post" class="span3 block-region">
+        <div class="region-content">
         <?php if (!right_to_left()) {
                   echo $OUTPUT->blocks_for_region('side-post');
               } else {

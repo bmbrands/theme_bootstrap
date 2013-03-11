@@ -5,7 +5,6 @@ canvas {
     -ms-touch-action: auto;
 }
 
-
 /* Course styling */
 
 .coursebox .enrolmenticons {
@@ -115,38 +114,12 @@ select {
     float: left;
 }
 
-
-/* Footer styling */
 #page-footer {
     text-align: left;
     font-size: 1em;
     padding: 1em 0;
     border-top: 2px solid #eee;
 }
-
-#page-footer .logininfo,
-#page-footer .sitelink,
-#page-footer .helplink {
-    margin: 0;
-    padding: 0;
-}
-
-/* Login menu in top nav */
-.logininfo,.langmenu {
-    display: inline-block;
-    float: right;
-    margin-left: 10px;
-}
-
-.logininfo {
-    padding-top: 10px;
-    padding-right: 10px;
-}
-
-.langmenu form {
-    margin: 0px;
-}
-
 
 /* login page */
 .loginbox.twocolumns .loginpanel {
@@ -168,9 +141,7 @@ select {
 
 // Course list
  .coursebox {
-     border-color: #ddd;
-     border-style: dotted;
-     border-width: 1px;
+     border: 1px dotted #ddd;
      .border-radius(4px);
      padding: 5px;
  }
@@ -196,35 +167,12 @@ select {
      margin-top: 5px;
  }
 
- .coursebox .info {
+.coursebox .info {
      margin-left: 0px;
- }
+}
 
-
-/* Calendar full view */
 .maincalendar .calendarmonth td,.maincalendar .calendarmonth th {
     border: 1px dotted #ddd;
-}
-
-/* Positioned 45 px below nav */
-#page {
-    padding-top: 45px;
-}
-
-#dndupload-status {
-    margin-top: 45px;
-}
-
-.headermain {
-    float: left;
-    font-size: 2.3em;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.nav-collapse.in .langmenu {
-    float: left;
-    margin-bottom: 5px;
 }
 
 // gradebook tooltip
@@ -232,14 +180,6 @@ div.yui3-overlay-content.yui3-widget-stdmod {
   border: 1px solid #ddd;
   background: #FFF url([[pix:theme|alert-overlay]]) repeat-x;
   padding: 3px;
-}
-
-.navbar {
-    overflow: visible;
-}
-
-.navbar-fixed-top {
-    margin: 0px;
 }
 
 #page-mod-chat-gui_basic input#message {
@@ -257,4 +197,15 @@ div.yui3-overlay-content.yui3-widget-stdmod {
 
 .template_heading {
     margin-top: 10px;
+}
+
+.navbar .logininfo {
+    .navbar-inverse .navbar-text;
+}
+.breadcrumb-button {
+    float: right;
+    margin-top: 3px;
+}
+.dir-rtl .breadcrumb-button {
+    float: left;
 }

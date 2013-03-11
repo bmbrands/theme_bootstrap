@@ -1,9 +1,6 @@
-/* moodle/responive.less */
-
-// Responsive tweaks for Moodle
+/* responsive.less */
 
 // Quiz
-
 @media (max-width: 480px) {
     .que .info {
         float: none;
@@ -132,23 +129,6 @@
       }
   }
 }
-// Navbar
-@media (min-width: 768px) {
-  .logininfo,
-  .langmenu {
-      display: inline-block;
-      float: right;
-  }
-  .logininfo,
-  .langmenu {
-      display: inline-block;
-      float: right;
-      margin-top: 2px;
-  }
-  .navbar .nav .nav {
-      width: auto;
-  }
-}
 
 // Stuart's 2,1,3 layout
 
@@ -212,31 +192,7 @@
         padding-right: 0;
     }
 }
-@media (min-width : 768px) and (max-width: 979px) {
-	.navbar-fixed-bottom {
-		margin-top: 0px;
-	}
-	.navbar-fixed-top .navbar-inner,.navbar-fixed-bottom .navbar-inner {
-		padding: 0px;
-	}
-	.navbar-fixed-top,.navbar-fixed-bottom {
-		position: absolute;
-	}
-}
 
-@media (max-width: 768px) {
-  .navbar-fixed-top {
-    margin-bottom: 0px;
-  }
-    #page {
-      padding-top: 0px;
-  }
-}
-@media (min-width: 1200px) {
-  #page {
-      padding-top: 45px;
-  }
-}
 // Hide broken drag'n'drop options on touch devices MDL-38371
 // Not a great workaround, landscape iPads are wider than this,
 // and a resized window on a netbook could be smaller, but best

@@ -30,37 +30,29 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $type = '';
 
         if ($classes == 'notifyproblem') {
-            $type = ' alert-error';
+            $type = 'alert alert-error';
         }
         if ($classes == 'notifysuccess') {
-            $type = ' alert-success';
+            $type = 'alert alert-success';
         }
         if ($classes == 'notifymessage') {
-            $type = ' alert-info';
+            $type = 'alert alert-info';
         }
         if ($classes == 'redirectmessage') {
-            $type = ' alert-block alert-info';
+            $type = 'alert alert-block alert-info';
         }
-        return '<div class="alert'.$type.'">'.$message.'</div>';
+        return "<div class=\"$type\">$message</div>";
     }
 
     public function navbar() {
-        $items = $this->page->navbar->get_items();
-
-        $breadcrumbs = array();
-        // Iterate the navarray and display each node.
-        $itemcount = count($items);
         $separator = '<span class=divider>/</span>';
-        for ($i=0; $i < $itemcount; $i++) {
-            $item = $items[$i];
+        $items = $this->page->navbar->get_items();
+        foreach ($items as $item) {
             $item->hideicon = true;
-            if ($i + 1 < $itemcount) {
-                $breadcrumbs[] = html_writer::tag('li', $this->render($item).' '.$separator);
-            } else {
-                $breadcrumbs[] = html_writer::tag('li', $this->render($item));
-            }
+            $breadcrumbs[] = $this->render($item);
         }
-        $breadcrumb_trail = html_writer::tag('span', get_string('pagepath'), array('class'=>'accesshide'));
-        return $breadcrumb_trail .= html_writer::tag('ul', join($breadcrumbs), array('class'=>'breadcrumb'));
+        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
+        $list_items = '<li>'.join(" $separator</li><li>", $breadcrumbs).'</li>';
+        return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
     }
 }
