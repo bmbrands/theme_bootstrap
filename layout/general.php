@@ -79,8 +79,8 @@ echo $OUTPUT->doctype() ?>
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
-        <a class="brand" href="<?php echo $CFG->httpswwwroot ?>"><span class="hidden-phone">The long name of the Moodle High School</span>
-        <span class="visible-phone">Moodle High</span></a>
+    <a class="brand" href="<?php echo $CFG->httpswwwroot ?>"><span class="hidden-phone"><?php echo $SITE->fullname ?></span>
+    <span class="visible-phone"><?php echo $SITE->shortname ?></span></a>
         <img class="img-circle pull-right" src="https://moodle.org/pix/u/f2.png">
             <?php echo $OUTPUT->login_info(); ?>
     </div>
