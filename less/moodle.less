@@ -25,16 +25,35 @@
 @import "moodle/undo";
 
 // extra padding for fixed nav
+// needs to be between bootstrap/bootstrap and
+// bootstrap/responsive
 body {
     padding-top: 60px;
 }
+
 // New Moodle stuff that builds on Bootstrap
 @import "moodle/blocks";
 @import "moodle/forms";
-@import "moodle/tables";
 @import "moodle/tabs";
 @import "moodle/custom";
 @import "moodle/backup-restore";
-@import "moodle/debug";
+@import "moodle/tables";
+
+// 4095 selector cutoff happens during this following file,
+// content after this point may be ignored in IE < 10
 @import "moodle/buttons";
 
+// anything below this line is considered expendable,
+// so it doesn't matter if it doesn't show up in ie < 9
+
+// the following responsive imports are copied in
+// from @import "bootstrap/responsive";
+@import "bootstrap/responsive-utilities.less";
+@import "bootstrap/responsive-1200px-min.less";
+@import "bootstrap/responsive-768px-979px.less";
+@import "bootstrap/responsive-767px-max.less";
+@import "bootstrap/responsive-navbar.less";
+@import "moodle/responsive";
+
+@import "moodle/debug";
+@import "moodle/expendable";

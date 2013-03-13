@@ -1,5 +1,3 @@
-.singlebutton,
-.singlebutton form,
 .singlebutton div {
     display: inline-block;
     margin-left: 5px;
@@ -8,59 +6,6 @@
 }
 .singlebutton form {
     margin: 0;
-}
-
-.path-admin .roleassigntable #buttonscell #add,
-.path-admin .roleassigntable #buttonscell #remove input,
-.felement.fbutton input[type="button"],
-input.fp-btn-choose,
-input[id$="_clearbutton"],
-button,
-input.form-submit,
-input[type="submit"],
-input[type="reset"],
-.form-submit,
-input#id_submitbutton,
-input#id_submitbutton2,
-input#id_previous,
-input#id_cancel {
-    .btn
-}
-button.yui3-button.closebutton,
-button.yui3-button.closebutton:hover {
-    background-position: 0 0;
-    // Because we assign button looks to every button tag above,
-    // we need to remove some styles from non-standard looking
-    // buttons. Correct fix, assign .btn class to every actual
-    // button in Moodle so we don't need to carpet bomb the
-    // bare button tag.
-}
-
-input.form-submit,
-input#id_submitbutton,
-input#id_submitbutton2,
-.path-admin .buttons input[type="submit"],
-td.submit input {
-    .btn-primary
-}
-// override .btn-primary
-#notice .singlebutton + .singlebutton input,
-.submit.buttons input[name="cancel"] {
-    .btn;
-}
-input[id$="_clearbutton"]:active,
-td.submit input:active {
-    .btn-info.active
-}
-input[id$="_clearbutton"],
-input[type="reset"] {
-    .btn-warning
-}
-input.fp-btn-choose {
-    .btn-small;
-}
-.user-enroller-panel .uep-search-results .user .options .enrol {
-    .btn-mini
 }
 .continuebutton {
     text-align: center;
@@ -90,4 +35,28 @@ p.arrow_button {
 #addcontrols input,
 #removecontrols input {
     .btn-block;
+}
+
+button,
+input.form-submit,
+input[type="submit"],
+input[type="reset"],
+{
+    .btn
+}
+button.yui3-button.closebutton,
+button.yui3-button.closebutton:hover {
+    background-position: 0 0;
+    // Because we assign button looks to every button tag above,
+    // we need to remove some styles from non-standard looking
+    // buttons. Correct fix, assign .btn class to every actual
+    // button in Moodle so we don't need to carpet bomb the
+    // bare button tag.
+}
+
+input.fp-btn-choose {
+    .btn-small;
+}
+.user-enroller-panel .uep-search-results .user .options .enrol {
+    .btn-mini
 }

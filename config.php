@@ -28,8 +28,7 @@ $THEME->name = 'bootstrap';
 $THEME->parents = array('');
 
 $THEME->sheets = array(
-    'bootstrap-min',
-    'bootstrap-responsive-min',
+    'bootstrap',
 );
 
 $THEME->editor_sheets = array('editor');

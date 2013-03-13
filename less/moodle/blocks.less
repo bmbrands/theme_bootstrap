@@ -30,14 +30,6 @@
 }
 .block .header .block_action {
     float: right;
-    margin: 4px 0 3px 0;
-    vertical-align: top;
-    img,
-    input {
-        margin: 0 3px;
-        width: 12px;
-        height: 12px;
-    }
 }
 .block .header .commands {
     clear: both;
@@ -47,8 +39,8 @@
     margin: 0 3px;
 }
 .block .header .commands .icon img {
-    width:12px;
-    height:12px;
+    width: 12px;
+    height: 12px;
 }
 
 .block .content {
@@ -60,18 +52,19 @@
 }
 
 .block .content .userpicture {
-    width:16px;
-    height:16px;
-    margin-right:6px;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
 }
 .block .content .list li.listentry {
-    clear:both;
+    clear: both;
 }
 .block .content .list .c0 {
-    display:inline;
+    display: inline;
 }
 .block .content .list .c1 {
-    margin-left:5px;display:inline;
+    margin-left: 5px;
+    display: inline;
 }
 
 .block .footer {
@@ -104,13 +97,16 @@
 }
 
 .block .block-hider-show,
-.block .block-hider-hide {cursor:pointer;}
-.block .block-hider-show,
-.block.hidden .block-hider-hide {display:none;}
-.block.hidden .block-hider-show {display:inline;}
-.block .block-hider-show,
 .block .block-hider-hide {
+    cursor: pointer;
     padding-right: 5px;
+}
+.block .block-hider-show,
+.block.hidden .block-hider-hide {
+    display: none;
+}
+.block.hidden .block-hider-show {
+    display: inline;
 }
 
 .jsenabled .block_tree .tree_item.branch {
