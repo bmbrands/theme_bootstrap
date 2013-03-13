@@ -38,13 +38,13 @@ body {
 @import "moodle/custom";
 @import "moodle/backup-restore";
 @import "moodle/tables";
-
-// 4095 selector cutoff happens during this following file,
-// content after this point may be ignored in IE < 10
 @import "moodle/buttons";
 
 // anything below this line is considered expendable,
 // so it doesn't matter if it doesn't show up in ie < 9
+// though at current time (2013-03-13) the whole file is
+// picked up in IE8, and IE9 fails at some point during the
+// responsive section, cutting off the last 400 selectors.
 
 // the following responsive imports are copied in
 // from @import "bootstrap/responsive";
