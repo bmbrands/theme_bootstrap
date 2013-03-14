@@ -51,11 +51,6 @@
     padding: 10px;
 }
 
-#page-admin-course-index .buttons,
-#page-admin-course-category .buttons {
-    margin-bottom: 15px;
-}
-
 #page-admin-course-index .editcourse {
     margin: 20px auto;
 }
@@ -565,18 +560,15 @@ img.iconsmall {
 #page-admin-plugins #plugins-control-panel .extension .source,
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity100 .info.release,
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity150 .info.release,
-#page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity100,
-#page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity150,
-#page-admin-index #plugins-check .status .pluginupdateinfo.maturity100,
-#page-admin-index #plugins-check .status .pluginupdateinfo.maturity150,
+.pluginupdateinfo.maturity100,
+.pluginupdateinfo.maturity150,
 #page-admin-index #plugins-check .extension .source {
     background-color: @warningBackground;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release,
 #page-admin-plugins #plugins-control-panel .missingfromdisk .pluginname,
-#page-admin-plugins #plugins-control-panel .notes .pluginupdateinfo.maturity50,
-#page-admin-index #plugins-check .status .pluginupdateinfo.maturity50,
+.pluginupdateinfo.maturity50,
 #page-admin-index #plugins-check .requires-failed,
 #page-admin-index #plugins-check .missingfromdisk .displayname,
 #page-admin-index #plugins-check .status-missing .status,
@@ -598,10 +590,6 @@ img.iconsmall {
 #page-admin-index #plugins-check .requires ul {
     font-size: @fontSizeMini;
     margin: 0;
-}
-
-#page-admin-index #plugins-check .requires li {
-    display: block;
 }
 
 #page-admin-index #plugins-check .status .pluginupdateinfo {
@@ -708,7 +696,7 @@ img.iconsmall {
 /** MNet networking */
 #page-admin-mnet-peers .box.deletedhosts {
     margin-bottom: 1em;
-    font-size: 80%;
+    font-size: @fontSizeSmall;
 }
 
 #page-admin-mnet-peers .mform .certdetails {
@@ -754,30 +742,3 @@ img.iconsmall {
     .alert;
     .alert-danger;
 }
-
-// language editing progress bar
-// copied in because the styles are set on the HTML
-div[id^="bar_pbar_"] {
-  overflow: hidden !important;
-  height: @baseLineHeight !important;
-  margin-bottom: @baseLineHeight !important;
-  #gradient > .vertical(#f5f5f5, #f9f9f9) !important;
-  .box-shadow(inset 0 1px 2px rgba(0,0,0,.1)) !important;
-  .border-radius(@baseBorderRadius) !important;
-  border: none !important;
-}
-div[id^="progress_pbar_"] {
-  height: 100% !important;
-  color: @white !important;
-  float: left !important;
-  font-size: 12px !important;
-  text-align: center !important;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25) !important;
-  #gradient > .vertical(#149bdf, #0480be) !important;
-  .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15)) !important;
-  .box-sizing(border-box) !important;
-  .transition(width .6s ease) !important;
-  padding-top: 0 !important;
-  border: none !important;
-}
-

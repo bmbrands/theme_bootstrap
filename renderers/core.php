@@ -48,14 +48,12 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $items = $this->page->navbar->get_items();
         foreach ($items as $item) {
             $item->hideicon = true;
-            if ($i + 1 < $itemcount) {
-                $breadcrumbs[] = html_writer::tag('li', $this->render($item).' '.$separator);
-            } else {
-                $breadcrumbs[] = html_writer::tag('li', $this->render($item));
-            }
+                $breadcrumbs[] = $this->render($item);
         }
-        $breadcrumb_trail = html_writer::tag('span', get_string('pagepath'), array('class'=>'accesshide'));
-        return $breadcrumb_trail .= html_writer::tag('ul', join($breadcrumbs), array('class'=>'breadcrumb'));
+        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
+        $divider = '<span class="divider">/</span>';
+        $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
+        return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
     }
     /*
      * Overriding the custom_menu function ensures the custom menu is
@@ -78,50 +76,25 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     /*
-     * this renders the bootstrap top menu
+     * This renders the bootstrap top menu
      *
      * This renderer is needed to enable the Bootstrap style navigation
      *
      */
 
     protected function render_custom_menu(custom_menu $menu) {
-        global $OUTPUT, $USER;
-        // If the menu has no children return an empty string
+        // If the menu has no children return an empty string.
         if (!$menu->has_children()) {
             return '';
         }
+        $content = '<ul class="nav">';
 
-        $menupos = 3;
-
-        // Initialise this custom menu
-        $content = html_writer::start_tag('div',array('class'=>"navbar navbar-fixed-top"));
-        $content .= html_writer::start_tag('div',array('class'=>"navbar-inner"));
-        $content .= html_writer::start_tag('div',array('class'=>"container-fluid"));
-        $content .= html_writer::start_tag('a',array('class'=>"btn btn-navbar",'data-toggle'=>"collapse",'data-target'=>".nav-collapse"));
-        $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
-        $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
-        $content .= html_writer::tag('span', '',array('class'=>'icon-bar'));
-        $content .= html_writer::end_tag('a');
-        $content .= html_writer::start_tag('div', array('class'=>'nav-collapse'));
-        $content .= html_writer::start_tag('ul', array('class'=>'nav'));
-
-        // Render each child
         foreach ($menu->get_children() as $item) {
-            $content .= $this->render_custom_menu_item($item,1);
+            $content .= $this->render_custom_menu_item($item, 1);
         }
 
-        // Close the open tags
-        $content .= $this->lang_menu();
-        $content .= html_writer::end_tag('ul');
-
-        //$content .= $this->login_info();
-
-        $content .= html_writer::end_tag('div');
-        $content .= html_writer::end_tag('div');
-        $content .= html_writer::end_tag('div');
-        $content .= html_writer::end_tag('div');
-        // Return the custom menu
-        return $content;
+        $content .= '<li>'.$this->lang_menu().'</li>';
+        return $content.'</ul>';
     }
 
     /*
@@ -130,7 +103,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
      */
 
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
-        // Required to ensure we get unique trackable id's
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -142,30 +114,27 @@ class theme_bootstrap_core_renderer extends core_renderer {
             }
 
             $content = html_writer::start_tag('li', array('class'=>$dropdowntype));
-            // If the child has menus render it as a sub menu
+            // If the child has menus render it as a sub menu.
             $submenucount++;
             if ($menunode->get_url() !== null) {
                 $url = $menunode->get_url();
             } else {
                 $url = '#cm_submenu_'.$submenucount;
             }
-            //$content .= html_writer::link($url, $menunode->get_text(), array('title'=>,));
-            $content .= html_writer::start_tag('a', array('href'=>$url,'class'=>'dropdown-toggle','data-toggle'=>'dropdown'));
+            $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown'));
             $content .= $menunode->get_title();
             if ($level == 1) {
-                $content .= html_writer::start_tag('b', array('class'=>'caret'));
-                $content .= html_writer::end_tag('b');
+                $content .= '<b class="caret"></b>';
             }
-            $content .= html_writer::end_tag('a');
-            $content .= html_writer::start_tag('ul', array('class'=>'dropdown-menu'));
+            $content .= '</a>';
+            $content .= '<ul class="dropdown-menu">';
             foreach ($menunode->get_children() as $menunode) {
                 $content .= $this->render_custom_menu_item($menunode, 0);
             }
-            $content .= html_writer::end_tag('ul');
+            $content .= '</ul>';
         } else {
-            $content = html_writer::start_tag('li');
-            // The node doesn't have children so produce a final menuitem
-
+            $content = '<li>';
+            // The node doesn't have children so produce a final menuitem.
             if ($menunode->get_url() !== null) {
                 $url = $menunode->get_url();
             } else {
@@ -173,8 +142,5 @@ class theme_bootstrap_core_renderer extends core_renderer {
             }
             $content .= html_writer::link($url, $menunode->get_text(), array('title'=>$menunode->get_title()));
         }
-        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
-        $list_items = '<li>'.join(" $separator</li><li>", $breadcrumbs).'</li>';
-        return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
     }
 }

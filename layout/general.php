@@ -79,9 +79,23 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php if ($hascustommenu) { ?>
-<div id="custommenuwrap"><div id="custommenu"><?php echo $custommenu; ?></div></div>
-<?php } ?>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="#"><?php echo $SITE->shortname; ?></a>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+            <?php if ($hascustommenu) {
+                echo $custommenu;
+            } ?>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="page" class="container-fluid">
 
