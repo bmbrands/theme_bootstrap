@@ -92,6 +92,10 @@ echo $OUTPUT->doctype() ?>
             <?php if ($hascustommenu) {
                 echo $custommenu;
             } ?>
+            <ul class="nav pull-right">
+            <li><?php echo $OUTPUT->headingmenu ?></li>
+            <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+            </ul>
             </div>
         </div>
     </div>

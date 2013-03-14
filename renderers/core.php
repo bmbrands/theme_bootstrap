@@ -50,9 +50,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $item->hideicon = true;
                 $breadcrumbs[] = $this->render($item);
         }
-        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
         $divider = '<span class="divider">/</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
+        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
         return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
     }
     /*
@@ -64,13 +64,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
     public function custom_menu($custommenuitems = '') {
         global $CFG;
 
-        $site = get_site();
-        $custommenuitems = $site->fullname . "|" . $CFG->wwwroot . "\n";
-
         if (!empty($CFG->custommenuitems)) {
             $custommenuitems .= $CFG->custommenuitems;
         }
-
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
     }
@@ -88,11 +84,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
             return '';
         }
         $content = '<ul class="nav">';
-
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
-
         $content .= '<li>'.$this->lang_menu().'</li>';
         return $content.'</ul>';
     }
@@ -142,5 +136,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
             }
             $content .= html_writer::link($url, $menunode->get_text(), array('title'=>$menunode->get_title()));
         }
+        return $content;
     }
 }
