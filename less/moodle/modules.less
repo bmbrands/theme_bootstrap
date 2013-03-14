@@ -1,44 +1,17 @@
-/* custom.less */
+/* modules.less */
 
-// contributed by Paul Hibbitts, see http://msdn.microsoft.com/en-us/library/ie/jj583807(v=vs.85).aspx
-canvas {
-    -ms-touch-action: auto;
-}
-
-/* Course styling */
-
-.coursebox .enrolmenticons {
-    border: 1px dotted #DDDDDD;
-    .border-radius(3px);
-    margin-top: 0.3em;
-    padding: 3px;
-}
-
+// The home for small tweaks to modules that don't require
+// changes drastic enough to pull in the full module css
+// and replace it completely
+// Plus some misc. odds and ends
 select {
     width: auto;
 }
 
-.filemanager select,
-.file-picker select {
-    height: inherit;
-    padding: inherit;
+.path-mod-forum .forumheaderlist {
+    border: none;
 }
 
-#page-enrol-users .user-enroller-panel .uep-search-results .user .details
-{
-    width: 237px;
-}
-
-.userenrolment .col_role .addrole {
-    background-color: #DDDDDD;
-    border: 1px outset #EEEEEE;
-}
-
-.path-mod-forum .forumheaderlist td {
-    border: 1px solid #EEEEEE;
-}
-
-.path-mod-forum .forumheaderlist,
 .forumpost {
     background-color: #f5f5f5;
     border: 1px solid #e3e3e3;
@@ -76,23 +49,6 @@ select {
     border-top: 2px solid #eee;
 }
 
-/* login page */
-.loginbox.twocolumns .loginpanel {
-    border-right: 1px solid #EEEEEE;
-}
-.loginbox.twocolumns .loginpanel,
-.loginbox.twocolumns .signuppanel {
-    border: 0;
-    margin: 0px;
-    padding: 0px;
-    float: none;
-    .box-sizing(border-box);
-    display: block;
-    float: left;
-    margin-left: 2.76243%;
-    min-height: 30px;
-}
-
 .maincalendar .calendarmonth td,.maincalendar .calendarmonth th {
     border: 1px dotted #ddd;
 }
@@ -125,7 +81,12 @@ div.yui3-overlay-content.yui3-widget-stdmod {
     float: right;
     margin-top: 3px;
 }
-.dir-rtl .breadcrumb-button {
+.dir-rtl .navbar .brand,
+.dir-rtl .navbar .nav {
+    float: right;
+}
+.dir-rtl .breadcrumb-button,
+.dir-rtl .nav.pull-right {
     float: left;
 }
 
@@ -138,4 +99,8 @@ div.yui3-overlay-content.yui3-widget-stdmod {
 .container-fluid {
     max-width: 1680px;
     margin: 0 auto;
+}
+// contributed by Paul Hibbitts, see http://msdn.microsoft.com/en-us/library/ie/jj583807(v=vs.85).aspx
+canvas {
+    -ms-touch-action: auto;
 }

@@ -123,19 +123,25 @@ echo $OUTPUT->doctype() ?>
     <div id="region-bs-main-and-pre" class="span9">
     <div class="row-fluid">
     <section id="region-bs-main" class="span8 pull-right">
-<?php } else if ($layout !== 'content-only') { ?>
+<?php } else if ($layout === 'side-post-only') { ?>
+    <section id="region-bs-main" class="span9">
+<?php } else if ($layout === 'side-pre-only') { ?>
     <section id="region-bs-main" class="span9 pull-right">
-<?php } else { ?>
+<?php } else if ($layout === 'content-only') { ?>
     <section id="region-bs-main" class="span12">
 <?php } ?>
+
+
     <?php echo $coursecontentheader; ?>
     <?php echo $OUTPUT->main_content() ?>
     <?php echo $coursecontentfooter; ?>
     </section>
+
+
 <?php if ($layout !== 'content-only') {
           if ($layout === 'pre-and-post') { ?>
             <aside id="region-pre" class="span4 block-region desktop-first-column">
-    <?php } else { ?>
+    <?php } else if ($layout === 'side-pre-only') { ?>
             <aside id="region-pre" class="span3 block-region desktop-first-column">
     <?php } ?>
           <div class="region-content">
@@ -148,9 +154,8 @@ echo $OUTPUT->doctype() ?>
             ?>
             </div>
             </aside>
-      <?php if ($layout === 'pre-and-post') {
-          ?></div></div><?php // close row-fluid & span9
-        }
+    <?php if ($layout === 'pre-and-post') {
+          ?></div><?php // Close row-fluid.
     }
 
     if ($layout === 'side-post-only' OR $layout === 'pre-and-post') { ?>
@@ -163,6 +168,7 @@ echo $OUTPUT->doctype() ?>
               } ?>
         </div>
         </aside>
+    <?php } ?>
 <?php } ?>
 </div>
 
