@@ -25,6 +25,7 @@
  */
 
 $THEME->doctype = 'html5';
+$THEME->yuicssmodules = array();
 $THEME->name = 'bootstrap';
 $THEME->parents = array('');
 

@@ -1,5 +1,18 @@
 /* responsive.less */
 
+
+@media (min-width: 980px) {
+    .dir-rtl .navbar .nav.pull-right,
+    .dir-rtl .navbar .logininfo {
+        float: left;
+    }
+    .dir-rtl .navbar .nav {
+        float: right;
+        & > li {
+            float: right;
+        }
+    }
+}
 // Quiz
 @media (max-width: 480px) {
     .que .info {
