@@ -14,9 +14,8 @@ Features:
 -Focussed on usablity
 
 This theme has been created with the help of:
-Stuart Lamour
-David Scotson
+Stuart Lamour, Mark Aberdour, Paul Hibbits, Mary Evans
 
-Author: Bas Brands
+Authors: Bas Brands, David Scotson
 Contact: bmbrands@gmail.com
 Website: www.basbrands.nl

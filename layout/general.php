@@ -25,6 +25,9 @@ $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->regio
 $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
 $showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
 
+$custommenu = $OUTPUT->custom_menu();
+$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
+
 $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
 
 if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
@@ -55,7 +58,7 @@ if ($showsidepre && !$showsidepost) {
     $bodyclasses[] = $layout;
 
 // Create protocol relative URL for potential use with https.
-$html5shiv_url = substr(new moodle_url($CFG->themewww."/bootstrap/js/html5shiv.js"), 5);
+$html5shiv_url = substr(new moodle_url($CFG->themewww."/bootstrap/javascript/html5shiv.js"), 5);
 $html5shiv = "<!--[if lt IE 9]><script src=\"$html5shiv_url\"></script><![endif]-->";
 
 
@@ -76,34 +79,24 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-    <a class="brand" href="<?php echo $CFG->httpswwwroot ?>"><span class="hidden-phone"><?php echo $SITE->fullname ?></span>
-    <span class="visible-phone"><?php echo $SITE->shortname ?></span></a>
-        <img class="img-circle pull-right" src="https://moodle.org/pix/u/f2.png">
-        <div class="navbar-text pull-right"><?php echo $OUTPUT->login_info(); ?></div>
-    </div>
-  </div>
-</div>
+<?php if ($hascustommenu) { ?>
+<div id="custommenuwrap"><div id="custommenu"><?php echo $custommenu; ?></div></div>
+<?php } ?>
 
 <div id="page" class="container-fluid">
 
 <?php if ($hasheader) { ?>
 <header id="page-header" class="clearfix">
-<?php if ($hasnavbar) { ?>
-    <div class="breadcrumb-button"><?php echo $PAGE->button; ?></div>
-    <?php echo $OUTPUT->navbar(); ?>
-<?php } ?>
+    <?php if ($hasnavbar) { ?>
+        <div class="breadcrumb-button"><?php echo $PAGE->button; ?></div>
+        <?php echo $OUTPUT->navbar(); ?>
+    <?php } ?>
+    <h1><?php echo $PAGE->heading ?></h1>
 
-<h1><?php echo $PAGE->heading ?></h1>
-<div class="headermenu"><?php echo $PAGE->headingmenu; ?></div>
+    <?php if (!empty($courseheader)) { ?>
+        <div id="course-header"><?php echo $courseheader; ?></div>
+    <?php } ?>
 
-<?php if (!empty($courseheader)) { ?>
-    <div id="course-header"><?php echo $courseheader; ?></div>
-<?php } ?>
-
-</header>
 <?php } ?>
 
 <div id="page-content" class="row-fluid">

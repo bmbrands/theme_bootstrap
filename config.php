@@ -19,7 +19,8 @@
  *
  *
  * @package   Moodle Bootstrap theme
- * @copyright 2012 Bas Brands. www.sonsbeekmedia.nl
+ * @copyright 2013 Bas Brands. www.sonsbeekmedia.nl
+ * @authors Bas Brands, David Scotson
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,17 +29,18 @@ $THEME->name = 'bootstrap';
 $THEME->parents = array('');
 
 $THEME->sheets = array(
-    'bootstrap-min',
-    'bootstrap-responsive-min',
+    'bootstrap',
 );
 
 $THEME->editor_sheets = array('editor');
+
 
 $THEME->plugins_exclude_sheets = array(
     'block' => array(
         'settings',
         'navigation',
-    ));
+    ),
+);
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
@@ -132,4 +134,19 @@ $THEME->layouts = array(
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
+);
+
+
+
+
+$THEME->javascripts = array('gallerybootstrapengine',
+'gallerybootstrap',
+'gallerybootstraphightlight',
+'gallerybootstrapdropdown',
+'gallerybootstrapmodal',
+'gallerybootstraptypeahead',
+'gallerybootstrappopover',
+'gallerybootstrapalert',
+'gallerybootstrapcollapse',
+'gallerybootstraptooltip'
 );
