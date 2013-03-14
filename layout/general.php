@@ -155,8 +155,8 @@ echo $OUTPUT->doctype() ?>
             </div>
             </aside>
     <?php if ($layout === 'pre-and-post') {
-          ?></div><?php // Close row-fluid.
-    }
+          ?></div></div><?php // Close row-fluid and span9.
+   }
 
     if ($layout === 'side-post-only' OR $layout === 'pre-and-post') { ?>
         <aside id="region-post" class="span3 block-region">
