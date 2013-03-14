@@ -204,11 +204,6 @@
 #page-site-index .headingblock {
     margin-bottom: 9px;
 }
-#page-site-index .clearfloat {
-    float: none;
-    clear: both;
-    height: 0px;
-}
 
 .path-course-view a.reduce-sections {
     padding-left: 0.2em;
@@ -382,62 +377,30 @@ ul.weeks h3.sectionname {
  min-height: 30px;
 }
 
- .coursebox .summary {
+.coursebox .summary {
      margin-top: 5px;
- }
-
-.coursebox .info {
-     margin-left: 0px;
 }
 
-.categorylist {
-    width: 100%;
-}
 .categorylist .category .numberofcourse {
-    font-style: italic;
-    font-size: 0.85em;
-    font-style: normal;
+    font-size: @fontSizeSmall;
 }
 .categorylist .category {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.categorylist .category .info,
-.categorylist .category .name,
-.categorylist .category .image,
-.categorylist .course .name,
-.categorylist .course .info {
-    float: left;
-    text-align: left;
-    margin-left: .45em;
-}
-.categorylist .course .name img.smallicon {
-    vertical-align: text-bottom;
-    margin-right: .45em;
-}
-.dir-rtl .categorylist .course .name img.smallicon {
-    margin-left: .45em;
-    margin-right: 0;
-}
-.categorylist .course .info {
-    margin-left: .45em;
-}
-.categorylist .course .info img {
-    vertical-align: text-bottom;
-}
-.dir-rtl .categorylist .course .info {
-    margin-right: .45em;
-    margin-left: 0;
+.categorylist .info,
+.categorylist .name,
+.categorylist .category .image {
+    display: inline-block;
+    margin-left: .2em;
+    margin-right: .2em;
 }
 .categorylist .course {
     padding-left: 24px;
     margin-bottom: .5em;
     line-height: 1.5em;
 }
-.categorylist .course .indentation {
-    margin-left: 24px;
-}
-.categorylist .category .indentation {
+.categorylist .indentation {
     margin-left: 24px;
 }
 
@@ -446,7 +409,7 @@ ul.weeks h3.sectionname {
     padding: 0;
 }
 
-.weeks-format, /* Window-width: 800 pixels.IE doesn't support, see inline IE conditional comment. */
+.weeks-format,
 .topics-format {
     margin-top: 8px;
     min-width: 763px;
@@ -519,17 +482,6 @@ ul.weeks h3.sectionname {
     display: none;
 }
 
-.path-course .clearfloat {
-    float: none;
-    clear: both;
-    height: 0px;
-}
-
-/*all courses view*/
-#page-course-index .categorylist .course.clearfloat {
-    height: auto;
-}
-
 /**
  * Overide for RTL layout
  */
@@ -553,21 +505,6 @@ ul.weeks h3.sectionname {
 .dir-rtl .course_category_tree .category .courses .course_link {
     background-position: center right;
     padding-right: 18px;
-}
-.dir-rtl .clearfloat {
-    float: none;
-    clear: both;
-    height: 0px;
-}
-.dir-rtl .categorylist .category .info,
-.dir-rtl .categorylist .category .indentation,
-.dir-rtl .categorylist .category .name,
-.dir-rtl .categorylist .category .image,
-.dir-rtl .categorylist .course .name,
-.dir-rtl .categorylist .course .indentation,
-.dir-rtl .categorylist .course .info {
-    float: right;
-    text-align: right;
 }
 .dir-rtl .categorylist .course {
     padding-right: 18px;
