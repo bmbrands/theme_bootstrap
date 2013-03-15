@@ -141,14 +141,8 @@ $THEME->layouts = array(
 
 
 
-$THEME->javascripts = array('gallerybootstrapengine',
-'gallerybootstrap',
-'gallerybootstraphightlight',
-'gallerybootstrapdropdown',
-'gallerybootstrapmodal',
-'gallerybootstraptypeahead',
-'gallerybootstrappopover',
-'gallerybootstrapalert',
-'gallerybootstrapcollapse',
-'gallerybootstraptooltip'
+$THEME->javascripts = array(
+'bootstrapengine',
+'moodlebootstrap',
+'bootstrapdropdown'
 );
