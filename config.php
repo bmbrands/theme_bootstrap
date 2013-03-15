@@ -138,9 +138,6 @@ $THEME->layouts = array(
     ),
 );
 
-
-
-
 $THEME->javascripts = array(
 'bootstrapengine',
 'moodlebootstrap',
