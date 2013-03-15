@@ -14,7 +14,7 @@ Features:
 -Focussed on usablity
 
 This theme has been created with the help of:
-Stuart Lamour, Mark Aberdour, Paul Hibbits, Mary Evans
+Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans
 
 Authors: Bas Brands, David Scotson
 Contact: bmbrands@gmail.com
