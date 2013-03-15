@@ -40,6 +40,7 @@ $THEME->plugins_exclude_sheets = array(
     'block' => array(
         'settings',
         'navigation',
+        'html'
     ),
 );
 
@@ -137,17 +138,9 @@ $THEME->layouts = array(
     ),
 );
 
-
-
-
-$THEME->javascripts = array('gallerybootstrapengine',
-'gallerybootstrap',
-'gallerybootstraphightlight',
-'gallerybootstrapdropdown',
-'gallerybootstrapmodal',
-'gallerybootstraptypeahead',
-'gallerybootstrappopover',
-'gallerybootstrapalert',
-'gallerybootstrapcollapse',
-'gallerybootstraptooltip'
+$THEME->javascripts = array(
+'bootstrapengine',
+'moodlebootstrap',
+'bootstrapcollapse',
+'bootstrapdropdown'
 );
