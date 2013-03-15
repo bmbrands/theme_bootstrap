@@ -55,12 +55,7 @@ if ($showsidepre && !$showsidepost) {
 } else if (!$showsidepost && !$showsidepre) {
     $layout = 'content-only';
 }
-    $bodyclasses[] = $layout;
-
-// Create protocol relative URL for potential use with https.
-$html5shiv_url = substr(new moodle_url($CFG->themewww."/bootstrap/javascript/html5shiv.js"), 5);
-$html5shiv = "<!--[if lt IE 9]><script src=\"$html5shiv_url\"></script><![endif]-->";
-
+$bodyclasses[] = $layout;
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
@@ -72,7 +67,6 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
-    <?php echo $html5shiv ?>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join($bodyclasses)) ?>">
