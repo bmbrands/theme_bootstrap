@@ -114,7 +114,7 @@ echo $OUTPUT->doctype() ?>
     <?php if (!empty($courseheader)) { ?>
         <div id="course-header"><?php echo $courseheader; ?></div>
     <?php } ?>
-
+</header>
 <?php } ?>
 
 <div id="page-content" class="row-fluid">
