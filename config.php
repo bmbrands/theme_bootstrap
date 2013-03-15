@@ -141,5 +141,6 @@ $THEME->layouts = array(
 $THEME->javascripts = array(
 'bootstrapengine',
 'moodlebootstrap',
+'bootstrapcollapse',
 'bootstrapdropdown'
 );
