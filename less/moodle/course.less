@@ -67,17 +67,15 @@
     white-space: nowrap;
     display: inline;
 }
-.sitetopic .section .activity.mod_label .commands,
 .sitetopic .section .activity.modtype_label .commands,
-.course-content .section .activity.mod_label .commands,
 .course-content .section .activity.modtype_label .commands {
-    display: block;
     margin-left: 40%;
     padding-left: 22px;
 }
 .sitetopic .section li.activity,
 .course-content .section li.activity {
     padding: .2em;
+    clear: both;
 }
 .section .activity .activityinstance .groupinglabel {
     padding-left: .45em;
@@ -239,32 +237,16 @@
 }
 .path-course-view li.activity span.autocompletion,
 .path-course-view li.activity form.togglecompletion {
-    position: absolute;
-    top: 0;
-    right: .2em;
-}
-.path-course-view li.activity span.autocompletion img,
-.path-course-view li.activity form.togglecompletion input {
-    position: absolute;
-    top: .25em;
-    right: 0px;
+    float: right;
 }
 .path-course-view li.activity form.togglecompletion .ajaxworking {
-    position: absolute;
-    right: 22px;
-    top: 5px;
     width: 16px;
     height: 16px;
     background: url([[pix:i/ajaxloader]]) no-repeat;
 }
-.path-course-view li.activity form.togglecompletion div {
-    display: inline;
-}
 .dir-rtl.path-course-view li.activity form.togglecompletion,
 .dir-rtl.path-course-view li.activity span.autocompletion {
-    left: 1.7em;
-    right: auto;
-    padding: 0px;
+    float: left;
 }
 .dir-rtl.path-course-view .completionprogress {
     float: none;
