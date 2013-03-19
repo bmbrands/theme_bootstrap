@@ -73,8 +73,8 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+<header role="banner" class="navbar navbar-fixed-top">
+    <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="#"><?php echo $SITE->shortname; ?></a>
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -87,20 +87,20 @@ echo $OUTPUT->doctype() ?>
                 echo $custommenu;
             } ?>
             <ul class="nav pull-right">
-            <li><?php echo $PAGE->headingmenu ?></li>
+            <li><?php echo $OUTPUT->headingmenu ?></li>
             <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
             </ul>
             </div>
         </div>
-    </div>
-</div>
+    </nav>
+</header>
 
 <div id="page" class="container-fluid">
 
 <?php if ($hasheader) { ?>
 <header id="page-header" class="clearfix">
     <?php if ($hasnavbar) { ?>
-        <div class="breadcrumb-button"><?php echo $PAGE->button; ?></div>
+        <nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
         <?php echo $OUTPUT->navbar(); ?>
     <?php } ?>
     <h1><?php echo $PAGE->heading ?></h1>
@@ -111,7 +111,7 @@ echo $OUTPUT->doctype() ?>
 </header>
 <?php } ?>
 
-<div id="page-content" class="row-fluid">
+<div role="main" id="page-content" class="row-fluid">
 
 <?php if ($layout === 'pre-and-post') { ?>
     <div id="region-bs-main-and-pre" class="span9">
