@@ -253,11 +253,7 @@ form.popupform div {
 }
 .action-icon img.smallicon {
     vertical-align: text-bottom;
-    margin-left: .45em;
-}
-.dir-rtl .action-icon img.smallicon {
-    margin-right: .45em;
-    margin-left: 0;
+    margin: 0 0.3em;
 }
 .main img {
     vertical-align: middle;
@@ -1727,7 +1723,7 @@ audio.mediaplugin_html5audio {
     left: 20.3em;
     margin: 0;
     padding: 1.6em;
-    background-color: #FFFFFF;
+    background-color: @bodyBackground;
     overflow-x: hidden;
     overflow-y: auto;
     line-height: 2em;
@@ -1744,15 +1740,11 @@ audio.mediaplugin_html5audio {
     display: block;
 }
 .choosercontainer #chooseform .selected {
-    background-color: #fff;
+    background-color: @bodyBackground;
     .box-shadow(0px 0px 10px 0px #ccc);
 }
 .section-modchooser-link img.smallicon {
-    padding-right: 3px;
-}
-.dir-rtl .section-modchooser-link img.smallicon {
-    padding-left: 3px;
-    padding-right: 0;
+    padding: 3px;
 }
 /* Form element: listing */
 .formlistingradio {
