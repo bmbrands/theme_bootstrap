@@ -16,9 +16,6 @@ Release notes version Version 2.0
 - Restored default editor
 - Tested for Moodle 2.4
 - Options to use glyphicons for moodle 2.3 in the settings menu
-- Option to add your Google analytics key. This theme enables improved Google analytics reporting:
-for more info check: http://basbrands.nl/2012/04/18/google-analytics-with-moodle/
-
 
 Using Bootstrap Version 2.1.1
 
