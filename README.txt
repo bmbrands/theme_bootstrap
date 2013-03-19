@@ -8,10 +8,8 @@ https://github.com/bmbrands/theme_bootstrap
 
 Feel free to modify / improve / share
 
-Features:
-
--Responsive design
--Focussed on usablity
+For more information on this theme go to:
+https://github.com/bmbrands/theme_bootstrap/wiki
 
 This theme has been created with the help of:
 Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans
