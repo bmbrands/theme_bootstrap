@@ -87,7 +87,7 @@ echo $OUTPUT->doctype() ?>
                 echo $custommenu;
             } ?>
             <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->headingmenu ?></li>
+            <li><?php echo $PAGE->headingmenu ?></li>
             <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
             </ul>
             </div>
