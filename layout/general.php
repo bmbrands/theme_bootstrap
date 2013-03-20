@@ -134,11 +134,10 @@ echo $OUTPUT->doctype() ?>
 
 <?php if ($layout !== 'content-only') {
           if ($layout === 'pre-and-post') { ?>
-            <aside id="region-pre" class="span4 block-region desktop-first-column">
+            <aside id="region-pre" class="span4 block-region desktop-first-column region-content">
     <?php } else if ($layout === 'side-pre-only') { ?>
-            <aside id="region-pre" class="span3 block-region desktop-first-column">
+            <aside id="region-pre" class="span3 block-region desktop-first-column region-content">
     <?php } ?>
-          <div class="region-content">
           <?php
                 if (!right_to_left()) {
                     echo $OUTPUT->blocks_for_region('side-pre');
@@ -146,21 +145,18 @@ echo $OUTPUT->doctype() ?>
                     echo $OUTPUT->blocks_for_region('side-post');
                 }
             ?>
-            </div>
             </aside>
     <?php if ($layout === 'pre-and-post') {
           ?></div></div><?php // Close row-fluid and span9.
    }
 
     if ($layout === 'side-post-only' OR $layout === 'pre-and-post') { ?>
-        <aside id="region-post" class="span3 block-region">
-        <div class="region-content">
+        <aside id="region-post" class="span3 block-region region-content">
         <?php if (!right_to_left()) {
                   echo $OUTPUT->blocks_for_region('side-post');
               } else {
                   echo $OUTPUT->blocks_for_region('side-pre');
               } ?>
-        </div>
         </aside>
     <?php } ?>
 <?php } ?>
