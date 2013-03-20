@@ -75,11 +75,4 @@ if ($ADMIN->fulltree) {
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $settings->add($setting);
-    
-    $name = 'theme_bootstrap/gakey';
-	$title = get_string('gakey','theme_bootstrap');
-	$description = get_string('gakeydesc', 'theme_bootstrap');
-	$setting = new admin_setting_configtext($name, $title, $description, '');
-	$settings->add($setting);
-
 }
