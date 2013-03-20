@@ -95,6 +95,14 @@ select {
 .dir-rtl .navbar .brand {
     float: right;
 }
+.navbar .logininfo a {
+    color: @navbarLinkColor;
+}
+.navbar .logininfo a:hover {
+  background-color: @navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
+  color: @navbarLinkColorHover;
+}
+  
 .dir-rtl .breadcrumb-button,
 .dir-rtl .navbar .btn-navbar {
     float: left;
