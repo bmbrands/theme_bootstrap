@@ -70,7 +70,8 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
     }
-
+    
+    
     /*
      * This renders the bootstrap top menu
      *
@@ -83,11 +84,29 @@ class theme_bootstrap_core_renderer extends core_renderer {
         if (!$menu->has_children()) {
             return '';
         }
+        $addlangmenu = true;
+        $langs = get_string_manager()->get_list_of_translations();
+            if ($this->page->course != SITEID and !empty($this->page->course->lang)) {
+            // do not show lang menu if language forced
+            $addlangmenu = false;
+        }
+        if (count($langs) < 2) {
+            $addlangmenu = false;
+        }
+        
+        if ($addlangmenu) {
+            $language = $menu->add(get_string('language'), new moodle_url('#'), get_string('language'), 10);
+            foreach ($langs as $langtype => $langname) {
+                $language->add($langname, 
+                new moodle_url($this->page->url, array('lang' => $langtype)), $langname);    
+            }
+        }
+        
         $content = '<ul class="nav">';
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
-        $content .= '<li>'.$this->lang_menu().'</li>';
+
         return $content.'</ul>';
     }
 

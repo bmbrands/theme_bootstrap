@@ -76,7 +76,7 @@ echo $OUTPUT->doctype() ?>
 <header role="banner" class="navbar navbar-fixed-top">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="#"><?php echo $SITE->shortname; ?></a>
+            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -87,7 +87,7 @@ echo $OUTPUT->doctype() ?>
                 echo $custommenu;
             } ?>
             <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->headingmenu ?></li>
+            <li><?php echo $PAGE->headingmenu ?></li>
             <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
             </ul>
             </div>
