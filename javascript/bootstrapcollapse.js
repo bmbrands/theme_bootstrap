@@ -176,7 +176,7 @@ Y.extend(CollapsePlugin, Y.Plugin.Base, {
         this.transitioning = true;
 
         node.transition({
-            height   : 'auto',
+            height   : to_height +'px',
             duration : duration,
             easing   : easing
         }, complete);
