@@ -88,12 +88,21 @@ li.section.hidden,
  * Moodle uses fieldset.hidden for mforms, to signify a collection of
  * form elements that don't have a box drawn round them. Bootstrap
  * uses hidden for stuff that is hidden in various responsive modes.
+ *
+ * Relatedly, there is also fieldset.invisiblefieldset which hides the
+ * border and sets the display to inline.
+ *
+ * Originally this just set block and visible, but it is used
+ * in random question dialogue in Quiz,
+ * that dialogue is hidden and shown, so when hidden the
+ * above workaround leaves you with a button floating around
  */
 
 fieldset.hidden {
-    display: block;
-    visibility: visible;
+    display: inherit;
+    visibility: inherit;
 }
+
 
 /* .controls vs .controls
  *
@@ -133,6 +142,9 @@ div.c1.btn {
  * it becomes near unuseable. 
  */
 
+#questionbank + .container {
+    width: auto;
+}
 // In Moodle .hide is the eye icon
 // In Bootstrap it hides things
 img.hide {
