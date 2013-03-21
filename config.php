@@ -142,10 +142,10 @@ $THEME->layouts = array(
 );
 
 $THEME->javascripts = array(
-'bootstrapengine',
-'moodlebootstrap',
-'bootstrapcollapse',
-'bootstrapdropdown'
+    'bootstrapengine',
+    'moodlebootstrap',
+    'bootstrapcollapse',
+    'bootstrapdropdown',
 );
 
 if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 8') || strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 7') ) {
