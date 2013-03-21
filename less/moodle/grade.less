@@ -95,16 +95,6 @@
     display: none;
 }
 
-/*adjustments to grader report (with static student cols) to make things line up in IE and Safari*/
-#page-grade-report-grader-index .right_scroller #user-grades td {
-    padding-top: 0;
-    padding-bottom: 2px;
-}
-#page-grade-report-grader-index #fixed_column td {
-    padding-top: 0;
-    padding-bottom: 2px;
-}
-
 /** Advanced grading **/
 #page-grade-grading-manage #activemethodselector {
     text-align: center;
@@ -238,4 +228,354 @@ font-size: 80%}
 }
 #page-grade-grading-pick .singlebutton {
     clear: both;
+}
+
+// overrides grades/report/grader/styles.css
+
+
+table#user-grades tr td.overridden {background-color:#F3E4C0;}
+table#user-grades tr.odd td.overridden {background-color:#EFD9A4;}
+
+table#user-grades tr td.ajaxoverridden {background-color:#FFE3A0;}
+table#user-grades tr.odd td.ajaxoverridden {background-color:#FFDA83;}
+
+table#user-grades tr.even td.excluded {
+background-color:#EABFFF;
+}
+
+table#user-grades tr.odd td.excluded {
+background-color:#E5AFFF;
+}
+
+table#user-grades tr.groupavg td.cell {
+background-color:#efffef;
+font-weight:700;
+color:#006400;
+}
+
+table#user-grades td.cat,
+table#user-grades td.course {
+font-weight:700;
+}
+
+table#user-grades,
+.left_scroller #fixed_column {
+    font-size:10px;
+}
+
+.path-grade-report-grader #overDiv table {
+margin:0;
+}
+
+.path-grade-report-grader #overDiv table td.feedback {
+border:0;
+}
+
+.path-grade-report-grader #overDiv .feedback {
+font-size: @fontSizeMini;
+background-color:#ABF;
+font-weight:400;
+}
+
+.path-grade-report-grader #overDiv .caption {
+font-size: @fontSizeMini;
+background-color:#56C;
+color:#CCF;
+font-weight:700;
+}
+
+.path-grade-report-grader #overDiv .intersection {
+font-size: @fontSizeMini;
+background-color:#ABF;
+color:#000;
+font-weight:400;
+}
+
+.path-grade-report-grader #overDiv .intersectioncaption {
+background-color:#56C;
+color:#CCF;
+font-weight:700;
+}
+
+table#user-grades td {
+    text-align:right;
+}
+
+table#user-grades th.user {
+text-align:left;
+}
+
+div.gradertoggle {
+display:inline;
+margin-left:20px;
+}
+
+table#user-grades th.range {
+text-align:right;
+}
+
+table#user-grades .userpic {
+    margin-right: 10px;
+}
+
+table#user-grades .quickfeedback {
+border:1px dashed #000;
+margin-left: 10px;
+}
+.dir-rtl table#user-grades .quickfeedback { margin-left: 0; margin-right: 10px;}
+
+.path-grade-report-grader #siteconfiglink {
+text-align:right;
+}
+
+table#user-grades .hidden,
+table#user-grades .hidden a {
+    .muted
+}
+
+table#user-grades .datesubmitted {
+font-size: @fontSizeMini;
+}
+
+.path-grade-report-grader span.inclusion-links {
+margin:0 5px 0 10px;
+}
+
+table#user-grades .item,
+table#user-grades .courseitem {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.path-grade-report-grader th.user img.userpicture {
+    margin-top: -8px;
+    margin-bottom: -8px;
+    margin-right: 0.5em;
+    height: 3em;
+    width: 3em;
+}
+
+.path-grade-report-grader a.quickedit {
+line-height:1em;
+display:block;
+float:right;
+clear:none;
+font-size:9px;
+background-color:transparent;
+margin:.1em 0 0;
+}
+
+.path-grade-report-grader a.quickedit2 {
+display:block;
+float:right;
+clear:none;
+background-color:transparent;
+margin:1.3em 0 0;
+}
+
+.path-grade-report-grader table#quick_edit {
+border:1px solid #cecece;
+margin:0 auto;
+}
+
+.path-grade-report-grader table#quick_edit td {
+vertical-align:middle;
+border:1px solid #cecece;
+text-align:left;
+margin:0;
+padding:5px;
+}
+
+.path-grade-report-grader table#quick_edit td img {
+border:3px double #cecece;
+vertical-align:middle;
+padding:0;
+}
+
+.path-grade-report-grader td input.submit {
+margin: 10px 10px 0px 10px;
+}
+
+.path-grade-report-grader table#quick_edit td.fullname {
+border-left:0;
+padding-left:5px;
+}
+
+.path-grade-report-grader table#quick_edit td.picture {
+border-right:0;
+}
+
+.path-grade-report-grader table#quick_edit td.finalgrade input {
+width:5em;
+}
+
+.path-grade-report-grader h1 {
+text-align:center;
+clear:both;
+}
+
+.path-grade-report-grader input.center {
+margin:10px auto 0;
+}
+
+.path-grade-report-grader .lefttbody {
+width:auto;
+vertical-align:middle;
+}
+
+.path-grade-report-grader .left_scroller {
+    float:left;
+    clear:none;
+}
+.path-grade-report-grader.dir-rtl .left_scroller {float:right;}
+
+.path-grade-report-grader .left_scroller .topleft {
+    height: 2em;
+}
+
+.path-grade-report-grader .right_scroller {
+width:auto;
+clear:none;
+overflow-x:scroll;
+}
+
+
+.path-grade-report-grader form td.excluded {
+    color: @errorText;
+}
+
+.path-grade-report-grader .excludedfloater {
+font-weight:700;
+    color: @errorText;
+font-size:9px;
+float:left;
+}
+
+.path-grade-report-grader span.gradepass {
+color:#298721;
+}
+
+.path-grade-report-grader span.gradefail {
+color:#890d0d;
+}
+
+.path-grade-report-grader .gradeweight {
+color:#461d7c;
+font-weight:700;
+}
+
+.path-grade-report-grader td select {
+font-size:100%;
+padding:0;
+}
+
+.path-grade-report-grader .right_scroller td select {
+font-size:86%;
+padding:0;
+}
+
+.path-grade-report-grader .grade_icons img.ajax {
+float:right;
+}
+
+.path-grade-report-grader .gradestable th.user,
+.path-grade-report-grader .gradestable th.range,
+.path-grade-report-grader .flexible th,
+.path-grade-report-grader .flexible td,
+.path-grade-report-grader .flexible th a,
+.path-grade-report-grader .flexible td a,
+.path-grade-report-grader .gradestable th.range,
+.path-grade-report-grader td {
+white-space:nowrap;
+}
+
+table#user-grades td.vmarked {
+    background-color: #fc3;
+}
+
+table#user-grades td.hmarked {
+    background-color: #ff9;
+}
+
+table#user-grades td.hmarked.vmarked {
+    background-color: #fc9;
+}
+
+table#user-grades td.userfield,
+table#user-grades th,
+.path-grade-report-grader div.gradeparent,
+table#user-grades td.ajax {
+text-align:left;
+}
+
+.dir-rtl table#user-grades td.userfield,
+.dir-rtl table#user-grades th,
+.path-grade-report-grader.dir-rtl  div.gradeparent,
+.dir-rtl table#user-grades td.ajax {
+text-align:right;
+}
+
+.path-grade-report-grader .gradeparent {
+    overflow:auto;
+}
+
+table#user-grades td.controls,
+.path-grade-report-grader table tr.avg,
+.path-grade-report-grader table tr.avg:hover {
+    background-color: @infoBackground;
+}
+
+.path-grade-report-grader table th.user,
+.path-grade-report-grader table td.userfield {
+    text-align:left;
+}
+
+.path-grade-report-grader .usersuspended a:link,
+.path-grade-report-grader .usersuspended a:visited {
+    .muted
+}
+
+.path-grade-report-grader table th.usersuspended img.usersuspendedicon {
+    vertical-align: text-bottom;
+    margin-left: .45em;
+}
+
+.path-grade-report-grader .grade_icons { margin-bottom: .3em;}
+
+.path-grade-report-grader .yui3-overlay {
+    background-color: #FFEE69;
+    border-color: #D4C237 #A6982B #A6982B;
+    border-style: solid;
+    border-width: 1px;
+    left: 0;
+    padding: 2px 5px;
+    font-size: 0.7em;
+}
+
+.path-grade-report-grader .yui3-overlay .fullname {
+    color: #5F3E00;
+    font-weight: bold;
+}
+.path-grade-report-grader .yui3-overlay .itemname {
+    color: #194F3E;
+    font-weight: bold;
+}
+.path-grade-report-grader .yui3-overlay .feedback {
+    color: #5F595E;
+}
+
+.path-grade-report-grader #tooltipPanel {
+  text-align: left;
+}
+
+.path-grade-report-grader .yui3-overlay a.container-close {
+  margin-top: -3px;
+}
+
+.path-grade-report-grader #hiddentooltiproot, .tooltipDiv {
+  display: none;
+}
+
+.path-grade-report-grader.ie .right_scroller {
+overflow-y:hidden;
 }
