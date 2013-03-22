@@ -167,16 +167,15 @@ Y.extend(CollapsePlugin, Y.Plugin.Base, {
             };
 
         if ( to_height === null ) {
-            to_height = 0;
-            node.all('> *').each(function(el) {
-                to_height += el.get('scrollHeight');
-            });
+            to_height = 0 + 'px';
+        } else {
+        	to_height = 'auto';
         }
 
         this.transitioning = true;
 
         node.transition({
-            height   : to_height +'px',
+            height   : to_height,
             duration : duration,
             easing   : easing
         }, complete);

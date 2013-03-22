@@ -209,6 +209,27 @@
     }
 }
 
+@media (max-width: 979px) {
+    .nav-collapse {
+        .nav > li > a {
+            color: @grayDark;
+        }
+        .nav > li > a:hover,
+        .nav > li > a:focus, 
+        .dropdown-menu a:hover, 
+        .dropdown-menu a:focus,
+        .dropdown-submenu a:focus,
+        .dropdown-submenu a:hover,
+        .dropdown-submenu a:active,
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus,
+        {
+            background-image: none;
+            color: @grayDark;
+        }
+    }
+}
+
 // Hide broken drag'n'drop options on touch devices MDL-38371
 // Not a great workaround, landscape iPads are wider than this,
 // and a resized window on a netbook could be smaller, but best

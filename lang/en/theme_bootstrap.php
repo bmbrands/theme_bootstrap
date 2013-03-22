@@ -30,14 +30,41 @@ $string['choosereadme'] = '
 <img class=img-polaroid src="bootstrap/pix/screenshot.jpg" />
 <h3>Theme Credits</h3>
 <p>
-This theme is a collaborative work from:<br>
-Stuart Lamour, <br>
-David Scotson, <br>
-Bas Brands
+<h3>Moodle twitter Bootstrap theme</h3>
+<p>
+This theme is based on the Bootstrap CSS framework, version 2.3
+</p>
+<p>
+<a href="http://getbootstrap.com">http://getbootstrap.com</a>
+</p>
+<p>
+This is a GPL theme that is available on GitHub:
+</p>
+<p>
+<a href=https://github.com/bmbrands/theme_bootstrap">https://github.com/bmbrands/theme_bootstrap</a>
+</p>
+<p>
+Feel free to modify / improve / share
+</p>
+<p>
+This theme has been created with the help of:
+Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans
+</p>
+<p>
+Authors: Bas Brands, David Scotson<br>
+Contact: bas@sonsbeekmedia.nl<br>
+Website: <a href="http://www.basbrands.nl">www.basbrands.nl</a><br>
 </p>
 
-<h3>About</h3>
-<p>Bootstrap is a responsive theme for mobile and desktop that is focused on usability and a clean, minimal look ideal for customising.</p>
-<h3>License</h3>
-<p>This theme is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.</p>
-';
+<h3>Reporting bugs</h3>
+
+<p>You can report bugs on the <a href="https://github.com/bmbrands/theme_bootstrap/issues">github page</a> for this theme or 
+on the Moodle tracker</p>
+
+<h3>More information</h3>
+<ul>
+<li><a href="https://github.com/bmbrands/theme_bootstrap/wiki">Wiki page for this theme</a>
+<li><a href="http://docs.moodle.org/23/en/bootstrap-Theme">Bootstrap on Moodle docs</a></li>
+<li><a href="http://theming.sonsbeekmedia.nl/">Theme testing playground </a></li>
+</ul>';
+
