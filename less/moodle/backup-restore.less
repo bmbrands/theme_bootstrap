@@ -1,58 +1,36 @@
 .path-backup .mform .grouped_settings.section_level {
+    .well;
+    padding: 10px 0 0 0;
     clear: both;
 }
 .path-backup .mform .grouped_settings {
     clear: both;
     overflow: hidden;
 }
-.path-backup .mform .grouped_settings .fitem .fitemtitle {
-    width: 40%;
-    padding-right: 10px;
+.path-backup .include_setting,
+.path-backup .normal_setting {
+    display: inline-block;
 }
-.path-backup.dir-rtl .mform .grouped_settings .fitem .fitemtitle {
-    width: 60%;
+
+.path-backup .include_setting.section_level label {
+        font-weight: bold;
 }
-.path-backup .mform .grouped_settings .fitem .felement {
-    width: 50%;
+.path-backup .mform .fitem .fitemtitle {
+    width: 260px;
 }
-.path-backup.dir-rtl .mform .grouped_settings .fitem .felement {
-    width: 99%;
-}
-.path-backup .mform .grouped_settings.section_level .include_setting {
-    width: 50%;
-    margin: 0;
-    float: left;
-    clear: left;
-    font-weight: bold;
-}
-.path-backup.dir-rtl  .mform .grouped_settings.section_level .include_setting {
-    float: right;
-    clear: right;
-}
-.path-backup.dir-rtl  .mform .grouped_settings.section_level .normal_setting {
-    margin: 0;
-}
-.path-backup .mform .grouped_settings.activity_level .include_setting label {
-    font-weight: normal;
-}
-.path-backup.dir-rtl .mform .grouped_settings.activity_level .include_setting label img {
-    float: right;
-}
-.path-backup .mform .fitem fieldset.felement {
-    margin-left: 0;
-    width: auto;
-    padding-left: 0;
+.path-backup .mform .fitem .felement {
+    margin-left: 280px;
 }
 .path-backup .notification.dependencies_enforced {
     text-align: center;
-    color: #A00;
+    color: @errorText;
     font-weight: bold;
 }
 .path-backup .backup_progress {
     text-align: center;
 }
 .path-backup .backup_progress span.backup_stage {
-    color: #999;
+    .muted
 }
 .path-backup .backup_progress .backup_stage.backup_stage_current {
     font-weight: bold;
@@ -72,19 +50,10 @@
     background-color: @bodyBackground;
     border: 1px dotted #666;
 }
-.path-backup .fitemtitle .iconlarge.icon-post {
-    padding-left: 6px;
-}
-.path-backup.dir-rtl .fitemtitle .iconlarge.icon-post {
-    padding-right: 6px;
-    padding-right: 0;
-}
 .path-backup .fitem .smallicon {
     vertical-align: text-bottom;
 }
-/**
-* Backup
-*/
+
 .backup-restore .backup-section {
     clear: both;
     border: 1px solid #ddd;
@@ -172,7 +141,7 @@
 }
 .path-backup .mform .fgroup .proceedbutton {
     float: right;
-    margin-right: 1%;
+    margin-right: 5%;
 }
 .restore-course-search .rcs-results {
     width: 70%;
