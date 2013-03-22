@@ -423,32 +423,39 @@ margin:10px auto 0;
 .path-grade-report-grader .left_scroller {
     float:left;
     clear:none;
-}
-.path-grade-report-grader.dir-rtl .left_scroller {
-    float:right;
-    table#fixed_column th {
+    #fixed_column .heading th.header,
+    #fixed_column td,
+    #fixed_column th {
         height: 4em;
-        font-size: 10px;
-        vertical-align: middle;
-        padding: 0 4px;
     }
-    table#fixed_column th.header {
+    #fixed_column td.controls {
         height: 2em;
     }
+}
+.path-grade-report-grader.dir-rtl .left_scroller {
+    float: right;
 }
 .path-grade-report-grader .right_scroller {
     width: auto;
     clear: none;
     overflow-x: scroll;
-    table#user-grades td.grade,
+
+    tr.heading_name_row th,
+    table#user-grades td.grade {
+        height: 4em;
+    }
     .path-grade-report-grader .left_scroller .topleft,
-    tr.avg,
+    tr.avg td,
     tr.groupavg,
     tr.controls_row,
     div.right_scroller tr {
         height: 2em;
     }
 }
+table#fixed_column,
+table#user-grades,
+table#fixed_column th,
+table#fixed_column td,
 table#user-grades td,
 table#user-grades th,
 table#user-grades input {
@@ -502,6 +509,7 @@ table#user-grades input {
 .path-grade-report-grader .flexible th a,
 .path-grade-report-grader .flexible td a,
 .path-grade-report-grader .gradestable th.range,
+.path-grade-report-grader th,
 .path-grade-report-grader td {
     white-space: nowrap;
 }
