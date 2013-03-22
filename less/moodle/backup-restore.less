@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 .path-backup .include_setting,
-.path-backup .normal_setting {
+.path-backup .grouped_settings .normal_setting {
     display: inline-block;
 }
 
@@ -54,38 +54,25 @@
     vertical-align: text-bottom;
 }
 
-.backup-restore .backup-section {
-    clear: both;
-    border: 1px solid #ddd;
-    background-color: #f6f6f6;
-    margin-bottom: 1em;
-}
-.backup-restore .backup-section > h2.header {
-    padding: 5px 6px;
-    margin: 0;
-    border-bottom: 1px solid #ddd;
+.backup-restore .backup-section > h2.header,
+.backup-restore .backup-section .backup-sub-section h3 {
+    // Copied from bootstrap/forms.less tag legend
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: @baseLineHeight;
+    font-size: @baseFontSize * 1.5;
+    line-height: @baseLineHeight * 2;
+    color: @grayDark;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
 }
 .backup-restore .backup-section .noticebox {
     margin: 1em auto;
     width: 60%;
     text-align: center;
 }
-.backup-restore .backup-section .backup-sub-section {
-    margin: 0 25px;
-    background-color: #f9f9f9;
-    border: 1px solid #f3f3f3;
-    margin-bottom: 1em;
-}
-.backup-restore .backup-section .backup-sub-section h3 {
-    text-align: right;
-    border-bottom: 1px solid #DDD;
-    padding: 5px 86% 5px 6px;
-    margin: 0;
-    background-color: #e9e9e9;
-}
 .backup-restore .backup-section.settings-section .detail-pair {
-    margin: 0;
-    padding: 0;
     width: 50%;
     display: inline-block;
     .ie7-inline-block();
@@ -97,7 +84,6 @@
     width: 25%;
 }
 .backup-restore .activitytable {
-    width: 60%;
     min-width: 500px;
 }
 .backup-restore .activitytable .modulename {
@@ -108,8 +94,6 @@
 }
 .backup-restore .activitytable .userinfoincluded {
     width: 50px;
-}
-.backup-restore .detail-pair {
 }
 .backup-restore .detail-pair-label {
     display: inline-block;
@@ -131,10 +115,8 @@
 }
 .backup-restore .detail-pair-value > .sub-detail {
     display: block;
-    color: #1580B6;
-    margin-left: 2em;
-    font-size: 90%;
-    font-style: italic;
+    font-size: @fontSizeSmall;
+    .muted
 }
 .backup-restore > .singlebutton {
     text-align: right;
@@ -146,8 +128,6 @@
 .restore-course-search .rcs-results {
     width: 70%;
     min-width: 400px;
-    border: 1px solid #ddd;
-    margin: 5px 0;
 }
 .restore-course-search .rcs-results table {
     width: 100%;
