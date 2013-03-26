@@ -2,17 +2,13 @@
 .message-discussion-noframes h1 {
     font-size: 1em;
 }
-.message-discussion-noframes #userinfo .commands {
-    font-size: 0.8em;
-}
-.message .noframesjslink {
-    font-size: 0.8em;
-}
+.message-discussion-noframes #userinfo .commands,
+.message .noframesjslink,
 .message .link {
-    font-size: 0.8em;
+    font-size: @fontSizeSmall;
 }
 .message .heading {
-    font-size: 1.0em;
+    font-size: 1em;
     font-weight: bold;
 }
 .message .author {
@@ -29,16 +25,14 @@
     font-size: 1.1em;
 }
 table.message_search_results td {
-    border-color: #DDDDDD;
+    border-color: #ddd;
 }
-.message .time {
-    color: #999999;
-}
+.message .time,
 .message.me .author {
-    color: #999999;
+    color: #999;
 }
 .message.other .author {
-    color: #8888CC;
+    color: #88c;
 }
 #page-message-messages {
     padding: 10px;
@@ -71,7 +65,7 @@ table.message .searchresults td {
 }
 .message .messagearea  {
     padding-left: 1%;
-    border-left: 1px solid LightGrey;
+    border-left: 1px solid #d3d3d3;
     width: 74%;
     float: right;
     min-height: 200px;
@@ -113,7 +107,7 @@ table.message .searchresults td {
 }
 .message .messagearea .messagehistory .notification {
     padding: 10px;
-    background-color: #EEEEEE;
+    background-color: #eee;
     margin-top: 5px;
 }
 .message .messagearea .messagesend {
@@ -121,17 +115,19 @@ table.message .searchresults td {
     clear: both;
 }
 .message .messagearea .messagesend .messagesendbox {
-width: 100%}
+    width: 100%;
+}
 .message .messagearea .messagesend fieldset {
     padding: 0;
     margin: 0;
-} /** bring the message send button closer to the message box */
+}
+// Bring the message send button closer to the message box.
 .message .messagearea .messagerecent {
     text-align: left;
     width: 100%;
 }
 .message .messagearea .messagerecent .singlemessage {
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 1px solid #d3d3d3;
     padding: 10px;
 }
 .message .messagearea .messagerecent .singlemessage .otheruser span {
@@ -175,7 +171,7 @@ width: 100%}
     padding: 0 .45em 0 0;
 }
 #newmessageoverlay {
-    background-color: LightGrey;
+    background-color: #d3d3d3;
     border: 1px solid black;
     padding: 20px;
     position: fixed;
@@ -184,7 +180,4 @@ width: 100%}
 }
 #newmessageoverlay #usermessage {
     padding: 10px;
-}
-.ie6 #newmessageoverlay {
-    position: static;
 }
