@@ -13,16 +13,6 @@
         }
     }
 }
-// Quiz
-@media (max-width: 480px) {
-    .que .info {
-        float: none;
-        width: auto;
-    }
-    .que .content {
-        margin: 0;
-    }
-}
 
 // login page
 @media (min-width: 1200px) {
@@ -105,49 +95,86 @@
 }
 
 @media (max-width: 480px) {
-  .course-content ul.topics li.section,
-  .course-content ul.topics li.section .content,
-  .course-content ul.weeks li.section .content,
-  .course-content ul.weeks li.section,
-  .course-content ul.section,
-  {
-      margin-right: 0;
-      margin-left: 0;
-      padding: 0;
-  }
-  .activityinstance {
-      display: block;
-  }
-  .editing .course-content .section .activity {
-      margin-bottom: 0.2em;
-      padding-bottom: 0.2em;
-      border-bottom: thin solid #eee;
-  }
-  .course-content .section .activity .commands {
-      display: block;
-      text-align: right;
-  }
-  .jsenabled .visibleifjs.addresourcemodchooser {
-      display: none;
-  }
-  .jsenabled .hiddenifjs.addresourcedropdown {
-      display: block;
-      .iconhelp {
-          display: inline-block;
-          padding: 6px;
-          vertical-align: top;
-      }
-      div.urlselect {
-          display: block;
-          form {
+    .file-picker .fp-repo-items,
+    .file-picker .fp-repo-area {
+        position: relative;
+        display: block;
+        width: auto;
+        top: 0;
+        bottom: 0;
+        border: none;
+        margin: 0;
+    }
+    .file-picker .fp-content {
+        width: 100%;
+    }
+    .fp-content-center {
+        display: block;
+        vertical-align: top;
+    }
+    .fp-upload-form td.mdl-right,
+    .fp-upload-form td.mdl-left,
+    .fp-login-form .input, 
+    .file-picker .fp-login-form .fp-login-input label,
+    .file-picker td.label {
+        display: block;
+        text-align: left;
+    }
+    .file-picker .fp-login-form table,
+    .file-picker td,
+    .file-picker td.label,
+    .file-picker .fp-upload-form table {
             margin: 0;
-          }
-      }
-  }
+            padding: 0;
+    }
+    .course-content ul.topics li.section,
+    .course-content ul.topics li.section .content,
+    .course-content ul.weeks li.section .content,
+    .course-content ul.weeks li.section,
+    .course-content ul.section {
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0;
+    }
+    .activityinstance {
+        display: block;
+    }
+    .editing .course-content .section .activity {
+        margin-bottom: 0.2em;
+        padding-bottom: 0.2em;
+        border-bottom: thin solid #eee;
+    }
+    .course-content .section .activity .commands {
+        display: block;
+        text-align: right;
+    }
+    .jsenabled .visibleifjs.addresourcemodchooser {
+        display: none;
+    }
+    .jsenabled .hiddenifjs.addresourcedropdown {
+        display: block;
+        .iconhelp {
+            display: inline-block;
+            padding: 6px;
+            vertical-align: top;
+        }
+        div.urlselect {
+            display: block;
+            form {
+                margin: 0;
+            }
+        }
+    }
+    .que .info {
+        float: none;
+        width: auto;
+    }
+    .que .content {
+        margin: 0;
+    }
 }
 
 // Stuart's 2,1,3 layout
-
 @media (min-width : 768px) {
   .row-fluid .desktop-first-column {
       margin-left: 0;
@@ -230,11 +257,17 @@
     }
 }
 
+@media (max-width: 768px) {
+// Resize, reflow file-picker on small devices
+   #filesskin .yui3-panel,
+   #filesskin .file-picker.fp-generallayout {
+        width: 100%;
+        left: 0;
+    }
 // Hide broken drag'n'drop options on touch devices MDL-38371
 // Not a great workaround, landscape iPads are wider than this,
 // and a resized window on a netbook could be smaller, but best
-// we can do with CSS. Might be a JS-based solution.
-@media (max-width: 768px) {
+// we can do with CSS. There might be a JS-based solution.
     .section .side,
     .editing_move {
         display: none;
