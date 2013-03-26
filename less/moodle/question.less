@@ -58,33 +58,34 @@
     border-top: 0 none;
     .box-shadow(5px 5px 20px 0 #666);
 }
-#qtypechoicecontainer #chooseqtype {
+//#qtypechoicecontainer
+#chooseqtype {
     width: 35em;
 }
-#qtypechoicecontainer #chooseqtypehead h3 {
+#chooseqtypehead h3 {
     margin: 0;
     font-weight: normal;
 }
-#qtypechoicecontainer #chooseqtype .qtypes {
+#chooseqtype .qtypes {
     position: relative;
     border-bottom: 1px solid #bbb;
     padding: 0.24em 0;
 }
-#qtypechoicecontainer #chooseqtype .qtypeoption {
+#chooseqtype .qtypeoption {
     margin-bottom: 0;
     padding: 0.3em 0.3em 0.3em 1.6em;
 }
-#qtypechoicecontainer #chooseqtype .qtypeoption img {
+#chooseqtype .qtypeoption img {
     vertical-align: text-bottom;
     padding-left: 1em;
     padding-right: 0.5em;
 }
-#qtypechoicecontainer #chooseqtype .selected {
+#chooseqtype .selected {
     background-color: #fff;
     .box-shadow(0px 0 10px 0 #ccc);
 }
-#qtypechoicecontainer #chooseqtype .instruction,
-#qtypechoicecontainer #chooseqtype .qtypesummary {
+#chooseqtype .instruction,
+#chooseqtype .qtypesummary {
     display: none;
     position: absolute;
     top: 0;
@@ -95,8 +96,8 @@
     padding: 1.5em 1.6em;
     background-color: #fff;
 }
-#qtypechoicecontainer #chooseqtype .instruction,
-#qtypechoicecontainer #chooseqtype .selected .qtypesummary {
+#chooseqtype .instruction,
+#chooseqtype .selected .qtypesummary {
     display: block;
 }
 #categoryquestions {
@@ -270,8 +271,8 @@
     margin: 1em 0;
 }
 /** Overide for RTL layout **/
-.dir-rtl #qtypechoicecontainer #chooseqtype .instruction,
-.dir-rtl #qtypechoicecontainer #chooseqtype .qtypesummary {
+.dir-rtl #chooseqtype .instruction,
+.dir-rtl #chooseqtype .qtypesummary {
     right: 60%;
     left: 0%;
     border-left: 0;
