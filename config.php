@@ -30,7 +30,7 @@ $THEME->name = 'bootstrap';
 $THEME->parents = array('');
 
 $THEME->sheets = array(
-    'bootstrap',
+    'generated',
 );
 
 $THEME->editor_sheets = array('editor');
