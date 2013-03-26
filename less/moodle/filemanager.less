@@ -3,40 +3,17 @@
 .filepicker,
 .file-picker {
     font-size: 11px;
-    color: #555555;
-    letter-spacing: .2px;
 }
 .filemanager a,
-.file-picker a {
-    color: #555555;
-}
+.file-picker a,
 .filemanager a:hover,
 .file-picker a:hover {
     color: #555555;
     text-decoration: none;
 }
-.filemanager select,
-.filemanager input,
-.filemanager button,
-.filemanager textarea,
-.file-picker select,
-.file-picker input,
-.file-picker button,
-.file-picker textarea {
-    color: #555555;
-    letter-spacing: .2px;
-}
 .filemanager input[type="text"],
 .file-picker input[type="text"] {
-    border: 1px solid #BBBBBB;
     width: 265px;
-    height: 18px;
-    padding: 1px 6px;
-}
-.filemanager select,
-.file-picker select {
-    height: 22px;
-    padding: 2px 1px;
 }
 .fp-content-center {
     height: 100%;
@@ -63,15 +40,14 @@
 #filesskin .yui3-widget-hd {
     .border-radius(10px 10px 0px 0px);
     border-bottom: 1px solid #BBBBBB;
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
     text-align: center;
     font-size: 12px;
-    letter-spacing: 1px;
     color: #333;
+    letter-spacing: 1px;
     text-shadow: 1px 1px 1px #fff;
     filter: dropshadow(color=#FFFFFF, offx=1, offy=1);
-    #gradient > .vertical (#fff,
-    #ccc);
+    #gradient > .vertical (#fff, #ccc);
 }
 .fp-panel-button {
     background: #fff;
@@ -183,7 +159,7 @@
     text-align: right;
     float: left;
 }
-.file-picker .fp-list .fp-repo a{
+.file-picker .fp-list .fp-repo a {
     display: block;
     padding: .5em .7em;
 }
@@ -334,16 +310,20 @@
 }
 .dir-rtl .fp-vb-details a:hover {
     background: none;
-border: 20px solid black}
+    border: 20px solid black;
+}
 .dir-rtl .fp-vb-details.checked a:hover {
     background: none;
-border: 40px solid black}
+    border: 40px solid black;
+}
 .dir-rtl .fp-vb-tree a:hover {
     background: none;
-border: 30px solid black}
+    border: 30px solid black;
+}
 .dir-rtl .fp-vb-tree.checked a:hover {
     background: none;
-border: 50px solid black}
+    border: 50px solid black;
+}
 .file-picker .fp-pathbar {
     display: table-row;
 }
@@ -608,7 +588,8 @@ a.ygtvspacer:hover {
     line-height: 24px;
 }
 .dir-rtl .fp-icon {
-float: right}
+    float: right;
+}
 .fp-icon img {
     max-height: 24px;
     max-width: 24px;
@@ -636,7 +617,8 @@ float: right}
 }
 .file-picker .fp-login-form .fp-login-input label {
     text-align: right;
-display: block}
+    display: block;
+}
 .file-picker .fp-login-form .fp-login-input .input {
     text-align: left;
 }
@@ -792,31 +774,20 @@ display: block}
 }
 // File Manager
 .filemanager-loading{
-display: none}
+    display: none;
+}
 .jsenabled .filemanager-loading{
     display: block;
     margin-top: 100px;
 }
 .filemanager.fm-loading .filemanager-toolbar,
 .filemanager.fm-loading .fp-pathbar,
-.filemanager.fm-loading .filemanager-container {
-    display: none;
-}
-.filemanager.fm-loaded .filemanager-loading {
-    display: none;
-}
-.filemanager.fm-maxfiles .fp-btn-add {
-    display: none;
-}
-.filemanager.fm-maxfiles .dndupload-message {
-    display: none;
-}
-.filemanager.fm-noitems .fp-btn-download {
-    display: none;
-}
-.filemanager .fm-empty-container {
-    display: none;
-}
+.filemanager.fm-loading .filemanager-container,
+.filemanager.fm-loaded .filemanager-loading,
+.filemanager.fm-maxfiles .fp-btn-add,
+.filemanager.fm-maxfiles .dndupload-message,
+.filemanager.fm-noitems .fp-btn-download,
+.filemanager .fm-empty-container,
 .filemanager.fm-noitems .filemanager-container .fp-content {
     display: none;
 }
@@ -828,12 +799,8 @@ display: none}
     display: block;
     margin-top: 37px;
 }
-.filemanager.fm-updating .fm-content-wrapper {
-    display: none;
-}
-.filemanager.fm-nomkdir .fp-btn-mkdir {
-    display: none;
-}
+.filemanager.fm-updating .fm-content-wrapper,
+.filemanager.fm-nomkdir .fp-btn-mkdir,
 .fitem.disabled .filemanager .filemanager-toolbar,
 .fitem.disabled .filemanager .fp-pathbar,
 .fitem.disabled .filemanager .fp-restrictions,
@@ -846,9 +813,8 @@ display: none}
 }
 .filemanager .fp-navbar {
     background: #F2F2F2;
-    border-top: 1px solid #BBBBBB;
-    border-left: 1px solid #BBBBBB;
-    border-right: 1px solid #BBBBBB;
+    border: 1px solid #BBBBBB;
+    border-bottom: none;
 }
 .filemanager-toolbar{
     padding: 5px 8px;
@@ -885,7 +851,7 @@ display: none}
     background-color: #EBEBE4;
 }
 .fitem.disabled .fp-btn-choose {
-    color: graytext;
+    .muted
 }
 .fitem.disabled .filepicker-filelist .filepicker-filename {
     display: none;
@@ -1110,18 +1076,14 @@ display: none}
 .fm-operation {
     font-weight: bold;
 }
-.filemanager.fp-select .fp-original.fp-unknown {
-    display: none;
-}
+.filemanager.fp-select .fp-original.fp-unknown,
 .filemanager.fp-select .fp-original .fp-originloading {
     display: none;
 }
 .filemanager.fp-select .fp-original.fp-loading .fp-originloading {
     display: inline;
 }
-.filemanager.fp-select .fp-reflist.fp-unknown {
-    display: none;
-}
+.filemanager.fp-select .fp-reflist.fp-unknown,
 .filemanager.fp-select .fp-reflist .fp-reflistloading {
     display: none;
 }
@@ -1173,13 +1135,11 @@ display: none}
     text-align: left;
 }
 // RTL Overrides
-.dir-rtl .file-picker div.bd {
-    text-align: right;
-}
-.dir-rtl .file-picker .fp-pathbar {
-    text-align: right;
-}
-.dir-rtl .file-picker .fp-list {
+.dir-rtl .file-picker div.bd,
+.dir-rtl .file-picker .fp-pathbar,
+.dir-rtl .file-picker .fp-list,
+.dir-rtl #filemenu .yuimenuitemlabel,
+.dir-rtl .filemanager-container .yui3-skin-sam .yui3-datatable-header {
     text-align: right;
 }
 .dir-rtl .filepicker .yui-layout-unit-left {
@@ -1187,10 +1147,4 @@ display: none}
 }
 .dir-rtl .filepicker .yui-layout-unit-center {
     left: 0;
-}
-.dir-rtl #filemenu .yuimenuitemlabel {
-    text-align: right;
-}
-.dir-rtl .filemanager-container .yui3-skin-sam .yui3-datatable-header {
-    text-align: right;
 }
