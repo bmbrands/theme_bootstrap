@@ -56,7 +56,7 @@
     .border-radius(10px);
     border: 1px solid #ccc;
     border-top: 0 none;
-    .box-shadow(5px 5px 20px 0px #666);
+    .box-shadow(5px 5px 20px 0 #666);
 }
 #qtypechoicecontainer #chooseqtype {
     width: 35em;
@@ -81,15 +81,15 @@
 }
 #qtypechoicecontainer #chooseqtype .selected {
     background-color: #fff;
-    .box-shadow(0px 0px 10px 0px #ccc);
+    .box-shadow(0px 0 10px 0 #ccc);
 }
 #qtypechoicecontainer #chooseqtype .instruction,
 #qtypechoicecontainer #chooseqtype .qtypesummary {
     display: none;
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
     left: 60%;
     margin: 0;
     padding: 1.5em 1.6em;
@@ -109,11 +109,6 @@
 #categoryquestions th {
     text-align: left;
     font-weight: normal;
-}
-#page-mod-quiz-edit table#categoryquestions {
-    overflow: hidden;
-    table-layout: fixed;
-    width: 220px;
 }
 #categoryquestions .checkbox {
     padding-left: 20px;
@@ -354,15 +349,6 @@
     background-color: transparent;
 }
 
-.questionbankwindow.block {
-    border-width: 0;
-    display: block;
-    float: right;
-    padding-bottom: 0.5em;
-    right: 0.3em;
-    width: 26%;
-}
-
 #page-mod-quiz-edit div.quizpage .pagecontent {
     border: 1px solid #ddd;
     .border-radius(2px);
@@ -393,11 +379,6 @@ a#hidebankcmd {
     color: @linkColor;
 }
 
-#page-mod-quiz-edit .questionbankwindow .createnewquestion select,
-#page-mod-quiz-edit .questionbankwindow #catmenu select,
-#page-mod-quiz-edit .questionbankwindow #menucategory {
-    width: 180px;
-}
 // override question plugins
 
 // qtype_shortanswer
