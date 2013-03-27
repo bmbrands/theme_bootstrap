@@ -108,7 +108,7 @@ echo $OUTPUT->doctype() ?>
 </header>
 <?php } ?>
 
-<div role="main" id="page-content" class="row-fluid">
+<div id="page-content" class="row-fluid">
 
 <?php if ($layout === 'pre-and-post') { ?>
     <div id="region-bs-main-and-pre" class="span9">
