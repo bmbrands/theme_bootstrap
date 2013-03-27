@@ -19,6 +19,7 @@ form {
 }
 .mform fieldset.collapsible legend a.fheader {
     padding: 0 5px 0 20px;
+    margin-left: -20px;
     background: url([[pix:t/expanded]]) 2px center no-repeat;
 }
 .mform fieldset.collapsed legend a.fheader {
@@ -82,18 +83,11 @@ form {
     min-width: 22em;
 }
 .mform .helplink img {
-    margin: 0 0 0 .45em;
-    padding: 0;
-}
-.dir-rtl .mform .helplink img {
-    margin: 0 .45em 0 0;
+    margin: 0 .45em;
     padding: 0;
 }
 .mform legend .helplink img {
-    margin-right: .2em;
-}
-.dir-rtl .mform legend .helplink img {
-    margin: 0 .45em 0 .2em;
+    margin: 0 .2em;
 }
 .singleselect label {
     margin-right: .3em;
@@ -121,12 +115,16 @@ input#id_externalurl {
 .mform .fitem div.fitemtitle {
     .form-horizontal .control-label
 }
-div.form-defaultinfo,
-.form-label span.form-shortname {
+.form-defaultinfo,
+.form-label .form-shortname {
     .muted;
 }
-.form-label span.form-shortname {
+.form-label .form-shortname {
     font-size: @fontSizeMini;
+    display: block;
+}
+.dir-rtl .form-label .form-shortname {
+    text-align: left;
 }
 .form-item .form-setting,
 .form-item .form-description,
@@ -188,6 +186,11 @@ div.backup-section + form,
     color: @grayDark;
     border: 0;
     border-bottom: 1px solid #e5e5e5;
+}
+.mform legend a,
+.mform legend a:hover {
+    color: @grayDark;
+    text-decoration: none;
 }
 .dir-rtl .mform .fitem .fitemtitle {
     float: right;

@@ -72,19 +72,19 @@
     .label;
 }
 .statusok {
-    background-color : @successText;
+    background-color: @successText;
 }
 .statuswarning {
-    background-color : @warningText;
+    background-color: @warningText;
 }
 .statusserious {
-    background-color : @orange;
+    background-color: @orange;
 }
 .statuscritical {
-    background-color : @errorText;
+    background-color: @errorText;
 }
 
-#page-admin-report-capability-index #settingsform #capabilitysearch {
+#page-admin-report-capability-index #capabilitysearch {
     width: 30em;
 }
 
@@ -169,7 +169,7 @@ img.iconsmall {
 
 #page-filter-manage .backlink,
 .path-admin-roles .backlink {
-    margin-top: 1em
+    margin-top: 1em;
 }
 
 #page-admin-roles-explain #chooseuser h3,
@@ -234,7 +234,6 @@ img.iconsmall {
     padding: 5px 10px;
     .border-radius(10px);
 }
-
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo span,
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo a {
@@ -367,15 +366,15 @@ img.iconsmall {
 }
 
 .environmenttable .cell {
-    padding: 0.15em 0.5em;
+    padding: .15em .5em;
 }
 
 .environmenttable img.iconhelp {
-    padding-right: 0.3em;
+    padding-right: .3em;
 }
 
 .dir-rtl .environmenttable img.iconhelp {
-    padding-left: 0.3em;
+    padding-left: .3em;
     padding-right: 0
 }
 
@@ -398,20 +397,11 @@ img.iconsmall {
 }
 
 #adminsettings fieldset.error {
-    margin: 0.2em 0 0.5em 0;
+    margin: .2em 0 .5em 0;
 }
 
 #adminsettings fieldset.error legend {
     display: block;
-}
-
-.form-label .form-shortname {
-    display: block;
-    .muted;
-    font-size: @fontSizeMini;
-}
-.dir-rtl .form-label .form-shortname {
-    text-align: left;
 }
 
 .dir-rtl #admin-spelllanguagelist textarea,
@@ -455,7 +445,7 @@ img.iconsmall {
 
 .form-item .form-setting .form-password .unmask,
 .form-item .form-setting .form-defaultinfo {
-    display: inline;
+    display: inline-block;
 }
 
 .form-item .pathok,
@@ -468,11 +458,11 @@ img.iconsmall {
     // override a table border=1 in the HTML
 }
 
-#admin-emoticons table td input {
+#admin-emoticons td input {
     width: 8em;
 }
 
-#admin-emoticons table td.c0 input {
+#admin-emoticons td.c0 input {
     width: 4em;
 }
 
@@ -526,14 +516,10 @@ img.iconsmall {
 /** Overide for RTL layout **/
 .dir-rtl .form-item  .form-setting,
 .dir-rtl .form-item  .form-label,
-.dir-rtl .form-item .form-description {
+.dir-rtl .form-item .form-description,
+.dir-rtl.path-admin .roleassigntable p {
     text-align: right
 }
-
-.dir-rtl.path-admin .roleassigntable p {
-    text-align: right;
-}
-
 
 // Plugins check 
 #page-admin-index #notice .checkforupdates {
@@ -621,10 +607,10 @@ img.iconsmall {
     font-size: @fontSizeSmall;
     .muted
 }
+
 #plugins-control-panel .pluginname .componentname {
     margin-left: 22px;
 }
-
 
 #plugins-overview-filter .filter-item,
 #plugins-overview-panel .info,
@@ -637,7 +623,6 @@ img.iconsmall {
 #page-admin-plugins .separator {
     border-left: 1px dotted #999;
 }
-
 
 #plugins-control-panel .msg td {
     text-align: center;
@@ -684,8 +669,8 @@ img.iconsmall {
 
 .dir-rtl {
     #plugins-check .pluginupdateinfo {
-    text-align: center;
-    direction: ltr;
+        text-align: center;
+        direction: ltr;
     }
 
     #plugins-check .rootdir,

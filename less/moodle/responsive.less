@@ -1,5 +1,7 @@
 /* responsive.less */
 
+// Should probably be moved to relevant .less files
+// after 4095 selector issue is solved
 
 @media (min-width: 980px) {
     .dir-rtl .navbar .nav.pull-right,
@@ -95,6 +97,28 @@
 }
 
 @media (max-width: 480px) {
+    // copied from tabs.less stacked-navs
+    .tabtree > ul {
+        border: none;
+    }
+    .tabtree > ul > li {
+        float: none;
+    }
+    .tabtree > ul > li > a {
+        border: 1px solid #ddd;
+        .border-radius(0);
+    }
+    .tabtree > ul > li.first > a {
+        .border-top-radius(4px);
+    }
+    .tabtree > ul > li.last > a {
+        .border-bottom-radius(4px);
+    }
+    .tabtree > ul > li > a:hover,
+    .tabtree > ul > li > a:focus {
+        border-color: #ddd;
+        z-index: 2;
+    }
     .file-picker .fp-repo-items,
     .file-picker .fp-repo-area {
         position: relative;
@@ -198,16 +222,17 @@
     }
     .form-item .form-label label{
         display: inline-block;
+        margin-right: .5em;
     }
     .form-item .form-setting .form-checkbox {
         margin-top: 0;
     }
     .form-label span.form-shortname {
         display: inline-block;
-        margin-left: 2em;
     }
     .form-item .form-setting,
     .mform .fitem .felement,
+    .path-backup .mform .fitem .felement,
     .mform .fdescription.required,
     .form-item .form-description {
       margin-left: 0;
