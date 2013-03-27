@@ -37,68 +37,58 @@
 .course-content ul.section {
     margin: 1em;
 }
-.sitetopic .section .activity img.activityicon,
-.course-content .section .activity img.activityicon {
+.section .activity img.activityicon {
     vertical-align: text-bottom;
     margin-right: 6px;
 }
-.dir-rtl .sitetopic .section .activity img.activityicon,
-.dir-rtl .course-content .section .activity img.activityicon {
+.dir-rtl .section .activity img.activityicon {
     margin-left: 6px;
     margin-right: 0;
 }
-.sitetopic .section .activity .activityinstance,
-.course-content .section .activity .activityinstance,
-.sitetopic .section .activity .activityinstance div,
-.course-content .section .activity .activityinstance div {
+.section .activity .activityinstance,
+.section .activity .activityinstance div {
     display: inline-block;
 }
-.sitetopic .section .activity .activityinstance,
-.course-content .section .activity .activityinstance {
+.editing .section .activity .activityinstance {
     min-width: 40%;
+}
+.section .activity .activityinstance > a {
+    display: block;
 }
 .editing_show + .editing_assign,
 .editing_hide + .editing_assign {
     // if roles icon missing, add space
     margin-left: 20px;
 }
-.sitetopic .section .activity .commands,
-.course-content .section .activity .commands {
+.section .activity .commands {
     white-space: nowrap;
     display: inline;
 }
-.sitetopic .section .activity.modtype_label .commands,
-.course-content .section .activity.modtype_label .commands {
+.section .activity.modtype_label .commands {
     margin-left: 40%;
     padding-left: 22px;
 }
-.sitetopic .section li.activity,
-.course-content .section li.activity {
+.section li.activity {
     padding: .2em;
     clear: both;
 }
 .section .activity .activityinstance .groupinglabel {
     padding-left: .45em;
 }
-.sitetopic .section .activity .availabilityinfo,
-.sitetopic .section .activity .contentafterlink,
-.course-content .section .activity .availabilityinfo,
-.course-content .section .activity .contentafterlink {
+.section .activity .availabilityinfo,
+.section .activity .contentafterlink {
     margin-top: 0.5em;
     margin-left: 30px;
 }
-.dir-rtl .sitetopic .section .activity .availabilityinfo,
-.dir-rtl .sitetopic .section .activity .contentafterlink,
-.dir-rtl .course-content .section .activity .availabilityinfo,
-.dir-rtl .course-content .section .activity .contentafterlink {
+.dir-rtl .section .activity .availabilityinfo,
+.dir-rtl .section .activity .contentafterlink {
     margin-left: 0;
     margin-right: 30px;
 }
 .section .activity .contentafterlink p {
     margin: .5em 0;
 }
-.editing .sitetopic .section .activity:hover,
-.editing .course-content .section .activity:hover {
+.editing .section .activity:hover {
     background-color: @grayLighter;
 }
 .course-content .section-summary {
@@ -513,11 +503,6 @@ table.category_subcategories td {
     white-space: nowrap;
 }
 
-.sitetopic .section .activity form.activityinstance,
-.course-content .section .activity form.activityinstance {
-    display: inline;
-    vertical-align: bottom;
-}
 span.editinstructions {
     position: absolute;
     top: 0;
