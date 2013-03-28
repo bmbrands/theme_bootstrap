@@ -298,6 +298,18 @@
         width: 100%;
         left: 0;
     }
+    .userprofile dl.list {
+    // copied from dl-horizontal in bootstrap/repsonsive.less
+        dt {
+          float: none;
+          clear: none;
+          width: auto;
+          text-align: left;
+        }
+        dd {
+          margin-left: 0;
+        }
+    }
 // Hide broken drag'n'drop options on touch devices MDL-38371
 // Not a great workaround, landscape iPads are wider than this,
 // and a resized window on a netbook could be smaller, but best
