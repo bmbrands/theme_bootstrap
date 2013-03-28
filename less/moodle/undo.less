@@ -41,8 +41,8 @@ li.activity.label,
  * There's seems to be even more naming confusion here since,
  * blocks can be actually 'visible' (or not) to students,
  * marked 'visible' but really just dimmed to indicate to editors
- * that students can't see them or  'visible' to the user who 
- * collapses them, 'visible' if you have the right role and in 
+ * that students can't see them or  'visible' to the user who
+ * collapses them, 'visible' if you have the right role and in
  * different circumstances different sections of a block can
  * be 'visible' or not.
  *
@@ -50,7 +50,7 @@ li.activity.label,
  * by rewriting the class name "invisible" to "dimmed",
  * though the blocks don't look particularly different apart
  * from their contents disappearing. Maybe try .muted? or
- * dimming all the edit icons apart from unhide, might be a 
+ * dimming all the edit icons apart from unhide, might be a
  * nice effect, though they'd still be active. Maybe reverse
  * it to white?
  */
@@ -64,7 +64,7 @@ li.section.hidden,
 
 
 /* .row vs .row
- * 
+ *
  * very tricky to track down this when it goes wrong,
  * since the styles are applied to generated content
  *
@@ -77,7 +77,7 @@ li.section.hidden,
   margin-left: 0 !important;
   // not sure if this needs !important
 }
-#turnitintool_style .row:before, 
+#turnitintool_style .row:before,
 #turnitintool_style .row:after,
 .forumpost .row:before,
 .forumpost .row:after {
@@ -139,7 +139,7 @@ div.c1.btn {
  *
  * bootstrap uses .container to set the width of the layout at 960px or so, Moodle uses it
  * in the Quiz to contain the questions to add. If you don't overule the Bootstrap code,
- * it becomes near unuseable. 
+ * it becomes near unuseable.
  */
 
 #questionbank + .container {
@@ -160,3 +160,30 @@ img.icon-warn,
 img.icon-pre {
     background-image: none;
 }
+
+// Homepage course listing fix
+.coursebox .summary {
+    margin-left: 0px;
+}
+
+// Weird big margins on login page
+.loginbox.twocolumns,
+.loginbox.twocolumns {
+    .signuppanel,
+    .loginpanel {
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+//Use nice Bootstrap alert boxes for login errors
+.loginerrors .error {
+    .alert;
+    .alert-error;
+}
+
+//Bootstrap needs tooltips to be specified. Moodle does not use this
+.tooltip {
+    .opacity(100);
+    display: inline;
+ }
