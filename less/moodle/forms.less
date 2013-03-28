@@ -25,12 +25,19 @@ form {
 .mform fieldset.collapsed legend a.fheader {
     background: url([[pix:t/collapsed]]) 2px center no-repeat;
 }
-.mform fieldset.collapsed.jsprocessed {
-    border-width: 1px 0 0 0;
-    padding: 0;
-}
+
 .jsenabled .mform .collapsed .fcontainer {
     display: none;
+}
+.mform .collapsible-actions {
+    display: none;
+    text-align: right;
+}
+.dir-rtl .mform .collapsible-actions {
+    text-align: left;
+}
+.jsenabled .mform .collapsible-actions {
+    display: block;
 }
 .mform .fitem .fitemtitle div {
     display: inline;
