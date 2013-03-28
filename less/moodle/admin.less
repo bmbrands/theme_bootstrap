@@ -202,6 +202,7 @@ img.iconsmall {
     // would like the use the alert stuff below for this,
     // but the way buttons are used makes it tricky
     width: 60%;
+    min-width: 220px;
     margin: auto;
 }
 
@@ -211,6 +212,7 @@ img.iconsmall {
 #page-admin-index .maturityinfo {
     .alert;
     width: 60%;
+    min-width: 220px;
     margin: auto;
 }
 #page-admin-index .maturitywarning,
@@ -223,21 +225,8 @@ img.iconsmall {
     .alert-info;
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo {
-    margin: 20px auto;
-    width: 60%;
-    text-align: left;
-}
-
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo .info.release {
-    margin-right: 10px;
-    padding: 5px 10px;
-    .border-radius(10px);
-}
-
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo span,
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo a {
-    padding-right: 1em;
+#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo span {
+    display: block;
 }
 
 
