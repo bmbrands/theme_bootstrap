@@ -28,10 +28,8 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->name = 'bootstrap';
 $THEME->parents = array('');
-
-$THEME->sheets = array(
-    'generated',
-);
+$THEME->sheets = array('generated');
+$THEME->supportscssoptimisation = false;
 
 $THEME->editor_sheets = array('editor');
 
@@ -138,6 +136,14 @@ $THEME->layouts = array(
         'file' => 'general.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
+    ),
+    // The pagelayout used for safebrowser and securewindow.
+    'secure' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre',
+        'options' => array('nofooter'=>true, 'nonavbar'=>true, 'nocustommenu'=>true,
+                           'nologinlinks'=>true, 'nocourseheaderfooter'=>true),
     ),
 );
 
