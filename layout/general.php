@@ -1,18 +1,4 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
-//
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 $hasheading = ($PAGE->heading);
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
@@ -26,7 +12,6 @@ $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pr
 $showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
 
 $haslogo = (!empty($PAGE->theme->settings->logo_url));
-
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
@@ -98,7 +83,6 @@ echo $OUTPUT->doctype() ?>
 
 <?php if ($hasheader) { ?>
 <header id="page-header" class="clearfix">
-
     <?php
         if (!$haslogo) { ?>
             <h1><?php echo $PAGE->heading ?></h1>
@@ -126,13 +110,13 @@ echo $OUTPUT->doctype() ?>
 <?php if ($layout === 'pre-and-post') { ?>
     <div id="region-bs-main-and-pre" class="span9">
     <div class="row-fluid">
-    <section id="region-bs-main" class="span8 pull-right">
+    <section id="region-main" class="span8 pull-right">
 <?php } else if ($layout === 'side-post-only') { ?>
-    <section id="region-bs-main" class="span9">
+    <section id="region-main" class="span9">
 <?php } else if ($layout === 'side-pre-only') { ?>
-    <section id="region-bs-main" class="span9 pull-right">
+    <section id="region-main" class="span9 pull-right">
 <?php } else if ($layout === 'content-only') { ?>
-    <section id="region-bs-main" class="span12">
+    <section id="region-main" class="span12">
 <?php } ?>
 
 
