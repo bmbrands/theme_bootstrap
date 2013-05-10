@@ -1,0 +1,123 @@
+#page-mod-data-view #singleimage {
+	width: auto;
+}
+
+.path-mod-data form {
+	margin-top: 10px;
+}
+
+.template_heading {
+	margin-top: 10px;
+}
+
+ul[class*='tabrow'],.tabrow1 {
+  margin-bottom: 20px;
+  margin-left: 0;
+  list-style: none;
+}
+
+ul[class*='tabrow'] > li > a,.tabrow1 > li > a {
+  display: block;
+}
+
+ul[class*='tabrow'] > li > a:hover {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+
+ul[class*='tabrow'] li + .nav-header {
+  margin-top: 9px;
+}
+
+ul[class*='tabrow'] {
+  *zoom: 1;
+}
+
+ul[class*='tabrow']:before,
+.nav-pills:before,
+ul[class*='tabrow']:after,
+.nav-pills:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+ul[class*='tabrow']:after,
+.nav-pills:after {
+  clear: both;
+}
+
+ul[class*='tabrow'] > li,
+.nav-pills > li {
+  float: left;
+}
+
+ul[class*='tabrow'] > li > a,
+.nav-pills > li > a {
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: 2px;
+  line-height: 14px;
+}
+
+ul[class*='tabrow'] {
+  border-bottom: 1px solid #ddd;
+}
+
+ul[class*='tabrow'] > li {
+  margin-bottom: -1px;
+}
+
+ul[class*='tabrow'] > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 20px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 4px 4px 0 0;
+     -moz-border-radius: 4px 4px 0 0;
+          border-radius: 4px 4px 0 0;
+}
+
+ul[class*='tabrow'] > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+
+ul[class*='tabrow'] > .selected > a,
+ul[class*='tabrow'] > .selected > a:hover {
+  color: #555555;
+  cursor: default;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+
+ul[class*='tabrow'] > .active > a,
+ul[class*='tabrow'] > .active > a:hover {
+  color: #555555;
+  cursor: default;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+
+.tabtree .tabrow0 ul, .tabtree .tabrow0 div {
+	border-left:0px;
+	border-right:0px;
+	border-bottom: 1px sold #ddd;
+	borrder-top: 0px;
+}
+
+.tabtree .tabrow0 ul {
+	border-top: 0px;
+}
+
+.tabtree .tabrow0 .tabrow1 {
+	padding-bottom: 0px;
+}
+
+.tabtree ul li.here ul {
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}

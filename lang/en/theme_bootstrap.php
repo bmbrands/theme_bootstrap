@@ -1,18 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
-//
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Strings for component 'theme_bootstrap', language 'en', branch 'MOODLE_23_STABLE'
  *
@@ -24,6 +11,26 @@
 $string['pluginname'] = 'Bootstrap';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
+$string['notes'] =  'Bootstrap Configuration page';
+$string['notesdesc'] = 'Configure your theme';
+$string['enableglyphicons'] = 'Enable Glyphicons';
+$string['enableglyphiconsdesc'] = 'Enable Glyphicons, use with Moodle 2.3 or older';
+$string['enablejquery'] = 'Enable jquery';
+$string['enablejquerydesc'] = 'Jquery is used in Bootstrap to enable the custom menu dropdown';
+$string['logo_url'] = 'Logo URL';
+$string['logo_urldesc'] = 'Enter the full URL of your custom logo, make sure it is of a proper size';
+$string['navlogo_url'] = 'Navigation Logo URL';
+$string['navlogo_urldesc'] = 'Enter the full URL of your navigation logo, it will be rendered inside the top menu';
+$string['navlogo_width'] = 'Navigation Logo width in px';
+$string['navlogo_widthdesc'] = 'Enter the width of the navlogo in pixels (default 40), this is used to make sure the theme menu renders okay';
+$string['navlogo_height'] = 'Navigation Logo height';
+$string['navlogo_heightdesc'] = 'Enter the height of your navigation logo in pixels (default 40), use a height of max 40px';
+$string['customcss'] = 'Custom CSS';
+$string['customcssdesc'] = 'Add your extra CSS in this box, use it to customize your theme with a little css';
+$string['shortennavbar'] = 'Shorten breadcrumb navbar';
+$string['shortennavbardesc'] = 'Enabling this setting shortens the navigation breadcrumb hiding the course category and submodule info';
+$string['showpurgecaches'] = 'Show purge caches option';
+$string['showpurgecachesdesc'] = 'Enable purging of caches link in navbar, this is only availble for admins and is used for Moodle development';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap</h2>
@@ -58,7 +65,7 @@ Website: <a href="http://www.basbrands.nl">www.basbrands.nl</a><br>
 
 <h3>Reporting bugs</h3>
 
-<p>You can report bugs on the <a href="https://github.com/bmbrands/theme_bootstrap/issues">github page</a> for this theme or 
+<p>You can report bugs on the <a href="https://github.com/bmbrands/theme_bootstrap/issues">github page</a> for this theme or
 on the Moodle tracker</p>
 
 <h3>More information</h3>

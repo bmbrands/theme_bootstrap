@@ -14,6 +14,7 @@
             float: right;
         }
     }
+
 }
 
 // login page
@@ -60,41 +61,6 @@
          .box-sizing(border-box);
      }
  }
- // Course
- @media (min-width: 1200px) {
-    .coursebox .info,
-    .coursebox .summary {
-        width: 48.717948717948715%;
-        *width: 48.664757228587014%;
-    }
-}
-
-@media (min-width: 980px) {
-    .coursebox .info,
-    .coursebox .summary {
-        width: 48.617948717948715%;
-        *width: 48.664757228587014%;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-    .coursebox .info,
-    .coursebox .summary {
-        width: 48.61878453038674%;
-        *width: 48.56559304102504%;
-    }
-}
-
-@media ( max-width : 767px) {
-    .coursebox .info,
-    .coursebox .summary {
-        display: block;
-        float: none;
-        width: 100%;
-        margin-left: 0;
-        .box-sizing(border-box);
-    }
-}
 
 @media (max-width: 480px) {
     // copied from tabs.less stacked-navs
@@ -141,7 +107,7 @@
     }
     .fp-upload-form td.mdl-right,
     .fp-upload-form td.mdl-left,
-    .fp-login-form .input, 
+    .fp-login-form .input,
     .file-picker .fp-login-form .fp-login-input label,
     .file-picker td.label {
         display: block;
@@ -205,6 +171,12 @@
     .path-mod-forum .forumsearch #search {
         width: 120px;
     }
+    h1 { font-size: @baseFontSize * 2; } // ~38px
+    h2 { font-size: @baseFontSize * 1.75; } // ~32px
+    h3 { font-size: @baseFontSize * 1.50; } // ~24px
+    h4 { font-size: @baseFontSize * 1.25; } // ~18px
+    h5 { font-size: @baseFontSize; } // 14px
+    h6 { font-size: @baseFontSize * 0.85; } // ~12px
 }
 
 // Stuart's 2,1,3 layout
@@ -272,12 +244,13 @@
 
 @media (max-width: 979px) {
     .nav-collapse {
+         height: 0;
         .nav > li > a {
             color: @grayDark;
         }
         .nav > li > a:hover,
-        .nav > li > a:focus, 
-        .dropdown-menu a:hover, 
+        .nav > li > a:focus,
+        .dropdown-menu a:hover,
         .dropdown-menu a:focus,
         .dropdown-submenu a:focus,
         .dropdown-submenu a:hover,
@@ -289,6 +262,10 @@
             color: @grayDark;
         }
     }
+    .nav-collapse.active {
+        height: auto;
+    }
+
 }
 
 @media (max-width: 768px) {

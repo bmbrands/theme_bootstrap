@@ -28,7 +28,7 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->name = 'bootstrap';
 $THEME->parents = array('');
-$THEME->sheets = array('generated');
+$THEME->sheets = array('moodle');
 $THEME->supportscssoptimisation = false;
 
 $THEME->editor_sheets = array('editor');
@@ -147,12 +147,15 @@ $THEME->layouts = array(
     ),
 );
 
-$THEME->javascripts = array(
-    'bootstrapengine',
-    'moodlebootstrap',
-    'bootstrapcollapse',
-    'bootstrapdropdown',
-);
+
+if (empty($THEME->settings->enablejquery)) {
+    $THEME->javascripts = array(
+        'bootstrapengine',
+        'moodlebootstrap',
+        'bootstrapcollapse',
+        'bootstrapdropdown',
+    );
+}
 
 if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 8') || strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 7') ) {
     $THEME->javascripts[] = 'html5shiv';

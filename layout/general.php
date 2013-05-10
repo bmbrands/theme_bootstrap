@@ -25,6 +25,8 @@ $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->regio
 $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
 $showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
 
+$haslogo = (!empty($PAGE->theme->settings->logo_url));
+
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
@@ -96,11 +98,22 @@ echo $OUTPUT->doctype() ?>
 
 <?php if ($hasheader) { ?>
 <header id="page-header" class="clearfix">
+
+    <?php
+        if (!$haslogo) { ?>
+            <h1><?php echo $PAGE->heading ?></h1>
+            <?php
+        } else { ?>
+             <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>">
+             <img src="<?php echo $PAGE->theme->settings->logo_url; ?>">
+             </a>
+             <h1><?php echo $PAGE->heading ?></h1>
+            <?php
+        } ?>
     <?php if ($hasnavbar) { ?>
         <nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
         <?php echo $OUTPUT->navbar(); ?>
     <?php } ?>
-    <h1><?php echo $PAGE->heading ?></h1>
 
     <?php if (!empty($courseheader)) { ?>
         <div id="course-header"><?php echo $courseheader; ?></div>
@@ -167,5 +180,13 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
+
+<?php if (!empty($PAGE->theme->settings->enablejquery)) {?>
+
+<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/javascript/jquery.js"></script>
+<script src="<?php echo $CFG->wwwroot;?>/theme/bootstrap/javascript/bootstrap.min.js"></script>
+
+<?php }?>
+
 </body>
 </html>
