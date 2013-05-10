@@ -28,13 +28,6 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $settings->add($setting);
 
-    $name = 'theme_bootstrap/navlogo_height';
-    $title = get_string('navlogo_height','theme_bootstrap');
-    $description = get_string('navlogo_heightdesc', 'theme_bootstrap');
-    $default = 40;
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $settings->add($setting);
-
     $name = 'theme_bootstrap/customcss';
     $title = get_string('customcss','theme_bootstrap');
     $description = get_string('customcssdesc', 'theme_bootstrap');
