@@ -10,8 +10,7 @@ function bootstrap_user_settings($css, $theme) {
         $customcss = null;
     }
 
-    $tag = '[[setting:customcss]]';
-    $css = str_replace($tag, $customcss, $css);
+    $css .= $customcss;
 
     return $css;
 }
