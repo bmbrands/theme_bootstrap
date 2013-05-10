@@ -1,0 +1,167 @@
+// Fix for black borders.
+th, td {
+    border: 0;
+}
+
+#region-main {
+    th, td {
+        border: 0;
+    }
+}
+
+body {
+    margin: 60px 0 0;
+}
+
+#page-header {
+    .logo img {
+        max-height: 50px;
+        margin: 0 10px 10px 0;
+        float: left;
+    }
+}
+
+// Some padding for page content.
+#page-content-wrapper {
+    div[role="main"] {
+        padding: 20px;
+    }
+}
+
+// Course view improvements.
+.path-course-view .section .summary {
+    line-height: 20px;
+}
+.course-content ul.topics li.section .summary {
+    margin-left: 0;
+}
+
+
+.helplink .tooltip {
+    position: relative;
+}
+
+// Builds a better course listing page.
+.categorybox {
+    .categorylist {
+        margin-bottom: 30px;
+    }
+    .clearfloat {
+        .clearfix;
+    }
+    .category {
+        width: 100%;
+        margin-bottom: 5px;
+        .image {
+            float: left;
+        }
+        .name {
+            a {
+                padding-left: 5px;
+            }
+        }
+    }
+
+    .course {
+        .name {
+            display: inline-block;
+            height: 30px;
+            img {
+                margin-right: 5px;
+                vertical-align: text-bottom;
+                }
+            a {
+                font-weight: normal;
+            }
+        }
+        .info {
+            display: inline-block;
+            float: left;
+            margin-right: 5px;
+            padding-left: 1px;
+        }
+    }
+}
+
+// Calendar styling.
+td.today {
+    background-color: #ddd;
+}
+
+
+// Typography.
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 10px;
+    line-height: 1.2;
+    a {
+        color: @headingsColor;
+    }
+}
+
+
+// Fix for fixed.
+code, pre {
+    .border-radius(0);
+    background-color: @grayLighter;
+    .box-shadow(none);
+}
+
+
+// Calendar.
+.block_calendar_month .content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+// No bold activity labels in courses.
+.activity.label {
+    font-weight: normal;
+    font-size: 11px;
+}
+
+// Icon alignment
+[class^="icon-"], [class*=" icon-"] {
+    vertical-align: baseline;
+}
+
+// No borders or shades on tables
+.table-bordered {
+    .border-radius(0);
+    .box-shadow(none);
+}
+
+// Form legends can use default heading styling.
+legend {
+    border-bottom: 2px solid @grayLighter;
+    font-family: @headingsFontFamily;
+    font-weight: @headingsFontWeight;
+    color: @headingsColor;
+}
+
+// No borders on footers.
+#page-footer {
+    border-top: 0;
+}
+
+// In the file manager the upload file box is too big
+input[type="file"] {
+    height: inherit;
+}
+
+// Moodle help popup bloxes
+#helppopupbox {
+    .alert;
+    .alert-info;
+    h1 {
+        font-size: 108%;
+    }
+    .box-shadow(0 3px 7px rgba(0,0,0,0.3));
+}
+
+// When navbar is no longer fixed this is needed to make padding zero.
+
+@media (max-width: @navbarCollapseWidth) {
+    body {
+        margin: 0;
+    }
+}
