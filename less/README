@@ -1,6 +1,6 @@
 If you want to make changes to the .css growdly from these .less files then you
 need to install recess (https://github.com/twitter/recess) to compile the .less files,
-then run these commands in the growdly/less/ folder:
+then run these commands in the bootstrap/less/ folder:
 
 recess --compile --compress moodle.less > ../style/moodle.css
 
