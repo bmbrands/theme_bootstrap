@@ -1,17 +1,12 @@
 This theme is based on the Bootstrap CSS framework, version 2.3
 
 
-RELESE NOTES VERSION 2013051000
-May 10th 2013
+RELESE NOTES VERSION 2013052300
+May 23th 2013
 
 Put the settings page back in
 Enable the choise for jQuery / YUI
 Merged core 2.5 bootstrap changes / bugfixes with 2.4
-
-
-
-NOTE FOR USERS UPGRADING FROM THE OLD THEME:
-Read the changelog. using this version will remove your bootstrap theme settings
 
 Changelog:
 - CSS compiled with less. Learn less to modify this theme, don't worry that's easy. Just read
