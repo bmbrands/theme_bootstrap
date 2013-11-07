@@ -4,25 +4,34 @@
 
 module.exports = function(grunt) {
 
-    var lessfiles = {
-    };
-
-    // Project tasks config.
     grunt.initConfig({
         less: {
-            dev: {
-                files: {
-                    "style/moodle.css": "less/moodle.less",
-                    "style/editor.css": "less/editor.less"
-                }
-            },
-            dist: {
+            // Compile moodle styles.
+            moodle: {
                 options: {
                     compress: true
                 },
                 files: {
-                    "style/moodle.min.css": "less/moodle.less",
-                    "style/editor.min.css": "less/editor.less"
+                    "style/moodle.css": "less/moodle.less",
+                }
+            },
+            // Compile editor styles.
+            editor: {
+                options: {
+                    compress: true
+                },
+                files: {
+                    "style/editor.css": "less/editor.less"
+                }
+            }
+        },
+        watch: {
+            // Watch for any changes to less files and compile.
+            default: {
+                files: ["less/**.less"],
+                tasks: ['less:moodle', 'less:editor'],
+                options: {
+                    spawn: false
                 }
             }
         }
@@ -30,7 +39,8 @@ module.exports = function(grunt) {
 
     // Load contrib tasks.
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Register tasks.
-    grunt.registerTask('default', ['less:dev']);
+    grunt.registerTask('default', ['watch']);
 };
