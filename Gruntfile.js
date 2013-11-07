@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         watch: {
             // Watch for any changes to less files and compile.
             files: ["less/**/*.less"],
-            tasks: ['less:moodle', 'less:editor'],
+            tasks: ['lesslint', 'less:moodle', 'less:editor'],
             options: {
                 spawn: false
             }
