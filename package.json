@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Grunt tasks for Moodle Bootstrap theme.",
   "devDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.8.1"
   }
 }
