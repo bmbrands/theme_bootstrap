@@ -1,5 +1,8 @@
 {
   "name": "theme_bootstrap",
   "version": "0.0.0",
-  "description": "Grunt tasks for Moodle Bootstrap theme."
+  "description": "Grunt tasks for Moodle Bootstrap theme.",
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  }
 }
