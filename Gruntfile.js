@@ -11,7 +11,7 @@
  * Usage:
  * Default behaviour is to watch all .less files and compile
  * into compressed CSS when a change is detected to any. Invoke
- * `grunt` in the theme's root directory.
+ * either `grunt` or `grunt watch` in the theme's root directory.
  *
  * To separately compile only moodle or editor .less files
  * run `grunt less:moodle` or `grunt less:editor` respectively.
