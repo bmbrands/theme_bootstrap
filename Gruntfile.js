@@ -17,7 +17,7 @@
  * run `grunt less:moodle` or `grunt less:editor` respectively.
  *
  * @package Moodle Bootstrap theme
- * @author Joby Harding
+ * @author Joby Harding www.iamjoby.com
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
