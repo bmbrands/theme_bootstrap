@@ -1,5 +1,9 @@
 /**
- * Gruntfile for Moodle theme_bootstrap.
+ * Gruntfile for compiling theme_bootstrap .less files.
+ *
+ * @package Moodle Bootstrap theme
+ * @author Joby Harding
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 module.exports = function(grunt) {
