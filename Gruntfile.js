@@ -1,6 +1,21 @@
 /**
  * Gruntfile for compiling theme_bootstrap .less files.
  *
+ * Requirements: nodejs, npm, grunt-cli.
+ *
+ * Installation:
+ * node and npm: instructions at http://nodejs.org/
+ * grunt-cli: `[sudo] npm install -g grunt-cli`
+ * node dependencies: run `npm install` in the root directory.
+ *
+ * Usage:
+ * Default behaviour is to watch all .less files and compile
+ * into compressed CSS when a change is detected to any. Invoke
+ * `grunt` in the theme's root directory.
+ *
+ * To separately compile only moodle or editor .less files
+ * run `grunt less:moodle` or `grunt less:editor` respectively.
+ *
  * @package Moodle Bootstrap theme
  * @author Joby Harding
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
