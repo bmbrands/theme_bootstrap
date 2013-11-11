@@ -16,7 +16,8 @@
  * To separately compile only moodle or editor .less files
  * run `grunt less:moodle` or `grunt less:editor` respectively.
  *
- * @package Moodle Bootstrap theme
+ * @package theme
+ * @subpackage bootstrap
  * @author Joby Harding www.iamjoby.com
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
