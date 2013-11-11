@@ -1,6 +1,9 @@
 /**
  * Gruntfile for compiling theme_bootstrap .less files.
  *
+ * This file configures tasks to be run by Grunt
+ * http://gruntjs.com/ for the current theme.
+ *
  * Requirements: nodejs, npm, grunt-cli.
  *
  * Installation:
