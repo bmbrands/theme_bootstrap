@@ -4,7 +4,8 @@
  * This file configures tasks to be run by Grunt
  * http://gruntjs.com/ for the current theme.
  *
- * Requirements: nodejs, npm, grunt-cli.
+ * Requirements:
+ * nodejs, npm, grunt-cli.
  *
  * Installation:
  * node and npm: instructions at http://nodejs.org/
@@ -13,11 +14,15 @@
  *
  * Usage:
  * Default behaviour is to watch all .less files and compile
- * into compressed CSS when a change is detected to any. Invoke
- * either `grunt` or `grunt watch` in the theme's root directory.
+ * into compressed CSS when a change is detected to any and then
+ * clear the theme's caches. Invoke either `grunt` or `grunt watch`
+ * in the theme's root directory.
  *
  * To separately compile only moodle or editor .less files
  * run `grunt less:moodle` or `grunt less:editor` respectively.
+ *
+ * To only clear the theme caches invoke `grunt exec:decache` in
+ * the theme's root directory.
  *
  * @package theme
  * @subpackage bootstrap
@@ -26,6 +31,15 @@
  */
 
 module.exports = function(grunt) {
+
+    // PHP strings for exec task.
+    var moodleroot = 'dirname(dirname(__DIR__))',
+        configfile = moodleroot + ' . "/config.php"',
+        decachephp = '';
+
+    decachephp += "define(\"CLI_SCRIPT\", true);";
+    decachephp += "require(" + configfile  + ");";
+    decachephp += "theme_reset_all_caches();";
 
     grunt.initConfig({
         less: {
@@ -48,10 +62,22 @@ module.exports = function(grunt) {
                 }
             }
         },
+        exec: {
+            decache: {
+                cmd: "php -r '" + decachephp + "'",
+                callback: function(error, stdout, stderror) {
+                    // exec will output error messages
+                    // just add one to confirm success.
+                    if (!error) {
+                        grunt.log.writeln("Moodle theme cache reset.");
+                    }
+                }
+            }
+        },
         watch: {
             // Watch for any changes to less files and compile.
             files: ["less/**/*.less"],
-            tasks: ['less:moodle', 'less:editor'],
+            tasks: ["less:moodle", "less:editor", "exec:decache"],
             options: {
                 spawn: false
             }
@@ -59,9 +85,10 @@ module.exports = function(grunt) {
     });
 
     // Load contrib tasks.
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-exec");
 
     // Register tasks.
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask("default", ["watch"]);
 };
