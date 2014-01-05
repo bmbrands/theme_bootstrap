@@ -100,7 +100,7 @@ $THEME->layouts = array(
     'login' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('langmenu'=>true, 'nonavbar'=>true),
+        'options' => array('langmenu'=>true),
     ),
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
@@ -158,7 +158,7 @@ $THEME->javascripts_footer = array(
     'bootstrap',
 );
 
-if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
+if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
     $THEME->javascripts[] = 'html5shiv';
 }
 
