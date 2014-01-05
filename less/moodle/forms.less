@@ -8,43 +8,80 @@
 form {
     margin: 0;
 }
+.mform {
+    .fcontainer {
+        .fitem {
+            .make-row();
+            .form-group;
+            .fitemtitle {
+                 .make-md-column(5);
+                 .make-lg-column(5);
+            }
+            .felement {
+                .make-md-column(12);
+                .make-lg-column(12);
+            }
+        }
+        
+    }
+}
+.form-item {
+    .make-row();
+    .form-label {
+        .make-md-column(5);
+    }
+    .form-setting {
+        .make-md-column(12);
+    }
+}
+
 .mform fieldset .advancedbutton {
     text-align: right;
+}
+.jsenabled .mform .containsadvancedelements .advanced {
+    display: none;
+}
+.mform .containsadvancedelements .advanced.show {
+    display: block;
 }
 .mform fieldset.group {
     margin-bottom: 0
 }
 .mform fieldset.error {
-    border: 1px solid @errorText;
+    border: 1px solid @state-danger-text;
+}
+.mform span.error {
+    display: inline-block;
+    border: 1px solid @state-danger-border;
+    border-radius: 4px;
+    background-color: @state-danger-bg;
+    padding: 4px;
+    margin-bottom: 4px;
 }
 .mform fieldset.collapsible legend a.fheader {
     padding: 0 5px 0 20px;
     margin-left: -20px;
     background: url([[pix:t/expanded]]) 2px center no-repeat;
 }
-.mform fieldset.collapsed legend a.fheader {
-    background: url([[pix:t/collapsed]]) 2px center no-repeat;
+.dir-rtl .mform fieldset.collapsible legend a.fheader {
+    padding: 0 20px 0 5px;
+    margin-right: -20px;
+    margin-left: 0;
+    background-position: right center;
 }
-
+.mform fieldset.collapsed legend a.fheader {
+    background-image: url([[pix:t/collapsed]]);
+}
+.dir-rtl .mform fieldset.collapsed legend a.fheader {
+    background-image: url([[pix:t/collapsed_rtl]]);
+}
 .jsenabled .mform .collapsed .fcontainer {
     display: none;
 }
-.mform .collapsible-actions {
-    display: none;
-    text-align: right;
-}
-.dir-rtl .mform .collapsible-actions {
-    text-align: left;
-}
-.jsenabled .mform .collapsible-actions {
-    display: block;
-}
-.mform .fitem .fitemtitle div {
-    display: inline;
-}
+
 .loginpanel .error,
 .mform .error {
-    color: @errorText;
+    color: @state-danger-text;
 }
 .mform .fdescription.required {
     margin-left: @horizontalComponentOffset;
@@ -58,6 +95,13 @@ form {
     & > label {
         display: inline-block;
     }
+}
+
+.mform .iconhelp {
+    margin-left: 4px;
+}
+.dir-rtl .mform .iconhelp {
+    margin-right: 4px;
 }
 .mform .ftextarea #id_alltext {
     width: 100%;
@@ -110,24 +154,20 @@ input#id_externalurl {
     display: inline;
 }
 
-// Copying in Bootstrap styles.
-.form-item,
-.mform .fitem {
-    .form-horizontal .control-group;
-    margin-bottom: 10px;
-    // Theres's a mysterious extra 10px inside this item,
-    // so reduce margin by 10px from 20px standard to compensate.
-}
-.form-item .form-label,
-.mform .fitem div.fitemtitle {
-    .form-horizontal .control-label
+
+.dir-rtl {
+    .form-item .form-label,
+    .mform .fitem div.fitemtitle {
+        float:right;
+        text-align: left;
+    }
 }
 .form-defaultinfo,
 .form-label .form-shortname {
-    .muted;
+    .text-muted;
 }
 .form-label .form-shortname {
-    font-size: @fontSizeMini;
+    font-size: @font-size-mini;
     display: block;
 }
 .dir-rtl .form-label .form-shortname {
@@ -137,12 +177,12 @@ input#id_externalurl {
 .form-item .form-description,
 .mform .fitem .felement,
 #page-mod-forum-search .c1 {
-    .form-horizontal .controls
+    .make-md-column(10);
 }
 
 
 .formsettingheading {
-    .form-horizontal .help-block
+    margin-bottom: 0;
 }
 // Moodle doesn't differentiate between what Bootstrap calls
 // .uneditable-inputs and form help text. Styling them both as
@@ -169,11 +209,25 @@ div.backup-section + form,
     padding-left: 0;
 }
 .path-admin .buttons,
-.form-buttons {
+.form-buttons { // Add back the padding it would usually get from being inside a .form-horizontal.
     padding-left: @horizontalComponentOffset;
-    // Add back the padding it would usually get from being inside a .form-horizontal.
 }
-
+.dir-rtl {
+    table#form td.submit,
+    .form-buttons,
+    .path-admin .buttons,
+    #fitem_id_submitbutton,
+    .fp-content-center form + div,
+    div.backup-section + form,
+    #fgroup_id_buttonar {
+        .form-actions;
+        padding-right: 0;
+    }
+    .path-admin .buttons,
+    .form-buttons { // Add back the padding it would usually get from being inside a .form-horizontal.
+        padding-right: @horizontalComponentOffset;
+    }
+}
 .form-item .form-setting .form-checkbox.defaultsnext {
     // Need to specify .defaultsnext and the .form-checkbox class
     // is somewhat randomly re-used on various actual checkboxes
@@ -182,29 +236,25 @@ div.backup-section + form,
     display: inline-block; // So above style sticks.
 }
 
-#adminsettings h3.main {
+#adminsettings h3 {
     // Copied from bootstrap/forms.less tag legend.
     display: block;
     width: 100%;
     padding: 0;
-    margin-bottom: @baseLineHeight;
-    font-size: @baseFontSize * 1.5;
-    line-height: @baseLineHeight * 2;
-    color: @grayDark;
+    margin-bottom: @base-line-height;
+    font-size: @font-size-base * 1.5;
+    line-height: @base-line-height * 2;
+    color: @gray-dark;
     border: 0;
     border-bottom: 1px solid #e5e5e5;
 }
 .mform legend a,
 .mform legend a:hover {
-    color: @grayDark;
+    color: @gray-dark;
     text-decoration: none;
 }
-.dir-rtl .mform .fitem .fitemtitle {
-    float: right;
-}
-
 .dir-rtl .mform .fitem .felement {
-    margin-right: 16%;
+    margin-right: 30%;
     margin-left: auto;
     text-align: right;
 }
@@ -273,6 +323,14 @@ div.backup-section + form,
 #page-admin-grade-edit-scale-edit.dir-rtl .error input#id_name {
     margin-right: 170px;
 }
+#page-grade-edit-outcome-course .courseoutcomes {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#page-grade-edit-outcome-course .courseoutcomes td {
+    text-align:center;
+}
 /* Install Process' text fields Forms, should always be justified to the left */
 #installform #id_wwwroot,
 #installform #id_dirroot,
@@ -302,7 +360,14 @@ input[type="checkbox"] + label {
 input[type="radio"],
 input[type="checkbox"] {
     margin-top: -4px; // Dodgy hack, must be better way.
-	margin-right: 7px;
+    margin-right: 7px;
+}
+.dir-rtl {
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-left: 7px;
+        margin-right: auto;
+    }
 }
 .singleselect {
     display: inline-block;
@@ -314,9 +379,24 @@ input[type="checkbox"] {
 .form-item .form-label label {
     margin-bottom: 0;
 }
+.dir-rtl .form-item .form-label label {
+     text-align:left;
+}
 .felement.ffilepicker {
     margin-top: 5px;
 }
 div#dateselector-calendar-panel {
     z-index: 3100; /* Set higher than the z-index of the filemanager - see MDL-39047. */
 }
+
+fieldset.coursesearchbox label {
+    display: inline;
+}
+
+/**
+ * Show the labels above text editors and file managers except on wide screens.
+ */
+#region-main .mform .fitem .fitemtitle label {
+    font-weight: bold;
+}
+

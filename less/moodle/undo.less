@@ -56,8 +56,8 @@ li.activity.label,
 li.section.hidden,
 .block.hidden,
 .block.invisible {
-  visibility: visible;
-  display: block;
+  visibility: visible !important;
+  display: block !important;
 }
 
 
@@ -97,8 +97,8 @@ li.section.hidden,
  */
 
 fieldset.hidden {
-    display: inherit;
-    visibility: inherit;
+    display: inherit !important;
+    visibility: inherit !important;
 }
 
 
@@ -159,25 +159,18 @@ img.icon-pre {
     background-image: none;
 }
 
-// Weird big margins on login page
-.loginbox.twocolumns,
-.loginbox.twocolumns {
-    .signuppanel,
-    .loginpanel {
-        padding: 0px;
-        margin: 0px;
-    }
-}
-
-//Use nice Bootstrap alert boxes for login errors
-.loginerrors .error {
-    display: block;
-    .alert;
-    .alert-error;
-}
 
 //Bootstrap needs tooltips to be specified. Moodle does not use this
 .tooltip {
     .opacity(100);
     display: inline;
+}
+
+// Extends bootstrapbase/less/bootstrap/navbar.less
+// to enable scroll in longer menus especially language menu.
+
+.open > .dropdown-menu {
+    display: block;
+    max-height: 500px;
+    overflow-y: auto;
 }

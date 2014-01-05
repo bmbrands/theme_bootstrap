@@ -16,8 +16,8 @@
 
 .environmenttable {
     p.warn {
-        background-color : @warningBackground;
-        color: @warningText;
+        background-color : @state-warning-bg;
+        color: @state-warning-text;
     }
     .error,
     span.warn,
@@ -25,13 +25,13 @@
         .label;
     }
     .error {
-        background-color : @errorText;
+        background-color : @state-danger-text;
     }
     span.warn {
         background-color : @orange;
     }
     .ok {
-        background-color: @successText;
+        background-color: @state-success-text;
     }
 }
 
@@ -71,16 +71,16 @@
     .label;
 }
 .statusok {
-    background-color: @successText;
+    background-color: @state-success-text;
 }
 .statuswarning {
-    background-color: @warningText;
+    background-color: @state-warning-text;
 }
 .statusserious {
     background-color: @orange;
 }
 .statuscritical {
-    background-color: @errorText;
+    background-color: @state-danger-text;
 }
 
 #page-admin-report-capability-index #capabilitysearch {
@@ -89,21 +89,22 @@
 
 #page-admin-report-backups-index .backup-error,
 #page-admin-report-backups-index .backup-unfinished {
-    color: @errorText;
+    color: @state-danger-text;
 }
 
 #page-admin-report-backups-index .backup-skipped,
-#page-admin-report-backups-index .backup-ok {
-    color: @successText;
+#page-admin-report-backups-index .backup-ok,
+#page-admin-report-backups-index .backup-notyetrun {
+    color: @state-success-text;
 }
 
 #page-admin-report-backups-index .backup-warning {
-    color: @warningText;
+    color: @state-warning-text;
 }
 
 #page-admin-qtypes .disabled,
 #page-admin-qbehaviours .disabled {
-    .muted;
+    .text-muted;
 }
 
 #page-admin-qtypes #qtypes div,
@@ -120,21 +121,20 @@
 
 // Make them more finger friendly.
 img.iconsmall {
-    margin: 0;
-    padding: 0.3em;
+    margin: 0.3em;
 }
 
 
 #page-admin-qbehaviours .cell.c3,
 #page-admin-qtypes .cell.c3 {
-    font-size: @fontSizeMini;
+    font-size: @font-size-mini;
 }
 
 #page-admin-lang .generalbox,
 #page-admin-course-index .singlebutton,
 #page-admin-course-index .addcategory,
 #page-course-index .buttons,
-#page-course-category .buttons,
+#page-course-index-category .buttons,
 #page-admin-course-category .addcategory,
 #page-admin-stickyblocks .generalbox,
 #page-admin-maintenance .buttons,
@@ -208,6 +208,7 @@ img.iconsmall {
 #page-admin-index .releasenoteslink,
 #page-admin-index .adminwarning,
 #page-admin-index .maturitywarning,
+#page-admin-index .testsitewarning,
 #page-admin-index .maturityinfo {
     .alert;
     width: 60%;
@@ -215,8 +216,9 @@ img.iconsmall {
     margin: auto;
 }
 #page-admin-index .maturitywarning,
+#page-admin-index .testsitewarning,
 #page-admin-index .adminwarning.maturityinfo.maturity50 {
-    .alert-error;
+    .alert-danger;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo,
@@ -237,8 +239,8 @@ img.iconsmall {
 #page-admin-index .updateplugin .updatepluginconfirmexternal,
 #page-admin-plugins .updateplugin .updatepluginconfirmexternal {
     padding: 1em;
-    background-color: @errorBackground;
-    border: 1px solid @errorBorder;
+    background-color: @state-danger-bg;
+    border: 1px solid @state-danger-border;
 }
 
 #page-admin-user-user_bulk #users .fgroup {
@@ -291,7 +293,7 @@ img.iconsmall {
 }
 
 .path-admin .roleassigntable #buttonscell #assignoptions {
-    font-size: @fontSizeMini;
+    font-size: @font-size-mini;
 }
 
 .path-admin .roleassigntable #removeselect_wrapper,
@@ -328,7 +330,7 @@ img.iconsmall {
 .path-admin .rolecap .cap-name,
 .path-admin .rolecap .note {
     display: block;
-    font-size: @fontSizeMini;
+    font-size: @font-size-mini;
     white-space: nowrap;
     font-weight: normal;
 }
@@ -398,6 +400,31 @@ img.iconsmall {
     direction: ltr;
 }
 
+/* Styles for flags on admin settings */
+.adminsettingsflags {
+    float: right;
+}
+
+.dir-rtl .adminsettingsflags {
+    float: left;
+}
+
+.adminsettingsflags label {
+    margin-right: 7px;
+}
+
+.dir-rtl .adminsettingsflags label {
+    margin-left: 7px;
+}
+
+.form-description {
+    clear: right;
+}
+
+.dir-rtl .form-description {
+    clear: left;
+}
+
 .form-item .form-setting .form-htmlarea {
     width: 640px;
     display: inline;
@@ -418,7 +445,10 @@ img.iconsmall {
     margin-right: 0.5em;
     display: inline;
 }
-
+.dir-rtl .form-item .form-setting .defaultsnext {
+    margin-left: 0.5em;
+    margin-right: 0;
+}
 .form-item .form-setting .locked-checkbox {
     margin-right: 0.2em;
     margin-left: 0.5em;
@@ -524,13 +554,13 @@ img.iconsmall {
 }
 
 #plugins-check .status-new .status {
-    background-color: @successBackground;
+    background-color: @state-success-bg;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity200 .info.release,
 #plugins-check .status-upgrade .status,
 #plugins-check .status-delete .status {
-    background-color: @infoBackground;
+    background-color: @state-info-bg;
 }
 
 #plugins-control-panel .extension .source,
@@ -539,39 +569,60 @@ img.iconsmall {
 .pluginupdateinfo.maturity100,
 .pluginupdateinfo.maturity150,
 #plugins-check .extension .source {
-    background-color: @warningBackground;
+    background-color: @state-warning-bg;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release,
-#plugins-control-panel .missingfromdisk .pluginname,
 .pluginupdateinfo.maturity50,
 #plugins-check .requires-failed,
 #plugins-check .missingfromdisk .displayname,
 #plugins-check .status-missing .status,
 #plugins-check .status-downgrade .status {
-    background-color: @errorBackground;
+    background-color: @state-danger-bg;
+}
+
+#plugins-control-panel .statusmsg {
+    background-color: @gray-lighter;
+    padding: 3px;
+    .border-radius(5px);
+}
+
+#plugins-control-panel .status-missing .pluginname {
+    background-color: @state-danger-bg;
+}
+
+#plugins-control-panel .status-missing .statusmsg {
+    color: @state-danger-text;
+}
+
+#plugins-control-panel .status-new .pluginname {
+    background-color: @state-success-bg;
+}
+
+#plugins-control-panel .status-new .statusmsg {
+    color: @state-success-text;
 }
 
 #plugins-control-panel .disabled .availability {
-    background-color: @inputDisabledBackground;
+    background-color: @input-bg-disabled;
 }
 
 #plugins-check .standard .source,
 #plugins-check .status-nodb .status,
 #plugins-check .status-uptodate .status,
 #plugins-check .requires-ok {
-    .muted
+    .text-muted;
 }
 
 #plugins-check .requires ul {
-    font-size: @fontSizeMini;
+    font-size: @font-size-mini;
     margin: 0;
 }
 
 #plugins-check .status .pluginupdateinfo {
     padding: 5px 10px;
     margin: 10px;
-    background-color: @infoBackground;
+    background-color: @state-info-bg;
     .border-radius(10px);
 }
 
@@ -592,8 +643,8 @@ img.iconsmall {
 
 #plugins-control-panel .requiredby,
 #plugins-control-panel .pluginname .componentname {
-    font-size: @fontSizeSmall;
-    .muted
+    font-size: @font-size-small;
+    .text-muted;
 }
 
 #plugins-control-panel .pluginname .componentname {
@@ -623,7 +674,7 @@ img.iconsmall {
 
 #plugins-overview-panel .info.updatable {
     margin-left: 10px;
-    background-color: @infoBackground;
+    background-color: @state-info-bg;
     font-weight: bold;
     .border-radius(10px);
 }
@@ -638,13 +689,13 @@ img.iconsmall {
 }
 
 #plugins-control-panel .uninstall a {
-    color: @errorText;
+    color: @state-danger-text;
 }
 
 #plugins-control-panel .notes .pluginupdateinfo {
     padding: 5px 10px;
     margin: 10px;
-    background-color: @infoBackground;
+    background-color: @state-info-bg;
     .border-radius(10px);
 }
 
@@ -670,7 +721,7 @@ img.iconsmall {
 /** MNet networking */
 #page-admin-mnet-peers .box.deletedhosts {
     margin-bottom: 1em;
-    font-size: @fontSizeSmall;
+    font-size: @font-size-small;
 }
 
 #page-admin-mnet-peers .mform .certdetails {
@@ -678,8 +729,8 @@ img.iconsmall {
 }
 
 #page-admin-mnet-peers .mform .deletedhostinfo {
-    background-color: @errorBackground;
-    border: 2px solid @errorBorder;
+    background-color: @state-danger-bg;
+    border: 2px solid @state-danger-border;
     padding: 4px;
     margin-bottom: 5px;
 }
@@ -701,7 +752,8 @@ img.iconsmall {
 }
 
 #core-cache-rescan-definitions,
-#core-cache-mode-mappings .edit-link {
+#core-cache-mode-mappings .edit-link,
+#core-cache-lock-summary .new-instance {
     margin-top: 0.5em;
     text-align: center;
 }

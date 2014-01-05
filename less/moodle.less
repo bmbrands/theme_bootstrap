@@ -1,43 +1,53 @@
+// Import the bootstrap variables.
+@import "bootstrap3/variables.less";
+
 // Old Moodle stuff from base theme.
 // Massive, needs broken up.
+@import "moodle/variables";
+@import "moodle/mixins";
 @import "moodle/core";
 @import "moodle/admin";
 @import "moodle/calendar";
 @import "moodle/course";
 @import "moodle/filemanager";
-@import "moodle/grade";
 @import "moodle/message";
 @import "moodle/question";
 @import "moodle/user";
+@import "moodle/new";
 
 
 // Upstream Bootstrap.
-@import "bootstrap/bootstrap";
+@import "bootstrap3/bootstrap";
+
+// Override Bootstrap defaults.
+//@import "moodle/bootstrapoverride";
 
 // Set image location.
 @iconSpritePath:          ~"[[pix:theme|glyphicons-halflings]]";
 @iconWhiteSpritePath:     ~"[[pix:theme|glyphicons-halflings-white]]";
 
+// Increase form label width.
+@horizontalComponentOffset: 200px;
+// On Wider screens.
+@horizontalComponentOffset980: 220px;
+@horizontalComponentOffset1200: 265px;
+
 // Roll back nameclashes.
 @import "moodle/undo";
 
-// Extra padding for fixed nav.
-// Needs to be between bootstrap/bootstrap and
-// bootstrap/responsive.
+@import "bootswatch/cerulean-variables.less";
+@import "bootswatch/cerulean-bootswatch.less";
+
 
 // New Moodle stuff that builds on Bootstrap.
 @import "moodle/blocks";
 @import "moodle/forms";
-@import "moodle/tabs";
 @import "moodle/modules";
+@import "moodle/chat";
+@import "moodle/reports";
 @import "moodle/backup-restore";
 @import "moodle/tables";
 @import "moodle/buttons";
-@import "moodle/24.less";
-
-@import "bootswatch/variables";
-@import "bootswatch/bootswatch";
-
 
 // Anything below this line is considered expendable,
 // so it doesn't matter if it doesn't show up in ie < 9
@@ -47,15 +57,8 @@
 
 // The following responsive imports are copied in
 // from "bootstrap/responsive".
-@import "bootstrap/responsive-utilities.less";
-@import "bootstrap/responsive-1200px-min.less";
-@import "bootstrap/responsive-768px-979px.less";
-@import "bootstrap/responsive-767px-max.less";
-@import "bootstrap/responsive-navbar.less";
+
 @import "moodle/responsive";
 
 @import "moodle/debug";
 @import "moodle/expendable";
-
-
-

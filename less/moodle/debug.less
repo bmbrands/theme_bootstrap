@@ -25,7 +25,6 @@
     font-weight: bold;
 }
 #page-footer .performanceinfo {
-    text-align: center;
     margin: 10px 20%;
 }
 #page-footer .performanceinfo span {
@@ -59,17 +58,23 @@
     margin: .3em;
     display: inline-block;
     vertical-align: top;
-    background-color: @wellBackground;
+    background-color: @well-bg;
 }
 .cache-store-stats {
     padding: 0 1.3em;
 }
 .cache-store-stats.nohits {
-    background-color: @errorBackground;
+    background-color: @state-danger-bg;
 }
 .cache-store-stats.lowhits {
-    background-color: @warningBackground;
+    background-color: @state-warning-bg;
 }
 .cache-store-stats.hihits {
-    background-color: @successBackground;
+    background-color: @state-success-bg;
+}
+#page-footer,
+#page-footer .validators,
+#page-footer .purgecaches,
+#page-footer .performanceinfo {
+    text-align: center;
 }

@@ -1,7 +1,5 @@
 /* responsive.less */
 
-// Should probably be moved to relevant .less files
-// after 4095 selector issue is solved
 
 @media (min-width: 980px) {
     .dir-rtl .navbar .nav.pull-right,
@@ -14,111 +12,143 @@
             float: right;
         }
     }
+}
 
+
+
+@media (max-width: 873px) {
+    .file-picker .fp-repo-area {
+        width: 100%;
+        height: auto;
+        max-height: 220px;
+        y-scroll: auto;
+        float: none;
+        border: 0px;
+    }
+    .file-picker .fp-repo-items {
+        width: 100%;
+        float: none;
+    }
+    .file-picker .fp-login-form .fp-login-input label {
+        text-align: left;
+    }
+    .dir-rtl .file-picker .fp-login-form .fp-login-input label {
+        text-align: right;
+    }
+    .file-picker .fp-content form td {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    .dir-rtl .file-picker .fp-content form td {
+        text-align: right;
+    }
+    .fp-content .mdl-right {
+        text-align: left;
+    }
+    .dir-rtl .fp-content .mdl-right {
+        text-align: right;
+    }
+
+    .fp-repo-items .fp-navbar {
+        border-top: 1px solid rgb(187, 187, 187);
+    }
 }
 
 // login page
 @media (min-width: 1200px) {
-    .loginbox.twocolumns .loginpanel {
-        margin-left: 0;
+
+    // Wider form labels.
+    /*
+    .form-item .form-label,
+    .mform .fitem div.fitemtitle,
+    .userprofile dl.list dt,
+    .form-horizontal .control-label {
+        width: @horizontalComponentOffset1200 - 20px;
     }
-    .loginbox.twocolumns .loginpanel,
-    .loginbox.twocolumns .signuppanel {
-        width: 48.717948717948715%;
-       *width: 48.664757228587014%;
-   }
+    .form-item .form-setting,
+    .form-item .form-description,
+    .mform .fitem .felement,
+    #page-mod-forum-search .c1,
+    .mform .fdescription.required,
+    .userprofile dl.list dd,
+    .form-horizontal .controls {
+        margin-left: @horizontalComponentOffset1200;
+    }
+    .dir-rtl {
+        .form-item .form-setting,
+        .form-item .form-description,
+        .mform .fitem .felement,
+        .mform .fdescription.required,
+        .userprofile dl.list dd,
+        .form-horizontal .controls {
+            margin-right: @horizontalComponentOffset1200;
+        }
+        #page-mod-forum-search .c1 {
+            margin-right: @horizontalComponentOffset1200;
+        }
+    }
+    */
+    .path-admin .buttons,
+    .form-buttons {
+        padding-left: @horizontalComponentOffset1200;
+    }
+    .dir-rtl {
+        .path-admin .buttons,
+        .form-buttons {
+            padding-right: @horizontalComponentOffset1200;
+        }
+    }
+
 }
 
-@media (min-width: 980px) {
-    .loginbox.twocolumns .loginpanel {
-        margin-left: 0;
-    }
-    .loginbox.twocolumns .loginpanel,
-    .loginbox.twocolumns .signuppanel {
-        width: 48.617948717948715%;
-       *width: 48.664757228587014%;
-   }
-}
 
-@media (min-width: 768px) and (max-width: 979px) {
-    .loginbox.twocolumns .loginpanel {
-          margin-left: 0;
-    }
-    .loginbox.twocolumns .loginpanel,
-    .loginbox.twocolumns .signuppanel {
-        width: 48.61878453038674%;
-        *width: 48.56559304102504%;
-    }
-}
+
+
 
 @media (max-width: 767px) {
-     .loginbox.twocolumns .loginpanel,
-     .loginbox.twocolumns .signuppanel {
-         display: block;
-         float: none;
-         width: 100%;
-         margin-left: 0;
-         .box-sizing(border-box);
-     }
+    #region-bs-main-and-pre {
+        padding-left: 0px;
+        #region-main {
+            padding-left: 0px;
+        }
+    }
  }
 
 @media (max-width: 480px) {
-    // copied from tabs.less stacked-navs
-    .tabtree > ul {
-        border: none;
-    }
-    .tabtree > ul > li {
+    // make tabs act like nav-stacked
+    // (mostly) copied from bootstrap/navs.less
+    .nav-tabs > li {
         float: none;
     }
-    .tabtree > ul > li > a {
+    .nav-tabs > li > a {
+        margin-right: 0; // no need for the gap between nav items
+    }
+    .nav-tabs {
+        border-bottom: 0;
+    }
+    .nav-tabs > li > a {
         border: 1px solid #ddd;
         .border-radius(0);
     }
-    .tabtree > ul > li.first > a {
+    .nav-tabs > .active > a,
+    .nav-tabs > .active > a:hover {
+        border: 1px solid #ddd;
+    }
+    .nav-tabs > li:first-child > a {
         .border-top-radius(4px);
     }
-    .tabtree > ul > li.last > a,
-    .tabtree > ul > li.last > a:hover {
-        border: 1px solid #ddd;
+    .nav-tabs > li:last-child > a {
         .border-bottom-radius(4px);
     }
-    .tabtree > ul > li > a:hover,
-    .tabtree > ul > li > a:focus {
+    .nav-tabs > li > a:hover,
+    .nav-tabs > li > a:focus {
         border-color: #ddd;
         z-index: 2;
-    }
-    .file-picker .fp-repo-items,
-    .file-picker .fp-repo-area {
-        position: relative;
-        display: block;
-        width: auto;
-        top: 0;
-        bottom: 0;
-        border: none;
-        margin: 0;
-    }
-    .file-picker .fp-content {
-        width: 100%;
-        height: 100%;
     }
     .fp-content-center {
         display: block;
         vertical-align: top;
-    }
-    .fp-upload-form td.mdl-right,
-    .fp-upload-form td.mdl-left,
-    .fp-login-form .input,
-    .file-picker .fp-login-form .fp-login-input label,
-    .file-picker td.label {
-        display: block;
-        text-align: left;
-    }
-    .file-picker .fp-login-form table,
-    .file-picker td,
-    .file-picker td.label,
-    .file-picker .fp-upload-form table {
-            margin: 0;
-            padding: 0;
     }
     .course-content ul.topics li.section,
     .course-content ul.topics li.section .content,
@@ -138,25 +168,15 @@
         border-bottom: thin solid #eee;
     }
     .course-content .section .activity .commands {
-        display: block;
         text-align: right;
     }
-    .jsenabled .visibleifjs.addresourcemodchooser {
-        display: none;
+    /** Handles display of the activity chooser on small screens **/
+    .jsenabled .choosercontainer #chooseform .alloptions {
+        max-width: 100%;
     }
-    .jsenabled .hiddenifjs.addresourcedropdown {
-        display: block;
-        .iconhelp {
-            display: inline-block;
-            padding: 6px;
-            vertical-align: top;
-        }
-        div.urlselect {
-            display: block;
-            form {
-                margin: 0;
-            }
-        }
+    .jsenabled .choosercontainer #chooseform .instruction,
+    .jsenabled .choosercontainer #chooseform .typesummary {
+        position:static;
     }
     .que .info {
         float: none;
@@ -171,18 +191,18 @@
     .path-mod-forum .forumsearch #search {
         width: 120px;
     }
-    h1 { font-size: @baseFontSize * 2; } // ~38px
-    h2 { font-size: @baseFontSize * 1.75; } // ~32px
-    h3 { font-size: @baseFontSize * 1.50; } // ~24px
-    h4 { font-size: @baseFontSize * 1.25; } // ~18px
-    h5 { font-size: @baseFontSize; } // 14px
-    h6 { font-size: @baseFontSize * 0.85; } // ~12px
+    .path-mod-forum .forumheaderlist .picture {
+        display: none;
+    }
 }
 
 // Stuart's 2,1,3 layout
 @media (min-width : 768px) {
   .row-fluid .desktop-first-column {
       margin-left: 0;
+  }
+  #page-navbar .breadcrumb-button {
+      display: inline;
   }
 }
 @media (max-width : 767px) {
@@ -192,42 +212,7 @@
 }
 // Forms
 @media (max-width: 767px) {
-  // Remove the horizontal form styles
-    .form-item .form-label,
-    .mform .fitem div.fitemtitle {
-    // copied from .control-label {
-      float: none;
-      width: auto;
-      padding-top: 0;
-      text-align: left;
-    }
-    .form-item .form-label label{
-        display: inline-block;
-        margin-right: .5em;
-    }
-    .form-item .form-setting .form-checkbox {
-        margin-top: 0;
-    }
-    .form-label span.form-shortname {
-        display: inline-block;
-    }
-    .form-item .form-setting,
-    .mform .fitem .felement,
-    .path-backup .mform .fitem .felement,
-    .mform .fdescription.required,
-    .form-item .form-description {
-      margin-left: 0;
-    }
-    table#form td.submit,
-    .form-buttons,
-    #fitem_id_submitbutton,
-    .fp-content-center form + div,
-    #fgroup_id_buttonar,
-    .form-horizontal .form-actions,
-    .fitem_fsubmit .felement.fsubmit {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+
     #helppopupbox {
         width: auto !important;
         left: 0 !important;
@@ -246,7 +231,7 @@
     .nav-collapse {
          height: 0;
         .nav > li > a {
-            color: @grayDark;
+            color: @gray-dark;
         }
         .nav > li > a:hover,
         .nav > li > a:focus,
@@ -259,13 +244,29 @@
         .dropdown-menu > li > a:focus,
         {
             background-image: none;
-            color: @grayDark;
+            color: @gray-dark;
         }
     }
     .nav-collapse.active {
         height: auto;
     }
-
+    .path-mod-data .box > table > tbody > tr > td {
+        display: block;
+    }
+    .path-mod-forum .forumheaderlist {
+        thead .header {
+            font-weight: normal;
+            font-size: round(@font-size-small);
+        }
+        .discussion {
+            .author, .replies, .lastpost {
+                font-size: round(@font-size-small);
+            }
+            .replies .unread a {
+                padding: 0;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -287,16 +288,9 @@
           margin-left: 0;
         }
     }
-// Hide broken drag'n'drop options on touch devices MDL-38371
-// Not a great workaround, landscape iPads are wider than this,
-// and a resized window on a netbook could be smaller, but best
-// we can do with CSS. There might be a JS-based solution.
-    .section .side,
-    .editing_move {
-        display: none;
-    }
-    .activityinstance > a {
-        display: block;
+    // Reset the alignment for required label to display inline on mobile devices
+    #page-mod-wiki-create .mform .fitem div.fitemtitle {
+        float: left;
     }
 
   // GRID & CONTAINERS
@@ -326,6 +320,18 @@
     margin-left: 0;
     .box-sizing(border-box);
   }
+
+  // We need to specify a more specific selector to reset the width for
+  // cases when we have content in the side-pre blockregion but not in the
+  // side-post blockregion as there are more specific selectors in
+  // core.less which take precedence which break responsiveness.
+  .empty-region-side-post.used-region-side-pre {
+      #block-region-side-pre.span4,
+      #region-main.span8.span8 {
+        .make-md-column(8);
+      }
+  }
+
   .row-fluid .span12 {
     width: 100%;
     .box-sizing(border-box);
@@ -334,6 +340,64 @@
     margin-left: 0;
   }
   div[role=main] {
-      margin-bottom: 2em;
+      margin-bottom: 1em;
   }
+    .coursebox {
+        .info {
+            .name {
+                a {
+                    background-position: 0 13px;
+                }
+            }
+        }
+    }
+    .category-browse {
+        .coursebox {
+            .info {
+                .name {
+                    a {
+                        background-position: 0 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// All widths between 1200px and 1600px
+@media (min-width: 1200px) and (max-width: 1600px) {
+    // CSS for the course management pages.
+    #course-category-listings.columns-3 {
+        background-color:transparent;
+        border:0;
+
+        #category-listing,
+        #course-listing {
+            .make-md-column(6);
+            margin-left: @grid-gutter-width;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        #course-detail {
+            .make-md-column(12);
+            margin: 1em 0 0;
+        }
+    }
+
+}
+
+// All widths up to 1199px.
+@media (max-width: 1199px) {
+    // CSS for the course management pages.
+    #course-category-listings.columns-3 {
+        background-color:transparent;
+        border:0;
+        #category-listing,
+        #course-listing,
+        #course-detail {
+            .make-md-column(12);
+            margin: 0 0 1em 0;
+        }
+    }
 }
