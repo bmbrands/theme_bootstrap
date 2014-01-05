@@ -1,0 +1,56 @@
+// IE7 inline-block
+// ----------------
+.ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table-striped {
+  tbody {
+    > tr:nth-child(odd) > td,
+    > tr:nth-child(odd) > th {
+      background-color: @table-bg-accent;
+    }
+  }
+}
+
+.dl-horizontal {
+    dt {
+      float: left;
+      width: (@component-offset-horizontal - 20);
+      clear: left;
+      text-align: right;
+      .text-overflow();
+    }
+    dd {
+      margin-left: @component-offset-horizontal;
+      .clearfix(); // Clear the floated `dt` if an empty `dd` is present
+    }
+}
+
+.control-group {
+  margin-bottom: @base-line-height / 2;
+}
+
+.form-actions {
+  padding: (@base-line-height - 1) 20px @base-line-height;
+  margin-top: @base-line-height;
+  margin-bottom: @base-line-height;
+  background-color: @form-actions-bg;
+  border-top: 1px solid #e5e5e5;
+  .clearfix(); // Adding clearfix to allow for .pull-right button containers
+}
+
+.table-hover {
+  tbody {
+    tr:hover > td,
+    tr:hover > th {
+      background-color: @table-bg-hover;
+    }
+  }
+}
