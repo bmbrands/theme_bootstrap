@@ -43,8 +43,8 @@ echo $OUTPUT->doctype() ?>
         <?php echo $OUTPUT->page_heading(); ?>
     </header>
 
-    <div id="page-content" class="row-fluid">
-        <section id="region-main" class="span12">
+    <div id="page-content" class="row">
+        <section id="region-main" class="col-md-17">
             <?php echo $OUTPUT->main_content(); ?>
         </section>
     </div>
