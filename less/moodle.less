@@ -22,9 +22,9 @@
 // Override Bootstrap defaults.
 //@import "moodle/bootstrapoverride";
 
-// Set image location.
-@iconSpritePath:          ~"[[pix:theme|glyphicons-halflings]]";
-@iconWhiteSpritePath:     ~"[[pix:theme|glyphicons-halflings-white]]";
+// Set icon font location.
+//@icon-font-path: ~"[[font:theme]]/"; // This should work, but can't test right now
+@icon-font-path: ~"//netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/";
 
 // Increase form label width.
 @horizontalComponentOffset: 200px;
@@ -35,7 +35,7 @@
 // Roll back nameclashes.
 @import "moodle/undo";
 
-@import "bootswatch/custom-variables.less";
+//@import "bootswatch/custom-variables.less";
 //@import "bootswatch/custom-bootswatch.less";
 
 
