@@ -33,7 +33,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $type = '';
 
         if ($classes == 'notifyproblem') {
-            $type = 'alert alert-error';
+            $type = 'alert alert-danger';
         }
         if ($classes == 'notifysuccess') {
             $type = 'alert alert-success';
