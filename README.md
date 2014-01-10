@@ -1,3 +1,5 @@
+![Moodlebootstrap](/pix/screenshot.jpg "Moodle Bootstrap")
+
 About this theme
 ================
 
