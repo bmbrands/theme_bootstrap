@@ -149,7 +149,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 $messagecontent .= $message->text;
                 $messagecontent .= html_writer::end_tag('span');
                 $messagecontent .= html_writer::start_tag('span', array('class' => 'msg-time'));
-                $messagecontent .= html_writer::tag('i','',array('class' => 'icon-time'));
+                $messagecontent .= $this->icon('time');
                 $messagecontent .= html_writer::tag('span', $message->date);
                 $messagecontent .= html_writer::end_tag('span');
 
@@ -178,15 +178,15 @@ class theme_bootstrap_core_renderer extends core_renderer {
         if ($addusermenu) {
             if (isloggedin()) {
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
-                $usermenu->add('<i class="icon-lock"></i>' . get_string('logout'), new moodle_url('/login/logout.php',
+                $usermenu->add($this->icon('lock') . get_string('logout'), new moodle_url('/login/logout.php',
                 array('sesskey'=>sesskey(),'alt'=>'logout')),
                 get_string('logout'));
 
-                $usermenu->add('<i class="icon-user"></i>' . get_string('viewprofile'), new moodle_url('/user/profile.php',
+                $usermenu->add($this->icon('user') . get_string('viewprofile'), new moodle_url('/user/profile.php',
                 array('id'=>$USER->id)),
                 get_string('viewprofile'));
 
-                $usermenu->add('<i class="icon-cog"></i>' . get_string('editmyprofile'), new moodle_url('/user/edit.php',
+                $usermenu->add($this->icon('cog') . get_string('editmyprofile'), new moodle_url('/user/edit.php',
                 array('id'=>$USER->id)),
                 get_string('editmyprofile'));
             } else {
@@ -388,4 +388,22 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
         return $heading;
     }
+
+    /*
+     * This renders an icon font tag
+     * Uses bootstrap3 or Font Awesome html, but hides that choice from calling
+     * code.
+     */
+    public function icon($name) {
+        return $this->glyphicon($name);
+    }
+
+    public function glyphicon($name) {
+        return "<span class=\"glyphicon glyphicon-$name\"></span>";
+    }
+
+    public function awesome_icon($name) {
+        return "<i class=\"fa fa-$name\"></i>";
+    }
 }
+
