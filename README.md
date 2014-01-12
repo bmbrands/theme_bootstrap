@@ -11,7 +11,7 @@ This is the Bootstrap theme for Moodle.
 * license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 
 This theme has been created with the help of:
-Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans
+Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans, Joby Harding, Gareth J Bernard
 
 This theme is based on the Twitter Bootstrap CSS framework version 2.3.
 It contains all unmodified less* CSS sources from the Twitter Bootstrap CSS
