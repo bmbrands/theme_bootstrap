@@ -274,8 +274,8 @@ class theme_bootstrap_core_renderer extends core_renderer {
             if ($message->fullmessageformat == FORMAT_HTML) {
                 $message->smallmessage = html_to_text($message->smallmessage);
             }
-            if (core_text::strlen($message->smallmessage) > 200) {
-                $messagecontent->text = core_text::substr($message->smallmessage, 0, 200).'...';
+            if (core_text::strlen($message->smallmessage) > 30) {
+                $messagecontent->text = core_text::substr($message->smallmessage, 0, 30).'...';
             } else {
                 $messagecontent->text = $message->smallmessage;
             }
