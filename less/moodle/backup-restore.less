@@ -1,3 +1,37 @@
+.path-backup .mform .grouped_settings {
+    &.section_level {
+        .well;
+        .section_level {
+            padding-left: 0;
+            .fitemtitle {
+                font-size: @font-size-large;
+            }
+        }
+    }
+    .make-row();
+    .include_setting {
+        .make-md-column(10);
+    }
+    .normal_setting {
+        .make-md-column(7);
+    }
+    .fitem {
+        .make-row();
+        .form-group;
+        .fitemtitle {
+             .make-sm-column(14);
+             .make-lg-column(14);
+        }
+        .felement {
+            .make-sm-column(3);
+            .make-lg-column(3);
+        }
+    }
+}
+
+
+
+/*
 .path-backup .mform .grouped_settings.section_level {
     .well;
     padding: 10px 0 0 0;
@@ -18,9 +52,8 @@
 .path-backup .mform .fitem .fitemtitle {
     width: 260px;
 }
-.path-backup .mform .fitem .felement {
-    margin-left: 280px;
-}
+*/
+
 .path-backup .notification.dependencies_enforced {
     text-align: center;
     color: @state-danger-text;
