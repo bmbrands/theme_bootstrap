@@ -52,16 +52,12 @@ class theme_bootstrap_core_renderer extends core_renderer {
      * Uses bootstrap compatible html.
      */
     public function navbar() {
-        $items = $this->page->navbar->get_items();
-        $breadcrumbs = array();
-        foreach ($items as $item) {
+        $breadcrumbs = '';
+        foreach ($this->page->navbar->get_items() as $item) {
             $item->hideicon = true;
-            $breadcrumbs[] = $this->render($item);
+            $breadcrumbs .= '<li>'.$this->render($item).'</li>';
         }
-        $divider = '<span class="divider">/</span>';
-        $list_items = '<li>'.join("</li><li>", $breadcrumbs).'</li>';
-        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
-        return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
+        return "<ol class=breadcrumb>$breadcrumbs</ol>";
     }
 
     /*
