@@ -44,7 +44,7 @@ echo $OUTPUT->doctype() ?>
     </header>
 
     <div id="page-content" class="row">
-        <section id="region-main" class="col-md-17">
+        <section id="region-main" class="col-md-24">
             <?php echo $OUTPUT->main_content(); ?>
         </section>
     </div>
