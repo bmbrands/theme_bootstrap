@@ -54,15 +54,15 @@ echo $OUTPUT->doctype() ?>
     </header>
 
     <div id="page-content" class="row">
-        <div id="region-bs-main-and-pre" class="col-md-9">
+        <div id="region-bs-main-and-pre" class="col-md-18">
             <div class="row-fluid">
-                <section id="region-main" class="col-md-8 pull-right">
+                <section id="region-main" class="col-md-16 pull-right">
                     <?php echo $OUTPUT->main_content(); ?>
                 </section>
-                <?php echo $OUTPUT->blocks('side-pre', 'col-md-4 desktop-first-column'); ?>
+                <?php echo $OUTPUT->blocks('side-pre', 'col-md-8 desktop-first-column'); ?>
             </div>
         </div>
-        <?php echo $OUTPUT->blocks('side-post', 'col-md-3'); ?>
+        <?php echo $OUTPUT->blocks('side-post', 'col-md-6'); ?>
     </div>
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>

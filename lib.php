@@ -20,23 +20,23 @@
  *
  * @package    theme_bootstrap
  * @copyright  2014 Bas Brands, www.basbrands.nl
- * @authors    Bas Brands, David Scotson
+ * @authors    Bas Brands, David Scotson, Gareth J Barnard
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 function bootstrap_grid($hassidepre, $hassidepost) {
     if ($hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-7 col-sm-push-5 col-md-9 col-md-push-4');
-        $regions['pre'] = 'col-sm-5 col-sm-pull-7 col-md-4 col-md-pull-9';
-        $regions['post'] = 'col-sm-5 col-md-4';
+        $regions = array('content' => 'col-sm-10 col-sm-push-7 col-md-12 col-md-push-6 col-lg-14 col-lg-push-5');
+        $regions['pre'] = 'col-sm-7 col-sm-pull-10 col-md-6 col-md-pull-12 col-lg-5 col-lg-pull-14';
+        $regions['post'] = 'col-sm-7 col-md-6 col-lg-5';
     } else if ($hassidepre && !$hassidepost) {
-        $regions = array('content' => 'col-sm-12 col-sm-push-5 col-md-13 col-md-push-4');
-        $regions['pre'] = 'col-sm-5 col-sm-pull-12 col-md-4 col-md-pull-13';
+        $regions = array('content' => 'col-sm-17 col-sm-push-7 col-md-18 col-md-push-6 col-lg-19 col-lg-push-5');
+        $regions['pre'] = 'col-sm-7 col-sm-pull-17 col-md-6 col-md-pull-18 col-lg-5 col-lg-pull-19';
     } else if (!$hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-12 col-md-13');
-        $regions['post'] = 'col-sm-5 col-md-4';
+        $regions = array('content' => 'col-sm-17 col-md-18 col-lg-19');
+        $regions['post'] = 'col-sm-7 col-md-6 col-lg-5';
     } else if (!$hassidepre && !$hassidepost) {
-        $regions = array('content' => 'col-md-17');
+        $regions = array('content' => 'col-md-24');
     }
     return $regions;
 }
