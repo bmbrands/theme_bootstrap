@@ -91,7 +91,7 @@ echo $OUTPUT->doctype() ?>
             echo $OUTPUT->blocks('side-pre', $regions['pre']);
         }?>
         <?php
-        if ($knownregionpre) {
+        if ($knownregionpost) {
             echo $OUTPUT->blocks('side-post', $regions['post']);
         }?>
     </div>
