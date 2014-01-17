@@ -17,6 +17,10 @@
 
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
+
+$knownregionpre = $PAGE->blocks->is_known_region('side-pre');
+$knownregionpost = $PAGE->blocks->is_known_region('side-post');
+
 $regions = bootstrap_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
 $PAGE->requires->jquery();
@@ -83,11 +87,11 @@ echo $OUTPUT->doctype() ?>
         </div>
 
         <?php
-        if ($hassidepre) {
+        if ($knownregionpre) {
             echo $OUTPUT->blocks('side-pre', $regions['pre']);
         }?>
         <?php
-        if ($hassidepost) {
+        if ($knownregionpre) {
             echo $OUTPUT->blocks('side-post', $regions['post']);
         }?>
     </div>
