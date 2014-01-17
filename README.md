@@ -48,7 +48,7 @@ Updating Twitter bootstrap and Libraries
 
 Twitter bootstrap
 -----------------
-This theme uses the original unmodified version 3.0.2 Twitter bootstrap less files. These are
+This theme uses the original unmodified version 3.0.3 Twitter bootstrap less files. These are
 Object Oriented CSS files. The bootstrap repository is available on:
 
 https://github.com/twitter/bootstrap.git
@@ -96,4 +96,4 @@ Html5shiv.js
 ------------
 Author: Sjoerd Visscher
 URL: http://en.wikipedia.org/wiki/HTML5_Shiv, https://github.com/aFarkas/html5shiv
-License: MIT/GPL2 Licensed
+License: MIT/GPL2 Licensedc
