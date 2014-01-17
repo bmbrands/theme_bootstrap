@@ -26,17 +26,17 @@
 
 function bootstrap_grid($hassidepre, $hassidepost) {
     if ($hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-7 col-sm-push-5 col-md-9 col-md-push-4');
-        $regions['pre'] = 'col-sm-5 col-sm-pull-7 col-md-4 col-md-pull-9';
-        $regions['post'] = 'col-sm-5 col-md-4';
+        $regions = array('content' => 'col-sm-4 col-sm-push-4 col-md-6 col-md-push-3');
+        $regions['pre'] = 'col-sm-4 col-sm-pull-4 col-md-3 col-md-pull-6';
+        $regions['post'] = 'col-sm-4 col-md-3';
     } else if ($hassidepre && !$hassidepost) {
-        $regions = array('content' => 'col-sm-12 col-sm-push-5 col-md-13 col-md-push-4');
-        $regions['pre'] = 'col-sm-5 col-sm-pull-12 col-md-4 col-md-pull-13';
+        $regions = array('content' => 'col-sm-8 col-sm-push-4 col-md-9 col-md-push-3');
+        $regions['pre'] = 'col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9';
     } else if (!$hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-12 col-md-13');
-        $regions['post'] = 'col-sm-5 col-md-4';
+        $regions = array('content' => 'col-sm-8 col-md-9');
+        $regions['post'] = 'col-sm-4 col-md-3';
     } else if (!$hassidepre && !$hassidepost) {
-        $regions = array('content' => 'col-md-17');
+        $regions = array('content' => 'col-md-12');
     }
     return $regions;
 }
