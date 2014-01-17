@@ -24,6 +24,8 @@
 $string['pluginname'] = 'Bootstrap 3';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
+$string['subtitle'] = 'Front page subtitle';
+$string['subtitle_desc'] = 'Optionally select a subtitle for the Moodle homepage';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap Base</h2>
