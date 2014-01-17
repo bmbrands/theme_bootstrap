@@ -65,8 +65,9 @@ div[id^="bar_pbar_"] {
   height: @line-height-base !important;
   margin-bottom: @line-height-base !important;
   #gradient > .vertical(#f5f5f5, #f9f9f9) !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.1) !important;
   .box-shadow(inset 0 1px 2px rgba(0,0,0,.1)) !important;
-  .border-radius(@border-radius-base) !important;
+  border-radius: @border-radius-base !important;
   border: none !important;
 }
 div[id^="progress_pbar_"] {
@@ -77,7 +78,7 @@ div[id^="progress_pbar_"] {
   text-align: center !important;
   text-shadow: 0 -1px 0 rgba(0,0,0,.25) !important;
   #gradient > .vertical(#149bdf, #0480be) !important;
-  .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15)) !important;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.15) !important;
   .box-sizing(border-box) !important;
   .transition(width .6s ease) !important;
   padding-top: 0 !important;

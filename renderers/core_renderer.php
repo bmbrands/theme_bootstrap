@@ -1,5 +1,5 @@
 <?php
-// This file is part of the custom Moodle Bootstrap theme
+// This file is part of The Bootstrap 3 Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $type = '';
 
         if ($classes == 'notifyproblem') {
-            $type = 'alert alert-error';
+            $type = 'alert alert-danger';
         }
         if ($classes == 'notifysuccess') {
             $type = 'alert alert-success';
@@ -52,16 +52,12 @@ class theme_bootstrap_core_renderer extends core_renderer {
      * Uses bootstrap compatible html.
      */
     public function navbar() {
-        $items = $this->page->navbar->get_items();
-        $breadcrumbs = array();
-        foreach ($items as $item) {
+        $breadcrumbs = '';
+        foreach ($this->page->navbar->get_items() as $item) {
             $item->hideicon = true;
-            $breadcrumbs[] = $this->render($item);
+            $breadcrumbs .= '<li>'.$this->render($item).'</li>';
         }
-        $divider = '<span class="divider">/</span>';
-        $list_items = '<li>'.join("</li><li>", $breadcrumbs).'</li>';
-        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
-        return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
+        return "<ol class=breadcrumb>$breadcrumbs</ol>";
     }
 
     /*
@@ -135,7 +131,13 @@ class theme_bootstrap_core_renderer extends core_renderer {
         if ($addmessagemenu) {
             $messages = $this->get_user_messages();
             $messagecount = count($messages);
-            $messagemenu = $menu->add($messagecount . ' ' . get_string('messages', 'message'), new moodle_url('#'),  get_string('messages', 'message'), 9999);
+            $messagemenu = $menu->add(
+                $messagecount . ' ' . get_string('messages', 'message'),
+                new moodle_url('#'),
+                get_string('messages', 'message'),
+                9999
+            );
+
             foreach ($messages as $message) {
 
                 $senderpicture = new user_picture($message->from);
@@ -149,11 +151,14 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 $messagecontent .= $message->text;
                 $messagecontent .= html_writer::end_tag('span');
                 $messagecontent .= html_writer::start_tag('span', array('class' => 'msg-time'));
-                $messagecontent .= html_writer::tag('i','',array('class' => 'icon-time'));
+
+                $messagecontent .= html_writer::tag('i', '', array('class' => 'icon-time'));
                 $messagecontent .= html_writer::tag('span', $message->date);
                 $messagecontent .= html_writer::end_tag('span');
 
-                $messagemenu->add($messagecontent, new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id)), $message->state);
+                $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
+                $messagemenu->add($messagecontent, $messageurl, $message->state);
+
             }
         }
 
@@ -178,17 +183,24 @@ class theme_bootstrap_core_renderer extends core_renderer {
         if ($addusermenu) {
             if (isloggedin()) {
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
-                $usermenu->add('<i class="icon-lock"></i>' . get_string('logout'), new moodle_url('/login/logout.php',
-                array('sesskey'=>sesskey(),'alt'=>'logout')),
-                get_string('logout'));
 
-                $usermenu->add('<i class="icon-user"></i>' . get_string('viewprofile'), new moodle_url('/user/profile.php',
-                array('id'=>$USER->id)),
-                get_string('viewprofile'));
+                $usermenu->add(
+                    '<i class="icon-lock"></i>' . get_string('logout'),
+                    new moodle_url('/login/logout.php', array('sesskey'=>sesskey(), 'alt'=>'logout')),
+                    get_string('logout')
+                );
 
-                $usermenu->add('<i class="icon-cog"></i>' . get_string('editmyprofile'), new moodle_url('/user/edit.php',
-                array('id'=>$USER->id)),
-                get_string('editmyprofile'));
+                $usermenu->add(
+                    '<i class="icon-user"></i>' . get_string('viewprofile'),
+                    new moodle_url('/user/profile.php', array('id'=>$USER->id)),
+                    get_string('viewprofile')
+                );
+
+                $usermenu->add(
+                    '<i class="icon-cog"></i>' . get_string('editmyprofile'),
+                    new moodle_url('/user/edit.php', array('id'=>$USER->id)),
+                    get_string('editmyprofile')
+                );
             } else {
                 $usermenu = $menu->add(get_string('login'), new moodle_url('/login/index.php'), get_string('login'), 10001);
             }
@@ -206,7 +218,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
     protected function process_user_messages() {
 
         $messagelist = array();
-
 
         foreach ($usermessages as $message) {
             $cleanmsg = new stdClass();
@@ -264,8 +275,10 @@ class theme_bootstrap_core_renderer extends core_renderer {
             if ($message->fullmessageformat == FORMAT_HTML) {
                 $message->smallmessage = html_to_text($message->smallmessage);
             }
-            if (core_text::strlen($message->smallmessage) > 200) {
-                $messagecontent->text = core_text::substr($message->smallmessage, 0, 200).'...';
+
+            if (core_text::strlen($message->smallmessage) > 15) {
+                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
+
             } else {
                 $messagecontent->text = $message->smallmessage;
             }
@@ -276,7 +289,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         } else {
             $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
         }
-
 
         $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
         $messagecontent->state = $state;
@@ -308,7 +320,15 @@ class theme_bootstrap_core_renderer extends core_renderer {
             } else {
                 $url = '#cm_submenu_'.$submenucount;
             }
-            $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
+
+            $link_attributes = array(
+                'href'=>$url,
+                'class'=>'dropdown-toggle',
+                'data-toggle'=>'dropdown',
+                'title'=>$menunode->get_title(),
+            );
+            $content .= html_writer::start_tag('a', $link_attributes);
+
             $content .= $menunode->get_text();
             if ($level == 1) {
                 $content .= '<b class="caret"></b>';
@@ -368,7 +388,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             return html_writer::tag('li', html_writer::tag('a', $tab->text), array('class' => 'disabled'));
         } else {
             if (!($tab->link instanceof moodle_url)) {
-                // backward compartibility when link was passed as quoted string
+                // Backward compatibility when link was passed as quoted string.
                 $link = "<a href=\"$tab->link\" title=\"$tab->title\">$tab->text</a>";
             } else {
                 $link = html_writer::link($tab->link, $tab->text, array('title' => $tab->title));
@@ -387,6 +407,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             if (isset($this->page->theme->settings->subtitle)) {
                 $heading .= '<h3>' . $this->page->theme->settings->subtitle . '</h3>';
             }
+
         }
         return $heading;
     }

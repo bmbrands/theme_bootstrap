@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of The Bootstrap 3 Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -17,29 +17,13 @@
 
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
+$knownregionpre = $PAGE->blocks->is_known_region('side-pre');
+$knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
-if ($hassidepre && $hassidepost) {
-    $regions = array('content' => 'col-sm-7 col-sm-push-5 col-md-9 col-md-push-4');
-    $regions['pre'] = 'col-sm-5 col-sm-pull-7 col-md-4 col-md-pull-9';
-    $regions['post'] = 'col-sm-5 col-md-4';
-}
-
-if ($hassidepre && !$hassidepost) {
-    $regions = array('content' => 'col-sm-12 col-sm-push-5 col-md-13 col-md-push-4');
-    $regions['pre'] = 'col-sm-5 col-sm-pull-12 col-md-4 col-md-pull-13';
-}
-
-if (!$hassidepre && $hassidepost) {
-    $regions = array('content' => 'col-sm-12 col-md-13');
-    $regions['post'] = 'col-sm-5 col-md-4';
-}
-
-if (!$hassidepre && !$hassidepost) {
-    $regions = array('content' => 'col-md-17');
-}
-
-
+$regions = bootstrap_grid($hassidepre, $hassidepost);
+$PAGE->set_popup_notification_allowed(false);
 $PAGE->requires->jquery();
+$PAGE->requires->jquery_plugin('bootstrap', 'theme_bootstrap');
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -84,8 +68,8 @@ echo $OUTPUT->doctype() ?>
 <div id="page" class="container">
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
-            <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-            <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
         </div>
 
         <div id="course-header">
@@ -103,11 +87,12 @@ echo $OUTPUT->doctype() ?>
         </div>
 
         <?php
-        if ($hassidepre) {
+
+        if ($knownregionpre) {
             echo $OUTPUT->blocks('side-pre', $regions['pre']);
         }?>
         <?php
-        if ($hassidepost) {
+        if ($knownregionpost) {
             echo $OUTPUT->blocks('side-post', $regions['post']);
         }?>
     </div>

@@ -57,10 +57,10 @@
     font-size: 12px;
     color: #333;
     background: #F2F2F2;
-    .border-radius(10px);
+    border-radius: 10px;
     border: 1px solid #ccc;
     border-top: 0 none;
-    .box-shadow(5px 5px 20px 0 #666);
+    box-shadow: 5px 5px 20px 0 #666;
 }
 #qtypechoicecontainer #chooseqtype {
     width: 40em;
@@ -96,7 +96,7 @@
 }
 #chooseqtype .selected {
     background-color: #fff;
-    .box-shadow(0px 0 10px 0 #ccc);
+    box-shadow: 0px 0 10px 0 #ccc;
 }
 #chooseqtype .instruction,
 #chooseqtype .qtypesummary {
@@ -175,7 +175,7 @@ body.path-question-type .fitem_fgroup .accesshide {
     margin-bottom: 1.8em;
     background-color: @gray-lighter;
     border: 1px solid darken(spin(@gray-lighter, -10), 7%);
-    .border-radius(2px);
+    border-radius: 2px;
 }
 .que h3.no {
     margin: 0;
@@ -269,11 +269,11 @@ body.path-question-type .fitem_fgroup .accesshide {
     color: @text-color;
     background-color: @backgroundColor;
     border-color: @borderColor;
-    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075); // Redeclare so transitions work
     &:focus {
       border-color: darken(@borderColor, 10%);
       @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@borderColor, 20%);
-      .box-shadow(@shadow);
+      box-shadow: @shadow;
     }
 }
 
@@ -421,7 +421,7 @@ body.path-question-type .fitem_fgroup .accesshide {
 
 #page-mod-quiz-edit div.quizpage .pagecontent {
     border: 1px solid #ddd;
-    .border-radius(2px);
+    border-radius: 2px;
     overflow: hidden;
 }
 
@@ -436,7 +436,7 @@ body.path-question-type .fitem_fgroup .accesshide {
 #page-mod-quiz-edit div.editq div.question div.content {
     background-color: @body-bg;
     border: 1px solid #ddd;
-    .border-radius(2px);
+    border-radius: 2px;
     overflow: hidden;
 }
 

@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of The Bootstrap 3 Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -14,6 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+
+$hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
+$hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
+$regions = bootstrap_grid($hassidepre, $hassidepost);
+$PAGE->requires->jquery();
+$PAGE->requires->jquery_plugin('bootstrap', 'theme_bootstrap');
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -54,15 +60,23 @@ echo $OUTPUT->doctype() ?>
     </header>
 
     <div id="page-content" class="row">
-        <div id="region-bs-main-and-pre" class="col-md-9">
-            <div class="row-fluid">
-                <section id="region-main" class="col-md-8 pull-right">
-                    <?php echo $OUTPUT->main_content(); ?>
-                </section>
-                <?php echo $OUTPUT->blocks('side-pre', 'col-md-4 desktop-first-column'); ?>
-            </div>
+
+        <div id="region-main" class="<?php echo $regions['content']; ?>">
+            <?php
+            echo $OUTPUT->course_content_header();
+            echo $OUTPUT->main_content();
+            echo $OUTPUT->course_content_footer();
+            ?>
         </div>
-        <?php echo $OUTPUT->blocks('side-post', 'col-md-3'); ?>
+
+        <?php
+        if ($hassidepre) {
+            echo $OUTPUT->blocks('side-pre', $regions['pre']);
+        }?>
+        <?php
+        if ($hassidepost) {
+            echo $OUTPUT->blocks('side-post', $regions['post']);
+        }?>
     </div>
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>

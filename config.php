@@ -155,7 +155,6 @@ $THEME->layouts = array(
 $THEME->javascripts = array(
 );
 $THEME->javascripts_footer = array(
-    'bootstrap',
 );
 
 if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {

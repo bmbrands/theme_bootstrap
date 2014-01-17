@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of The Bootstrap 3 Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -25,6 +25,6 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2013122300;
-$plugin->requires  = 2013051400;
+$plugin->version   = 2014011700;
+$plugin->requires  = 2013110500;
 $plugin->component = 'theme_bootstrap';

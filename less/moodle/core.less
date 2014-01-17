@@ -10,6 +10,28 @@
 }
 
 
+.editing.used-region-side-post.used-region-side-pre #region-main {
+    .make-sm-column(4);
+    .make-md-column(6);
+    .make-sm-column-push(4);
+    .make-md-column-push(3);
+}
+
+
+.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    .make-sm-column(4);
+    .make-md-column(3);
+    min-height: 100px;
+}
+
+.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    .make-sm-column(4);
+    .make-md-column(3);
+    .make-sm-column-pull(4);
+    .make-md-column-pull(6);
+     min-height: 100px;
+}
+
 /** Page layout CSS ends **/
 
 .dir-ltr,
@@ -420,22 +442,22 @@ a.skip:active {
     .form-group;
 
     &.onecolumn  {
-        .make-md-column-offset(5);
-        .make-md-column(7);
+        .make-md-column-offset(2);
+        .make-md-column(8);
         .well;
     }
 
     &.twocolumns .loginpanel {
-        .make-sm-column(5);
-        .make-lg-column(4);
+        .make-sm-column(4);
+        .make-lg-column(3);
         .well;
     }
     
     &.twocolumns .signuppanel {
-        .make-sm-column(11);
+        .make-sm-column(7);
         .make-sm-column-push(1);
-        .make-lg-column(11);
-        .make-lg-column-push(2);
+        .make-lg-column(8);
+        .make-lg-column-push(1);
     }
 
     .loginform {
@@ -1351,7 +1373,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     margin-left: -3px;
     background-color: #fff;
     border: 1px solid #ccc;
-    .border-radius(10px);
+    border-radius: 10px;
     .box-shadow(5px 5px 20px 0 #666);
 }
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
@@ -1364,7 +1386,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     color: #333;
     text-align: center;
     text-shadow: 1px 1px 1px #fff;
-    .border-radius(10px 10px 0 0);
+    border-radius: 10px 10px 0 0;
     border-bottom: 1px solid #bbb;
     background: #ccc;
     #gradient > .vertical(#fff, #ccc);
@@ -1424,7 +1446,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 }
 .moodle-dialogue-base .moodle-dialogue-fullscreen .moodle-dialogue-hd,
 .moodle-dialogue-base .moodle-dialogue-fullscreen .moodle-dialogue-wrap {
-    border-radius: 0px;
+    border-radius: 0;
 }
 .moodle-dialogue-confirm .confirmation-dialogue {
     text-align: center;
@@ -1572,7 +1594,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     overflow-x: hidden;
     overflow-y: auto;
     max-width: 20.3em;
-    .box-shadow(inset 0 0 30px 0px #ccc);
+    box-shadow: inset 0 0 30px 0px #ccc;
 }
 .dir-rtl.jsenabled .choosercontainer #chooseform .alloptions {
     max-width: 18.3em;
@@ -1667,7 +1689,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 }
 .choosercontainer #chooseform .selected {
     background-color: @body-bg;
-    .box-shadow(0px 0 10px 0 #ccc);
+    box-shadow: 0px 0 10px 0 #ccc;
 }
 .section-modchooser-link img.smallicon {
     padding: 3px;
@@ -1689,7 +1711,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     padding: 1px 19px 14px;
     background-color: white;
     border: 1px solid #DDD;
-    .border-radius(4px);
+    border-radius: 4px;
 }
 .formlistingmore {
     position: absolute;
@@ -1702,12 +1724,12 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     background-color: whiteSmoke;
     border: 1px solid #ddd;
     color: #9DA0A4;
-    .border-radius(4px 0 4px 0);
+    border-radius: 4px 0 4px 0;
 }
 .formlistingall {
     margin: 15px 0;
     padding: 0;
-    .border-radius(4px);
+    border-radius: 4px;
 }
 .formlistingrow {
     cursor: pointer;
@@ -1716,7 +1738,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     border-left: 1px solid #E1E1E8;
     border-right: 1px solid #E1E1E8;
     background-color: #F7F7F9;
-    .border-radius(0 0 4px 4px);
+    border-radius: 0 0 4px 4px;
     padding: 6px;
     top: 50%;
     left: 50%;
@@ -1999,7 +2021,7 @@ img#persona_signin {
         background-color: #fff;
         border: 1px solid #ccc;
         z-index:1000;
-        .border-radius(5px);
+        border-radius: 5px;
         .box-shadow(5px 5px 20px 0 #666);
 
         a {

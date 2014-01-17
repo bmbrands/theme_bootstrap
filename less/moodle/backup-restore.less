@@ -1,3 +1,37 @@
+.path-backup .mform .grouped_settings {
+    &.section_level {
+        .well;
+        .section_level {
+            padding-left: 0;
+            .fitemtitle {
+                font-size: @font-size-large;
+            }
+        }
+    }
+    .make-row();
+    .include_setting {
+        .make-md-column(7);
+    }
+    .normal_setting {
+        .make-md-column(5);
+    }
+    .fitem {
+        .make-row();
+        .form-group;
+        .fitemtitle {
+             .make-sm-column(9);
+             .make-lg-column(9);
+        }
+        .felement {
+            .make-sm-column(3);
+            .make-lg-column(3);
+        }
+    }
+}
+
+
+
+/*
 .path-backup .mform .grouped_settings.section_level {
     .well;
     padding: 10px 0 0 0;
@@ -18,9 +52,8 @@
 .path-backup .mform .fitem .fitemtitle {
     width: 260px;
 }
-.path-backup .mform .fitem .felement {
-    margin-left: 280px;
-}
+*/
+
 .path-backup .notification.dependencies_enforced {
     text-align: center;
     color: @state-danger-text;
@@ -75,7 +108,6 @@
 .backup-restore .backup-section.settings-section .detail-pair {
     width: 50%;
     display: inline-block;
-    .ie7-inline-block();
 }
 .backup-restore .backup-section.settings-section .detail-pair-label {
     width: 65%;
@@ -97,7 +129,6 @@
 }
 .backup-restore .detail-pair-label {
     display: inline-block;
-    .ie7-inline-block();
     width: 25%;
     padding: 8px;
     margin: 0;
@@ -107,7 +138,6 @@
 }
 .backup-restore .detail-pair-value {
     display: inline-block;
-    .ie7-inline-block();
     width: 65%;
     padding: 8px;
     margin: 0;

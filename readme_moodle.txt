@@ -30,21 +30,3 @@ To update to the latest release of html5shiv:
 * download and replace: javascript/html5shiv.js
 * update ./thirdpartylibs.xml
 
-bootstrapcollapse.js, bootstrapdropdown.js, bootstrapengine.js
---------------------------------------------------------------
-This theme uses YUI ports of the Twitter bootstrap jQuery based libs. These ported files are available on:
-
-https://github.com/jshirley/yui3-gallery/blob/master/src/gallery-bootstrap-collapse/js/bootstrap-collapse.js
-https://github.com/jshirley/yui3-gallery/blob/master/src/gallery-bootstrap-dropdown/js/bootstrap-dropdown.js
-https://github.com/jshirley/yui3-gallery/blob/master/src/gallery-bootstrap-engine/js/bootstrap-engine.js
-
-The content of these files are slightly modified to make sure all required YUI libraries are loaded. To achieve
-that the first and last line of each of these files has been modified.
-
-The YUI port of the Twitter bootstrap libs are now longer maintained. If you need all of the Bootstrap JavaScript
-functionality consider switching to the original jQuery version of these file
-
-If you do want to update use these file locations:
-theme/bootstrapbase/yui/src/bootstrap/js/bootstrap-collapse.js
-theme/bootstrapbase/yui/src/bootstrap/js/bootstrap-dropdown.js
-theme/bootstrapbase/yui/src/bootstrap/js/bootstrap-engine.js

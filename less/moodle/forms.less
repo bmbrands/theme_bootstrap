@@ -9,17 +9,18 @@ form {
     margin: 0;
 }
 .mform {
-    .fcontainer {
+    .fcontainer,
+    fieldset {
         .fitem {
             .make-row();
             .form-group;
             .fitemtitle {
-                 .make-md-column(5);
-                 .make-lg-column(5);
+                 .make-md-column(4);
+                 .make-lg-column(3);
             }
             .felement {
-                .make-md-column(12);
-                .make-lg-column(12);
+                .make-md-column(8);
+                .make-lg-column(9);
             }
         }
         
@@ -28,12 +29,13 @@ form {
 .form-item {
     .make-row();
     .form-label {
-        .make-md-column(5);
+        .make-md-column(4);
     }
     .form-setting {
-        .make-md-column(12);
+        .make-md-column(8);
     }
 }
+
 
 .mform fieldset .advancedbutton {
     text-align: right;
@@ -173,12 +175,7 @@ input#id_externalurl {
 .dir-rtl .form-label .form-shortname {
     text-align: left;
 }
-.form-item .form-setting,
-.form-item .form-description,
-.mform .fitem .felement,
-#page-mod-forum-search .c1 {
-    .make-md-column(10);
-}
+
 
 
 .formsettingheading {
