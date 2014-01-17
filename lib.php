@@ -32,11 +32,15 @@ function bootstrap_grid($hassidepre, $hassidepost) {
     } else if ($hassidepre && !$hassidepost) {
         $regions = array('content' => 'col-sm-8 col-sm-push-4 col-md-9 col-md-push-3');
         $regions['pre'] = 'col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9';
+        $regions['post'] = 'emtpy';
     } else if (!$hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-8 col-md-9');
+        $regions['pre'] =  'empty';
         $regions['post'] = 'col-sm-4 col-md-3';
     } else if (!$hassidepre && !$hassidepost) {
         $regions = array('content' => 'col-md-12');
+        $regions['pre'] =  'empty';
+        $regions['post'] = 'empty';
     }
     return $regions;
 }
