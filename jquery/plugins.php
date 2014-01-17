@@ -17,5 +17,5 @@
 
 
 $plugins = array(
-    'bootstrap' => array('files' => array('bootstrap-min.js')),
+    'bootstrap' => array('files' => array('bootstrap.js')),
 );
