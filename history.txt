@@ -1,7 +1,12 @@
 17th January 2014 - Version 2014011700
 
 Updated layout files to use the bootstrap_grid function
-
+Updated the Grunt library versions
+Updated thirdpartylibs
+Moved jQuery files to a separate folder
+Added a plugin.php for defining jQuery plugins
+Moved to 12 column grid
+Update to Twitter Bootstrap 3.0.3
 
 
 
