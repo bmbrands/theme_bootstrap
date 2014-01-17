@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of The Bootstrap 3 Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -24,6 +24,8 @@
  * breaking installation or upgrade unwittingly.
  */
 
+$regions = bootstrap_grid(false, false);
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -44,7 +46,7 @@ echo $OUTPUT->doctype() ?>
     </header>
 
     <div id="page-content" class="row">
-        <section id="region-main" class="col-md-17">
+        <section id="region-main" class="<?php echo $regions['content']; ?>">
             <?php echo $OUTPUT->main_content(); ?>
         </section>
     </div>

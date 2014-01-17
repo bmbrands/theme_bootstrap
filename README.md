@@ -11,9 +11,9 @@ This is the Bootstrap theme for Moodle.
 * license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 
 This theme has been created with the help of:
-Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans, Joby Harding, Gareth J Bernard
+Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans, Joby Harding, Gareth J Barnard
 
-This theme is based on the Twitter Bootstrap CSS framework version 2.3.
+This theme is based on the Twitter Bootstrap CSS framework version 3.0.2.
 It contains all unmodified less* CSS sources from the Twitter Bootstrap CSS
 framework in folder /less/bootstrap.
 On top of the Bootstrap less CSS sources Moodle CSS is added to create this
@@ -38,27 +38,17 @@ Explorer 8 (IE8) a javascript library call /javascript/html5shiv.js was added. T
 JavaScript converts HTML tags and CSS into Tag that are understood by IE7 and IE8.
 The config.php makes sure these libraries are only loaded for IE7 and IE8.
 
-bootstrapcollapse.js, bootstrapdropdown.js, bootstrapengine.js
+bootstrap.js
 --------------------------------------------------------------
-These are the 3 out of 12 original YUI ports of the Twitter Bootstrap jQuery libraries by
-Jay Shirley. The full list of the ported libraries can be found here:
-https://github.com/jshirley/bootstrap/tree/master/js
+This is the Bootstrap JavaScript file created by @fat and @mdo
 
-moodlebootstrap.js
-------------------
-This file initiates the bootstrap*.js libraries.
-
-headercollapse.js
------------------
-Workaround for the collapse button on the Moodle custom menu. Without this
-Submenu items cannot be opened
 
 Updating Twitter bootstrap and Libraries
 ========================================
 
 Twitter bootstrap
 -----------------
-This theme uses the original unmodified version 2.3.0 Twitter bootstrap less files. These are
+This theme uses the original unmodified version 3.0.2 Twitter bootstrap less files. These are
 Object Oriented CSS files. The bootstrap repository is available on:
 
 https://github.com/twitter/bootstrap.git
@@ -78,24 +68,6 @@ https://github.com/aFarkas/html5shiv/blob/master/src/html5shiv.js
 To update to the latest release of html5shiv download and replace:
 javascript/html5shiv.js
 
-bootstrapcollapse.js, bootstrapdropdown.js, bootstrapengine.js
---------------------------------------------------------------
-This them uses YUI ports of the Twitter bootstrap jQuery based libs. These ported files are available on:
-
-https://github.com/jshirley/yui3-gallery/blob/master/src/gallery-bootstrap-collapse/js/bootstrap-collapse.js
-https://github.com/jshirley/yui3-gallery/blob/master/src/gallery-bootstrap-dropdown/js/bootstrap-dropdown.js
-https://github.com/jshirley/yui3-gallery/blob/master/src/gallery-bootstrap-engine/js/bootstrap-engine.js
-
-The content of these files are slightly modified to make sure all required YUI libraries are loaded. To achieve
-that the first and last line of each of these files has been modified.
-
-The YUI port of the Twitter bootstrap libs are now longer maintained. If you need all of the Bootstrap JavaScript
-functionality consider switching to the original jQuery version of these file
-
-If you do want to update use these file locations:
-javascript/bootstrap-collapse.js
-javascript/bootstrap-dropdown.js
-javascript/bootstrap-engine.js
 
 Licenses & Authors
 ==================
@@ -125,27 +97,3 @@ Html5shiv.js
 Author: Sjoerd Visscher
 URL: http://en.wikipedia.org/wiki/HTML5_Shiv, https://github.com/aFarkas/html5shiv
 License: MIT/GPL2 Licensed
-
-bootstrapcollapse.js, bootstrapdropdown.js, bootstrapengine.js
---------------------------------------------------------------
-Author: Jay Shirley
-URL: http://jshirley.github.com/bootstrap/
-License:
-Copyright 2012 Twitter, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this work except in compliance with the License.
-You may obtain a copy of the License in the LICENSE file, or at:
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-moodlebootstrap.js
-------------------
-Author: 2013 Bas Brands. www.sonsbeekmedia.nl
-license:  http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

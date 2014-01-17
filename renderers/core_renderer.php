@@ -1,5 +1,5 @@
 <?php
-// This file is part of the custom Moodle Bootstrap theme
+// This file is part of The Bootstrap 3 Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -270,8 +270,8 @@ class theme_bootstrap_core_renderer extends core_renderer {
             if ($message->fullmessageformat == FORMAT_HTML) {
                 $message->smallmessage = html_to_text($message->smallmessage);
             }
-            if (core_text::strlen($message->smallmessage) > 30) {
-                $messagecontent->text = core_text::substr($message->smallmessage, 0, 30).'...';
+            if (core_text::strlen($message->smallmessage) > 15) {
+                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
             } else {
                 $messagecontent->text = $message->smallmessage;
             }

@@ -1,3 +1,10 @@
+17th January 2014 - Version 2014011700
+
+Updated layout files to use the bootstrap_grid function
+
+
+
+
 9th January 2014 - Version 2014010900
 1. Fixed:
 Debug info: 
