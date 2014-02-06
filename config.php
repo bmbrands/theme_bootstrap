@@ -65,7 +65,7 @@ $THEME->layouts = array(
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
     ),
-    // part of course, typical for modules - default page layout if $cm specified in require_login().
+    // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'default.php',
         'regions' => array('side-pre', 'side-post'),
@@ -159,6 +159,7 @@ $THEME->javascripts_footer = array(
 
 if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
     $THEME->javascripts[] = 'html5shiv';
+    $THEME->javascripts[] = 'respond.min';
 }
 
 $THEME->hidefromselector = false;
