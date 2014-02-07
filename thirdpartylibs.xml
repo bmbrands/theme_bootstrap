@@ -4,7 +4,7 @@
     <location>less/bootstrap</location>
     <name>Twitter Bootstrap</name>
     <license>Apache</license>
-    <version>3.0.3/version>
+    <version>3.0.3</version>
     <licenseversion>2.0</licenseversion>
   </library>
   <library>
