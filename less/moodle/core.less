@@ -452,7 +452,7 @@ a.skip:active {
         .make-lg-column(3);
         .well;
     }
-    
+
     &.twocolumns .signuppanel {
         .make-sm-column(7);
         .make-sm-column-push(1);
@@ -1024,10 +1024,10 @@ body.tag .managelink {
     float: right;
     width: 18px;
     height: 18px;
-    margin: 3px;
+    margin: 8px 15px 8px 0px;
     text-align: center;
-    background-color: @alert-success-bg;
-    border: 1px solid @alert-success-border;
+    background-color: @gray-dark;
+    border: 1px solid @gray-dark;
 }
 .userenrolment .col_role .addrole img {
     vertical-align: baseline;
@@ -1041,7 +1041,6 @@ body.tag .managelink {
 .userenrolment .col_group .group {
     float: left;
     padding: 3px;
-    margin: 3px;
     white-space: nowrap;
 }
 .userenrolment .col_group .group a {
@@ -1049,14 +1048,17 @@ body.tag .managelink {
     cursor: pointer;
 }
 .userenrolment .col_group .addgroup {
-    float: right;
     width: 18px;
-    margin: 3px;
     height: 18px;
+    margin: 8px 15px 8px 0px;
+    text-align: center;
+    background-color: @gray-dark;
+    border: 1px solid @gray-dark;
+    float: right;
     text-align: center;
 }
 .userenrolment .col_group .addgroup a img {
-    vertical-align: bottom;
+    vertical-align: baseline;
 }
 .userenrolment .col_enrol .enrolment {
     float: left;
@@ -1132,7 +1134,7 @@ body.tag .managelink {
 }
 
 .mod-indent-outer {
-    display: table;
+    display: block;
 }
 .mod-indent {
     display: table-cell;
@@ -2018,8 +2020,8 @@ img#persona_signin {
         display:block;
         position: absolute;
         text-align: left;
-        background-color: #fff;
-        border: 1px solid #ccc;
+        background-color: @dropdown-bg;
+        border: 1px solid @dropdown-border;
         z-index:1000;
         border-radius: 5px;
         .box-shadow(5px 5px 20px 0 #666);

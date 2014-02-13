@@ -37,6 +37,9 @@ $THEME->plugins_exclude_sheets = array(
     'block' => array(
         'html'
     ),
+    'tool' => array(
+    	'customlang'
+    ),
 );
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';

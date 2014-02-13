@@ -43,6 +43,9 @@
         height: 16px;
         width: 16px;
     }
+    .label {
+        text-align: left;
+    }
     .activity {
         .spinner {
             left: 100%;
@@ -62,7 +65,7 @@
              * Add appropriate padding such that nothing overlaps the
              * absolute positioned move icon.
              */
-            padding-left: 32px;
+            //padding-left: 32px;
         }
 
         /* The command block for each activity */
@@ -75,8 +78,8 @@
         .contentwithoutlink,
         .activityinstance {
 
+			display: block;
             min-width: 40%;
-            display: table-cell;
             padding-right: 4px;
             min-height: 2em;
 
@@ -112,6 +115,10 @@
             }
         }
     }
+}
+
+.editing .section .activity  .mod-indent-outer {
+    padding-left: 32px;
 }
 
 .dir-rtl .section {
@@ -659,6 +666,7 @@ span.editinstructions {
 .course_category_tree .category.with_children > .info > .categoryname {
     background-image:url([[pix:moodle|t/expanded]]);
     cursor: pointer;
+    line-height: 30px;
 }
 .course_category_tree .category.with_children.collapsed >.info > .categoryname {
     background-image:url([[pix:moodle|t/collapsed]]);
@@ -720,7 +728,7 @@ span.editinstructions {
 }
 
 #page-course-index-category .categorypicker {
-    text-align: center;
+    text-align: right;
     margin: 10px 0 20px;
 }
 
@@ -734,8 +742,8 @@ span.editinstructions {
     }
     .editing_title {
         .iconsmall {
-            width: 12px;
-            height: 12px;
+            width: 21px;
+            height: 21px;
             margin: 8px 8px 0px 0;
             padding: 4px 8px 0px 0;
             vertical-align: text-bottom;
@@ -744,8 +752,8 @@ span.editinstructions {
     .moodle-actionmenu {
         .iconsmall {
             max-width: none !important; /** reset sets 100% !important which breaks on IE8 without this !important */
-            width:16px;
-            height:16px;
+            width:21px;
+            height:21px;
             padding: 4px;
             vertical-align: text-bottom;
         }
@@ -753,8 +761,8 @@ span.editinstructions {
     .moodle-actionmenu[data-enhanced] {
         .menu {
             img {
-              width: 12px;
-              height: 12px;
+              width: 21px;
+              height: 21px;
             }
         }
     }

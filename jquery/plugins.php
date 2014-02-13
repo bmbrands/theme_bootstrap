@@ -18,4 +18,6 @@
 
 $plugins = array(
     'bootstrap' => array('files' => array('bootstrap.js')),
+    'fitvids'	=> array('files' => array('fitvids-1.0.3.js')),
+
 );

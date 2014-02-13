@@ -21,21 +21,44 @@ form {
             .felement {
                 .make-md-column(8);
                 .make-lg-column(9);
+                input[type="text"],
+                input[type="password"] {
+                    .form-control;
+                    width: auto;
+                }
             }
         }
         
     }
 }
+
+
 .form-item {
     .make-row();
+    .form-group();
     .form-label {
         .make-md-column(4);
     }
     .form-setting {
         .make-md-column(8);
+        input[type="text"],
+        input[type="password"] {
+            .form-control;
+            width: auto;
+        }
+    }
+    .form-description {
+        .make-md-column(8);
+        .make-md-column-push(4);
     }
 }
 
+form input[type="text"] {
+   .form-control;
+   display: inline-block;
+   width: auto;
+   height: auto;
+}
 
 .mform fieldset .advancedbutton {
     text-align: right;

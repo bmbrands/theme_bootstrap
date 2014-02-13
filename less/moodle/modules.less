@@ -42,7 +42,8 @@ select {
 }
 
 .forumpost {
-    .well;
+    &:extend(.panel);
+    &:extend(.panel-default);
     padding: 6px;
     .header {
         margin-bottom: 3px;
@@ -76,7 +77,25 @@ select {
 }
 
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol {
-    float: left;
+    float: none;
+    width: 100%;
+    .singleselect {
+        width: 100%;
+        select.singleselect {
+            .form-control;
+        }
+    }
+    &.movediscussion {
+        margin-top: 5px;
+        select.urlselect {
+            .form-control;
+            width: auto;
+            float: left;
+        }
+        &.movediscussion {
+            float: left;
+        }
+    }
 }
 
 #page-footer {

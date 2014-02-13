@@ -25,6 +25,8 @@ $regions = bootstrap_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
 $PAGE->requires->jquery();
 $PAGE->requires->jquery_plugin('bootstrap', 'theme_bootstrap');
+$PAGE->requires->jquery_plugin('fitvids', 'theme_bootstrap');
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -109,5 +111,10 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
+<script>
+  $(document).ready(function(){
+    $(".mediaplugin").fitVids();
+  });
+</script>
 </body>
 </html>
