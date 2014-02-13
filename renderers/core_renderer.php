@@ -30,21 +30,23 @@ class theme_bootstrap_core_renderer extends core_renderer {
      */
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
-        $type = '';
 
         if ($classes == 'notifyproblem') {
-            $type = 'alert alert-danger';
+            return html_writer::div($message, 'alert alert-danger');
+        }
+        if ($classes == 'notifywarning') {
+            return html_writer::div($message, 'alert alert-warning');
         }
         if ($classes == 'notifysuccess') {
-            $type = 'alert alert-success';
+            return html_writer::div($message, 'alert alert-success');
         }
         if ($classes == 'notifymessage') {
-            $type = 'alert alert-info';
+            return html_writer::div($message, 'alert alert-info');
         }
         if ($classes == 'redirectmessage') {
-            $type = 'alert alert-block alert-info';
+            return html_writer::div($message, 'alert alert-block alert-info');
         }
-        return html_writer::div($message, $type);
+        return html_writer::div($message, $classes);
     }
 
     /*
