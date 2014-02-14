@@ -1,10 +1,32 @@
 .box.message {
+    .mdl-align {
+        text-align: left;
+    }
+    table {
+        tr {
+            &:nth-child(odd) {
+                > td,
+                > th {
+                  background-color: @table-bg-accent;
+                }
+            }
+            border-bottom: 1px solid @table-border-color;
+        }
+        td.heading{
+            &:extend(.panel-default > .panel-heading);
+            padding: 5px 10px;
+            font-size: @font-size-base;
+        }
+    }
+    tbody {
+        margin: 5px 10px;
+        padding: 5px 10px;
+    }
     .contactselector {
         .panel;
         .panel-default;
         .heading {
             margin: 10px 15px;
-            font-size: @font-size-h2;
             color: @headings-color;
         }
         form#usergroupform {
@@ -30,39 +52,15 @@
             }
         }
         table#message_contacts,
-        table#message_participants {
-            .make-md-column-push(4);
-            .make-md-column(7);
-            .table-striped;
+        table#message_participants {      
+            
             float: none !important;
             display: block;
             margin: 5px 5px;
-            tbody {
-                margin: 5px 10px;
-                padding: 5px 10px;
-            }
-            
-            
-            tr {
-                &:nth-child(odd) {
-                    > td,
-                    > th {
-                      background-color: @table-bg-accent;
-                    }
-                }
-                border-bottom: 1px solid @table-border-color;
-            }
-            td.heading{
-                &:extend(.panel-default > .panel-heading);
-                padding: 5px 10px;
-                font-size: @font-size-base;
-            }
+
             td.pix {
                 padding: 10px;
                 width: 30px;
-                img.userpicture {
-
-                }
             }
             td.contact {
                 width: 100px;
@@ -105,6 +103,26 @@
             }
             input[type="submit"] {
                 margin-left: 0px;
+            }
+
+        }
+        .mdl-left {
+            .heading {
+                font-size: @font-size-base;
+            }
+            .messagesearchresults {
+
+                margin: 10px 15px;
+                td.pix {
+                    padding: 10px;
+                    width: 30px;
+                }
+                td.contact {
+                    width: 30px;
+                    img {
+                       margin: 10px; 
+                    }
+                }
             }
 
         }
@@ -177,19 +195,18 @@
                     .make-md-column-push(2);
                     .make-md-column(8);
                     float: none !important;
+                    tr {
+                        border: 0;
+                    }
+                    td {
+                        background-color: @body-bg;
+                    }
                     td#user1,
                     td#user2 {
                         display: block;
                         height: 160px;
                         img.userpicture {
                             .img-circle;
-                        }
-                        .useractionlinks {
-                            .addcontact,
-                            .blockcontact {
-
-                            }
-
                         }
                     }
                     td#user1 img.userpicture {
@@ -198,8 +215,6 @@
                     td#user2 img.userpicture {
                         border: 3px solid @state-info-border;
                     }
-
-
                 }
             }
             .messagehistorytype {
