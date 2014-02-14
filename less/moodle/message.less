@@ -259,6 +259,36 @@
 
     }
 }
+
+#newmessageoverlay {
+    //fix for yui absolute positioning
+    width: @popover-max-width;
+    .popover;
+    position: fixed;
+    top: inherit;
+    left: inherit;
+    bottom: 5px;
+    right: 5px;
+    a {
+        text-decoration: underline;
+    }
+    display: block;
+    #newmessagetext {
+        .popover-title;
+
+    }
+    #usermessage {
+        .popover-content;
+        border: 1px dotted @popover-border-color;
+        border-radius: @border-radius-base;
+        margin-top: 5px;
+        background-color: (lighten(@popover-bg, 10%));
+    }
+    #newmessagelinks {
+        margin: 5px 14px;
+    }
+}
+
 textarea {
     .form-control;
     height: 200px;
