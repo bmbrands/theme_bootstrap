@@ -10,15 +10,19 @@
 
 .dl-horizontal {
     dt {
-      float: left;
-      width: (@component-offset-horizontal - 20);
-      clear: left;
-      text-align: right;
+      .make-md-column(4);
       .text-overflow();
+      text-align: right;
+      padding: 5px;
     }
     dd {
-      margin-left: @component-offset-horizontal;
-      .clearfix(); // Clear the floated `dt` if an empty `dd` is present
+      .make-md-column(8);
+      padding: 5px;
+
+    }
+    > dt:nth-child(4n-1),
+    > dd:nth-child(4n) {
+      background-color: @table-bg-accent;
     }
 }
 
