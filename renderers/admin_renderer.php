@@ -32,16 +32,16 @@ class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
         }
 
         if ($maturity == MATURITY_ALPHA) {
-            $notify_level = 'notifyproblem';
+            $level = 'notifyproblem';
         } else {
-            $notify_level = 'notifywarning';
+            $level = 'notifywarning';
         }
 
         $maturitylevel = get_string('maturity' . $maturity, 'admin');
         $warningtext = get_string('maturitycoreinfo', 'admin', $maturitylevel);
-        $doc_link = $this->doc_link('admin/versions', get_string('morehelp'));
+        $doclink = $this->doc_link('admin/versions', get_string('morehelp'));
 
-        return $this->notification($warningtext . ' ' . $doc_link, $notify_level);
+        return $this->notification($warningtext . ' ' . $doclink, $level);
     }
 
     protected function maturity_warning($maturity) {
@@ -50,10 +50,10 @@ class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
         }
 
         $maturitylevel = get_string('maturity' . $maturity, 'admin');
-        $maturity_warning = get_string('maturitycorewarning', 'admin', $maturitylevel);
-        $maturity_warning .= $this->doc_link('admin/versions', get_string('morehelp'));
+        $maturitywarning = get_string('maturitycorewarning', 'admin', $maturitylevel);
+        $maturitywarning .= $this->doc_link('admin/versions', get_string('morehelp'));
 
-        return $this->notification($maturity_warning, 'notifyproblem');
+        return $this->notification($maturitywarning, 'notifyproblem');
     }
 
     /**

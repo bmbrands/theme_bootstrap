@@ -184,19 +184,19 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
                 $usermenu->add(
                     '<i class="icon-lock"></i>' . get_string('logout'),
-                    new moodle_url('/login/logout.php', array('sesskey'=>sesskey(), 'alt'=>'logout')),
+                    new moodle_url('/login/logout.php', array('sesskey' => sesskey(), 'alt' => 'logout')),
                     get_string('logout')
                 );
 
                 $usermenu->add(
                     '<i class="icon-user"></i>' . get_string('viewprofile'),
-                    new moodle_url('/user/profile.php', array('id'=>$USER->id)),
+                    new moodle_url('/user/profile.php', array('id' => $USER->id)),
                     get_string('viewprofile')
                 );
 
                 $usermenu->add(
                     '<i class="icon-cog"></i>' . get_string('editmyprofile'),
-                    new moodle_url('/user/edit.php', array('id'=>$USER->id)),
+                    new moodle_url('/user/edit.php', array('id' => $USER->id)),
                     get_string('editmyprofile')
                 );
             } else {
@@ -307,7 +307,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 $dropdowntype = 'dropdown-submenu';
             }
 
-            $content = html_writer::start_tag('li', array('class'=>$dropdowntype));
+            $content = html_writer::start_tag('li', array('class' => $dropdowntype));
             // If the child has menus render it as a sub menu.
             $submenucount++;
             if ($menunode->get_url() !== null) {
@@ -315,13 +315,13 @@ class theme_bootstrap_core_renderer extends core_renderer {
             } else {
                 $url = '#cm_submenu_'.$submenucount;
             }
-            $link_attributes = array(
-                'href'=>$url,
-                'class'=>'dropdown-toggle',
-                'data-toggle'=>'dropdown',
-                'title'=>$menunode->get_title(),
+            $linkattributes = array(
+                'href' => $url,
+                'class' => 'dropdown-toggle',
+                'data-toggle' => 'dropdown',
+                'title' => $menunode->get_title(),
             );
-            $content .= html_writer::start_tag('a', $link_attributes);
+            $content .= html_writer::start_tag('a', $linkattributes);
             $content .= $menunode->get_text();
             if ($level == 1) {
                 $content .= '<b class="caret"></b>';
@@ -340,7 +340,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             } else {
                 $url = '#';
             }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title'=>$menunode->get_title()));
+            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
         }
         return $content;
     }
