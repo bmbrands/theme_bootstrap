@@ -21,11 +21,21 @@ $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $knownregionpre = $PAGE->blocks->is_known_region('side-pre');
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
+
+
 $regions = bootstrap_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
 $PAGE->requires->jquery();
 $PAGE->requires->jquery_plugin('bootstrap', 'theme_bootstrap');
-$PAGE->requires->jquery_plugin('fitvids', 'theme_bootstrap');
+
+$fluid = (!empty($PAGE->layout_options['fluid']));
+$container = 'container';
+if (isset($PAGE->theme->settings->fluidwidth) && ($PAGE->theme->settings->fluidwidth == true)) {
+    $container = 'container-fluid';
+}
+if ($fluid) {
+    $container = 'container-fluid';
+}
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -41,7 +51,7 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <nav role="navigation" class="navbar navbar-default">
-    <div class="container">
+    <div class="<?php echo $container; ?>">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -62,12 +72,12 @@ echo $OUTPUT->doctype() ?>
     </div>
 </nav>
 <header class="moodleheader">
-<div class="container">
+<div class="<?php echo $container; ?>">
 <?php echo $OUTPUT->page_heading(); ?>
 </div>
 </header>
 
-<div id="page" class="container">
+<div id="page" class="<?php echo $container; ?>">
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
@@ -111,10 +121,5 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
-<script>
-  $(document).ready(function(){
-    $(".mediaplugin").fitVids();
-  });
-</script>
 </body>
 </html>

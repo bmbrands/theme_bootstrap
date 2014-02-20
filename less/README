@@ -2,27 +2,25 @@ If you want to make changes to the .css generated from these .less files then yo
 need to use a LESS Compiler. Details on specific compilers and how to install them
 can be found at http://docs.moodle.org/dev/LESS
 
-At present, recess is the official tool for developers to compile LESS in to CSS, as
-other tools give different results in the generated CSS.
+Requirements:
+nodejs, npm, grunt-cli.
 
-Once recess has been installed you can compile and compress the LESS in to CSS using
-the following commands from the "theme/bootstrapbase/less" directory:
+Installation:
+node and npm: instructions at http://nodejs.org/
+grunt-cli: `[sudo] npm install -g grunt-cli`
+node dependencies: run `npm install` in the root directory.
 
-For the main Moodle styles:
+Usage:
+Default behaviour is to watch all .less files and compile
+into compressed CSS when a change is detected to any and then
+clear the theme's caches. Invoke either `grunt` or `grunt watch`
+in the theme's root directory.
 
-recess --compile --compress moodle.less > ../style/moodle.css
+To separately compile only moodle or editor .less files
+run `grunt less:moodle` or `grunt less:editor` respectively.
 
-And for the subset of styles of interest to the TinyMCE editor:
-
-recess --compile --compress editor.less >  ../style/editor.css
-
-You can add --watch to make sure it updates every time you make a change.
-
-If the compilation is failing and you're not getting any useful error message, try using lessc instead i.e.:
-
-lessc moodle.less
-
-This is the same tool that's getting called by recess, but the errors seems better if you go direct.
+To only clear the theme caches invoke `grunt exec:decache` in
+the theme's root directory.
 
 Additional information about the Moodle bootstrap base theme can be found at
 http://docs.moodle.org/dev/Bootstrap

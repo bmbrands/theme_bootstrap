@@ -14,19 +14,25 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Theme version info
- *
- * @package    theme_bootstrap
- * @copyright  2014 Bas Brands, www.basbrands.nl
- * @authors    Bas Brands, David Scotson
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
 
-defined('MOODLE_INTERNAL') || die;
+echo $OUTPUT->doctype() ?>
+<html <?php echo $OUTPUT->htmlattributes(); ?>>
+<head>
+    <title><?php echo $OUTPUT->page_title(); ?></title>
+    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+    <?php echo $OUTPUT->standard_head_html() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-$plugin->version   = 2014022000;
-$plugin->requires  = 2013110500;
-$plugin->maturity  = MATURITY_BETA;
-$plugin->release   = 2014022000;
-$plugin->component = 'theme_bootstrap';
+<body <?php echo $OUTPUT->body_attributes(); ?>>
+
+<?php
+echo $OUTPUT->standard_top_of_body_html();
+echo $OUTPUT->main_content();
+echo $OUTPUT->standard_footer_html();
+echo $OUTPUT->standard_end_of_body_html();
+?>
+
+</div>
+</body>
+</html>

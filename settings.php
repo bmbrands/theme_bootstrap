@@ -26,9 +26,11 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-    $name = 'theme_bootstrap/subtitle';
-    $title = get_string('subtitle','theme_bootstrap');
-    $description = get_string('subtitle_desc', 'theme_bootstrap');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
+    // Turn on fluid width
+    $name = 'theme_bootstrap/fluidwidth';
+    $title = get_string('fluidwidth', 'theme_bootstrap');
+    $description = get_string('fluidwidth_desc', 'theme_bootstrap');
+    $default = '0';
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $settings->add($setting);
 }

@@ -86,6 +86,7 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
+    	'options' => array('fluid'=>true),
     ),
     // My dashboard page.
     'mydashboard' => array(
@@ -108,7 +109,7 @@ $THEME->layouts = array(
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
-        'file' => 'default.php',
+        'file' => 'popup.php',
         'regions' => array(),
         'options' => array('nofooter'=>true, 'nonavbar'=>true),
     ),
@@ -146,6 +147,7 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
+    	'options' => array('fluid'=>true),
     ),
     // The pagelayout used for safebrowser and securewindow.
     'secure' => array(
