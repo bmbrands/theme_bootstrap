@@ -54,6 +54,30 @@ input[type="reset"]
     .btn-lineup;
 }
 
+input.form-submit,
+input#id_submitbutton,
+input#id_submitbutton2,
+.path-admin .buttons input[type="submit"],
+td.submit input {
+    .btn-primary
+}
+
+// override .btn-primary
+#notice .singlebutton + .singlebutton input,
+.submit.buttons input[name="cancel"] {
+    .btn
+}
+
+#notice .singlebutton + .singlebutton input,
+.submit.buttons input[name="cancel"] {
+    .btn-lineup
+}
+
+input[id$="_clearbutton"],
+input[type="reset"] {
+    .btn-warning
+}
+
 button.yui3-button.closebutton,
 button.yui3-button.closebutton:hover {
     background-position: 0 0;
