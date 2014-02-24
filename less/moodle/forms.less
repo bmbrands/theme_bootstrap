@@ -110,9 +110,11 @@ form input[type="text"] {
 .mform .error {
     color: @state-danger-text;
 }
+/*
 .mform .fdescription.required {
     margin-left: @horizontalComponentOffset;
 }
+*/
 .mform .fpassword .unmask {
     display: inline-block;
     margin-left: 0.5em;
@@ -194,7 +196,7 @@ input#id_externalurl {
     .text-muted;
 }
 .form-label .form-shortname {
-    font-size: @font-size-mini;
+    font-size: @font-size-small;
     display: block;
 }
 .dir-rtl .form-label .form-shortname {
@@ -218,7 +220,7 @@ input#id_externalurl {
 .form-item .form-description {
     padding-top: 0;
 }
-
+/*
 // Pale grey container for submit buttons.
 table#form td.submit,
 .form-buttons,
@@ -250,6 +252,7 @@ div.backup-section + form,
         padding-right: @horizontalComponentOffset;
     }
 }
+*/
 .form-item .form-setting .form-checkbox.defaultsnext {
     // Need to specify .defaultsnext and the .form-checkbox class
     // is somewhat randomly re-used on various actual checkboxes
@@ -263,16 +266,16 @@ div.backup-section + form,
     display: block;
     width: 100%;
     padding: 0;
-    margin-bottom: @base-line-height;
-    font-size: @font-size-base * 1.5;
-    line-height: @base-line-height * 2;
-    color: @gray-dark;
+    margin-bottom: @line-height-computed;
+    font-size: (@font-size-base * 1.5);
+    line-height: inherit;
+    color: @legend-color;
     border: 0;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid @legend-border-color;
 }
 .mform legend a,
 .mform legend a:hover {
-    color: @gray-dark;
+    color: @legend-color;
     text-decoration: none;
 }
 .dir-rtl .mform .fitem .felement {
