@@ -32,7 +32,7 @@ $string['choosereadme'] = '
 <img class=img-polaroid src="bootstrap/pix/screenshot.jpg" />
 <h3>Theme Credits</h3>
 <p>
-<h3>Moodle twitter Bootstrap 3 theme</h3>
+<h3>Moodle Bootstrap 3 theme</h3>
 <p>
 This theme is based on the Bootstrap CSS framework, version 3.0
 </p>
