@@ -24,6 +24,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 function bootstrap_grid($hassidepre, $hassidepost) {
     if ($hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-4 col-sm-push-4 col-md-6 col-md-push-3');
@@ -35,11 +37,11 @@ function bootstrap_grid($hassidepre, $hassidepost) {
         $regions['post'] = 'emtpy';
     } else if (!$hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-8 col-md-9');
-        $regions['pre'] =  'empty';
+        $regions['pre'] = 'empty';
         $regions['post'] = 'col-sm-4 col-md-3';
     } else if (!$hassidepre && !$hassidepost) {
         $regions = array('content' => 'col-md-12');
-        $regions['pre'] =  'empty';
+        $regions['pre'] = 'empty';
         $regions['post'] = 'empty';
     }
     return $regions;

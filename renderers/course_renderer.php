@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 require_once($CFG->dirroot . "/course/renderer.php");
 
 class theme_bootstrap_core_course_renderer extends core_course_renderer {
