@@ -13,8 +13,8 @@ This is the Bootstrap theme for Moodle.
 This theme has been created with the help of:
 Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans, Joby Harding, Gareth J Barnard
 
-This theme is based on the Twitter Bootstrap CSS framework version 3.0.2.
-It contains all unmodified less* CSS sources from the Twitter Bootstrap CSS
+This theme is based on the Bootstrap CSS framework version 3.0.2.
+It contains all unmodified less* CSS sources from the Bootstrap CSS
 framework in folder /less/bootstrap.
 On top of the Bootstrap less CSS sources Moodle CSS is added to create this
 theme.
@@ -43,17 +43,17 @@ bootstrap.js
 This is the Bootstrap JavaScript file created by @fat and @mdo
 
 
-Updating Twitter bootstrap and Libraries
+Updating Bootstrap and Libraries
 ========================================
 
-Twitter bootstrap
+bootstrap
 -----------------
-This theme uses the original unmodified version 3.0.3 Twitter bootstrap less files. These are
+This theme uses the original unmodified version 3.0.3 Bootstrap less files. These are
 Object Oriented CSS files. The bootstrap repository is available on:
 
-https://github.com/twitter/bootstrap.git
+https://github.com/twbs/bootstrap.git
 
-To update to the latest release of twitter bootstrap remove all files from less/bootstrap,
+To update to the latest release of Bootstrap remove all files from less/bootstrap,
 download the new less files and store them in less/bootstrap
 Inclusion of bootstrap files is configured in less/moodle.less. To generate the new
 Moodle CSS read /less/README
@@ -72,10 +72,10 @@ javascript/html5shiv.js
 Licenses & Authors
 ==================
 
-Twitter Bootstrap Copyright and license
+Bootstrap Copyright and license
 ---------------------------------------
 Authors: Mark Otto, Jacob Thornton
-URL: http://twitter.github.com/bootstrap/
+URL: http://getbootstrap.com/
 License:
 
 Copyright 2012 Twitter, Inc.
