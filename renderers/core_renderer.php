@@ -24,10 +24,6 @@
 
 class theme_bootstrap_core_renderer extends core_renderer {
 
-    /*
-     * This renders a notification message.
-     * Uses bootstrap compatible html.
-     */
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
 
@@ -49,10 +45,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return html_writer::div($message, $classes);
     }
 
-    /*
-     * This renders the navbar.
-     * Uses bootstrap compatible html.
-     */
     public function navbar() {
         $breadcrumbs = '';
         foreach ($this->page->navbar->get_items() as $item) {
@@ -62,12 +54,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return "<ol class=breadcrumb>$breadcrumbs</ol>";
     }
 
-    /*
-     * Overriding the custom_menu function ensures the custom menu is
-     * always shown, even if no menu items are configured in the global
-     * theme settings page.
-     */
     public function custom_menu($custommenuitems = '') {
+    // The custom menu is always shown, even if no menu items
+    // are configured in the global theme settings page.
         global $CFG;
 
         if (!empty($CFG->custommenuitems)) {
@@ -77,11 +66,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return $this->render_custom_menu($custommenu);
     }
 
-    /*
-     * This renders the bootstrap top menu.
-     *
-     * This renderer is needed to enable the Bootstrap style navigation.
-     */
     protected function render_custom_menu(custom_menu $menu) {
         global $CFG, $USER;
 
@@ -96,22 +80,12 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return $content.'</ul>';
     }
 
-    /*
-     * Overriding the custom_menu function ensures the custom menu is
-     * always shown, even if no menu items are configured in the global
-     * theme settings page.
-     */
     public function user_menu() {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
     }
 
-    /*
-     * This renders the bootstrap top menu.
-     *
-     * This renderer is needed to enable the Bootstrap style navigation.
-     */
     protected function render_user_menu(custom_menu $menu) {
         global $CFG, $USER, $DB;
 
@@ -279,12 +253,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return $messagecontent;
     }
 
-
-
-    /*
-     * This code renders the custom menu items for the
-     * bootstrap dropdown menu.
-     */
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
 
@@ -334,12 +302,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return $content;
     }
 
-    /**
-     * Renders tabtree
-     *
-     * @param tabtree $tabtree
-     * @return string
-     */
     protected function render_tabtree(tabtree $tabtree) {
         if (empty($tabtree->subtree)) {
             return '';
@@ -354,15 +316,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return html_writer::tag('ul', $firstrow, array('class' => 'nav nav-tabs')) . $secondrow;
     }
 
-    /**
-     * Renders tabobject (part of tabtree)
-     *
-     * This function is called from {@link core_renderer::render_tabtree()}
-     * and also it calls itself when printing the $tabobject subtree recursively.
-     *
-     * @param tabobject $tabobject
-     * @return string HTML fragment
-     */
     protected function render_tabobject(tabobject $tab) {
         if ($tab->selected or $tab->activated) {
             return html_writer::tag('li', html_writer::tag('a', $tab->text), array('class' => 'active'));

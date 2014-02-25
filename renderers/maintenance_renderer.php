@@ -24,10 +24,6 @@
 
 class theme_bootstrap_core_renderer_maintenance extends core_renderer_maintenance {
 
-    /*
-     * This renders a notification message.
-     * Uses bootstrap compatible html.
-     */
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
 

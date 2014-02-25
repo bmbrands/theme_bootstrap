@@ -26,13 +26,6 @@ require_once($CFG->dirroot . "/course/renderer.php");
 
 class theme_bootstrap_core_course_renderer extends core_course_renderer {
 
-    /**
-     * Renders html to display a course search form
-     *
-     * @param string $value default value to populate the search field
-     * @param string $format display format - 'plain' (default), 'short' or 'navbar'
-     * @return string
-     */
     public function course_search_form($value = '', $format = 'plain') {
         static $count = 0;
         $formid = 'coursesearch';

@@ -56,12 +56,6 @@ class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
         return $this->notification($maturitywarning, 'notifyproblem');
     }
 
-    /**
-     * Output a warning message, of the type that appears on the admin notifications page.
-     * @param string $message the message to display.
-     * @param string $type type class
-     * @return string HTML to output.
-     */
     protected function warning($message, $type = 'warning') {
         if ($type == 'warning') {
             return $this->notification($message, 'notifywarning');
