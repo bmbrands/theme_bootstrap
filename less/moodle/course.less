@@ -78,15 +78,14 @@
         .contentwithoutlink,
         .activityinstance {
 
-			display: block;
+            display: block;
             min-width: 40%;
             padding-right: 4px;
             min-height: 2em;
 
             .dimmed {
                 img.activityicon {
-                  opacity: 0.5;
-                  filter: alpha(opacity=50);
+                  .opacity(.5);
                 }
             }
         }
@@ -309,7 +308,7 @@
     margin-top: 0;
 }
 .course-content ul li.section.hidden {
-    opacity: 0.5;
+    .opacity(.5);
 }
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
@@ -1266,7 +1265,7 @@ span.editinstructions {
     padding: 0 0 0 4em;
 }
 .course-being-dragged {
-    .opacity(50);
+    .opacity(.5);
 }
 
 /**

@@ -1,13 +1,5 @@
-/**
- * Moodle forms HTML isn't changeable via renderers (yet?) so this
- * .less file imports styles from the bootstrap @variables file and
- * adds them to the existing Moodle form CSS ids and classes.
- *
- */
+// Basic mforms layout, used in resources, user profile etc.
 
-form {
-    margin: 0;
-}
 .mform {
     .fcontainer,
     fieldset {
@@ -17,140 +9,233 @@ form {
             .fitemtitle {
                  .make-md-column(4);
                  .make-lg-column(3);
+                label {
+                    .form-horizontal .control-label;
+                }
+
             }
             .felement {
                 .make-md-column(8);
                 .make-lg-column(9);
+                select,
                 input[type="text"],
                 input[type="password"] {
                     .form-control;
+                }
+            }
+            .felement.fdate_selector {
+                select {
                     width: auto;
-                    max-width: 100%;
+                    display: inline-block;
+                }
+                select[size],
+                select[multiple] {
+                    height: auto;
+                }
+                label {
+                    display: inline-block;
                 }
             }
         }
-        
+    }
+    fieldset.hidden {
+            .make-row();
+            .form-group;
+            > div {
+                .make-md-column(8);
+                .make-md-column-offset(4);
+                .make-lg-column(9);
+                .make-lg-column-offset(3);
+            }
     }
 }
 
-
-.form-item {
-    .make-row();
-    .form-group();
-    .form-label {
-        .make-md-column(4);
-    }
-    .form-setting {
-        .make-md-column(8);
-        input[type="text"],
-        input[type="password"] {
-            .form-control;
-            width: auto;
-            max-width: 100%;
-        }
-    }
-    .form-description {
-        .make-md-column(8);
-        .make-md-column-push(4);
-    }
-}
-
-form input[type="text"] {
-   .form-control;
-   display: inline-block;
-   width: auto;
-   height: auto;
+.mform fieldset.hidden .fitem_actionbuttons .felement {
+    padding-left: 10px;
 }
 
 .mform fieldset .advancedbutton {
     text-align: right;
 }
+
 .jsenabled .mform .containsadvancedelements .advanced {
     display: none;
 }
+
 .mform .containsadvancedelements .advanced.show {
     display: block;
 }
+
 .mform fieldset.group {
     margin-bottom: 0
 }
-.mform fieldset.error {
-    border: 1px solid @state-danger-text;
-}
+
 .mform span.error {
-    display: inline-block;
-    border: 1px solid @state-danger-border;
-    border-radius: 4px;
-    background-color: @state-danger-bg;
-    padding: 4px;
-    margin-bottom: 4px;
+    color: @state-danger-text;
 }
+
+.mform fieldset.error {
+    border: 1px solid @state-danger-border;
+}
+
 .mform fieldset.collapsible legend a.fheader {
     padding: 0 5px 0 20px;
     margin-left: -20px;
     background: url([[pix:t/expanded]]) 2px center no-repeat;
 }
+
 .dir-rtl .mform fieldset.collapsible legend a.fheader {
     padding: 0 20px 0 5px;
     margin-right: -20px;
     margin-left: 0;
     background-position: right center;
 }
+
 .mform fieldset.collapsed legend a.fheader {
     background-image: url([[pix:t/collapsed]]);
 }
+
 .dir-rtl .mform fieldset.collapsed legend a.fheader {
     background-image: url([[pix:t/collapsed_rtl]]);
 }
+
 .jsenabled .mform .collapsed .fcontainer {
     display: none;
 }
 
-.loginpanel .error,
-.mform .error {
-    color: @state-danger-text;
+// These are for javascript hide/show, not actual links
+.mform legend a,
+.mform legend a:hover {
+    color: @legend-color;
+    text-decoration: none;
 }
-.mform .fdescription.required {
-    margin-left: @horizontalComponentOffset;
-}
-.mform .fpassword .unmask {
-    display: inline-block;
-    margin-left: 0.5em;
-    & > input {
-        margin: 0;
-    }
-    & > label {
-        display: inline-block;
-    }
+
+.mform label .req,
+.mform label .adv {
+    cursor: help;
 }
 
 .mform .iconhelp {
     margin-left: 4px;
+    margin-right: -16px;
 }
-.dir-rtl .mform .iconhelp {
-    margin-right: 4px;
+
+// Basic admin forms layout.
+
+.form-item {
+    .make-row();
+    .form-group();
+    .form-label {
+        .make-md-column(4);
+        label {
+            .form-horizontal .control-label;
+        }
+    }
+    .form-setting {
+        .make-md-column(8);
+        select,
+        input[type="text"],
+        input[type="password"] {
+            .form-control;
+        }
+        select[size],
+        select[multiple] {
+            height: auto;
+        }
+        .form-group {
+            margin-bottom: 0;
+            // name clash with Bootstrap form-group
+        }
+    }
+    .form-description {
+        .make-md-column(8);
+        .make-md-column-offset(4);
+        clear: left;
+        margin-bottom: 0;
+    }
 }
-.mform .ftextarea #id_alltext {
-    width: 100%;
+
+.path-admin .buttons,
+.form-buttons {
+    .make-md-column(8);
+    .make-md-column-offset(4);
+    margin-left: -15px; // There's no row container, needs negative margin at small sizes
+    margin-bottom: 15px;
+    .form-submit {
+        margin-left: 0;
+    }
+}
+
+.form-defaultinfo,
+.form-label .form-shortname {
+    .text-muted;
+    font-size: @font-size-small;
+}
+
+#adminsettings h3 {
+    &:extend(legend);
+}
+
+.form-setting .form-checkbox input {
+    margin-top: 12px;
+}
+
+.form-setting .form-multicheckbox ul {
+    &:extend(.list-unstyled);
+}
+
+// Shared styles
+
+.form-checkbox + label,
+.form-multicheckbox label,
+.unmask label {
+    &:extend(.checkbox label);
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+// Copied from /bootstrap/forms.less
+// Only right align form labels here when the columns stop stacking
+@media (min-width: @screen-md-min) {
+    .mform .fitemtitle,
+    .form-label {
+        text-align: right;
+        .form-shortname {
+            display: block;
+        }
+    }
+    .form-setting .form-multicheckbox,
+    .fitem_fcheckbox .fcheckbox {
+        padding-top: 8px;
+    }
+    fieldset.hidden > div {
+        margin-left: -20px;
+    }
+    .form-buttons .form-submit {
+        margin-left: -5px;
+    }
+}
+
+.mform .felement.fstatic,
+.form-item .form-description {
+    .help-block;
+    margin-bottom: 0;
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/*
+.mform .fitem fieldset.fgroup label {
+    // see .felement.fdate_selector above
+    display: inline;
+    float: none;
+    width: auto;
 }
 .mform ul.file-list {
     padding: 0;
     margin: 0;
     list-style: none;
-}
-.mform label .req,
-.mform label .adv {
-    cursor: help;
-}
-.mform .fcheckbox input {
-    margin-left: 0;
-    margin-top: 5px;
-}
-.mform .fitem fieldset.fgroup label,
-.mform fieldset.fdate_selector label {
-    display: inline;
-    float: none;
-    width: auto;
 }
 .mform .ftags label.accesshide {
     display: block;
@@ -164,130 +249,73 @@ form input[type="text"] {
     margin: 0 .45em;
     padding: 0;
 }
-.mform legend .helplink img {
-    margin: 0 .2em;
+
+form input[type="text"] {
+   .form-control;
+   display: inline-block;
+   width: auto;
+   height: auto;
 }
+
+.loginpanel .error,
 .singleselect label {
     margin-right: .3em;
-}
-.dir-rtl .singleselect label {
-    margin-left: .3em;
-    margin-right: 0;
-}
-input#id_externalurl {
-    direction: ltr;
 }
 #portfolio-add-button {
     display: inline;
 }
 
 
-.dir-rtl {
-    .form-item .form-label,
-    .mform .fitem div.fitemtitle {
-        float:right;
-        text-align: left;
-    }
-}
-.form-defaultinfo,
-.form-label .form-shortname {
-    .text-muted;
-}
-.form-label .form-shortname {
-    font-size: @font-size-mini;
-    display: block;
-}
-.dir-rtl .form-label .form-shortname {
-    text-align: left;
-}
-
-
-
-.formsettingheading {
-    margin-bottom: 0;
-}
-// Moodle doesn't differentiate between what Bootstrap calls
-// .uneditable-inputs and form help text. Styling them both as
-// uneditable looks ugly, styling both as form help is fairly
-// subtle in it's impact. Going for the latter as the best option.
-.form-item .form-description,
-.felement.fstatic {
-    .help-block;
-    padding-top: 5px;
-}
-.form-item .form-description {
-    padding-top: 0;
-}
-
-// Pale grey container for submit buttons.
-table#form td.submit,
-.form-buttons,
-.path-admin .buttons,
-#fitem_id_submitbutton,
-.fp-content-center form + div,
-div.backup-section + form,
-#fgroup_id_buttonar {
-    .form-actions;
-    padding-left: 0;
-}
-.path-admin .buttons,
-.form-buttons { // Add back the padding it would usually get from being inside a .form-horizontal.
-    padding-left: @horizontalComponentOffset;
-}
-.dir-rtl {
-    table#form td.submit,
-    .form-buttons,
-    .path-admin .buttons,
-    #fitem_id_submitbutton,
-    .fp-content-center form + div,
-    div.backup-section + form,
-    #fgroup_id_buttonar {
-        .form-actions;
-        padding-right: 0;
-    }
-    .path-admin .buttons,
-    .form-buttons { // Add back the padding it would usually get from being inside a .form-horizontal.
-        padding-right: @horizontalComponentOffset;
-    }
-}
-.form-item .form-setting .form-checkbox.defaultsnext {
-    // Need to specify .defaultsnext and the .form-checkbox class
-    // is somewhat randomly re-used on various actual checkboxes
-    // throughout the admin forms, instead of on the wrapper div.
-    margin-top: 5px; // Push down checkboxes to align.
-    display: inline-block; // So above style sticks.
-}
-
-#adminsettings h3 {
-    // Copied from bootstrap/forms.less tag legend.
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin-bottom: @base-line-height;
-    font-size: @font-size-base * 1.5;
-    line-height: @base-line-height * 2;
-    color: @gray-dark;
-    border: 0;
-    border-bottom: 1px solid #e5e5e5;
-}
-.mform legend a,
-.mform legend a:hover {
-    color: @gray-dark;
-    text-decoration: none;
-}
-.dir-rtl .mform .fitem .felement {
-    margin-right: 30%;
+#page-grade-edit-outcome-course .courseoutcomes {
     margin-left: auto;
-    text-align: right;
+    margin-right: auto;
+    width: 100%;
 }
-// I think this could be avoided (or at least tidied up) ifr
+#page-grade-edit-outcome-course .courseoutcomes td {
+    text-align:center;
+}
+
+// Checkbox labels. Bootstrap puts the associated checkbox inside the label.
+// Moodle puts it beside the label, so we need to make it inline-block
+// to keep it on the same horizontal level.
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline;
+    padding-left: 0.2em;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    margin-top: -4px; // Dodgy hack, must be better way.
+    margin-right: 7px;
+}
+.singleselect {
+    display: inline-block;
+    form,
+    select{
+        margin: 0;
+    }
+}
+.felement.ffilepicker {
+    margin-top: 5px;
+}
+div#dateselector-calendar-panel {
+    z-index: 3100; // Set higher than the z-index of the filemanager - see MDL-39047.
+}
+
+fieldset.coursesearchbox label {
+    display: inline;
+}
+*/
+
+// I think this could be avoided (or at least tidied up) if
 // we used HTML5 input types like url, phone, email, number etc.
 .dir-rtl .mform .fitem .felement input[name=email],
 .dir-rtl .mform .fitem .felement input[name=email2],
 .dir-rtl .mform .fitem .felement input[name=url],
 .dir-rtl .mform .fitem .felement input[name=idnumber],
 .dir-rtl .mform .fitem .felement input[name=phone1],
-.dir-rtl .mform .fitem .felement input[name=phone2] {
+.dir-rtl .mform .fitem .felement input[name=phone2],
+.dir-rtl#page-admin-setting-enrolsettingsflatfile .informationbox {
     text-align: left;
     direction: ltr;
 }
@@ -333,92 +361,8 @@ div.backup-section + form,
 .dir-rtl #admin-role_mapping input[type=text],
 .dir-rtl #id_s_enrol_paypal_paypalbusiness,
 .dir-rtl #id_s_enrol_flatfile_location,
-#page-admin-setting-enrolsettingsflatfile.dir-rtl input[type=text],
-#page-admin-setting-enrolsettingsdatabase.dir-rtl input[type=text],
-#page-admin-auth-db.dir-rtl input[type=text] {
+.dir-rtl#page-admin-setting-enrolsettingsflatfile input[type=text],
+.dir-rtl#page-admin-setting-enrolsettingsdatabase input[type=text],
+.dir-rtl#page-admin-auth-db input[type=text] {
     direction: ltr;
 }
-#page-admin-setting-enrolsettingsflatfile.dir-rtl .informationbox {
-    direction: ltr;
-    text-align: left;
-}
-#page-admin-grade-edit-scale-edit.dir-rtl .error input#id_name {
-    margin-right: 170px;
-}
-#page-grade-edit-outcome-course .courseoutcomes {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-#page-grade-edit-outcome-course .courseoutcomes td {
-    text-align:center;
-}
-/* Install Process' text fields Forms, should always be justified to the left */
-#installform #id_wwwroot,
-#installform #id_dirroot,
-#installform #id_dataroot,
-#installform #id_dbhost,
-#installform #id_dbname,
-#installform #id_dbuser,
-#installform #id_dbpass,
-#installform #id_prefix {
-    direction: ltr;
-}
-
-.mdl-right > label {
-    // Workaround for repository pop-up because the : are outside the label,
-    // can/should be fixed in filemanager renderers.
-    display: inline-block;
-}
-
-// Checkbox labels. Bootstrap puts the associated checkbox inside the label.
-// Moodle puts it beside the label, so we need to make it inline-block
-// to keep it on the same horizontal level.
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-    display: inline;
-    padding-left: 0.2em;
-}
-input[type="radio"],
-input[type="checkbox"] {
-    margin-top: -4px; // Dodgy hack, must be better way.
-    margin-right: 7px;
-}
-.dir-rtl {
-    input[type="radio"],
-    input[type="checkbox"] {
-        margin-left: 7px;
-        margin-right: auto;
-    }
-}
-.singleselect {
-    display: inline-block;
-    form,
-    select{
-        margin: 0;
-    }
-}
-.form-item .form-label label {
-    margin-bottom: 0;
-}
-.dir-rtl .form-item .form-label label {
-     text-align:left;
-}
-.felement.ffilepicker {
-    margin-top: 5px;
-}
-div#dateselector-calendar-panel {
-    z-index: 3100; /* Set higher than the z-index of the filemanager - see MDL-39047. */
-}
-
-fieldset.coursesearchbox label {
-    display: inline;
-}
-
-/**
- * Show the labels above text editors and file managers except on wide screens.
- */
-#region-main .mform .fitem .fitemtitle label {
-    font-weight: bold;
-}
-

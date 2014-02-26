@@ -6,7 +6,7 @@ Updated thirdpartylibs
 Moved jQuery files to a separate folder
 Added a plugin.php for defining jQuery plugins
 Moved to 12 column grid
-Update to Twitter Bootstrap 3.0.3
+Update to Bootstrap 3.0.3
 
 
 
