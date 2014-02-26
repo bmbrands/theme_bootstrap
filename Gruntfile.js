@@ -31,7 +31,7 @@
  * --dirroot=<path>   Explicitly define the path to your Moodle
  *                    root directory when your theme is not in the
  *                    standard location. Necessary for tasks which
- *                    clear the theme decache.
+ *                    clear the theme cache.
  *
  * @package theme
  * @subpackage bootstrap
