@@ -136,6 +136,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
             );
             foreach ($messages as $message) {
 
+                if (!$message->from) { // Workaround for issue #103.
+                    continue;
+                }
                 $senderpicture = new user_picture($message->from);
                 $senderpicture->link = false;
                 $senderpicture = $this->render($senderpicture);
