@@ -24,6 +24,15 @@
  * To only clear the theme caches invoke `grunt exec:decache` in
  * the theme's root directory.
  *
+ * Options:
+ * The following command-line options can be passed in conjunction
+ * with calls to grunt:
+ *
+ * --dirroot=<path>   Explicitly define the path to your Moodle
+ *                    root directory when your theme is not in the
+ *                    standard location. Necessary for tasks which
+ *                    clear the theme cache.
+ *
  * @package theme
  * @subpackage bootstrap
  * @author Joby Harding www.iamjoby.com
@@ -34,8 +43,16 @@ module.exports = function(grunt) {
 
     // PHP strings for exec task.
     var moodleroot = 'dirname(dirname(__DIR__))',
-        configfile = moodleroot + ' . "/config.php"',
-        decachephp = '';
+        configfile = '',
+        decachephp = '',
+        dirrootopt = grunt.option('dirroot') || '';
+
+    // Allow user to explicitly define Moodle root dir.
+    if ('' !== dirrootopt) {
+        moodleroot = 'realpath("' + dirrootopt + '")';
+    }
+
+    configfile = moodleroot + ' . "/config.php"';
 
     decachephp += "define(\"CLI_SCRIPT\", true);";
     decachephp += "require(" + configfile  + ");";
