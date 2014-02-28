@@ -482,6 +482,43 @@ img.iconsmall {
     background-color: @state-danger-bg;
 }
 
+#plugins-check .standard .source,
+#plugins-check .status-nodb .status,
+#plugins-check .status-uptodate .status,
+#plugins-check .requires-ok {
+    .text-muted;
+}
+
+#plugins-check .requires ul {
+    font-size: @font-size-small;
+    margin: 0;
+}
+
+#plugins-check .status .pluginupdateinfo {
+    padding: 5px 10px;
+    margin: 10px;
+    background-color: @state-info-bg;
+    border-radius: 10px;
+}
+
+#plugins-check .status .pluginupdateinfo span,
+#plugins-check .status .pluginupdateinfo a {
+    padding-right: 1em;
+}
+
+.dir-rtl {
+    #plugins-check .pluginupdateinfo {
+        text-align: center;
+        direction: ltr;
+    }
+
+    #plugins-check .rootdir,
+    #plugins-check .requires-ok {
+        text-align: left;
+        direction: ltr;
+    }
+}
+
 #plugins-control-panel .statusmsg {
     background-color: @gray-lighter;
     padding: 3px;
@@ -508,27 +545,38 @@ img.iconsmall {
     background-color: @input-bg-disabled;
 }
 
-#plugins-check .standard .source,
-#plugins-check .status-nodb .status,
-#plugins-check .status-uptodate .status,
-#plugins-check .requires-ok {
+#plugins-control-panel .requiredby,
+#plugins-control-panel .pluginname .componentname {
+    font-size: @font-size-small;
     .text-muted;
 }
 
-#plugins-check .requires ul {
-    font-size: @font-size-small;
-    margin: 0;
+#plugins-control-panel .pluginname .componentname {
+    margin-left: 22px;
 }
 
-#plugins-check .status .pluginupdateinfo {
+#plugins-control-panel .msg td {
+    text-align: center;
+}
+
+#plugins-control-panel .displayname img.icon {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#plugins-control-panel .uninstall a {
+    color: @state-danger-text;
+}
+
+#plugins-control-panel .notes .pluginupdateinfo {
     padding: 5px 10px;
     margin: 10px;
     background-color: @state-info-bg;
     border-radius: 10px;
 }
 
-#plugins-check .status .pluginupdateinfo span,
-#plugins-check .status .pluginupdateinfo a {
+#plugins-control-panel .notes .pluginupdateinfo span,
+#plugins-control-panel .notes .pluginupdateinfo a {
     padding-right: 1em;
 }
 
@@ -542,16 +590,6 @@ img.iconsmall {
     text-align: center;
 }
 
-#plugins-control-panel .requiredby,
-#plugins-control-panel .pluginname .componentname {
-    font-size: @font-size-small;
-    .text-muted;
-}
-
-#plugins-control-panel .pluginname .componentname {
-    margin-left: 22px;
-}
-
 #plugins-overview-filter .filter-item,
 #plugins-overview-panel .info {
     padding: 0 10px;
@@ -561,10 +599,6 @@ img.iconsmall {
 #plugins-check .status .pluginupdateinfo .separator,
 #page-admin-plugins .separator {
     border-left: 1px dotted #999;
-}
-
-#plugins-control-panel .msg td {
-    text-align: center;
 }
 
 #plugins-overview-filter,
@@ -584,40 +618,6 @@ img.iconsmall {
     font-weight: bold;
 }
 
-#plugins-control-panel .displayname img.icon {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-#plugins-control-panel .uninstall a {
-    color: @state-danger-text;
-}
-
-#plugins-control-panel .notes .pluginupdateinfo {
-    padding: 5px 10px;
-    margin: 10px;
-    background-color: @state-info-bg;
-    border-radius: 10px;
-}
-
-
-#plugins-control-panel .notes .pluginupdateinfo span,
-#plugins-control-panel .notes .pluginupdateinfo a {
-    padding-right: 1em;
-}
-
-.dir-rtl {
-    #plugins-check .pluginupdateinfo {
-        text-align: center;
-        direction: ltr;
-    }
-
-    #plugins-check .rootdir,
-    #plugins-check .requires-ok {
-        text-align: left;
-        direction: ltr;
-    }
-}
 
 /** MNet networking */
 #page-admin-mnet-peers .box.deletedhosts {
