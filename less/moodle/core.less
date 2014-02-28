@@ -80,9 +80,7 @@ a.dimmed_text:visited,
 .section li.activity,
 .section li.movehere,
 .tabtree li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    &:extend(.list-unstyled);
 }
 .inline,
 .inline-list li {
@@ -94,14 +92,6 @@ a.dimmed_text:visited,
 .notifytiny li,
 .notifytiny td {
     font-size: 100%;
-}
-.red,
-.notifyproblem {
-    color: @alert-danger-text;
-}
-.green,
-.notifysuccess {
-    color: @alert-success-text;
 }
 .reportlink {
     text-align: right;
@@ -175,7 +165,6 @@ a.autolink.glossary:hover {
     padding: 0;
 }
 .bold,
-.warning,
 .errorbox .title,
 .pagingbar .title,
 .pagingbar .thispage {
@@ -195,11 +184,11 @@ img.icon {
     height: 16px;
     vertical-align: text-bottom;
     width: 16px;
-    padding-right: 6px;
+    margin-right: 6px;
 }
 .dir-rtl img.icon {
-    padding-left: 6px;
-    padding-right: 0;
+    margin-left: 6px;
+    margin-right: 0;
 }
 img.iconsmall {
     height: 12px;
@@ -210,8 +199,13 @@ img.iconsmall {
 img.iconhelp,
 .helplink img {
     height: 16px;
-    padding-left: 3px;
+    margin-left: 3px;
     width: 16px;
+}
+.dir-rtl img.iconhelp,
+.dir-rtl .helplink img {
+    margin-right: 3px;
+    margin-left: 0;
 }
 h1 img.iconhelp, h1 img.icon,
 h2 img.iconhelp, h2 img.icon,
@@ -220,11 +214,7 @@ h4 img.iconhelp, h4 img.icon,
 h5 img.iconhelp, h5 img.icon,
 h6 img.iconhelp, h6 img.icon {
   vertical-align: middle;
-  padding: 4px;
-}
-.dir-rtl img.iconhelp, .dir-rtl .helplink img {
-    padding-right: 3px;
-    padding-left: 0;
+  margin: 4px;
 }
 img.iconlarge {
     height: 24px;

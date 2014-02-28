@@ -20,23 +20,23 @@
 .timewarninghidden {
     display: none;
 }
+
+// These status classes are only used on /report/security/ page
 .statusok,
 .statuswarning,
 .statusserious,
 .statuscritical {
-    .label;
+    &:extend(.label);
 }
 .statusok {
-    background-color: @label-success-bg;
+    &:extend(.label-success);
 }
 .statuswarning {
-    background-color: @label-warning-bg;
+    &:extend(.label-warning);
 }
-.statusserious {
-    background-color: @label-danger-bg;
-}
+.statusserious,
 .statuscritical {
-    background-color: @label-danger-bg;
+    &:extend(.label-danger);
 }
 
 #page-admin-report-capability-index #capabilitysearch {
@@ -455,36 +455,9 @@ img.iconsmall {
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release,
 .pluginupdateinfo.maturity50,
 #plugins-check .requires-failed,
-#plugins-check .missingfromdisk .displayname,
 #plugins-check .status-missing .status,
 #plugins-check .status-downgrade .status {
     background-color: @state-danger-bg;
-}
-
-#plugins-control-panel .statusmsg {
-    background-color: @gray-lighter;
-    padding: 3px;
-    border-radius: 5px;
-}
-
-#plugins-control-panel .status-missing .pluginname {
-    background-color: @state-danger-bg;
-}
-
-#plugins-control-panel .status-missing .statusmsg {
-    color: @state-danger-text;
-}
-
-#plugins-control-panel .status-new .pluginname {
-    background-color: @state-success-bg;
-}
-
-#plugins-control-panel .status-new .statusmsg {
-    color: @state-success-text;
-}
-
-#plugins-control-panel .disabled .availability {
-    background-color: @input-bg-disabled;
 }
 
 #plugins-check .standard .source,
@@ -511,14 +484,44 @@ img.iconsmall {
     padding-right: 1em;
 }
 
+.dir-rtl {
+    #plugins-check .pluginupdateinfo {
+        text-align: center;
+        direction: ltr;
+    }
 
-#page-admin-index .upgradepluginsinfo {
-    text-align: center;
+    #plugins-check .rootdir,
+    #plugins-check .requires-ok {
+        text-align: left;
+        direction: ltr;
+    }
+}
+#plugins-control-panel .pluginicon.noicon {
+    display: none;
 }
 
-#page-admin-plugins .checkforupdates {
-    margin: 0 auto 1em;
-    text-align: center;
+#plugins-control-panel .status-missing .pluginname {
+    background-color: @state-danger-bg;
+}
+
+#plugins-control-panel .status-new .pluginname {
+    background-color: @state-success-bg;
+}
+
+#plugins-control-panel .statusmsg {
+    &:extend(.label);
+}
+
+#plugins-control-panel .status-missing .statusmsg {
+    &:extend(.label-danger);
+}
+
+#plugins-control-panel .status-new .statusmsg {
+    &:extend(.label-success);
+}
+
+#plugins-control-panel .disabled .availability {
+    background-color: @input-bg-disabled;
 }
 
 #plugins-control-panel .requiredby,
@@ -527,8 +530,29 @@ img.iconsmall {
     .text-muted;
 }
 
-#plugins-control-panel .pluginname .componentname {
-    margin-left: 22px;
+#plugins-control-panel .msg td {
+    text-align: center;
+}
+
+#plugins-control-panel .notes .pluginupdateinfo {
+    padding: 5px 10px;
+    margin: 10px;
+    background-color: @state-info-bg;
+    border-radius: 10px;
+}
+
+#plugins-control-panel .notes .pluginupdateinfo span,
+#plugins-control-panel .notes .pluginupdateinfo a {
+    padding-right: 1em;
+}
+
+#page-admin-index .upgradepluginsinfo {
+    text-align: center;
+}
+
+#page-admin-plugins .checkforupdates {
+    margin: 0 auto 1em;
+    text-align: center;
 }
 
 #plugins-overview-filter .filter-item,
@@ -540,10 +564,6 @@ img.iconsmall {
 #plugins-check .status .pluginupdateinfo .separator,
 #page-admin-plugins .separator {
     border-left: 1px dotted #999;
-}
-
-#plugins-control-panel .msg td {
-    text-align: center;
 }
 
 #plugins-overview-filter,
@@ -563,40 +583,6 @@ img.iconsmall {
     font-weight: bold;
 }
 
-#plugins-control-panel .displayname img.icon {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-#plugins-control-panel .uninstall a {
-    color: @state-danger-text;
-}
-
-#plugins-control-panel .notes .pluginupdateinfo {
-    padding: 5px 10px;
-    margin: 10px;
-    background-color: @state-info-bg;
-    border-radius: 10px;
-}
-
-
-#plugins-control-panel .notes .pluginupdateinfo span,
-#plugins-control-panel .notes .pluginupdateinfo a {
-    padding-right: 1em;
-}
-
-.dir-rtl {
-    #plugins-check .pluginupdateinfo {
-        text-align: center;
-        direction: ltr;
-    }
-
-    #plugins-check .rootdir,
-    #plugins-check .requires-ok {
-        text-align: left;
-        direction: ltr;
-    }
-}
 
 /** MNet networking */
 #page-admin-mnet-peers .box.deletedhosts {
