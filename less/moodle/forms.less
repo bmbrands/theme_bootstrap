@@ -21,9 +21,6 @@
                 input[type="text"],
                 input[type="password"] {
                     .form-control;
-                    // Reset to width is auto.
-                    width: auto;
-                    max-width: 100%;
                 }
             }
             .felement.fdate_selector {
@@ -140,9 +137,6 @@
         input[type="text"],
         input[type="password"] {
             .form-control;
-            // Reset to width is auto.
-            width: auto;
-            max-width: 100%;
         }
         select[size],
         select[multiple] {
@@ -219,6 +213,15 @@
     }
     .form-buttons .form-submit {
         margin-left: -5px;
+    }
+    .form-item .form-setting input[type="text"],
+    .form-item .form-setting input[type="password"],
+    .form-item .form-setting select,
+    .mform .fcontainer .fitem .felement input[type="text"],
+    .mform .fcontainer .fitem .felement input[type="password"],
+    .mform .fcontainer .fitem .felement select {
+        width: auto;
+        min-width: 500px;
     }
 }
 
