@@ -518,6 +518,9 @@ img.iconsmall {
         direction: ltr;
     }
 }
+#plugins-control-panel .pluginicon.noicon {
+    display: none;
+}
 
 #plugins-control-panel .statusmsg {
     background-color: @gray-lighter;
@@ -551,21 +554,8 @@ img.iconsmall {
     .text-muted;
 }
 
-#plugins-control-panel .pluginname .componentname {
-    margin-left: 22px;
-}
-
 #plugins-control-panel .msg td {
     text-align: center;
-}
-
-#plugins-control-panel .displayname img.icon {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-#plugins-control-panel .uninstall a {
-    color: @state-danger-text;
 }
 
 #plugins-control-panel .notes .pluginupdateinfo {
@@ -579,7 +569,6 @@ img.iconsmall {
 #plugins-control-panel .notes .pluginupdateinfo a {
     padding-right: 1em;
 }
-
 
 #page-admin-index .upgradepluginsinfo {
     text-align: center;
