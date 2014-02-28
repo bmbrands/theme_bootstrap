@@ -41,23 +41,23 @@
 .timewarninghidden {
     display: none;
 }
+
+// These status classes are only used on /report/security/ page
 .statusok,
 .statuswarning,
 .statusserious,
 .statuscritical {
-    .label;
+    &:extend(.label);
 }
 .statusok {
-    background-color: @label-success-bg;
+    &:extend(.label-success);
 }
 .statuswarning {
-    background-color: @label-warning-bg;
+    &:extend(.label-warning);
 }
-.statusserious {
-    background-color: @label-danger-bg;
-}
+.statusserious,
 .statuscritical {
-    background-color: @label-danger-bg;
+    &:extend(.label-danger);
 }
 
 #page-admin-report-capability-index #capabilitysearch {
