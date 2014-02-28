@@ -21,8 +21,8 @@
  * To separately compile only moodle or editor .less files
  * run `grunt less:moodle` or `grunt less:editor` respectively.
  *
- * To only clear the theme caches invoke `grunt exec:decache` in
- * the theme's root directory.
+ * To only clear the theme caches invoke `grunt decache` in the
+ * theme's root directory.
  *
  * Options:
  * The following command-line options can be passed in conjunction
