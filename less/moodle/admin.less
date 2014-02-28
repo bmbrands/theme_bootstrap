@@ -433,30 +433,29 @@ img.iconsmall {
     width: 16px;
 }
 
-#plugins-check .status-new .status {
-    background-color: @state-success-bg;
+.pluginicon.noicon {
+    display: none;
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity200 .info.release,
-#plugins-check .status-upgrade .status,
-#plugins-check .status-delete .status {
+#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity200 .info.release {
     background-color: @state-info-bg;
 }
 
 #plugins-control-panel .extension .source,
+#plugins-check .extension .source {
+    font-weight: bold;
+}
+
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity100 .info.release,
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity150 .info.release,
 .pluginupdateinfo.maturity100,
-.pluginupdateinfo.maturity150,
-#plugins-check .extension .source {
+.pluginupdateinfo.maturity150 {
     background-color: @state-warning-bg;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release,
 .pluginupdateinfo.maturity50,
-#plugins-check .requires-failed,
-#plugins-check .status-missing .status,
-#plugins-check .status-downgrade .status {
+#plugins-check .requires-failed {
     background-color: @state-danger-bg;
 }
 
@@ -523,6 +522,7 @@ img.iconsmall {
 #plugins-control-panel .disabled .availability {
     background-color: @input-bg-disabled;
 }
+
 
 #plugins-control-panel .requiredby,
 #plugins-control-panel .pluginname .componentname {

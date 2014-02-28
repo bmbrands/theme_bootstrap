@@ -80,22 +80,23 @@ class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
         return $this->notification($releasenoteslink, 'notifymessage');
     }
 
-
-    public function environment_check_table($result, $environmentresults) {
-        $output = parent::environment_check_table($result, $environmentresults);
+    public function plugins_check_table(core_plugin_manager $pluginman, $version, array $options = array()) {
+        $html = parent::plugins_check_table($pluginman, $version, $options);
 
         $replacements = array(
-            '<span class="ok">' => '<span class="label label-success">',
-            '<span class="warn">' => '<span class="label label-warning">',
-            '<span class="error">' => '<span class="label label-danger">',
-            '<p class="ok">' => '<p class="text-success">',
-            '<p class="warn">' => '<p class="text-warning">',
-            '<p class="error">' => '<p class="text-danger">',
+            'generaltable' => 'table table-striped',
+            'status-missing' => 'danger',
+            'status-downgrade' => 'danger',
+            'status-upgrade' => 'info',
+            'status-delete' => 'info',
+            'status-new' => 'success',
+
         );
 
         $find = array_keys($replacements);
         $replace = array_values($replacements);
 
-        return str_replace($find, $replace, $output);
+        return str_replace($find, $replace, $html);
+
     }
 }
