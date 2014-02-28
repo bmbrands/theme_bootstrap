@@ -85,4 +85,22 @@ class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
         $releasenoteslink = get_string('releasenoteslink', 'admin', 'http://docs.moodle.org/dev/Releases');
         return $this->notification($releasenoteslink, 'notifymessage');
     }
+
+    public function plugins_check_table(core_plugin_manager $pluginman, $version, array $options = array()) {
+        $html = parent::plugins_check_table($pluginman, $version, $options);
+
+        $replacements = array(
+            'generaltable' => 'table table-striped',
+            'status-missing' => 'danger',
+            'status-downgrade' => 'danger',
+            'status-upgrade' => 'info',
+            'status-delete' => 'info',
+            'status-new' => 'success',
+        );
+
+        $find = array_keys($replacements);
+        $replace = array_values($replacements);
+
+        return str_replace($find, $replace, $html);
+    }
 }
