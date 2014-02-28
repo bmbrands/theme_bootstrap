@@ -521,26 +521,24 @@ img.iconsmall {
     display: none;
 }
 
-#plugins-control-panel .statusmsg {
-    background-color: @gray-lighter;
-    padding: 3px;
-    border-radius: 5px;
-}
-
 #plugins-control-panel .status-missing .pluginname {
     background-color: @state-danger-bg;
-}
-
-#plugins-control-panel .status-missing .statusmsg {
-    color: @state-danger-text;
 }
 
 #plugins-control-panel .status-new .pluginname {
     background-color: @state-success-bg;
 }
 
+#plugins-control-panel .statusmsg {
+    &:extend(.label);
+}
+
+#plugins-control-panel .status-missing .statusmsg {
+    &:extend(.label-danger);
+}
+
 #plugins-control-panel .status-new .statusmsg {
-    color: @state-success-text;
+    &:extend(.label-success);
 }
 
 #plugins-control-panel .disabled .availability {
