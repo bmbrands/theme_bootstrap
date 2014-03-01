@@ -115,7 +115,7 @@ module.exports = function(grunt) {
     });
 
     // Local task functions.
-    var _copyswatch = function() {
+    var _bootswatch = function() {
 
         var swatchname = grunt.option('name') || '',
             swatchroot = grunt.option('swatches-dir') || '';
@@ -174,6 +174,6 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("copyswatch", _copyswatch);
-    grunt.registerTask("swatch", ["copyswatch", "less", "exec:decache"]);
+    grunt.registerTask("bootswatch", _bootswatch);
+    grunt.registerTask("swatch", ["bootswatch", "less", "exec:decache"]);
 };
