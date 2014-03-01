@@ -95,16 +95,16 @@
  *                   and less/bootswatch/custom-variables.less files for those
  *                   of a given bootswatch theme.
  *
- *               Options:
+ *                   Options:
  *
- *               --name=<swatchname>    Required. Name (as defined by
- *                                      the convention) of the swatch
- *                                      to activate.
+ *                   --name=<swatchname>    Required. Name (as defined by
+ *                                          the convention) of the swatch
+ *                                          to activate.
  *
- *               --swatches-dir=<path>  Optional. Explicitly define
- *                                      the path to the directory
- *                                      containing your bootswatches
- *                                      (default is less/bootswatch).
+ *                   --swatches-dir=<path>  Optional. Explicitly define
+ *                                          the path to the directory
+ *                                          containing your bootswatches
+ *                                          (default is less/bootswatch).
  *
  *
  * @package theme
