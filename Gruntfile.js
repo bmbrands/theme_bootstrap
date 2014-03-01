@@ -163,8 +163,9 @@ module.exports = function(grunt) {
         // Copy in new swatch files.
         grunt.file.copy(swatchless, BOOTSWATCHFILE);
         grunt.file.copy(varsless, BOOTSWATCHVARS);
+        grunt.log.writeln('Swatch files copied.');
 
     });
 
-    grunt.registerTask("swatch", ["copyswatch", "exec:decache"]);
+    grunt.registerTask("swatch", ["copyswatch", "less", "exec:decache"]);
 };
