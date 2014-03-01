@@ -117,17 +117,23 @@ module.exports = function(grunt) {
     // Local task functions.
     var _copyswatch = function() {
 
-        var swatchname = grunt.option('name') || '';
+        var swatchname = grunt.option('name') || '',
+            swatchroot = grunt.option('swatches-dir') || '';
 
         // Required option.
         if ('' === swatchname) {
             grunt.fail.fatal('You must provide a swatch name.');
         }
 
-        // TODO allow user to explicitly set path to swatch dir via opt.
+        var swatchpath = path.join(BOOTSWATCHDIR, swatchname);
 
-        var swatchpath = path.join(BOOTSWATCHDIR, swatchname),
-            swatchless = path.join(swatchpath, 'bootswatch.less'),
+        // Allow user to explicitly define source swatches dir.
+        if ('' !== swatchroot) {
+           swatchpath = path.resolve(swatchroot);
+           swatchpath = path.join(swatchpath, swatchname);
+        }
+
+        var swatchless = path.join(swatchpath, 'bootswatch.less'),
             varsless   = path.join(swatchpath, 'variables.less'),
             message    = '';
 
