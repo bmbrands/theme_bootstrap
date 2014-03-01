@@ -4,7 +4,9 @@
  * This file configures tasks to be run by Grunt
  * http://gruntjs.com/ for the current theme.
  *
+ *
  * Requirements:
+ * -------------
  * nodejs, npm, grunt-cli.
  *
  * Installation:
@@ -12,11 +14,13 @@
  * grunt-cli: `[sudo] npm install -g grunt-cli`
  * node dependencies: run `npm install` in the root directory.
  *
+ *
  * Usage:
- * Default behaviour is to watch all .less files and compile
+ * ------
+ * Call tasks from the theme root directory. Default behaviour
+ * (calling only `grunt` is to watch all .less files and compile
  * into compressed CSS when a change is detected to any and then
- * clear the theme's caches. Invoke either `grunt` or `grunt watch`
- * in the theme's root directory.
+ * clear the theme's caches.
  *
  * To separately compile only moodle or editor .less files
  * run `grunt less:moodle` or `grunt less:editor` respectively.
@@ -24,14 +28,84 @@
  * To only clear the theme caches invoke `grunt decache` in the
  * theme's root directory.
  *
- * Options:
  * The following command-line options can be passed in conjunction
  * with calls to grunt:
  *
- * --dirroot=<path>   Explicitly define the path to your Moodle
- *                    root directory when your theme is not in the
- *                    standard location. Necessary for tasks which
- *                    clear the theme cache.
+ *
+ * Porcelain tasks:
+ * ----------------
+ * The nice user interface intended for everyday use. Provide a
+ * high level of automation and convenience for specific use-cases.
+ *
+ * grunt watch   Watch the less directory (and all subdirectories)
+ *               for changes to *.less files then on detection
+ *               recompile all less files and clear the theme cache.
+ *
+ *               Options:
+ *
+ *               --dirroot=<path>  Optional. Explicitly define the
+ *                                 path to your Moodle root directory
+ *                                 when your theme is not in the
+ *                                 standard location.
+ *
+ * grunt swatch  Task for working with bootswatch files. Expects a
+ *               convention to be followed - bootswatch files are
+ *               contained within a directory providing the name
+ *               by which the swatch is identified. By default the
+ *               directory these should be placed in is less/bootswatch
+ *               however the user may optionally override this.
+ *
+ *               Switches the current bootswatch files compiled with
+ *               the theme to those of a given bootswatch, recompiles
+ *               less and clears the theme cache.
+ *
+ *               Options:
+ *
+ *               --name=<swatchname>    Required. Name (as defined by
+ *                                      the convention) of the bootswatch
+ *                                      to activate.
+ *
+ *               --swatches-dir=<path>  Optional. Explicitly define
+ *                                      the path to the directory
+ *                                      containing your bootswatches
+ *                                      (default is less/bootswatch).
+ *
+ *
+ * Plumbing tasks & targets:
+ * -------------------------
+ * Lower level tasks encapsulating a specific piece of functionality
+ * but usually only useful when called in combination with another.
+ *
+ * grunt less         Compile all less files.
+ *
+ * grunt less:moodle  Compile Moodle less files only.
+ *
+ * grunt less:editor  Compile editor less files only.
+ *
+ * grunt decache      Clears the Moodle theme cache.
+ *
+ *                    Options:
+ *
+ *                    --dirroot=<path>  Optional. Explicitly define the
+ *                                      path to your Moodle root directory
+ *                                      when your theme is not in the
+ *                                      standard location.
+ *
+ * grunt bootswatch  Switch the theme less/bootswatch/custom-bootswatch.less
+ *                   and less/bootswatch/custom-variables.less files for those
+ *                   of a given bootswatch theme.
+ *
+ *               Options:
+ *
+ *               --name=<swatchname>    Required. Name (as defined by
+ *                                      the convention) of the bootswatch
+ *                                      to activate.
+ *
+ *               --swatches-dir=<path>  Optional. Explicitly define
+ *                                      the path to the directory
+ *                                      containing your bootswatches
+ *                                      (default is less/bootswatch).
+ *
  *
  * @package theme
  * @subpackage bootstrap
