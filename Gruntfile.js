@@ -147,14 +147,14 @@ module.exports = function(grunt) {
         // Ensure the bootswatch.less file exists.
         if (!grunt.file.isFile(swatchless)) {
             message = "The required file '" + swatchless + "' ";
-            message += 'does not exist.';
+            message += 'does not exist or is not accessible.';
             grunt.fail.fatal(message);
         }
 
         // Ensure the variables.less file exists.
         if (!grunt.file.isFile(varsless)) {
             message = "The required file '" + varsless + "' ";
-            message += 'does not exist.';
+            message += 'does not exist or is not accessible.';
             grunt.fail.fatal(message);
         }
 
