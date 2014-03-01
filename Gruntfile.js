@@ -41,6 +41,13 @@
 
 module.exports = function(grunt) {
 
+    // Import modules.
+    var path = require('path');
+
+    // Theme Bootstrap constants.
+    var LESSDIR   = 'less',
+        SWATCHDIR = path.join(LESSDIR, 'bootswatch');
+
     // PHP strings for exec task.
     var moodleroot = 'dirname(dirname(__DIR__))',
         configfile = '',
@@ -113,4 +120,41 @@ module.exports = function(grunt) {
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
+
+    grunt.registerTask("swatch", function() {
+
+        var swatchname = grunt.option('name') || '';
+
+        // Required option.
+        if ('' === swatchname) {
+            grunt.fail.fatal('You must provide a swatch name.');
+        }
+
+        var swatchpath = path.join(SWATCHDIR, swatchname),
+            swatchless = path.join(swatchpath, 'bootswatch.less'),
+            varsless   = path.join(swatchpath, 'variables.less'),
+            message    = '';
+
+        // Ensure the swatch directory exists.
+        if (!grunt.file.isDir(swatchpath)) {
+            message = "The swatch directory '" + swatchpath + "' ";
+            message += 'does not exist.';
+            grunt.fail.fatal(message);
+        }
+
+        // Ensure the bootswatch.less file exists.
+        if (!grunt.file.isFile(swatchless)) {
+            message = "The required file '" + swatchless + "' ";
+            message += 'does not exist under ' + swatchdir;
+            grunt.fail.fatal(message);
+        }
+
+        // Ensure the variables.less file exists.
+        if (!grunt.file.isFile(varsless)) {
+            message = "The required file '" + swatchless + "' ";
+            message += 'does not exist under ' + swatchdir;
+            grunt.fail.fatal(message);
+        }
+
+    });
 };
