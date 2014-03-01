@@ -18,18 +18,7 @@
  * Usage:
  * ------
  * Call tasks from the theme root directory. Default behaviour
- * (calling only `grunt`) is to watch all .less files and compile
- * into compressed CSS when a change is detected to any and then
- * clear the theme's caches.
- *
- * To separately compile only moodle or editor .less files
- * run `grunt less:moodle` or `grunt less:editor` respectively.
- *
- * To only clear the theme caches invoke `grunt decache` in the
- * theme's root directory.
- *
- * The following command-line options can be passed in conjunction
- * with calls to grunt:
+ * (calling only `grunt`) is to run the watch task detailed below.
  *
  *
  * Porcelain tasks:
