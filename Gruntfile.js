@@ -45,8 +45,10 @@ module.exports = function(grunt) {
     var path = require('path');
 
     // Theme Bootstrap constants.
-    var LESSDIR   = 'less',
-        SWATCHDIR = path.join(LESSDIR, 'bootswatch');
+    var LESSDIR         = 'less',
+        BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'),
+        BOOTSWATCHFILE  = path.join(BOOTSWATCHDIR, 'custom-bootswatch.less'),
+        BOOTSWATCHVARS  = path.join(BOOTSWATCHDIR, 'custom-variables.less');
 
     // PHP strings for exec task.
     var moodleroot = 'dirname(dirname(__DIR__))',
@@ -121,7 +123,7 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("swatch", function() {
+    grunt.registerTask("copyswatch", function() {
 
         var swatchname = grunt.option('name') || '';
 
@@ -130,7 +132,9 @@ module.exports = function(grunt) {
             grunt.fail.fatal('You must provide a swatch name.');
         }
 
-        var swatchpath = path.join(SWATCHDIR, swatchname),
+        // TODO allow user to explicitly set path to swatch dir via opt.
+
+        var swatchpath = path.join(BOOTSWATCHDIR, swatchname),
             swatchless = path.join(swatchpath, 'bootswatch.less'),
             varsless   = path.join(swatchpath, 'variables.less'),
             message    = '';
@@ -145,16 +149,22 @@ module.exports = function(grunt) {
         // Ensure the bootswatch.less file exists.
         if (!grunt.file.isFile(swatchless)) {
             message = "The required file '" + swatchless + "' ";
-            message += 'does not exist under ' + swatchdir;
+            message += 'does not exist.';
             grunt.fail.fatal(message);
         }
 
         // Ensure the variables.less file exists.
         if (!grunt.file.isFile(varsless)) {
-            message = "The required file '" + swatchless + "' ";
-            message += 'does not exist under ' + swatchdir;
+            message = "The required file '" + varsless + "' ";
+            message += 'does not exist.';
             grunt.fail.fatal(message);
         }
 
+        // Copy in new swatch files.
+        grunt.file.copy(swatchless, BOOTSWATCHFILE);
+        grunt.file.copy(varsless, BOOTSWATCHVARS);
+
     });
+
+    grunt.registerTask("swatch", ["copyswatch", "exec:decache"]);
 };
