@@ -62,7 +62,7 @@
  *               Options:
  *
  *               --name=<swatchname>    Required. Name (as defined by
- *                                      the convention) of the bootswatch
+ *                                      the convention) of the swatch
  *                                      to activate.
  *
  *               --swatches-dir=<path>  Optional. Explicitly define
@@ -98,7 +98,7 @@
  *               Options:
  *
  *               --name=<swatchname>    Required. Name (as defined by
- *                                      the convention) of the bootswatch
+ *                                      the convention) of the swatch
  *                                      to activate.
  *
  *               --swatches-dir=<path>  Optional. Explicitly define
