@@ -18,7 +18,7 @@
  * Usage:
  * ------
  * Call tasks from the theme root directory. Default behaviour
- * (calling only `grunt` is to watch all .less files and compile
+ * (calling only `grunt`) is to watch all .less files and compile
  * into compressed CSS when a change is detected to any and then
  * clear the theme's caches.
  *
