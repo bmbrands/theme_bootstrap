@@ -114,16 +114,8 @@ module.exports = function(grunt) {
         }
     });
 
-    // Load contrib tasks.
-    grunt.loadNpmTasks("grunt-contrib-less");
-    grunt.loadNpmTasks("grunt-contrib-watch");
-    grunt.loadNpmTasks("grunt-exec");
-
-    // Register tasks.
-    grunt.registerTask("default", ["watch"]);
-    grunt.registerTask("decache", ["exec:decache"]);
-
-    grunt.registerTask("copyswatch", function() {
+    // Local task functions.
+    var _copyswatch = function() {
 
         var swatchname = grunt.option('name') || '';
 
@@ -165,7 +157,17 @@ module.exports = function(grunt) {
         grunt.file.copy(varsless, BOOTSWATCHVARS);
         grunt.log.writeln('Swatch files copied.');
 
-    });
+    };
 
+    // Load contrib tasks.
+    grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-exec");
+
+    // Register tasks.
+    grunt.registerTask("default", ["watch"]);
+    grunt.registerTask("decache", ["exec:decache"]);
+
+    grunt.registerTask("copyswatch", _copyswatch);
     grunt.registerTask("swatch", ["copyswatch", "less", "exec:decache"]);
 };
