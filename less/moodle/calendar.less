@@ -1,9 +1,7 @@
-/* calendar.less */
 .calendartable {
     width: 100%;
 }
-.calendartable th,
-.calendartable td {
+.calendartable th,.calendartable td {
     width: 14%;
     vertical-align: top;
     text-align: center;
@@ -21,171 +19,232 @@
 .calendar_event_user {
     background-color: #DCE7EC;
 }
-.path-calendar .calendar-controls .previous,
-.path-calendar .calendar-controls .next,
-.path-calendar .calendar-controls .current {
+.path-calendar .calendar-controls .previous,.path-calendar .calendar-controls .next,.path-calendar .calendar-controls .current {
     display: block;
     float: left;
     width: 12%;
 }
-.path-calendar .calendar-controls .previous {
-    text-align: left;
+.path-calendar {
+    .calendar-controls {
+        .previous {
+            text-align: left;
+        }
+        .current {
+            text-align: center;
+            width: 76%;
+        }
+        .next {
+            text-align: right;
+        }
+    }
+    .maincalendar {
+        vertical-align: top;
+        padding: 0;
+        .bottom {
+            text-align: center;
+            padding: 5px 0 0 0;
+        }
+        .heightcontainer {
+            height: 100%;
+            position: relative;
+        }
+        .calendarmonth {
+            width: 98%;
+            margin: 10px auto;
+            ul {
+                margin: 0;
+                li {
+                    list-style-type: none;
+                    margin-top: 4px;
+                }
+            }
+            td {
+                height: 5em;
+            }
+        }
+        .calendar-controls {
+            .current {
+                width: 39.95%;
+            }
+        }
+
+        .cal_courses_flt {
+            select {
+                .form-control;
+            }
+        }
+        .controls {
+            width: 98%;
+            margin: 10px auto;
+        }
+        .eventlist {
+            .event {
+                .panel;
+                .panel-default;
+                width: 100%;
+                .topic {
+                    .name {
+                        float: left;
+                    }
+                }
+                .side {
+                    width: 32px;
+                }
+                .commands {
+                    a {
+                        margin: 0 3px;
+                    }
+                }
+            }
+        }
+        .header {
+            overflow: hidden;
+            .buttons {
+                float: right;
+            }
+        }
+    }
+    .filters {
+        table {
+            border-collapse: separate;
+            border-spacing: 2px;
+            width: 100%;
+        }
+    }
+    .cal_courses_flt {
+        label {
+            margin-right: .45em;
+        }
+    }
 }
-.path-calendar .calendar-controls .current {
-    text-align: center;
-    width: 76%;
-}
-.path-calendar .calendar-controls .next {
-    text-align: right;
-}
-.path-calendar .maincalendar {
-    vertical-align: top;
-    padding: 0;
-}
-.path-calendar .maincalendar .bottom {
-    text-align: center;
-    padding: 5px 0 0 0;
-}
-.path-calendar .maincalendar .heightcontainer {
-    height: 100%;
-    position: relative;
-}
-.path-calendar .maincalendar .calendarmonth {
-    width: 98%;
-    margin: 10px auto;
-}
-.path-calendar .maincalendar .calendarmonth ul {
-    margin: 0;
-}
-.path-calendar .maincalendar .calendarmonth ul li {
-    list-style-type: none;
-    margin-top: 4px;
-}
-.path-calendar .maincalendar .calendarmonth td {
-    height: 5em;
-}
-.path-calendar .maincalendar .calendar-controls .previous,
-.path-calendar .maincalendar .calendar-controls .next{
+.path-calendar .maincalendar .calendar-controls .previous,.path-calendar .maincalendar .calendar-controls .next {
     width: 30%;
 }
-.path-calendar .maincalendar .calendar-controls .current {
-    width: 39.95%;
-}
-.path-calendar .maincalendar .controls {
-    width: 98%;
-    margin: 10px auto;
-}
-.path-calendar .maincalendar .eventlist .event {
-    width: 100%;
-    margin-bottom: 10px;
-    border-spacing: 0;
-    border-collapse: separate;
-    border-width: 1px;
-    border-style: solid;
-}
-.path-calendar .maincalendar .eventlist .event .topic .name {
-    float: left;
-}
-.dir-rtl.path-calendar .maincalendar .eventlist .event .topic .name,
-.path-calendar .maincalendar .eventlist .event .topic .date {
+.dir-rtl.path-calendar .maincalendar .eventlist .event .topic .name,.path-calendar .maincalendar .eventlist .event .topic .date {
     float: right;
 }
-.dir-rtl.path-calendar .maincalendar .eventlist .event .topic .date {
-    float: left;
+.dir-rtl.path-calendar {
+    .maincalendar {
+        .eventlist {
+            .event {
+                .topic {
+                    .date {
+                        float: left;
+                    }
+                }
+            }
+        }
+        .header {
+            .buttons {
+                float: left;
+            }
+        }
+    }
+    .cal_courses_flt {
+        label {
+            margin-left: .45em;
+            margin-right: 0;
+        }
+    }
 }
-.path-calendar .maincalendar .eventlist .event .subscription,
-.path-calendar .maincalendar .eventlist .event .course {
+.path-calendar .maincalendar .eventlist .event .subscription,.path-calendar .maincalendar .eventlist .event .course {
     float: left;
     clear: left;
 }
-.dir-rtl.path-calendar .maincalendar .eventlist .event .subscription,
-.dir-rtl.path-calendar .maincalendar .eventlist .event .course {
+.dir-rtl.path-calendar .maincalendar .eventlist .event .subscription,.dir-rtl.path-calendar .maincalendar .eventlist .event .course {
     float: right;
     clear: right;
 }
-.path-calendar .maincalendar .eventlist .event .side {
-    width: 32px;
+#page-calendar-export {
+    .indent {
+        padding-left: 20px;
+    }
 }
-.path-calendar .maincalendar .eventlist .event .commands a {
-    margin: 0 3px;
-}
-.path-calendar .maincalendar .header {
-    overflow: hidden;
-}
-.path-calendar .maincalendar .header .buttons {
-    float: right;
-}
-.dir-rtl.path-calendar .maincalendar .header .buttons {
-    float: left;
-}
-.path-calendar .filters table {
-    border-collapse: separate;
-    border-spacing: 2px;
-    width: 100%;
-}
-#page-calendar-export .indent {
-    padding-left: 20px;
-}
-.path-calendar .cal_courses_flt label {
-    margin-right: .45em;
-}
-.dir-rtl.path-calendar .cal_courses_flt label {
-    margin-left: .45em;
-    margin-right: 0;
-}
-.block .minicalendar th,
-.block .minicalendar td {
+.block .minicalendar th,.block .minicalendar td {
     padding: 2px;
     font-size: 0.8em;
 }
-.block .minicalendar {
-    max-width: 280px;
-    margin-left: auto;
-    margin-right: auto;
+.block {
+    .minicalendar {
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        td.weekend {
+            color: #A00;
+        }
+        .calendar-controls {
+            .previous {
+                text-align: left;
+                display: block;
+                float: left;
+                width: 12%;
+            }
+            .current {
+                float: left;
+                text-align: center;
+                display: block;
+                width: 76%;
+            }
+            .next {
+                text-align: right;
+                display: block;
+                float: left;
+                width: 12%;
+            }
+        }
+        .calendar_filters {
+            ul {
+                list-style: none;
+                margin: 0;
+            }
+            li {
+                margin-bottom: .2em;
+                span {
+                    img {
+                        padding: 0 .2em;
+                    }
+                }
+            }
+            .eventname {
+                padding-left: .2em;
+            }
+        }
+        .content {
+            h3.eventskey {
+                margin-top: 0.5em;
+            }
+        }
+        .calendar-event-panel {
+            .yui3-overlay-content {
+                .popover;
+                display: block;
+            }
+            h2 {
+                .popover-title;
+            }
+            .yui3-widget-bd {
+                .popover-content;
+                border: 1px dotted @popover-border-color;
+                border-radius: @border-radius-base;
+                margin: 10px;
+                background-color: (lighten(@popover-bg, 10%));
+                .eventcontent {
+                    text-align: left;
+                    margin: 0;
+                    font-size: @font-size-base;
+                }
+            }
+        }
+    }
+
 }
-.block .minicalendar td.weekend {
-    color: #A00;
-}
-.block .calendar-controls .previous {
-    text-align: left;
-    display: block;
-    float: left;
-    width: 12%;
-}
-.block .calendar-controls .current {
-    float: left;
-    text-align: center;
-    display: block;
-    width: 76%;
-}
-.block .calendar-controls .next {
-    text-align: right;
-    display: block;
-    float: left;
-    width: 12%;
-}
-.block .calendar_filters ul {
-    list-style: none;
-    margin: 0;
-}
-.block .calendar_filters li {
-    margin-bottom: .2em;
-}
-.block .calendar_filters li span img {
-    padding: 0 .2em;
-}
-.block .calendar_filters .eventname {
-    padding-left: .2em;
-}
-.dir-rtl .block .calendar_filters .eventname {
-    padding-right: .2em;
-    padding-left: 0;
-}
-.block .content h3.eventskey {
-    margin-top: 0.5em;
-}
-@media (min-width: 768px) {
-    #page-calender-view .container fluid {
-        min-width: 1024px;
+.dir-rtl {
+    .block {
+        .calendar_filters {
+            .eventname {
+                padding-right: .2em;
+                padding-left: 0;
+            }
+        }
     }
 }
