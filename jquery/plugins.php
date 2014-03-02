@@ -14,8 +14,16 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
+/**
+ * Theme version info
+ *
+ * @package    theme_bootstrap
+ * @copyright  2014 Bas Brands, www.basbrands.nl
+ * @authors    Bas Brands, David Scotson
+ *             With the help of by Gareth J Barnard
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 $plugins = array(
-    'bootstrap' => array('files' => array('bootstrap.js')),
+    'bootstrap' => array('files' => array('bootstrap-3_1_1.js')),
 );
