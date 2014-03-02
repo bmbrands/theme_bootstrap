@@ -65,6 +65,16 @@
  *                                      containing your bootswatches
  *                                      (default is less/bootswatch).
  *
+ *               --vars-only            Optional. Copy the swatch's
+ *                                      variables.less file only
+ *                                      and empty custom-bootswatch.less
+ *                                      Due to issues with grunt's
+ *                                      handling of boolean options
+ *                                      if not explicitly set e.g.
+ *                                      `--vars-only=true` this option
+ *                                      should be passed last.
+ *
+ *
  *
  * Plumbing tasks & targets:
  * -------------------------
@@ -101,6 +111,15 @@
  *                                          the path to the directory
  *                                          containing your bootswatches
  *                                          (default is less/bootswatch).
+ *
+ *                   --vars-only            Optional. Copy the swatch's
+ *                                          variables.less file only
+ *                                          and empty custom-bootswatch.less
+ *                                          Due to issues with grunt's
+ *                                          handling of boolean options
+ *                                          if not explicitly set e.g.
+ *                                          `--vars-only=true` this option
+ *                                          should be passed last.
  *
  *
  * @package theme
@@ -188,7 +207,8 @@ module.exports = function(grunt) {
     var _bootswatch = function() {
 
         var swatchname = grunt.option('name') || '',
-            swatchroot = grunt.option('swatches-dir') || '';
+            swatchroot = grunt.option('swatches-dir') || '',
+            varsonly   = grunt.option('vars-only');
 
         // Required option.
         if ('' === swatchname) {
@@ -215,10 +235,14 @@ module.exports = function(grunt) {
         }
 
         // Ensure the bootswatch.less file exists.
-        if (!grunt.file.isFile(swatchless)) {
-            message = "The required file '" + swatchless + "' ";
-            message += 'does not exist or is not accessible.';
-            grunt.fail.fatal(message);
+        if (!varsonly) {
+            if (!grunt.file.isFile(swatchless)) {
+                message = "The required file '" + swatchless + "' ";
+                message += 'does not exist or is not accessible.';
+                grunt.fail.fatal(message);
+            }
+        } else {
+            grunt.file.write(BOOTSWATCHFILE, '');
         }
 
         // Ensure the variables.less file exists.
@@ -229,9 +253,11 @@ module.exports = function(grunt) {
         }
 
         // Copy in new swatch files.
-        grunt.file.copy(swatchless, BOOTSWATCHFILE);
+        if (!varsonly) {
+            grunt.file.copy(swatchless, BOOTSWATCHFILE);
+        }
         grunt.file.copy(varsless, BOOTSWATCHVARS);
-        grunt.log.writeln('Swatch files copied.');
+        grunt.log.writeln('Swatch copied.');
 
     };
 
