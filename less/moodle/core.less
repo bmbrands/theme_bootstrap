@@ -1,4 +1,4 @@
-/* core.less */
+/** core.less */
 
 /** Page layout CSS starts **/
 .layout-option-noheader #page-header,
@@ -10,26 +10,25 @@
 }
 
 
-.editing.used-region-side-post.used-region-side-pre #region-main {
-    .make-sm-column(4);
-    .make-md-column(6);
-    .make-sm-column-push(4);
-    .make-md-column-push(3);
-}
-
-
-.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
-    .make-sm-column(4);
-    .make-md-column(3);
-    min-height: 100px;
-}
-
-.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
-    .make-sm-column(4);
-    .make-md-column(3);
-    .make-sm-column-pull(4);
-    .make-md-column-pull(6);
-     min-height: 100px;
+.editing.used-region-side-post.used-region-side-pre {
+    #region-main {
+        .make-sm-column(4);
+        .make-md-column(6);
+        .make-sm-column-push(4);
+        .make-md-column-push(3);
+    }
+    #block-region-side-post {
+        .make-sm-column(4);
+        .make-md-column(3);
+        min-height: 100px;
+    }
+    #block-region-side-pre {
+        .make-sm-column(4);
+        .make-md-column(3);
+        .make-sm-column-pull(4);
+        .make-md-column-pull(6);
+        min-height: 100px;
+    }
 }
 
 /** Page layout CSS ends **/
@@ -102,58 +101,65 @@ a.autolink.glossary:hover {
 /* Block which is hidden if javascript enabled, prevents fickering visible when JS from footer used! */
 .collapsibleregioncaption {
     white-space: nowrap;
+    img {
+        vertical-align: middle;
+    }
 }
-.collapsibleregioncaption img {
-    vertical-align: middle;
-}
-.jsenabled .hiddenifjs {
-    display: none;
+.jsenabled {
+    .hiddenifjs {
+        display: none;
+    }
+    .visibleifjs {
+        display: inline;
+    }
+    .collapsibleregion {
+        overflow: hidden;
+    }
+    .collapsed {
+        .collapsibleregioninner {
+            visibility: hidden;
+        }
+    }
+    .collapsible-actions {
+        display: block;
+    }
 }
 .visibleifjs {
     display: none;
 }
-.jsenabled .visibleifjs {
-    display: inline;
-}
-.jsenabled .collapsibleregion {
-    overflow: hidden;
-}
-.jsenabled .collapsed .collapsibleregioninner {
-    visibility: hidden;
-}
 .collapsible-actions {
     display: none;
     text-align: right;
+    .collapseexpand {
+        padding-left: 20px;
+        background: url([[pix:t/collapsed]]) 2px center no-repeat;
+    }
 }
-.dir-rtl .collapsible-actions {
-    text-align: left;
+.dir-rtl {
+    .collapsible-actions {
+        text-align: left;
+        .collapseexpand {
+            padding-right: 20px;
+            padding-left: 0;
+            background: url([[pix:t/collapsed_rtl]]) right center no-repeat;
+        }
+    }
 }
-.jsenabled .collapsible-actions {
-    display: block;
-}
-.collapsible-actions .collapseexpand {
-    padding-left: 20px;
-    background: url([[pix:t/collapsed]]) 2px center no-repeat;
-}
-.dir-rtl .collapsible-actions .collapseexpand {
-    padding-right: 20px;
-    padding-left: 0;
-    background: url([[pix:t/collapsed_rtl]]) right center no-repeat;
-}
-.collapsible-actions .collapse-all,
-.dir-rtl .collapsible-actions .collapse-all {
+.collapsible-actions .collapse-all,.dir-rtl .collapsible-actions .collapse-all {
     background-image: url([[pix:t/expanded]]);
 }
-.yui-overlay .yui-widget-bd {
-    background-color: #FFEE69;
-    border: 1px solid #A6982B;
-    border-top-color: #D4C237;
-    color: #000000;
-    left: 0;
-    padding: 2px 5px;
-    position: relative;
-    top: 0;
-    z-index: 1;
+.yui-overlay {
+    .yui-widget-bd {
+        background-color: #FFEE69;
+        border: 1px solid #A6982B;
+        border-top-color: #D4C237;
+        color: #000000;
+        left: 0;
+        padding: 2px 5px;
+        position: relative;
+        top: 0;
+        z-index: 1;
+    }
 }
 .clearer {
     background: transparent;
@@ -164,18 +170,14 @@ a.autolink.glossary:hover {
     margin: 0;
     padding: 0;
 }
-.bold,
-.errorbox .title,
-.pagingbar .title,
-.pagingbar .thispage {
+.bold,.errorbox .title,.pagingbar .title,.pagingbar .thispage {
     font-weight: bold;
 }
 img.resize {
     height: 1em;
     width: 1em;
 }
-.block img.resize,
-.breadcrumb img.resize {
+.block img.resize,.breadcrumb img.resize {
     height: 0.9em;
     width: 0.8em;
 }
@@ -317,9 +319,10 @@ form.popupform div {
 .no-overflow > .generaltable {
     margin-bottom: 0;
 }
-// Accessibility features
+/** Accessibility features
 
-// Accessibility: text 'seen' by screen readers but not visual users.
+    Accessibility: text 'seen' by screen readers but not visual users.
+**/
 .accesshide {
     position: absolute;
     left: -10000px;
@@ -334,7 +337,7 @@ span.hide,
 div.hide {
     display: none;
 }
-// Accessibility: Skip block link, for keyboard-only users.
+/** Accessibility: Skip block link, for keyboard-only users. **/
 a.skip-block,
 a.skip {
     position: absolute;
@@ -354,7 +357,7 @@ a.skip:active {
     height: 1px;
     overflow: hidden;
 }
-// Blogs
+/** Blogs **/
 .addbloglink {
     text-align: center;
 }
@@ -372,7 +375,7 @@ a.skip:active {
 .blog_entry .content {
     margin-left: 43px;
 }
-// Group
+/** Group **/
 #page-group-index #groupeditform {
     text-align: center;
 }
@@ -417,7 +420,7 @@ a.skip:active {
     display: inline-block;
 }
 
-// Notes
+/** Notes **/
 .notepost {
     margin-bottom: 1em;
 }
@@ -433,7 +436,7 @@ a.skip:active {
     margin-left: 20px;
 }
 
-// My Moodle
+/** My Moodle **/
 .path-my .coursebox .overview {
     margin: 15px 30px 10px 30px;
 }
@@ -442,7 +445,7 @@ a.skip:active {
     margin: 0;
 }
 
-// Modules
+/** Modules **/
 .mod_introbox {
     padding: 10px;
 }
@@ -450,7 +453,7 @@ table.mod_index {
     width: 100%;
 }
 
-// Comments
+/** Comments **/
 .comment-ctrl {
     font-size: 12px;
     display: none;
@@ -577,9 +580,7 @@ table.mod_index {
 .completion-expired .completion-expected {
     font-weight: bold;
 }
-/**
-* Tags
-*/
+/** Tags **/
 #page-tag-coursetags_edit .coursetag_edit_centered {
     position: relative;
     width: 600px;
@@ -1008,9 +1009,7 @@ body.tag .managelink {
 #page-enrol-users .user-enroller-panel .uep-search-results .user .details {
     width: 237px;
 }
-/**
-* Overide for RTL layout
-**/
+/** Overide for RTL layout **/
 .dir-rtl .headermain {
     float: right;
 }
@@ -1724,12 +1723,12 @@ table.badgeissuedinfo .bfield {
     text-align: left;
     font-style: italic;
 }
-.dir-rtl {
-    table.badgeissuedinfo .bvalue,
-    table.badgeissuedinfo .bfield {
+
+.dir-rtl table.badgeissuedinfo .bvalue,
+.dir-rtl table.badgeissuedinfo .bfield {
         text-align: right;
-    }
 }
+
 ul.badges {
     margin: 0;
     list-style: none;

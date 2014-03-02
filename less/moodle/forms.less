@@ -23,10 +23,15 @@
                     .form-control;
                 }
             }
-            .felement.fdate_selector {
+            select[multiple], select[size] {
+                height: auto;
+            }
+            .felement.fdate_selector,
+            .felement.fdate_time_selector {
                 select {
                     width: auto;
                     display: inline-block;
+                    min-width: 60px;
                 }
                 select[size],
                 select[multiple] {
