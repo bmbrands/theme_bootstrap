@@ -10,8 +10,11 @@
  * nodejs, npm, grunt-cli.
  *
  * Installation:
+ * -------------
  * node and npm: instructions at http://nodejs.org/
+ *
  * grunt-cli: `[sudo] npm install -g grunt-cli`
+ *
  * node dependencies: run `npm install` in the root directory.
  *
  *
@@ -43,6 +46,9 @@
  *               by which the swatch is identified. By default the
  *               directory these should be placed in is less/bootswatch
  *               however the user may optionally override this.
+ *               e.g. swatch files contained within a directory
+ *               located at less/bootswatch/squib will be associated
+ *               with the swatch name 'squib'.
  *
  *               Switches the current bootswatch files compiled with
  *               the theme to those of a given bootswatch, recompiles
@@ -75,14 +81,15 @@
  *
  *                    Options:
  *
- *                    --dirroot=<path>  Optional. Explicitly define the
- *                                      path to your Moodle root directory
- *                                      when your theme is not in the
- *                                      standard location.
+ *                    --dirroot=<path>  Optional. Explicitly define
+ *                                      the path to your Moodle root
+ *                                      directory when your theme is
+ *                                      not in the standard location.
  *
- * grunt bootswatch  Switch the theme less/bootswatch/custom-bootswatch.less
- *                   and less/bootswatch/custom-variables.less files for those
- *                   of a given bootswatch theme.
+ * grunt bootswatch  Switch the theme less/bootswatch/custom-bootswatch.
+ *                   less and less/bootswatch/custom-variables.less
+ *                   files for those of a given bootswatch theme using
+ *                   convention described in swatch task.
  *
  *                   Options:
  *
