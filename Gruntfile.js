@@ -81,45 +81,51 @@
  * Lower level tasks encapsulating a specific piece of functionality
  * but usually only useful when called in combination with another.
  *
- * grunt less         Compile all less files.
+ * grunt lessc           Compile and compress all less files.
  *
- * grunt less:moodle  Compile Moodle less files only.
+ * grunt lessc:moodlec   Compile and compress Moodle less files only.
  *
- * grunt less:editor  Compile editor less files only.
+ * grunt lessc:editorc   Compile and compress editor less files only.
  *
- * grunt decache      Clears the Moodle theme cache.
+ * grunt lessc           Compile and source map all less files.
  *
- *                    Options:
+ * grunt lesssm:moodlesm Compile and source map Moodle less files only.
  *
- *                    --dirroot=<path>  Optional. Explicitly define
- *                                      the path to your Moodle root
- *                                      directory when your theme is
- *                                      not in the standard location.
+ * grunt lesssm:editorsm Compile and source map editor less files only.
  *
- * grunt bootswatch  Switch the theme less/bootswatch/custom-bootswatch.
- *                   less and less/bootswatch/custom-variables.less
- *                   files for those of a given bootswatch theme using
- *                   convention described in swatch task.
+ * grunt decache         Clears the Moodle theme cache.
  *
- *                   Options:
+ *                       Options:
  *
- *                   --name=<swatchname>    Required. Name (as defined by
- *                                          the convention) of the swatch
- *                                          to activate.
+ *                       --dirroot=<path>  Optional. Explicitly define
+ *                                         the path to your Moodle root
+ *                                            directory when your theme is
+ *                                         not in the standard location.
  *
- *                   --swatches-dir=<path>  Optional. Explicitly define
- *                                          the path to the directory
- *                                          containing your bootswatches
- *                                          (default is less/bootswatch).
+ * grunt bootswatch     Switch the theme less/bootswatch/custom-bootswatch.
+ *                      less and less/bootswatch/custom-variables.less
+ *                      files for those of a given bootswatch theme using
+ *                      convention described in swatch task.
  *
- *                   --vars-only            Optional. Copy the swatch's
- *                                          variables.less file only
- *                                          and empty custom-bootswatch.less
- *                                          Due to issues with grunt's
- *                                          handling of boolean options
- *                                          if not explicitly set e.g.
- *                                          `--vars-only=true` this option
- *                                          should be passed last.
+ *                      Options:
+ *
+ *                      --name=<swatchname>    Required. Name (as defined by
+ *                                             the convention) of the swatch
+ *                                             to activate.
+ *
+ *                      --swatches-dir=<path>  Optional. Explicitly define
+ *                                             the path to the directory
+ *                                             containing your bootswatches
+ *                                             (default is less/bootswatch).
+ *
+ *                      --vars-only            Optional. Copy the swatch's
+ *                                             variables.less file only
+ *                                             and empty custom-bootswatch.less
+ *                                             Due to issues with grunt's
+ *                                             handling of boolean options
+ *                                             if not explicitly set e.g.
+ *                                             `--vars-only=true` this option
+ *                                             should be passed last.
  *
  *
  * @package theme
@@ -158,23 +164,41 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         less: {
-            // Compile moodle styles.
-            moodle: {
+            // Compile and source map for moodle styles.
+            moodlesm: {
                 options: {
-                    compress: true,
-                    sourceMap: false,
+                    compress: false,
+                    sourceMap: true,
                     outputSourceFiles: true
                 },
                 files: {
                     "style/moodle.css": "less/moodle.less",
                 }
             },
-            // Compile editor styles.
-            editor: {
+            // Compile and compress moodle styles.
+            moodlec: {
                 options: {
-                    compress: true,
-                    sourceMap: false,
+                    compress: true
+                },
+                files: {
+                    "style/moodle.css": "less/moodle.less",
+                }
+            },
+            // Compile and source map for editor styles.
+            editorsm: {
+                options: {
+                    compress: false,
+                    sourceMap: true,
                     outputSourceFiles: true
+                },
+                files: {
+                    "style/editor.css": "less/editor.less"
+                }
+            },
+            // Compile and compress editor styles.
+            editorc: {
+                options: {
+                    compress: true
                 },
                 files: {
                     "style/editor.css": "less/editor.less"
@@ -196,7 +220,7 @@ module.exports = function(grunt) {
         watch: {
             // Watch for any changes to less files and compile.
             files: ["less/**/*.less"],
-            tasks: ["less:moodle", "less:editor", "exec:decache"],
+            tasks: ["less:moodlec", "less:editorc", "exec:decache"],
             options: {
                 spawn: false
             }
@@ -269,6 +293,8 @@ module.exports = function(grunt) {
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
+    grunt.registerTask("lessc", ["less:moodlec", "less:editorc"]);
+    grunt.registerTask("lesssm", ["less:moodlesm", "less:editorsm"]);
 
     grunt.registerTask("bootswatch", _bootswatch);
     grunt.registerTask("swatch", ["bootswatch", "less", "exec:decache"]);
