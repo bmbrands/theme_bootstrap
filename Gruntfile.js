@@ -230,7 +230,7 @@ module.exports = function(grunt) {
         // Ensure the swatch directory exists.
         if (!grunt.file.isDir(swatchpath)) {
             message = "The swatch directory '" + swatchpath + "' ";
-            message += 'does not exist.';
+            message += 'does not exist or is not accessible.';
             grunt.fail.fatal(message);
         }
 
