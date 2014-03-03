@@ -4,34 +4,123 @@
  * This file configures tasks to be run by Grunt
  * http://gruntjs.com/ for the current theme.
  *
+ *
  * Requirements:
+ * -------------
  * nodejs, npm, grunt-cli.
  *
  * Installation:
+ * -------------
  * node and npm: instructions at http://nodejs.org/
+ *
  * grunt-cli: `[sudo] npm install -g grunt-cli`
+ *
  * node dependencies: run `npm install` in the root directory.
  *
+ *
  * Usage:
- * Default behaviour is to watch all .less files and compile
- * into compressed CSS when a change is detected to any and then
- * clear the theme's caches. Invoke either `grunt` or `grunt watch`
- * in the theme's root directory.
+ * ------
+ * Call tasks from the theme root directory. Default behaviour
+ * (calling only `grunt`) is to run the watch task detailed below.
  *
- * To separately compile only moodle or editor .less files
- * run `grunt less:moodle` or `grunt less:editor` respectively.
  *
- * To only clear the theme caches invoke `grunt decache` in the
- * theme's root directory.
+ * Porcelain tasks:
+ * ----------------
+ * The nice user interface intended for everyday use. Provide a
+ * high level of automation and convenience for specific use-cases.
  *
- * Options:
- * The following command-line options can be passed in conjunction
- * with calls to grunt:
+ * grunt watch   Watch the less directory (and all subdirectories)
+ *               for changes to *.less files then on detection
+ *               recompile all less files and clear the theme cache.
  *
- * --dirroot=<path>   Explicitly define the path to your Moodle
- *                    root directory when your theme is not in the
- *                    standard location. Necessary for tasks which
- *                    clear the theme cache.
+ *               Options:
+ *
+ *               --dirroot=<path>  Optional. Explicitly define the
+ *                                 path to your Moodle root directory
+ *                                 when your theme is not in the
+ *                                 standard location.
+ *
+ * grunt swatch  Task for working with bootswatch files. Expects a
+ *               convention to be followed - bootswatch files are
+ *               contained within a directory providing the name
+ *               by which the swatch is identified. By default the
+ *               directory these should be placed in is less/bootswatch
+ *               however the user may optionally override this.
+ *               e.g. swatch files contained within a directory
+ *               located at less/bootswatch/squib will be associated
+ *               with the swatch name 'squib'.
+ *
+ *               Switches the current bootswatch files compiled with
+ *               the theme to those of a given bootswatch, recompiles
+ *               less and clears the theme cache.
+ *
+ *               Options:
+ *
+ *               --name=<swatchname>    Required. Name (as defined by
+ *                                      the convention) of the swatch
+ *                                      to activate.
+ *
+ *               --swatches-dir=<path>  Optional. Explicitly define
+ *                                      the path to the directory
+ *                                      containing your bootswatches
+ *                                      (default is less/bootswatch).
+ *
+ *               --vars-only            Optional. Copy the swatch's
+ *                                      variables.less file only
+ *                                      and empty custom-bootswatch.less
+ *                                      Due to issues with grunt's
+ *                                      handling of boolean options
+ *                                      if not explicitly set e.g.
+ *                                      `--vars-only=true` this option
+ *                                      should be passed last.
+ *
+ *
+ *
+ * Plumbing tasks & targets:
+ * -------------------------
+ * Lower level tasks encapsulating a specific piece of functionality
+ * but usually only useful when called in combination with another.
+ *
+ * grunt less         Compile all less files.
+ *
+ * grunt less:moodle  Compile Moodle less files only.
+ *
+ * grunt less:editor  Compile editor less files only.
+ *
+ * grunt decache      Clears the Moodle theme cache.
+ *
+ *                    Options:
+ *
+ *                    --dirroot=<path>  Optional. Explicitly define
+ *                                      the path to your Moodle root
+ *                                      directory when your theme is
+ *                                      not in the standard location.
+ *
+ * grunt bootswatch  Switch the theme less/bootswatch/custom-bootswatch.
+ *                   less and less/bootswatch/custom-variables.less
+ *                   files for those of a given bootswatch theme using
+ *                   convention described in swatch task.
+ *
+ *                   Options:
+ *
+ *                   --name=<swatchname>    Required. Name (as defined by
+ *                                          the convention) of the swatch
+ *                                          to activate.
+ *
+ *                   --swatches-dir=<path>  Optional. Explicitly define
+ *                                          the path to the directory
+ *                                          containing your bootswatches
+ *                                          (default is less/bootswatch).
+ *
+ *                   --vars-only            Optional. Copy the swatch's
+ *                                          variables.less file only
+ *                                          and empty custom-bootswatch.less
+ *                                          Due to issues with grunt's
+ *                                          handling of boolean options
+ *                                          if not explicitly set e.g.
+ *                                          `--vars-only=true` this option
+ *                                          should be passed last.
+ *
  *
  * @package theme
  * @subpackage bootstrap
@@ -40,6 +129,15 @@
  */
 
 module.exports = function(grunt) {
+
+    // Import modules.
+    var path = require('path');
+
+    // Theme Bootstrap constants.
+    var LESSDIR         = 'less',
+        BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'),
+        BOOTSWATCHFILE  = path.join(BOOTSWATCHDIR, 'custom-bootswatch.less'),
+        BOOTSWATCHVARS  = path.join(BOOTSWATCHDIR, 'custom-variables.less');
 
     // PHP strings for exec task.
     var moodleroot = 'dirname(dirname(__DIR__))',
@@ -105,6 +203,64 @@ module.exports = function(grunt) {
         }
     });
 
+    // Local task functions.
+    var _bootswatch = function() {
+
+        var swatchname = grunt.option('name') || '',
+            swatchroot = grunt.option('swatches-dir') || '',
+            varsonly   = grunt.option('vars-only');
+
+        // Required option.
+        if ('' === swatchname) {
+            grunt.fail.fatal('You must provide a swatch name.');
+        }
+
+        var swatchpath = path.join(BOOTSWATCHDIR, swatchname);
+
+        // Allow user to explicitly define source swatches dir.
+        if ('' !== swatchroot) {
+           swatchpath = path.resolve(swatchroot);
+           swatchpath = path.join(swatchpath, swatchname);
+        }
+
+        var swatchless = path.join(swatchpath, 'bootswatch.less'),
+            varsless   = path.join(swatchpath, 'variables.less'),
+            message    = '';
+
+        // Ensure the swatch directory exists.
+        if (!grunt.file.isDir(swatchpath)) {
+            message = "The swatch directory '" + swatchpath + "' ";
+            message += 'does not exist or is not accessible.';
+            grunt.fail.fatal(message);
+        }
+
+        // Ensure the bootswatch.less file exists.
+        if (!varsonly) {
+            if (!grunt.file.isFile(swatchless)) {
+                message = "The required file '" + swatchless + "' ";
+                message += 'does not exist or is not accessible.';
+                grunt.fail.fatal(message);
+            }
+        } else {
+            grunt.file.write(BOOTSWATCHFILE, '');
+        }
+
+        // Ensure the variables.less file exists.
+        if (!grunt.file.isFile(varsless)) {
+            message = "The required file '" + varsless + "' ";
+            message += 'does not exist or is not accessible.';
+            grunt.fail.fatal(message);
+        }
+
+        // Copy in new swatch files.
+        if (!varsonly) {
+            grunt.file.copy(swatchless, BOOTSWATCHFILE);
+        }
+        grunt.file.copy(varsless, BOOTSWATCHVARS);
+        grunt.log.writeln('Swatch copied.');
+
+    };
+
     // Load contrib tasks.
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-watch");
@@ -113,4 +269,7 @@ module.exports = function(grunt) {
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
+
+    grunt.registerTask("bootswatch", _bootswatch);
+    grunt.registerTask("swatch", ["bootswatch", "less", "exec:decache"]);
 };
