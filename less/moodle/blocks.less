@@ -1,6 +1,15 @@
 .block {
     &:extend(.panel);
     &:extend(.panel-default);
+     &.invisible {
+         border-color: lighten(@panel-default-border, 5%);
+         .header {
+             background-color: lighten(@panel-default-heading-bg, 5%);
+             h2 {
+               color: lighten(@panel-default-text, 20%);
+           }
+       }
+    }
     .header {
         &:extend(.panel-default > .panel-heading);
         .panel-heading;
@@ -86,9 +95,6 @@
     display: block;
     height: 1em;
     margin-bottom: 1em;
-}
-.block.invisible {
-    .opacity(.5);
 }
 .block .block-hider-show,.block .block-hider-hide {
     cursor: pointer;
