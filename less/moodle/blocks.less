@@ -32,7 +32,7 @@
                 }
             }
             img.actionmenu {
-                width:auto;
+                width: auto;
             }
         }
     }
@@ -70,14 +70,8 @@
         .form-control;
     }
 }
-.block.hidden {
-    .content {
-        display: none;
-    }
-    .block-hider-show {
-        display: inline;
-    }
-}
+
+
 .block.list_block {
     .unlist {
         & > li {
@@ -87,21 +81,29 @@
         }
     }
 }
-.blockmovetarget,.block.beingmoved {
+
+.blockmovetarget,
+.block.beingmoved {
     border-width: 2px;
     border-style: dashed;
 }
+
 .blockmovetarget {
     display: block;
     height: 1em;
     margin-bottom: 1em;
 }
-.block .block-hider-show,.block .block-hider-hide {
+
+.block .block-hider-show,
+.block .block-hider-hide {
     cursor: pointer;
 }
-.block .block-hider-show,.block.hidden .block-hider-hide {
+
+.block .block-hider-show,
+.block.hidden .block-hider-hide {
     display: none;
 }
+
 .block_calendar_upcoming {
     .footer {
         margin-top: .5em;
@@ -127,6 +129,7 @@
         width: 100%;
     }
 }
+
 .block_rss_client {
     .content li {
         margin-bottom: 10px;
@@ -141,6 +144,7 @@
         border-top-width: 1px; // undo the style provided by the block's styles.css
     }
 }
+
 .block_news_items .content {
     .newlink {
         padding-bottom: 10px;
@@ -168,6 +172,7 @@
         padding-left: 0px;
     }
 }
+
 // Overide for RTL layout.
 .dir-rtl {
     .block .header,
