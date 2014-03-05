@@ -27,3 +27,4 @@ require_once('renderers/core_renderer.php');
 require_once('renderers/maintenance_renderer.php');
 require_once('renderers/admin_renderer.php');
 require_once('renderers/course_renderer.php');
+require_once('renderers/block_settings_renderer.php');
