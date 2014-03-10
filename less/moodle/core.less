@@ -1925,29 +1925,28 @@ img#persona_signin {
 
     .menu {
 
-        display:block;
+        display: block;
+        padding: 5px 0;
         position: absolute;
         text-align: left;
         background-color: @dropdown-bg;
+        border: 1px solid @dropdown-fallback-border; // IE8 fallback
         border: 1px solid @dropdown-border;
-        z-index:1000;
-        border-radius: 5px;
-        box-shadow: 5px 5px 20px 0 #666;
+        z-index: 1000;
+        border-radius: @border-radius-base;
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
 
         a {
             display: block;
+            white-space: nowrap;
             color: @dropdown-link-color;
-            padding:2px 1em 2px 28px;
+            padding: 3px 20px;
+            line-height: @line-height-base;
             &:hover,
             &:focus {
                 color: @dropdown-link-active-color;
                 background-color: @dropdown-link-active-bg;
-            }
-            &:first-child {
-                .border-top-radius(4px);
-            }
-            &:last-child {
-                .border-bottom-radius(4px);
+                text-decoration: none;
             }
         }
         a.hidden {
@@ -1957,7 +1956,7 @@ img#persona_signin {
             vertical-align: middle;
         }
         .iconsmall {
-            margin: 4px 4px 4px -24px;
+            margin: 4px;
         }
         > li {
             display:block;
