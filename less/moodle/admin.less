@@ -236,10 +236,6 @@ img.iconsmall {
     font-weight: normal;
 }
 
-.path-admin.dir-rtl table.rolecap tr.rolecap th {
-    text-align: right;
-}
-
 .path-admin .rolecap .hiddenrow {
     display: none;
 }
@@ -284,8 +280,9 @@ img.iconsmall {
     margin: .2em 0 .5em 0;
 }
 
+/* @noflip */
 .dir-rtl #admin-spelllanguagelist textarea,
-#page-admin-setting-editorsettingstinymce.dir-rtl .form-textarea textarea {
+.dir-rtl#page-admin-setting-editorsettingstinymce .form-textarea textarea {
     text-align: left;
     direction: ltr;
 }
@@ -295,16 +292,8 @@ img.iconsmall {
     float: right;
 }
 
-.dir-rtl .adminsettingsflags {
-    float: left;
-}
-
 .adminsettingsflags label {
     margin-right: 7px;
-}
-
-.dir-rtl .adminsettingsflags label {
-    margin-left: 7px;
 }
 
 #admin-emoticons td input {
@@ -420,18 +409,22 @@ img.iconsmall {
     padding-right: 1em;
 }
 
+
 .dir-rtl {
+    /* @noflip */
     #plugins-check .pluginupdateinfo {
         text-align: center;
         direction: ltr;
     }
 
+    /* @noflip */
     #plugins-check .rootdir,
     #plugins-check .requires-ok {
         text-align: left;
         direction: ltr;
     }
 }
+
 #plugins-control-panel .pluginicon.noicon {
     display: none;
 }
