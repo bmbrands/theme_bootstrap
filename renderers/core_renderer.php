@@ -336,4 +336,66 @@ class theme_bootstrap_core_renderer extends core_renderer {
             return html_writer::tag('li', $link);
         }
     }
+/*
+    protected function render_pix_icon(pix_icon $icon) {
+        if ($icon->attributes["alt"] === '' && $this->replace_moodle_icon($icon->pix) !== false) {
+            return $this->replace_moodle_icon($icon->pix);
+        } else {
+            return parent::render_pix_icon($icon);
+        }
+    }
+*/
+    protected function replace_moodle_icon($name) {
+        $icons = array(
+            'add' => 'plus',
+            'book' => 'book',
+            'chapter' => 'file',
+            'docs' => 'question-sign',
+            'generate' => 'gift',
+            'i/backup' => 'download',
+            't/backup' => 'download',
+            'i/checkpermissions' => 'user',
+            'i/edit' => 'pencil',
+            'i/filter' => 'filter',
+            'i/grades' => 'grades',
+            'i/group' => 'user',
+            'i/hide' => 'eye-open',
+            'i/import' => 'upload',
+            'i/info' => 'info',
+            'i/move_2d' => 'move',
+            'i/navigationitem' => 'chevron-right',
+            'i/publish' => 'globe',
+            'i/reload' => 'refresh',
+            'i/report' => 'list-alt',
+            'i/restore' => 'upload',
+            't/restore' => 'upload',
+            'i/return' => 'repeat',
+            'i/roles' => 'user',
+            'i/settings' => 'cog',
+            'i/show' => 'eye-close',
+            'i/switchrole' => 'user',
+            'i/user' => 'user',
+            'i/users' => 'user',
+            'spacer' => 'spacer',
+            't/add' => 'plus',
+            't/copy' => 'plus-sign',
+            't/delete' => 'remove',
+            't/down' => 'arrow-down',
+            't/edit' => 'edit',
+            't/editstring' => 'tag',
+            't/hide' => 'eye-open',
+            't/left' => 'arrow-left',
+            't/move' => 'resize-vertical',
+            't/right' => 'arrow-right',
+            't/show' => 'eye-close',
+            't/switch_minus' => 'minus-sign',
+            't/switch_plus' => 'plus-sign',
+            't/up' => 'arrow-up',
+        );
+        if (isset($icons[$name])) {
+            return '<span class="glyphicon glyphicon-'.$icons[$name].'"></span> ';
+        } else {
+            return false;
+        }
+    }
 }
