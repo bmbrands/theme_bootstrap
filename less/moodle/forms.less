@@ -4,8 +4,8 @@
     .fcontainer,
     fieldset {
         .fitem {
-            .make-row();
-            .form-group;
+            &:extend(.form-group);
+            &:extend(.form-horizontal .form-group);
             .fitemtitle {
                  .make-md-column(4);
                  .make-lg-column(3);
@@ -44,8 +44,8 @@
         }
     }
     fieldset.hidden {
-            .make-row();
-            .form-group;
+            &:extend(.form-group);
+            &:extend(.form-horizontal .form-group);
             > div {
                 .make-md-column(8);
                 .make-md-column-offset(4);
@@ -128,8 +128,8 @@
 // Basic admin forms layout.
 
 .form-item {
-    .make-row();
-    .form-group();
+    &:extend(.form-group);
+    &:extend(.form-horizontal .form-group);
     .form-label {
         .make-md-column(4);
         label {
@@ -199,8 +199,7 @@
     padding-right: 0.3em;
 }
 
-// Copied from /bootstrap/forms.less
-// Only right align form labels here when the columns stop stacking
+// At this width and above the form label stacks beside the control
 @media (min-width: @screen-md-min) {
     .mform .fitemtitle,
     .form-label {
