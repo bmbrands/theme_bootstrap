@@ -90,13 +90,29 @@ class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
             'status-upgrade' => 'info',
             'status-delete' => 'info',
             'status-new' => 'success',
-
         );
 
         $find = array_keys($replacements);
         $replace = array_values($replacements);
 
         return str_replace($find, $replace, $html);
+    }
 
+    public function environment_check_table($result, $environment) {
+        $html = parent::environment_check_table($result, $environment);
+
+        $replacements = array(
+            '<span class="ok">' => '<span class="label label-success">',
+            '<span class="warn">' => '<span class="label label-warning">',
+            '<span class="error">' => '<span class="label label-danger">',
+            '<p class="ok">' => '<p class="text-success">',
+            '<p class="warn">' => '<p class="text-warning">',
+            '<p class="error">' => '<p class="text-danger">',
+        );
+
+        $find = array_keys($replacements);
+        $replace = array_values($replacements);
+
+        return str_replace($find, $replace, $html);
     }
 }
