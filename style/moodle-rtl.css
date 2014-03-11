@@ -190,20 +190,27 @@ a.autolink.glossary:hover {
 
 .collapsible-actions {
   display: none;
+}
+
+.dir-rtl .collapsible-actions,
+.collapsible-actions {
   text-align: left;
 }
 
+.dir-rtl .collapsible-actions .collapseexpand,
 .collapsible-actions .collapseexpand {
   padding-right: 20px;
-  background: url([[pix:t/collapsed]]) 2px center no-repeat;
+  background-image: url([[pix:t/collapsed]]);
+  background-position: right;
+  background-repeat: no-repeat;
 }
 
 .dir-rtl .collapsible-actions .collapseexpand {
   background-image: url([[pix:t/collapsed_rtl]]);
 }
 
-.collapsible-actions .collapse-all,
-.dir-rtl .collapsible-actions .collapse-all {
+.dir-rtl .collapsible-actions .collapse-all,
+.collapsible-actions .collapse-all {
   background-image: url([[pix:t/expanded]]);
 }
 
@@ -4175,7 +4182,7 @@ span.editinstructions {
   background-repeat: no-repeat;
   padding: 2px 18px;
   margin: 3px;
-  background-position: center right;
+  background-position: right;
 }
 
 .dir-rtl .course_category_tree .category>.info>.categoryname {
@@ -16252,7 +16259,9 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 .mform fieldset.collapsible legend a.fheader {
   padding: 0 20px 0 5px;
   margin-right: -20px;
-  background: url([[pix:t/expanded]]) 2px center no-repeat;
+  background-image: url([[pix:t/expanded]]);
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 .mform fieldset.collapsed legend a.fheader {

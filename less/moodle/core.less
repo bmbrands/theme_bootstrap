@@ -127,10 +127,20 @@ a.autolink.glossary:hover {
 }
 .collapsible-actions {
     display: none;
+}
+
+// This is trickier in RTL than it needs to be,
+// due to specificity clashes because of the extra
+// .dir-rtl class and the fact that the defaultr
+// state is collapsed rather than expanded
+.dir-rtl .collapsible-actions,
+.collapsible-actions {
     text-align: right;
     .collapseexpand {
         padding-left: 20px;
-        background: url([[pix:t/collapsed]]) 2px center no-repeat;
+        background-image: url([[pix:t/collapsed]]);
+        background-position: left;
+        background-repeat: no-repeat;
     }
 }
 
@@ -138,10 +148,12 @@ a.autolink.glossary:hover {
     background-image: url([[pix:t/collapsed_rtl]]);
 }
 
-.collapsible-actions .collapse-all,
-.dir-rtl .collapsible-actions .collapse-all {
+.dir-rtl .collapsible-actions .collapse-all,
+.collapsible-actions .collapse-all {
     background-image: url([[pix:t/expanded]]);
 }
+
+
 
 .yui-overlay {
     .yui-widget-bd {
