@@ -89,13 +89,6 @@
     background: url([[pix:t/expanded]]) 2px center no-repeat;
 }
 
-.dir-rtl .mform fieldset.collapsible legend a.fheader {
-    padding: 0 20px 0 5px;
-    margin-right: -20px;
-    margin-left: 0;
-    background-position: right center;
-}
-
 .mform fieldset.collapsed legend a.fheader {
     background-image: url([[pix:t/collapsed]]);
 }
@@ -322,6 +315,7 @@ fieldset.coursesearchbox label {
 
 // I think this could be avoided (or at least tidied up) if
 // we used HTML5 input types like url, phone, email, number etc.
+/*@noflip*/
 .dir-rtl .mform .fitem .felement input[name=email],
 .dir-rtl .mform .fitem .felement input[name=email2],
 .dir-rtl .mform .fitem .felement input[name=url],
@@ -332,6 +326,7 @@ fieldset.coursesearchbox label {
     text-align: left;
     direction: ltr;
 }
+/*@noflip*/
 .dir-rtl #id_s__pathtodu,
 .dir-rtl #id_s__aspellpath,
 .dir-rtl #id_s__pathtodot,

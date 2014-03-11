@@ -84,17 +84,9 @@
     height: 525px;
     border-right: 1px solid #BBBBBB;
 }
-.dir-rtl .file-picker .fp-repo-area {
-    border-left: 1px solid #BBBBBB;
-    border-right: none;
-    float: right;
-}
 .file-picker .fp-repo-items {
     float: left;
     width: 693px;
-}
-.dir-rtl .file-picker .fp-repo-items {
-    float: right;
 }
 .file-picker .fp-navbar {
     background: #F2F2F2;
@@ -124,39 +116,6 @@
     width: 98%;
     height: 98%;
 }
-.dir-rtl .file-picker .fp-list {
-    text-align: right;
-}
-.dir-rtl .file-picker .fp-toolbar {
-    padding: 4px;
-}
-.dir-rtl .file-picker .fp-list {
-    text-align: right;
-}
-.dir-rtl .file-picker .fp-repo-name {
-    display: inline;
-}
-.dir-rtl .file-picker .fp-pathbar {
-    text-align: right;
-    display: block;
-    border-top: none;
-}
-.dir-rtl .file-picker div.bd {
-    text-align: right;
-}
-.dir-rtl #filemenu .yuimenuitemlabel {
-    text-align: right;
-}
-.dir-rtl .filepicker .yui-layout-unit-left {
-    left: 500px;
-}
-.dir-rtl .filepicker .yui-layout-unit-center {
-    left: 0;
-}
-// File Manager
-.dir-rtl .filemanager-toolbar a {
-    padding: 0;
-}
 // Repositories on fp-repo-area (File Picker only)
 .file-picker .fp-list {
     list-style-type: none;
@@ -164,10 +123,6 @@
     float: left;
     width: 100%;
     margin: 0;
-}
-.dir-rtl .file-picker .fp-list {
-    text-align: right;
-    float: left;
 }
 .file-picker .fp-list .fp-repo a {
     display: block;
@@ -185,13 +140,9 @@
 .fp-toolbar {
     float: left;
 }
-.dir-rtl .fp-toolbar {
-    float: right;
-}
 .fp-toolbar.empty {
     display: none;
 }
-.dir-rtl .fp-toolbar div.disabled,
 .fp-toolbar .disabled {
     display: none;
 }
@@ -199,12 +150,6 @@
     display: block;
     float: left;
     margin-right: 4px;
-}
-.dir-rtl .fp-toolbar div {
-    display: block;
-    float: right;
-    margin-left: 4px;
-    margin-right: 0px;
 }
 .fp-toolbar img {
     vertical-align: -15%;
@@ -231,12 +176,6 @@
 }
 .fp-repo-items fp-viewbar {
     margin: 4px;
-}
-.dir-rtl .fp-toolbar img {
-    vertical-align: -35%;
-}
-.dir-rtl .fp-viewbar {
-    float: left;
 }
 
 .fp-viewbar a {
@@ -314,22 +253,10 @@
     margin-left: 4px;
 }
 .dir-rtl .fp-pathbar .fp-path-folder {
-    background: url('[[pix:theme|fp/path_folder_rtl]]') no-repeat right top;
-    width: auto;
-    height: 12px;
-    margin-left: 4px;
-}
-.dir-rtl .fp-pathbar span {
-    display: inline-block;
-    float: right;
-    margin-left: 32px;
+    background-image: url('[[pix:theme|fp/path_folder_rtl]]');
 }
 .fp-pathbar .fp-path-folder-name {
     margin-left: 32px;
-    line-height: 20px;
-}
-.dir-rtl .fp-pathbar .fp-path-folder-name {
-    margin-right: 32px;
     line-height: 20px;
 }
 // Icon view (File Picker and File Manager)
@@ -374,9 +301,6 @@
     padding-bottom: 12px;
     min-width: 112px;
 }
-.dir-rtl .fp-iconview .fp-file {
-    float: right;
-}
 // Table view (File Picker only)
 .file-picker .yui3-datatable table {
     border: 0 solid #BBBBBB;
@@ -396,9 +320,6 @@
     background-color: #FFFFFF;
     border-left: 0 solid #FFFFFF;
 }
-.dir-rtl .file-picker .yui3-datatable-header {
-    text-align: right;
-}
 // Tree view (File Manager only)
 
 // first or middle sibling, no children
@@ -411,8 +332,6 @@
 .dir-rtl .filemanager .ygtvtn,
 .dir-rtl .file-picker .ygtvtn {
     background: url('[[pix:moodle|y/tn_rtl]]') 0 0 no-repeat;
-    width: 17px;
-    height: 22px;
 }
 // first or middle sibling, collapsable
 .file-picker .ygtvtm,
@@ -555,11 +474,6 @@ a.ygtvspacer:hover {
     text-align: center;
     line-height: 24px;
 }
-.dir-rtl .fp-icon {
-    float: right;
-    margin-left: 10px;
-    margin-right: 0;
-}
 .fp-icon img {
     max-height: 24px;
     max-width: 24px;
@@ -567,10 +481,6 @@ a.ygtvspacer:hover {
 }
 .fp-filename {
     padding-right: 10px;
-}
-.dir-rtl .fp-filename {
-    padding-left: 10px;
-    padding-right: 0;
 }
 // Repositories Login on fp-content (File Picker only)
 
@@ -963,16 +873,6 @@ a.ygtvspacer:hover {
     margin-right: -20px;
     top: 6px;
 }
-.dir-rtl .filemanager .fp-iconview .fp-folder.fp-hascontextmenu .fp-contextmenu {
-    left: 7px;
-    right: inherit;
-}
-.dir-rtl .filemanager .fp-treeview .fp-folder.fp-hascontextmenu .fp-contextmenu,
-.dir-rtl .filemanager .fp-tableview .fp-folder.fp-hascontextmenu .fp-contextmenu {
-    left: inherit;
-    right: 16px;
-    margin-right: 0;
-}
 
 // Drag and drop support (filemanager and filepicker form elements)
 .filepicker-filelist .filepicker-container,
@@ -1140,9 +1040,6 @@ a.ygtvspacer:hover {
     text-align: left;
     margin: 20px;
 }
-.dir-rtl .filemanager .fp-mkdir-dlg p {
-    text-align: right;
-}
 // Confirm dialogue for delete (File Manager only)
 .filemanager.fp-dlg {
     text-align: center;
@@ -1160,18 +1057,4 @@ a.ygtvspacer:hover {
 // file picker search dialog
 .file-picker div.bd {
     text-align: left;
-}
-// RTL Overrides
-.dir-rtl .file-picker div.bd,
-.dir-rtl .file-picker .fp-pathbar,
-.dir-rtl .file-picker .fp-list,
-.dir-rtl #filemenu .yuimenuitemlabel,
-.dir-rtl .filemanager-container .yui3-skin-sam .yui3-datatable-header {
-    text-align: right;
-}
-.dir-rtl .filepicker .yui-layout-unit-left {
-    left: 500px;
-}
-.dir-rtl .filepicker .yui-layout-unit-center {
-    left: 0;
 }
