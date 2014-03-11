@@ -4830,7 +4830,6 @@ span.editinstructions {
   border-radius: 8px;
   border: 1px solid #fff;
   display: inline-block;
-  -webkit-box-shadow: -5px 5px 20px 0 #666;
   box-shadow: -5px 5px 20px 0 #666;
 }
 
@@ -5044,7 +5043,9 @@ span.editinstructions {
 }
 
 .fp-pathbar .fp-path-folder {
-  background: url('[[pix:theme|fp/path_folder]]') no-repeat 0 0;
+  background-image: url('[[pix:theme|fp/path_folder]]');
+  background-position: right;
+  background-repeat: no-repeat;
   width: 27px;
   height: 12px;
   margin-right: 4px;
@@ -5131,7 +5132,9 @@ span.editinstructions {
 
 .file-picker .ygtvtn,
 .filemanager .ygtvtn {
-  background: url('[[pix:moodle|y/tn]]') 0 0 no-repeat;
+  background-image: url('[[pix:moodle|y/tn]]');
+  background-position: right;
+  background-repeat: no-repeat;
   width: 17px;
   height: 22px;
 }
@@ -5143,7 +5146,9 @@ span.editinstructions {
 
 .file-picker .ygtvtm,
 .filemanager .ygtvtm {
-  background: url('[[pix:moodle|y/tm]]') 0 10px no-repeat;
+  background-image: url('[[pix:moodle|y/tm]]');
+  background-position: right 10px;
+  background-repeat: no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -5151,7 +5156,9 @@ span.editinstructions {
 
 .file-picker .ygtvtmh,
 .filemanager .ygtvtmh {
-  background: url('[[pix:moodle|y/tm]]') 0 10px no-repeat;
+  background-image: url('[[pix:moodle|y/tm]]');
+  background-position: right 10px;
+  background-repeat: no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -5159,7 +5166,9 @@ span.editinstructions {
 
 .file-picker .ygtvtp,
 .filemanager .ygtvtp {
-  background: url('[[pix:moodle|y/tp]]') 0 10px no-repeat;
+  background-image: url('[[pix:moodle|y/tp]]');
+  background-position: right 10px;
+  background-repeat: no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -5172,7 +5181,9 @@ span.editinstructions {
 
 .file-picker .ygtvtph,
 .filemanager .ygtvtph {
-  background: url('[[pix:moodle|y/tp]]') 0 10px no-repeat;
+  background-image: url('[[pix:moodle|y/tp]]');
+  background-position: right 10px;
+  background-repeat: no-repeat;
   width: 13px;
   height: 22px;
   cursor: pointer;
@@ -5185,7 +5196,9 @@ span.editinstructions {
 
 .file-picker .ygtvln,
 .filemanager .ygtvln {
-  background: url('[[pix:moodle|y/ln]]') 0 0 no-repeat;
+  background-image: url('[[pix:moodle|y/ln]]');
+  background-position: right;
+  background-repeat: no-repeat;
   width: 17px;
   height: 22px;
 }
@@ -5197,7 +5210,9 @@ span.editinstructions {
 
 .file-picker .ygtvlm,
 .filemanager .ygtvlm {
-  background: url('[[pix:moodle|y/lm]]') 0 10px no-repeat;
+  background-image: url('[[pix:moodle|y/lm]]');
+  background-position: right 10px;
+  background-repeat: no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -5205,7 +5220,9 @@ span.editinstructions {
 
 .file-picker .ygtvlmh,
 .filemanager .ygtvlmh {
-  background: url('[[pix:moodle|y/lm]]') 0 10px no-repeat;
+  background-image: url('[[pix:moodle|y/lm]]');
+  background-position: right 10px;
+  background-repeate: no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -5213,7 +5230,9 @@ span.editinstructions {
 
 .file-picker .ygtvlp,
 .filemanager .ygtvlp {
-  background: url('[[pix:moodle|y/lp]]') 0 10px no-repeat;
+  background-image: url('[[pix:moodle|y/lp]]');
+  background-position: right 10px;
+  background-repeat: no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -5226,7 +5245,9 @@ span.editinstructions {
 
 .file-picker .ygtvlph,
 .filemanager .ygtvlph {
-  background: url('[[pix:moodle|y/lp]]') 0 10px no-repeat;
+  background-image: url('[[pix:moodle|y/lp]]');
+  background-position: right 10px;
+  background-repeat: no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
