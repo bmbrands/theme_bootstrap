@@ -28,7 +28,11 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->name = 'bootstrap';
 $THEME->parents = array();
-$THEME->sheets = array('moodle');
+if ('ltr' === get_string('thisdirection', 'langconfig')) {
+    $THEME->sheets = array('moodle');
+} else {
+    $THEME->sheets = array('moodle-rtl', 'tinymce-rtl', 'yui2-rtl', 'forms-rtl');
+}
 $THEME->supportscssoptimisation = false;
 
 $THEME->editor_sheets = array('editor');
@@ -39,7 +43,7 @@ $THEME->plugins_exclude_sheets = array(
         'search_forums'
     ),
     'tool' => array(
-    	'customlang'
+        'customlang'
     ),
 );
 
@@ -169,8 +173,3 @@ if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
 }
 
 $THEME->hidefromselector = false;
-
-$THEME->blockrtlmanipulations = array(
-    'side-pre' => 'side-post',
-    'side-post' => 'side-pre'
-);
