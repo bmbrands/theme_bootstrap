@@ -124,10 +124,11 @@
  *                   --none                 Optional. Reset bootswatch to
  *                                          plain Bootstrap (no swatch).
  *
- * grunt replace   Run all text replace tasks.
+ * grunt replace                  Run all text replace tasks.
  *
  * grunt replace:rtl_flip_images  Add _rtl to the filenames of certain
- *                 images that require flipping for use with RTL languages.
+ *                                images that require flipping for use
+ *                                with RTL languages.
  *
  * @package theme
  * @subpackage bootstrap
