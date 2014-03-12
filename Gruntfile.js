@@ -96,10 +96,10 @@
  *                                      directory when your theme is
  *                                      not in the standard location.
  *
- * grunt bootswatch  Switch the theme less/bootswatch/custom-bootswatch.
- *                   less and less/bootswatch/custom-variables.less
- *                   files for those of a given bootswatch theme using
- *                   convention described in swatch task.
+ * grunt bootswatch  Switch the theme less/bootswatch/custom-bootswatch.less
+ *                   and less/bootswatch/custom-variables.less files for
+ *                   those of a given bootswatch theme using convention
+ *                   described in swatch task.
  *
  *                   Options:
  *
@@ -120,6 +120,9 @@
  *                                          if not explicitly set e.g.
  *                                          `--vars-only=true` this option
  *                                          should be passed last.
+ *
+ *                   --none                 Optional. Reset bootswatch to
+ *                                          plain Bootstrap (no swatch).
  *
  *
  * @package theme
@@ -208,7 +211,17 @@ module.exports = function(grunt) {
 
         var swatchname = grunt.option('name') || '',
             swatchroot = grunt.option('swatches-dir') || '',
-            varsonly   = grunt.option('vars-only');
+            varsonly   = grunt.option('vars-only'),
+            noswatch   = grunt.option('none'),
+            list       = grunt.option('list');
+
+        // Reset bootwatches for default boootstrap.
+        if (noswatch) {
+            grunt.file.write(BOOTSWATCHFILE, '');
+            grunt.file.write(BOOTSWATCHVARS, '');
+            grunt.log.writeln('Cleared bootswatch.');
+            return;
+        }
 
         // Required option.
         if ('' === swatchname) {
