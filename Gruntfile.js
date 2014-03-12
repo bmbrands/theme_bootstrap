@@ -236,12 +236,6 @@ module.exports = function(grunt) {
            swatchpath = path.join(swatchpath, swatchname);
         }
 
-        // List avaliable bootswatches.
-        if (list) {
-            var swatchdirs = ;
-            return;
-        }
-
         var swatchless = path.join(swatchpath, 'bootswatch.less'),
             varsless   = path.join(swatchpath, 'variables.less'),
             message    = '';
