@@ -121,7 +121,7 @@
  *                                          `--vars-only=true` this option
  *                                          should be passed last.
  *
- *                   --reset                Optional. Reset bootswatch to
+ *                   --none                 Optional. Reset bootswatch to
  *                                          plain Bootstrap (no swatch).
  *
  *
@@ -212,14 +212,14 @@ module.exports = function(grunt) {
         var swatchname = grunt.option('name') || '',
             swatchroot = grunt.option('swatches-dir') || '',
             varsonly   = grunt.option('vars-only'),
-            reset      = grunt.option('reset'),
+            noswatch   = grunt.option('none'),
             list       = grunt.option('list');
 
         // Reset bootwatches for default boootstrap.
-        if (reset) {
+        if (noswatch) {
             grunt.file.write(BOOTSWATCHFILE, '');
             grunt.file.write(BOOTSWATCHVARS, '');
-            grunt.log.writeln('Bootswatch reset.');
+            grunt.log.writeln('Cleared bootswatch.');
             return;
         }
 
