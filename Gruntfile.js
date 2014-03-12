@@ -245,8 +245,7 @@ module.exports = function(grunt) {
         var swatchname = grunt.option('name') || '',
             swatchroot = grunt.option('swatches-dir') || '',
             varsonly   = grunt.option('vars-only'),
-            noswatch   = grunt.option('none'),
-            list       = grunt.option('list');
+            noswatch   = grunt.option('none');
 
         // Reset bootwatches for default boootstrap.
         if (noswatch) {
