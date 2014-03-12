@@ -124,6 +124,10 @@
  *                   --none                 Optional. Reset bootswatch to
  *                                          plain Bootstrap (no swatch).
  *
+ * grunt replace   Run all text replace tasks.
+ *
+ * grunt replace:rtl_flip_images  Add _rtl to the filenames of certain
+ *                 images that require flipping for use with RTL languages.
  *
  * @package theme
  * @subpackage bootstrap
@@ -203,6 +207,34 @@ module.exports = function(grunt) {
             options: {
                 spawn: false
             }
+        },
+        replace: {
+            rtl_flip_images: {
+                src: ['style/moodle-rtl.css'],
+                    overwrite: true,
+                    replacements: [{
+                        from: '[[pix:theme|fp/path_folder]]',
+                        to: '[[pix:theme|fp/path_folder_rtl]]'
+                    }, {
+                        from: '[[pix:t/collapsed]]',
+                        to: '[[pix:t/collapsed_rtl]]'
+                    }, {
+                        from: '[[pix:t/collapsed_empty]]',
+                        to: '[[pix:t/collapsed_empty_rtl]]'
+                    }, {
+                        from: '[[pix:y/tn]]',
+                        to: '[[pix:y/tn_rtl]]'
+                    }, {
+                        from: '[[pix:y/tp]]',
+                        to: '[[pix:y/tp_rtl]]'
+                    }, {
+                        from: '[[pix:y/ln]]',
+                        to: '[[pix:y/ln_rtl]]'
+                    }, {
+                        from: '[[pix:y/lp]]',
+                        to: '[[pix:y/lp_rtl]]'
+                    }]
+            }
         }
     });
 
@@ -278,6 +310,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-exec");
+    grunt.loadNpmTasks("grunt-text-replace");
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);

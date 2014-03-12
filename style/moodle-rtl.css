@@ -192,12 +192,10 @@ a.autolink.glossary:hover {
   display: none;
 }
 
-.dir-rtl .collapsible-actions,
 .collapsible-actions {
   text-align: left;
 }
 
-.dir-rtl .collapsible-actions .collapseexpand,
 .collapsible-actions .collapseexpand {
   padding-right: 20px;
   background-image: url([[pix:t/collapsed]]);
@@ -205,11 +203,6 @@ a.autolink.glossary:hover {
   background-repeat: no-repeat;
 }
 
-.dir-rtl .collapsible-actions .collapseexpand {
-  background-image: url([[pix:t/collapsed_rtl]]);
-}
-
-.dir-rtl .collapsible-actions .collapse-all,
 .collapsible-actions .collapse-all {
   background-image: url([[pix:t/expanded]]);
 }
@@ -1043,7 +1036,7 @@ body.tag .managelink {
 }
 
 .smartselect .smartselect_submenuitem {
-  background-image: url([[pix:moodle|t/collapsed]]);
+  background-image: url([[pix:t/collapsed]]);
   background-repeat: no-repeat;
   background-position: right 100%;
 }
@@ -2581,12 +2574,6 @@ img.iconsmall {
   margin: .2em 0 .5em 0;
 }
 
-.dir-rtl #admin-spelllanguagelist textarea,
-.dir-rtl#page-admin-setting-editorsettingstinymce .form-textarea textarea {
-  text-align: right;
-  direction: rtl;
-}
-
 .adminsettingsflags {
   float: left;
 }
@@ -2705,17 +2692,6 @@ img.iconsmall {
 #plugins-check .status .pluginupdateinfo span,
 #plugins-check .status .pluginupdateinfo a {
   padding-left: 1em;
-}
-
-.dir-rtl #plugins-check .pluginupdateinfo {
-  text-align: center;
-  direction: rtl;
-}
-
-.dir-rtl #plugins-check .rootdir,
-.dir-rtl #plugins-check .requires-ok {
-  text-align: right;
-  direction: rtl;
 }
 
 #plugins-control-panel .pluginicon.noicon {
@@ -4178,29 +4154,21 @@ span.editinstructions {
 }
 
 .course_category_tree .category>.info>.categoryname {
-  background-image: url([[pix:moodle|t/collapsed_empty]]);
+  background-image: url([[pix:t/collapsed_empty]]);
   background-repeat: no-repeat;
   padding: 2px 18px;
   margin: 3px;
   background-position: right;
 }
 
-.dir-rtl .course_category_tree .category>.info>.categoryname {
-  background-image: url([[pix:moodle|t/collapsed_empty_rtl]]);
-}
-
 .course_category_tree .category.with_children>.info>.categoryname {
-  background-image: url([[pix:moodle|t/expanded]]);
+  background-image: url([[pix:t/expanded]]);
   cursor: pointer;
   line-height: 30px;
 }
 
 .course_category_tree .category.with_children.collapsed>.info>.categoryname {
-  background-image: url([[pix:moodle|t/collapsed]]);
-}
-
-.dir-rtl .course_category_tree .category.with_children.collapsed>.info>.categoryname {
-  background-image: url([[pix:moodle|t/collapsed_rtl]]);
+  background-image: url([[pix:t/collapsed]]);
 }
 
 .course_category_tree .category.collapsed>.content {
@@ -5051,10 +5019,6 @@ span.editinstructions {
   margin-right: 4px;
 }
 
-.dir-rtl .fp-pathbar .fp-path-folder {
-  background-image: url('[[pix:theme|fp/path_folder_rtl]]');
-}
-
 .fp-pathbar .fp-path-folder-name {
   margin-right: 32px;
   line-height: 20px;
@@ -5132,21 +5096,16 @@ span.editinstructions {
 
 .file-picker .ygtvtn,
 .filemanager .ygtvtn {
-  background-image: url('[[pix:moodle|y/tn]]');
+  background-image: url('[[pix:y/tn]]');
   background-position: right;
   background-repeat: no-repeat;
   width: 17px;
   height: 22px;
 }
 
-.dir-rtl .filemanager .ygtvtn,
-.dir-rtl .file-picker .ygtvtn {
-  background-image: url('[[pix:moodle|y/tn_rtl]]');
-}
-
 .file-picker .ygtvtm,
 .filemanager .ygtvtm {
-  background-image: url('[[pix:moodle|y/tm]]');
+  background-image: url('[[pix:y/tm]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5156,7 +5115,7 @@ span.editinstructions {
 
 .file-picker .ygtvtmh,
 .filemanager .ygtvtmh {
-  background-image: url('[[pix:moodle|y/tm]]');
+  background-image: url('[[pix:y/tm]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5166,7 +5125,7 @@ span.editinstructions {
 
 .file-picker .ygtvtp,
 .filemanager .ygtvtp {
-  background-image: url('[[pix:moodle|y/tp]]');
+  background-image: url('[[pix:y/tp]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5174,14 +5133,9 @@ span.editinstructions {
   cursor: pointer;
 }
 
-.dir-rtl .file-picker .ygtvtp,
-.dir-rtl .filemanager .ygtvtp {
-  background-image: url('[[pix:moodle|y/tp_rtl]]');
-}
-
 .file-picker .ygtvtph,
 .filemanager .ygtvtph {
-  background-image: url('[[pix:moodle|y/tp]]');
+  background-image: url('[[pix:y/tp]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5189,28 +5143,18 @@ span.editinstructions {
   cursor: pointer;
 }
 
-.dir-rtl .file-picker .ygtvtph,
-.dir-rtl .filemanager .ygtvtph {
-  background-image: url('[[pix:moodle|y/tp_rtl]]');
-}
-
 .file-picker .ygtvln,
 .filemanager .ygtvln {
-  background-image: url('[[pix:moodle|y/ln]]');
+  background-image: url('[[pix:y/ln]]');
   background-position: right;
   background-repeat: no-repeat;
   width: 17px;
   height: 22px;
 }
 
-.dir-rtl .file-picker .ygtvln,
-.dir-rtl .filemanager .ygtvln {
-  background-image: url('[[pix:moodle|y/ln_rtl]]');
-}
-
 .file-picker .ygtvlm,
 .filemanager .ygtvlm {
-  background-image: url('[[pix:moodle|y/lm]]');
+  background-image: url('[[pix:y/lm]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5220,7 +5164,7 @@ span.editinstructions {
 
 .file-picker .ygtvlmh,
 .filemanager .ygtvlmh {
-  background-image: url('[[pix:moodle|y/lm]]');
+  background-image: url('[[pix:y/lm]]');
   background-position: right 10px;
   background-repeate: no-repeat;
   width: 13px;
@@ -5230,22 +5174,17 @@ span.editinstructions {
 
 .file-picker .ygtvlp,
 .filemanager .ygtvlp {
-  background-image: url('[[pix:moodle|y/lp]]');
+  background-image: url('[[pix:y/lp]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
-}
-
-.dir-rtl .file-picker .ygtvlp,
-.dir-rtl .filemanager .ygtvlp {
-  background-image: url('[[pix:moodle|y/lp_rtl]]');
 }
 
 .file-picker .ygtvlph,
 .filemanager .ygtvlph {
-  background-image: url('[[pix:moodle|y/lp]]');
+  background-image: url('[[pix:y/lp]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5253,21 +5192,16 @@ span.editinstructions {
   cursor: pointer;
 }
 
-.dir-rtl .file-picker .ygtvlph,
-.dir-rtl .filemanager .ygtvlph {
-  background-image: url('[[pix:moodle|y/lp_rtl]]');
-}
-
 .file-picker .ygtvloading,
 .filemanager .ygtvloading {
-  background: transparent url('[[pix:moodle|y/loading]]') 0 0 no-repeat;
+  background: transparent url('[[pix:y/loading]]') 0 0 no-repeat;
   width: 16px;
   height: 22px;
 }
 
 .file-picker .ygtvdepthcell,
 .filemanager .ygtvdepthcell {
-  background: url('[[pix:moodle|y/vline]]') 0 0 no-repeat;
+  background: url('[[pix:y/vline]]') 0 0 no-repeat;
   width: 17px;
   height: 32px;
 }
@@ -16287,10 +16221,6 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 
 .mform fieldset.collapsed legend a.fheader {
   background-image: url([[pix:t/collapsed]]);
-}
-
-.dir-rtl .mform fieldset.collapsed legend a.fheader {
-  background-image: url([[pix:t/collapsed_rtl]]);
 }
 
 .jsenabled .mform .collapsed .fcontainer {

@@ -13,6 +13,22 @@
     direction: ltr;
 }
 
+.dir-rtl #admin-spelllanguagelist textarea,
+.dir-rtl#page-admin-setting-editorsettingstinymce .form-textarea textarea {
+    text-align: left;
+    direction: ltr;
+}
+
+.dir-rtl #plugins-check .pluginupdateinfo {
+    direction: ltr;
+}
+
+#plugins-check .rootdir,
+#plugins-check .requires-ok {
+    text-align: left;
+    direction: ltr;
+}
+
 .dir-rtl #id_s__pathtodu,
 .dir-rtl #id_s__aspellpath,
 .dir-rtl #id_s__pathtodot,

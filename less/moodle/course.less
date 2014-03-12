@@ -431,12 +431,6 @@ span.editinstructions {
 .coursebox.remotehost > .info > .categoryname a {
     background-image:url([[pix:moodle|i/mnethost]]);
 }
-.coursebox .content .teachers,
-.coursebox .content .courseimage,
-.coursebox .content .coursefile {
-
-}
-
 
 .coursebox .content .teachers li {
     list-style-type:none;
@@ -520,25 +514,19 @@ span.editinstructions {
 }
 
 .course_category_tree .category > .info > .categoryname{
-    background-image: url([[pix:moodle|t/collapsed_empty]]);
+    background-image: url([[pix:t/collapsed_empty]]);
     background-repeat: no-repeat;
     padding: 2px 18px;
     margin: 3px;
     background-position: left;
 }
-.dir-rtl .course_category_tree .category > .info > .categoryname {
-    background-image: url([[pix:moodle|t/collapsed_empty_rtl]]);
-}
 .course_category_tree .category.with_children > .info > .categoryname {
-    background-image: url([[pix:moodle|t/expanded]]);
+    background-image: url([[pix:t/expanded]]);
     cursor: pointer;
     line-height: 30px;
 }
 .course_category_tree .category.with_children.collapsed >.info > .categoryname {
-    background-image: url([[pix:moodle|t/collapsed]]);
-}
-.dir-rtl .course_category_tree .category.with_children.collapsed > .info > .categoryname {
-    background-image: url([[pix:moodle|t/collapsed_rtl]]);
+    background-image: url([[pix:t/collapsed]]);
 }
 .course_category_tree .category.collapsed>.content {
     display: none;

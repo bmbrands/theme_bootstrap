@@ -129,11 +129,6 @@ a.autolink.glossary:hover {
     display: none;
 }
 
-// This is trickier in RTL than it needs to be,
-// due to specificity clashes because of the extra
-// .dir-rtl class and the fact that the defaultr
-// state is collapsed rather than expanded
-.dir-rtl .collapsible-actions,
 .collapsible-actions {
     text-align: right;
     .collapseexpand {
@@ -144,16 +139,9 @@ a.autolink.glossary:hover {
     }
 }
 
-.dir-rtl .collapsible-actions .collapseexpand {
-    background-image: url([[pix:t/collapsed_rtl]]);
-}
-
-.dir-rtl .collapsible-actions .collapse-all,
 .collapsible-actions .collapse-all {
     background-image: url([[pix:t/expanded]]);
 }
-
-
 
 .yui-overlay {
     .yui-widget-bd {
@@ -832,7 +820,7 @@ body.tag .managelink {
     color: inherit;
 }
 .smartselect .smartselect_submenuitem {
-    background-image: url([[pix:moodle|t/collapsed]]);
+    background-image: url([[pix:t/collapsed]]);
     background-repeat: no-repeat;
     background-position: 100%;
 }
