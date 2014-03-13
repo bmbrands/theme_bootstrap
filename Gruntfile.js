@@ -172,11 +172,11 @@ module.exports = function(grunt) {
         moodleroot = 'realpath("' + dirrootopt + '")';
     }
 
-    configfile = moodleroot + ' . "/config.php"';
+    configfile = moodleroot + " . '/config.php'";
 
-    decachephp += "define(\"CLI_SCRIPT\", true);";
-    decachephp += "require(" + configfile  + ");";
-    decachephp += "theme_reset_all_caches();";
+    decachephp += 'define(\'CLI_SCRIPT\', true);';
+    decachephp += 'require(' + configfile  + ');';
+    decachephp += 'theme_reset_all_caches();';
 
     grunt.initConfig({
         less: {
@@ -205,7 +205,7 @@ module.exports = function(grunt) {
         },
         exec: {
             decache: {
-                cmd: "php -r '" + decachephp + "'",
+                cmd: 'php -r "' + decachephp + '"',
                 callback: function(error, stdout, stderror) {
                     // exec will output error messages
                     // just add one to confirm success.
