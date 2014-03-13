@@ -7,23 +7,7 @@
     color: #555555;
     text-decoration: none;
 }
-.filemanager input[type="text"],
-.file-picker input[type="text"] {
-    width: 265px;
-}
-.filemanager .fp-license,
-.file-picker .fp-setlicense {
-    td {
-        max-width: 265px;
-    }
-    select {
-        max-width: 100%;
-    }
-}
 .fp-content-center {
-    height: 100%;
-    width: 100%;
-    display: table-cell;
     vertical-align: middle;
 }
 .fp-content-hidden {
@@ -97,8 +81,7 @@
 }
 
 .file-picker .fp-content {
-    background: #FFFFFF;
-    clear: both;
+    padding-top: 15px;
     overflow: auto;
     height: 452px;
 }
@@ -455,40 +438,6 @@ a.ygtvspacer:hover {
     padding-right: 10px;
 }
 
-// Repositories Login on fp-content (File Picker only)
-.file-picker .fp-login-form {
-    height: 100%;
-    width: 100%;
-    display: table;
-}
-.file-picker .fp-login-form table {
-    margin: 0 auto;
-}
-.file-picker .fp-login-form p {
-    text-align: center;
-    margin-top: 3em;
-}
-.file-picker .fp-login-form .fp-login-input label {
-    text-align: right;
-    display: block;
-}
-.file-picker .fp-login-form .fp-login-input .input {
-    text-align: left;
-}
-.file-picker .fp-login-form input[type="checkbox"]{
-    width: 15px;
-    height: 15px;
-}
-
-// Upload on fp-content (File Picker only)
-.file-picker .fp-upload-form {
-    height: 100%;
-    width: 100%;
-    display: table;
-}
-.file-picker .fp-upload-form table {
-    margin: 0 auto;
-}
 // File exists dialogue on Upload (File Picker only)
 .file-picker.fp-dlg {
     text-align: center;
@@ -520,16 +469,9 @@ a.ygtvspacer:hover {
 
 // Error on fp-content (File Picker only)
 .file-picker .fp-content-error {
-    height: 100%;
-    width: 100%;
-    display: table;
     text-align: center;
 }
 .file-picker .fp-content-error .fp-error {
-    height: 100%;
-    width: 100%;
-    display: table-cell;
-    vertical-align: middle;
     padding: 40px 20px 10px 20px;
     font-size: 12px;
 }
@@ -1035,3 +977,15 @@ a.ygtvspacer:hover {
 .file-picker div.bd {
     text-align: left;
 }
+
+.fp-formset .control-label {
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+}
+.fp-formset .controls {
+    input[type="text"],
+    select {
+        &:extend(.form-control);
+    }
+}
+
