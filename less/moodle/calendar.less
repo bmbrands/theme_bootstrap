@@ -138,12 +138,29 @@
     font-size: 0.8em;
 }
 .block {
+    .calendar_filters {
+        ul {
+            list-style: none;
+            margin: 0;
+        }
+        li {
+            margin-bottom: .2em;
+            span {
+                img {
+                    padding: 0 .2em;
+                }
+            }
+        }
+        .eventname {
+            padding-left: .2em;
+        }
+    }
     .minicalendar {
         max-width: 280px;
         margin-left: auto;
         margin-right: auto;
         td.weekend {
-            color: #A00;
+            color: @brand-warning;
         }
         .calendar-controls {
             .previous {
@@ -165,29 +182,14 @@
                 width: 12%;
             }
         }
-        .calendar_filters {
-            ul {
-                list-style: none;
-                margin: 0;
-            }
-            li {
-                margin-bottom: .2em;
-                span {
-                    img {
-                        padding: 0 .2em;
-                    }
-                }
-            }
-            .eventname {
-                padding-left: .2em;
-            }
-        }
+
         .content {
             h3.eventskey {
                 margin-top: 0.5em;
             }
         }
         .calendar-event-panel {
+            border: 0;
             .yui3-overlay-content {
                 .popover;
                 display: block;
