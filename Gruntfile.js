@@ -31,7 +31,17 @@
  *
  * grunt watch   Watch the less directory (and all subdirectories)
  *               for changes to *.less files then on detection
- *               recompile all less files and clear the theme cache.
+ *               run 'grunt compile'
+ *
+ *               Options:
+ *
+ *               --dirroot=<path>  Optional. Explicitly define the
+ *                                 path to your Moodle root directory
+ *                                 when your theme is not in the
+ *                                 standard location.
+ * grunt compile Run the .less files through the compiler, create the
+ *               RTL version of the output, then run decache so that 
+ *               the results can be seen on the next page load.
  *
  *               Options:
  *
@@ -126,9 +136,13 @@
  *
  * grunt replace                  Run all text replace tasks.
  *
- * grunt replace:rtl_flip_images  Add _rtl to the filenames of certain
- *                                images that require flipping for use
- *                                with RTL languages.
+ * grunt replace:rtl_images  Add _rtl to the filenames of certain images
+ *                           that require flipping for use with RTL
+ *                           languages.
+ *
+ * grunt cssflip    Create moodle-rtl.css by flipping the direction styles
+ *                  in moodle.css.
+ *
  *
  * @package theme
  * @subpackage bootstrap
@@ -204,13 +218,20 @@ module.exports = function(grunt) {
         watch: {
             // Watch for any changes to less files and compile.
             files: ["less/**/*.less"],
-            tasks: ["less:moodle", "less:editor", "exec:decache"],
+            tasks: ["compile"],
             options: {
                 spawn: false
             }
         },
+        cssflip: {
+            rtl: {
+                files: {
+                    'style/moodle-rtl.css': 'style/moodle.css'
+                }
+            }
+        },
         replace: {
-            rtl_flip_images: {
+            rtl_images: {
                 src: ['style/moodle-rtl.css'],
                     overwrite: true,
                     replacements: [{
@@ -311,11 +332,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-exec");
     grunt.loadNpmTasks("grunt-text-replace");
+    grunt.loadNpmTasks("grunt-css-flip");
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
     grunt.registerTask("bootswatch", _bootswatch);
-    grunt.registerTask("swatch", ["bootswatch", "less", "exec:decache"]);
+    grunt.registerTask("compile", ["less", "cssflip", "replace:rtl_images", "decache"]);
+    grunt.registerTask("swatch", ["bootswatch", "compile"]);
 };
