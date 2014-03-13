@@ -350,18 +350,15 @@ span.editinstructions {
 
 /* Course drag and drop upload styles */
 #dndupload-status {
-    width: 40%;
-    margin: 0 15%;
-    padding: 6px;
-    border: 1px solid @state-info-border;
-    text-align: center;
-    background: @state-info-bg;
-    color: @state-info-text;
     position: absolute;
-    z-index: 9999;
-    box-shadow: 2px 2px 5px 1px #ccc;
-    .border-bottom-radius(8px);
-    z-index: 0;
+    top: @navbar-height + 2px;
+    .alert;
+    .alert-info;
+    width: 40%;
+    margin: 0 30%;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    .border-top-radius(0);
+    z-index: -1; // to slide under navbar
 }
 .dndupload-preview {
     color: #909090;
