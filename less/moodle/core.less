@@ -65,6 +65,13 @@ a.dimmed_text:visited,
 .dimmed_category a {
     .text-muted
 }
+a.disabled:hover,
+a.disabled {
+    text-decoration: none;
+    cursor: default;
+    font-style: italic;
+    .text-muted;
+}
 .activity.label .dimmed_text {
     .opacity(.5)
 }
@@ -267,16 +274,6 @@ img.icon-post {
 img.uihint {
     cursor: help;
 }
-#addmembersform table {
-    margin-left: auto;
-    margin-right: auto;
-}
-.flexible th {
-    white-space: nowrap;
-}
-table.flexible .emptyrow {
-    display: none;
-}
 img.emoticon {
     vertical-align: middle;
     width: 15px;
@@ -305,24 +302,15 @@ form.popupform div {
 .no-overflow > .generaltable {
     margin-bottom: 0;
 }
-/** Accessibility features
-
-    Accessibility: text 'seen' by screen readers but not visual users.
-**/
-.accesshide {
-    .sr-only
-}
+/** Accessibility features **/
 span.hide,
 div.hide {
     display: none;
 }
-/** Accessibility: Skip block link, for keyboard-only users. **/
+.accesshide,
 a.skip-block,
 a.skip {
-    position: absolute;
-    top: -1000em;
-    font-size: 0.85em;
-    text-decoration: none;
+    &:extend(.sr-only); // screen-reader-only
 }
 a.skip-block:focus,
 a.skip-block:active,
@@ -424,9 +412,6 @@ a.skip:active {
 /** Modules **/
 .mod_introbox {
     padding: 10px;
-}
-table.mod_index {
-    width: 100%;
 }
 
 /** Comments **/
@@ -547,228 +532,6 @@ table.mod_index {
 .completion-expired .completion-expected {
     font-weight: bold;
 }
-/** Tags **/
-#page-tag-coursetags_edit .coursetag_edit_centered {
-    position: relative;
-    width: 600px;
-    margin: 20px auto;
-}
-#page-tag-coursetags_edit .coursetag_edit_row {
-    clear: both;
-}
-#page-tag-coursetags_edit .coursetag_edit_row .coursetag_edit_left {
-    float: left;
-    width: 50%;
-    text-align: right;
-}
-#page-tag-coursetags_edit .coursetag_edit_row .coursetag_edit_right {
-    margin-left: 50%;
-}
-#page-tag-coursetags_edit .coursetag_edit_input3 {
-    display: none;
-}
-#page-tag-coursetags_more .coursetag_more_large {
-    font-size: 120%;
-}
-#page-tag-coursetags_more .coursetag_more_small {
-    font-size: 80%;
-}
-#page-tag-coursetags_more .coursetag_more_link {
-    font-size: 80%;
-}
-#tag-description,
-#tag-blogs {
-    width: 100%;
-}
-#tag-management-box {
-    margin-bottom: 10px;
-    line-height: 20px;
-}
-#tag-user-table {
-    padding: 3px;
-    clear: both;
-    width: 100%;
-}
-#tag-user-table {
-    .clearfix
-}
-img.user-image {
-    height: 100px;
-    width: 100px;
-}
-#small-tag-cloud-box {
-    width: 300px;
-    margin: 0 auto;
-}
-#big-tag-cloud-box {
-    width: 600px;
-    margin: 0 auto;
-    float: none;
-}
-ul#tag-cloud-list {
-    list-style: none;
-    padding: 5px;
-    margin: 0;
-}
-ul#tag-cloud-list li {
-    margin: 0;
-    display: inline;
-    list-style-type: none;
-}
-#tag-search-box {
-    text-align: center;
-    margin: 10px auto;
-}
-#tag-search-results-container {
-    padding: 0;
-    width: 100%;
-}
-#tag-search-results {
-    padding: 0;
-    margin: 15px 20% 0 20%;
-    float: left;
-    width: 60%;
-    display: block;
-}
-#tag-search-results li {
-    width: 30%;
-    float: left;
-    padding-left: 1%;
-    text-align: left;
-    line-height: 20px;
-    padding-right: 1%;
-    list-style: none;
-}
-span.flagged-tag,
-span.flagged-tag a {
-    color: @alert-danger-text;
-}
-table#tag-management-list {
-    text-align: left;
-    width: 100%;
-}
-table#tag-management-list td,
-table#tag-management-list th {
-    vertical-align: middle;
-    text-align: left;
-    padding: 4px;
-}
-.tag-management-form {
-    text-align: center;
-}
-#relatedtags-autocomplete-container {
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 4.6em;
-    width: 100%;
-}
-#relatedtags-autocomplete {
-    position: relative;
-    display: block;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-}
-#relatedtags-autocomplete .yui-ac-content {
-    position: absolute;
-    width: 420px;
-    left: 20%;
-    border: 1px solid #404040;
-    background: #fff;
-    overflow: hidden;
-    z-index: 9050;
-}
-#relatedtags-autocomplete .ysearchquery {
-    position: absolute;
-    right: 10px;
-    color: #808080;
-    z-index: 10;
-}
-#relatedtags-autocomplete .yui-ac-shadow {
-    position: absolute;
-    margin: .3em;
-    width: 100%;
-    background: #a0a0a0;
-    z-index: 9049;
-}
-#relatedtags-autocomplete ul {
-    padding: 0;
-    width: 100%;
-    margin: 0;
-    list-style-type: none;
-}
-#relatedtags-autocomplete li {
-    padding: 0 5px;
-    cursor: default;
-    white-space: nowrap;
-}
-#relatedtags-autocomplete li.yui-ac-highlight{
-    background: #FFFFCC;
-}
-h2.tag-heading,
-div#tag-description,
-div#tag-blogs,
-body.tag .managelink {
-    padding: 5px;
-}
-.tag_cloud .s20 {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-.tag_cloud .s19 {
-    font-size: 1.5em;
-}
-.tag_cloud .s18 {
-    font-size: 1.4em;
-    font-weight: bold;
-}
-.tag_cloud .s17 {
-    font-size: 1.4em;
-}
-.tag_cloud .s16 {
-    font-size: 1.3em;
-    font-weight: bold;
-}
-.tag_cloud .s15 {
-    font-size: 1.3em;
-}
-.tag_cloud .s14 {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-.tag_cloud .s13 {
-    font-size: 1.2em;
-}
-.tag_cloud .s12,
-.tag_cloud .s11 {
-    font-size: 1.1em;
-    font-weight: bold;
-}
-.tag_cloud .s10,
-.tag_cloud .s9 {
-    font-size: 1.1em;
-}
-.tag_cloud .s8,
-.tag_cloud .s7 {
-    font-size: 1em;
-    font-weight: bold;
-}
-.tag_cloud .s6,
-.tag_cloud .s5 {
-    font-size: 1em;
-}
-.tag_cloud .s4,
-.tag_cloud .s3 {
-    font-size: 0.9em;
-    font-weight: bold;
-}
-.tag_cloud .s2,
-.tag_cloud .s1 {
-    font-size: 0.9em;
-}
-.tag_cloud .s0 {
-    font-size: 0.8em;
-}
 /**
 * Web Service
 */
@@ -858,114 +621,6 @@ body.tag .managelink {
 }
 .smartselect.compactmenu .smartselect_submenuitem:hover > .smartselect_menuitem_label {
     font-weight: bold;
-}
-/**
-* Registration
-*/
-#page-admin-registration-register .registration_textfield {
-    width: 300px;
-}
-/**
-* Enrol
-*/
-.userenrolment {
-    width: 100%;
-    border-collapse: collapse;
-}
-.userenrolment td {
-    padding: 0;
-    height: 41px;
-}
-.userenrolment .subfield {
-    margin-right: 5px;
-}
-.userenrolment .col_userdetails .subfield_picture {
-    float: left;
-}
-.userenrolment .col_lastseen {
-    width: 150px;
-}
-.userenrolment .col_role {
-    width: 262px;
-}
-.userenrolment .col_role .roles {
-    margin-right: 30px;
-}
-.userenrolment .col_role .role {
-    float: left;
-    padding: 3px;
-    margin: 3px;
-}
-.userenrolment .col_role .role a {
-    margin-left: 3px;
-    cursor: pointer;
-}
-.userenrolment .col_role .addrole {
-    float: right;
-    width: 18px;
-    height: 18px;
-    margin: 8px 15px 8px 0px;
-    text-align: center;
-    background-color: @gray-dark;
-    border: 1px solid @gray-dark;
-}
-.userenrolment .col_role .addrole img {
-    vertical-align: baseline;
-}
-.userenrolment .hasAllRoles .col_role .addrole {
-    display: none;
-}
-.userenrolment .col_group .groups {
-    margin-right: 30px;
-}
-.userenrolment .col_group .group {
-    float: left;
-    padding: 3px;
-    white-space: nowrap;
-}
-.userenrolment .col_group .group a {
-    margin-left: 3px;
-    cursor: pointer;
-}
-.userenrolment .col_group .addgroup {
-    width: 18px;
-    height: 18px;
-    margin: 8px 15px 8px 0px;
-    text-align: center;
-    background-color: @gray-dark;
-    border: 1px solid @gray-dark;
-    float: right;
-    text-align: center;
-}
-.userenrolment .col_group .addgroup a img {
-    vertical-align: baseline;
-}
-.userenrolment .col_enrol .enrolment {
-    float: left;
-    padding: 3px;
-    margin: 3px;
-}
-.userenrolment .col_enrol .enrolment a {
-    float: right;
-    margin-left: 3px;
-}
-#page-enrol-users .enrol_user_buttons {
-    float: right;
-}
-#page-enrol-users .enrol_user_buttons .enrolusersbutton {
-    margin-left: 1em;
-    display: inline;
-}
-#page-enrol-users .enrol_user_buttons .enrolusersbutton div,
-#page-enrol-users .enrol_user_buttons .enrolusersbutton form {
-    display: inline;
-}
-#page-enrol-users .enrol_user_buttons .enrolusersbutton input {
-    padding-left: 6px;
-    padding-right: 6px;
-}
-#page-enrol-users .user-enroller-panel .uep-search-results .user .details {
-    width: 237px;
 }
 
 .corelightbox {
@@ -1462,165 +1117,6 @@ body.jsenabled .formlisting {
     display: block;
 }
 
-/* Badges styles */
-table.collection {
-    .table;
-    .table-bordered;
-    .table-striped;
-}
-table.collection .name {
-    text-align: left;
-    vertical-align: middle;
-}
-table.collection .awards {
-    width: 10%;
-    text-align: center;
-    vertical-align: middle;
-}
-table.collection .criteria {
-    width: 40%;
-    text-align: left;
-    vertical-align: top;
-}
-table.collection .badgeimage,
-table.collection .status {
-    width: 15%;
-    text-align: center;
-    vertical-align: middle;
-}
-table.collection .description {
-    width: 25%;
-    text-align: left;
-}
-table.collection .actions {
-    width: 11em;
-    text-align: center;
-    vertical-align: middle;
-}
-
-a.criteria-action {
-    padding: 0px 3px;
-    float: right;
-}
-table.issuedbadgebox {
-    width: 750px;
-    background-color: #FFFFFF;
-}
-table.badgeissuedimage {
-    width: 150px;
-    text-align: center;
-}
-table.badgeissuedinfo {
-    width: 600px;
-}
-table.badgeissuedinfo .bvalue {
-    text-align: left;
-    vertical-align: middle;
-}
-table.badgeissuedinfo .bfield {
-    width: 125px;
-    text-align: left;
-    font-style: italic;
-}
-
-ul.badges {
-    margin: 0;
-    list-style: none;
-}
-.badges li {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 2em;
-    text-align: center;
-    vertical-align: top;
-    width: 150px;
-}
-.badges li .badge-name {
-    display: block;
-    padding: 5px;
-}
-.badges li > img {
-    position: absolute;
-}
-.badges li .badge-image {
-    width: 90px;
-    height: 90px;
-    left: 10px;
-    top: 0px;
-    z-index: 1;
-}
-.badges li .badge-actions {
-    position: relative;
-}
-div.badge {
-    position: relative;
-    display: block;
-}
-div.badge .expireimage {
-    width: 100px;
-    height: 100px;
-    left: 20px;
-    top: 0px;
-}
-.expireimage {
-    .opacity(.85);
-    width: 90px; height: 90px;
-    left: 30px;
-    top: 0px;
-    position: absolute;
-    z-index:10;
-}
-.badge-profile {
-    vertical-align: top;
-}
-.connected {
-    color: @alert-success-text;
-}
-.notconnected {
-    color: @alert-danger-text;
-}
-.connecting {
-    color: @alert-warning-text;
-}
-#page-badges-award .recipienttable tr td {
-    vertical-align: top;
-}
-#page-badges-award .recipienttable tr td.actions .actionbutton {
-    margin: 0.3em 0;
-    padding: 0.5em 0;
-    width: 100%;
-}
-#page-badges-award .recipienttable tr td.existing,
-#page-badges-award .recipienttable tr td.potential {
-    width: 42%;
-}
-
-.statustable {
-    margin-bottom: 0px;
-}
-.statusbox.active {
-    background-color: @alert-success-bg;
-}
-.statusbox.inactive {
-    background-color: @alert-warning-bg;
-}
-.activatebadge {
-    margin: 0px;
-    text-align: left;
-    vertical-align: middle;
-}
-img#persona_signin {
-    cursor: pointer;
-}
-.addcourse {
-    float: right;
-}
-.invisiblefieldset {
-    display: inline;
-    margin: 0;
-    padding: 0;
-    border-width: 0;
-}
 .breadcrumb-nav {
     float: left;
     margin-bottom: 10px;
@@ -1772,10 +1268,3 @@ ul.dragdrop-keyboard-drag li {
     height: 12px;
 }
 
-a.disabled:hover,
-a.disabled {
-    text-decoration: none;
-    cursor: default;
-    font-style: italic;
-    color: #808080;
-}
