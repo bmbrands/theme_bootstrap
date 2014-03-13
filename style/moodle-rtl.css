@@ -198,7 +198,7 @@ a.autolink.glossary:hover {
 
 .collapsible-actions .collapseexpand {
   padding-right: 20px;
-  background-image: url([[pix:t/collapsed]]);
+  background-image: url([[pix:t/collapsed_rtl]]);
   background-position: right;
   background-repeat: no-repeat;
 }
@@ -1036,7 +1036,7 @@ body.tag .managelink {
 }
 
 .smartselect .smartselect_submenuitem {
-  background-image: url([[pix:t/collapsed]]);
+  background-image: url([[pix:t/collapsed_rtl]]);
   background-repeat: no-repeat;
   background-position: right 100%;
 }
@@ -4154,7 +4154,7 @@ span.editinstructions {
 }
 
 .course_category_tree .category>.info>.categoryname {
-  background-image: url([[pix:t/collapsed_empty]]);
+  background-image: url([[pix:t/collapsed_empty_rtl]]);
   background-repeat: no-repeat;
   padding: 2px 18px;
   margin: 3px;
@@ -4168,7 +4168,7 @@ span.editinstructions {
 }
 
 .course_category_tree .category.with_children.collapsed>.info>.categoryname {
-  background-image: url([[pix:t/collapsed]]);
+  background-image: url([[pix:t/collapsed_rtl]]);
 }
 
 .course_category_tree .category.collapsed>.content {
@@ -4762,25 +4762,7 @@ span.editinstructions {
   text-decoration: none;
 }
 
-.filemanager input[type="text"],
-.file-picker input[type="text"] {
-  width: 265px;
-}
-
-.filemanager .fp-license td,
-.file-picker .fp-setlicense td {
-  max-width: 265px;
-}
-
-.filemanager .fp-license select,
-.file-picker .fp-setlicense select {
-  max-width: 100%;
-}
-
 .fp-content-center {
-  height: 100%;
-  width: 100%;
-  display: table-cell;
   vertical-align: middle;
 }
 
@@ -4864,8 +4846,7 @@ span.editinstructions {
 }
 
 .file-picker .fp-content {
-  background: #FFFFFF;
-  clear: both;
+  padding-top: 15px;
   overflow: auto;
   height: 452px;
 }
@@ -5011,7 +4992,7 @@ span.editinstructions {
 }
 
 .fp-pathbar .fp-path-folder {
-  background-image: url('[[pix:theme|fp/path_folder]]');
+  background-image: url('[[pix:theme|fp/path_folder_rtl]]');
   background-position: right;
   background-repeat: no-repeat;
   width: 27px;
@@ -5096,7 +5077,7 @@ span.editinstructions {
 
 .file-picker .ygtvtn,
 .filemanager .ygtvtn {
-  background-image: url('[[pix:y/tn]]');
+  background-image: url('[[pix:y/tn_rtl]]');
   background-position: right;
   background-repeat: no-repeat;
   width: 17px;
@@ -5125,7 +5106,7 @@ span.editinstructions {
 
 .file-picker .ygtvtp,
 .filemanager .ygtvtp {
-  background-image: url('[[pix:y/tp]]');
+  background-image: url('[[pix:y/tp_rtl]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5135,7 +5116,7 @@ span.editinstructions {
 
 .file-picker .ygtvtph,
 .filemanager .ygtvtph {
-  background-image: url('[[pix:y/tp]]');
+  background-image: url('[[pix:y/tp_rtl]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5145,7 +5126,7 @@ span.editinstructions {
 
 .file-picker .ygtvln,
 .filemanager .ygtvln {
-  background-image: url('[[pix:y/ln]]');
+  background-image: url('[[pix:y/ln_rtl]]');
   background-position: right;
   background-repeat: no-repeat;
   width: 17px;
@@ -5174,7 +5155,7 @@ span.editinstructions {
 
 .file-picker .ygtvlp,
 .filemanager .ygtvlp {
-  background-image: url('[[pix:y/lp]]');
+  background-image: url('[[pix:y/lp_rtl]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5184,7 +5165,7 @@ span.editinstructions {
 
 .file-picker .ygtvlph,
 .filemanager .ygtvlph {
-  background-image: url('[[pix:y/lp]]');
+  background-image: url('[[pix:y/lp_rtl]]');
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -5258,45 +5239,6 @@ a.ygtvspacer:hover {
   padding-left: 10px;
 }
 
-.file-picker .fp-login-form {
-  height: 100%;
-  width: 100%;
-  display: table;
-}
-
-.file-picker .fp-login-form table {
-  margin: 0 auto;
-}
-
-.file-picker .fp-login-form p {
-  text-align: center;
-  margin-top: 3em;
-}
-
-.file-picker .fp-login-form .fp-login-input label {
-  text-align: left;
-  display: block;
-}
-
-.file-picker .fp-login-form .fp-login-input .input {
-  text-align: right;
-}
-
-.file-picker .fp-login-form input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
-}
-
-.file-picker .fp-upload-form {
-  height: 100%;
-  width: 100%;
-  display: table;
-}
-
-.file-picker .fp-upload-form table {
-  margin: 0 auto;
-}
-
 .file-picker.fp-dlg {
   text-align: center;
 }
@@ -5329,17 +5271,10 @@ a.ygtvspacer:hover {
 }
 
 .file-picker .fp-content-error {
-  height: 100%;
-  width: 100%;
-  display: table;
   text-align: center;
 }
 
 .file-picker .fp-content-error .fp-error {
-  height: 100%;
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
   padding: 40px 20px 10px 20px;
   font-size: 12px;
 }
@@ -5919,6 +5854,11 @@ a.ygtvspacer:hover {
 
 .file-picker div.bd {
   text-align: right;
+}
+
+.fp-formset .control-label {
+  font-size: 14px;
+  line-height: 1.42857143;
 }
 
 .box.message .mdl-align {
@@ -10574,7 +10514,9 @@ output {
   color: #555;
 }
 
-.form-control {
+.form-control,
+.fp-formset .controls input[type="text"],
+.fp-formset .controls select {
   display: block;
   width: 100%;
   height: 38px;
@@ -16220,7 +16162,7 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 }
 
 .mform fieldset.collapsed legend a.fheader {
-  background-image: url([[pix:t/collapsed]]);
+  background-image: url([[pix:t/collapsed_rtl]]);
 }
 
 .jsenabled .mform .collapsed .fcontainer {
