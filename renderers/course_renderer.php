@@ -91,7 +91,11 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
         $content .= $this->coursecat_coursebox_content($chelper, $course);
 
         if ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_EXPANDED) {
-            $arrow = html_writer::tag('span','', array('class' => ' glyphicon glyphicon-arrow-right'));
+            $icondirection = 'left';
+            if ('ltr' === get_string('thisdirection', 'langconfig')) {
+                $icondirection = 'right';
+            }
+            $arrow = html_writer::tag('span','', array('class' => ' glyphicon glyphicon-arrow-'.$icondirection));
             $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
             $content .= html_writer::link(new moodle_url('/course/view.php',
                 array('id' => $course->id)), $btn, array('class' => 'coursebtn btn btn-info btn-sm pull-right'));
