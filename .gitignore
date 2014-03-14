@@ -6,3 +6,5 @@ Thumbs.db
 .project
 .settings
 *.swp
+sourcemap-moodle.json
+sourcemap-editor.json

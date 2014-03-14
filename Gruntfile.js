@@ -159,7 +159,8 @@ module.exports = function(grunt) {
     var LESSDIR         = 'less',
         BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'),
         BOOTSWATCHFILE  = path.join(BOOTSWATCHDIR, 'custom-bootswatch.less'),
-        BOOTSWATCHVARS  = path.join(BOOTSWATCHDIR, 'custom-variables.less');
+        BOOTSWATCHVARS  = path.join(BOOTSWATCHDIR, 'custom-variables.less'),
+        THEMEDIR        = path.basename(path.resolve('.'));
 
     // PHP strings for exec task.
     var moodleroot = 'dirname(dirname(__DIR__))',
@@ -183,9 +184,10 @@ module.exports = function(grunt) {
             // Compile moodle styles.
             moodle: {
                 options: {
-                    compress: true,
-                    sourceMap: false,
-                    outputSourceFiles: true
+                    compress: false,
+                    sourceMap: true,
+                    sourceMapRootpath: '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'sourcemap-moodle.json'
                 },
                 files: {
                     "style/moodle.css": "less/moodle.less",
@@ -194,9 +196,10 @@ module.exports = function(grunt) {
             // Compile editor styles.
             editor: {
                 options: {
-                    compress: true,
-                    sourceMap: false,
-                    outputSourceFiles: true
+                    compress: false,
+                    sourceMap: true,
+                    sourceMapRootpath: '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'sourcemap-editor.json'
                 },
                 files: {
                     "style/editor.css": "less/editor.less"
