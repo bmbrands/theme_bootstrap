@@ -293,7 +293,7 @@ class theme_bootstrap_core_files_renderer extends core_files_renderer {
 
         <div class="fp-forminset">
                 <div class="fp-saveas form-group">
-                    <label class="control-label col-md-4">'.get_string('name', 'repository').'</label>
+                    <label class="control-label col-md-4">'.get_string('name', 'moodle').':</label>
                     <div class="controls col-md-8">
                         <input type="text"/>
                     </div>
@@ -311,7 +311,7 @@ class theme_bootstrap_core_files_renderer extends core_files_renderer {
                     </div>
                 </div>
                 <div class="fp-path form-group">
-                    <label class="control-label col-md-4">'.get_string('path', 'repository').'</label>
+                    <label class="control-label col-md-4">'.get_string('path', 'moodle').':</label>
                     <div class="controls col-md-8">
                         <select></select>
                     </div>
@@ -340,7 +340,7 @@ class theme_bootstrap_core_files_renderer extends core_files_renderer {
         <div class="fp-hr"></div>
         <p class="fp-thumbnail"></p>
         <div class="fp-fileinfo">
-            <div class="fp-datemodified">'.get_string('lastmodified', 'repository').' <span class="fp-value"></span></div>
+            <div class="fp-datemodified">'.get_string('lastmodified', 'moodle').': <span class="fp-value"></span></div>
             <div class="fp-datecreated">'.get_string('datecreated', 'repository').' <span class="fp-value"></span></div>
             <div class="fp-size">'.get_string('size', 'repository').' <span class="fp-value"></span></div>
             <div class="fp-dimensions">'.get_string('dimensions', 'repository').' <span class="fp-value"></span></div>
@@ -660,7 +660,7 @@ class theme_bootstrap_core_files_renderer extends core_files_renderer {
         <div class="fp-hr"></div>
         <p class="fp-thumbnail"></p>
         <div class="fp-fileinfo">
-            <div class="fp-datemodified">'.get_string('lastmodified', 'moodle').'<span class="fp-value"></span></div>
+            <div class="fp-datemodified">'.get_string('lastmodified', 'moodle').':<span class="fp-value"></span></div>
             <div class="fp-datecreated">'.get_string('datecreated', 'repository').'<span class="fp-value"></span></div>
             <div class="fp-size">'.get_string('size', 'repository').'<span class="fp-value"></span></div>
             <div class="fp-license">'.get_string('license', 'moodle').'<span class="fp-value"></span></div>
