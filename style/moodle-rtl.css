@@ -3074,8 +3074,9 @@ span.editinstructions {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #3a87ad;
-  width: 40%;
-  margin: 0 30%;
+  right: 50%;
+  width: 30em;
+  margin-right: -15em;
   box-shadow: -2px 2px 5px 1px rgba(0,0,0,0.2);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
