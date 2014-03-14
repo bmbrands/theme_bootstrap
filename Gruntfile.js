@@ -170,7 +170,7 @@ module.exports = function(grunt) {
 
     // Allow user to explicitly define Moodle root dir.
     if ('' !== dirrootopt) {
-        moodleroot = 'realpath("' + dirrootopt + '")';
+        moodleroot = "realpath('" + dirrootopt + "')";
     }
 
     configfile = moodleroot + " . '/config.php'";
