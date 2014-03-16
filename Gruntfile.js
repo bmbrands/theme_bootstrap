@@ -163,20 +163,20 @@ module.exports = function(grunt) {
         THEMEDIR        = path.basename(path.resolve('.'));
 
     // PHP strings for exec task.
-    var moodleroot = 'dirname(dirname(__DIR__))',
+    var moodleroot = path.dirname(path.dirname(__dirname)),
         configfile = '',
         decachephp = '',
         dirrootopt = grunt.option('dirroot') || '';
 
     // Allow user to explicitly define Moodle root dir.
     if ('' !== dirrootopt) {
-        moodleroot = "realpath('" + dirrootopt + "')";
+        moodleroot = path.resolve(dirrootopt);
     }
 
-    configfile = moodleroot + " . '/config.php'";
+    configfile = path.join(moodleroot, 'config.php');
 
     decachephp += 'define(\'CLI_SCRIPT\', true);';
-    decachephp += 'require(' + configfile  + ');';
+    decachephp += 'require(\'' + configfile  + '\');';
     decachephp += 'theme_reset_all_caches();';
 
     grunt.initConfig({
