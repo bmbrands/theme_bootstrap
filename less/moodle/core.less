@@ -1139,6 +1139,7 @@ body.jsenabled .formlisting {
     padding: 0;
     margin: 0;
     list-style-type: none;
+    line-height: 30px;
 }
 
 .moodle-actionmenu .toggle-display,
@@ -1157,6 +1158,9 @@ body.jsenabled .formlisting {
             .opacity(.5);
         }
         .toggle-display.textmenu {
+            .btn;
+            .btn-default;
+            .btn-sm;
             display: block;
             margin-left: 4px;
             padding-left: 4px;
@@ -1169,13 +1173,13 @@ body.jsenabled .formlisting {
             }
 
             .caret {
-                margin-top: 8px;
-                margin-left: 2px;
-                border-top-color: @navbar-default-link-color;
-                &:hover,
-                &:active {
-                    border-top-color: @navbar-default-link-active-color;
-                }
+                // margin-top: 8px;
+                // margin-left: 2px;
+                // border-top-color: @navbar-default-link-color;
+                // &:hover,
+                // &:active {
+                //     border-top-color: @navbar-default-link-active-color;
+                // }
             }
         }
     }
@@ -1185,6 +1189,7 @@ body.jsenabled .formlisting {
         }
         .menu-action-text  {
             display:inline;
+            white-space: normal;
         }
     }
 }
@@ -1194,17 +1199,9 @@ body.jsenabled .formlisting {
     position: relative;
 
     .menu {
-
+        .dropdown-menu;
         display: block;
-        padding: 5px 0;
-        position: absolute;
         text-align: left;
-        background-color: @dropdown-bg;
-        border: 1px solid @dropdown-fallback-border; // IE8 fallback
-        border: 1px solid @dropdown-border;
-        z-index: 1000;
-        border-radius: @border-radius-base;
-        box-shadow: 0 6px 12px rgba(0,0,0,.175);
 
         a {
             display: block;
@@ -1226,7 +1223,7 @@ body.jsenabled .formlisting {
             vertical-align: middle;
         }
         .iconsmall {
-            margin: 4px;
+            margin: 4px 4px 4px -10px;
         }
         > li {
             display:block;

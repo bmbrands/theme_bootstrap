@@ -1156,6 +1156,7 @@ body.jsenabled .formlisting {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  line-height: 30px;
 }
 .moodle-actionmenu .toggle-display,
 .moodle-actionmenu .menu-action-text {
@@ -1175,24 +1176,104 @@ body.jsenabled .formlisting {
   filter: alpha(opacity=50);
 }
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #555555;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
   display: block;
   margin-left: 4px;
   padding-left: 4px;
   padding-right: 4px;
 }
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:focus,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active:focus,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:hover,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:focus {
+  color: #555555;
+  text-decoration: none;
+}
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled],
+fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:hover,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:focus,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active,
+.open .dropdown-toggle.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
+  color: #555555;
+  background-color: #ebebeb;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active,
+.open .dropdown-toggle.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
+  background-image: none;
+}
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled],
+fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled:hover,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled]:hover,
+fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:hover,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled:focus,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled]:focus,
+fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:focus,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled:active,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled]:active,
+fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled.active,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled].active,
+fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active {
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .badge {
+  color: #ffffff;
+  background-color: #555555;
+}
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .iconsmall {
   margin: 4px 4px 4px 0px;
   padding: 8px 4px 0px 2px;
   vertical-align: text-bottom;
-}
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret {
-  margin-top: 8px;
-  margin-left: 2px;
-  border-top-color: #ffffff;
-}
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret:hover,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret:active {
-  border-top-color: #ffffff;
 }
 .jsenabled .moodle-actionmenu[data-enhanced] .toggle-display {
   opacity: 1;
@@ -1200,25 +1281,83 @@ body.jsenabled .formlisting {
 }
 .jsenabled .moodle-actionmenu[data-enhanced] .menu-action-text {
   display: inline;
+  white-space: normal;
 }
 .moodle-actionmenu[data-enhanced].show {
   position: relative;
 }
 .moodle-actionmenu[data-enhanced].show .menu {
-  display: block;
-  padding: 5px 0;
   position: absolute;
-  text-align: left;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  z-index: 1000;
   border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  display: block;
+  text-align: left;
   /** bottom left of button **/
   /** bottom right of button **/
   /** top left of button **/
   /** top right of button **/
+}
+.moodle-actionmenu[data-enhanced].show .menu .userpicture {
+  margin-left: -10px;
+  margin-right: 7px;
+}
+.moodle-actionmenu[data-enhanced].show .menu .msg-body {
+  display: inline-block;
+  line-height: 20px;
+  max-width: 175px;
+  vertical-align: middle;
+}
+.moodle-actionmenu[data-enhanced].show .menu .msg-title {
+  display: inline-block;
+  line-height: 14px;
+}
+.moodle-actionmenu[data-enhanced].show .menu .msg-sender {
+  color: #478FCA;
+}
+.moodle-actionmenu[data-enhanced].show .menu .msg-time {
+  color: #777777;
+  display: block;
+  font-size: 11px;
+}
+.moodle-actionmenu[data-enhanced].show .menu [title="new"] {
+  background-color: #c8e7f9;
+}
+.moodle-actionmenu[data-enhanced].show .menu .glyphicon {
+  margin-right: 5px;
+}
+.moodle-actionmenu[data-enhanced].show .menu.pull-right {
+  right: 0;
+  left: auto;
+}
+.moodle-actionmenu[data-enhanced].show .menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.moodle-actionmenu[data-enhanced].show .menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
 }
 .moodle-actionmenu[data-enhanced].show .menu a {
   display: block;
@@ -1240,7 +1379,7 @@ body.jsenabled .formlisting {
   vertical-align: middle;
 }
 .moodle-actionmenu[data-enhanced].show .menu .iconsmall {
-  margin: 4px;
+  margin: 4px 4px 4px -10px;
 }
 .moodle-actionmenu[data-enhanced].show .menu > li {
   display: block;
@@ -2348,10 +2487,7 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
   filter: alpha(opacity=50);
 }
 .section .filler {
-  width: 16px;
-  height: 16px;
-  padding: 0.3em;
-  display: inline-block;
+  display: none;
 }
 .section .activity.editor_displayed a.editing_title,
 .section .activity.editor_displayed .moodle-actionmenu {
@@ -2826,7 +2962,7 @@ span.editinstructions {
   width: 21px;
   height: 21px;
   padding: 4px;
-  vertical-align: text-bottom;
+  vertical-align: bottom;
 }
 .section .moodle-actionmenu[data-enhanced] .menu img {
   width: 21px;
