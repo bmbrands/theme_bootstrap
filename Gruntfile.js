@@ -40,7 +40,7 @@
  *                                 when your theme is not in the
  *                                 standard location.
  * grunt compile Run the .less files through the compiler, create the
- *               RTL version of the output, then run decache so that 
+ *               RTL version of the output, then run decache so that
  *               the results can be seen on the next page load.
  *
  *               Options:
@@ -134,14 +134,14 @@
  *                   --none                 Optional. Reset bootswatch to
  *                                          plain Bootstrap (no swatch).
  *
- * grunt replace                  Run all text replace tasks.
+ * grunt replace             Run all text replace tasks.
  *
  * grunt replace:rtl_images  Add _rtl to the filenames of certain images
  *                           that require flipping for use with RTL
  *                           languages.
  *
- * grunt cssflip    Create moodle-rtl.css by flipping the direction styles
- *                  in moodle.css.
+ * grunt cssflip   Create moodle-rtl.css by flipping the direction styles
+ *                 in moodle.css.
  *
  *
  * @package theme
@@ -163,20 +163,20 @@ module.exports = function(grunt) {
         THEMEDIR        = path.basename(path.resolve('.'));
 
     // PHP strings for exec task.
-    var moodleroot = 'dirname(dirname(__DIR__))',
+    var moodleroot = path.dirname(path.dirname(__dirname)),
         configfile = '',
         decachephp = '',
         dirrootopt = grunt.option('dirroot') || '';
 
     // Allow user to explicitly define Moodle root dir.
     if ('' !== dirrootopt) {
-        moodleroot = "realpath('" + dirrootopt + "')";
+        moodleroot = path.resolve(dirrootopt);
     }
 
-    configfile = moodleroot + " . '/config.php'";
+    configfile = path.join(moodleroot, 'config.php');
 
     decachephp += 'define(\'CLI_SCRIPT\', true);';
-    decachephp += 'require(' + configfile  + ');';
+    decachephp += 'require(\'' + configfile  + '\');';
     decachephp += 'theme_reset_all_caches();';
 
     grunt.initConfig({
