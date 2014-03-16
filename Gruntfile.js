@@ -40,7 +40,7 @@
  *                                 when your theme is not in the
  *                                 standard location.
  * grunt compile Run the .less files through the compiler, create the
- *               RTL version of the output, then run decache so that 
+ *               RTL version of the output, then run decache so that
  *               the results can be seen on the next page load.
  *
  *               Options:
@@ -134,14 +134,14 @@
  *                   --none                 Optional. Reset bootswatch to
  *                                          plain Bootstrap (no swatch).
  *
- * grunt replace                  Run all text replace tasks.
+ * grunt replace             Run all text replace tasks.
  *
  * grunt replace:rtl_images  Add _rtl to the filenames of certain images
  *                           that require flipping for use with RTL
  *                           languages.
  *
- * grunt cssflip    Create moodle-rtl.css by flipping the direction styles
- *                  in moodle.css.
+ * grunt cssflip   Create moodle-rtl.css by flipping the direction styles
+ *                 in moodle.css.
  *
  *
  * @package theme
