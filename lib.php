@@ -52,10 +52,76 @@ function theme_bootstrap_checkbox($setting, $default='0') {
     return new admin_setting_configcheckbox($name, $title, $description, $default);
 }
 
+function theme_bootstrap_textarea($setting, $default='') {
+    list($name, $title, $description) = theme_bootstrap_setting_details($setting);
+    return new admin_setting_configtextarea($name, $title, $description, $default);
+}
+
 function theme_bootstrap_setting_details($setting) {
     $theme = "theme_bootstrap";
     $name = "$theme/$setting";
     $title = get_string($setting, $theme);
     $description = get_string($setting.'desc', $theme);
     return array($name, $title, $description);
+}
+
+/**
+ * Parses CSS before it is cached.
+ *
+ * This function can make alterations and replace patterns within the CSS.
+ *
+ * @param string $css The CSS
+ * @param theme_config $theme The theme config object.
+ * @return string The parsed CSS The parsed CSS.
+ */
+function theme_bootstrap_process_css($css, $theme) {
+
+    $defaultsettings = array(
+        'customcss' => '',
+    );
+
+    $settings = theme_bootstrap_get_user_settings($defaultsettings, $theme);
+
+    return theme_bootstrap_replace_settings($settings, $css);
+}
+
+/**
+ * Parses CSS before it is cached.
+ *
+ * This function can make alterations and replace patterns within the CSS.
+ *
+ * @param array $settings containing setting names and default values
+ * @param theme_config $theme The theme config object.
+ * @return array The setting with defaults replaced with user settings (if any)
+ */
+function theme_bootstrap_get_user_settings($settings, $theme) {
+    foreach (array_keys($settings) as $setting) {
+        if (!empty($theme->settings->$setting)) {
+            $settings[$setting] = $theme->settings->$setting;
+        }
+    }
+    return $settings;
+}
+
+/**
+ * For each setting called e.g. "customcss" this looks for the string
+ * "[[setting:customcss]]" in the CSS and replaces it with
+ * the value held in the $settings array for the key
+ * "customcss".
+ *
+ * @param array $settings containing setting names and values
+ * @param string $css The CSS
+ * @return string The CSS with replacements made
+ */
+function theme_bootstrap_replace_settings($settings, $css) {
+    $settingnames = array_keys($settings);
+
+    $wrapsettings = function($name) {
+        return "[[setting:$name]]";
+    };
+
+    $find = array_map($wrapsettings, $settingnames);
+    $replace = array_values($settings);
+
+    return str_replace($find, $replace, $css);
 }
