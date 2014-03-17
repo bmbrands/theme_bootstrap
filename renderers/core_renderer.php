@@ -336,15 +336,15 @@ class theme_bootstrap_core_renderer extends core_renderer {
             return html_writer::tag('li', $link);
         }
     }
-/*
     protected function render_pix_icon(pix_icon $icon) {
-        if ($icon->attributes["alt"] === '' && $this->replace_moodle_icon($icon->pix) !== false) {
+        if ($this->page->theme->settings->fonticons === '1'
+            && $icon->attributes["alt"] === ''
+            && $this->replace_moodle_icon($icon->pix) !== false) {
             return $this->replace_moodle_icon($icon->pix);
-        } else {
-            return parent::render_pix_icon($icon);
         }
+        return parent::render_pix_icon($icon);
     }
-*/
+
     protected function replace_moodle_icon($name) {
         $icons = array(
             'add' => 'plus',
@@ -378,6 +378,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             'i/users' => 'user',
             'spacer' => 'spacer',
             't/add' => 'plus',
+            't/assignroles' => 'user',
             't/copy' => 'plus-sign',
             't/delete' => 'remove',
             't/down' => 'arrow-down',
