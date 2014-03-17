@@ -24,8 +24,10 @@
 $string['pluginname'] = 'Bootstrap 3';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
+$string['fonticons'] = 'Use Icon Font';
+$string['fonticonsdesc'] = 'Enable this option to use the Glyphicon Icon Font';
 $string['fluidwidth'] = 'Fluid width theme';
-$string['fluidwidth_desc'] = 'Enable this option to allow using your full screen';
+$string['fluidwidthdesc'] = 'Enable this option to allow using your full screen';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap Base</h2>

@@ -26,11 +26,19 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-    // Turn on fluid width
-    $name = 'theme_bootstrap/fluidwidth';
-    $title = get_string('fluidwidth', 'theme_bootstrap');
-    $description = get_string('fluidwidth_desc', 'theme_bootstrap');
-    $default = '0';
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $settings->add($setting);
+    $settings->add(theme_bootstrap_checkbox('fluidwidth'));
+    $settings->add(theme_bootstrap_checkbox('fonticons'));
+}
+
+function theme_bootstrap_checkbox($setting, $default='0') {
+    list($name, $title, $description) = theme_bootstrap_setting_details($setting);
+    return new admin_setting_configcheckbox($name, $title, $description, $default);
+}
+
+function theme_bootstrap_setting_details($setting) {
+    $theme = "theme_bootstrap";
+    $name = "$theme/$setting";
+    $title = get_string($setting, $theme);
+    $description = get_string($setting.'desc', $theme);
+    return array($name, $title, $description);
 }
