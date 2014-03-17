@@ -15087,6 +15087,11 @@ input.fp-btn-choose {
   .path-mod-forum .forumheaderlist .picture {
     display: none;
   }
+  .panel .courseimage img {
+    margin-right: 5px;
+    float: none;
+    max-width: 100%;
+  }
 }
 @media (max-width: 768px) {
   #filesskin .yui3-panel,

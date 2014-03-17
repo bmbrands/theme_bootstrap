@@ -29,7 +29,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: @screen-xs) {
     .fp-content-center {
         display: block;
         vertical-align: top;
@@ -78,10 +78,19 @@
     .path-mod-forum .forumheaderlist .picture {
         display: none;
     }
+    .panel {
+        .courseimage {
+            img {
+                margin-right: 5px;
+                float: none;
+                max-width: 100%;
+            }
+        }
+    }
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: @screen-sm) {
 // Resize, reflow file-picker on small devices
    #filesskin .yui3-panel,
    #filesskin .file-picker.fp-generallayout {
