@@ -25,12 +25,11 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-require_once($CFG->themedir . "/bootstrap/lib.php");
+require_once($CFG->dirroot . '/theme/' . "/bootstrap/lib.php");
 
 if ($ADMIN->fulltree) {
     $settings->add(theme_bootstrap_checkbox('fluidwidth'));
     $settings->add(theme_bootstrap_checkbox('fonticons'));
     $settings->add(theme_bootstrap_checkbox('inversenavbar'));
-
     $settings->add(theme_bootstrap_textarea('customcss'));
 }
