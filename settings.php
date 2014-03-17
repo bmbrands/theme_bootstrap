@@ -25,12 +25,11 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+require_once($CFG->themedir . "/bootstrap/lib.php");
+
 if ($ADMIN->fulltree) {
-    // Turn on fluid width
-    $name = 'theme_bootstrap/fluidwidth';
-    $title = get_string('fluidwidth', 'theme_bootstrap');
-    $description = get_string('fluidwidth_desc', 'theme_bootstrap');
-    $default = '0';
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $settings->add($setting);
+    $settings->add(theme_bootstrap_checkbox('fluidwidth'));
+    $settings->add(theme_bootstrap_checkbox('fonticons'));
+    $settings->add(theme_bootstrap_checkbox('inversenavbar'));
 }
+

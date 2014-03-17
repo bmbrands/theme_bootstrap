@@ -37,6 +37,11 @@ if ($fluid) {
     $container = 'container-fluid';
 }
 
+$navbarclass = 'navbar navbar-default';
+if ($PAGE->theme->settings->inversenavbar == true) {
+    $navbarclass = 'navbar navbar-inverse';
+}
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -50,7 +55,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<nav role="navigation" class="navbar navbar-default">
+<nav role="navigation" class="<?php echo $navbarclass ?>">
     <div class="<?php echo $container; ?>">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
