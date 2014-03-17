@@ -31,5 +31,6 @@ if ($ADMIN->fulltree) {
     $settings->add(theme_bootstrap_checkbox('fluidwidth'));
     $settings->add(theme_bootstrap_checkbox('fonticons'));
     $settings->add(theme_bootstrap_checkbox('inversenavbar'));
-}
 
+    $settings->add(theme_bootstrap_textarea('customcss'));
+}
