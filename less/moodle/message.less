@@ -22,6 +22,25 @@
         margin: 5px 10px;
         padding: 5px 10px;
     }
+    tbody {
+        display: table;
+        margin: 5px 0;
+        padding: 5px 0;
+        width: 100%;
+    }
+    .message_form {
+        width: 100%;
+        tr {
+            border: 0;
+        }
+        td {
+            background-color: inherit !important;
+        }
+        input[type="text"] {
+            .form-control;
+            display: inline-block;
+        }
+    }
     .contactselector {
         .panel;
         .panel-default;
@@ -111,8 +130,10 @@
                 font-size: @font-size-base;
             }
             .messagesearchresults {
-
-                margin: 10px 15px;
+                width: 100%;
+                margin: 10px 0;
+                padding: 0px 15px;
+                display: block;
                 td.pix {
                     padding: 10px;
                     width: 30px;
@@ -246,6 +267,17 @@
         }
         .messagesend {
             .mform {
+                fieldset .fitem .felement,
+                fieldset.hidden > div {
+                    margin-left: 0;
+                    float: none;
+                    width: 100%;
+                }
+                .fitemtitle, .form-label {
+                    .h3;
+                    float: none;
+                    text-align: left;
+                }
                 fieldset .fitem {
                     margin-left: 0;
                     margin-right: 0;

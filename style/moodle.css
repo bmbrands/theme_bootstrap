@@ -2842,6 +2842,9 @@ span.editinstructions {
   clear: both;
   margin-bottom: 30px;
 }
+.coursebox .enrolmenticons {
+  float: right;
+}
 .coursebox.remotehost > .info > .categoryname a {
   background-image: url([[pix:moodle|i/mnethost]]);
 }
@@ -4324,6 +4327,65 @@ a.ygtvspacer:hover {
   margin: 5px 10px;
   padding: 5px 10px;
 }
+.box.message tbody {
+  display: table;
+  margin: 5px 0;
+  padding: 5px 0;
+  width: 100%;
+}
+.box.message .message_form {
+  width: 100%;
+}
+.box.message .message_form tr {
+  border: 0;
+}
+.box.message .message_form td {
+  background-color: inherit !important;
+}
+.box.message .message_form input[type="text"] {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  display: inline-block;
+}
+.box.message .message_form input[type="text"]:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.box.message .message_form input[type="text"]::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+.box.message .message_form input[type="text"]:-ms-input-placeholder {
+  color: #999999;
+}
+.box.message .message_form input[type="text"]::-webkit-input-placeholder {
+  color: #999999;
+}
+.box.message .message_form input[type="text"][disabled],
+.box.message .message_form input[type="text"][readonly],
+fieldset[disabled] .box.message .message_form input[type="text"] {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+  opacity: 1;
+}
+textarea.box.message .message_form input[type="text"] {
+  height: auto;
+}
 .box.message .contactselector {
   margin-bottom: 20px;
   background-color: #ffffff;
@@ -4760,7 +4822,10 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   font-size: 14px;
 }
 .box.message .messagearea .mdl-left .messagesearchresults {
-  margin: 10px 15px;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0px 15px;
+  display: block;
 }
 .box.message .messagearea .mdl-left .messagesearchresults td.pix {
   padding: 10px;
@@ -5120,6 +5185,38 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 }
 .box.message .messagearea .messagehistory .messagehistorytype a.visible {
   color: #2fa4e7;
+}
+.box.message .messagearea .messagesend .mform fieldset .fitem .felement,
+.box.message .messagearea .messagesend .mform fieldset.hidden > div {
+  margin-left: 0;
+  float: none;
+  width: 100%;
+}
+.box.message .messagearea .messagesend .mform .fitemtitle,
+.box.message .messagearea .messagesend .mform .form-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #317eac;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  float: none;
+  text-align: left;
+}
+.box.message .messagearea .messagesend .mform .fitemtitle small,
+.box.message .messagearea .messagesend .mform .form-label small,
+.box.message .messagearea .messagesend .mform .fitemtitle .small,
+.box.message .messagearea .messagesend .mform .form-label .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+.box.message .messagearea .messagesend .mform .fitemtitle small,
+.box.message .messagearea .messagesend .mform .form-label small,
+.box.message .messagearea .messagesend .mform .fitemtitle .small,
+.box.message .messagearea .messagesend .mform .form-label .small {
+  font-size: 65%;
 }
 .box.message .messagearea .messagesend .mform fieldset .fitem {
   margin-left: 0;

@@ -104,7 +104,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $messagecount = count($messages);
             $messagemenu = $menu->add(
                 $messagecount . ' ' . get_string('messages', 'message'),
-                new moodle_url('#'),
+                new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
                 get_string('messages', 'message'),
                 9999
             );
