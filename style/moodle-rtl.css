@@ -16621,6 +16621,11 @@ textarea.form-item .form-setting input[type="password"] {
   border-width: 0;
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px;
+}
+
 /*
 .mform .fitem fieldset.fgroup label {
     // see .felement.fdate_selector above
