@@ -49,12 +49,16 @@ function bootstrap_grid($hassidepre, $hassidepost) {
 
 function theme_bootstrap_checkbox($setting, $default='0') {
     list($name, $title, $description) = theme_bootstrap_setting_details($setting);
-    return new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    return $setting;
 }
 
 function theme_bootstrap_textarea($setting, $default='') {
     list($name, $title, $description) = theme_bootstrap_setting_details($setting);
-    return new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    return $setting;
 }
 
 function theme_bootstrap_setting_details($setting) {
