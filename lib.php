@@ -47,26 +47,56 @@ function bootstrap_grid($hassidepre, $hassidepost) {
     return $regions;
 }
 
-function theme_bootstrap_checkbox($setting, $default='0') {
-    list($name, $title, $description) = theme_bootstrap_setting_details($setting);
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    return $setting;
-}
+/**
+ * Wrapper class for settings
+ *
+ * Uses 'convention over configuration', assumes all strings are in the theme
+ * lang file, assumes the title langstring is the same as the name, and that
+ * the description langstring is the same as the title with 'desc' added to 
+ * end
+ */
+class simple_settings {
+    private $themename;
+    private $settingspage;
 
-function theme_bootstrap_textarea($setting, $default='') {
-    list($name, $title, $description) = theme_bootstrap_setting_details($setting);
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    return $setting;
-}
+    public function __construct($settingspage, $themename) {
+        $this->themename = $themename;
+        $this->settingspage = $settingspage;
+    }
 
-function theme_bootstrap_setting_details($setting) {
-    $theme = "theme_bootstrap";
-    $name = "$theme/$setting";
-    $title = get_string($setting, $theme);
-    $description = get_string($setting.'desc', $theme);
-    return array($name, $title, $description);
+    private function name_for($setting) {
+        return "$this->themename/$setting";
+    }
+
+    private function title_for($setting) {
+        return get_string($setting, $this->themename);
+    }
+
+    private function description_for($setting) {
+        return get_string("{$setting}desc", $this->themename);
+    }
+
+    public function add_checkbox($setting, $default='0') {
+        $checkbox = new admin_setting_configcheckbox(
+                $this->name_for($setting),
+                $this->title_for($setting),
+                $this->description_for($setting),
+                $default
+        );
+        $checkbox->set_updatedcallback('theme_reset_all_caches');
+        $this->settingspage->add($checkbox);
+    }
+
+    public function add_textarea($setting, $default='') {
+        $textarea = new admin_setting_configtextarea(
+                $this->name_for($setting),
+                $this->title_for($setting),
+                $this->description_for($setting),
+                $default
+        );
+        $textarea->set_updatedcallback('theme_reset_all_caches');
+        $this->settingspage->add($textarea);
+    }
 }
 
 /**
@@ -118,14 +148,9 @@ function theme_bootstrap_get_user_settings($settings, $theme) {
  * @return string The CSS with replacements made
  */
 function theme_bootstrap_replace_settings($settings, $css) {
-    $settingnames = array_keys($settings);
-
-    $wrapsettings = function($name) {
-        return "[[setting:$name]]";
-    };
-
-    $find = array_map($wrapsettings, $settingnames);
-    $replace = array_values($settings);
-
+    foreach ($settings as $name => $value) {
+        $find[] = "[[setting:$name]]";
+        $replace[] = $value;
+    }
     return str_replace($find, $replace, $css);
 }
