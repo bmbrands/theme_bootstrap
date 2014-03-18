@@ -6280,6 +6280,10 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   color: #2fa4e7;
 }
 
+.box.message .messagearea .messagesend .mform {
+  margin: 0 20px;
+}
+
 .box.message .messagearea .messagesend .mform fieldset .fitem .felement,
 .box.message .messagearea .messagesend .mform fieldset.hidden > div {
   margin-right: 0;
