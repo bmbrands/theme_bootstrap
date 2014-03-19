@@ -44,7 +44,16 @@ class theme_bootstrap_core_renderer extends core_renderer {
         if ($classes == 'redirectmessage') {
             return html_writer::div($message, 'alert alert-block alert-info');
         }
+        if ($classes == 'notifytiny') {
+            // Not an appropriate semantic alert class!
+            return $this->debug_listing($message);
+        }
         return html_writer::div($message, $classes);
+    }
+
+    private function debug_listing($message) {
+        $message = str_replace('<ul style', '<ul class="list-unstyled" style', $message);
+        return html_writer::tag('pre', $message, array('class' => 'alert alert-info'));
     }
 
     public function navbar() {
@@ -398,5 +407,11 @@ class theme_bootstrap_core_renderer extends core_renderer {
         } else {
             return false;
         }
+    }
+    public function box($contents, $classes = 'generalbox', $id = null, $attributes = array()) {
+        if (isset($attributes['data-rel']) && $attributes['data-rel'] === 'fatalerror') {
+            return html_writer::div($contents, 'alert alert-danger', $attributes);
+        }
+        return parent::box($contents, $classes, $id, $attributes);
     }
 }
