@@ -64,12 +64,12 @@ class simple_settings {
         $this->settingspage = $settingspage;
     }
 
-    private function name_for($setting) {
-        return "$this->themename/$setting";
+    private function name_for($setting, $suffix='') {
+        return "$this->themename/$setting$suffix";
     }
 
-    private function title_for($setting) {
-        return get_string($setting, $this->themename);
+    private function title_for($setting, $additional = null) {
+        return get_string($setting, $this->themename, $additional);
     }
 
     private function description_for($setting) {
@@ -96,6 +96,18 @@ class simple_settings {
         );
         $textarea->set_updatedcallback('theme_reset_all_caches');
         $this->settingspage->add($textarea);
+    }
+    public function add_numbered_textareas($setting, $count, $default='') {
+        for ($i = 1; $i <= $count; $i++) {
+            $textarea = new admin_setting_configtextarea(
+                    $this->name_for($setting, $i),
+                    $this->title_for($setting, $i),
+                    $this->description_for($setting),
+                    $default
+            );
+            $textarea->set_updatedcallback('theme_reset_all_caches');
+            $this->settingspage->add($textarea);
+        }
     }
 }
 
