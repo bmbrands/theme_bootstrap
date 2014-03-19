@@ -5135,6 +5135,7 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 }
 .box.message .messagearea .messagehistory .messagehistorytype.nav-justified {
   width: 100%;
+  padding: 10px 0 0 0;
   border-bottom: 0;
 }
 .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li {
@@ -5157,6 +5158,30 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
     margin-bottom: 0;
   }
 }
+@media (min-width: 768px) {
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li {
+    display: block;
+    width: 100%;
+    float: none;
+  }
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li > a {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 992px) {
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified {
+    border: 0;
+    border-radius: 0;
+  }
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
 .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li > a {
   margin-right: 0;
   border-radius: 4px;
@@ -5167,6 +5192,32 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   border: 1px solid #dddddd;
 }
 @media (min-width: 768px) {
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a,
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a:hover,
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a:focus {
+    border-bottom-color: #ffffff;
+  }
+}
+.box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li > a {
+  margin-right: 1px;
+  border-radius: 4px;
+}
+.box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a,
+.box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a:hover,
+.box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a:focus {
+  border: 1px solid #dddddd;
+}
+@media (min-width: 768px) {
+  .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li > a {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+  }
+}
+@media (min-width: 992px) {
   .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li > a {
     border-bottom: 1px solid #dddddd;
     border-radius: 4px 4px 0 0;
@@ -10537,6 +10588,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs.nav-justified {
   width: 100%;
+  padding: 10px 0 0 0;
   border-bottom: 0;
 }
 .nav-tabs.nav-justified > li {
@@ -10559,6 +10611,30 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-bottom: 0;
   }
 }
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li {
+    display: block;
+    width: 100%;
+    float: none;
+  }
+  .nav-tabs.nav-justified > li > a {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 992px) {
+  .nav-tabs.nav-justified {
+    border: 0;
+    border-radius: 0;
+  }
+  .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
 .nav-tabs.nav-justified > li > a {
   margin-right: 0;
   border-radius: 4px;
@@ -10569,6 +10645,32 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border: 1px solid #dddddd;
 }
 @media (min-width: 768px) {
+  .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #ffffff;
+  }
+}
+.nav-tabs.nav-justified > li > a {
+  margin-right: 1px;
+  border-radius: 4px;
+}
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #dddddd;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li > a {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+  }
+}
+@media (min-width: 992px) {
   .nav-tabs.nav-justified > li > a {
     border-bottom: 1px solid #dddddd;
     border-radius: 4px 4px 0 0;
@@ -15107,6 +15209,65 @@ input.fp-btn-choose {
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
+}
+.nav-justified > li > a {
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+.nav-justified {
+  padding: 10px 0 0 0;
+}
+@media (min-width: 768px) {
+  .nav-justified > li {
+    display: block;
+    width: 100%;
+    float: none;
+  }
+  .nav-justified > li > a {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 992px) {
+  .nav-justified {
+    border: 0;
+    border-radius: 0;
+  }
+  .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs-justified > li > a {
+  margin-right: 1px;
+  border-radius: 4px;
+}
+.nav-tabs-justified > .active > a,
+.nav-tabs-justified > .active > a:hover,
+.nav-tabs-justified > .active > a:focus {
+  border: 1px solid #dddddd;
+}
+@media (min-width: 768px) {
+  .nav-tabs-justified > li > a {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+  }
+}
+@media (min-width: 992px) {
+  .nav-tabs-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs-justified > .active > a,
+  .nav-tabs-justified > .active > a:hover,
+  .nav-tabs-justified > .active > a:focus {
+    border-bottom-color: #ffffff;
+  }
 }
 /* responsive.less */
 @media (max-width: 873px) {
