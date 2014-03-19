@@ -24,6 +24,7 @@
 $string['pluginname'] = 'Bootstrap 3';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
+$string['reader'] = 'Reader';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 $string['fonticons'] = 'Use Icon Font';

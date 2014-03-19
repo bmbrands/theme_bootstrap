@@ -21,12 +21,17 @@ $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $knownregionpre = $PAGE->blocks->is_known_region('side-pre');
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
-
-
 $regions = bootstrap_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
 $PAGE->requires->jquery();
 $PAGE->requires->jquery_plugin('bootstrap', 'theme_bootstrap');
+
+$usereader = (!empty($PAGE->layout_options['usereader']));
+$navbarbtn = '';
+if ($usereader) {
+    theme_bootstrap_initialise_reader($PAGE);
+    $navbarbtn = $OUTPUT->navbar_button_reader('#region-main', 'visible-sm');
+}
 
 $fluid = (!empty($PAGE->layout_options['fluid']));
 $container = 'container';
@@ -69,6 +74,7 @@ echo $OUTPUT->doctype() ?>
 
     <div id="moodle-navbar" class="navbar-collapse collapse">
         <?php echo $OUTPUT->custom_menu(); ?>
+        <?php echo $navbarbtn; ?>
         <?php echo $OUTPUT->user_menu(); ?>
         <ul class="nav pull-right">
             <li><?php echo $OUTPUT->page_heading_menu(); ?></li>

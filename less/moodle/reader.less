@@ -1,0 +1,21 @@
+.yui3-panel .readerpanel{
+    .yui3-widget-hd {
+        padding: @panel-body-padding;
+        background: @panel-primary-heading-bg;
+        height: @navbar-height;
+    }
+    // Fighting YUI classes KAPOW!!!
+    .yui3-widget-hd .yui3-button-close { 
+        .btn;
+        .btn-default;
+        .btn-sm;
+        width: auto;
+        height: auto;
+        &:before {
+            content: inherit;
+        }
+    }
+    div[role=main] {
+        padding: 0 10px;
+    }
+}

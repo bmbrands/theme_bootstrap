@@ -47,6 +47,10 @@ function bootstrap_grid($hassidepre, $hassidepost) {
     return $regions;
 }
 
+function theme_bootstrap_initialise_reader(moodle_page $page) {
+    $page->requires->yui_module('moodle-theme_bootstrap-reader', 'M.theme_bootstrap.initreader', array());
+}
+
 /**
  * Wrapper class for settings
  *
