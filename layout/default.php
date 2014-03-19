@@ -30,7 +30,7 @@ $usereader = (!empty($PAGE->layout_options['usereader']));
 $navbarbtn = '';
 if ($usereader) {
     theme_bootstrap_initialise_reader($PAGE);
-    $navbarbtn = $OUTPUT->navbar_button_reader('#region-main', 'hidden-sm');
+    $navbarbtn = $OUTPUT->navbar_button_reader('#region-main', 'hidden-xs');
 }
 
 $fluid = (!empty($PAGE->layout_options['fluid']));
