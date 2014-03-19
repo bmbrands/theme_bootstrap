@@ -1,6 +1,7 @@
 /*! Reader.js 
- * Copyright 2014 Bas Brands
- * Part of theme Bootstrap
+ * copyright  2014 Bas Brands, www.basbrands.nl
+ * authors    Bas Brands, David Scotson
+ * license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *  */
 YUI.add('moodle-theme_bootstrap-reader', function(Y) {
 
