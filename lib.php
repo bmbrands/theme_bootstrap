@@ -82,21 +82,32 @@ class simple_settings {
 
     public function add_checkbox($setting, $default='0') {
         $checkbox = new admin_setting_configcheckbox(
-                $this->name_for($setting),
-                $this->title_for($setting),
-                $this->description_for($setting),
-                $default
+            $this->name_for($setting),
+            $this->title_for($setting),
+            $this->description_for($setting),
+            $default
         );
         $checkbox->set_updatedcallback('theme_reset_all_caches');
         $this->settingspage->add($checkbox);
     }
 
+    public function add_text($setting, $default='') {
+        $text = new admin_setting_configtext(
+            $this->name_for($setting),
+            $this->title_for($setting),
+            $this->description_for($setting),
+            $default
+        );
+        $text->set_updatedcallback('theme_reset_all_caches');
+        $this->settingspage->add($text);
+    }
+
     public function add_textarea($setting, $default='') {
         $textarea = new admin_setting_configtextarea(
-                $this->name_for($setting),
-                $this->title_for($setting),
-                $this->description_for($setting),
-                $default
+            $this->name_for($setting),
+            $this->title_for($setting),
+            $this->description_for($setting),
+            $default
         );
         $textarea->set_updatedcallback('theme_reset_all_caches');
         $this->settingspage->add($textarea);
@@ -104,10 +115,10 @@ class simple_settings {
     public function add_numbered_textareas($setting, $count, $default='') {
         for ($i = 1; $i <= $count; $i++) {
             $textarea = new admin_setting_configtextarea(
-                    $this->name_for($setting, $i),
-                    $this->title_for($setting, $i),
-                    $this->description_for($setting),
-                    $default
+                $this->name_for($setting, $i),
+                $this->title_for($setting, $i),
+                $this->description_for($setting),
+                $default
             );
             $textarea->set_updatedcallback('theme_reset_all_caches');
             $this->settingspage->add($textarea);
@@ -128,9 +139,12 @@ function theme_bootstrap_process_css($css, $theme) {
 
     $defaultsettings = array(
         'customcss' => '',
+        'brandfont' => '',
     );
 
     $settings = theme_bootstrap_get_user_settings($defaultsettings, $theme);
+
+    $settings['brandcss'] = theme_bootstrap_brand_font_css($settings);
 
     return theme_bootstrap_replace_settings($settings, $css);
 }
@@ -169,4 +183,24 @@ function theme_bootstrap_replace_settings($settings, $css) {
         $replace[] = $value;
     }
     return str_replace($find, $replace, $css);
+}
+
+function theme_bootstrap_brand_font_css($settings) {
+    $font = $settings['brandfont'];
+    if ($font === '') {
+        return '';
+    }
+    return ".navbar-default .navbar-brand,
+            .navbar-inverse .navbar-brand {
+                font-family: $font;
+            }";
+}
+function theme_bootstrap_brand_font_link($brandname, $fontname) {
+    if ($fontname === '') {
+        return '';
+    }
+    $fontname = urlencode($fontname);
+    $nameletters = count_chars($brandname, 3);
+    return '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='
+            .$fontname.'&text='.$nameletters.'">';
 }
