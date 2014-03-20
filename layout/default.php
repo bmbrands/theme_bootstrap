@@ -42,6 +42,8 @@ if ($fluid) {
     $container = 'container-fluid';
 }
 
+$brandfont = $PAGE->theme->settings->brandfont;
+
 $navbarclass = 'navbar navbar-default';
 if ($PAGE->theme->settings->inversenavbar == true) {
     $navbarclass = 'navbar navbar-inverse';
@@ -52,6 +54,7 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+    <?php echo theme_bootstrap_brand_font_link($SITE->shortname, $brandfont) ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

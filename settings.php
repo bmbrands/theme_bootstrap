@@ -32,6 +32,7 @@ if ($ADMIN->fulltree) {
     $simplesettings->add_checkbox('fluidwidth');
     $simplesettings->add_checkbox('fonticons');
     $simplesettings->add_checkbox('inversenavbar');
+    $simplesettings->add_text('brandfont');
     $simplesettings->add_textarea('customcss');
     $simplesettings->add_numbered_textareas('footerwidget', 4);
 }

@@ -21,20 +21,22 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Bootstrap 3';
-$string['region-side-post'] = 'Right';
-$string['region-side-pre'] = 'Left';
-$string['reader'] = 'Reader';
+$string['brandfont'] = 'Logotype Font';
+$string['brandfontdesc'] = 'The name of a Google Font to use for the site name in the navbar';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
+$string['fluidwidth'] = 'Fluid width theme';
+$string['fluidwidthdesc'] = 'Enable this option to allow using your full screen';
 $string['fonticons'] = 'Use Icon Font';
 $string['fonticonsdesc'] = 'Enable this option to use the Glyphicon Icon Font';
 $string['footerwidget'] = 'Footer Widget #{$a}';
 $string['footerwidgetdesc'] = 'All footer widgets have the same description';
-$string['fluidwidth'] = 'Fluid width theme';
-$string['fluidwidthdesc'] = 'Enable this option to allow using your full screen';
 $string['inversenavbar'] = 'Inverse Navbar';
 $string['inversenavbardesc'] = 'Enable this option to use the inverted color scheme for the navbar';
+$string['pluginname'] = 'Bootstrap 3';
+$string['reader'] = 'Reader';
+$string['region-side-post'] = 'Right';
+$string['region-side-pre'] = 'Left';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap Base</h2>
