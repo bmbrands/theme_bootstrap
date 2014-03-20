@@ -411,7 +411,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
     public function navbar_button_reader($dataid = '#region-main', $class = null) {
         $icon = html_writer::tag('span', '' , array('class' => 'glyphicon glyphicon-zoom-in'));
-        $content = html_writer::link('#', $icon . ' ' . get_string('reader','theme_bootstrap'),
+        $content = html_writer::link('#', $icon . ' ' . get_string('reader', 'theme_bootstrap'),
             array('class' => 'btn btn-default navbar-btn btn-sm moodlereader pull-right ' . $class,
                 'dataid' => $dataid));
         return $content;
