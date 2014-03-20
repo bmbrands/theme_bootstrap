@@ -80,7 +80,7 @@ class simple_settings {
         return get_string("{$setting}desc", $this->themename);
     }
 
-    public function add_checkbox($setting, $default='0') {
+    public function add_checkbox($setting, $default='0', $yes='1', $no='0') {
         $checkbox = new admin_setting_configcheckbox(
             $this->name_for($setting),
             $this->title_for($setting),
@@ -101,6 +101,26 @@ class simple_settings {
         $text->set_updatedcallback('theme_reset_all_caches');
         $this->settingspage->add($text);
     }
+    public function add_heading($setting) {
+        $heading = new admin_setting_heading(
+            $this->name_for($setting),
+            $this->title_for($setting),
+            $this->description_for($setting)
+        );
+        $this->settingspage->add($heading);
+    }
+
+    public function add_select($setting, $default, $options) {
+        $select = new admin_setting_configselect(
+            $this->name_for($setting),
+            $this->title_for($setting),
+            $this->description_for($setting),
+            $default,
+            $options
+        );
+        $select->set_updatedcallback('theme_reset_all_caches');
+        $this->settingspage->add($select);
+    }
 
     public function add_textarea($setting, $default='') {
         $textarea = new admin_setting_configtextarea(
@@ -111,6 +131,38 @@ class simple_settings {
         );
         $textarea->set_updatedcallback('theme_reset_all_caches');
         $this->settingspage->add($textarea);
+    }
+
+    public function add_htmleditor($setting, $default='') {
+        $htmleditor = new admin_setting_confightmleditor(
+            $this->name_for($setting),
+            $this->title_for($setting),
+            $this->description_for($setting),
+            $default
+        );
+        $htmleditor->set_updatedcallback('theme_reset_all_caches');
+        $this->settingspage->add($htmleditor);
+    }
+    public function add_colourpicker($setting, $default='#666') {
+        $colorpicker = new admin_setting_configcolourpicker(
+            $this->name_for($setting),
+            $this->title_for($setting),
+            $this->description_for($setting),
+            $default,
+            null // Don't hook up any javascript preview of color change.
+        );
+        $colorpicker->set_updatedcallback('theme_reset_all_caches');
+        $this->settingspage->add($colorpicker);
+    }
+    public function add_file($setting) {
+        $file = new admin_setting_configstoredfile(
+            $this->name_for($setting),
+            $this->title_for($setting),
+            $this->description_for($setting),
+            $setting // TODO find out what this does
+        );
+        $file->set_updatedcallback('theme_reset_all_caches');
+        $this->settingspage->add($file);
     }
     public function add_numbered_textareas($setting, $count, $default='') {
         for ($i = 1; $i <= $count; $i++) {
