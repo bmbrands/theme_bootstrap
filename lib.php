@@ -26,6 +26,94 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Parses CSS before it is cached.
+ *
+ * This function can make alterations and replace patterns within the CSS.
+ *
+ * @param string $css The CSS
+ * @param theme_config $theme The theme config object.
+ * @return string The parsed CSS The parsed CSS.
+ */
+function theme_bootstrap_process_css($css, $theme) {
+
+    $settings = get_object_vars($theme->settings);
+
+    $settings['brandcss'] = theme_bootstrap_brand_font_css($settings);
+
+    return theme_bootstrap_replace_settings($settings, $css);
+}
+
+/**
+ * For each setting called e.g. "customcss" this looks for the string
+ * "[[setting:customcss]]" in the CSS and replaces it with
+ * the value held in the $settings array for the key
+ * "customcss".
+ *
+ * @param array $settings containing setting names and values
+ * @param string $css The CSS
+ * @return string The CSS with replacements made
+ */
+function theme_bootstrap_replace_settings($settings, $css) {
+    foreach ($settings as $name => $value) {
+        $find[] = "[[setting:$name]]";
+        $replace[] = $value;
+    }
+    return str_replace($find, $replace, $css);
+}
+
+function theme_bootstrap_brand_font_css($settings) {
+    $fontname = $settings['brandfont'];
+    if ($fontname === '') {
+        return '';
+    }
+    return ".navbar-default .navbar-brand,
+            .navbar-inverse .navbar-brand {
+                font-family: $fontname;
+            }";
+}
+
+/**
+ * This function creates the dynamic HTML needed for the 
+ * layout and then passes it back in an object so it can
+ * be echo'd to the page.
+ *
+ * This keeps the logic out of the layout files.
+ */
+function theme_bootstrap_html_for_settings($PAGE) {
+    $settings = $PAGE->theme->settings;
+
+    $html = new stdClass;
+
+    if ($settings->inversenavbar == true) {
+        $html->navbarclass = 'navbar navbar-inverse';
+    } else {
+        $html->navbarclass = 'navbar navbar-default';
+    }
+
+    $fluid = (!empty($PAGE->layout_options['fluid']));
+    if ($fluid || $settings->fluidwidth == true) {
+        $html->containerclass = 'container-fluid';
+    } else {
+        $html->containerclass = 'container';
+    }
+
+    $html->brandfontlink = theme_bootstrap_brand_font_link($settings->brandfont);
+
+    return $html;
+}
+
+function theme_bootstrap_brand_font_link($fontname) {
+    global $SITE;
+    if ($fontname === '') {
+        return '';
+    }
+    $fontname = urlencode($fontname);
+    $nameletters = count_chars($SITE->shortname, 3);
+    return '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='
+            .$fontname.'&text='.$nameletters.'">';
+}
+
 function bootstrap_grid($hassidepre, $hassidepost) {
     if ($hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-4 col-sm-push-4 col-md-6 col-md-push-3');
@@ -51,208 +139,3 @@ function theme_bootstrap_initialise_reader(moodle_page $page) {
     $page->requires->yui_module('moodle-theme_bootstrap-reader', 'M.theme_bootstrap.initreader', array());
 }
 
-/**
- * Wrapper class for settings
- *
- * Uses 'convention over configuration', assumes all strings are in the theme
- * lang file, assumes the title langstring is the same as the name, and that
- * the description langstring is the same as the title with 'desc' added to 
- * end
- */
-class simple_settings {
-    private $themename;
-    private $settingspage;
-
-    public function __construct($settingspage, $themename) {
-        $this->themename = $themename;
-        $this->settingspage = $settingspage;
-    }
-
-    private function name_for($setting, $suffix='') {
-        return "$this->themename/$setting$suffix";
-    }
-
-    private function title_for($setting, $additional = null) {
-        return get_string($setting, $this->themename, $additional);
-    }
-
-    private function description_for($setting) {
-        return get_string("{$setting}desc", $this->themename);
-    }
-
-    public function add_checkbox($setting, $default='0', $yes='1', $no='0') {
-        $checkbox = new admin_setting_configcheckbox(
-            $this->name_for($setting),
-            $this->title_for($setting),
-            $this->description_for($setting),
-            $default
-        );
-        $checkbox->set_updatedcallback('theme_reset_all_caches');
-        $this->settingspage->add($checkbox);
-    }
-
-    public function add_text($setting, $default='') {
-        $text = new admin_setting_configtext(
-            $this->name_for($setting),
-            $this->title_for($setting),
-            $this->description_for($setting),
-            $default
-        );
-        $text->set_updatedcallback('theme_reset_all_caches');
-        $this->settingspage->add($text);
-    }
-    public function add_heading($setting) {
-        $heading = new admin_setting_heading(
-            $this->name_for($setting),
-            $this->title_for($setting),
-            $this->description_for($setting)
-        );
-        $this->settingspage->add($heading);
-    }
-
-    public function add_select($setting, $default, $options) {
-        $select = new admin_setting_configselect(
-            $this->name_for($setting),
-            $this->title_for($setting),
-            $this->description_for($setting),
-            $default,
-            $options
-        );
-        $select->set_updatedcallback('theme_reset_all_caches');
-        $this->settingspage->add($select);
-    }
-
-    public function add_textarea($setting, $default='') {
-        $textarea = new admin_setting_configtextarea(
-            $this->name_for($setting),
-            $this->title_for($setting),
-            $this->description_for($setting),
-            $default
-        );
-        $textarea->set_updatedcallback('theme_reset_all_caches');
-        $this->settingspage->add($textarea);
-    }
-
-    public function add_htmleditor($setting, $default='') {
-        $htmleditor = new admin_setting_confightmleditor(
-            $this->name_for($setting),
-            $this->title_for($setting),
-            $this->description_for($setting),
-            $default
-        );
-        $htmleditor->set_updatedcallback('theme_reset_all_caches');
-        $this->settingspage->add($htmleditor);
-    }
-    public function add_colourpicker($setting, $default='#666') {
-        $colorpicker = new admin_setting_configcolourpicker(
-            $this->name_for($setting),
-            $this->title_for($setting),
-            $this->description_for($setting),
-            $default,
-            null // Don't hook up any javascript preview of color change.
-        );
-        $colorpicker->set_updatedcallback('theme_reset_all_caches');
-        $this->settingspage->add($colorpicker);
-    }
-    public function add_file($setting) {
-        $file = new admin_setting_configstoredfile(
-            $this->name_for($setting),
-            $this->title_for($setting),
-            $this->description_for($setting),
-            $setting // TODO find out what this does
-        );
-        $file->set_updatedcallback('theme_reset_all_caches');
-        $this->settingspage->add($file);
-    }
-    public function add_numbered_textareas($setting, $count, $default='') {
-        for ($i = 1; $i <= $count; $i++) {
-            $textarea = new admin_setting_configtextarea(
-                $this->name_for($setting, $i),
-                $this->title_for($setting, $i),
-                $this->description_for($setting),
-                $default
-            );
-            $textarea->set_updatedcallback('theme_reset_all_caches');
-            $this->settingspage->add($textarea);
-        }
-    }
-}
-
-/**
- * Parses CSS before it is cached.
- *
- * This function can make alterations and replace patterns within the CSS.
- *
- * @param string $css The CSS
- * @param theme_config $theme The theme config object.
- * @return string The parsed CSS The parsed CSS.
- */
-function theme_bootstrap_process_css($css, $theme) {
-
-    $defaultsettings = array(
-        'customcss' => '',
-        'brandfont' => '',
-    );
-
-    $settings = theme_bootstrap_get_user_settings($defaultsettings, $theme);
-
-    $settings['brandcss'] = theme_bootstrap_brand_font_css($settings);
-
-    return theme_bootstrap_replace_settings($settings, $css);
-}
-
-/**
- * Parses CSS before it is cached.
- *
- * This function can make alterations and replace patterns within the CSS.
- *
- * @param array $settings containing setting names and default values
- * @param theme_config $theme The theme config object.
- * @return array The setting with defaults replaced with user settings (if any)
- */
-function theme_bootstrap_get_user_settings($settings, $theme) {
-    foreach (array_keys($settings) as $setting) {
-        if (!empty($theme->settings->$setting)) {
-            $settings[$setting] = $theme->settings->$setting;
-        }
-    }
-    return $settings;
-}
-
-/**
- * For each setting called e.g. "customcss" this looks for the string
- * "[[setting:customcss]]" in the CSS and replaces it with
- * the value held in the $settings array for the key
- * "customcss".
- *
- * @param array $settings containing setting names and values
- * @param string $css The CSS
- * @return string The CSS with replacements made
- */
-function theme_bootstrap_replace_settings($settings, $css) {
-    foreach ($settings as $name => $value) {
-        $find[] = "[[setting:$name]]";
-        $replace[] = $value;
-    }
-    return str_replace($find, $replace, $css);
-}
-
-function theme_bootstrap_brand_font_css($settings) {
-    $font = $settings['brandfont'];
-    if ($font === '') {
-        return '';
-    }
-    return ".navbar-default .navbar-brand,
-            .navbar-inverse .navbar-brand {
-                font-family: $font;
-            }";
-}
-function theme_bootstrap_brand_font_link($brandname, $fontname) {
-    if ($fontname === '') {
-        return '';
-    }
-    $fontname = urlencode($fontname);
-    $nameletters = count_chars($brandname, 3);
-    return '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='
-            .$fontname.'&text='.$nameletters.'">';
-}
