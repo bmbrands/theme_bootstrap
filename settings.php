@@ -26,13 +26,13 @@
 defined('MOODLE_INTERNAL') || die;
 
 require_once(__DIR__ . "/lib.php");
+require_once(__DIR__ . "/simple_theme_settings.class.php");
 
 if ($ADMIN->fulltree) {
-    $simplesettings = new simple_settings($settings, 'theme_bootstrap');
+    $simplesettings = new simple_theme_settings($settings, 'theme_bootstrap');
     $simplesettings->add_checkbox('fluidwidth');
     $simplesettings->add_checkbox('fonticons');
     $simplesettings->add_checkbox('inversenavbar');
     $simplesettings->add_text('brandfont');
     $simplesettings->add_textarea('customcss');
-    $simplesettings->add_numbered_textareas('footerwidget', 4);
 }

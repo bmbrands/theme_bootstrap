@@ -33,29 +33,15 @@ if ($usereader) {
     $navbarbtn = $OUTPUT->navbar_button_reader('#region-main', 'hidden-xs');
 }
 
-$fluid = (!empty($PAGE->layout_options['fluid']));
-$container = 'container';
-if (isset($PAGE->theme->settings->fluidwidth) && ($PAGE->theme->settings->fluidwidth == true)) {
-    $container = 'container-fluid';
-}
-if ($fluid) {
-    $container = 'container-fluid';
-}
-
-$brandfont = $PAGE->theme->settings->brandfont;
-
-$navbarclass = 'navbar navbar-default';
-if ($PAGE->theme->settings->inversenavbar == true) {
-    $navbarclass = 'navbar navbar-inverse';
-}
+$settingshtml = theme_bootstrap_html_for_settings($PAGE);
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo theme_bootstrap_brand_font_link($SITE->shortname, $brandfont) ?>
-    <?php echo $OUTPUT->standard_head_html() ?>
+    <?php echo $settingshtml->brandfontlink; ?>
+    <?php echo $OUTPUT->standard_head_html(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 </head>
 
@@ -63,8 +49,8 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<nav role="navigation" class="<?php echo $navbarclass ?>">
-    <div class="<?php echo $container; ?>">
+<nav role="navigation" class="<?php echo $settingshtml->navbarclass; ?>">
+    <div class="<?php echo $settingshtml->containerclass; ?>">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -86,12 +72,12 @@ echo $OUTPUT->doctype() ?>
     </div>
 </nav>
 <header class="moodleheader">
-<div class="<?php echo $container; ?>">
+<div class="<?php echo $settingshtml->containerclass; ?>">
 <?php echo $OUTPUT->page_heading(); ?>
 </div>
 </header>
 
-<div id="page" class="<?php echo $container; ?>">
+<div id="page" class="<?php echo $settingshtml->containerclass; ?>">
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
