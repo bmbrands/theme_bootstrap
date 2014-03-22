@@ -39,9 +39,23 @@ function theme_bootstrap_process_css($css, $theme) {
 
     $settings = get_object_vars($theme->settings);
 
+    $css = theme_bootstrap_delete_css($settings, $css);
+
     $settings['brandcss'] = theme_bootstrap_brand_font_css($settings);
 
     return theme_bootstrap_replace_settings($settings, $css);
+}
+
+function theme_bootstrap_delete_css($settings, $css) {
+    if ($settings['deletecss'] == true) {
+        $find[] = '/-webkit-border-radius:[^;]*;/';
+        $find[] = '/-webkit-box-shadow:[^;]*;/';
+        $find[] = '/-moz-border-radius:[^;]*;/';
+        $find[] = '/-moz-box-shadow:[^;]*;/';
+        return preg_replace($find, '', $css);
+    } else {
+        return $css;
+    }
 }
 
 /**
