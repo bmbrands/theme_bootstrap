@@ -43,14 +43,21 @@
         }
     }
     fieldset.hidden {
-            &:extend(.form-group);
-            &:extend(.form-horizontal .form-group);
-            > div {
-                .make-md-column(8);
-                .make-md-column-offset(4);
-                .make-lg-column(9);
-                .make-lg-column-offset(3);
+        .fitem {
+            .fitemtitle {
+                width: auto;
             }
+            .felement {
+                .make-md-column(10);
+                .make-lg-column(11);
+            }
+            .fsubmit {
+                width: 100%;
+                input {
+                    float: right;
+                }
+            }
+        }
     }
 }
 
@@ -202,9 +209,6 @@
     .fitem_fcheckbox .fcheckbox {
         padding-top: 8px;
     }
-    fieldset.hidden > div {
-        margin-left: -20px;
-    }
     .form-buttons .form-submit {
         margin-left: -5px;
     }
@@ -215,7 +219,7 @@
     .mform .fcontainer .fitem .felement input[type="password"],
     .mform .fcontainer .fitem .felement select {
         width: auto;
-        min-width: 500px;
+        min-width: 480px;
     }
 }
 

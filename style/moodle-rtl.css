@@ -3932,7 +3932,7 @@ span.editinstructions {
 }
 
 #course-category-listings #category-listing .course-count {
-  color: #a1a1a8;
+  color: #555555;
   margin-left: 2rem;
   min-width: 3.5em;
   display: inline-block;
@@ -10650,7 +10650,6 @@ input[type="date"] {
 .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden,
 .form-item {
   margin-bottom: 15px;
 }
@@ -10937,7 +10936,6 @@ select[multiple].input-lg {
 .form-horizontal .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden,
 .form-item {
   margin-right: -15px;
   margin-left: -15px;
@@ -15449,8 +15447,6 @@ button.close {
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:before,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:before,
-.mform fieldset.hidden:after,
 .form-item:before,
 .form-item:after {
   content: " ";
@@ -15478,7 +15474,6 @@ button.close {
 .path-backup .mform .grouped_settings .fitem:after,
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:after,
 .form-item:after {
   clear: both;
 }
@@ -16293,7 +16288,11 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
   display: inline-block;
 }
 
-.mform fieldset.hidden > div {
+.mform fieldset.hidden .fitem .fitemtitle {
+  width: auto;
+}
+
+.mform fieldset.hidden .fitem .felement {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
@@ -16301,29 +16300,25 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 }
 
 @media (min-width: 992px) {
-  .mform fieldset.hidden > div {
+  .mform fieldset.hidden .fitem .felement {
     float: right;
-    width: 66.66666667%;
-  }
-}
-
-@media (min-width: 992px) {
-  .mform fieldset.hidden > div {
-    margin-right: 33.33333333%;
+    width: 83.33333333%;
   }
 }
 
 @media (min-width: 1200px) {
-  .mform fieldset.hidden > div {
+  .mform fieldset.hidden .fitem .felement {
     float: right;
-    width: 75%;
+    width: 91.66666667%;
   }
 }
 
-@media (min-width: 1200px) {
-  .mform fieldset.hidden > div {
-    margin-right: 25%;
-  }
+.mform fieldset.hidden .fitem .fsubmit {
+  width: 100%;
+}
+
+.mform fieldset.hidden .fitem .fsubmit input {
+  float: left;
 }
 
 .mform fieldset.hidden .fitem_actionbuttons .felement {
@@ -16582,10 +16577,6 @@ textarea.form-item .form-setting input[type="password"] {
     padding-top: 8px;
   }
 
-  fieldset.hidden > div {
-    margin-right: -20px;
-  }
-
   .form-buttons .form-submit {
     margin-right: -5px;
   }
@@ -16597,7 +16588,7 @@ textarea.form-item .form-setting input[type="password"] {
   .mform .fcontainer .fitem .felement input[type="password"],
   .mform .fcontainer .fitem .felement select {
     width: auto;
-    min-width: 500px;
+    min-width: 480px;
   }
 }
 
