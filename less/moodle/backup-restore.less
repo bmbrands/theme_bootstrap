@@ -89,16 +89,7 @@
 
 .backup-restore .backup-section > h2.header,
 .backup-restore .backup-section .backup-sub-section h3 {
-    // Copied from bootstrap/forms.less tag legend
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin-bottom: @line-height-base;
-    font-size: @font-size-base * 1.5;
-    line-height: @line-height-base * 2;
-    color: @gray-dark;
-    border: 0;
-    border-bottom: 1px solid #e5e5e5;
+    &:extend(legend);
 }
 .backup-restore .backup-section .noticebox {
     margin: 1em auto;

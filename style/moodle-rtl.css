@@ -17301,19 +17301,6 @@ div#dock {
   vertical-align: text-bottom;
 }
 
-.backup-restore .backup-section > h2.header,
-.backup-restore .backup-section .backup-sub-section h3 {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 1.42857143;
-  font-size: 21px;
-  line-height: 2.85714286;
-  color: #333333;
-  border: 0;
-  border-bottom: 1px solid #e5e5e5;
-}
-
 .backup-restore .backup-section .noticebox {
   margin: 1em auto;
   width: 60%;
