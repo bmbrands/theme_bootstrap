@@ -101,11 +101,12 @@ select {
 #page-footer {
     margin-top: 1em;
     padding: 1em 0;
-    border-top: 2px solid #eee;
+    border-top: 2px solid @table-border-color;
 }
 
-.maincalendar .calendarmonth td,.maincalendar .calendarmonth th {
-    border: 1px dotted #ddd;
+.maincalendar .calendarmonth td,
+.maincalendar .calendarmonth th {
+    border: 1px dotted @table-border-color;
 }
 
 .path-grade-report-grader h1 {
@@ -200,8 +201,7 @@ div#dock {
 
 .path-mod-survey {
     .surveytable {
-        .r0 {background-color: #eee;}
-        .r1 {background-color: #ddd;}
+        .r1 {background-color: @table-bg-accent}
         .rblock label {text-align: center;}
     }
     .resultgraph, .reportsummary, .studentreport, .reportbuttons, .centerpara {
