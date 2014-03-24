@@ -3927,7 +3927,7 @@ span.editinstructions {
 }
 
 #course-category-listings #category-listing .course-count {
-  color: #a1a1a8;
+  color: #555555;
   margin-left: 2rem;
   min-width: 3.5em;
   display: inline-block;
