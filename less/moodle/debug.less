@@ -1,28 +1,6 @@
-.phpinfo table,
-.phpinfo th,
-.phpinfo h2 {
-    margin: auto;
-    text-align: left;
-}
-.phpinfo h2 {
-    width: 600px;
-}
-.phpinfo .e,
-.phpinfo .v,
-.phpinfo .h {
-    border: 1px solid #000000;
-    font-size: 0.8em;
+.phpinfo td {
+    border: 1px solid @table-border-color;
     vertical-align: baseline;
-    color: #000000;
-    background-color: #cccccc;
-}
-.phpinfo .e {
-    background-color: #ccccff;
-    font-weight: bold;
-}
-.phpinfo .h {
-    background-color: #9999cc;
-    font-weight: bold;
 }
 #page-footer .performanceinfo {
     margin: 10px 20%;
@@ -58,7 +36,7 @@
     margin: .3em;
     display: inline-block;
     vertical-align: top;
-    background-color: @well-bg;
+    background-color: @table-bg-accent;
 }
 .cache-store-stats {
     padding: 0 1.3em;

@@ -1896,8 +1896,8 @@ img.iconsmall {
 }
 
 #page-admin-roles-define .capdefault {
-  background-color: #eee;
-  border: 1px solid #cecece;
+  background-color: #f9f9f9;
+  border: 1px solid #dddddd;
 }
 
 #page-filter-manage .backlink,
@@ -2294,7 +2294,7 @@ img.iconsmall {
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo .separator,
 #plugins-check .status .pluginupdateinfo .separator,
 #page-admin-plugins .separator {
-  border-right: 1px dotted #999;
+  border-right: 1px dotted #dddddd;
 }
 
 #plugins-overview-filter,
@@ -2330,11 +2330,6 @@ img.iconsmall {
   border: 2px solid #eed3d7;
   padding: 4px;
   margin-bottom: 5px;
-}
-
-#core-cache-store-summaries .default-store td {
-  color: #333;
-  font-style: italic;
 }
 
 #core-cache-rescan-definitions,
@@ -7826,7 +7821,7 @@ textarea.loginbox .loginform .form-input input[type="password"] {
   font-size: 30px;
   line-height: 30px;
   font-weight: 300;
-  color: #333333;
+  color: #555555;
 }
 
 .loginbox .subcontent {
@@ -8387,7 +8382,7 @@ ol {
 }
 
 #adminthemeselector td img {
-  max-widht: 500px;
+  max-width: 500px;
 }
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
@@ -8589,7 +8584,9 @@ fieldset {
 }
 
 legend,
-#adminsettings h3 {
+#adminsettings h3,
+.backup-restore .backup-section > h2.header,
+.backup-restore .backup-section .backup-sub-section h3 {
   border: 0;
   padding: 0;
 }
@@ -10525,7 +10522,9 @@ fieldset {
 }
 
 legend,
-#adminsettings h3 {
+#adminsettings h3,
+.backup-restore .backup-section > h2.header,
+.backup-restore .backup-section .backup-sub-section h3 {
   display: block;
   width: 100%;
   padding: 0;
@@ -16906,12 +16905,12 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 #page-footer {
   margin-top: 1em;
   padding: 1em 0;
-  border-top: 2px solid #eee;
+  border-top: 2px solid #dddddd;
 }
 
 .maincalendar .calendarmonth td,
 .maincalendar .calendarmonth th {
-  border: 1px dotted #ddd;
+  border: 1px dotted #dddddd;
 }
 
 .path-grade-report-grader h1 {
@@ -17004,12 +17003,8 @@ div#dock {
   width: 100%;
 }
 
-.path-mod-survey .surveytable .r0 {
-  background-color: #eee;
-}
-
 .path-mod-survey .surveytable .r1 {
-  background-color: #ddd;
+  background-color: #f9f9f9;
 }
 
 .path-mod-survey .surveytable .rblock label {
@@ -17303,24 +17298,11 @@ div#dock {
   width: 90%;
   margin: 0.8em auto;
   background-color: #ffffff;
-  border: 1px dotted #666;
+  border: 1px dotted #dddddd;
 }
 
 .path-backup .fitem .smallicon {
   vertical-align: text-bottom;
-}
-
-.backup-restore .backup-section > h2.header,
-.backup-restore .backup-section .backup-sub-section h3 {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 1.42857143;
-  font-size: 21px;
-  line-height: 2.85714286;
-  color: #333333;
-  border: 0;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 .backup-restore .backup-section .noticebox {
@@ -17395,115 +17377,16 @@ div#dock {
   min-width: 400px;
 }
 
-.restore-course-search .rcs-results table {
-  width: 100%;
-  margin: 0;
-  border-width: 0;
-}
-
 .restore-course-search .rcs-results table .no-overflow {
   max-width: 600px;
-}
-
-.restore-course-search .rcs-results .paging {
-  text-align: right;
-  margin: 0;
-  background-color: #eee;
-  padding: 3px;
-}
-
-.restore-course-category .rcs-results {
-  width: 70%;
-  min-width: 400px;
-  border: 1px solid #ddd;
-  margin: 5px 0;
-}
-
-.restore-course-category .rcs-results table {
-  width: 100%;
-  margin: 0;
-  border-width: 0;
 }
 
 .restore-course-category .rcs-results table .no-overflow {
   max-width: 600px;
 }
 
-.restore-course-category .rcs-results .paging {
-  text-align: right;
-  margin: 0;
-  background-color: #eee;
-  padding: 3px;
-}
-
 .path-backup .wibbler {
-  width: 500px;
-  margin: 0 auto 10px;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  position: relative;
-  min-height: 4px;
-}
-
-.path-backup .wibbler .wibble {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  height: 4px;
-}
-
-.path-backup .wibbler .state0 {
-  background: #eee;
-}
-
-.path-backup .wibbler .state1 {
-  background: #ddd;
-}
-
-.path-backup .wibbler .state2 {
-  background: #ccc;
-}
-
-.path-backup .wibbler .state3 {
-  background: #bbb;
-}
-
-.path-backup .wibbler .state4 {
-  background: #aaa;
-}
-
-.path-backup .wibbler .state5 {
-  background: #999;
-}
-
-.path-backup .wibbler .state6 {
-  background: #888;
-}
-
-.path-backup .wibbler .state7 {
-  background: #777;
-}
-
-.path-backup .wibbler .state8 {
-  background: #666;
-}
-
-.path-backup .wibbler .state9 {
-  background: #555;
-}
-
-.path-backup .wibbler .state10 {
-  background: #444;
-}
-
-.path-backup .wibbler .state11 {
-  background: #333;
-}
-
-.path-backup .wibbler .state12 {
-  background: #222;
+  display: none;
 }
 
 .path-backup .backup_log {
@@ -17515,7 +17398,7 @@ div#dock {
 }
 
 .path-backup .backup_log_contents {
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   padding: 10px;
   height: 300px;
   overflow-y: scroll;
@@ -18790,7 +18673,7 @@ fieldset[disabled] .yui3-panel .readerpanel .yui3-widget-hd .yui3-button-close.a
   .editing .course-content .section .activity {
     margin-bottom: 0.2em;
     padding-bottom: 0.2em;
-    border-bottom: thin solid #eee;
+    border-bottom: thin solid #dddddd;
   }
 
   .course-content .section .activity .commands {
@@ -18844,35 +18727,9 @@ fieldset[disabled] .yui3-panel .readerpanel .yui3-widget-hd .yui3-button-close.a
   }
 }
 
-.phpinfo table,
-.phpinfo th,
-.phpinfo h2 {
-  margin: auto;
-  text-align: right;
-}
-
-.phpinfo h2 {
-  width: 600px;
-}
-
-.phpinfo .e,
-.phpinfo .v,
-.phpinfo .h {
-  border: 1px solid #000000;
-  font-size: 0.8em;
+.phpinfo td {
+  border: 1px solid #dddddd;
   vertical-align: baseline;
-  color: #000000;
-  background-color: #cccccc;
-}
-
-.phpinfo .e {
-  background-color: #ccccff;
-  font-weight: bold;
-}
-
-.phpinfo .h {
-  background-color: #9999cc;
-  font-weight: bold;
 }
 
 #page-footer .performanceinfo {
@@ -18916,7 +18773,7 @@ fieldset[disabled] .yui3-panel .readerpanel .yui3-widget-hd .yui3-button-close.a
   margin: .3em;
   display: inline-block;
   vertical-align: top;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
 }
 
 .cache-store-stats {

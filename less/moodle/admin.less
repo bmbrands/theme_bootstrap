@@ -118,8 +118,8 @@ img.iconsmall {
 }
 
 #page-admin-roles-define .capdefault {
-    background-color: #eee;
-    border: 1px solid #cecece;
+    background-color: @table-bg-accent;
+    border: 1px solid @table-border-color;
 }
 
 #page-filter-manage .backlink,
@@ -469,7 +469,7 @@ img.iconsmall {
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo .separator,
 #plugins-check .status .pluginupdateinfo .separator,
 #page-admin-plugins .separator {
-    border-left: 1px dotted #999;
+    border-left: 1px dotted @table-border-color;
 }
 
 #plugins-overview-filter,
@@ -505,11 +505,6 @@ img.iconsmall {
     border: 2px solid @state-danger-border;
     padding: 4px;
     margin-bottom: 5px;
-}
-
-#core-cache-store-summaries .default-store td {
-    color: #333;
-    font-style: italic;
 }
 
 #core-cache-rescan-definitions,
