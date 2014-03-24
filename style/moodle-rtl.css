@@ -224,10 +224,10 @@ a.autolink.glossary:hover {
 }
 
 .yui-overlay .yui-widget-bd {
-  background-color: #FFEE69;
-  border: 1px solid #A6982B;
-  border-top-color: #D4C237;
-  color: #000000;
+  background-color: #ffee69;
+  border: 1px solid #a6982b;
+  border-top-color: #d4c237;
+  color: #000;
   right: 0;
   padding: 2px 5px;
   position: relative;
@@ -609,7 +609,7 @@ a.skip:active {
 }
 
 .comment-paging .curpage {
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
 }
 
 .comment-message .picture {
@@ -733,7 +733,7 @@ a.skip:active {
 .smartselect .smartselect_menu,
 .smartselect .smartselect_submenu {
   border: 1px solid #000;
-  background-color: #FFF;
+  background-color: #fff;
   display: none;
 }
 
@@ -808,7 +808,7 @@ a.skip:active {
 }
 
 .corelightbox {
-  background-color: #CCC;
+  background-color: #ccc;
   position: absolute;
   top: 0;
   right: 0;
@@ -946,7 +946,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 /* Moodle Dialogue Settings (moodle-core-dialogue)  */
 
 .moodle-dialogue-base .moodle-dialogue-lightbox {
-  background-color: #AAA;
+  background-color: #aaa;
 }
 
 .moodle-dialogue-base .hidden,
@@ -1048,7 +1048,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-content {
   padding: 0;
-  background: #FFF;
+  background: #fff;
 }
 
 .moodle-dialogue-base .moodle-dialogue-fullscreen .moodle-dialogue-hd {
@@ -1089,7 +1089,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 }
 
 .moodle-dialogue-exception .param-stacktrace label {
-  background-color: #EEE;
+  background-color: #eee;
   border: 1px solid #ccc;
   border-bottom-width: 0;
 }
@@ -1119,7 +1119,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   padding: 0;
   margin: 0.7em 1em;
   text-align: left;
-  background-color: #FFF;
+  background-color: #fff;
   font-size: 12px;
 }
 
@@ -1218,7 +1218,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 
 .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
   padding: 0;
-  background: #F2F2F2;
+  background: #f2f2f2;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -1239,7 +1239,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 
 .choosercontainer #chooseform .options {
   position: relative;
-  border-bottom: 1px solid #BBBBBB;
+  border-bottom: 1px solid #bbb;
 }
 
 /* Only set these options if we're showing the js container */
@@ -1288,7 +1288,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .choosercontainer #chooseform .option label {
   display: block;
   padding: 0.3em 0 0.1em 0;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #fff;
 }
 
 .choosercontainer #chooseform .nonoption {
@@ -1360,7 +1360,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   margin: 15px 0;
   padding: 1px 19px 14px;
   background-color: white;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
 
@@ -1374,7 +1374,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   font-weight: bold;
   background-color: whiteSmoke;
   border: 1px solid #ddd;
-  color: #9DA0A4;
+  color: #9da0a4;
   border-radius: 0 4px 0 4px;
 }
 
@@ -1387,10 +1387,10 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .formlistingrow {
   cursor: pointer;
   border-bottom: 1px solid;
-  border-color: #E1E1E8;
-  border-right: 1px solid #E1E1E8;
-  border-left: 1px solid #E1E1E8;
-  background-color: #F7F7F9;
+  border-color: #e1e1e8;
+  border-right: 1px solid #e1e1e8;
+  border-left: 1px solid #e1e1e8;
+  background-color: #f7f7f9;
   border-radius: 0 0 4px 4px;
   padding: 6px;
   top: 50%;
@@ -1626,11 +1626,11 @@ fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.t
 }
 
 .moodle-actionmenu[data-enhanced].show .menu .msg-sender {
-  color: #478FCA;
+  color: #478fca;
 }
 
 .moodle-actionmenu[data-enhanced].show .menu .msg-time {
-  color: #777777;
+  color: #777;
   display: block;
   font-size: 11px;
 }
@@ -2392,19 +2392,19 @@ img.iconsmall {
 }
 
 .calendar_event_course {
-  background-color: #FFD3BD;
+  background-color: #ffd3bd;
 }
 
 .calendar_event_global {
-  background-color: #D6F8CD;
+  background-color: #d6f8cd;
 }
 
 .calendar_event_group {
-  background-color: #FEE7AE;
+  background-color: #fee7ae;
 }
 
 .calendar_event_user {
-  background-color: #DCE7EC;
+  background-color: #dce7ec;
 }
 
 .path-calendar .calendar-controls .previous,
@@ -3117,7 +3117,7 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 }
 
 .course-content .section-summary {
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   margin-top: 5px;
   list-style: none;
 }
@@ -3478,12 +3478,12 @@ span.editinstructions {
 }
 
 .courses .coursebox.collapsed {
-  border: 1px solid #eeeeee;
+  border: 1px solid #eee;
   padding: 5px;
 }
 
 .course_category_tree .courses > .paging.paging-morelink:hover {
-  background-color: #eeeeee;
+  background-color: #eee;
 }
 
 .course_category_tree .category .numberofcourse {
@@ -3621,9 +3621,9 @@ span.editinstructions {
  * Course management page
  * Palette
  *
- * Background (reg)         #F5F5F5
+ * Background (reg)         #f5f5f5
  * Background (light        #fafafa
- * Background (highlight)   #ddffaa
+ * Background (highlight)   #dfa
  * Borders                  #e1e1e8
  */
 
@@ -3655,7 +3655,7 @@ span.editinstructions {
 #course-category-listings h3 {
   margin: 0;
   padding: 0.4rem 0.6rem 0.3rem;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-bottom: 1px solid #e1e1e8;
 }
 
@@ -3739,9 +3739,9 @@ span.editinstructions {
 }
 
 #course-category-listings li[data-selected='1'] > div {
-  background-color: #FFFFD8;
+  background-color: #ffffd8;
   border-top-color: #e1e1e8;
-  border-bottom-color: #F5F5F5;
+  border-bottom-color: #f5f5f5;
 }
 
 #course-category-listings li[data-selected='1'] li:first-of-type > div,
@@ -3787,7 +3787,7 @@ span.editinstructions {
 
 #course-category-listings li + li > div,
 #course-category-listings li:first-child > div {
-  border-top-color: #F5F5F5;
+  border-top-color: #f5f5f5;
 }
 
 #course-category-listings .item-actions {
@@ -3874,7 +3874,7 @@ span.editinstructions {
 #course-category-listings .listitem.highlight > div,
 #course-category-listings .listitem.highlight > div:hover,
 #course-category-listings .listitem.highlight[data-selected='1'] > div {
-  background-color: #ddffaa;
+  background-color: #dfa;
 }
 
 #course-category-listings #course-listing .listitem .categoryname {
@@ -3912,7 +3912,7 @@ span.editinstructions {
 }
 
 #course-category-listings #category-listing .listitem.highlight > div > .ba-checkbox {
-  background-color: #ddffaa;
+  background-color: #dfa;
 }
 
 #course-category-listings #category-listing .listitem[data-selected='1'] > div > .ba-checkbox {
@@ -3986,14 +3986,14 @@ span.editinstructions {
 }
 
 #course-category-listings .listing-pagination .yui3-button {
-  background-color: #FFF;
+  background-color: #fff;
   border: 0;
   margin: 0.4rem 0.2rem 0.45rem;
   font-size: 10.4px;
 }
 
 #course-category-listings .listing-pagination .yui3-button.active-page {
-  background-color: #E5EFFD;
+  background-color: #e5effd;
 }
 
 #course-category-listings .listing-pagination-totals {
@@ -4096,7 +4096,7 @@ span.editinstructions {
   #course-category-listings.columns-3 #course-listing > div,
   #course-category-listings.columns-3 #course-detail > div {
     border: 1px solid #e1e1e8;
-    background-color: #FFF;
+    background-color: #fff;
   }
 
   #course-category-listings.columns-3 #course-detail {
@@ -4129,7 +4129,7 @@ span.editinstructions {
   #course-category-listings.columns-2 #course-detail > div,
   #course-category-listings.columns-3 #course-detail > div {
     border: 1px solid #e1e1e8;
-    background-color: #FFF;
+    background-color: #fff;
   }
 }
 
@@ -4137,7 +4137,7 @@ span.editinstructions {
 .file-picker a,
 .filemanager a:hover,
 .file-picker a:hover {
-  color: #555555;
+  color: #555;
   text-decoration: none;
 }
 
@@ -4155,7 +4155,7 @@ span.editinstructions {
 
 #filesskin .yui3-panel-content {
   padding-bottom: 20px;
-  background: #F2F2F2;
+  background: #f2f2f2;
   border-radius: 8px;
   border: 1px solid #fff;
   display: inline-block;
@@ -4164,7 +4164,7 @@ span.editinstructions {
 
 #filesskin .yui3-widget-hd {
   border-radius: 10px 10px 0 0;
-  border-bottom: 1px solid #BBBBBB;
+  border-bottom: 1px solid #bbb;
   padding: 5px;
   text-align: center;
   font-size: 12px;
@@ -4194,9 +4194,9 @@ span.editinstructions {
 
 #filesskin .file-picker.fp-generallayout {
   width: 859px;
-  background: #FFFFFF;
+  background: #fff;
   border-radius: 10px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #ccc;
   position: relative;
 }
 
@@ -4206,7 +4206,7 @@ span.editinstructions {
   display: inline-block;
   float: right;
   height: 525px;
-  border-left: 1px solid #BBBBBB;
+  border-left: 1px solid #bbb;
 }
 
 .file-picker .fp-repo-items {
@@ -4215,8 +4215,8 @@ span.editinstructions {
 }
 
 .file-picker .fp-navbar {
-  background: #F2F2F2;
-  border-bottom: 1px solid #BBBBBB;
+  background: #f2f2f2;
+  border-bottom: 1px solid #bbb;
   min-height: 40px;
 }
 
@@ -4260,7 +4260,7 @@ span.editinstructions {
 }
 
 .file-picker .fp-list .fp-repo.active {
-  background: #F2F2F2;
+  background: #f2f2f2;
 }
 
 .file-picker .fp-list .fp-repo-icon {
@@ -4302,14 +4302,14 @@ span.editinstructions {
   padding: 2px 27px 1px 6px;
   width: 200px;
   height: 27px;
-  border: 1px solid #BBBBBB;
+  border: 1px solid #bbb;
 }
 
 .fp-viewbar {
   float: left;
   height: 30px;
-  border: 1px solid #CCC;
-  border-bottom: 1px solid #B3B3B3;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #b3b3b3;
   border-radius: 4px;
   background: white;
 }
@@ -4321,7 +4321,7 @@ span.editinstructions {
 .fp-viewbar a {
   width: 30px;
   height: 30px;
-  border-left: 1px solid #CCC;
+  border-left: 1px solid #ccc;
   display: block;
   float: right;
 }
@@ -4396,7 +4396,7 @@ span.editinstructions {
   min-height: 110px;
   line-height: 110px;
   text-align: center;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #fff;
   display: block;
 }
 
@@ -4426,32 +4426,32 @@ span.editinstructions {
 }
 
 .fp-iconview .fp-filename-field .fp-filename {
-  background: #FFFFFF;
+  background: #fff;
   padding-top: 5px;
   padding-bottom: 12px;
   min-width: 112px;
 }
 
 .file-picker .yui3-datatable table {
-  border: 0 solid #BBBBBB;
+  border: 0 solid #bbb;
   width: 100%;
 }
 
 #filesskin .file-picker .yui3-datatable-header {
-  background: #FFFFFF;
-  border-bottom: 1px solid #CCCCCC;
-  border-right: 0 solid #FFFFFF;
-  color: #555555;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  border-right: 0 solid #fff;
+  color: #555;
 }
 
 #filesskin .file-picker .yui3-datatable-odd .yui3-datatable-cell {
-  background-color: #F6F6F6;
-  border-right: 0 solid #F6F6F6;
+  background-color: #f6f6f6;
+  border-right: 0 solid #f6f6f6;
 }
 
 #filesskin .file-picker .yui3-datatable-even .yui3-datatable-cell {
-  background-color: #FFFFFF;
-  border-right: 0 solid #FFFFFF;
+  background-color: #fff;
+  border-right: 0 solid #fff;
 }
 
 .file-picker .ygtvtn,
@@ -4589,7 +4589,7 @@ a.ygtvspacer:hover {
 
 .file-picker .ygtvfocus,
 .filemanager .ygtvfocus {
-  background-color: #EEEEEE;
+  background-color: #eee;
 }
 
 .fp-filename-icon {
@@ -4689,8 +4689,8 @@ a.ygtvspacer:hover {
 .fp-select .fp-hr {
   clear: both;
   height: 1px;
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #BBBBBB;
+  background-color: #fff;
+  border-bottom: 1px solid #bbb;
   width: auto;
   margin: 10px 0;
 }
@@ -4730,7 +4730,7 @@ a.ygtvspacer:hover {
 }
 
 .fp-select .fp-thumbnail img {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #ddd;
   padding: 3px;
   vertical-align: middle;
   margin: 10px;
@@ -4814,8 +4814,8 @@ a.ygtvspacer:hover {
 }
 
 .filemanager .fp-navbar {
-  background: #F2F2F2;
-  border: 1px solid #BBBBBB;
+  background: #f2f2f2;
+  border: 1px solid #bbb;
   border-bottom: none;
 }
 
@@ -4825,7 +4825,7 @@ a.ygtvspacer:hover {
 }
 
 .fp-pathbar {
-  border-top: 1px solid #BBBBBB;
+  border-top: 1px solid #bbb;
   padding: 5px 8px 1px;
   min-height: 20px;
 }
@@ -4841,8 +4841,8 @@ a.ygtvspacer:hover {
 .fp-toolbar .fp-tb-manage,
 .fp-toolbar .fp-tb-logout,
 .fp-toolbar .fp-tb-refresh {
-  border: 1px solid #CCC;
-  border-bottom: 1px solid #B3B3B3;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #b3b3b3;
   border-radius: 4px;
   background: white;
   width: 30px;
@@ -4888,10 +4888,10 @@ a.ygtvspacer:hover {
 
 .filepicker-filelist,
 .filemanager-container {
-  background: #FFFFFF;
+  background: #fff;
   clear: both;
   overflow: auto;
-  border: 1px solid #BBBBBB;
+  border: 1px solid #bbb;
   min-height: 140px;
   position: relative;
 }
@@ -4909,7 +4909,7 @@ a.ygtvspacer:hover {
 
 .fitem.disabled .filepicker-filelist,
 .fitem.disabled .filemanager-container {
-  background-color: #EBEBE4;
+  background-color: #ebebe4;
 }
 
 .fitem.disabled .fp-btn-choose {
@@ -4956,25 +4956,25 @@ a.ygtvspacer:hover {
 }
 
 .filemanager .yui3-datatable table {
-  border: 0 solid #BBBBBB;
+  border: 0 solid #bbb;
   width: 100%;
 }
 
 .filemanager .yui3-datatable-header {
-  background: #FFFFFF!important;
-  border-bottom: 1px solid #CCCCCC!important;
-  border-right: 0 solid #FFFFFF!important;
-  color: #555555!important;
+  background: #fff!important;
+  border-bottom: 1px solid #ccc!important;
+  border-right: 0 solid #fff!important;
+  color: #555!important;
 }
 
 .filemanager .yui3-datatable-odd .yui3-datatable-cell {
-  background-color: #F6F6F6!important;
-  border-right: 0 solid #F6F6F6;
+  background-color: #f6f6f6!important;
+  border-right: 0 solid #f6f6f6;
 }
 
 .filemanager .yui3-datatable-even .yui3-datatable-cell {
-  background-color: #FFFFFF!important;
-  border-right: 0 solid #FFFFFF;
+  background-color: #fff!important;
+  border-right: 0 solid #fff;
 }
 
 .filemanager .fp-filename-icon.fp-hasreferences .fp-reficons1 {
@@ -5025,14 +5025,14 @@ a.ygtvspacer:hover {
   bottom: 10px;
   right: 10px;
   left: 10px;
-  border: 2px dashed #BBBBBB;
+  border: 2px dashed #bbb;
   padding-top: 85px;
   text-align: center;
 }
 
 .filepicker-filelist .dndupload-target,
 .filemanager-container .dndupload-target {
-  background: #FFFFFF;
+  background: #fff;
   position: absolute;
   top: 10px;
   bottom: 10px;
@@ -5046,7 +5046,7 @@ a.ygtvspacer:hover {
 
 .filepicker-filelist.dndupload-over .dndupload-target,
 .filemanager-container.dndupload-over .dndupload-target {
-  background: #FFFFFF;
+  background: #fff;
   position: absolute;
   top: 10px;
   bottom: 10px;
@@ -5194,8 +5194,8 @@ a.ygtvspacer:hover {
 }
 
 .filemanager.fp-select .fp-reflist .fp-value {
-  background: #F9F9F9;
-  border: 1px solid #BBBBBB;
+  background: #f9f9f9;
+  border: 1px solid #bbb;
   padding: 8px 7px;
   margin: 0;
   max-width: 265px;
@@ -6174,7 +6174,7 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 }
 
 .box.message .messagearea .messagehistory .messagehistorytype {
-  color: #FFF;
+  color: #fff;
   padding: 5px 15px;
   border-bottom: 1px solid #dddddd;
   border: 0;
@@ -6649,7 +6649,7 @@ textareatextarea {
 #qtypechoicecontainer {
   font-size: 12px;
   color: #333;
-  background: #F2F2F2;
+  background: #f2f2f2;
   border-radius: 10px;
   border: 1px solid #ccc;
   border-top: 0 none;
@@ -8003,7 +8003,7 @@ table#tag-management-list {
 }
 
 #relatedtags-autocomplete li.yui-ac-highlight {
-  background: #FFFFCC;
+  background: #ffc;
 }
 
 h2.tag-heading,
@@ -8187,7 +8187,7 @@ a.criteria-action {
 
 table.issuedbadgebox {
   width: 750px;
-  background-color: #FFFFFF;
+  background-color: #fff;
 }
 
 table.badgeissuedimage {
@@ -8364,11 +8364,11 @@ ol {
 }
 
 .dropdown-menu .msg-sender {
-  color: #478FCA;
+  color: #478fca;
 }
 
 .dropdown-menu .msg-time {
-  color: #777777;
+  color: #777;
   display: block;
   font-size: 11px;
 }
