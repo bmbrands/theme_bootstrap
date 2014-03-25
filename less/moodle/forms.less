@@ -25,6 +25,12 @@
             select[multiple], select[size] {
                 height: auto;
             }
+            .felement.fduration input[type="text"] {
+                min-width: 0;
+                width: 5em;
+                display: inline-block;
+            }
+            .felement.fduration,
             .felement.fdate_selector,
             .felement.fdate_time_selector {
                 select {
@@ -182,6 +188,7 @@
 
 // Shared styles
 
+.fcheckbox > span > label,
 .form-checkbox + label,
 .form-multicheckbox label,
 .unmask label {
@@ -219,7 +226,24 @@
         width: auto;
         min-width: 480px;
     }
+    #page-mod-quiz-mod #id_reviewoptionshdr .fitem.fitem_fgroup {
+        font-size: @font-size-small;
+        .fitemtitle {
+            min-height: 3.5em;
+        }
+    }
+
 }
+
+@media (max-width: @screen-sm-max) {
+
+    // Fake a responsive grid for the quiz review options section.
+    #page-mod-quiz-mod #id_reviewoptionshdr .fitem.fitem_fgroup {
+        float: none;
+        width: 100%;
+    }
+}
+
 
 .mform .felement.fstatic,
 .form-item .form-description {

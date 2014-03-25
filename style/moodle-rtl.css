@@ -2278,6 +2278,7 @@ input[type="date"] {
 
 .radio label,
 .checkbox label,
+.fcheckbox > span > label,
 .form-checkbox + label,
 .form-multicheckbox label,
 .unmask label {
@@ -16265,6 +16266,15 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
   height: auto;
 }
 
+.mform .fcontainer .fitem .felement.fduration input[type="text"],
+.mform fieldset .fitem .felement.fduration input[type="text"] {
+  min-width: 0;
+  width: 5em;
+  display: inline-block;
+}
+
+.mform .fcontainer .fitem .felement.fduration select,
+.mform fieldset .fitem .felement.fduration select,
 .mform .fcontainer .fitem .felement.fdate_selector select,
 .mform fieldset .fitem .felement.fdate_selector select,
 .mform .fcontainer .fitem .felement.fdate_time_selector select,
@@ -16274,10 +16284,14 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
   min-width: 60px;
 }
 
+.mform .fcontainer .fitem .felement.fduration select[size],
+.mform fieldset .fitem .felement.fduration select[size],
 .mform .fcontainer .fitem .felement.fdate_selector select[size],
 .mform fieldset .fitem .felement.fdate_selector select[size],
 .mform .fcontainer .fitem .felement.fdate_time_selector select[size],
 .mform fieldset .fitem .felement.fdate_time_selector select[size],
+.mform .fcontainer .fitem .felement.fduration select[multiple],
+.mform fieldset .fitem .felement.fduration select[multiple],
 .mform .fcontainer .fitem .felement.fdate_selector select[multiple],
 .mform fieldset .fitem .felement.fdate_selector select[multiple],
 .mform .fcontainer .fitem .felement.fdate_time_selector select[multiple],
@@ -16285,6 +16299,8 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
   height: auto;
 }
 
+.mform .fcontainer .fitem .felement.fduration label,
+.mform fieldset .fitem .felement.fduration label,
 .mform .fcontainer .fitem .felement.fdate_selector label,
 .mform fieldset .fitem .felement.fdate_selector label,
 .mform .fcontainer .fitem .felement.fdate_time_selector label,
@@ -16558,6 +16574,7 @@ textarea.form-item .form-setting input[type="password"] {
   margin-top: 12px;
 }
 
+.fcheckbox > span > label,
 .form-checkbox + label,
 .form-multicheckbox label,
 .unmask label {
@@ -16597,6 +16614,21 @@ textarea.form-item .form-setting input[type="password"] {
   .mform .fcontainer .fitem .felement select {
     width: auto;
     min-width: 480px;
+  }
+
+  #page-mod-quiz-mod #id_reviewoptionshdr .fitem.fitem_fgroup {
+    font-size: 12px;
+  }
+
+  #page-mod-quiz-mod #id_reviewoptionshdr .fitem.fitem_fgroup .fitemtitle {
+    min-height: 3.5em;
+  }
+}
+
+@media (max-width: 991px) {
+  #page-mod-quiz-mod #id_reviewoptionshdr .fitem.fitem_fgroup {
+    float: none;
+    width: 100%;
   }
 }
 
