@@ -42,7 +42,8 @@
             }
         }
     }
-    fieldset.hidden {
+    // submit buttons
+    fieldset.hidden:last-child {
             &:extend(.form-group);
             &:extend(.form-horizontal .form-group);
             > div {
@@ -202,7 +203,8 @@
     .fitem_fcheckbox .fcheckbox {
         padding-top: 8px;
     }
-    fieldset.hidden > div {
+    // submit buttons
+    fieldset.hidden:last-child > div {
         margin-left: -20px;
     }
     .form-buttons .form-submit {
