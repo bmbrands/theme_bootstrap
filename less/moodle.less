@@ -1,8 +1,18 @@
-// Import the bootstrap variables.
-@import "bootstrap3/variables.less";
+// Upstream Bootstrap.
+@import "bootstrap3/bootstrap";
 
-// Old Moodle stuff from base theme.
-// Massive, needs broken up.
+// Bootswatches
+@import "bootswatch/custom-variables.less";
+@import "bootswatch/custom-bootswatch.less";
+// bootswatch docs recommend repeating this
+@import "bootstrap3/utilities.less";
+
+// Override Bootstrap defaults.
+@import "moodle/bootstrapoverride";
+
+// Roll back nameclashes.
+@import "moodle/undo";
+
 @import "moodle/core";
 @import "moodle/admin";
 @import "moodle/calendar";
@@ -16,18 +26,6 @@
 @import "moodle/tags";
 @import "moodle/badges";
 @import "moodle/new";
-
-
-// Upstream Bootstrap.
-@import "bootstrap3/bootstrap";
-
-// Override Bootstrap defaults.
-@import "moodle/bootstrapoverride";
-
-// Roll back nameclashes.
-@import "moodle/undo";
-
-// New Moodle stuff that builds on Bootstrap.
 @import "moodle/blocks";
 @import "moodle/forms";
 @import "moodle/modules";
@@ -39,21 +37,5 @@
 @import "moodle/navs";
 @import "moodle/reader";
 @import "moodle/enrolment";
-
-@import "bootswatch/custom-variables.less";
-@import "bootswatch/custom-bootswatch.less";
-
-@icon-font-path: "[[font:theme|";
-
-// Anything below this line is considered expendable,
-// so it doesn't matter if it doesn't show up in ie < 9
-// though at current time (2013-03-13) the whole file is
-// picked up in IE8, and IE9 fails at some point during the
-// responsive section, cutting off the last 400 selectors.
-
-// The following responsive imports are copied in
-// from "bootstrap/responsive".
-
 @import "moodle/responsive";
-
 @import "moodle/debug";
