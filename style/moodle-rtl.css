@@ -10649,7 +10649,6 @@ input[type="date"] {
 .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden,
 .form-item {
   margin-bottom: 15px;
 }
@@ -10936,7 +10935,6 @@ select[multiple].input-lg {
 .form-horizontal .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden,
 .form-item {
   margin-right: -15px;
   margin-left: -15px;
@@ -15448,8 +15446,6 @@ button.close {
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:before,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:before,
-.mform fieldset.hidden:after,
 .form-item:before,
 .form-item:after {
   content: " ";
@@ -15477,7 +15473,6 @@ button.close {
 .path-backup .mform .grouped_settings .fitem:after,
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:after,
 .form-item:after {
   clear: both;
 }
@@ -16292,36 +16287,81 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
   display: inline-block;
 }
 
-.mform fieldset.hidden > div {
+.mform fieldset.hidden .fitem .fitemtitle {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
 
-@media (min-width: 992px) {
-  .mform fieldset.hidden > div {
+@media (min-width: 768px) {
+  .mform fieldset.hidden .fitem .fitemtitle {
     float: right;
-    width: 66.66666667%;
+    width: 25%;
   }
 }
 
 @media (min-width: 992px) {
-  .mform fieldset.hidden > div {
-    margin-right: 33.33333333%;
+  .mform fieldset.hidden .fitem .fitemtitle {
+    float: right;
+    width: 16.66666667%;
   }
 }
 
 @media (min-width: 1200px) {
-  .mform fieldset.hidden > div {
+  .mform fieldset.hidden .fitem .fitemtitle {
+    float: right;
+    width: 8.33333333%;
+  }
+}
+
+.mform fieldset.hidden .fitem .felement {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .mform fieldset.hidden .fitem .felement {
     float: right;
     width: 75%;
   }
 }
 
+@media (min-width: 992px) {
+  .mform fieldset.hidden .fitem .felement {
+    float: right;
+    width: 83.33333333%;
+  }
+}
+
 @media (min-width: 1200px) {
-  .mform fieldset.hidden > div {
+  .mform fieldset.hidden .fitem .felement {
+    float: right;
+    width: 91.66666667%;
+  }
+}
+
+.mform fieldset.hidden .fitem .fsubmit {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .mform fieldset.hidden .fitem .fsubmit input {
     margin-right: 25%;
+  }
+}
+
+@media (min-width: 992px) {
+  .mform fieldset.hidden .fitem .fsubmit input {
+    margin-right: 16.66666667%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mform fieldset.hidden .fitem .fsubmit input {
+    margin-right: 8.33333333%;
   }
 }
 
@@ -16579,10 +16619,6 @@ textarea.form-item .form-setting input[type="password"] {
   .form-setting .form-multicheckbox,
   .fitem_fcheckbox .fcheckbox {
     padding-top: 8px;
-  }
-
-  fieldset.hidden > div {
-    margin-right: -20px;
   }
 
   .form-buttons .form-submit {

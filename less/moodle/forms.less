@@ -43,14 +43,26 @@
         }
     }
     fieldset.hidden {
-            &:extend(.form-group);
-            &:extend(.form-horizontal .form-group);
-            > div {
-                .make-md-column(8);
-                .make-md-column-offset(4);
-                .make-lg-column(9);
-                .make-lg-column-offset(3);
+        .fitem {
+            .fitemtitle {
+                .make-sm-column(3);
+                .make-md-column(2);
+                .make-lg-column(1);
             }
+            .felement {
+                .make-sm-column(9);
+                .make-md-column(10);
+                .make-lg-column(11);
+            }
+            .fsubmit {
+                width: 100%;
+                input {
+                    .make-sm-column-offset(3);
+                    .make-md-column-offset(2);
+                    .make-lg-column-offset(1);
+                }
+            }
+        }
     }
 }
 
@@ -201,9 +213,6 @@
     .form-setting .form-multicheckbox,
     .fitem_fcheckbox .fcheckbox {
         padding-top: 8px;
-    }
-    fieldset.hidden > div {
-        margin-left: -20px;
     }
     .form-buttons .form-submit {
         margin-left: -5px;
