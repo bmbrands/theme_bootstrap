@@ -2264,7 +2264,7 @@ input[type="date"] {
 .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden,
+.mform fieldset.hidden:last-child,
 .form-item {
   margin-bottom: 15px;
 }
@@ -2551,7 +2551,7 @@ select[multiple].input-lg {
 .form-horizontal .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden,
+.mform fieldset.hidden:last-child,
 .form-item {
   margin-right: -15px;
   margin-left: -15px;
@@ -7308,8 +7308,8 @@ legend,
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:before,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:before,
-.mform fieldset.hidden:after,
+.mform fieldset.hidden:last-child:before,
+.mform fieldset.hidden:last-child:after,
 .form-item:before,
 .form-item:after {
   content: " ";
@@ -7337,7 +7337,7 @@ legend,
 .path-backup .mform .grouped_settings .fitem:after,
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:after,
+.mform fieldset.hidden:last-child:after,
 .form-item:after {
   clear: both;
 }
@@ -16417,7 +16417,7 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
   display: inline-block;
 }
 
-.mform fieldset.hidden > div {
+.mform fieldset.hidden:last-child > div {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
@@ -16425,27 +16425,27 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 }
 
 @media (min-width: 992px) {
-  .mform fieldset.hidden > div {
+  .mform fieldset.hidden:last-child > div {
     float: right;
     width: 66.66666667%;
   }
 }
 
 @media (min-width: 992px) {
-  .mform fieldset.hidden > div {
+  .mform fieldset.hidden:last-child > div {
     margin-right: 33.33333333%;
   }
 }
 
 @media (min-width: 1200px) {
-  .mform fieldset.hidden > div {
+  .mform fieldset.hidden:last-child > div {
     float: right;
     width: 75%;
   }
 }
 
 @media (min-width: 1200px) {
-  .mform fieldset.hidden > div {
+  .mform fieldset.hidden:last-child > div {
     margin-right: 25%;
   }
 }
@@ -16706,7 +16706,7 @@ textarea.form-item .form-setting input[type="password"] {
     padding-top: 8px;
   }
 
-  fieldset.hidden > div {
+  fieldset.hidden:last-child > div {
     margin-right: -20px;
   }
 
