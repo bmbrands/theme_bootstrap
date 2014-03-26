@@ -11041,18 +11041,8 @@ span.editinstructions {
   height: 21px;
 }
 
-/**
- * Course management page
- * Palette
- *
- * Background (reg)         #f5f5f5
- * Background (light        #fafafa
- * Background (highlight)   #dfa
- * Borders                  #e1e1e8
- */
-
 #course-category-listings {
-  background-color: #fff;
+  background-color: transparent;
   margin-bottom: 200px;
   /** Two column layout */
   /** Three column layout */
@@ -11069,7 +11059,7 @@ span.editinstructions {
 
 #course-category-listings > div > div {
   min-height: 300px;
-  border: 1px solid #e1e1e8;
+  border: 1px solid #dddddd;
 }
 
 #course-category-listings > div > div > ul.ml > li:first-child > div {
@@ -11078,14 +11068,15 @@ span.editinstructions {
 
 #course-category-listings h3 {
   margin: 0;
-  padding: 0.4rem 0.6rem 0.3rem;
+  padding: .4rem .6rem .3rem;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #e1e1e8;
+  color: #555555;
+  border-bottom: 1px solid #dddddd;
 }
 
 #course-category-listings h4 {
   margin: 1rem 0 0;
-  padding: 0.6rem 1rem 0.5rem;
+  padding: .6rem 1rem .5rem;
 }
 
 #course-category-listings .moodle-actionmenu {
@@ -11106,7 +11097,7 @@ span.editinstructions {
 
 #course-category-listings .listing-actions {
   text-align: center;
-  padding: 0.4rem 0.3rem 0.3rem;
+  padding: .4rem .3rem .3rem;
   line-height: 2.2em;
 }
 
@@ -11153,7 +11144,7 @@ span.editinstructions {
 }
 
 #course-category-listings li > div:hover {
-  background-color: #fafafa;
+  background-color: #f5f5f5;
 }
 
 #course-category-listings li .tree-icon {
@@ -11163,18 +11154,18 @@ span.editinstructions {
 }
 
 #course-category-listings li[data-selected='1'] > div {
-  background-color: #ffffd8;
-  border-top-color: #e1e1e8;
-  border-bottom-color: #f5f5f5;
+  background-color: #d9edf7;
+  border-top-color: #dddddd;
+  border-bottom-color: #dddddd;
 }
 
 #course-category-listings li[data-selected='1'] li:first-of-type > div,
 #course-category-listings li[data-selected='1'][data-expandable='0'] + li > div {
-  border-top-color: #e1e1e8;
+  border-top-color: #dddddd;
 }
 
 #course-category-listings li[data-selected='1']:last-of-type > div {
-  border-bottom-color: #e1e1e8;
+  border-bottom-color: #dddddd;
 }
 
 #course-category-listings li .tree-icon {
@@ -11211,7 +11202,7 @@ span.editinstructions {
 
 #course-category-listings li + li > div,
 #course-category-listings li:first-child > div {
-  border-top-color: #f5f5f5;
+  border-top-color: #dddddd;
 }
 
 #course-category-listings .item-actions {
@@ -11258,11 +11249,11 @@ span.editinstructions {
 }
 
 #course-category-listings .listitem > div .without-actions {
-  color: #333;
+  color: #555555;
 }
 
 #course-category-listings .listitem > div .idnumber {
-  color: #a1a1a8;
+  color: #555555;
   margin-left: 2em;
 }
 
@@ -11298,13 +11289,13 @@ span.editinstructions {
 #course-category-listings .listitem.highlight > div,
 #course-category-listings .listitem.highlight > div:hover,
 #course-category-listings .listitem.highlight[data-selected='1'] > div {
-  background-color: #dfa;
+  background-color: #d9edf7;
 }
 
 #course-category-listings #course-listing .listitem .categoryname {
   display: inline-block;
   margin-right: 1em;
-  color: #a1a1a8;
+  color: #555555;
 }
 
 #course-category-listings #course-listing .listitem .coursename {
@@ -11336,7 +11327,7 @@ span.editinstructions {
 }
 
 #course-category-listings #category-listing .listitem.highlight > div > .ba-checkbox {
-  background-color: #dfa;
+  background-color: #d9edf7;
 }
 
 #course-category-listings #category-listing .listitem[data-selected='1'] > div > .ba-checkbox {
@@ -11377,7 +11368,7 @@ span.editinstructions {
 }
 
 #course-category-listings .detail-pair {
-  border-bottom: 1px solid #e1e1e8;
+  border-bottom: 1px solid #dddddd;
   margin: 0 1rem;
 }
 
@@ -11410,14 +11401,16 @@ span.editinstructions {
 }
 
 #course-category-listings .listing-pagination .yui3-button {
-  background-color: #fff;
+  background-color: #ffffff;
+  color: #555555;
   border: 0;
-  margin: 0.4rem 0.2rem 0.45rem;
+  margin: .4rem .2rem .45rem;
   font-size: 10.4px;
 }
 
 #course-category-listings .listing-pagination .yui3-button.active-page {
-  background-color: #e5effd;
+  background-color: #2fa4e7;
+  color: #ffffff;
 }
 
 #course-category-listings .listing-pagination-totals {
@@ -11426,7 +11419,7 @@ span.editinstructions {
 
 #course-category-listings .listing-pagination-totals.dimmed {
   color: #999999;
-  margin: 0.4rem 1rem 0.45rem;
+  margin: .4rem 1rem .45rem;
 }
 
 #course-category-listings .select-a-category .notifymessage,
