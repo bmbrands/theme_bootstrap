@@ -9200,7 +9200,7 @@ span.editinstructions {
 #course-category-listings .listitem.highlight > div,
 #course-category-listings .listitem.highlight > div:hover,
 #course-category-listings .listitem.highlight[data-selected='1'] > div {
-  background-color: #d9edf7;
+  background-color: #dff0d8;
 }
 #course-category-listings #course-listing .listitem .categoryname {
   display: inline-block;
@@ -9230,7 +9230,7 @@ span.editinstructions {
   padding-top: 2px;
 }
 #course-category-listings #category-listing .listitem.highlight > div > .ba-checkbox {
-  background-color: #d9edf7;
+  background-color: #dff0d8;
 }
 #course-category-listings #category-listing .listitem[data-selected='1'] > div > .ba-checkbox {
   margin: 0 0.5em 0 0;
