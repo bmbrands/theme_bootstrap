@@ -203,6 +203,7 @@ module.exports = function(grunt) {
         cosmo: '#007fff',
         cupid: '#56caef',
         cyborg: '#2a9fd6',
+        darkly: '#0ce3ac',
         flatly: '#18bc9c',
         journal: '#eb6864',
         lumen: '#158cba',
