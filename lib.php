@@ -81,9 +81,11 @@ function theme_bootstrap_brand_font_css($settings) {
     if ($fontname === '') {
         return '';
     }
+    $fontweight = $settings['brandfontweight'];
     return ".navbar-default .navbar-brand,
             .navbar-inverse .navbar-brand {
-                font-family: $fontname;
+                font-family: $fontname, serif;
+                font-weight: $fontweight;
             }";
 }
 
@@ -112,20 +114,26 @@ function theme_bootstrap_html_for_settings($PAGE) {
         $html->containerclass = 'container';
     }
 
-    $html->brandfontlink = theme_bootstrap_brand_font_link($settings->brandfont);
+    $html->brandfontlink = theme_bootstrap_brand_font_link($settings);
 
     return $html;
 }
 
-function theme_bootstrap_brand_font_link($fontname) {
+function theme_bootstrap_brand_font_link($settings) {
     global $SITE;
+    $fontname = $settings->brandfont;
     if ($fontname === '') {
         return '';
     }
     $fontname = urlencode($fontname);
-    $nameletters = count_chars($SITE->shortname, 3);
+    $text = urlencode(str_replace(' ', '', $SITE->shortname));
+    $fontweight = $settings->brandfontweight;
+    $fontitalic = '';
+    if ($settings->brandfontitalic == true) {
+        $fontitalic = 'italic';
+    }
     return '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='
-            .$fontname.'&text='.$nameletters.'">';
+            .$fontname.':'.$fontweight.$fontitalic.'&amp;text='.$text.'">';
 }
 
 function bootstrap_grid($hassidepre, $hassidepost) {
