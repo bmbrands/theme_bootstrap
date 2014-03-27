@@ -30,10 +30,6 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT;
 
-         if ($OUTPUT->body_id() != 'page-site-index') {
-         return parent::coursecat_coursebox($chelper, $course, $additionalclasses = '');
-         }
-
         if (!isset($this->strings->summary)) {
             $this->strings->summary = get_string('summary');
         }
@@ -132,7 +128,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
                     $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
             if ($isimage) {
                 $contentimages .= html_writer::tag('div',
-                        html_writer::empty_tag('img', array('src' => $url)),
+                        html_writer::empty_tag('img', array('src' => $url, 'alt' => 'Course Image '. $course->fullname)),
                         array('class' => 'courseimage'));
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
