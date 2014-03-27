@@ -30,10 +30,23 @@ require_once(__DIR__ . "/simple_theme_settings.class.php");
 
 if ($ADMIN->fulltree) {
     $simplesettings = new simple_theme_settings($settings, 'theme_bootstrap');
+
     $simplesettings->add_checkbox('fluidwidth');
+
     $simplesettings->add_checkbox('fonticons');
+
     $simplesettings->add_checkbox('inversenavbar');
+
     $simplesettings->add_checkbox('deletecss');
+
     $simplesettings->add_text('brandfont');
+
+    foreach (range(100, 900, 100) as $weight) {
+        $fontweights[$weight] = get_string("fontweight$weight", 'theme_bootstrap');
+    }
+    $simplesettings->add_select('brandfontweight', 400, $fontweights);
+
+    $simplesettings->add_checkbox('brandfontitalic');
+
     $simplesettings->add_textarea('customcss');
 }
