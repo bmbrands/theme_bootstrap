@@ -10632,7 +10632,8 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 }
 
 .path-course-view .completionprogress {
-  margin-right: 25pxdisplay: block;
+  margin-right: 25px;
+  display: block;
   float: left;
   height: 20px;
   position: relative;
