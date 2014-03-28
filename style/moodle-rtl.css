@@ -18648,7 +18648,7 @@ fieldset[disabled] .yui3-panel .readerpanel .yui3-widget-hd .yui3-button-close.a
     width: 100%;
     height: auto;
     max-height: 220px;
-    y-scroll: auto;
+    overflow-y: auto;
     float: none;
     border: 0px;
   }
