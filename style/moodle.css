@@ -1758,7 +1758,7 @@ input[type="date"] {
 .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden:last-child,
+.mform fieldset.hidden,
 .form-item {
   margin-bottom: 15px;
 }
@@ -2003,7 +2003,7 @@ select[multiple].input-lg {
 .form-horizontal .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden:last-child,
+.mform fieldset.hidden,
 .form-item {
   margin-left: -15px;
   margin-right: -15px;
@@ -5848,8 +5848,8 @@ button.close {
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:before,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:last-child:before,
-.mform fieldset.hidden:last-child:after,
+.mform fieldset.hidden:before,
+.mform fieldset.hidden:after,
 .form-item:before,
 .form-item:after {
   content: " ";
@@ -5876,7 +5876,7 @@ button.close {
 .path-backup .mform .grouped_settings .fitem:after,
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:last-child:after,
+.mform fieldset.hidden:after,
 .form-item:after {
   clear: both;
 }
@@ -13394,31 +13394,31 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 .mform fieldset .fitem .felement.fdate_time_selector label {
   display: inline-block;
 }
-.mform fieldset.hidden:last-child > div {
+.mform fieldset.hidden > div {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .mform fieldset.hidden:last-child > div {
+  .mform fieldset.hidden > div {
     float: left;
     width: 66.66666667%;
   }
 }
 @media (min-width: 992px) {
-  .mform fieldset.hidden:last-child > div {
+  .mform fieldset.hidden > div {
     margin-left: 33.33333333%;
   }
 }
 @media (min-width: 1200px) {
-  .mform fieldset.hidden:last-child > div {
+  .mform fieldset.hidden > div {
     float: left;
     width: 75%;
   }
 }
 @media (min-width: 1200px) {
-  .mform fieldset.hidden:last-child > div {
+  .mform fieldset.hidden > div {
     margin-left: 25%;
   }
 }
