@@ -48,21 +48,16 @@
             }
         }
     }
-    // submit buttons
-    fieldset.hidden {
-            &:extend(.form-group);
-            &:extend(.form-horizontal .form-group);
-            > div {
+    .fitem_actionbuttons {
+            .form-group;
+            .form-horizontal .form-group;
+            > div.felement {
                 .make-md-column(8);
                 .make-md-column-offset(4);
                 .make-lg-column(9);
                 .make-lg-column-offset(3);
             }
     }
-}
-
-.mform fieldset.hidden .fitem_actionbuttons .felement {
-    padding-left: 10px;
 }
 
 .mform fieldset .advancedbutton {
@@ -210,9 +205,8 @@
     .fitem_fcheckbox .fcheckbox {
         padding-top: 8px;
     }
-    // submit buttons
-    fieldset.hidden:last-child > div {
-        margin-left: -20px;
+    .mform .fitem_actionbuttons > div.felement {
+        padding-left: 10px;
     }
     .form-buttons .form-submit {
         margin-left: -5px;

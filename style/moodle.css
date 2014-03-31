@@ -1758,7 +1758,6 @@ input[type="date"] {
 .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden,
 .form-item {
   margin-bottom: 15px;
 }
@@ -2003,7 +2002,6 @@ select[multiple].input-lg {
 .form-horizontal .form-group,
 .mform .fcontainer .fitem,
 .mform fieldset .fitem,
-.mform fieldset.hidden,
 .form-item {
   margin-left: -15px;
   margin-right: -15px;
@@ -2405,8 +2403,8 @@ input[type="button"].btn-block {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('[[font:theme|glyphicons-halflings-regular.eot');
-  src: url('[[font:theme|glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -5728,6 +5726,8 @@ button.close {
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
 .userprofile .userprofilebox:before,
 .userprofile .userprofilebox:after,
+.mform .fitem_actionbuttons:before,
+.mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:before,
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:before,
@@ -5736,8 +5736,6 @@ button.close {
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:before,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:before,
-.mform fieldset.hidden:after,
 .form-item:before,
 .form-item:after {
   content: " ";
@@ -5760,11 +5758,11 @@ button.close {
 .box.message .contactselector form#usergroupform fieldset:after,
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
 .userprofile .userprofilebox:after,
+.mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:after,
 .mform .fcontainer .fitem:after,
 .mform fieldset .fitem:after,
-.mform fieldset.hidden:after,
 .form-item:after {
   clear: both;
 }
@@ -13395,36 +13393,38 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 .mform fieldset .fitem .felement.fdate_time_selector label {
   display: inline-block;
 }
-.mform fieldset.hidden > div {
+.mform .fitem_actionbuttons {
+  margin-bottom: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.mform .fitem_actionbuttons > div.felement {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .mform fieldset.hidden > div {
+  .mform .fitem_actionbuttons > div.felement {
     float: left;
     width: 66.66666667%;
   }
 }
 @media (min-width: 992px) {
-  .mform fieldset.hidden > div {
+  .mform .fitem_actionbuttons > div.felement {
     margin-left: 33.33333333%;
   }
 }
 @media (min-width: 1200px) {
-  .mform fieldset.hidden > div {
+  .mform .fitem_actionbuttons > div.felement {
     float: left;
     width: 75%;
   }
 }
 @media (min-width: 1200px) {
-  .mform fieldset.hidden > div {
+  .mform .fitem_actionbuttons > div.felement {
     margin-left: 25%;
   }
-}
-.mform fieldset.hidden .fitem_actionbuttons .felement {
-  padding-left: 10px;
 }
 .mform fieldset .advancedbutton {
   text-align: right;
@@ -13640,8 +13640,8 @@ textarea.form-item .form-setting input[type="password"] {
   .fitem_fcheckbox .fcheckbox {
     padding-top: 8px;
   }
-  fieldset.hidden:last-child > div {
-    margin-left: -20px;
+  .mform .fitem_actionbuttons > div.felement {
+    padding-left: 10px;
   }
   .form-buttons .form-submit {
     margin-left: -5px;
