@@ -175,7 +175,6 @@ $THEME->javascripts_footer = array(
 
 if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
     $THEME->javascripts[] = 'html5shiv';
-    $THEME->javascripts[] = 'respond.min';
 }
 
 $THEME->hidefromselector = false;
