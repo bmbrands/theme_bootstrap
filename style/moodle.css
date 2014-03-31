@@ -12361,7 +12361,6 @@ a#hidebankcmd {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: 0;
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -12374,7 +12373,23 @@ a#hidebankcmd {
 @media (min-width: 768px) {
   .loginbox.onecolumn {
     float: left;
-    width: 25%;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .loginbox.onecolumn {
+    left: 25%;
+  }
+}
+@media (min-width: 992px) {
+  .loginbox.onecolumn {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .loginbox.onecolumn {
+    left: 33.33333333%;
   }
 }
 .loginbox.onecolumn blockquote {
