@@ -42,9 +42,9 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $settingshtml->brandfontlink; ?>
     <?php echo $OUTPUT->standard_head_html(); ?>
+    <!--[if lt IE 9]><link rel="stylesheet" href="<?php echo $CFG->wwwroot;?>/theme/bootstrap/style/moodle-ie8.css"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 </head>
-
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>

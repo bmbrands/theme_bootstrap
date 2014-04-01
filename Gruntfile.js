@@ -243,6 +243,17 @@ module.exports = function(grunt) {
                 dest: 'style/editor.css'
             }
         },
+        stripmq: {
+            options: {
+                width: 1024,     // viewport width, default is 1024
+                type: 'screen'
+            },
+            all: {
+                files: {
+                    'style/moodle-ie8.css': ['style/moodle.css']
+                }
+            }
+        },
         exec: {
             decache: {
                 cmd: 'php -r "' + decachephp + '"',
@@ -329,6 +340,7 @@ module.exports = function(grunt) {
                         to: 'glyphicons-halflings-regular.woff]]',
                     }]
             }
+
         }
     });
 
@@ -406,6 +418,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-text-replace");
     grunt.loadNpmTasks("grunt-css-flip");
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-stripmq');
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
