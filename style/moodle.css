@@ -8879,6 +8879,9 @@ span.editinstructions {
 .coursebox .enrolmenticons {
   float: right;
 }
+.coursebox .enrolmenticons img {
+  padding: 0 5px;
+}
 .coursebox.remotehost > .info > .categoryname a {
   background-image: url([[pix:moodle|i/mnethost]]);
 }
