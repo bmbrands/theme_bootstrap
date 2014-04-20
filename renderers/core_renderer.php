@@ -347,9 +347,11 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
     protected function render_pix_icon(pix_icon $icon) {
         if ($this->page->theme->settings->fonticons === '1'
-            && $icon->attributes["alt"] === ''
-            && $this->replace_moodle_icon($icon->pix) !== false) {
-            return $this->replace_moodle_icon($icon->pix);
+            && $icon->attributes["alt"] === '') {
+            $iconout = $this->replace_moodle_icon($icon->pix);
+            if ($iconout !== false) {
+                return $iconout;
+            }
         }
         return parent::render_pix_icon($icon);
     }
