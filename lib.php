@@ -49,8 +49,8 @@ function bootstrap_grid($hassidepre, $hassidepost) {
     
     if ('rtl' === get_string('thisdirection', 'langconfig')) {
         if ($hassidepre && $hassidepost) {
-            $regions['pre'] = 'col-sm-3 col-lg-2';
-            $regions['post'] = 'col-sm-3 col-sm-pull-6 col-lg-2 col-lg-pull-8';
+            $regions['pre'] = 'col-sm-3  col-md-push-3 col-lg-2 col-lg-push-2';
+            $regions['post'] = 'col-sm-3 col-sm-pull-9 col-lg-2 col-lg-pull-10';
         } else if ($hassidepre && !$hassidepost) {
             $regions = array('content' => 'col-sm-9 col-lg-10');
             $regions['pre'] = 'col-sm-3 col-lg-2';
