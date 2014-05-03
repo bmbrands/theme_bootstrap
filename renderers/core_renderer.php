@@ -102,45 +102,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
         $addusermenu = true;
         $addlangmenu = true;
-        $addmessagemenu = true;
-
-        if (!isloggedin() || isguestuser()) {
-            $addmessagemenu = false;
-        }
-
-        if ($addmessagemenu) {
-            $messages = $this->get_user_messages();
-            $messagecount = count($messages);
-            $messagemenu = $menu->add(
-                $messagecount . ' ' . get_string('messages', 'message'),
-                new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
-                get_string('messages', 'message'),
-                9999
-            );
-            foreach ($messages as $message) {
-
-                if (!$message->from) { // Workaround for issue #103.
-                    continue;
-                }
-                $senderpicture = new user_picture($message->from);
-                $senderpicture->link = false;
-                $senderpicture = $this->render($senderpicture);
-
-                $messagecontent = $senderpicture;
-                $messagecontent .= html_writer::start_span('msg-body');
-                $messagecontent .= html_writer::start_span('msg-title');
-                $messagecontent .= html_writer::span($message->from->firstname . ': ', 'msg-sender');
-                $messagecontent .= $message->text;
-                $messagecontent .= html_writer::end_span();
-                $messagecontent .= html_writer::start_span('msg-time');
-                $messagecontent .= html_writer::tag('i', '', array('class' => 'icon-time'));
-                $messagecontent .= html_writer::span($message->date);
-                $messagecontent .= html_writer::end_span();
-
-                $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
-                $messagemenu->add($messagecontent, $messageurl, $message->state);
-            }
-        }
 
         $langs = get_string_manager()->get_list_of_translations();
         if (count($langs) < 2
@@ -187,84 +148,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
 
         return $content.'</ul>';
-    }
-
-    protected function process_user_messages() {
-
-        $messagelist = array();
-
-        foreach ($usermessages as $message) {
-            $cleanmsg = new stdClass();
-            $cleanmsg->from = fullname($message);
-            $cleanmsg->msguserid = $message->id;
-
-            $userpicture = new user_picture($message);
-            $userpicture->link = false;
-            $picture = $this->render($userpicture);
-
-            $cleanmsg->text = $picture . ' ' . $cleanmsg->text;
-
-            $messagelist[] = $cleanmsg;
-        }
-
-        return $messagelist;
-    }
-
-    protected function get_user_messages() {
-        global $USER, $DB;
-        $messagelist = array();
-        $maxmessages = 5;
-
-        $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-        				     FROM {message_read}
-        			        WHERE useridto = :userid
-        			     ORDER BY timecreated DESC
-        			        LIMIT $maxmessages";
-        $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-        					FROM {message}
-        			       WHERE useridto = :userid";
-
-        $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
-
-        $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
-
-        foreach ($newmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message, 'new');
-        }
-
-        foreach ($readmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message, 'old');
-        }
-        return $messagelist;
-
-    }
-
-    protected function bootstrap_process_message($message, $state) {
-        global $DB;
-        $messagecontent = new stdClass();
-
-        if ($message->notification) {
-            $messagecontent->text = get_string('unreadnewnotification', 'message');
-        } else {
-            if ($message->fullmessageformat == FORMAT_HTML) {
-                $message->smallmessage = html_to_text($message->smallmessage);
-            }
-            if (core_text::strlen($message->smallmessage) > 15) {
-                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
-            } else {
-                $messagecontent->text = $message->smallmessage;
-            }
-        }
-
-        if ((time() - $message->timecreated ) <= (3600 * 3)) {
-            $messagecontent->date = format_time(time() - $message->timecreated);
-        } else {
-            $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
-        }
-
-        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-        $messagecontent->state = $state;
-        return $messagecontent;
     }
 
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
@@ -345,76 +228,19 @@ class theme_bootstrap_core_renderer extends core_renderer {
             return html_writer::tag('li', $link);
         }
     }
-    protected function render_pix_icon(pix_icon $icon) {
-        if ($this->page->theme->settings->fonticons === '1'
-            && $icon->attributes["alt"] === '') {
-            $iconout = $this->replace_moodle_icon($icon->pix);
-            if ($iconout !== false) {
-                return $iconout;
-            }
-        }
-        return parent::render_pix_icon($icon);
-    }
-
-    protected function replace_moodle_icon($name) {
-        $icons = array(
-            'add' => 'plus',
-            'book' => 'book',
-            'chapter' => 'file',
-            'docs' => 'question-sign',
-            'generate' => 'gift',
-            'i/backup' => 'download',
-            't/backup' => 'download',
-            'i/checkpermissions' => 'user',
-            'i/edit' => 'pencil',
-            'i/filter' => 'filter',
-            'i/grades' => 'grades',
-            'i/group' => 'user',
-            'i/hide' => 'eye-open',
-            'i/import' => 'upload',
-            'i/info' => 'info',
-            'i/move_2d' => 'move',
-            'i/navigationitem' => 'chevron-right',
-            'i/publish' => 'globe',
-            'i/reload' => 'refresh',
-            'i/report' => 'list-alt',
-            'i/restore' => 'upload',
-            't/restore' => 'upload',
-            'i/return' => 'repeat',
-            'i/roles' => 'user',
-            'i/settings' => 'cog',
-            'i/show' => 'eye-close',
-            'i/switchrole' => 'user',
-            'i/user' => 'user',
-            'i/users' => 'user',
-            'spacer' => 'spacer',
-            't/add' => 'plus',
-            't/assignroles' => 'user',
-            't/copy' => 'plus-sign',
-            't/delete' => 'remove',
-            't/down' => 'arrow-down',
-            't/edit' => 'edit',
-            't/editstring' => 'tag',
-            't/hide' => 'eye-open',
-            't/left' => 'arrow-left',
-            't/move' => 'resize-vertical',
-            't/right' => 'arrow-right',
-            't/show' => 'eye-close',
-            't/switch_minus' => 'minus-sign',
-            't/switch_plus' => 'plus-sign',
-            't/up' => 'arrow-up',
-        );
-        if (isset($icons[$name])) {
-            return '<span class="glyphicon glyphicon-'.$icons[$name].'"></span> ';
-        } else {
-            return false;
-        }
-    }
 
     public function box($contents, $classes = 'generalbox', $id = null, $attributes = array()) {
         if (isset($attributes['data-rel']) && $attributes['data-rel'] === 'fatalerror') {
             return html_writer::div($contents, 'alert alert-danger', $attributes);
         }
         return parent::box($contents, $classes, $id, $attributes);
+    }
+
+    public function content_zoom() {
+        $zoomin = html_writer::span(get_string('fullscreen', 'theme_bootstrapbase'), 'zoomin');
+        $zoomout = html_writer::span(get_string('closefullscreen', 'theme_bootstrapbase'), 'zoomout');
+        $content = html_writer::link('#',  $zoomin . $zoomout,
+            array('class' => 'pull-right moodlezoom'));
+        return $content;
     }
 }

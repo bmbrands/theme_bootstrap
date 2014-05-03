@@ -165,6 +165,7 @@ $THEME->layouts = array(
 $THEME->javascripts = array(
 );
 $THEME->javascripts_footer = array(
+    'moodlebootstrap', 'dock'
 );
 
 if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {

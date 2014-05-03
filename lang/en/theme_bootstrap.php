@@ -21,35 +21,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['brandfont'] = 'Logotype Font';
-$string['brandfontdesc'] = 'The name of a Google Font to use for the site name in the navbar';
-$string['brandfontitalic'] = 'Logotype Italics';
-$string['brandfontitalicdesc'] = 'Use the italic version of the font, check italic is available at the selected weight';
-$string['brandfontweight'] = 'Logotype Weight';
-$string['brandfontweightdesc'] = 'Weight of the font, 400 is normal, 700 bold, double check what weights the font supports';
-$string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
-$string['deletecss'] = 'Delete Unneeded CSS';
-$string['deletecssdesc'] = 'Delete CSS for webkit and moz specific rules that are no longer necessary';
-$string['fluidwidth'] = 'Fluid width theme';
-$string['fluidwidthdesc'] = 'Enable this option to allow using your full screen';
-$string['fonticons'] = 'Use Icon Font';
-$string['fonticonsdesc'] = 'Enable this option to use the Glyphicon Icon Font';
-$string['fontweight100'] = '100 (thin)';
-$string['fontweight200'] = '200';
-$string['fontweight300'] = '300 (light)';
-$string['fontweight400'] = '400 (normal)';
-$string['fontweight500'] = '500';
-$string['fontweight600'] = '600';
-$string['fontweight700'] = '700 (bold)';
-$string['fontweight800'] = '800';
-$string['fontweight900'] = '900 (ultra-bold)';
-$string['footerwidget'] = 'Footer Widget #{$a}';
-$string['footerwidgetdesc'] = 'All footer widgets have the same description';
-$string['inversenavbar'] = 'Inverse Navbar';
-$string['inversenavbardesc'] = 'Enable this option to use the inverted color scheme for the navbar';
 $string['pluginname'] = 'Bootstrap 3';
-$string['reader'] = 'Reader';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 
