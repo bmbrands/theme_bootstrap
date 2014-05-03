@@ -412,7 +412,7 @@ module.exports = function(grunt) {
     grunt.registerTask("decache", ["exec:decache"]);
 
     grunt.registerTask("bootswatch", _bootswatch);
-    grunt.registerTask("compile", ["less", "cssflip", "replace:rtl_images", "decache"]);
+    grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "decache"]);
     grunt.registerTask("swatch", ["bootswatch", "svg", "compile"]);
     grunt.registerTask("svg", ["copy:svg", "replace:svg_colors"]);
 };
