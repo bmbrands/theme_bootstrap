@@ -23,7 +23,9 @@ $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
 $regions = bootstrap_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
-theme_bootstrap_initialise_zoom($PAGE);
+if ($knownregionpre || $knownregionpost) {
+    theme_bootstrap_initialise_zoom($PAGE);
+}
 $setzoom = theme_bootstrap_get_zoom();
 
 echo $OUTPUT->doctype() ?>
@@ -83,7 +85,9 @@ echo $OUTPUT->doctype() ?>
         <div id="region-main" class="<?php echo $regions['content']; ?>">
             <?php
             echo $OUTPUT->course_content_header();
-            echo $OUTPUT->content_zoom();
+            if ($knownregionpre || $knownregionpost) {
+                echo $OUTPUT->content_zoom();
+            }
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
