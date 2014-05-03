@@ -200,7 +200,6 @@ module.exports = function(grunt) {
         bootstrap: '#428bca',
         classic: '#428bca',
         cerulean: '#2fa4e7',
-        classic: '#428bca',
         cosmo: '#007fff',
         cupid: '#56caef',
         cyborg: '#2a9fd6',
