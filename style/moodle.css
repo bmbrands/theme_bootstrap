@@ -2403,8 +2403,8 @@ input[type="button"].btn-block {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]#glyphicons_halflingsregular') format('svg');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -13797,87 +13797,107 @@ input[type="radio"],
 input[type="checkbox"] {
   margin: 0 4px;
 }
-/*
-.mform .fitem fieldset.fgroup label {
-    // see .felement.fdate_selector above
-    display: inline;
-    float: none;
-    width: auto;
+/* Section and module editing forms contain special JS components for the
+   availability system (if enabled). */
+#fitem_id_availabilityconditionsjson {
+  /* Hidden eye icon still takes up space. */
+  /* Eye icons in front of child lists are aligned specially. */
+  /* Add button lines up with child elements. */
+  /* Nested section is grey. */
+  /* Second (and more) levels of nested sections are white. */
+  /* Connecting text needs to be indented. */
 }
-.mform ul.file-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+#fitem_id_availabilityconditionsjson *[aria-hidden=true] {
+  display: none;
 }
-.mform .ftags label.accesshide {
-    display: block;
-    position: static;
+#fitem_id_availabilityconditionsjson select,
+#fitem_id_availabilityconditionsjson input[type=text] {
+  width: auto;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 4px 6px;
 }
-.mform .ftags select {
-    margin-bottom: 0.7em;
-    min-width: 22em;
+#fitem_id_availabilityconditionsjson label {
+  display: inline;
 }
-.mform .helplink img {
-    margin: 0 .45em;
-    padding: 0;
+#fitem_id_availabilityconditionsjson .availability-group {
+  margin: 5px;
 }
-
-form input[type="text"] {
-   .form-control;
-   display: inline-block;
-   width: auto;
-   height: auto;
+#fitem_id_availabilityconditionsjson .availability-item {
+  margin-bottom: 6px;
 }
-
-.loginpanel .error,
-.singleselect label {
-    margin-right: .3em;
+#fitem_id_availabilityconditionsjson .availability-header {
+  padding: 5px;
 }
-#portfolio-add-button {
-    display: inline;
+#fitem_id_availabilityconditionsjson .availability-plugincontrols {
+  padding: 5px;
+  margin: 0 8px;
+  background: none repeat scroll 0% 0% #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  display: inline-block;
 }
-
-
-#page-grade-edit-outcome-course .courseoutcomes {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+#fitem_id_availabilityconditionsjson .availability-eye[aria-hidden=true] {
+  display: inline;
+  visibility: hidden;
 }
-#page-grade-edit-outcome-course .courseoutcomes td {
-    text-align:center;
+#fitem_id_availabilityconditionsjson .availability-list > .availability-eye img {
+  vertical-align: top;
+  margin-top: 12px;
 }
-
-// Checkbox labels. Bootstrap puts the associated checkbox inside the label.
-// Moodle puts it beside the label, so we need to make it inline-block
-// to keep it on the same horizontal level.
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-    display: inline;
-    padding-left: 0.2em;
+#fitem_id_availabilityconditionsjson .availability-button {
+  margin-left: 15px;
 }
-input[type="radio"],
-input[type="checkbox"] {
-    margin-top: -4px; // Dodgy hack, must be better way.
-    margin-right: 7px;
+#fitem_id_availabilityconditionsjson .availability-childlist > .availability-inner {
+  display: inline-block;
+  background: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  padding: 6px;
+  margin-bottom: 6px;
 }
-.singleselect {
-    display: inline-block;
-    form,
-    select{
-        margin: 0;
-    }
+#fitem_id_availabilityconditionsjson .availability-childlist .availability-childlist > .availability-inner {
+  background: white;
 }
-.felement.ffilepicker {
-    margin-top: 5px;
+#fitem_id_availabilityconditionsjson .availability-connector {
+  margin-left: 20px;
+  margin-bottom: 6px;
 }
-div#dateselector-calendar-panel {
-    z-index: 3100; // Set higher than the z-index of the filemanager - see MDL-39047.
+/* This dialogue is used to add an availability condition. */
+.availability-dialogue .moodle-dialogue .moodle-dialogue-bd {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 2px;
 }
-
-fieldset.coursesearchbox label {
-    display: inline;
+.availability-dialogue ul {
+  display: block;
+  margin: 0;
 }
-*/
+.availability-dialogue li {
+  display: block;
+  list-style-type: none;
+  padding: 0 0 4px;
+  clear: both;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 4px;
+}
+.availability-dialogue ul button {
+  float: left;
+  margin: 0 10px;
+  min-width: 140px;
+  margin-top: 4px;
+  display: inline;
+}
+.availability-dialogue label {
+  margin-bottom: 0;
+  display: block;
+}
+.availability-dialogue .availability-buttons button {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 4px;
+}
 /* modules.less */
 select {
   width: auto;
