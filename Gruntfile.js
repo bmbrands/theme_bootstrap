@@ -174,7 +174,8 @@ module.exports = function(grunt) {
         BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'),
         BOOTSWATCHFILE  = path.join(BOOTSWATCHDIR, 'custom-bootswatch.less'),
         BOOTSWATCHVARS  = path.join(BOOTSWATCHDIR, 'custom-variables.less'),
-        THEMEDIR        = path.basename(path.resolve('.'));
+        THEMEDIR        = path.basename(path.resolve('.')),
+        SVGDEFAULTCOL   = '#999';
 
     // PHP strings for exec task.
     var moodleroot = path.dirname(path.dirname(__dirname)),
@@ -216,7 +217,7 @@ module.exports = function(grunt) {
         united: '#dd4814',
         yeti: '#008cba',
     };
-    var svgcolor = grunt.option('svgcolor') || defaultsvgcolor[swatchname] || '#999';
+    var svgcolor = grunt.option('svgcolor') || defaultsvgcolor[swatchname] || SVGDEFAULTCOL;
 
     grunt.initConfig({
         less: {
@@ -308,7 +309,7 @@ module.exports = function(grunt) {
                 src: 'pix_core/**/*.svg',
                     overwrite: true,
                     replacements: [{
-                        from: '#999',
+                        from: SVGDEFAULTCOL,
                         to: svgcolor
                     }]
             },
