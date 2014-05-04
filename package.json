@@ -16,11 +16,11 @@
     "grunt-css-flip": "~0.2.0",
     "grunt-contrib-copy": "~0.5.0"
   },
-  author {
+  "author": {
     "name": "Joby Harding",
     "url": "http://www.iamjoby.com"
   },
-  contributors {
+  "contributors": {
     [
       {
         "name": "David Scotson"
