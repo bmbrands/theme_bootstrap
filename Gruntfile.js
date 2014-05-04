@@ -144,11 +144,8 @@
  *                           loader to pick up the Glyphicon font.
  *
  * grunt replace:svg_colors  Change the color of the SVGs in pix_core by
- *                           text replacing #999 with a new hex color.
- *                           Note this requires the SVGs to be #999 to
- *                           start with or the replace will do nothing
- *                           so should usually be preceded by copying
- *                           a fresh set of the original SVGs.
+ *                           text replacing with a new hex color passed
+ *                           as an option.
  *
  *                           Options:
  *
