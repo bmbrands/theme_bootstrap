@@ -4,6 +4,7 @@
     "type": "git",
       "url": "https://github.com/bmbrands/theme_bootstrap.git"
   },
+  "license": "GPL-3.0+",
   "bugs": {
     "url": "https://github.com/bmbrands/theme_bootstrap/issues"
   },
