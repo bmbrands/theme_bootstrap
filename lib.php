@@ -90,7 +90,7 @@ function theme_bootstrap_brand_font_css($settings) {
 }
 
 /**
- * This function creates the dynamic HTML needed for the 
+ * This function creates the dynamic HTML needed for the
  * layout and then passes it back in an object so it can
  * be echo'd to the page.
  *
@@ -144,7 +144,7 @@ function bootstrap_grid($hassidepre, $hassidepost) {
     } else if ($hassidepre && !$hassidepost) {
         $regions = array('content' => 'col-sm-8 col-sm-push-4 col-md-9 col-md-push-3');
         $regions['pre'] = 'col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9';
-        $regions['post'] = 'emtpy';
+        $regions['post'] = 'empty';
     } else if (!$hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-8 col-md-9');
         $regions['pre'] = 'empty';
