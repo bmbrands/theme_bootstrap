@@ -197,29 +197,6 @@ module.exports = function(grunt) {
     decachephp += 'require(\'' + configfile  + '\');';
     decachephp += 'theme_reset_all_caches();';
 
-    var swatchname = grunt.option('name') || '';
-    // var defaultsvgcolor = {
-    //     amelia: '#e8d069',
-    //     bootstrap: '#428bca',
-    //     classic: '#428bca',
-    //     cerulean: '#2fa4e7',
-    //     cosmo: '#007fff',
-    //     cupid: '#56caef',
-    //     cyborg: '#2a9fd6',
-    //     darkly: '#0ce3ac',
-    //     flatly: '#18bc9c',
-    //     journal: '#eb6864',
-    //     lumen: '#158cba',
-    //     readable: '#4582ec',
-    //     shamrock: '#f8e33c',
-    //     simplex: '#d9230f',
-    //     slate: '#fff',
-    //     spacelab: '#446e9b',
-    //     superhero: '#df691a',
-    //     united: '#dd4814',
-    //     yeti: '#008cba',
-    // };
-
     grunt.initConfig({
 
         // Colour
@@ -438,7 +415,7 @@ module.exports = function(grunt) {
             grunt.option('svgcolor', regex.exec(css)[2]);
         }
 
-        var message = 'Updating SVG color to ';
+        var message = 'Updating SVG fill to ';
         message += grunt.option('svgcolor').cyan + '.';
         grunt.log.writeln(message);
 
