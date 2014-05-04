@@ -1,5 +1,6 @@
 {
   "description": "Grunt tasks for Moodle Bootstrap theme.",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/bmbrands/theme_bootstrap.git"
