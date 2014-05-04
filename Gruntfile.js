@@ -199,7 +199,6 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
 
-        // Colour
         _svgreplacecol: SVGDEFAULTCOL,
 
         less: {
