@@ -20,20 +20,18 @@
     "name": "Joby Harding",
     "url": "http://www.iamjoby.com"
   },
-  "contributors": {
-    [
-      {
-        "name": "David Scotson"
-      },
-      {
-        "name": "Bas Brands",
-        "url": "http://www.basbrands.nl"
-      },
-      {
-        "name": "Gareth J Barnard",
-        "url": "http://about.me/gjbarnard"
-      }
-    ]
-  },
+  "contributors": [
+    {
+      "name": "David Scotson"
+    },
+    {
+      "name": "Bas Brands",
+      "url": "http://www.basbrands.nl"
+    },
+    {
+      "name": "Gareth J Barnard",
+      "url": "http://about.me/gjbarnard"
+    }
+  ],
   "license": "GPL-3.0+"
 }
