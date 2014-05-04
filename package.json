@@ -1,6 +1,17 @@
 {
-  "description": "Grunt tasks for Moodle Bootstrap theme.",
+  "name": "theme-bootstrap-tasks",
   "version": "0.1.0",
+  "description": "Grunt tasks for Moodle Bootstrap theme.",
+  "main": "Gruntfile.js",
+  "author": {
+    "name": "Joby Harding",
+    "url": "http://www.iamjoby.com"
+  },
+  "contributors": [
+    { "name": "David Scotson" },
+    { "name": "Bas Brands", "url": "http://www.basbrands.nl" },
+    { "name": "Gareth J Barnard", "url": "http://about.me/gjbarnard" }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/bmbrands/theme_bootstrap.git"
@@ -17,14 +28,5 @@
     "grunt-css-flip": "~0.2.0",
     "grunt-contrib-copy": "~0.5.0"
   },
-  "author": {
-    "name": "Joby Harding",
-    "url": "http://www.iamjoby.com"
-  },
-  "contributors": [
-    { "name": "David Scotson" },
-    { "name": "Bas Brands", "url": "http://www.basbrands.nl" },
-    { "name": "Gareth J Barnard", "url": "http://about.me/gjbarnard" }
-  ],
   "license": "GPL-3.0+"
 }
