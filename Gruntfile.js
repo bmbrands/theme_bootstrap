@@ -106,7 +106,7 @@
  *                                      directory when your theme is
  *                                      not in the standard location.
  *
- * grunt bootswatch  Switch the theme less/bootswatch/custom-bootswatch.less
+ * grunt swatch  Switch the theme less/bootswatch/custom-bootswatch.less
  *                   and less/bootswatch/custom-variables.less files for
  *                   those of a given bootswatch theme using convention
  *                   described in swatch task.
