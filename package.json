@@ -4,7 +4,6 @@
     "type": "git",
       "url": "https://github.com/bmbrands/theme_bootstrap.git"
   },
-  "license": "GPL-3.0+",
   "bugs": {
     "url": "https://github.com/bmbrands/theme_bootstrap/issues"
   },
@@ -16,5 +15,6 @@
     "grunt-text-replace": "~0.3.11",
     "grunt-css-flip": "~0.2.0",
     "grunt-contrib-copy": "~0.5.0"
-  }
+  },
+  "license": "GPL-3.0+"
 }
