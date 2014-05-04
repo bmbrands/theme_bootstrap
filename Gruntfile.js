@@ -167,14 +167,17 @@
 module.exports = function(grunt) {
 
     // Import modules.
-    var path = require('path');
+    var path     = require('path'),
+        fs       = require('fs');
 
     // Theme Bootstrap constants.
     var LESSDIR         = 'less',
         BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'),
         BOOTSWATCHFILE  = path.join(BOOTSWATCHDIR, 'custom-bootswatch.less'),
         BOOTSWATCHVARS  = path.join(BOOTSWATCHDIR, 'custom-variables.less'),
-        THEMEDIR        = path.basename(path.resolve('.')),
+        THEMEROOT       = path.resolve('.'),
+        THEMEDIR        = path.basename(THEMEROOT),
+        STYLEDIR        = path.join(THEMEROOT, 'style'),
         SVGDEFAULTCOL   = '#999';
 
     // PHP strings for exec task.
@@ -195,30 +198,33 @@ module.exports = function(grunt) {
     decachephp += 'theme_reset_all_caches();';
 
     var swatchname = grunt.option('name') || '';
-    var defaultsvgcolor = {
-        amelia: '#e8d069',
-        bootstrap: '#428bca',
-        classic: '#428bca',
-        cerulean: '#2fa4e7',
-        cosmo: '#007fff',
-        cupid: '#56caef',
-        cyborg: '#2a9fd6',
-        darkly: '#0ce3ac',
-        flatly: '#18bc9c',
-        journal: '#eb6864',
-        lumen: '#158cba',
-        readable: '#4582ec',
-        shamrock: '#f8e33c',
-        simplex: '#d9230f',
-        slate: '#fff',
-        spacelab: '#446e9b',
-        superhero: '#df691a',
-        united: '#dd4814',
-        yeti: '#008cba',
-    };
-    var svgcolor = grunt.option('svgcolor') || defaultsvgcolor[swatchname] || SVGDEFAULTCOL;
+    // var defaultsvgcolor = {
+    //     amelia: '#e8d069',
+    //     bootstrap: '#428bca',
+    //     classic: '#428bca',
+    //     cerulean: '#2fa4e7',
+    //     cosmo: '#007fff',
+    //     cupid: '#56caef',
+    //     cyborg: '#2a9fd6',
+    //     darkly: '#0ce3ac',
+    //     flatly: '#18bc9c',
+    //     journal: '#eb6864',
+    //     lumen: '#158cba',
+    //     readable: '#4582ec',
+    //     shamrock: '#f8e33c',
+    //     simplex: '#d9230f',
+    //     slate: '#fff',
+    //     spacelab: '#446e9b',
+    //     superhero: '#df691a',
+    //     united: '#dd4814',
+    //     yeti: '#008cba',
+    // };
 
     grunt.initConfig({
+
+        // Colour
+        _svgreplacecol: SVGDEFAULTCOL,
+
         less: {
             // Compile moodle styles.
             moodle: {
@@ -309,7 +315,7 @@ module.exports = function(grunt) {
                     overwrite: true,
                     replacements: [{
                         from: SVGDEFAULTCOL,
-                        to: svgcolor
+                        to: '<%= _svgreplacecol %>'
                     }]
             },
             font_fix: {
@@ -330,10 +336,11 @@ module.exports = function(grunt) {
                     }]
             }
         }
-    });
+    }); // End initConfig().
 
     // Local task functions.
     var _bootswatch = function() {
+
         var swatchname = grunt.option('name') || '',
             swatchroot = grunt.option('swatches-dir') || '',
             varsonly   = grunt.option('vars-only'),
@@ -399,6 +406,49 @@ module.exports = function(grunt) {
 
     };
 
+    /**
+     * Update svg fill to match current bootswatch.
+     *
+     * Wrap in a function so that we can enforce order
+     * of invocation by testing if the `compile` task has
+     * already been successfully completed.
+     *
+     */
+    var _svg = function() {
+
+        // We get the svg color from compiled theme CSS.
+        grunt.task.requires("compile");
+
+        // Allow command-line parameter to override.
+        if (!grunt.option('svgcolor')) {
+
+            var regex   = /\s*a\s*{\s*([a-z-]+\s*:\s*.+\s*;\s*)*\s*color\s*:\s*(#[abcdefABCDEF1234567890]{3,6})\s*;/,
+                csspath = path.join(STYLEDIR, 'moodle.css'),
+                css     = '';
+
+            try {
+                css = fs.readFileSync(csspath);
+            } catch (e) {
+                grunt.log.fatal(e);
+            }
+
+            // Use bootstrap's output CSS to infer the compiled
+            // value of @link-color. The CSS hex value is always
+            // the 3rd capture.
+            grunt.option('svgcolor', regex.exec(css)[2]);
+        }
+
+        var message = 'Updating SVG color to ';
+        message += grunt.option('svgcolor').cyan + '.';
+        grunt.log.writeln(message);
+
+        // Update config and run replace task.
+        grunt.config.set('_svgreplacecol', grunt.option('svgcolor'));
+        grunt.task.run("copy:svg");
+        grunt.task.run("replace:svg_colors");
+
+    };
+
     // Load contrib tasks.
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-watch");
@@ -413,6 +463,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask("bootswatch", _bootswatch);
     grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "decache"]);
-    grunt.registerTask("swatch", ["bootswatch", "svg", "compile"]);
-    grunt.registerTask("svg", ["copy:svg", "replace:svg_colors"]);
+    grunt.registerTask("swatch", ["bootswatch", "compile", "svg"]);
+    grunt.registerTask("svg", _svg);
+
 };
