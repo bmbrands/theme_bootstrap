@@ -2,7 +2,7 @@
   "description": "Grunt tasks for Moodle Bootstrap theme.",
   "repository": {
     "type": "git",
-      "url": "https://github.com/bmbrands/theme_bootstrap.git"
+    "url": "https://github.com/bmbrands/theme_bootstrap.git"
   },
   "bugs": {
     "url": "https://github.com/bmbrands/theme_bootstrap/issues"
@@ -21,17 +21,9 @@
     "url": "http://www.iamjoby.com"
   },
   "contributors": [
-    {
-      "name": "David Scotson"
-    },
-    {
-      "name": "Bas Brands",
-      "url": "http://www.basbrands.nl"
-    },
-    {
-      "name": "Gareth J Barnard",
-      "url": "http://about.me/gjbarnard"
-    }
+    { "name": "David Scotson" },
+    { "name": "Bas Brands", "url": "http://www.basbrands.nl" },
+    { "name": "Gareth J Barnard", "url": "http://about.me/gjbarnard" }
   ],
   "license": "GPL-3.0+"
 }
