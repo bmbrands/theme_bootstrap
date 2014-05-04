@@ -1,6 +1,5 @@
 node_modules
 pix/header.jpg
-pix_core/**
 .DS_Store
 Thumbs.db
 .buildpath
