@@ -25,8 +25,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-exec": "~0.4.3",
     "grunt-text-replace": "~0.3.11",
-    "grunt-css-flip": "~0.2.0",
-    "grunt-contrib-copy": "~0.5.0"
+    "grunt-css-flip": "~0.2.0"
   },
   "license": "GPL-3.0+"
 }

@@ -251,14 +251,6 @@ module.exports = function(grunt) {
                 dest: 'style/moodle-rtl.css'
             }
         },
-        copy: {
-            svg: {
-                 expand: true,
-                 cwd: 'pix_core_originals/',
-                 src: '**',
-                 dest: 'pix_core/',
-            }
-        },
         replace: {
             rtl_images: {
                 src: 'style/moodle-rtl.css',
@@ -290,8 +282,8 @@ module.exports = function(grunt) {
                 src: 'pix_core/**/*.svg',
                     overwrite: true,
                     replacements: [{
-                        from: SVGDEFAULTCOL,
-                        to: '<%= _svgreplacecol %>'
+                        from: /fill=".+"/,
+                        to: 'fill="<%= _svgreplacecol %>"'
                     }]
             },
             font_fix: {
@@ -420,7 +412,6 @@ module.exports = function(grunt) {
 
         // Update config and run replace task.
         grunt.config.set('_svgreplacecol', grunt.option('svgcolor'));
-        grunt.task.run("copy:svg");
         grunt.task.run("replace:svg_colors");
 
     };
@@ -431,15 +422,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-exec");
     grunt.loadNpmTasks("grunt-text-replace");
     grunt.loadNpmTasks("grunt-css-flip");
-    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
-
     grunt.registerTask("bootswatch", _bootswatch);
     grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "decache"]);
-    grunt.registerTask("swatch", ["bootswatch", "compile", "svg"]);
     grunt.registerTask("svg", _svg);
+    grunt.registerTask("swatch", ["bootswatch", "compile", "svg"]);
 
 };
