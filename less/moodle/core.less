@@ -9,8 +9,7 @@
     display: none;
 }
 
-
-.editing.used-region-side-post.used-region-side-pre {
+.dir-ltr.editing.used-region-side-post.used-region-side-pre {
     #region-main {
         .make-sm-column(6);
         .make-lg-column(8); 
@@ -27,6 +26,29 @@
         .make-lg-column(2);
         .make-sm-column-pull(6);
         .make-lg-column-pull(8);
+        min-height: 100px;
+    }
+}
+
+.dir-rtl.editing.used-region-side-post.used-region-side-pre {
+    #region-main {
+        .make-sm-column(6);
+        .make-lg-column(8); 
+        .make-sm-column-push(3);
+        .make-lg-column-push(2);
+    }
+    #block-region-side-pre {
+        .make-sm-column(3);
+        .make-lg-column(2);
+        .make-sm-column-push(3);
+        .make-lg-column-push(2);
+        min-height: 100px;
+    }
+    #block-region-side-post {
+        .make-sm-column(3);
+        .make-lg-column(2);
+        .make-sm-column-pull(9);
+        .make-lg-column-pull(10);
         min-height: 100px;
     }
 }

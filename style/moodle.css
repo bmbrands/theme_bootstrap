@@ -2403,8 +2403,8 @@ input[type="button"].btn-block {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]#glyphicons_halflingsregular') format('svg');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]]]');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff]]]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]]]#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -6046,35 +6046,35 @@ img.icon.hide {
 .layout-option-nocoursefooter .course-content-footer {
   display: none;
 }
-.editing.used-region-side-post.used-region-side-pre #region-main {
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .editing.used-region-side-post.used-region-side-pre #region-main {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
     float: left;
     width: 50%;
   }
 }
 @media (min-width: 1200px) {
-  .editing.used-region-side-post.used-region-side-pre #region-main {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
     float: left;
     width: 66.66666667%;
   }
 }
 @media (min-width: 768px) {
-  .editing.used-region-side-post.used-region-side-pre #region-main {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
     left: 25%;
   }
 }
 @media (min-width: 1200px) {
-  .editing.used-region-side-post.used-region-side-pre #region-main {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
     left: 16.66666667%;
   }
 }
-.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6082,18 +6082,18 @@ img.icon.hide {
   min-height: 100px;
 }
 @media (min-width: 768px) {
-  .editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
     float: left;
     width: 25%;
   }
 }
 @media (min-width: 1200px) {
-  .editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
     float: left;
     width: 16.66666667%;
   }
 }
-.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6101,25 +6101,111 @@ img.icon.hide {
   min-height: 100px;
 }
 @media (min-width: 768px) {
-  .editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
     float: left;
     width: 25%;
   }
 }
 @media (min-width: 1200px) {
-  .editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
     float: left;
     width: 16.66666667%;
   }
 }
 @media (min-width: 768px) {
-  .editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
     right: 50%;
   }
 }
 @media (min-width: 1200px) {
-  .editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
     right: 66.66666667%;
+  }
+}
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    left: 16.66666667%;
+  }
+}
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 100px;
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    left: 16.66666667%;
+  }
+}
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 100px;
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    right: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    right: 83.33333333%;
   }
 }
 .has_dock.used-region-side-post.empty-region-side-pre #region-main {
