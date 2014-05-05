@@ -47,11 +47,13 @@ $string['fontweight900'] = '900 (ultra-bold)';
 $string['footerwidget'] = 'Footer Widget #{$a}';
 $string['footerwidgetdesc'] = 'All footer widgets have the same description';
 $string['inversenavbar'] = 'Inverse Navbar';
-$string['inversenavbardesc'] = 'Enable this option to use the inverted color scheme for the navbar';
+$string['inversenavbardesc'] = 'Enable this option to use the inverted colour scheme for the navbar';
 $string['pluginname'] = 'Bootstrap 3';
 $string['reader'] = 'Reader';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
+$string['showoldmessages'] = 'Show old messages';
+$string['showoldmessagesdesc'] = 'Show old messages on the message menu';
 
 
 $string['choosereadme'] = '

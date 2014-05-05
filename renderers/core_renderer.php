@@ -26,6 +26,9 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_bootstrap_core_renderer extends core_renderer {
 
+    const NEWMESSAGE = 1;
+    const OLDMESSAGE = 2;
+
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
 
@@ -109,17 +112,35 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
 
         if ($addmessagemenu) {
+            $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 : $this->page->theme->settings->showoldmessages;
             $messages = $this->get_user_messages();
-            $messagecount = count($messages);
+            $messagecount = 0;
+            foreach ($messages as $message) {
+                if (!$message->from) { // Workaround for issue #103.
+                    continue;
+                }
+                if ((!$showoldmessages) && ($message->state == self::OLDMESSAGE)) {
+                    continue;
+                }
+                $messagecount++;
+            }
+            $messagemenutext = $messagecount . ' ';
+            if ($messagecount == 1) {
+                 $messagemenutext .= get_string('message', 'message');
+            } else {
+                 $messagemenutext .= get_string('messages', 'message');
+            }
             $messagemenu = $menu->add(
-                $messagecount . ' ' . get_string('messages', 'message'),
+                $messagemenutext,
                 new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
                 get_string('messages', 'message'),
                 9999
             );
             foreach ($messages as $message) {
-
                 if (!$message->from) { // Workaround for issue #103.
+                    continue;
+                }
+                if ((!$showoldmessages) && ($message->state == self::OLDMESSAGE)) {
                     continue;
                 }
                 $senderpicture = new user_picture($message->from);
@@ -138,7 +159,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 $messagecontent .= html_writer::end_span();
 
                 $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
-                $messagemenu->add($messagecontent, $messageurl, $message->state);
+                $messagemenu->add($messagecontent, $messageurl, $message->text);
             }
         }
 
@@ -216,24 +237,24 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $maxmessages = 5;
 
         $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-        				     FROM {message_read}
-        			        WHERE useridto = :userid
-        			     ORDER BY timecreated DESC
-        			        LIMIT $maxmessages";
+                             FROM {message_read}
+                            WHERE useridto = :userid
+                         ORDER BY timecreated DESC
+                            LIMIT $maxmessages";
         $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-        					FROM {message}
-        			       WHERE useridto = :userid";
+                            FROM {message}
+                           WHERE useridto = :userid";
 
         $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
 
         $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
 
         foreach ($newmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message, 'new');
+            $messagelist[] = $this->bootstrap_process_message($message, self::NEWMESSAGE);
         }
 
         foreach ($readmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message, 'old');
+            $messagelist[] = $this->bootstrap_process_message($message, self::OLDMESSAGE);
         }
         return $messagelist;
 
