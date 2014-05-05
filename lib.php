@@ -26,133 +26,57 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-/**
- * Parses CSS before it is cached.
- *
- * This function can make alterations and replace patterns within the CSS.
- *
- * @param string $css The CSS
- * @param theme_config $theme The theme config object.
- * @return string The parsed CSS The parsed CSS.
- */
-function theme_bootstrap_process_css($css, $theme) {
-
-    $settings = get_object_vars($theme->settings);
-
-    $css = theme_bootstrap_delete_css($settings, $css);
-
-    $settings['brandcss'] = theme_bootstrap_brand_font_css($settings);
-
-    return theme_bootstrap_replace_settings($settings, $css);
-}
-
-function theme_bootstrap_delete_css($settings, $css) {
-    if ($settings['deletecss'] == true) {
-        $find[] = '/-webkit-border-radius:[^;]*;/';
-        $find[] = '/-webkit-box-shadow:[^;]*;/';
-        $find[] = '/-moz-border-radius:[^;]*;/';
-        $find[] = '/-moz-box-shadow:[^;]*;/';
-        return preg_replace($find, '', $css);
-    } else {
-        return $css;
-    }
-}
-
-/**
- * For each setting called e.g. "customcss" this looks for the string
- * "[[setting:customcss]]" in the CSS and replaces it with
- * the value held in the $settings array for the key
- * "customcss".
- *
- * @param array $settings containing setting names and values
- * @param string $css The CSS
- * @return string The CSS with replacements made
- */
-function theme_bootstrap_replace_settings($settings, $css) {
-    foreach ($settings as $name => $value) {
-        $find[] = "[[setting:$name]]";
-        $replace[] = $value;
-    }
-    return str_replace($find, $replace, $css);
-}
-
-function theme_bootstrap_brand_font_css($settings) {
-    $fontname = $settings['brandfont'];
-    if ($fontname === '') {
-        return '';
-    }
-    $fontweight = $settings['brandfontweight'];
-    return ".navbar-default .navbar-brand,
-            .navbar-inverse .navbar-brand {
-                font-family: $fontname, serif;
-                font-weight: $fontweight;
-            }";
-}
-
-/**
- * This function creates the dynamic HTML needed for the
- * layout and then passes it back in an object so it can
- * be echo'd to the page.
- *
- * This keeps the logic out of the layout files.
- */
-function theme_bootstrap_html_for_settings($PAGE) {
-    $settings = $PAGE->theme->settings;
-
-    $html = new stdClass;
-
-    if ($settings->inversenavbar == true) {
-        $html->navbarclass = 'navbar navbar-inverse';
-    } else {
-        $html->navbarclass = 'navbar navbar-default';
-    }
-
-    $fluid = (!empty($PAGE->layout_options['fluid']));
-    if ($fluid || $settings->fluidwidth == true) {
-        $html->containerclass = 'container-fluid';
-    } else {
-        $html->containerclass = 'container';
-    }
-
-    $html->brandfontlink = theme_bootstrap_brand_font_link($settings);
-
-    return $html;
-}
-
-function theme_bootstrap_brand_font_link($settings) {
-    global $SITE;
-    $fontname = $settings->brandfont;
-    if ($fontname === '') {
-        return '';
-    }
-    $fontname = urlencode($fontname);
-    $text = urlencode(str_replace(' ', '', $SITE->shortname));
-    $fontweight = $settings->brandfontweight;
-    $fontitalic = '';
-    if ($settings->brandfontitalic == true) {
-        $fontitalic = 'italic';
-    }
-    return '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='
-            .$fontname.':'.$fontweight.$fontitalic.'&amp;text='.$text.'">';
-}
 
 function bootstrap_grid($hassidepre, $hassidepost) {
+
     if ($hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-4 col-sm-push-4 col-md-6 col-md-push-3');
-        $regions['pre'] = 'col-sm-4 col-sm-pull-4 col-md-3 col-md-pull-6';
-        $regions['post'] = 'col-sm-4 col-md-3';
+        $regions = array('content' => 'col-sm-6 col-sm-push-3 col-lg-8 col-lg-push-2');
+        $regions['pre'] = 'col-sm-3 col-sm-pull-6 col-lg-2 col-lg-pull-8';
+        $regions['post'] = 'col-sm-3 col-lg-2';
     } else if ($hassidepre && !$hassidepost) {
-        $regions = array('content' => 'col-sm-8 col-sm-push-4 col-md-9 col-md-push-3');
-        $regions['pre'] = 'col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9';
-        $regions['post'] = 'empty';
+        $regions = array('content' => 'col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-2');
+        $regions['pre'] = 'col-sm-3 col-sm-pull-9 col-lg-2 col-lg-pull-10';
+        $regions['post'] = 'emtpy';
     } else if (!$hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-8 col-md-9');
+        $regions = array('content' => 'col-sm-9 col-lg-10');
         $regions['pre'] = 'empty';
-        $regions['post'] = 'col-sm-4 col-md-3';
+        $regions['post'] = 'col-sm-3 col-lg-2';
     } else if (!$hassidepre && !$hassidepost) {
         $regions = array('content' => 'col-md-12');
         $regions['pre'] = 'empty';
         $regions['post'] = 'empty';
     }
+    
+    if ('rtl' === get_string('thisdirection', 'langconfig')) {
+        if ($hassidepre && $hassidepost) {
+            $regions['pre'] = 'col-sm-3  col-md-push-3 col-lg-2 col-lg-push-2';
+            $regions['post'] = 'col-sm-3 col-sm-pull-9 col-lg-2 col-lg-pull-10';
+        } else if ($hassidepre && !$hassidepost) {
+            $regions = array('content' => 'col-sm-9 col-lg-10');
+            $regions['pre'] = 'col-sm-3 col-lg-2';
+            $regions['post'] = 'emtpy';
+        } else if (!$hassidepre && $hassidepost) {
+            $regions = array('content' => 'col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-2');
+            $regions['pre'] = 'empty';
+            $regions['post'] = 'col-sm-3 col-sm-pull-9 col-lg-2 col-lg-pull-10';
+        }
+    }
     return $regions;
+}
+
+/**
+ * Loads the JavaScript for the zoom function.
+ *
+ * @param moodle_page $page Pass in $PAGE.
+ */
+function theme_bootstrap_initialise_zoom(moodle_page $page) {
+    user_preference_allow_ajax_update('theme_bootstrap_zoom', PARAM_TEXT);
+    $page->requires->yui_module('moodle-theme_bootstrap-zoom', 'M.theme_bootstrap.zoom.init', array());
+}
+
+/**
+ * Get the user preference for the zoom function.
+ */
+function theme_bootstrap_get_zoom() {
+    return get_user_preferences('theme_bootstrap_zoom', '');
 }

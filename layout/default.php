@@ -23,27 +23,26 @@ $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
 $regions = bootstrap_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
-$PAGE->requires->jquery();
-$PAGE->requires->jquery_plugin('bootstrap', 'theme_bootstrap');
-
-$settingshtml = theme_bootstrap_html_for_settings($PAGE);
+if ($knownregionpre || $knownregionpost) {
+    theme_bootstrap_initialise_zoom($PAGE);
+}
+$setzoom = theme_bootstrap_get_zoom();
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $settingshtml->brandfontlink; ?>
     <?php echo $OUTPUT->standard_head_html(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
+<body <?php echo $OUTPUT->body_attributes($setzoom); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<nav role="navigation" class="<?php echo $settingshtml->navbarclass; ?>">
-    <div class="<?php echo $settingshtml->containerclass; ?>">
+<nav role="navigation" class="navbar navbar-default">
+    <div class="container-fluid">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -64,12 +63,13 @@ echo $OUTPUT->doctype() ?>
     </div>
 </nav>
 <header class="moodleheader">
-<div class="<?php echo $settingshtml->containerclass; ?>">
-<?php echo $OUTPUT->page_heading(); ?>
-</div>
+    <div class="container-fluid">
+    <a href="<?php echo $CFG->wwwroot ?>" class="logo"></a>
+    <?php echo $OUTPUT->page_heading(); ?>
+    </div>
 </header>
 
-<div id="page" class="<?php echo $settingshtml->containerclass; ?>">
+<div id="page" class="container-fluid">
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
@@ -85,6 +85,9 @@ echo $OUTPUT->doctype() ?>
         <div id="region-main" class="<?php echo $regions['content']; ?>">
             <?php
             echo $OUTPUT->course_content_header();
+            if ($knownregionpre || $knownregionpost) {
+                echo $OUTPUT->content_zoom();
+            }
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
