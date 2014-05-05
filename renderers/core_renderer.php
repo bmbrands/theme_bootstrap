@@ -26,9 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_bootstrap_core_renderer extends core_renderer {
 
-    const NEWMESSAGE = 1;
-    const OLDMESSAGE = 2;
-
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
 
@@ -112,14 +109,10 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
 
         if ($addmessagemenu) {
-            $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 : $this->page->theme->settings->showoldmessages;
             $messages = $this->get_user_messages();
             $messagecount = 0;
             foreach ($messages as $message) {
                 if (!$message->from) { // Workaround for issue #103.
-                    continue;
-                }
-                if ((!$showoldmessages) && ($message->state == self::OLDMESSAGE)) {
                     continue;
                 }
                 $messagecount++;
@@ -138,9 +131,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
             );
             foreach ($messages as $message) {
                 if (!$message->from) { // Workaround for issue #103.
-                    continue;
-                }
-                if ((!$showoldmessages) && ($message->state == self::OLDMESSAGE)) {
                     continue;
                 }
                 $senderpicture = new user_picture($message->from);
@@ -234,33 +224,38 @@ class theme_bootstrap_core_renderer extends core_renderer {
     protected function get_user_messages() {
         global $USER, $DB;
         $messagelist = array();
-        $maxmessages = 5;
 
-        $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                             FROM {message_read}
-                            WHERE useridto = :userid
-                         ORDER BY timecreated DESC
-                            LIMIT $maxmessages";
         $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
                             FROM {message}
                            WHERE useridto = :userid";
 
-        $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
-
         $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
 
         foreach ($newmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message, self::NEWMESSAGE);
+            $messagelist[] = $this->bootstrap_process_message($message);
         }
 
-        foreach ($readmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message, self::OLDMESSAGE);
+        $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 : $this->page->theme->settings->showoldmessages;
+        if ($showoldmessages) {
+            $maxmessages = 5;
+            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                                 FROM {message_read}
+                                WHERE useridto = :userid
+                             ORDER BY timecreated DESC
+                                LIMIT $maxmessages";
+
+            $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+
+            foreach ($readmessages as $message) {
+                $messagelist[] = $this->bootstrap_process_message($message);
+            }
         }
+
         return $messagelist;
 
     }
 
-    protected function bootstrap_process_message($message, $state) {
+    protected function bootstrap_process_message($message) {
         global $DB;
         $messagecontent = new stdClass();
 
@@ -284,7 +279,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
 
         $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-        $messagecontent->state = $state;
         return $messagecontent;
     }
 
