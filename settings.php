@@ -37,6 +37,8 @@ if ($ADMIN->fulltree) {
 
     $simplesettings->add_checkbox('inversenavbar');
 
+    $simplesettings->add_checkbox('showoldmessages');
+
     $simplesettings->add_checkbox('deletecss');
 
     $simplesettings->add_text('brandfont');

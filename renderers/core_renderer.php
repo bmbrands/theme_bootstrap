@@ -110,15 +110,26 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
         if ($addmessagemenu) {
             $messages = $this->get_user_messages();
-            $messagecount = count($messages);
+            $messagecount = 0;
+            foreach ($messages as $message) {
+                if (!$message->from) { // Workaround for issue #103.
+                    continue;
+                }
+                $messagecount++;
+            }
+            $messagemenutext = $messagecount . ' ';
+            if ($messagecount == 1) {
+                 $messagemenutext .= get_string('message', 'message');
+            } else {
+                 $messagemenutext .= get_string('messages', 'message');
+            }
             $messagemenu = $menu->add(
-                $messagecount . ' ' . get_string('messages', 'message'),
+                $messagemenutext,
                 new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
                 get_string('messages', 'message'),
                 9999
             );
             foreach ($messages as $message) {
-
                 if (!$message->from) { // Workaround for issue #103.
                     continue;
                 }
@@ -138,7 +149,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 $messagecontent .= html_writer::end_span();
 
                 $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
-                $messagemenu->add($messagecontent, $messageurl, $message->state);
+                $messagemenu->add($messagecontent, $messageurl, $message->text);
             }
         }
 
@@ -213,33 +224,38 @@ class theme_bootstrap_core_renderer extends core_renderer {
     protected function get_user_messages() {
         global $USER, $DB;
         $messagelist = array();
-        $maxmessages = 5;
 
-        $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-        				     FROM {message_read}
-        			        WHERE useridto = :userid
-        			     ORDER BY timecreated DESC
-        			        LIMIT $maxmessages";
         $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-        					FROM {message}
-        			       WHERE useridto = :userid";
-
-        $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+                            FROM {message}
+                           WHERE useridto = :userid";
 
         $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
 
         foreach ($newmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message, 'new');
+            $messagelist[] = $this->bootstrap_process_message($message);
         }
 
-        foreach ($readmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message, 'old');
+        $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 : $this->page->theme->settings->showoldmessages;
+        if ($showoldmessages) {
+            $maxmessages = 5;
+            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                                 FROM {message_read}
+                                WHERE useridto = :userid
+                             ORDER BY timecreated DESC
+                                LIMIT $maxmessages";
+
+            $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+
+            foreach ($readmessages as $message) {
+                $messagelist[] = $this->bootstrap_process_message($message);
+            }
         }
+
         return $messagelist;
 
     }
 
-    protected function bootstrap_process_message($message, $state) {
+    protected function bootstrap_process_message($message) {
         global $DB;
         $messagecontent = new stdClass();
 
@@ -263,7 +279,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
 
         $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-        $messagecontent->state = $state;
         return $messagecontent;
     }
 
