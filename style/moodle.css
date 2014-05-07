@@ -2403,8 +2403,8 @@ input[type="button"].btn-block {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]]]');
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff]]]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]]]#glyphicons_halflingsregular') format('svg');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -14689,6 +14689,13 @@ table#permissions > tbody > tr:hover > th {
 }
 table.flexible .emptyrow {
   display: none;
+}
+.left_scroller .generaltable th,
+.right_scroller .generaltable th,
+.left_scroller .generaltable td,
+.right_scroller .generaltable td {
+  line-height: 20px;
+  box-sizing: content-box;
 }
 .singlebutton div {
   display: inline-block;

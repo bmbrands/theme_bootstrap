@@ -17846,6 +17846,14 @@ table.flexible .emptyrow {
   display: none;
 }
 
+.left_scroller .generaltable th,
+.right_scroller .generaltable th,
+.left_scroller .generaltable td,
+.right_scroller .generaltable td {
+  line-height: 20px;
+  box-sizing: content-box;
+}
+
 .singlebutton div {
   display: inline-block;
   margin-right: 5px;
