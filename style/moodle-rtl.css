@@ -11061,12 +11061,12 @@ span.editinstructions {
   position: relative;
 }
 
-.coursebox .courseimage img {
+.coursebox img.courseimage {
   border-radius: 6px;
   float: right;
   height: auto;
   margin-left: 10px;
-  max-width: 240px;
+  max-width: 140px;
 }
 
 .coursebox .teachers li {

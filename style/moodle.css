@@ -9026,12 +9026,12 @@ span.editinstructions {
 .coursebox {
   position: relative;
 }
-.coursebox .courseimage img {
+.coursebox img.courseimage {
   border-radius: 6px;
   float: left;
   height: auto;
   margin-right: 10px;
-  max-width: 240px;
+  max-width: 140px;
 }
 .coursebox .teachers li {
   list-style-type: none;
