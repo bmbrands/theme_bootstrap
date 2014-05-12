@@ -9089,12 +9089,12 @@ span.editinstructions {
 .coursebox {
   position: relative;
 }
-.coursebox .courseimage img {
+.coursebox img.courseimage {
   border-radius: 6px;
   float: left;
   height: auto;
   margin-right: 10px;
-  max-width: 240px;
+  max-width: 140px;
 }
 .coursebox .teachers li {
   list-style-type: none;
@@ -14900,6 +14900,13 @@ table#permissions > tbody > tr:hover > th {
 }
 table.flexible .emptyrow {
   display: none;
+}
+.left_scroller .generaltable th,
+.right_scroller .generaltable th,
+.left_scroller .generaltable td,
+.right_scroller .generaltable td {
+  line-height: 20px;
+  box-sizing: content-box;
 }
 .singlebutton div {
   display: inline-block;
