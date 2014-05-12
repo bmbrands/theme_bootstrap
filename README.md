@@ -38,10 +38,6 @@ Explorer 8 (IE8) a javascript library call /javascript/html5shiv.js was added. T
 JavaScript converts HTML tags and CSS into Tag that are understood by IE7 and IE8.
 The config.php makes sure these libraries are only loaded for IE7 and IE8.
 
-bootstrap.js
---------------------------------------------------------------
-This is the Bootstrap JavaScript file created by @fat and @mdo
-
 
 Updating Bootstrap and Libraries
 ========================================

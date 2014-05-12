@@ -7983,7 +7983,7 @@ img.icon-post {
 }
 
 .boxwidthwide {
-  width: 80%;
+  width: 100%;
 }
 
 .headermain {
@@ -9685,9 +9685,79 @@ img.iconsmall {
   border-style: solid;
 }
 
+.path-admin .roleassigntable {
+  width: 100%;
+}
+
+.path-admin .roleassigntable input[type="text"] {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  margin-bottom: 0.3em;
+}
+
+.path-admin .roleassigntable input[type="text"]:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.path-admin .roleassigntable input[type="text"]::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.path-admin .roleassigntable input[type="text"]:-ms-input-placeholder {
+  color: #999999;
+}
+
+.path-admin .roleassigntable input[type="text"]::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.path-admin .roleassigntable input[type="text"][disabled],
+.path-admin .roleassigntable input[type="text"][readonly],
+fieldset[disabled] .path-admin .roleassigntable input[type="text"] {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+  opacity: 1;
+}
+
+textarea.path-admin .roleassigntable input[type="text"] {
+  height: auto;
+}
+
+.path-admin .roleassigntable td {
+  vertical-align: top;
+  padding: 0.2em 0.3em;
+}
+
+.path-admin .roleassigntable p {
+  text-align: right;
+  margin: 0.2em 0;
+}
+
 .path-admin .roleassigntable #existingcell,
 .path-admin .roleassigntable #potentialcell {
   width: 42%;
+}
+
+.path-admin .roleassigntable #existingcell p > label:first-child,
+.path-admin .roleassigntable #potentialcell p > label:first-child {
+  font-weight: bold;
 }
 
 .path-admin .roleassigntable #buttonscell {
@@ -9696,6 +9766,11 @@ img.iconsmall {
 
 .path-admin .roleassigntable #buttonscell #assignoptions {
   font-size: 12px;
+}
+
+.path-admin .roleassigntable #removeselect_wrapper,
+.path-admin .roleassigntable #addselect_wrapper {
+  width: 100%;
 }
 
 .path-admin table.rolecap tr.rolecap th {
@@ -11763,6 +11838,21 @@ span.editinstructions {
   text-decoration: none;
 }
 
+.filemanager input[type="text"],
+.file-picker input[type="text"] {
+  width: 265px;
+}
+
+.filemanager .fp-license td,
+.file-picker .fp-setlicense td {
+  max-width: 265px;
+}
+
+.filemanager .fp-license select,
+.file-picker .fp-setlicense select {
+  max-width: 100%;
+}
+
 .fp-content-center {
   vertical-align: middle;
 }
@@ -12240,6 +12330,45 @@ a.ygtvspacer:hover {
   padding-left: 10px;
 }
 
+.file-picker .fp-login-form {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+
+.file-picker .fp-login-form table {
+  margin: 0 auto;
+}
+
+.file-picker .fp-login-form p {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.file-picker .fp-login-form .fp-login-input label {
+  text-align: left;
+  display: block;
+}
+
+.file-picker .fp-login-form .fp-login-input .input {
+  text-align: right;
+}
+
+.file-picker .fp-login-form input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+}
+
+.file-picker .fp-upload-form {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+
+.file-picker .fp-upload-form table {
+  margin: 0 auto;
+}
+
 .file-picker.fp-dlg {
   text-align: center;
 }
@@ -12272,10 +12401,17 @@ a.ygtvspacer:hover {
 }
 
 .file-picker .fp-content-error {
+  height: 100%;
+  width: 100%;
+  display: table;
   text-align: center;
 }
 
 .file-picker .fp-content-error .fp-error {
+  height: 100%;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
   padding: 40px 20px 10px 20px;
   font-size: 12px;
 }
@@ -12431,7 +12567,7 @@ a.ygtvspacer:hover {
   display: none;
 }
 
-.fp-restrictions {
+.filemanager .fp-restrictions {
   text-align: left;
 }
 
@@ -12860,6 +12996,10 @@ a.ygtvspacer:hover {
 .fp-formset .control-label {
   font-size: 14px;
   line-height: 1.42857143;
+}
+
+.fp-formset {
+  margin: 0 15px;
 }
 
 .box.message .mdl-align {
@@ -14341,22 +14481,25 @@ textareatextarea {
   display: block;
 }
 
-#categoryquestions {
+#page-mod-quiz-edit div.questionbankwindow div.header {
   margin: 0;
 }
 
-#categoryquestions td,
-#categoryquestions th {
-  padding: 0 0.2em;
-}
-
-#categoryquestions th {
-  text-align: right;
-  font-weight: normal;
+#page-mod-quiz-edit div.questionbankwindow.block {
+  padding: 0;
 }
 
 #categoryquestions .checkbox {
-  padding-right: 20px;
+  display: table-cell;
+  width: 19px;
+}
+
+#categoryquestions .checkbox input[type="checkbox"] {
+  margin-right: 0px;
+}
+
+#categoryquestions img.iconsmall {
+  margin: 0;
 }
 
 .questionbank .singleselect {
@@ -14778,8 +14921,37 @@ body.path-question-type .fitem_fgroup .accesshide {
   overflow: hidden;
 }
 
-#page-mod-quiz-edit .modulespecificbuttonscontainer {
-  width: 220px;
+#page-mod-quiz-edit div.questionbank .categoryinfo {
+  padding: 0.3em 0;
+}
+
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer {
+  padding: 0;
+}
+
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer strong {
+  display: block;
+}
+
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer hr,
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer br {
+  display: none;
+}
+
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer strong {
+  margin-right: -0.3em;
+}
+
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer strong label {
+  margin-right: 0.3em;
+}
+
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer input {
+  margin-right: 0;
+}
+
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer input + input {
+  margin-right: 5px;
 }
 
 .questionbankwindow .module {
@@ -14987,10 +15159,6 @@ a#hidebankcmd {
 
 .userselector .userselector-infobelow {
   font-size: 0.8em;
-}
-
-#userselector_options {
-  padding: 0.3em 0;
 }
 
 #userselector_options .collapsibleregioncaption {
@@ -16755,6 +16923,87 @@ textarea.form-item .form-setting input[type="password"] {
   .form-item .form-description {
     margin-right: 33.33333333%;
   }
+}
+
+form select,
+form input[type="text"],
+form.atto_form input[type="url"],
+select.singleselect {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  width: auto;
+  max-width: 300px;
+  display: inline;
+  margin: 0 0 5px 0;
+}
+
+form select:focus,
+form input[type="text"]:focus,
+form.atto_form input[type="url"]:focus,
+select.singleselect:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+form select::-moz-placeholder,
+form input[type="text"]::-moz-placeholder,
+form.atto_form input[type="url"]::-moz-placeholder,
+select.singleselect::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+form select:-ms-input-placeholder,
+form input[type="text"]:-ms-input-placeholder,
+form.atto_form input[type="url"]:-ms-input-placeholder,
+select.singleselect:-ms-input-placeholder {
+  color: #999999;
+}
+
+form select::-webkit-input-placeholder,
+form input[type="text"]::-webkit-input-placeholder,
+form.atto_form input[type="url"]::-webkit-input-placeholder,
+select.singleselect::-webkit-input-placeholder {
+  color: #999999;
+}
+
+form select[disabled],
+form input[type="text"][disabled],
+form.atto_form input[type="url"][disabled],
+select.singleselect[disabled],
+form select[readonly],
+form input[type="text"][readonly],
+form.atto_form input[type="url"][readonly],
+select.singleselect[readonly],
+fieldset[disabled] form select,
+fieldset[disabled] form input[type="text"],
+fieldset[disabled] form.atto_form input[type="url"],
+fieldset[disabled] select.singleselect {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+  opacity: 1;
+}
+
+textareaform select,
+textareaform input[type="text"],
+textareaform.atto_form input[type="url"],
+textareaselect.singleselect {
+  height: auto;
 }
 
 .path-admin .buttons,

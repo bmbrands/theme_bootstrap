@@ -117,20 +117,28 @@
 #chooseqtype .selected .qtypesummary {
     display: block;
 }
+
+#page-mod-quiz-edit {
+    div.questionbankwindow div.header {
+        margin: 0;
+    }
+    div.questionbankwindow.block {
+        padding: 0;
+    }
+}
 #categoryquestions {
-    margin: 0;
+    .checkbox {
+    	display: table-cell;
+    	width: 19px;
+        input[type="checkbox"] {
+        	margin-left: 0px;
+        }
+    }
+    img.iconsmall {
+        margin: 0;
+    }
 }
-#categoryquestions td,
-#categoryquestions th {
-    padding: 0 0.2em;
-}
-#categoryquestions th {
-    text-align: left;
-    font-weight: normal;
-}
-#categoryquestions .checkbox {
-    padding-left: 20px;
-}
+
 .questionbank .singleselect {
     margin: 0;
 }
@@ -404,8 +412,30 @@ body.path-question-type .fitem_fgroup .accesshide {
     overflow: hidden;
 }
 
-#page-mod-quiz-edit .modulespecificbuttonscontainer {
-    width: 220px;
+#page-mod-quiz-edit div.questionbank .categoryinfo {
+    padding: 0.3em 0;
+}
+
+#page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer {
+    padding: 0;
+    strong {
+        display: block;
+    }
+    hr, br {
+        display: none;
+    }
+    strong {
+        margin-left: -0.3em;
+    }
+    strong label {
+        margin-left: 0.3em;
+    }
+    input {
+        margin-left: 0;
+    }
+    input + input {
+        margin-left: 5px;
+    }
 }
 
 .questionbankwindow .module {

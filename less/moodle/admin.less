@@ -218,9 +218,34 @@ img.iconsmall {
     border-style: solid;
 }
 
+// This is the CSS for the role assignment control.
+.path-admin .roleassigntable {
+    width: 100%;
+    input[type="text"] {
+    	.form-control;
+    	margin-bottom: 0.3em;
+    }
+}
+
+.path-admin .roleassigntable td {
+    vertical-align: top;
+    padding: 0.2em 0.3em
+}
+
+.path-admin .roleassigntable p {
+    text-align: left;
+    margin: 0.2em 0;
+}
+
 .path-admin .roleassigntable #existingcell,
 .path-admin .roleassigntable #potentialcell {
     width: 42%;
+}
+
+// Targetting the label at the top.
+.path-admin .roleassigntable #existingcell p > label:first-child,
+.path-admin .roleassigntable #potentialcell p > label:first-child {
+    font-weight: bold;
 }
 
 .path-admin .roleassigntable #buttonscell {
@@ -229,6 +254,11 @@ img.iconsmall {
 
 .path-admin .roleassigntable #buttonscell #assignoptions {
     font-size: @font-size-small;
+}
+
+.path-admin .roleassigntable #removeselect_wrapper,
+.path-admin .roleassigntable #addselect_wrapper {
+    width: 100%;
 }
 
 .path-admin table.rolecap tr.rolecap th {
