@@ -5,7 +5,7 @@ About this theme
 
 This is the Bootstrap theme for Moodle.
 
-* package   Moodle Bootstrap theme
+* package   Moodle Bootstrap 3 theme
 * copyright 2014 Bas Brands. www.sonsbeekmedia.nl
 * authors   Bas Brands, David Scotson
 * license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -19,17 +19,38 @@ framework in folder /less/bootstrap.
 On top of the Bootstrap less CSS sources Moodle CSS is added to create this
 theme.
 
-HTML5 is tags are used in the /layout/general.php file. The structure of this file
-provides a 2-1-3 layout when looking at your Moodle page source. This improves
-accessibility and Search Engine Optimization (SEO).
+Modify this theme
+-----------------
+Do not modify or clone this theme. If you want to customize this theme create a 
+child theme, a simple child theme is available on:
+https://github.com/bmbrands/theme_cerulean
 
-*less CSS
+Moodle versions
+---------------
+This theme works on Moodle 2.6 and Moodle 2.7
+
+Warning
+-------
+This is a Beta theme in development. It does not support:
+Internet Explorer8 & Right-to-Left laguages
+
+Supported browsers
+------------------
+IE9+
+Recent versions of all modern browsers
+
+Less CSS
+--------
 Less CSS is a Object Oriented way of writing CSS code. All Less CSS files
 for this theme are stored in the /less folder. A developer can use recess
 to generate the CSS files in the /style folder. For more
 information read /less/README
 
 JavaScript Libraries
+====================
+
+This theme only uses YUI libraries. If you would like to used any of the advance
+Bootstrap3 JavaScript you can create a child theme that requires jQuery
 
 html5shiv.js
 ------------
@@ -40,7 +61,7 @@ The config.php makes sure these libraries are only loaded for IE7 and IE8.
 
 
 Updating Bootstrap and Libraries
-========================================
+================================
 
 bootstrap
 -----------------
