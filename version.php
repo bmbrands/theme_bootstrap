@@ -25,8 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2014051200;
+$plugin->version   = 2014051301;
 $plugin->requires  = 2013110500;
 $plugin->maturity  = MATURITY_BETA;
-$plugin->release   = 2014050100;
+$plugin->release   = 2014051300;
 $plugin->component = 'theme_bootstrap';
