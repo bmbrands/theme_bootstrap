@@ -14416,6 +14416,10 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 .path-mod-data form {
   margin-top: 10px;
 }
+.path-mod-data table.mod-data-default-template th,
+.path-mod-data table.mod-data-default-template td {
+  padding: 5px;
+}
 .template_heading {
   margin-top: 10px;
 }
