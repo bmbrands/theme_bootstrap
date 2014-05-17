@@ -15884,6 +15884,9 @@ input.fp-btn-choose {
     width: 120px;
   }
   .path-mod-forum .forumheaderlist .picture {
+    width: 0px;
+  }
+  .path-mod-forum .forumheaderlist .picture a {
     display: none;
   }
   .panel .courseimage img {

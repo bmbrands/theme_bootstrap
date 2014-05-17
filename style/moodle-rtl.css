@@ -19196,6 +19196,10 @@ input.fp-btn-choose {
   }
 
   .path-mod-forum .forumheaderlist .picture {
+    width: 0px;
+  }
+
+  .path-mod-forum .forumheaderlist .picture a {
     display: none;
   }
 
