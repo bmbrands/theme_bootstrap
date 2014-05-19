@@ -26,7 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-include_once($CFG->dirroot . "/course/format/topics/renderer.php");
+require_once($CFG->dirroot . "/course/format/topics/renderer.php");
 class theme_bootstrap_format_topics_renderer extends format_topics_renderer {
     /**
      * Generate the content to displayed on the left part of a section
@@ -51,7 +51,7 @@ class theme_bootstrap_format_topics_renderer extends format_topics_renderer {
     }
 }
 
-include_once($CFG->dirroot . "/course/format/weeks/renderer.php");
+require_once($CFG->dirroot . "/course/format/weeks/renderer.php");
 class theme_bootstrap_format_weeks_renderer extends format_weeks_renderer {
     /**
      * Generate the content to displayed on the left part of a section

@@ -35,7 +35,7 @@ class theme_bootstrap_core_course_management_renderer extends core_course_manage
      * @param string $class A class to give this grid.
      * @return string
      */
-     public function grid_start($id = null, $class = null) {
+    public function grid_start($id = null, $class = null) {
         $gridclass = 'grid-row-r row';
         if (is_null($class)) {
             $class = $gridclass;
@@ -48,7 +48,7 @@ class theme_bootstrap_core_course_management_renderer extends core_course_manage
         }
         return html_writer::start_div($class, $attributes);
     }
-    
+
     /**
      * Opens a grid column
      *
@@ -78,9 +78,9 @@ class theme_bootstrap_core_course_management_renderer extends core_course_manage
             }
         }
         if ($maxsize > 1) {
-            $yuigridclass =  "grid-col-{$size}-{$maxsize} grid-col";
+            $yuigridclass = "grid-col-{$size}-{$maxsize} grid-col";
         } else {
-            $yuigridclass =  "grid-col-1 grid-col";
+            $yuigridclass = "grid-col-1 grid-col";
         }
 
         if (is_null($class)) {
