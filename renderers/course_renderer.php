@@ -144,7 +144,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
 
         // display course summary
         if ($course->has_summary()) {
-            $content .= $course->summary;
+            $content .= $chelper->get_course_formatted_summary($course);
         }
 
         // display course contacts. See course_in_list::get_course_contacts()
