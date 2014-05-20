@@ -66,8 +66,8 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     public function custom_menu($custommenuitems = '') {
-    // The custom menu is always shown, even if no menu items
-    // are configured in the global theme settings page.
+        // The custom menu is always shown, even if no menu items
+        // are configured in the global theme settings page.
         global $CFG;
 
         if (!empty($CFG->custommenuitems)) {
