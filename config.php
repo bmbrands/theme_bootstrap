@@ -28,7 +28,10 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->name = 'bootstrap';
 $THEME->parents = array();
-$THEME->sheets = array('moodle', 'custom');
+
+// $THEME->sheets = array('moodle', 'custom'); // LTR-only.
+// $THEME->sheets = array('moodle-rtl', 'tinymce-rtl', 'yui2-rtl', 'forms-rtl', 'custom'); // RTL-only.
+ $THEME->sheets = array('moodle', 'moodle-ltr-rtl', 'tinymce-rtl', 'yui2-rtl', 'forms-rtl', 'custom'); // LTR & RTL.
 
 $THEME->supportscssoptimisation = false;
 
