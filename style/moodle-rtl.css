@@ -16515,6 +16515,10 @@ textarea.searchform input[type="text"] {
   border-top-width: 1px;
 }
 
+.block_myprofile .content .email {
+  overflow-wrap: break-word;
+}
+
 .block_news_items .content .newlink {
   padding-bottom: 10px;
 }
