@@ -13559,6 +13559,9 @@ textarea.searchform input[type="text"] {
 .block_rss_client .list li:first-child {
   border-top-width: 1px;
 }
+.block_myprofile .content .email {
+  overflow-wrap: break-word;
+}
 .block_news_items .content .newlink {
   padding-bottom: 10px;
 }
