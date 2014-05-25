@@ -13959,6 +13959,7 @@ textarea.form-item .form-setting input[type="password"] {
 }
 form select,
 form input[type="text"],
+form input[type="password"],
 form.atto_form input[type="url"],
 select.singleselect {
   display: block;
@@ -13983,6 +13984,7 @@ select.singleselect {
 }
 form select:focus,
 form input[type="text"]:focus,
+form input[type="password"]:focus,
 form.atto_form input[type="url"]:focus,
 select.singleselect:focus {
   border-color: #66afe9;
@@ -13992,6 +13994,7 @@ select.singleselect:focus {
 }
 form select::-moz-placeholder,
 form input[type="text"]::-moz-placeholder,
+form input[type="password"]::-moz-placeholder,
 form.atto_form input[type="url"]::-moz-placeholder,
 select.singleselect::-moz-placeholder {
   color: #999999;
@@ -13999,26 +14002,31 @@ select.singleselect::-moz-placeholder {
 }
 form select:-ms-input-placeholder,
 form input[type="text"]:-ms-input-placeholder,
+form input[type="password"]:-ms-input-placeholder,
 form.atto_form input[type="url"]:-ms-input-placeholder,
 select.singleselect:-ms-input-placeholder {
   color: #999999;
 }
 form select::-webkit-input-placeholder,
 form input[type="text"]::-webkit-input-placeholder,
+form input[type="password"]::-webkit-input-placeholder,
 form.atto_form input[type="url"]::-webkit-input-placeholder,
 select.singleselect::-webkit-input-placeholder {
   color: #999999;
 }
 form select[disabled],
 form input[type="text"][disabled],
+form input[type="password"][disabled],
 form.atto_form input[type="url"][disabled],
 select.singleselect[disabled],
 form select[readonly],
 form input[type="text"][readonly],
+form input[type="password"][readonly],
 form.atto_form input[type="url"][readonly],
 select.singleselect[readonly],
 fieldset[disabled] form select,
 fieldset[disabled] form input[type="text"],
+fieldset[disabled] form input[type="password"],
 fieldset[disabled] form.atto_form input[type="url"],
 fieldset[disabled] select.singleselect {
   cursor: not-allowed;
@@ -14027,6 +14035,7 @@ fieldset[disabled] select.singleselect {
 }
 textareaform select,
 textareaform input[type="text"],
+textareaform input[type="password"],
 textareaform.atto_form input[type="url"],
 textareaselect.singleselect {
   height: auto;
