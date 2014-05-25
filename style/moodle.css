@@ -14478,6 +14478,9 @@ div#dock {
 .path-mod-wiki .wiki_contentbox {
   width: 100%;
 }
+.path-mod-quiz .questioncontainer input[type="text"] {
+  height: 1.5em;
+}
 .path-mod-survey .surveytable .r1 {
   background-color: #f9f9f9;
 }

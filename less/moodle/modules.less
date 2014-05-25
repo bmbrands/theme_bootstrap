@@ -169,6 +169,7 @@ div#dock {
     display: none;
 }
 
+// Choice.
 .path-mod-choice {
     .horizontal  .choices {
         margin: 0;
@@ -182,6 +183,7 @@ div#dock {
     }
 }
 
+// Lesson.
 .path-mod-lesson .firstpageoptions {
     margin: auto;
     min-width: 280px;
@@ -193,6 +195,7 @@ div#dock {
     text-align: center;
 }
 
+// Wiki
 .path-mod-wiki .wiki_headingtitle,
 .path-mod-wiki .midpad,
 .path-mod-wiki .wiki_headingtime {
@@ -203,8 +206,16 @@ div#dock {
     width: 100%;
 }
 
-// Survey module
+// Quiz.
+.path-mod-quiz {
+    .questioncontainer {
+        input[type="text"] {
+            height: 1.5em;
+        }
+    }
+}
 
+// Survey module
 .path-mod-survey {
     .surveytable {
         .r1 {background-color: @table-bg-accent}
