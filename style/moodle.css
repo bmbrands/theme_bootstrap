@@ -13561,6 +13561,7 @@ textarea.searchform input[type="text"] {
 }
 .block_myprofile .content .email {
   overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 .block_news_items .content .newlink {
   padding-bottom: 10px;
