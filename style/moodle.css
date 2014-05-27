@@ -8754,9 +8754,6 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
   height: 16px;
   width: 16px;
 }
-.section .label {
-  text-align: left;
-}
 .section .activity {
   /* The command block for each activity */
 }
@@ -8776,6 +8773,7 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
              * Add appropriate padding such that nothing overlaps the
              * absolute positioned move icon.
              */
+  padding-left: 32px;
 }
 .section .activity .actions {
   position: absolute;
@@ -8784,8 +8782,8 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 }
 .section .activity .contentwithoutlink,
 .section .activity .activityinstance {
-  display: block;
   min-width: 40%;
+  display: table-cell;
   padding-right: 4px;
   min-height: 2em;
 }
@@ -8793,6 +8791,16 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 .section .activity .activityinstance .dimmed img.activityicon {
   opacity: 0.5;
   filter: alpha(opacity=50);
+}
+.section .label .contentwithoutlink,
+.section .label .activityinstance {
+  padding-right: 32px;
+  display: block;
+  height: inherit;
+}
+.section .label .mod-indent-outer {
+  padding-left: 24px;
+  display: block;
 }
 .section .filler {
   display: none;

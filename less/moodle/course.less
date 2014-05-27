@@ -29,9 +29,6 @@
         height: 16px;
         width: 16px;
     }
-    .label {
-        text-align: left;
-    }
     .activity {
         .spinner {
             left: 100%;
@@ -51,7 +48,7 @@
              * Add appropriate padding such that nothing overlaps the
              * absolute positioned move icon.
              */
-            //padding-left: 32px;
+            padding-left: 32px;
         }
 
         /* The command block for each activity */
@@ -64,17 +61,31 @@
         .contentwithoutlink,
         .activityinstance {
 
-            display: block;
             min-width: 40%;
+            display: table-cell;
             padding-right: 4px;
             min-height: 2em;
 
             .dimmed {
                 img.activityicon {
-                  .opacity(.5);
+                  opacity: 0.5;
+                  filter: alpha(opacity=50);
                 }
             }
         }
+    }
+    .label {
+      .contentwithoutlink,
+      .activityinstance {
+        padding-right: 32px;
+        display: block;
+        height: inherit;
+      }
+
+      .mod-indent-outer {
+        padding-left: 24px;
+        display: block;
+      }
     }
     // Hide the filler, this makes edit buttons jump
     .filler {
