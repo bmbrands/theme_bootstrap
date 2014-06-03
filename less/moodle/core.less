@@ -781,6 +781,15 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     background: none;
 }
 
+// Overriding the tinycmce themes/advanced/skins/moodlu/ui.css
+// to cope with box-sizing: border-box set by Bootstrap 3
+.mceEditor.moodleSkin .mceToolbar a span.mceIcon {
+    padding: 7px;
+    img {
+        padding: 0px;
+    }
+}
+
 .initialbar {
     a, strong {
         padding-left: 3px;
