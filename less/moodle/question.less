@@ -78,11 +78,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     max-height: 400px;
-    max-height: calc(100vh - 15em);
- /* The next line is a workaround because recess is crap. Delete ththe following line once
-  * https://github.com/twitter/recess/issues/59 / https://github.com/twitter/recess/issues/75
-  * is fixed. The previous line is the right one. */
-    max-height: 60vh;
+    max-height: calc(~"100vh - 15em");
     width: 60%;
 }
 #chooseqtype .qtypeoption {
