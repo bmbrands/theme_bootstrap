@@ -26,17 +26,8 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . "/course/classes/management_renderer.php");
 
 class theme_bootstrap_core_course_management_renderer extends core_course_management_renderer {
-    /**
-     * Opens a grid.
-     *
-     * Call {@link core_course_management_renderer::grid_column_start()} to create columns.
-     *
-     * @param string $id An id to give this grid.
-     * @param string $class A class to give this grid.
-     * @return string
-     */
     public function grid_start($id = null, $class = null) {
-        $gridclass = 'grid-row-r row';
+        $gridclass = 'row';
         if (is_null($class)) {
             $class = $gridclass;
         } else {
@@ -49,49 +40,28 @@ class theme_bootstrap_core_course_management_renderer extends core_course_manage
         return html_writer::start_div($class, $attributes);
     }
 
-    /**
-     * Opens a grid column
-     *
-     * @param int $size The number of segments this column should span.
-     * @param string $id An id to give the column.
-     * @param string $class A class to give the column.
-     * @return string
-     */
     public function grid_column_start($size, $id = null, $class = null) {
 
         // Calculate Bootstrap grid sizing.
         $bootstrapclass = 'col-md-'.$size;
 
-        // Calculate YUI grid sizing.
-        if ($size === 12) {
-            $maxsize = 1;
-            $size = 1;
-        } else {
-            $maxsize = 12;
-            $divisors = array(8, 6, 5, 4, 3, 2);
-            foreach ($divisors as $divisor) {
-                if (($maxsize % $divisor === 0) && ($size % $divisor === 0)) {
-                    $maxsize = $maxsize / $divisor;
-                    $size = $size / $divisor;
-                    break;
-                }
-            }
-        }
-        if ($maxsize > 1) {
-            $yuigridclass = "grid-col-{$size}-{$maxsize} grid-col";
-        } else {
-            $yuigridclass = "grid-col-1 grid-col";
-        }
-
         if (is_null($class)) {
-            $class = $yuigridclass . ' ' . $bootstrapclass;
+            $class = $bootstrapclass;
         } else {
-            $class .= ' ' . $yuigridclass . ' ' . $bootstrapclass;
+            $class .= ' ' . $bootstrapclass;
         }
         $attributes = array();
         if (!is_null($id)) {
             $attributes['id'] = $id;
         }
         return html_writer::start_div($class, $attributes);
+    }
+
+    protected function detail_pair($key, $value, $class ='') {
+        $html = html_writer::start_div('detail-pair row '.preg_replace('#[^a-zA-Z0-9_\-]#', '-', $class));
+        $html .= html_writer::div(html_writer::span($key), 'pair-key col-sm-3');
+        $html .= html_writer::div(html_writer::span($value), 'pair-value col-sm-9');
+        $html .= html_writer::end_div();
+        return $html;
     }
 }
