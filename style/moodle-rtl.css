@@ -15687,20 +15687,15 @@ textarea.loginbox .loginform .form-input input[type="password"] {
 }
 
 .loginbox .desc {
-  font-size: 30px;
   line-height: 30px;
   font-weight: 300;
   color: #333333;
 }
 
 .loginbox .subcontent {
-  text-align: right;
+  text-align: center;
   padding: 0;
   margin: 0;
-}
-
-.loginbox .subcontent .desc {
-  display: none;
 }
 
 #page-tag-coursetags_edit .coursetag_edit_centered {
