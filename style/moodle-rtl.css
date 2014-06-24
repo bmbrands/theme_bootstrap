@@ -15773,12 +15773,10 @@ textarea.loginbox .loginform .form-input input[type="password"] {
 
 .loginbox .desc {
   line-height: 30px;
-  font-weight: 300;
   color: #333333;
 }
 
 .loginbox .subcontent {
-  text-align: center;
   padding: 0;
   margin: 0;
 }
@@ -18220,33 +18218,6 @@ table.flexible > tbody > tr:nth-child(odd) > th,
   background-color: #f9f9f9;
 }
 
-#page-report-loglive-index .generaltable > thead > tr > th,
-#page-admin-report-log-index .generaltable > thead > tr > th,
-#page-report-log-user .generaltable > thead > tr > th,
-#page-admin-user table > thead > tr > th,
-#page-report-loglive-index .generaltable > tbody > tr > th,
-#page-admin-report-log-index .generaltable > tbody > tr > th,
-#page-report-log-user .generaltable > tbody > tr > th,
-#page-admin-user table > tbody > tr > th,
-#page-report-loglive-index .generaltable > tfoot > tr > th,
-#page-admin-report-log-index .generaltable > tfoot > tr > th,
-#page-report-log-user .generaltable > tfoot > tr > th,
-#page-admin-user table > tfoot > tr > th,
-#page-report-loglive-index .generaltable > thead > tr > td,
-#page-admin-report-log-index .generaltable > thead > tr > td,
-#page-report-log-user .generaltable > thead > tr > td,
-#page-admin-user table > thead > tr > td,
-#page-report-loglive-index .generaltable > tbody > tr > td,
-#page-admin-report-log-index .generaltable > tbody > tr > td,
-#page-report-log-user .generaltable > tbody > tr > td,
-#page-admin-user table > tbody > tr > td,
-#page-report-loglive-index .generaltable > tfoot > tr > td,
-#page-admin-report-log-index .generaltable > tfoot > tr > td,
-#page-report-log-user .generaltable > tfoot > tr > td,
-#page-admin-user table > tfoot > tr > td {
-  padding: 5px;
-}
-
 .user-enroller-panel .uep-search-results .users > tbody > tr:hover > td,
 table.grading-report > tbody > tr:hover > td,
 .forumheaderlist > tbody > tr:hover > td,
@@ -18260,6 +18231,39 @@ table.grading-report > tbody > tr:hover > th,
 table.flexible > tbody > tr:hover > th,
 table#permissions > tbody > tr:hover > th {
   background-color: #f5f5f5;
+}
+
+#page-report-loglive-index .generaltable > thead > tr > th,
+#page-admin-report-log-index .generaltable > thead > tr > th,
+#page-report-log-index .generaltable > thead > tr > th,
+#page-report-log-user .generaltable > thead > tr > th,
+#page-admin-user table > thead > tr > th,
+#page-report-loglive-index .generaltable > tbody > tr > th,
+#page-admin-report-log-index .generaltable > tbody > tr > th,
+#page-report-log-index .generaltable > tbody > tr > th,
+#page-report-log-user .generaltable > tbody > tr > th,
+#page-admin-user table > tbody > tr > th,
+#page-report-loglive-index .generaltable > tfoot > tr > th,
+#page-admin-report-log-index .generaltable > tfoot > tr > th,
+#page-report-log-index .generaltable > tfoot > tr > th,
+#page-report-log-user .generaltable > tfoot > tr > th,
+#page-admin-user table > tfoot > tr > th,
+#page-report-loglive-index .generaltable > thead > tr > td,
+#page-admin-report-log-index .generaltable > thead > tr > td,
+#page-report-log-index .generaltable > thead > tr > td,
+#page-report-log-user .generaltable > thead > tr > td,
+#page-admin-user table > thead > tr > td,
+#page-report-loglive-index .generaltable > tbody > tr > td,
+#page-admin-report-log-index .generaltable > tbody > tr > td,
+#page-report-log-index .generaltable > tbody > tr > td,
+#page-report-log-user .generaltable > tbody > tr > td,
+#page-admin-user table > tbody > tr > td,
+#page-report-loglive-index .generaltable > tfoot > tr > td,
+#page-admin-report-log-index .generaltable > tfoot > tr > td,
+#page-report-log-index .generaltable > tfoot > tr > td,
+#page-report-log-user .generaltable > tfoot > tr > td,
+#page-admin-user table > tfoot > tr > td {
+  padding: 5px;
 }
 
 table.flexible .emptyrow {
