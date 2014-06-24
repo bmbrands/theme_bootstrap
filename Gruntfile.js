@@ -290,11 +290,17 @@ module.exports = function(grunt) {
             }
         },
         copy: {
-            svg: {
+            svg_core: {
                  expand: true,
                  cwd: 'pix_core_originals/',
                  src: '**',
                  dest: 'pix_core/',
+            },
+            svg_plugins: {
+                 expand: true,
+                 cwd: 'pix_plugins_originals/',
+                 src: '**',
+                 dest: 'pix_plugins/',
             }
         },
         replace: {
@@ -324,8 +330,16 @@ module.exports = function(grunt) {
                         to: '[[pix:y/lp_rtl]]'
                     }]
             },
-            svg_colors: {
+            svg_colors_core: {
                 src: 'pix_core/**/*.svg',
+                    overwrite: true,
+                    replacements: [{
+                        from: '#999',
+                        to: svgcolor
+                    }]
+            },
+            svg_colors_plugins: {
+                src: 'pix_plugins/**/*.svg',
                     overwrite: true,
                     replacements: [{
                         from: '#999',
@@ -435,5 +449,5 @@ module.exports = function(grunt) {
     grunt.registerTask("bootswatch", _bootswatch);
     grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "autoprefixer", "decache"]);
     grunt.registerTask("swatch", ["bootswatch", "svg", "compile"]);
-    grunt.registerTask("svg", ["copy:svg", "replace:svg_colors"]);
+    grunt.registerTask("svg", ["copy:svg_core", "copy:svg_plugins", "replace:svg_colors_core", "replace:svg_colors_plugins"]);
 };
