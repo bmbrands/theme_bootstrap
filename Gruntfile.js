@@ -226,7 +226,7 @@ module.exports = function(grunt) {
                     compress: false,
                     sourceMap: true,
                     sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'sourcemap-moodle.json'
+                    sourceMapFilename: 'style/moodle.css'
                 },
                 src: 'less/moodle.less',
                 dest: 'style/moodle.css'
@@ -237,7 +237,7 @@ module.exports = function(grunt) {
                     compress: false,
                     sourceMap: true,
                     sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'sourcemap-editor.json'
+                    sourceMapFilename: 'style/editor.css'
                 },
                 src: 'less/editor.less',
                 dest: 'style/editor.css'
@@ -362,6 +362,14 @@ module.exports = function(grunt) {
                         from: 'glyphicons-halflings-regular.woff',
                         to: 'glyphicons-halflings-regular.woff]]',
                     }]
+            },
+            sourcemap: {
+                src: ['style/moodle.css', 'style/moodle-rtl.css', 'style/editor.css'],
+                    overwrite: true,
+                    replacements: [{
+                        from: 'sourceMappingURL=',
+                        to: 'sourceMappingURL=/theme/'+ THEMEDIR + '/style/'
+                    }]
             }
         }
     });
@@ -447,7 +455,7 @@ module.exports = function(grunt) {
     grunt.registerTask("decache", ["exec:decache"]);
 
     grunt.registerTask("bootswatch", _bootswatch);
-    grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "autoprefixer", "decache"]);
+    grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "autoprefixer", "replace:sourcemap", "decache"]);
     grunt.registerTask("swatch", ["bootswatch", "svg", "compile"]);
     grunt.registerTask("svg", ["copy:svg_core", "copy:svg_plugins", "replace:svg_colors_core", "replace:svg_colors_plugins"]);
 };
