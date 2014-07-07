@@ -15105,6 +15105,10 @@ body.path-question-type .fitem_fgroup .accesshide {
   display: inline-block;
 }
 
+#page-mod-quiz-edit .question .questioncontentcontainer .singlequestion label {
+  display: inherit;
+}
+
 #page-mod-quiz-edit div.quizpage .pagecontent .pagestatus {
   background-color: #ffffff;
 }
