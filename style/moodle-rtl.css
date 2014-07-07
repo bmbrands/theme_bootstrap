@@ -9358,6 +9358,7 @@ fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.t
 
 .moodle-actionmenu[data-enhanced].show {
   position: relative;
+  display: inline-block !important;
 }
 
 .moodle-actionmenu[data-enhanced].show .menu {
@@ -9505,6 +9506,7 @@ fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.t
 .moodle-actionmenu[data-enhanced].show .menu.align-tr-br {
   top: 100% !important;
   left: 0;
+  right: inherit;
   margin-top: 4px;
 }
 
@@ -11659,7 +11661,6 @@ span.editinstructions {
 #course-category-listings .item-actions {
   margin-left: 1em;
   display: inline-block;
-  display: initial;
 }
 
 #course-category-listings .item-actions img {
