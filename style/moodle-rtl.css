@@ -17303,7 +17303,8 @@ textareaselect.singleselect {
   .form-item .form-setting > select,
   .mform .fcontainer .fitem .felement > select {
     width: auto;
-    min-width: 480px;
+    min-width: 500px;
+    min-width: 220px;
     margin-bottom: 5px;
   }
 
