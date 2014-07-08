@@ -229,7 +229,8 @@ select.singleselect {
         > input[type="password"],
         > select {
             width: auto;
-            min-width: 480px;
+            min-width: 500px;
+            min-width: 220px;
             margin-bottom: 5px;
         }
     }
@@ -278,18 +279,18 @@ input[type="checkbox"] {
 #fitem_id_availabilityconditionsjson {
     *[aria-hidden=true] {
         display: none;
-    }
+}
     select,
     input[type=text] {
         width: auto;
-        display: inline-block;
+   display: inline-block;
         height: 30px;
         line-height: 30px;
         padding: 4px 6px;
-    }
+}
     label {
-        display: inline;
-    }
+    display: inline;
+}
     .availability-group {
         margin: 5px;
     }
@@ -300,7 +301,7 @@ input[type="checkbox"] {
 
     .availability-header {
         padding: 5px;
-    }
+}
 
     .availability-plugincontrols {
         padding: 5px;
@@ -309,25 +310,25 @@ input[type="checkbox"] {
         border: 1px solid @well-border;
         border-radius: @border-radius-base;
         display: inline-block;
-    }
+}
 
     /* Hidden eye icon still takes up space. */
     .availability-eye[aria-hidden=true] {
-        display: inline;
+    display: inline;
         visibility: hidden;
-    }
+}
     /* Eye icons in front of child lists are aligned specially. */
     .availability-list > .availability-eye img {
         vertical-align: top;
         margin-top: 12px;
-    }
+}
     /* Add button lines up with child elements. */
     .availability-button {
         margin-left: 15px;
     }
     /* Nested section is grey. */
     .availability-childlist > .availability-inner {
-        display: inline-block;
+    display: inline-block;
         background: @well-bg;
         border: 1px solid @well-border;
         border-radius: 4px;
@@ -337,12 +338,12 @@ input[type="checkbox"] {
     /* Second (and more) levels of nested sections are white. */
     .availability-childlist .availability-childlist > .availability-inner {
         background: white;
-    }
+}
     /* Connecting text needs to be indented. */
     .availability-connector {
         margin-left: 20px;
         margin-bottom: 6px;
-    }
+}
 }
 
 /* This dialogue is used to add an availability condition. */
@@ -369,15 +370,15 @@ input[type="checkbox"] {
         margin: 0 10px;
         min-width: 140px;
         margin-top: 4px;
-        display: inline;
-    }
+    display: inline;
+}
     label {
         margin-bottom: 0;
         display: block;
-    }
+}
     .availability-buttons button {
         margin-left: 1em;
         margin-right: 1em;
         margin-top: 4px;
-    }
+}
 }
