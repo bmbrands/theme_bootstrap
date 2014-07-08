@@ -57,8 +57,12 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     public function navbar() {
+        $items = $this->page->navbar->get_items();
+        if (empty($items)) { // MDL-46107
+            return '';
+        }
         $breadcrumbs = '';
-        foreach ($this->page->navbar->get_items() as $item) {
+        foreach ($items as $item) {
             $item->hideicon = true;
             $breadcrumbs .= '<li>'.$this->render($item).'</li>';
         }
@@ -70,8 +74,8 @@ class theme_bootstrap_core_renderer extends core_renderer {
         // are configured in the global theme settings page.
         global $CFG;
 
-        if (!empty($CFG->custommenuitems)) {
-            $custommenuitems .= $CFG->custommenuitems;
+        if (empty($custommenuitems) && !empty($CFG->custommenuitems)) { // MDL-45507
+            $custommenuitems = $CFG->custommenuitems;
         }
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
