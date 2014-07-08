@@ -313,7 +313,6 @@ Y.extend(CollapsePlugin, Y.Plugin.Base, {
         easing    : 'ease-in',
         showClass : 'in',
         hideClass : 'out',
-
         groupSelector : '> .accordion-group > .in'
     },
 
@@ -373,10 +372,7 @@ Y.extend(CollapsePlugin, Y.Plugin.Base, {
             parent,
             group_selector = this.config.groupSelector;
 
-        if ( this.transitioning ) {
-            console.log('trans');
-            return;
-        }
+
 
         if ( host.getData('parent') ) {
             parent = Y.one( host.getData('parent') );

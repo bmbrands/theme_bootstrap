@@ -109,7 +109,6 @@ figure {
 
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -170,8 +169,6 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
@@ -230,7 +227,6 @@ th {
     text-shadow: none !important;
     color: #000 !important;
     background: transparent !important;
-    -webkit-box-shadow: none !important;
     box-shadow: none !important;
   }
 
@@ -401,7 +397,6 @@ img {
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -866,7 +861,6 @@ kbd {
   color: #ffffff;
   background-color: #333333;
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -2221,8 +2215,7 @@ output {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
@@ -2987,7 +2980,6 @@ input[type="button"].btn-block {
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
-  -o-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 
@@ -3008,7 +3000,6 @@ input[type="button"].btn-block {
   height: 0;
   overflow: hidden;
   -webkit-transition: height 0.35s ease;
-  -o-transition: height 0.35s ease;
   transition: height 0.35s ease;
 }
 
@@ -3867,7 +3858,6 @@ input[type="button"].btn-block {
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
 
@@ -4702,7 +4692,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-left: 15px;
   padding-right: 15px;
   border-top: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
 }
@@ -4715,7 +4704,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-collapse {
     width: auto;
     border-top: 0;
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
 
@@ -4865,7 +4853,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-top: 0;
     background-color: transparent;
     border: 0;
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
 
@@ -5612,7 +5599,6 @@ a.list-group-item.active > .badge,
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
@@ -5735,16 +5721,6 @@ a.thumbnail.active {
   }
 }
 
-@-o-keyframes progress-bar-stripes {
-  from {
-    background-position: 40px 0;
-  }
-
-  to {
-    background-position: 100% 0;
-  }
-}
-
 @keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
@@ -5777,21 +5753,17 @@ a.thumbnail.active {
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
-  -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 
 .progress-striped .progress-bar {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  -webkit-background-size: 40px 40px;
   background-size: 40px 40px;
 }
 
 .progress.active .progress-bar {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
-  -o-animation: progress-bar-stripes 2s linear infinite;
   animation: progress-bar-stripes 2s linear infinite;
 }
 
@@ -5801,7 +5773,6 @@ a.thumbnail.active {
 
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5811,7 +5782,6 @@ a.thumbnail.active {
 
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5821,7 +5791,6 @@ a.thumbnail.active {
 
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5831,7 +5800,6 @@ a.thumbnail.active {
 
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -6479,9 +6447,9 @@ button.close {
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
-  -o-transform: translate(0, -25%);
   transform: translate(0, -25%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
@@ -6489,7 +6457,6 @@ button.close {
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 
@@ -6507,7 +6474,6 @@ button.close {
   border-radius: 6px;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   outline: none;
 }
@@ -6718,7 +6684,6 @@ button.close {
   padding: 1px;
   text-align: right;
   background-color: #ffffff;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -6860,7 +6825,6 @@ button.close {
   display: none;
   position: relative;
   -webkit-transition: 0.6s ease-in-out left;
-  -o-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
 }
 
@@ -6923,9 +6887,6 @@ button.close {
 
 .carousel-control.left {
   background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%));
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
@@ -6935,9 +6896,6 @@ button.close {
   right: auto;
   left: 0;
   background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0%), color-stop(rgba(0, 0, 0, 0.5) 100%));
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
@@ -7348,6 +7306,8 @@ button.close {
   right: 100%;
   margin-top: -6px;
   margin-right: -1px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
   border-radius: 6px 0 6px 6px;
 }
 
@@ -7380,6 +7340,8 @@ button.close {
 .dropdown-submenu.pull-left > .dropdown-menu {
   right: -100%;
   margin-right: 10px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px 6px;
   border-radius: 0 6px 6px 6px;
 }
 
@@ -8745,7 +8707,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .moodle-dialogue-base .moodle-dialogue-fullscreen .closebutton {
   width: 28px;
   height: 16px;
-  -webkit-background-size: 100% 100%;
   background-size: 100%;
 }
 
@@ -8764,7 +8725,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
-  -webkit-box-shadow: -5px 5px 20px 0 #666;
   box-shadow: -5px 5px 20px 0 #666;
 }
 
@@ -8782,12 +8742,9 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   border-bottom: 1px solid #bbb;
   background: #ccc;
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #cccccc 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
-  background-image: -o-linear-gradient(top, #ffffff 0%, #cccccc 100%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #cccccc 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffcccccc', GradientType=0);
-  -webkit-filter: 0;
   filter: 0;
 }
 
@@ -9025,7 +8982,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   overflow-x: hidden;
   overflow-y: auto;
   max-width: 20.3em;
-  -webkit-box-shadow: inset 0 0 30px 0px #ccc;
   box-shadow: inset 0 0 30px 0px #ccc;
 }
 
@@ -9111,7 +9067,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 
 .choosercontainer #chooseform .selected {
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 0 10px 0 #ccc;
   box-shadow: 0px 0 10px 0 #ccc;
 }
 
@@ -9358,6 +9313,7 @@ fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.t
 
 .moodle-actionmenu[data-enhanced].show {
   position: relative;
+  display: inline-block !important;
 }
 
 .moodle-actionmenu[data-enhanced].show .menu {
@@ -9378,7 +9334,6 @@ fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.t
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   display: block;
   text-align: right;
@@ -9505,6 +9460,7 @@ fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.t
 .moodle-actionmenu[data-enhanced].show .menu.align-tr-br {
   top: 100% !important;
   left: 0;
+  right: inherit;
   margin-top: 4px;
 }
 
@@ -9859,8 +9815,7 @@ img.iconsmall {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   margin-bottom: 0.3em;
 }
@@ -10335,8 +10290,7 @@ textarea.path-admin .roleassigntable input[type="text"] {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
@@ -10673,7 +10627,6 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
   padding: 1px;
   text-align: right;
   background-color: #ffffff;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -11177,7 +11130,6 @@ span.editinstructions {
   color: #31708f;
   text-decoration: none;
   z-index: 9999;
-  -webkit-box-shadow: -2px 2px 5px 1px #ccc;
   box-shadow: -2px 2px 5px 1px #ccc;
   border: 1px solid #bce8f1;
 }
@@ -11195,7 +11147,6 @@ span.editinstructions {
   right: 50%;
   width: 30em;
   margin-right: -15em;
-  -webkit-box-shadow: -2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   box-shadow: -2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -11263,7 +11214,6 @@ span.editinstructions {
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
-  -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 
@@ -11659,7 +11609,6 @@ span.editinstructions {
 #course-category-listings .item-actions {
   margin-left: 1em;
   display: inline-block;
-  display: initial;
 }
 
 #course-category-listings .item-actions img {
@@ -12042,7 +11991,6 @@ span.editinstructions {
   border-radius: 8px;
   border: 1px solid #fff;
   display: inline-block;
-  -webkit-box-shadow: -5px 5px 20px 0 #666;
   box-shadow: -5px 5px 20px 0 #666;
 }
 
@@ -12055,11 +12003,8 @@ span.editinstructions {
   color: #333;
   letter-spacing: 1px;
   text-shadow: 1px 1px 1px #fff;
-  -webkit-filter: dropshadow(color=#ffffff, offx=1, offy=1);
   filter: dropshadow(color=#ffffff, offx=1, offy=1);
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #cccccc 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
-  background-image: -o-linear-gradient(top, #ffffff 0%, #cccccc 100%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #cccccc 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffcccccc', GradientType=0);
@@ -12072,7 +12017,6 @@ span.editinstructions {
   margin: 10px;
   border-radius: 10px;
   display: inline-block;
-  -webkit-box-shadow: -2px 2px 3px .1px #999;
   box-shadow: -2px 2px 3px .1px #999;
 }
 
@@ -12216,16 +12160,12 @@ span.editinstructions {
 
 .fp-viewbar a.checked:hover,
 .fp-viewbar a:hover {
-  background-image: -webkit-radial-gradient(center, ellipse, #ffffff 60%, #dfdfdf 100%);
-  background-image: -o-radial-gradient(center, ellipse, #ffffff 60%, #dfdfdf 100%);
   background-image: radial-gradient(ellipse at center, #ffffff 60%, #dfdfdf 100%);
   background-color: #ebebeb;
 }
 
 .fp-viewbar a.checked,
 .fp-viewbar a:active {
-  background-image: -webkit-radial-gradient(center, ellipse, #ffffff 40%, #dfdfdf 100%);
-  background-image: -o-radial-gradient(center, ellipse, #ffffff 40%, #dfdfdf 100%);
   background-image: radial-gradient(ellipse at center, #ffffff 40%, #dfdfdf 100%);
   background-color: #dfdfdf;
 }
@@ -12296,14 +12236,12 @@ span.editinstructions {
   border: 1px solid #ddd;
   padding: 3px;
   vertical-align: middle;
-  -webkit-box-shadow: -1px 1px 2px 0 #ccc;
   box-shadow: -1px 1px 2px 0 #ccc;
 }
 
 .fp-iconview .fp-thumbnail:hover {
   background: #fff;
   border: 1px solid #ddd;
-  -webkit-box-shadow: inset 0 0 10px 0px #ccc;
   box-shadow: inset 0 0 10px 0px #ccc;
 }
 
@@ -12666,7 +12604,6 @@ a.ygtvspacer:hover {
   margin: 10px 0 0 20px;
   background: #fff;
   border: 1px solid #ddd;
-  -webkit-box-shadow: inset 0 0 10px 0 #ccc;
   box-shadow: inset 0 0 10px 0 #ccc;
 }
 
@@ -12791,15 +12728,11 @@ a.ygtvspacer:hover {
 }
 
 .fp-toolbar a:hover {
-  background-image: -webkit-radial-gradient(center, ellipse, #ffffff 60%, #dfdfdf 100%);
-  background-image: -o-radial-gradient(center, ellipse, #ffffff 60%, #dfdfdf 100%);
   background-image: radial-gradient(ellipse at center, #ffffff 60%, #dfdfdf 100%);
   background-color: #ebebeb;
 }
 
 .fp-toolbar a:active {
-  background-image: -webkit-radial-gradient(center, ellipse, #ffffff 40%, #dfdfdf 100%);
-  background-image: -o-radial-gradient(center, ellipse, #ffffff 40%, #dfdfdf 100%);
   background-image: radial-gradient(ellipse at center, #ffffff 40%, #dfdfdf 100%);
   background-color: #dfdfdf;
 }
@@ -12986,7 +12919,6 @@ a.ygtvspacer:hover {
   border: 2px dashed #fb7979;
   padding-top: 85px;
   text-align: center;
-  -webkit-box-shadow: 0px 0 0 10px #fff;
   box-shadow: 0px 0 0 10px #fff;
 }
 
@@ -13246,8 +13178,7 @@ a.ygtvspacer:hover {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   display: inline-block;
 }
@@ -13517,8 +13448,7 @@ textarea.box.message .message_form input[type="text"] {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: auto;
 }
@@ -14346,7 +14276,6 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   padding: 1px;
   text-align: right;
   background-color: #ffffff;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -14487,8 +14416,7 @@ textarea {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   height: 200px;
 }
@@ -14595,8 +14523,6 @@ textareatextarea {
   border: 1px solid #ccc;
   border-bottom: 1px solid #bbb;
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #cccccc 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
-  background-image: -o-linear-gradient(top, #ffffff 0%, #cccccc 100%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #cccccc 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffcccccc', GradientType=0);
@@ -14609,7 +14535,6 @@ textareatextarea {
   border-radius: 10px;
   border: 1px solid #ccc;
   border-top: 0 none;
-  -webkit-box-shadow: -5px 5px 20px 0 #666;
   box-shadow: -5px 5px 20px 0 #666;
 }
 
@@ -14632,7 +14557,6 @@ textareatextarea {
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 400px;
-  max-height: -webkit-calc(100vh - 15em);
   max-height: calc(100vh - 15em);
   width: 60%;
 }
@@ -14650,7 +14574,6 @@ textareatextarea {
 
 #chooseqtype .selected {
   background-color: #fff;
-  -webkit-box-shadow: 0px 0 10px 0 #ccc;
   box-shadow: 0px 0 10px 0 #ccc;
 }
 
@@ -14951,14 +14874,12 @@ body.path-question-type .fitem_fgroup .accesshide {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #3c763d;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .formulation select.correct:focus,
 .formulation input.correct:focus {
   border-color: #2b542c;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
 }
 
@@ -14967,14 +14888,12 @@ body.path-question-type .fitem_fgroup .accesshide {
   color: #8a6d3b;
   background-color: #fcf8e3;
   border-color: #8a6d3b;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .formulation select.partiallycorrect:focus,
 .formulation input.partiallycorrect:focus {
   border-color: #66512c;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
 }
 
@@ -14983,14 +14902,12 @@ body.path-question-type .fitem_fgroup .accesshide {
   color: #a94442;
   background-color: #f2dede;
   border-color: #a94442;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .formulation select.incorrect:focus,
 .formulation input.incorrect:focus {
   border-color: #843534;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
 }
 
@@ -15775,8 +15692,7 @@ a#hidebankcmd {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: 100%;
   max-width: none;
@@ -16502,8 +16418,7 @@ ol {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
@@ -16602,8 +16517,7 @@ textarea.block .singleselect select {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
@@ -16777,8 +16691,7 @@ textarea.searchform input[type="text"] {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
@@ -17048,8 +16961,7 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
@@ -17150,8 +17062,7 @@ select.singleselect {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: auto;
   max-width: 300px;
@@ -17569,8 +17480,7 @@ select {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
@@ -17624,8 +17534,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol .singlese
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: auto;
   float: right;
@@ -18335,8 +18244,6 @@ table.flexible .emptyrow {
 .left_scroller .generaltable td,
 .right_scroller .generaltable td {
   line-height: 20px;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -19069,7 +18976,6 @@ input.fp-btn-choose {
   padding: 1px;
   text-align: right;
   background-color: #ffffff;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -20346,4 +20252,5 @@ fieldset[disabled] #rubric-rubric.gradingform_rubric .addcriterion {
 .path-grade-report-grader .grade_icons {
   display: inline;
 }
-/*# sourceMappingURL=moodle-rtl.css.map */
+
+/*# sourceMappingURL=/theme/bootstrap/sourcemap-moodle.json */

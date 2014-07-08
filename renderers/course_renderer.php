@@ -47,7 +47,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
             $classes .= ' collapsed';
         }
 
-        $content .= html_writer::start_tag('div', array('class' => 'panel panel-default coursebox'));
+        $content .= html_writer::start_tag('div', array('class' => 'panel panel-default coursebox accordion-group'));
 
         $content .= html_writer::start_tag('div', array('class' => 'panel-heading'));
 
@@ -79,7 +79,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
 
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $content .= html_writer::start_tag('div', array('id' => 'coursecollapse' . $course->id,
-                'class' => 'panel-collapse collapse'));
+                'class' => 'panel-collapse collapse out'));
         }
 
         $content .= html_writer::start_tag('div', array('class' => 'panel-body'));

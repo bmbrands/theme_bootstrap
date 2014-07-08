@@ -1293,8 +1293,8 @@ body.jsenabled .formlisting {
 }
 
 .moodle-actionmenu[data-enhanced].show  {
-
     position: relative;
+    display: inline-block !important; // Override 'show' class in Bootstrap utilities.less.
 
     .menu {
         .dropdown-menu;
@@ -1334,7 +1334,7 @@ body.jsenabled .formlisting {
         &.align-br-bl {bottom: 100%;right: 100%;}
         /** bottom right of button **/
         &.align-tl-br {top: 100%;left:100%;}
-        &.align-tr-br {top: 100% !important;right: 0;margin-top: 4px;}
+        &.align-tr-br {top: 100% !important;right: 0;left: inherit;margin-top: 4px;}
         &.align-bl-br {bottom: 100%;left:100%;}
         &.align-br-br {bottom: 100%;right: 0;}
         /** top left of button **/
