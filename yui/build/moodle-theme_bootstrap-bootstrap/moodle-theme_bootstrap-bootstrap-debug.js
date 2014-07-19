@@ -313,6 +313,7 @@ Y.extend(CollapsePlugin, Y.Plugin.Base, {
         easing    : 'ease-in',
         showClass : 'in',
         hideClass : 'out',
+
         groupSelector : '> .accordion-group > .in'
     },
 
@@ -372,7 +373,9 @@ Y.extend(CollapsePlugin, Y.Plugin.Base, {
             parent,
             group_selector = this.config.groupSelector;
 
-
+        if ( this.transitioning ) {
+            return;
+        }
 
         if ( host.getData('parent') ) {
             parent = Y.one( host.getData('parent') );
@@ -422,6 +425,8 @@ Y.extend(CollapsePlugin, Y.Plugin.Base, {
             removeClass = method === 'hide' ? config.showClass : config.hideClass,
             // And if we are hiding, add the hide class.
             addClass    = method === 'hide' ? config.hideClass : config.showClass,
+
+            to_height   = method === 'hide' ? 0 : null,
             event       = method === 'hide' ? 'hidden' : 'shown',
 
             complete = function() {
@@ -430,9 +435,18 @@ Y.extend(CollapsePlugin, Y.Plugin.Base, {
                 self.transitioning = false;
                 this.fire( event );
             };
+
+        if ( to_height === null ) {
+            to_height = 0;
+            node.all('> *').each(function(el) {
+                to_height += el.get('scrollHeight');
+            });
+        }
+
         this.transitioning = true;
 
         node.transition({
+            height   : to_height +'px',
             duration : duration,
             easing   : easing
         }, complete);
@@ -615,7 +629,7 @@ var CSS = {
     SELECTORS = {
         NAVBAR_BUTTON: '.navbar-toggle',
         // FIXME This is deliberately wrong because of a breaking issue in the upstream library.
-        TOGGLECOLLAPSE: '*[data-toggle="collapse"]',
+        TOGGLECOLLAPSE: '*[data-disabledtoggle="collapse"]',
         NAV_COLLAPSE: '.navbar-collapse'
     },
     NS = Y.namespace('Moodle.theme_bootstrap.bootstrap');

@@ -19,7 +19,7 @@ var CSS = {
     SELECTORS = {
         NAVBAR_BUTTON: '.navbar-toggle',
         // FIXME This is deliberately wrong because of a breaking issue in the upstream library.
-        TOGGLECOLLAPSE: '*[data-toggle="collapse"]',
+        TOGGLECOLLAPSE: '*[data-disabledtoggle="collapse"]',
         NAV_COLLAPSE: '.navbar-collapse'
     },
     NS = Y.namespace('Moodle.theme_bootstrap.bootstrap');
