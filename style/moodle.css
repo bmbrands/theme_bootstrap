@@ -6496,6 +6496,9 @@ img.hide {
 img.icon.hide {
   display: inline-block !important;
 }
+.section .label {
+  text-align: center;
+}
 /** core.less */
 /** Page layout CSS starts **/
 .layout-option-noheader #page-header,
@@ -9280,6 +9283,9 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 .section .activity .activityinstance .dimmed img.activityicon {
   filter: alpha(opacity=50);
   opacity: .5;
+}
+.section .label {
+  text-align: left;
 }
 .section .label .contentwithoutlink,
 .section .label .activityinstance {

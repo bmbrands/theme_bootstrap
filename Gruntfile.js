@@ -308,7 +308,8 @@ module.exports = function(grunt) {
             files: ["less/**/*.less"],
             tasks: ["compile"],
             options: {
-                spawn: false
+                spawn: false,
+                livereload: true
             }
         },
         cssflip: {

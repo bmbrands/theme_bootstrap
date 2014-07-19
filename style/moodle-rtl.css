@@ -7958,6 +7958,10 @@ img.icon.hide {
   display: inline-block !important;
 }
 
+.section .label {
+  text-align: center;
+}
+
 /** core.less */
 
 /** Page layout CSS starts **/
@@ -11337,6 +11341,10 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 .section .activity .activityinstance .dimmed img.activityicon {
   opacity: 0.5;
   filter: alpha(opacity=50);
+}
+
+.section .label {
+  text-align: right;
 }
 
 .section .label .contentwithoutlink,
