@@ -224,6 +224,8 @@ module.exports = function(grunt) {
             moodle: {
                 options: {
                     compress: false,
+                    strictMath: true,
+                    outputSourceFiles: true,
                     sourceMap: true,
                     sourceMapRootpath: '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/moodle.css'
@@ -235,6 +237,8 @@ module.exports = function(grunt) {
             editor: {
                 options: {
                     compress: false,
+                    strictMath: true,
+                    outputSourceFiles: true,
                     sourceMap: true,
                     sourceMapRootpath: '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/editor.css'
@@ -260,8 +264,32 @@ module.exports = function(grunt) {
             options: {
               map: true
             },
-            src: ['style/moodle.css', "style/moodle-rtl.css", "style/editor.css"],
+            src: ['style/moodle.css', 'style/moodle-rtl.css', 'style/editor.css'],
           },
+        },
+        cssmin: {
+            options: {
+                compatibility: 'ie8',
+                keepSpecialComments: '*',
+                noAdvanced: true
+            }, 
+            core: {
+                files: {
+                    'style/moodle_min.css': 'style/moodle.css',
+                    'style/editor_min.css': 'style/editor.css'
+                }
+            }
+        },
+        csscomb: {
+            options: {
+                config: 'less/bootstrap3/.csscomb.json'
+            },
+            dist: {
+                expand: true,
+                cwd: 'style/',
+                src: ['moodle.css', 'editor.css'],
+                dest: 'style/'
+            }
         },
         exec: {
             decache: {
@@ -449,13 +477,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-text-replace");
     grunt.loadNpmTasks("grunt-css-flip");
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-csscomb');
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
     grunt.registerTask("bootswatch", _bootswatch);
-    grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "autoprefixer", "replace:sourcemap", "decache"]);
+    grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "autoprefixer", 'csscomb', 'cssmin', "replace:sourcemap", "decache"]);
     grunt.registerTask("swatch", ["bootswatch", "svg", "compile"]);
     grunt.registerTask("svg", ["copy:svg_core", "copy:svg_plugins", "replace:svg_colors_core", "replace:svg_colors_plugins"]);
 };

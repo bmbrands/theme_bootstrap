@@ -9,9 +9,10 @@
                  .make-md-column(4);
                  .make-lg-column(3);
                 label {
-                    .form-horizontal .control-label;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    padding-top: (@padding-base-vertical + 1); // Default padding plus a border
                 }
-
             }
             .felement {
                 .make-md-column(8);
@@ -125,7 +126,9 @@
     .form-label {
         .make-md-column(4);
         label {
-            .form-horizontal .control-label;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: (@padding-base-vertical + 1); // Default padding plus a border
         }
     }
     .form-setting {
