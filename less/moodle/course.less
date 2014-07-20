@@ -446,11 +446,10 @@ span.editinstructions {
             margin:0;
         }
     }
-    .coursebtn {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
+    .coursebtncont {
+        text-align: right;
     }
+
     .boxfooter {
         clear: both;
         margin-bottom: 30px;
@@ -488,60 +487,62 @@ span.editinstructions {
         }
     }
 }
-// .coursebox {
-//     .content {
-//         clear:both;
-//         .teachers {
-//             li {
-//                 list-style-type:none;
-//                 padding:0;
-//                 margin:0;
-//             }
-//         }
-//         .coursecat {
-//             text-align:right;
-//             clear:right;
-//         }
-//         .courseimage {
-//             img {
-//                 max-width:100px;
-//                 max-height:100px;
-//             }
-//         }
-//     }
-//     .enrolmenticons {
-//         float:right;
-//     }
-//     .moreinfo {
-//         padding:3px 0;
-//         float:right;
-//     }
-// }
-// .coursebox .enrolmenticons img,.coursebox .moreinfo img {
-//     margin:0 .2em;
-// }
-// .coursebox.remotecoursebox {
-//     .remotecourseinfo {
-//         float:left;
-//         width: 40%;
-//     }
-// }
-// .coursebox .content .coursecat,.coursebox .content .summary,.coursebox .content .courseimage,.coursebox .content .coursefile,.coursebox .content .teachers,.coursebox.remotecoursebox .remotecourseinfo {
-//     margin:3px 5px;
-//     padding:0;
-// }
-.coursebox.collapsed {
-    margin-bottom:0;
-    & > .content {
-        display:none;
+.coursebox {
+    .content {
+        clear:both;
+        .teachers {
+            li {
+                list-style-type:none;
+                padding:0;
+                margin:0;
+            }
+        }
+        .coursecat {
+            text-align:right;
+            clear:right;
+        }
+        .coursecat,
+        .summary,
+        .courseimage,
+        .coursefile,
+        .teachers {
+            margin:3px 5px;
+            padding:0;
+        }
+        .courseimage {
+            img {
+                max-width:100px;
+                max-height:100px;
+            }
+        }
+    }
+    .enrolmenticons {
+        float:right;
+        img {
+            margin:0 .2em;
+        }
+    }
+    .moreinfo {
+        padding:3px 7px;
+    }
+    .remotecoursebox {
+        .remotecourseinfo {
+            float:left;
+            width: 40%;
+            margin:3px 5px;
+            padding:0;
+        }
+    }
+    &.collapsed {
+        margin-bottom:5px;
+        padding: 0;
+        & > .content {
+            display:none;
+        }
     }
 }
-.courses {
-    .coursebox.collapsed {
-        border:1px solid #eee;
-        padding:5px;
-    }
-}
+
+
 .course_category_tree {
     .courses {
         & > .paging.paging-morelink:hover {

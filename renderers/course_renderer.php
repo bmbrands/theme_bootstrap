@@ -40,12 +40,9 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
             $course = new course_in_list($course);
         }
         $content = '';
-        $classes = trim('coursebox clearfix '. $additionalclasses);
-        if ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_EXPANDED) {
-            $nametag = 'h3';
-        } else {
+        $classes = trim('panel panel-default coursebox clearfix '. $additionalclasses);
+        if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $classes .= ' collapsed';
-            $nametag = 'div';
         }
 
         // .coursebox
@@ -55,27 +52,28 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
             'data-type' => self::COURSECAT_TYPE_COURSE,
         ));
 
-        $content .= html_writer::start_tag('div', array('class' => 'info'));
+        $content .= html_writer::start_tag('div', array('class' => 'panel-heading info'));
 
-        // Course name.
+        // course name
         $coursename = $chelper->get_course_formatted_name($course);
         $coursenamelink = html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
                                             $coursename, array('class' => $course->visible ? '' : 'dimmed'));
-        $content .= html_writer::tag($nametag, $coursenamelink, array('class' => 'coursename'));
+        $content .= html_writer::tag('span', $coursenamelink, array('class' => 'coursename'));
         // If we display course in collapsed form but the course has summary or course contacts, display the link to the info page.
-        $content .= html_writer::start_tag('div', array('class' => 'moreinfo'));
+        $content .= html_writer::start_tag('span', array('class' => 'moreinfo'));
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             if ($course->has_summary() || $course->has_course_contacts() || $course->has_course_overviewfiles()) {
                 $url = new moodle_url('/course/info.php', array('id' => $course->id));
-                $arrow = html_writer::tag('span', '', array('class' => 'glyphicon glyphicon-info-sign'));
-                $content .= html_writer::link($url, $arrow, array('title' => $this->strings->summary));
+                $image = html_writer::empty_tag('img', array('src' => $this->output->pix_url('i/info'),
+                    'alt' => $this->strings->summary));
+                $content .= html_writer::link($url, $image, array('title' => $this->strings->summary));
                 // Make sure JS file to expand course content is included.
                 $this->coursecat_include_js();
             }
         }
-        $content .= html_writer::end_tag('div'); // .moreinfo
+        $content .= html_writer::end_tag('span'); // .moreinfo
 
-        // Print enrolmenticons.
+        // print enrolmenticons
         if ($icons = enrol_get_course_info_icons($course)) {
             $content .= html_writer::start_tag('div', array('class' => 'enrolmenticons'));
             foreach ($icons as $pix_icon) {
@@ -86,8 +84,22 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
 
         $content .= html_writer::end_tag('div'); // .info
 
-        $content .= html_writer::start_tag('div', array('class' => 'content'));
+        $content .= html_writer::start_tag('div', array('class' => 'content panel-body'));
         $content .= $this->coursecat_coursebox_content($chelper, $course);
+
+        if ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_EXPANDED) {
+            $icondirection = 'left';
+            if ('ltr' === get_string('thisdirection', 'langconfig')) {
+                $icondirection = 'right';
+            }
+            if (is_enrolled(context_course::instance($course->id))) {
+                $arrow = html_writer::tag('span', '', array('class' => ' glyphicon glyphicon-arrow-'.$icondirection));
+                $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
+                $coursebtn = html_writer::link(new moodle_url('/course/view.php',
+                    array('id' => $course->id)), $btn, array('class' => 'btn btn-info btn-sm pull-right'));
+                $content .= html_writer::tag('div', $coursebtn, array('class' => 'coursebtn'));
+            }
+        }
         $content .= html_writer::end_tag('div'); // .content
 
         $content .= html_writer::end_tag('div'); // .coursebox
@@ -105,14 +117,6 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
         }
         $content = '';
 
-        // Display course summary.
-        if ($course->has_summary()) {
-            $content .= html_writer::start_tag('div', array('class' => 'summary'));
-            $content .= $chelper->get_course_formatted_summary($course,
-                    array('overflowdiv' => true, 'noclean' => true, 'para' => false));
-            $content .= html_writer::end_tag('div'); // .summary
-        }
-
         // Display course overview files.
         $contentimages = $contentfiles = '';
         foreach ($course->get_course_overviewfiles() as $file) {
@@ -121,9 +125,8 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
                     '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
                     $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
             if ($isimage) {
-                $contentimages .= html_writer::tag('div',
-                        html_writer::empty_tag('img', array('src' => $url)),
-                        array('class' => 'courseimage'));
+                $contentimages .= html_writer::empty_tag('img', array('src' => $url, 'alt' => 'Course Image '. $course->fullname,
+                    'class' => 'courseimage'));
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
                 $filename = html_writer::tag('span', $image, array('class' => 'fp-icon')).
@@ -134,6 +137,12 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
             }
         }
         $content .= $contentimages. $contentfiles;
+
+        // Display course summary.
+        if ($course->has_summary()) {
+            $content .= $chelper->get_course_formatted_summary($course);
+        }
+
 
         // Display course contacts. See course_in_list::get_course_contacts().
         if ($course->has_course_contacts()) {

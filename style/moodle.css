@@ -9660,10 +9660,8 @@ span.editinstructions {
   margin: 0;
   list-style-type: none;
 }
-.coursebox .coursebtn {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
+.coursebox .coursebtncont {
+  text-align: right;
 }
 .coursebox .boxfooter {
   margin-bottom: 30px;
@@ -9678,15 +9676,51 @@ span.editinstructions {
 .coursebox.remotehost > .info > .categoryname a {
   background-image: url([[pix:moodle|i/mnethost]]);
 }
+.coursebox .content {
+  clear: both;
+}
+.coursebox .content .teachers li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.coursebox .content .coursecat {
+  clear: right;
+  text-align: right;
+}
+.coursebox .content .coursecat,
+.coursebox .content .summary,
+.coursebox .content .courseimage,
+.coursebox .content .coursefile,
+.coursebox .content .teachers {
+  padding: 0;
+  margin: 3px 5px;
+}
+.coursebox .content .courseimage img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.coursebox .enrolmenticons {
+  float: right;
+}
+.coursebox .enrolmenticons img {
+  margin: 0 .2em;
+}
+.coursebox .moreinfo {
+  padding: 3px 7px;
+}
+.coursebox .remotecoursebox .remotecourseinfo {
+  float: left;
+  width: 40%;
+  padding: 0;
+  margin: 3px 5px;
+}
 .coursebox.collapsed {
-  margin-bottom: 0;
+  padding: 0;
+  margin-bottom: 5px;
 }
 .coursebox.collapsed > .content {
   display: none;
-}
-.courses .coursebox.collapsed {
-  padding: 5px;
-  border: 1px solid #eee;
 }
 .course_category_tree .courses > .paging.paging-morelink:hover {
   background-color: #eee;
