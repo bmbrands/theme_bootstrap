@@ -6853,6 +6853,9 @@ a.disabled {
 .notifytiny td {
   font-size: 100%;
 }
+.highlight {
+  background: #d9edf7;
+}
 .reportlink {
   text-align: right;
 }

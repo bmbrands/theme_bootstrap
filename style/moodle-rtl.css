@@ -8381,6 +8381,10 @@ a.disabled {
   font-size: 100%;
 }
 
+.highlight {
+  background: #d9edf7;
+}
+
 .reportlink {
   text-align: left;
 }
