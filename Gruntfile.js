@@ -143,8 +143,8 @@
  * grunt replace:font_fix    Correct the format for the Moodle font
  *                           loader to pick up the Glyphicon font.
  *
- * grunt replace:svg_colors  Change the color of the SVGs in pix_core by
- *                           text replacing #999 with a new hex color.
+ * grunt replace:svg_colours Change the colour of the SVGs in pix_core by
+ *                           text replacing #999 with a new hex colour.
  *                           Note this requires the SVGs to be #999 to
  *                           start with or the replace will do nothing
  *                           so should usually be preceded by copying
@@ -152,7 +152,7 @@
  *
  *                           Options:
  *
- *                           --svgcolor=<hexcolor> Hex color to use for SVGs
+ *                           --svgcolour=<hexcolour> Hex colour to use for SVGs
  *
  * grunt cssflip    Create moodle-rtl.css by flipping the direction styles
  *                  in moodle.css.
@@ -194,7 +194,7 @@ module.exports = function(grunt) {
     decachephp += 'theme_reset_all_caches();';
 
     var swatchname = grunt.option('name') || '';
-    var defaultsvgcolor = {
+    var defaultsvgcolour = {
         amelia: '#e8d069',
         bootstrap: '#428bca',
         classic: '#428bca',
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
         united: '#dd4814',
         yeti: '#008cba',
     };
-    var svgcolor = grunt.option('svgcolor') || defaultsvgcolor[swatchname] || '#999';
+    var svgcolour = grunt.option('svgcolour') || defaultsvgcolour[swatchname] || '#999';
 
     grunt.initConfig({
         less: {
@@ -359,20 +359,20 @@ module.exports = function(grunt) {
                         to: '[[pix:y/lp_rtl]]'
                     }]
             },
-            svg_colors_core: {
+            svg_colours_core: {
                 src: 'pix_core/**/*.svg',
                     overwrite: true,
                     replacements: [{
                         from: '#999',
-                        to: svgcolor
+                        to: svgcolour
                     }]
             },
-            svg_colors_plugins: {
+            svg_colours_plugins: {
                 src: 'pix_plugins/**/*.svg',
                     overwrite: true,
                     replacements: [{
                         from: '#999',
-                        to: svgcolor
+                        to: svgcolour
                     }]
             },
             font_fix: {
@@ -399,6 +399,36 @@ module.exports = function(grunt) {
                         from: 'sourceMappingURL=',
                         to: 'sourceMappingURL=/theme/'+ THEMEDIR + '/style/'
                     }]
+            }
+        },
+        svgmin: {                       // Task
+            options: {                  // Configuration that will be passed directly to SVGO
+                plugins: [{
+                    removeViewBox: false
+                }, {
+                    removeUselessStrokeAndFill: false
+                }, {
+                    convertPathData: { 
+                        straightCurves: false // advanced SVGO plugin option
+                   }
+                }]
+            },
+            dist: {                     // Target
+                files: [{               // Dictionary of files
+                    expand: true,       // Enable dynamic expansion.
+                    cwd: 'pix_core',     // Src matches are relative to this path.
+                    src: ['**/*.svg'],  // Actual pattern(s) to match.
+                    dest: 'pix_core/',       // Destination path prefix.
+                    ext: '.svg'     // Dest filepaths will have this extension.
+                    // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
+                }, {               // Dictionary of files
+                    expand: true,       // Enable dynamic expansion.
+                    cwd: 'pix_plugins',     // Src matches are relative to this path.
+                    src: ['**/*.svg'],  // Actual pattern(s) to match.
+                    dest: 'pix_plugins/',       // Destination path prefix.
+                    ext: '.svg'     // Dest filepaths will have this extension.
+                    // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
+                }]
             }
         }
     });
@@ -480,6 +510,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-csscomb');
+    grunt.loadNpmTasks('grunt-svgmin');
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
@@ -488,5 +519,7 @@ module.exports = function(grunt) {
     grunt.registerTask("bootswatch", _bootswatch);
     grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "autoprefixer", 'csscomb', 'cssmin', "replace:sourcemap", "decache"]);
     grunt.registerTask("swatch", ["bootswatch", "svg", "compile"]);
-    grunt.registerTask("svg", ["copy:svg_core", "copy:svg_plugins", "replace:svg_colors_core", "replace:svg_colors_plugins"]);
+    grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
+    grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
+    grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
 };
