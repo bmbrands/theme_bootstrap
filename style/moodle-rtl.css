@@ -5937,7 +5937,7 @@ a.thumbnail.active {
   }
 
   to {
-    background-position: 100% 0;
+    background-position: 0 0;
   }
 }
 
@@ -5947,7 +5947,7 @@ a.thumbnail.active {
   }
 
   to {
-    background-position: 100% 0;
+    background-position: 0 0;
   }
 }
 
@@ -5957,7 +5957,7 @@ a.thumbnail.active {
   }
 
   to {
-    background-position: 100% 0;
+    background-position: 0 0;
   }
 }
 
@@ -8978,7 +8978,7 @@ a.skip:active {
 .smartselect .smartselect_submenuitem {
   background-image: url([[pix:t/collapsed_rtl]]);
   background-repeat: no-repeat;
-  background-position: right 100%;
+  background-position: 0%;
 }
 
 /** Spanning mode */
@@ -19472,7 +19472,7 @@ input[type="reset"] .badge {
 
 button.yui3-button.closebutton,
 button.yui3-button.closebutton:hover {
-  background-position: 100% 0;
+  background-position: 0 0;
 }
 
 input.fp-btn-choose {
