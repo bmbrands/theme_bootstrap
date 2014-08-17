@@ -105,7 +105,7 @@
     }
 
     // Negate the push applied when transitioning from three columns.
-	// LTR does not have this vice-versa issue as no 'push' for post.
+    // LTR does not have this vice-versa issue as no 'push' for post.
     &.empty-region-side-post.used-region-side-pre #block-region-side-pre {
         .make-sm-column-push(0);
         .make-lg-column-push(0);
@@ -182,6 +182,9 @@ a.disabled {
 .notifytiny li,
 .notifytiny td {
     font-size: 100%;
+}
+.highlight { // MDL-41506.
+    background: @state-info-bg;
 }
 .reportlink {
     text-align: right;
