@@ -120,6 +120,7 @@
     }
     div.questionbankwindow.block {
         padding: 0;
+        border-width: 1px;
     }
 }
 #categoryquestions {
@@ -128,6 +129,7 @@
     	width: 19px;
         input[type="checkbox"] {
         	margin-left: 0px;
+            position: relative;
         }
     }
     img.iconsmall {
@@ -328,7 +330,39 @@ body.path-question-type .fitem_fgroup .accesshide {
     margin: 1em 0;
 }
 
+
+// Bootstrap 3 only
+
+#questionbank + .container {
+    padding: 0;
+}
 // imported from quiz.css
+
+#page-mod-quiz-edit .box.generalbox.questionbank {
+    padding: 0.5em;
+}
+
+#page-mod-quiz-edit .questionbank .categorypagingbarcontainer,
+#page-mod-quiz-edit .questionbank .categoryquestionscontainer,
+#page-mod-quiz-edit .questionbank .choosecategory {
+    padding: 0;
+}
+
+#page-mod-quiz-edit .questionbank .choosecategory select {
+    width: 100%;
+}
+
+#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
+    margin: 0;
+    background: transparent;
+}
+#page-mod-quiz-edit #categoryquestions>thead {
+    background: #FFF;
+}
+#page-mod-quiz-edit #categoryquestions>tbody>tr:nth-of-type(even) {
+    background: #e4e4e4;
+}
+
 #page-mod-quiz-edit .questionbankwindow div.header {
     color: #444;
     text-shadow: none;
@@ -348,6 +382,66 @@ body.path-question-type .fitem_fgroup .accesshide {
     color: @link-hover-color;
 }
 
+#page-mod-quiz-edit .createnewquestion {
+    padding: 0.3em 0;
+    div, input {
+        margin: 0;
+    }
+}
+
+#page-mod-quiz-edit .questionbankwindow div.header .title {
+    color: @text-color;
+}
+
+#page-mod-quiz-edit div.container div.generalbox {
+    background-color: transparent;
+    padding: 1.5em;
+}
+
+#page-mod-quiz-edit .categoryinfo {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+#page-mod-quiz-edit .createnewquestion .singlebutton input {
+    margin-bottom: 0;
+}
+
+#page-mod-quiz-edit div.questionbank .categorysortopotionscontainer,
+#page-mod-quiz-edit div.questionbank .categoryselectallcontainer {
+    padding: 0 0 1.5em 0;
+}
+
+#page-mod-quiz-edit div.questionbank .categorypagingbarcontainer {
+    background-color: transparent;
+    margin: 0;
+    border-top: 0;
+    border-bottom: 0;
+    .paging {
+        padding: 0 0.3em;
+    }
+}
+
+#page-mod-quiz-edit div.question div.content div.questioncontrols {
+    background-color: @body-bg;
+}
+#page-mod-quiz-edit div.question div.content div.points {
+    margin-top: -0.5em;
+    padding-bottom: 0em;
+    border: none;
+    background-color: @body-bg;
+    position: static;
+    width: 12.1em;
+    float: right;
+    margin-right: 60px;
+}
+#page-mod-quiz-edit div.question div.content div.points br {
+    display: none;
+}
+#page-mod-quiz-edit div.question div.content div.points label {
+    display: inline-block;
+}
+
 #page-mod-quiz-edit .questionbankwindow div.header .title {
     color: @text-color;
 }
@@ -362,9 +456,7 @@ body.path-question-type .fitem_fgroup .accesshide {
     border-bottom: none;
 }
 
-#page-mod-quiz-edit div.questionbank .categoryquestionscontainer,
 #page-mod-quiz-edit div.questionbank .categorysortopotionscontainer,
-#page-mod-quiz-edit div.questionbank .categorypagingbarcontainer,
 #page-mod-quiz-edit div.questionbank .categoryselectallcontainer {
     padding: 0 0 1.5em 0;
 }
@@ -377,9 +469,6 @@ body.path-question-type .fitem_fgroup .accesshide {
     border-bottom: none;
 }
 
-#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
-    margin: 0 -1.2em -1em -1.2em;
-}
 #page-mod-quiz-edit div.question div.content div.questioncontrols {
     background-color: @body-bg;
 }
@@ -392,9 +481,7 @@ body.path-question-type .fitem_fgroup .accesshide {
 #page-mod-quiz-edit div.question div.content div.points label {
     display: inline-block;
 }
-#page-mod-quiz-edit .question .questioncontentcontainer .singlequestion label {
-    display: inherit;
-}
+
 #page-mod-quiz-edit div.quizpage .pagecontent .pagestatus {
     background-color: @body-bg;
 }
@@ -430,6 +517,7 @@ body.path-question-type .fitem_fgroup .accesshide {
     }
     input {
         margin-left: 0;
+        margin-bottom: 0.3em;
     }
     input + input {
         margin-left: 5px;

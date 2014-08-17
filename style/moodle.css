@@ -12520,12 +12520,14 @@ textareatextarea {
 }
 #page-mod-quiz-edit div.questionbankwindow.block {
   padding: 0;
+  border-width: 1px;
 }
 #categoryquestions .checkbox {
   display: table-cell;
   width: 19px;
 }
 #categoryquestions .checkbox input[type="checkbox"] {
+  position: relative;
   margin-left: 0;
 }
 #categoryquestions img.iconsmall {
@@ -12811,6 +12813,30 @@ a.que .correctness:focus {
 #page-question-preview #techinfo {
   margin: 1em 0;
 }
+#questionbank + .container {
+  padding: 0;
+}
+#page-mod-quiz-edit .box.generalbox.questionbank {
+  padding: .5em;
+}
+#page-mod-quiz-edit .questionbank .categorypagingbarcontainer,
+#page-mod-quiz-edit .questionbank .categoryquestionscontainer,
+#page-mod-quiz-edit .questionbank .choosecategory {
+  padding: 0;
+}
+#page-mod-quiz-edit .questionbank .choosecategory select {
+  width: 100%;
+}
+#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
+  margin: 0;
+  background: transparent;
+}
+#page-mod-quiz-edit #categoryquestions > thead {
+  background: #fff;
+}
+#page-mod-quiz-edit #categoryquestions > tbody > tr:nth-of-type(even) {
+  background: #e4e4e4;
+}
 #page-mod-quiz-edit .questionbankwindow div.header {
   padding: 3px;
   padding: 2px 10px 2px 10px;
@@ -12829,6 +12855,59 @@ a.que .correctness:focus {
 #page-mod-quiz-edit .questionbankwindow div.header a:hover {
   color: #2a6496;
 }
+#page-mod-quiz-edit .createnewquestion {
+  padding: .3em 0;
+}
+#page-mod-quiz-edit .createnewquestion div,
+#page-mod-quiz-edit .createnewquestion input {
+  margin: 0;
+}
+#page-mod-quiz-edit .questionbankwindow div.header .title {
+  color: #333;
+}
+#page-mod-quiz-edit div.container div.generalbox {
+  padding: 1.5em;
+  background-color: transparent;
+}
+#page-mod-quiz-edit .categoryinfo {
+  background-color: transparent;
+  border-bottom: none;
+}
+#page-mod-quiz-edit .createnewquestion .singlebutton input {
+  margin-bottom: 0;
+}
+#page-mod-quiz-edit div.questionbank .categorysortopotionscontainer,
+#page-mod-quiz-edit div.questionbank .categoryselectallcontainer {
+  padding: 0 0 1.5em 0;
+}
+#page-mod-quiz-edit div.questionbank .categorypagingbarcontainer {
+  margin: 0;
+  background-color: transparent;
+  border-top: 0;
+  border-bottom: 0;
+}
+#page-mod-quiz-edit div.questionbank .categorypagingbarcontainer .paging {
+  padding: 0 .3em;
+}
+#page-mod-quiz-edit div.question div.content div.questioncontrols {
+  background-color: #fff;
+}
+#page-mod-quiz-edit div.question div.content div.points {
+  position: static;
+  float: right;
+  width: 12.1em;
+  padding-bottom: 0;
+  margin-top: -.5em;
+  margin-right: 60px;
+  background-color: #fff;
+  border: none;
+}
+#page-mod-quiz-edit div.question div.content div.points br {
+  display: none;
+}
+#page-mod-quiz-edit div.question div.content div.points label {
+  display: inline-block;
+}
 #page-mod-quiz-edit .questionbankwindow div.header .title {
   color: #333;
 }
@@ -12840,9 +12919,7 @@ a.que .correctness:focus {
   background-color: #fff;
   border-bottom: none;
 }
-#page-mod-quiz-edit div.questionbank .categoryquestionscontainer,
 #page-mod-quiz-edit div.questionbank .categorysortopotionscontainer,
-#page-mod-quiz-edit div.questionbank .categorypagingbarcontainer,
 #page-mod-quiz-edit div.questionbank .categoryselectallcontainer {
   padding: 0 0 1.5em 0;
 }
@@ -12852,9 +12929,6 @@ a.que .correctness:focus {
   background-color: transparent;
   border-top: none;
   border-bottom: none;
-}
-#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
-  margin: 0 -1.2em -1em -1.2em;
 }
 #page-mod-quiz-edit div.question div.content div.questioncontrols {
   background-color: #fff;
@@ -12867,9 +12941,6 @@ a.que .correctness:focus {
 }
 #page-mod-quiz-edit div.question div.content div.points label {
   display: inline-block;
-}
-#page-mod-quiz-edit .question .questioncontentcontainer .singlequestion label {
-  display: inherit;
 }
 #page-mod-quiz-edit div.quizpage .pagecontent .pagestatus {
   background-color: #fff;
@@ -12903,6 +12974,7 @@ a.que .correctness:focus {
   margin-left: .3em;
 }
 #page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer input {
+  margin-bottom: .3em;
   margin-left: 0;
 }
 #page-mod-quiz-edit div.questionbank .modulespecificbuttonscontainer input + input {
@@ -15018,6 +15090,9 @@ fieldset[disabled] #page-mod-forum-discuss .discussioncontrols .discussioncontro
 }
 textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion select.urlselect {
   height: auto;
+}
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion input[type="submit"] {
+  float: left;
 }
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {
   float: left;
