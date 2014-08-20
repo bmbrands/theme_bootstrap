@@ -8018,7 +8018,6 @@ fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.t
 }
 .moodle-actionmenu[data-enhanced].show {
   position: relative;
-  display: inline-block !important;
 }
 .moodle-actionmenu[data-enhanced].show .menu {
   position: absolute;
