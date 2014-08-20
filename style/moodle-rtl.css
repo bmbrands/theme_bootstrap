@@ -5937,7 +5937,7 @@ a.thumbnail.active {
   }
 
   to {
-    background-position: 0 0;
+    background-position: 100% 0;
   }
 }
 
@@ -5947,7 +5947,7 @@ a.thumbnail.active {
   }
 
   to {
-    background-position: 0 0;
+    background-position: 100% 0;
   }
 }
 
@@ -5957,7 +5957,7 @@ a.thumbnail.active {
   }
 
   to {
-    background-position: 0 0;
+    background-position: 100% 0;
   }
 }
 
@@ -8982,7 +8982,7 @@ a.skip:active {
 .smartselect .smartselect_submenuitem {
   background-image: url([[pix:t/collapsed_rtl]]);
   background-repeat: no-repeat;
-  background-position: 0%;
+  background-position: right 100%;
 }
 
 /** Spanning mode */
@@ -12183,6 +12183,7 @@ span.editinstructions {
 }
 
 #course-category-listings .item-actions {
+  float: right;
   margin-left: 1em;
   display: inline-block;
 }
@@ -19569,7 +19570,7 @@ input[type="reset"] .badge {
 
 button.yui3-button.closebutton,
 button.yui3-button.closebutton:hover {
-  background-position: 0 0;
+  background-position: 100% 0;
 }
 
 input.fp-btn-choose {

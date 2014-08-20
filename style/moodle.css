@@ -9967,6 +9967,7 @@ span.editinstructions {
 }
 #course-category-listings .item-actions {
   display: inline-block;
+  float: left;
   margin-right: 1em;
 }
 #course-category-listings .item-actions img {
