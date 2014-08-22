@@ -113,7 +113,33 @@
 #chooseqtype .selected .qtypesummary {
     display: block;
 }
-
+#categoryquestions {
+    margin: 0;
+    td,
+    th {
+        padding: 0 0.2em;
+    }
+    th {
+        text-align: left;
+        font-weight: normal;
+    }
+    .checkbox {
+        padding-left: 5px;
+    }
+    .checkbox input[type="checkbox"] {
+        margin-left: 0px;
+        float: none;
+    }
+    img.iconsmall {
+        padding: 0;
+    }
+    .iconcol {
+        padding: 3px;
+    }
+    label {
+        margin: 0;
+    }
+}
 #page-mod-quiz-edit {
     div.questionbankwindow div.header {
         margin: 0;
@@ -162,6 +188,8 @@ body.path-question-type .fitem_fgroup .accesshide {
     left: 0;
     position: static;
     padding-right: .3em;
+    width: auto;
+    height: auto;
 }
 .que {
     clear: left;
@@ -189,6 +217,11 @@ body.path-question-type .fitem_fgroup .accesshide {
 .que .info > div {
     font-size: 0.8em;
     margin-top: 0.7em;
+}
+
+body.path-question-type .mform fieldset.hidden {
+    padding: 0;
+    margin: 0.7em 0 0;
 }
 .que .info .questionflag.editable {
     cursor: pointer;
@@ -556,13 +589,13 @@ a#hidebankcmd {
     display: inline;
 }
 
-/* Add a little padding to the answer sections of edit question forms. */
-.path-question-type #id_answerhdr .fitem .fitemtitle,
-.path-question-type #id_answerhdr .fitem .felement {
-    margin-left: 6px;
-    margin-right: 6px;
-}
+
 .path-question-type #id_answerhdr .fitem_feditor .felement {
     margin-left: 0px;
     margin-right: 0px;
+}
+
+body.path-question-type .mform fieldset.hidden {
+    padding: 0;
+    margin: 0.7em 0 0;
 }

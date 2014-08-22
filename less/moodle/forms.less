@@ -33,7 +33,8 @@
             }
             .felement.fduration,
             .felement.fdate_selector,
-            .felement.fdate_time_selector {
+            .felement.fdate_time_selector,
+            .felement.fgroup {
                 select {
                     width: auto;
                     display: inline-block;
@@ -46,6 +47,10 @@
                 label {
                     display: inline-block;
                 }
+            }
+            .felement.fgroup input[type="text"] {
+                min-width: unset;
+                display: inline;
             }
         }
     }

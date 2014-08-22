@@ -12518,6 +12518,33 @@ textareatextarea {
 #chooseqtype .selected .qtypesummary {
   display: block;
 }
+#categoryquestions {
+  margin: 0;
+}
+#categoryquestions td,
+#categoryquestions th {
+  padding: 0 .2em;
+}
+#categoryquestions th {
+  font-weight: normal;
+  text-align: left;
+}
+#categoryquestions .checkbox {
+  padding-left: 5px;
+}
+#categoryquestions .checkbox input[type="checkbox"] {
+  float: none;
+  margin-left: 0;
+}
+#categoryquestions img.iconsmall {
+  padding: 0;
+}
+#categoryquestions .iconcol {
+  padding: 3px;
+}
+#categoryquestions label {
+  margin: 0;
+}
 #page-mod-quiz-edit div.questionbankwindow div.header {
   margin: 0;
 }
@@ -12559,6 +12586,8 @@ textareatextarea {
 body.path-question-type .fitem_fgroup .accesshide {
   position: static;
   left: 0;
+  width: auto;
+  height: auto;
   padding-right: .3em;
   font: inherit;
 }
@@ -12588,6 +12617,10 @@ body.path-question-type .fitem_fgroup .accesshide {
 .que .info > div {
   margin-top: .7em;
   font-size: .8em;
+}
+body.path-question-type .mform fieldset.hidden {
+  padding: 0;
+  margin: .7em 0 0;
 }
 .que .info .questionflag.editable {
   cursor: pointer;
@@ -13005,15 +13038,13 @@ a#hidebankcmd {
 .que label {
   display: inline;
 }
-/* Add a little padding to the answer sections of edit question forms. */
-.path-question-type #id_answerhdr .fitem .fitemtitle,
-.path-question-type #id_answerhdr .fitem .felement {
-  margin-right: 6px;
-  margin-left: 6px;
-}
 .path-question-type #id_answerhdr .fitem_feditor .felement {
   margin-right: 0;
   margin-left: 0;
+}
+body.path-question-type .mform fieldset.hidden {
+  padding: 0;
+  margin: .7em 0 0;
 }
 /* user.less */
 .user-box {
@@ -14425,7 +14456,9 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 .mform .fcontainer .fitem .felement.fdate_selector select,
 .mform fieldset .fitem .felement.fdate_selector select,
 .mform .fcontainer .fitem .felement.fdate_time_selector select,
-.mform fieldset .fitem .felement.fdate_time_selector select {
+.mform fieldset .fitem .felement.fdate_time_selector select,
+.mform .fcontainer .fitem .felement.fgroup select,
+.mform fieldset .fitem .felement.fgroup select {
   display: inline-block;
   width: auto;
   min-width: 60px;
@@ -14436,12 +14469,16 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 .mform fieldset .fitem .felement.fdate_selector select[size],
 .mform .fcontainer .fitem .felement.fdate_time_selector select[size],
 .mform fieldset .fitem .felement.fdate_time_selector select[size],
+.mform .fcontainer .fitem .felement.fgroup select[size],
+.mform fieldset .fitem .felement.fgroup select[size],
 .mform .fcontainer .fitem .felement.fduration select[multiple],
 .mform fieldset .fitem .felement.fduration select[multiple],
 .mform .fcontainer .fitem .felement.fdate_selector select[multiple],
 .mform fieldset .fitem .felement.fdate_selector select[multiple],
 .mform .fcontainer .fitem .felement.fdate_time_selector select[multiple],
-.mform fieldset .fitem .felement.fdate_time_selector select[multiple] {
+.mform fieldset .fitem .felement.fdate_time_selector select[multiple],
+.mform .fcontainer .fitem .felement.fgroup select[multiple],
+.mform fieldset .fitem .felement.fgroup select[multiple] {
   height: auto;
 }
 .mform .fcontainer .fitem .felement.fduration label,
@@ -14449,8 +14486,15 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 .mform .fcontainer .fitem .felement.fdate_selector label,
 .mform fieldset .fitem .felement.fdate_selector label,
 .mform .fcontainer .fitem .felement.fdate_time_selector label,
-.mform fieldset .fitem .felement.fdate_time_selector label {
+.mform fieldset .fitem .felement.fdate_time_selector label,
+.mform .fcontainer .fitem .felement.fgroup label,
+.mform fieldset .fitem .felement.fgroup label {
   display: inline-block;
+}
+.mform .fcontainer .fitem .felement.fgroup input[type="text"],
+.mform fieldset .fitem .felement.fgroup input[type="text"] {
+  display: inline;
+  min-width: unset;
 }
 .mform .fitem_actionbuttons {
   margin-right: -15px;
