@@ -26,12 +26,16 @@ echo $OUTPUT->doctype() ?>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
-<?php
-echo $OUTPUT->standard_top_of_body_html();
-echo $OUTPUT->main_content();
-echo $OUTPUT->standard_footer_html();
-echo $OUTPUT->standard_end_of_body_html();
-?>
+<div id="page-content" class="row-fluid">
+    <section id="region-main" class="col-md-12">
+    <?php
+    echo $OUTPUT->standard_top_of_body_html();
+    echo $OUTPUT->main_content();
+    echo $OUTPUT->standard_footer_html();
+    echo $OUTPUT->standard_end_of_body_html();
+    ?>
+    </section>
+</div>
 
 </div>
 </body>
