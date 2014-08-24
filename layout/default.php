@@ -74,6 +74,9 @@ echo $OUTPUT->doctype() ?>
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
             <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+            <?php if ($knownregionpre || $knownregionpost) { ?>
+                <div class="breadcrumb-button"> <?php echo $OUTPUT->content_zoom(); ?></div>
+            <?php } ?>
         </div>
 
         <div id="course-header">
@@ -85,9 +88,7 @@ echo $OUTPUT->doctype() ?>
         <div id="region-main" class="<?php echo $regions['content']; ?>">
             <?php
             echo $OUTPUT->course_content_header();
-            if ($knownregionpre || $knownregionpost) {
-                echo $OUTPUT->content_zoom();
-            }
+
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>

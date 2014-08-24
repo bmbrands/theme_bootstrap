@@ -43,14 +43,6 @@
             top: 0;
         }
 
-        .mod-indent-outer {
-            /**
-             * Add appropriate padding such that nothing overlaps the
-             * absolute positioned move icon.
-             */
-            padding-left: 32px;
-        }
-
         /* The command block for each activity */
         .actions {
             position: absolute;
@@ -84,7 +76,7 @@
       }
 
       .mod-indent-outer {
-        padding-left: 24px;
+        padding-left: 0px;
         display: block;
       }
     }
@@ -111,10 +103,6 @@
     }
 }
 
-.editing .section .activity  .mod-indent-outer {
-    padding-left: 32px;
-}
-
 .activity img.activityicon {
     margin-right: 6px;
     vertical-align: text-bottom;
@@ -125,17 +113,34 @@
     display: inline-block;
 }
 .editing {
-    .section {
-        .activity {
-            .contentwithoutlink,
-            .activityinstance {
-                padding-right: 200px;
-            }
+    .section .activity {
+        .contentwithoutlink,
+        .activityinstance {
+            padding-right: 200px;
+        }
+        .mod-indent-outer {
+            padding-left: 32px;
+        }
+        &:hover,
+        &.action-menu-shown {
+            background-color: @gray-lighter;
+        }
+    }
+    .course-content ul li.section.main {
+        .left, 
+        .right {
+            display: inherit;
+        }
+    }
+    ul.weeks {
+        h3.sectionname {
+            white-space: normal;
         }
     }
 }
 
-.editing_show + .editing_assign,.editing_hide + .editing_assign {
+.editing_show + .editing_assign,
+.editing_hide + .editing_assign {
     // if roles icon missing, add space
     margin-left: 20px;
 }
@@ -173,9 +178,7 @@
     margin-top: 0.5em;
     margin-left: 30px;
 }
-.editing .section .activity:hover,.editing .section .activity.action-menu-shown {
-    background-color: @gray-lighter;
-}
+
 
 .course-content {
     margin-top: 0;
@@ -241,6 +244,10 @@
         li.section.main {
             border-bottom: 2px solid #eee;
             margin-top: 0;
+            .left,
+            .right {
+                display: none;
+            }
         }
         li.section.hidden {
             .opacity(.5);
@@ -255,9 +262,10 @@
         }
     }
 }
-.course-content ul.topics li.section .content,.course-content ul.weeks li.section .content {
-    margin-right: 20px;
-    margin-left: 20px;
+.course-content ul.topics li.section .content,
+.course-content ul.weeks li.section .content {
+    margin-right: 0px;
+    margin-left: 0px;
     padding: 0;
 }
 .path-course-view {
@@ -335,13 +343,7 @@ ul.weeks {
         white-space: nowrap;
     }
 }
-.editing {
-    ul.weeks {
-        h3.sectionname {
-            white-space: normal;
-        }
-    }
-}
+
 .single-section {
     h3.sectionname {
         text-align: center;

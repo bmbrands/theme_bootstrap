@@ -11318,14 +11318,6 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
   top: 0;
 }
 
-.section .activity .mod-indent-outer {
-  /**
-             * Add appropriate padding such that nothing overlaps the
-             * absolute positioned move icon.
-             */
-  padding-right: 32px;
-}
-
 .section .activity .actions {
   position: absolute;
   left: 0;
@@ -11358,7 +11350,7 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 }
 
 .section .label .mod-indent-outer {
-  padding-right: 24px;
+  padding-right: 0px;
   display: block;
 }
 
@@ -11382,10 +11374,6 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
   vertical-align: text-bottom;
 }
 
-.editing .section .activity .mod-indent-outer {
-  padding-right: 32px;
-}
-
 .activity img.activityicon {
   margin-left: 6px;
   vertical-align: text-bottom;
@@ -11399,6 +11387,24 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 .editing .section .activity .contentwithoutlink,
 .editing .section .activity .activityinstance {
   padding-left: 200px;
+}
+
+.editing .section .activity .mod-indent-outer {
+  padding-right: 32px;
+}
+
+.editing .section .activity:hover,
+.editing .section .activity.action-menu-shown {
+  background-color: #eeeeee;
+}
+
+.editing .course-content ul li.section.main .left,
+.editing .course-content ul li.section.main .right {
+  display: inherit;
+}
+
+.editing ul.weeks h3.sectionname {
+  white-space: normal;
 }
 
 .editing_show + .editing_assign,
@@ -11438,11 +11444,6 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 .section .activity .contentafterlink {
   margin-top: 0.5em;
   margin-right: 30px;
-}
-
-.editing .section .activity:hover,
-.editing .section .activity.action-menu-shown {
-  background-color: #eeeeee;
 }
 
 .course-content {
@@ -11524,6 +11525,11 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
   margin-top: 0;
 }
 
+.course-content ul li.section.main .left,
+.course-content ul li.section.main .right {
+  display: none;
+}
+
 .course-content ul li.section.hidden {
   opacity: 0.5;
   filter: alpha(opacity=50);
@@ -11539,8 +11545,8 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
   padding: 0;
 }
 
@@ -11619,10 +11625,6 @@ li.section.hidden span.commands a.editing_show {
 
 ul.weeks h3.sectionname {
   white-space: nowrap;
-}
-
-.editing ul.weeks h3.sectionname {
-  white-space: normal;
 }
 
 .single-section h3.sectionname {
@@ -13637,6 +13639,16 @@ a.ygtvspacer:hover {
 
 .filemanager.fp-select.fp-folder .fp-file-download {
   display: none;
+}
+
+.filemanager .fp-img-downloading {
+  display: none;
+  padding-top: 7px;
+}
+
+.filemanager .filemanager-updating {
+  display: none;
+  text-align: center;
 }
 
 .fm-operation {
