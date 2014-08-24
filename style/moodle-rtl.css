@@ -10695,17 +10695,7 @@ textarea.path-admin .roleassigntable input[type="text"] {
   color: #843534;
 }
 
-.calendartable {
-  width: 100%;
-}
-
-.calendartable th,
-.calendartable td {
-  width: 14%;
-  vertical-align: top;
-  text-align: center;
-  border: 0;
-}
+/* calendar.less */
 
 .calendar_event_course {
   background-color: #ffd3bd;
@@ -10721,6 +10711,18 @@ textarea.path-admin .roleassigntable input[type="text"] {
 
 .calendar_event_user {
   background-color: #dce7ec;
+}
+
+.path-calendar .calendartable {
+  width: 100%;
+}
+
+.path-calendar .calendartable th,
+.path-calendar .calendartable td {
+  width: 14%;
+  vertical-align: top;
+  text-align: center;
+  border: 0;
 }
 
 .path-calendar .calendar-controls .previous,
@@ -10742,6 +10744,16 @@ textarea.path-admin .roleassigntable input[type="text"] {
 
 .path-calendar .calendar-controls .next {
   text-align: left;
+}
+
+.path-calendar .filters table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  width: 100%;
+}
+
+.path-calendar .cal_courses_flt label {
+  margin-left: .45em;
 }
 
 .path-calendar .maincalendar {
@@ -10777,59 +10789,13 @@ textarea.path-admin .roleassigntable input[type="text"] {
   height: 5em;
 }
 
+.path-calendar .maincalendar .calendar-controls .previous,
+.path-calendar .maincalendar .calendar-controls .next {
+  width: 30%;
+}
+
 .path-calendar .maincalendar .calendar-controls .current {
   width: 39.95%;
-}
-
-.path-calendar .maincalendar .cal_courses_flt select {
-  display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555555;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
-
-.path-calendar .maincalendar .cal_courses_flt select:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-
-.path-calendar .maincalendar .cal_courses_flt select::-moz-placeholder {
-  color: #777777;
-  opacity: 1;
-}
-
-.path-calendar .maincalendar .cal_courses_flt select:-ms-input-placeholder {
-  color: #777777;
-}
-
-.path-calendar .maincalendar .cal_courses_flt select::-webkit-input-placeholder {
-  color: #777777;
-}
-
-.path-calendar .maincalendar .cal_courses_flt select[disabled],
-.path-calendar .maincalendar .cal_courses_flt select[readonly],
-fieldset[disabled] .path-calendar .maincalendar .cal_courses_flt select {
-  cursor: not-allowed;
-  background-color: #eeeeee;
-  opacity: 1;
-}
-
-textarea.path-calendar .maincalendar .cal_courses_flt select {
-  height: auto;
 }
 
 .path-calendar .maincalendar .controls {
@@ -10837,201 +10803,60 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
   margin: 10px auto;
 }
 
-.path-calendar .maincalendar .eventlist .event {
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  border: 1px solid transparent;
+.path-calendar .maincalendar .calendar_event_course,
+.path-calendar .maincalendar .calendar_event_global,
+.path-calendar .maincalendar .calendar_event_group,
+.path-calendar .maincalendar .calendar_event_user {
+  border-width: 1px 12px 1px 1px;
+  border-style: solid;
+}
+
+.path-calendar .maincalendar .calendar_event_course {
+  border-color: #ffd3bd;
+}
+
+.path-calendar .maincalendar .calendar_event_global {
+  border-color: #d6f8cd;
+}
+
+.path-calendar .maincalendar .calendar_event_group {
+  border-color: #fee7ae;
+}
+
+.path-calendar .maincalendar .calendar_event_user {
+  border-color: #dce7ec;
+}
+
+.path-calendar .maincalendar .calendar-event-panel {
+  background-color: #eeeeee;
+  border: 2px solid #eeeeee;
+}
+
+.path-calendar .maincalendar .calendar-event-panel .yui3-overlay-content {
+  padding: 19px;
+  background-color: #fdfdfd;
+  border: 1px solid #e3e3e3;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  border-color: #dddddd;
-  width: 100%;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-.path-calendar .maincalendar .eventlist .event > .list-group {
-  margin-bottom: 0;
+.path-calendar .maincalendar .calendar-controls .current {
+  font-family: inherit;
+  font-weight: 500;
+  color: inherit;
+  font-size: 25px;
+  line-height: 1.2;
 }
 
-.path-calendar .maincalendar .eventlist .event > .list-group .list-group-item {
-  border-width: 1px 0;
-  border-radius: 0;
+.path-calendar .maincalendar .calendartable td,
+.path-calendar .maincalendar .calendartable li {
+  padding: 5px;
 }
 
-.path-calendar .maincalendar .eventlist .event > .list-group:first-child .list-group-item:first-child {
-  border-top: 0;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-.path-calendar .maincalendar .eventlist .event > .list-group:last-child .list-group-item:last-child {
-  border-bottom: 0;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table,
-.path-calendar .maincalendar .eventlist .event > .panel-collapse > .table {
-  margin-bottom: 0;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table:first-child > thead:first-child > tr:first-child td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table:first-child > thead:first-child > tr:first-child th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
-  border-top-right-radius: 3px;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table:first-child > thead:first-child > tr:first-child td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table:first-child > thead:first-child > tr:first-child th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
-  border-top-left-radius: 3px;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
-  border-bottom-right-radius: 3px;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
-  border-bottom-left-radius: 3px;
-}
-
-.path-calendar .maincalendar .eventlist .event > .panel-body + .table,
-.path-calendar .maincalendar .eventlist .event > .panel-body + .table-responsive {
-  border-top: 1px solid #dddddd;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table > tbody:first-child > tr:first-child th,
-.path-calendar .maincalendar .eventlist .event > .table > tbody:first-child > tr:first-child td {
-  border-top: 0;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table-bordered,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered {
-  border: 0;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table-bordered > thead > tr > th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > thead > tr > th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tbody > tr > th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tbody > tr > th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tfoot > tr > th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > thead > tr > td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > thead > tr > td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tbody > tr > td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tbody > tr > td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tfoot > tr > td:first-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
-  border-right: 0;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table-bordered > thead > tr > th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > thead > tr > th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tbody > tr > th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tbody > tr > th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tfoot > tr > th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > thead > tr > td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > thead > tr > td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tbody > tr > td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tbody > tr > td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tfoot > tr > td:last-child,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
-  border-left: 0;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table-bordered > thead > tr:first-child > td,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > thead > tr:first-child > td,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tbody > tr:first-child > td,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tbody > tr:first-child > td,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > thead > tr:first-child > th,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > thead > tr:first-child > th,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tbody > tr:first-child > th,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tbody > tr:first-child > th {
-  border-bottom: 0;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tbody > tr:last-child > td,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tbody > tr:last-child > td,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tfoot > tr:last-child > td,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tbody > tr:last-child > th,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tbody > tr:last-child > th,
-.path-calendar .maincalendar .eventlist .event > .table-bordered > tfoot > tr:last-child > th,
-.path-calendar .maincalendar .eventlist .event > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
-  border-bottom: 0;
-}
-
-.path-calendar .maincalendar .eventlist .event > .table-responsive {
-  border: 0;
-  margin-bottom: 0;
-}
-
-.path-calendar .maincalendar .eventlist .event > .panel-heading {
-  color: #333333;
-  background-color: #f5f5f5;
-  border-color: #dddddd;
-}
-
-.path-calendar .maincalendar .eventlist .event > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #dddddd;
-}
-
-.path-calendar .maincalendar .eventlist .event > .panel-heading .badge {
-  color: #f5f5f5;
-  background-color: #333333;
-}
-
-.path-calendar .maincalendar .eventlist .event > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #dddddd;
-}
-
-.path-calendar .maincalendar .eventlist .event .topic .name {
-  float: right;
-}
-
-.path-calendar .maincalendar .eventlist .event .side {
-  width: 32px;
-}
-
-.path-calendar .maincalendar .eventlist .event .commands a {
-  margin: 0 3px;
+.path-calendar .maincalendar .calendartable li {
+  padding-right: 10px;
+  text-align: right;
 }
 
 .path-calendar .maincalendar .header {
@@ -11042,35 +10867,184 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
   float: left;
 }
 
-.path-calendar .filters table {
-  border-collapse: separate;
-  border-spacing: 2px;
+.path-calendar .maincalendar .eventlist .event {
   width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  position: relative;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fdfdfd;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-.path-calendar .cal_courses_flt label {
-  margin-left: .45em;
+.path-calendar .maincalendar .eventlist .event .picture {
+  vertical-align: text-top;
 }
 
-.path-calendar .maincalendar .calendar-controls .previous,
-.path-calendar .maincalendar .calendar-controls .next {
-  width: 30%;
+.path-calendar .maincalendar .eventlist .event .topic .name {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24px;
+  float: right;
 }
 
-.path-calendar .maincalendar .eventlist .event .subscription,
-.path-calendar .maincalendar .eventlist .event .course {
+.path-calendar .maincalendar .eventlist .event .topic .name,
+.path-calendar .maincalendar .eventlist .event .topic .course {
+  margin-bottom: 5px;
+}
+
+.path-calendar .maincalendar .eventlist .event .topic .date {
+  float: left;
+}
+
+.path-calendar .maincalendar .eventlist .event .course,
+.path-calendar .maincalendar .eventlist .event .subscription {
   float: right;
   clear: right;
+}
+
+.path-calendar .maincalendar .eventlist .event .side {
+  width: 22px;
+}
+
+.path-calendar .maincalendar .eventlist .event .description {
+  background-color: #FFF;
+  padding: 5px;
+}
+
+.path-calendar .maincalendar .eventlist .event .description .commands {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 3px;
+}
+
+.path-calendar .maincalendar .eventlist .event .commands a {
+  margin: 0 3px;
+}
+
+.dir-rtl.path-calendar .cal_courses_flt label {
+  margin-right: .45em;
+  margin-left: 0;
+}
+
+.dir-rtl.path-calendar .maincalendar .calendar_event_course,
+.dir-rtl.path-calendar .maincalendar .calendar_event_global,
+.dir-rtl.path-calendar .maincalendar .calendar_event_group,
+.dir-rtl.path-calendar .maincalendar .calendar_event_user {
+  border-right-width: 1px;
+  border-left-width: 12px;
+}
+
+.dir-rtl.path-calendar .maincalendar .calendar-controls .next {
+  text-align: right;
+}
+
+.dir-rtl.path-calendar .maincalendar .calendar-controls .previous {
+  text-align: left;
+}
+
+.dir-rtl.path-calendar .maincalendar .calendartable td,
+.dir-rtl.path-calendar .maincalendar .calendartable li {
+  text-align: left;
+}
+
+.dir-rtl.path-calendar .maincalendar .calendartable li {
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.dir-rtl.path-calendar .maincalendar .header .buttons {
+  float: right;
+}
+
+.dir-rtl.path-calendar .maincalendar .eventlist .event .topic .name {
+  float: left;
+}
+
+.dir-rtl.path-calendar .maincalendar .eventlist .event .topic .date {
+  float: right;
+}
+
+.dir-rtl.path-calendar .maincalendar .eventlist .event .description .commands {
+  left: inherit;
+  right: 0;
+}
+
+.dir-rtl.path-calendar .maincalendar .eventlist .event .course,
+.dir-rtl.path-calendar .maincalendar .eventlist .event .subscription {
+  float: left;
+  clear: left;
 }
 
 #page-calendar-export .indent {
   padding-right: 20px;
 }
 
+.block .minicalendar {
+  max-width: 280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .block .minicalendar th,
 .block .minicalendar td {
   padding: 2px;
   font-size: 0.8em;
+  text-align: center;
+}
+
+.block .minicalendar td.weekend {
+  color: #777777;
+}
+
+.block .calendar-event-panel {
+  background-color: #eeeeee;
+  border: 1px solid #eeeeee;
+}
+
+.block .calendar-event-panel .yui3-overlay-content {
+  padding: 19px;
+  background-color: #fdfdfd;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.block .calendar-event-panel .yui3-overlay-content h2.eventtitle {
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+.block .calendar-event-panel .yui3-overlay-content .eventcontent img {
+  padding-left: 5px;
+}
+
+.block .calendar-controls .previous,
+.block .calendar-controls .current,
+.block .calendar-controls .next {
+  display: block;
+  float: right;
+}
+
+.block .calendar-controls .previous {
+  text-align: right;
+  width: 12%;
+}
+
+.block .calendar-controls .current {
+  text-align: center;
+  width: 76%;
+}
+
+.block .calendar-controls .next {
+  text-align: left;
+  width: 12%;
 }
 
 .block .calendar_filters ul {
@@ -11079,184 +11053,25 @@ textarea.path-calendar .maincalendar .cal_courses_flt select {
 }
 
 .block .calendar_filters li {
-  margin-bottom: .2em;
+  margin-bottom: 0.2em;
 }
 
 .block .calendar_filters li span img {
-  padding: 0 .2em;
+  padding: 0 0.2em;
 }
 
 .block .calendar_filters .eventname {
-  padding-right: .2em;
+  padding-right: 0.2em;
 }
 
-.block .minicalendar {
-  max-width: 280px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.block .minicalendar td.weekend {
-  color: #f0ad4e;
-}
-
-.block .minicalendar .calendar-controls .previous {
-  text-align: right;
-  display: block;
-  float: right;
-  width: 12%;
-}
-
-.block .minicalendar .calendar-controls .current {
-  float: right;
-  text-align: center;
-  display: block;
-  width: 76%;
-}
-
-.block .minicalendar .calendar-controls .next {
-  text-align: left;
-  display: block;
-  float: right;
-  width: 12%;
-}
-
-.block .minicalendar .content h3.eventskey {
+.block .content h3.eventskey {
   margin-top: 0.5em;
 }
 
-.block .minicalendar .calendar-event-panel {
-  border: 0;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1060;
-  display: none;
-  max-width: 276px;
-  padding: 1px;
-  text-align: right;
-  background-color: #ffffff;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  white-space: normal;
-  display: block;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.top {
-  margin-top: -10px;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.right {
-  margin-right: 10px;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.bottom {
-  margin-top: 10px;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.left {
-  margin-right: -10px;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.top > .arrow {
-  right: 50%;
-  margin-right: -11px;
-  border-bottom-width: 0;
-  border-top-color: #999999;
-  border-top-color: rgba(0, 0, 0, 0.25);
-  bottom: -11px;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.top > .arrow:after {
-  content: " ";
-  bottom: 1px;
-  margin-right: -10px;
-  border-bottom-width: 0;
-  border-top-color: #ffffff;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.right > .arrow {
-  top: 50%;
-  right: -11px;
-  margin-top: -11px;
-  border-right-width: 0;
-  border-left-color: #999999;
-  border-left-color: rgba(0, 0, 0, 0.25);
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.right > .arrow:after {
-  content: " ";
-  right: 1px;
-  bottom: -10px;
-  border-right-width: 0;
-  border-left-color: #ffffff;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.bottom > .arrow {
-  right: 50%;
-  margin-right: -11px;
-  border-top-width: 0;
-  border-bottom-color: #999999;
-  border-bottom-color: rgba(0, 0, 0, 0.25);
-  top: -11px;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.bottom > .arrow:after {
-  content: " ";
-  top: 1px;
-  margin-right: -10px;
-  border-top-width: 0;
-  border-bottom-color: #ffffff;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.left > .arrow {
-  top: 50%;
-  left: -11px;
-  margin-top: -11px;
-  border-left-width: 0;
-  border-right-color: #999999;
-  border-right-color: rgba(0, 0, 0, 0.25);
-}
-
-.block .minicalendar .calendar-event-panel .yui3-overlay-content.left > .arrow:after {
-  content: " ";
-  left: 1px;
-  border-left-width: 0;
-  border-right-color: #ffffff;
-  bottom: -10px;
-}
-
-.block .minicalendar .calendar-event-panel h2 {
-  margin: 0;
-  padding: 8px 14px;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 18px;
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #ebebeb;
-  border-radius: 5px 5px 0 0;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-widget-bd {
-  padding: 9px 14px;
-  border: 1px dotted rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  margin: 10px;
-  background-color: #ffffff;
-}
-
-.block .minicalendar .calendar-event-panel .yui3-widget-bd .eventcontent {
-  text-align: right;
-  margin: 0;
-  font-size: 14px;
+@media (min-width: 768px) {
+  #page-calender-view .container-fluid {
+    min-width: 1024px;
+  }
 }
 
 /* course.less */
