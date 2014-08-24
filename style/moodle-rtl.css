@@ -15686,6 +15686,7 @@ a#hidebankcmd {
 
 .que label {
   display: inline;
+  font-weight: normal;
 }
 
 .path-question-type #id_answerhdr .fitem_feditor .felement {
