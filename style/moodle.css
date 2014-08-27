@@ -6388,6 +6388,10 @@ button.close {
   margin-left: 10px;
   border-radius: 6px 0 6px 6px;
 }
+div[role="main"] ul,
+div[role="main"] ol {
+  padding: 0 20px;
+}
 /* some very targetted corrections to roll back nameclashes between
  * Moodle and Bootstrap like .row, .label, .content, .controls
  *
@@ -9069,10 +9073,6 @@ textarea.path-admin .roleassigntable input[type="text"] {
 .section_add_menus .horizontal form {
   display: inline;
 }
-.site-topic ul.section,
-.course-content ul.section {
-  margin: 1em;
-}
 .section .spinner {
   width: 16px;
   height: 16px;
@@ -9166,6 +9166,12 @@ textarea.path-admin .roleassigntable input[type="text"] {
 .editing_show + .editing_assign,
 .editing_hide + .editing_assign {
   margin-left: 20px;
+}
+div[role="main"] ul.section {
+  padding: 0;
+}
+.section {
+  padding: 0;
 }
 .section .activity .commands {
   display: inline !important;
@@ -9264,12 +9270,6 @@ textarea.path-admin .roleassigntable input[type="text"] {
 .course-content ul li.section.hidden {
   filter: alpha(opacity=50);
   opacity: .5;
-}
-.course-content ul.topics li.section {
-  padding-bottom: 20px;
-}
-.course-content ul.topics li.section .summary {
-  margin-left: 25px;
 }
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {

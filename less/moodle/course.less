@@ -21,9 +21,7 @@
 .section_add_menus .horizontal div,.section_add_menus .horizontal form {
     display: inline;
 }
-.site-topic ul.section,.course-content ul.section {
-    margin: 1em;
-}
+
 .section {
     .spinner {
         height: 16px;
@@ -144,7 +142,13 @@
     // if roles icon missing, add space
     margin-left: 20px;
 }
+div[role="main"] {
+    ul.section {
+        padding: 0;
+    }
+}
 .section {
+    padding: 0;
     .activity {
         .commands {
             white-space: nowrap;
@@ -251,14 +255,6 @@
         }
         li.section.hidden {
             .opacity(.5);
-        }
-    }
-    ul.topics {
-        li.section {
-            padding-bottom: 20px;
-            .summary {
-                margin-left: 25px;
-            }
         }
     }
 }
