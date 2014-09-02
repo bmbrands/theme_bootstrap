@@ -2437,8 +2437,7 @@ input[type="month"].input-lg {
   line-height: 46px;
 }
 .form-group,
-.mform .fcontainer .fitem,
-.mform fieldset .fitem,
+.mform .fitem,
 .form-item {
   margin-bottom: 15px;
 }
@@ -2723,8 +2722,7 @@ select[multiple].input-lg {
   min-height: 27px;
 }
 .form-horizontal .form-group,
-.mform .fcontainer .fitem,
-.mform fieldset .fitem,
+.mform .fitem,
 .form-item {
   margin-right: -15px;
   margin-left: -15px;
@@ -6053,10 +6051,8 @@ button.close {
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:before,
 .path-backup .mform .grouped_settings .fitem:after,
-.mform .fcontainer .fitem:before,
-.mform .fcontainer .fitem:after,
-.mform fieldset .fitem:before,
-.mform fieldset .fitem:after,
+.mform .fitem:before,
+.mform .fitem:after,
 .form-item:before,
 .form-item:after {
   display: table;
@@ -6083,8 +6079,7 @@ button.close {
 .mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:after,
-.mform .fcontainer .fitem:after,
-.mform fieldset .fitem:after,
+.mform .fitem:after,
 .form-item:after {
   clear: both;
 }
@@ -9166,9 +9161,6 @@ textarea.path-admin .roleassigntable input[type="text"] {
 .editing_show + .editing_assign,
 .editing_hide + .editing_assign {
   margin-left: 20px;
-}
-div[role="main"] ul.section {
-  padding: 0;
 }
 .section {
   padding: 0;
@@ -14141,60 +14133,50 @@ textarea.searchform input[type="text"] {
   padding-top: 10px;
   padding-left: 0;
 }
-.mform .fcontainer .fitem .fitemtitle,
-.mform fieldset .fitem .fitemtitle {
+.mform .fitem .fitemtitle {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
 @media (min-width: 992px) {
-  .mform .fcontainer .fitem .fitemtitle,
-  .mform fieldset .fitem .fitemtitle {
+  .mform .fitem .fitemtitle {
     float: left;
     width: 33.33333333%;
   }
 }
 @media (min-width: 1200px) {
-  .mform .fcontainer .fitem .fitemtitle,
-  .mform fieldset .fitem .fitemtitle {
+  .mform .fitem .fitemtitle {
     float: left;
     width: 25%;
   }
 }
-.mform .fcontainer .fitem .fitemtitle label,
-.mform fieldset .fitem .fitemtitle label {
+.mform .fitem .fitemtitle label {
   padding-top: 7px;
   margin-top: 0;
   margin-bottom: 0;
 }
-.mform .fcontainer .fitem .felement,
-.mform fieldset .fitem .felement {
+.mform .fitem .felement {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
 @media (min-width: 992px) {
-  .mform .fcontainer .fitem .felement,
-  .mform fieldset .fitem .felement {
+  .mform .fitem .felement {
     float: left;
     width: 66.66666667%;
   }
 }
 @media (min-width: 1200px) {
-  .mform .fcontainer .fitem .felement,
-  .mform fieldset .fitem .felement {
+  .mform .fitem .felement {
     float: left;
     width: 75%;
   }
 }
-.mform .fcontainer .fitem .felement select,
-.mform fieldset .fitem .felement select,
-.mform .fcontainer .fitem .felement input[type="text"],
-.mform fieldset .fitem .felement input[type="text"],
-.mform .fcontainer .fitem .felement input[type="password"],
-.mform fieldset .fitem .felement input[type="password"] {
+.mform .fitem .felement select,
+.mform .fitem .felement input[type="text"],
+.mform .fitem .felement input[type="password"] {
   display: block;
   width: 100%;
   height: 34px;
@@ -14212,126 +14194,82 @@ textarea.searchform input[type="text"] {
        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-.mform .fcontainer .fitem .felement select:focus,
-.mform fieldset .fitem .felement select:focus,
-.mform .fcontainer .fitem .felement input[type="text"]:focus,
-.mform fieldset .fitem .felement input[type="text"]:focus,
-.mform .fcontainer .fitem .felement input[type="password"]:focus,
-.mform fieldset .fitem .felement input[type="password"]:focus {
+.mform .fitem .felement select:focus,
+.mform .fitem .felement input[type="text"]:focus,
+.mform .fitem .felement input[type="password"]:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
           box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
 }
-.mform .fcontainer .fitem .felement select::-moz-placeholder,
-.mform fieldset .fitem .felement select::-moz-placeholder,
-.mform .fcontainer .fitem .felement input[type="text"]::-moz-placeholder,
-.mform fieldset .fitem .felement input[type="text"]::-moz-placeholder,
-.mform .fcontainer .fitem .felement input[type="password"]::-moz-placeholder,
-.mform fieldset .fitem .felement input[type="password"]::-moz-placeholder {
+.mform .fitem .felement select::-moz-placeholder,
+.mform .fitem .felement input[type="text"]::-moz-placeholder,
+.mform .fitem .felement input[type="password"]::-moz-placeholder {
   color: #777;
   opacity: 1;
 }
-.mform .fcontainer .fitem .felement select:-ms-input-placeholder,
-.mform fieldset .fitem .felement select:-ms-input-placeholder,
-.mform .fcontainer .fitem .felement input[type="text"]:-ms-input-placeholder,
-.mform fieldset .fitem .felement input[type="text"]:-ms-input-placeholder,
-.mform .fcontainer .fitem .felement input[type="password"]:-ms-input-placeholder,
-.mform fieldset .fitem .felement input[type="password"]:-ms-input-placeholder {
+.mform .fitem .felement select:-ms-input-placeholder,
+.mform .fitem .felement input[type="text"]:-ms-input-placeholder,
+.mform .fitem .felement input[type="password"]:-ms-input-placeholder {
   color: #777;
 }
-.mform .fcontainer .fitem .felement select::-webkit-input-placeholder,
-.mform fieldset .fitem .felement select::-webkit-input-placeholder,
-.mform .fcontainer .fitem .felement input[type="text"]::-webkit-input-placeholder,
-.mform fieldset .fitem .felement input[type="text"]::-webkit-input-placeholder,
-.mform .fcontainer .fitem .felement input[type="password"]::-webkit-input-placeholder,
-.mform fieldset .fitem .felement input[type="password"]::-webkit-input-placeholder {
+.mform .fitem .felement select::-webkit-input-placeholder,
+.mform .fitem .felement input[type="text"]::-webkit-input-placeholder,
+.mform .fitem .felement input[type="password"]::-webkit-input-placeholder {
   color: #777;
 }
-.mform .fcontainer .fitem .felement select[disabled],
-.mform fieldset .fitem .felement select[disabled],
-.mform .fcontainer .fitem .felement input[type="text"][disabled],
-.mform fieldset .fitem .felement input[type="text"][disabled],
-.mform .fcontainer .fitem .felement input[type="password"][disabled],
-.mform fieldset .fitem .felement input[type="password"][disabled],
-.mform .fcontainer .fitem .felement select[readonly],
-.mform fieldset .fitem .felement select[readonly],
-.mform .fcontainer .fitem .felement input[type="text"][readonly],
-.mform fieldset .fitem .felement input[type="text"][readonly],
-.mform .fcontainer .fitem .felement input[type="password"][readonly],
-.mform fieldset .fitem .felement input[type="password"][readonly],
-fieldset[disabled] .mform .fcontainer .fitem .felement select,
-fieldset[disabled] .mform fieldset .fitem .felement select,
-fieldset[disabled] .mform .fcontainer .fitem .felement input[type="text"],
-fieldset[disabled] .mform fieldset .fitem .felement input[type="text"],
-fieldset[disabled] .mform .fcontainer .fitem .felement input[type="password"],
-fieldset[disabled] .mform fieldset .fitem .felement input[type="password"] {
+.mform .fitem .felement select[disabled],
+.mform .fitem .felement input[type="text"][disabled],
+.mform .fitem .felement input[type="password"][disabled],
+.mform .fitem .felement select[readonly],
+.mform .fitem .felement input[type="text"][readonly],
+.mform .fitem .felement input[type="password"][readonly],
+fieldset[disabled] .mform .fitem .felement select,
+fieldset[disabled] .mform .fitem .felement input[type="text"],
+fieldset[disabled] .mform .fitem .felement input[type="password"] {
   cursor: not-allowed;
   background-color: #eee;
   opacity: 1;
 }
-textarea.mform .fcontainer .fitem .felement select,
-textarea.mform fieldset .fitem .felement select,
-textarea.mform .fcontainer .fitem .felement input[type="text"],
-textarea.mform fieldset .fitem .felement input[type="text"],
-textarea.mform .fcontainer .fitem .felement input[type="password"],
-textarea.mform fieldset .fitem .felement input[type="password"] {
+textarea.mform .fitem .felement select,
+textarea.mform .fitem .felement input[type="text"],
+textarea.mform .fitem .felement input[type="password"] {
   height: auto;
 }
-.mform .fcontainer .fitem select[multiple],
-.mform fieldset .fitem select[multiple],
-.mform .fcontainer .fitem select[size],
-.mform fieldset .fitem select[size] {
+.mform .fitem select[multiple],
+.mform .fitem select[size] {
   height: auto;
 }
-.mform .fcontainer .fitem .felement.fduration input[type="text"],
-.mform fieldset .fitem .felement.fduration input[type="text"] {
+.mform .fitem .felement.fduration input[type="text"] {
   display: inline-block;
   width: 5em;
   min-width: 0;
 }
-.mform .fcontainer .fitem .felement.fduration select,
-.mform fieldset .fitem .felement.fduration select,
-.mform .fcontainer .fitem .felement.fdate_selector select,
-.mform fieldset .fitem .felement.fdate_selector select,
-.mform .fcontainer .fitem .felement.fdate_time_selector select,
-.mform fieldset .fitem .felement.fdate_time_selector select,
-.mform .fcontainer .fitem .felement.fgroup select,
-.mform fieldset .fitem .felement.fgroup select {
+.mform .fitem .felement.fduration select,
+.mform .fitem .felement.fdate_selector select,
+.mform .fitem .felement.fdate_time_selector select,
+.mform .fitem .felement.fgroup select {
   display: inline-block;
   width: auto;
   min-width: 60px;
 }
-.mform .fcontainer .fitem .felement.fduration select[size],
-.mform fieldset .fitem .felement.fduration select[size],
-.mform .fcontainer .fitem .felement.fdate_selector select[size],
-.mform fieldset .fitem .felement.fdate_selector select[size],
-.mform .fcontainer .fitem .felement.fdate_time_selector select[size],
-.mform fieldset .fitem .felement.fdate_time_selector select[size],
-.mform .fcontainer .fitem .felement.fgroup select[size],
-.mform fieldset .fitem .felement.fgroup select[size],
-.mform .fcontainer .fitem .felement.fduration select[multiple],
-.mform fieldset .fitem .felement.fduration select[multiple],
-.mform .fcontainer .fitem .felement.fdate_selector select[multiple],
-.mform fieldset .fitem .felement.fdate_selector select[multiple],
-.mform .fcontainer .fitem .felement.fdate_time_selector select[multiple],
-.mform fieldset .fitem .felement.fdate_time_selector select[multiple],
-.mform .fcontainer .fitem .felement.fgroup select[multiple],
-.mform fieldset .fitem .felement.fgroup select[multiple] {
+.mform .fitem .felement.fduration select[size],
+.mform .fitem .felement.fdate_selector select[size],
+.mform .fitem .felement.fdate_time_selector select[size],
+.mform .fitem .felement.fgroup select[size],
+.mform .fitem .felement.fduration select[multiple],
+.mform .fitem .felement.fdate_selector select[multiple],
+.mform .fitem .felement.fdate_time_selector select[multiple],
+.mform .fitem .felement.fgroup select[multiple] {
   height: auto;
 }
-.mform .fcontainer .fitem .felement.fduration label,
-.mform fieldset .fitem .felement.fduration label,
-.mform .fcontainer .fitem .felement.fdate_selector label,
-.mform fieldset .fitem .felement.fdate_selector label,
-.mform .fcontainer .fitem .felement.fdate_time_selector label,
-.mform fieldset .fitem .felement.fdate_time_selector label,
-.mform .fcontainer .fitem .felement.fgroup label,
-.mform fieldset .fitem .felement.fgroup label {
+.mform .fitem .felement.fduration label,
+.mform .fitem .felement.fdate_selector label,
+.mform .fitem .felement.fdate_time_selector label,
+.mform .fitem .felement.fgroup label {
   display: inline-block;
 }
-.mform .fcontainer .fitem .felement.fgroup input[type="text"],
-.mform fieldset .fitem .felement.fgroup input[type="text"] {
+.mform .fitem .felement.fgroup input[type="text"] {
   display: inline;
   min-width: unset;
 }
@@ -16602,9 +16540,6 @@ input.fp-btn-choose {
   body.zoomin #page-header h1,
   body.zoomin #page-footer {
     display: none;
-  }
-  body.zoomin .breadcrumb-nav {
-    margin-top: 4px;
   }
 }
 .nonsense {

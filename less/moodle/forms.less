@@ -1,59 +1,57 @@
 // Basic mforms layout, used in resources, user profile etc.
 .mform {
-    .fcontainer,
-    fieldset {
-        .fitem {
-            &:extend(.form-group);
-            &:extend(.form-horizontal .form-group);
-            .fitemtitle {
-                 .make-md-column(4);
-                 .make-lg-column(3);
-                label {
-                    margin-top: 0;
-                    margin-bottom: 0;
-                    padding-top: (@padding-base-vertical + 1); // Default padding plus a border
-                }
-            }
-            .felement {
-                .make-md-column(8);
-                .make-lg-column(9);
-                select,
-                input[type="text"],
-                input[type="password"] {
-                    .form-control;
-                }
-            }
-            select[multiple], select[size] {
-                height: auto;
-            }
-            .felement.fduration input[type="text"] {
-                min-width: 0;
-                width: 5em;
-                display: inline-block;
-            }
-            .felement.fduration,
-            .felement.fdate_selector,
-            .felement.fdate_time_selector,
-            .felement.fgroup {
-                select {
-                    width: auto;
-                    display: inline-block;
-                    min-width: 60px;
-                }
-                select[size],
-                select[multiple] {
-                    height: auto;
-                }
-                label {
-                    display: inline-block;
-                }
-            }
-            .felement.fgroup input[type="text"] {
-                min-width: unset;
-                display: inline;
+    .fitem {
+        &:extend(.form-group);
+        &:extend(.form-horizontal .form-group);
+        .fitemtitle {
+             .make-md-column(4);
+             .make-lg-column(3);
+            label {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: (@padding-base-vertical + 1); // Default padding plus a border
             }
         }
+        .felement {
+            .make-md-column(8);
+            .make-lg-column(9);
+            select,
+            input[type="text"],
+            input[type="password"] {
+                .form-control;
+            }
+        }
+        select[multiple], select[size] {
+            height: auto;
+        }
+        .felement.fduration input[type="text"] {
+            min-width: 0;
+            width: 5em;
+            display: inline-block;
+        }
+        .felement.fduration,
+        .felement.fdate_selector,
+        .felement.fdate_time_selector,
+        .felement.fgroup {
+            select {
+                width: auto;
+                display: inline-block;
+                min-width: 60px;
+            }
+            select[size],
+            select[multiple] {
+                height: auto;
+            }
+            label {
+                display: inline-block;
+            }
+        }
+        .felement.fgroup input[type="text"] {
+            min-width: unset;
+            display: inline;
+        }
     }
+    
     .fitem_actionbuttons {
             .form-group;
             .form-horizontal .form-group;
