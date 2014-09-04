@@ -15912,6 +15912,7 @@ td.submit input .badge {
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
+  color: #333;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -15920,8 +15921,10 @@ td.submit input .badge {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background-color: #fff;
   background-image: none;
   border: 1px solid transparent;
+  border-color: #ccc;
   border-radius: 4px;
 }
 #notice .singlebutton + .singlebutton input:focus,
@@ -15962,6 +15965,66 @@ fieldset[disabled] .submit.buttons input[name="cancel"] {
   -webkit-box-shadow: none;
           box-shadow: none;
   opacity: .65;
+}
+#notice .singlebutton + .singlebutton input:hover,
+.submit.buttons input[name="cancel"]:hover,
+#notice .singlebutton + .singlebutton input:focus,
+.submit.buttons input[name="cancel"]:focus,
+#notice .singlebutton + .singlebutton input:active,
+.submit.buttons input[name="cancel"]:active,
+#notice .singlebutton + .singlebutton input.active,
+.submit.buttons input[name="cancel"].active,
+.open > .dropdown-toggle#notice .singlebutton + .singlebutton input,
+.open > .dropdown-toggle.submit.buttons input[name="cancel"] {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+#notice .singlebutton + .singlebutton input:active,
+.submit.buttons input[name="cancel"]:active,
+#notice .singlebutton + .singlebutton input.active,
+.submit.buttons input[name="cancel"].active,
+.open > .dropdown-toggle#notice .singlebutton + .singlebutton input,
+.open > .dropdown-toggle.submit.buttons input[name="cancel"] {
+  background-image: none;
+}
+#notice .singlebutton + .singlebutton input.disabled,
+.submit.buttons input[name="cancel"].disabled,
+#notice .singlebutton + .singlebutton input[disabled],
+.submit.buttons input[name="cancel"][disabled],
+fieldset[disabled] #notice .singlebutton + .singlebutton input,
+fieldset[disabled] .submit.buttons input[name="cancel"],
+#notice .singlebutton + .singlebutton input.disabled:hover,
+.submit.buttons input[name="cancel"].disabled:hover,
+#notice .singlebutton + .singlebutton input[disabled]:hover,
+.submit.buttons input[name="cancel"][disabled]:hover,
+fieldset[disabled] #notice .singlebutton + .singlebutton input:hover,
+fieldset[disabled] .submit.buttons input[name="cancel"]:hover,
+#notice .singlebutton + .singlebutton input.disabled:focus,
+.submit.buttons input[name="cancel"].disabled:focus,
+#notice .singlebutton + .singlebutton input[disabled]:focus,
+.submit.buttons input[name="cancel"][disabled]:focus,
+fieldset[disabled] #notice .singlebutton + .singlebutton input:focus,
+fieldset[disabled] .submit.buttons input[name="cancel"]:focus,
+#notice .singlebutton + .singlebutton input.disabled:active,
+.submit.buttons input[name="cancel"].disabled:active,
+#notice .singlebutton + .singlebutton input[disabled]:active,
+.submit.buttons input[name="cancel"][disabled]:active,
+fieldset[disabled] #notice .singlebutton + .singlebutton input:active,
+fieldset[disabled] .submit.buttons input[name="cancel"]:active,
+#notice .singlebutton + .singlebutton input.disabled.active,
+.submit.buttons input[name="cancel"].disabled.active,
+#notice .singlebutton + .singlebutton input[disabled].active,
+.submit.buttons input[name="cancel"][disabled].active,
+fieldset[disabled] #notice .singlebutton + .singlebutton input.active,
+fieldset[disabled] .submit.buttons input[name="cancel"].active {
+  background-color: #fff;
+  border-color: #ccc;
+}
+#notice .singlebutton + .singlebutton input .badge,
+.submit.buttons input[name="cancel"] .badge {
+  color: #fff;
+  background-color: #333;
 }
 #notice .singlebutton + .singlebutton input,
 .submit.buttons input[name="cancel"] {
