@@ -16905,7 +16905,10 @@ fieldset[disabled] #dock .dockedtitle.active {
   height: 1px;
 }
 #page-grade-report-grader-index #user-grades {
-  margin-top: 4px;
+  margin-top: 0px;
+}
+#page-grade-report-grader-index .left_scroller {
+  padding-top: 18px;
 }
 #page-grade-grading-manage #activemethodselector label {
   display: inline-block;
