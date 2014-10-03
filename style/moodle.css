@@ -6506,6 +6506,15 @@ div[role="main"] ol {
   padding-left: 20px;
   overflow: hidden;
 }
+div[role="main"] ul.section,
+div[role="main"] ol.section,
+div[role="main"] ul.weeks,
+div[role="main"] ol.weeks,
+div[role="main"] ul.topics,
+div[role="main"] ol.topics {
+  padding: 0;
+  overflow: visible;
+}
 /** core.less */
 /** Page layout CSS starts **/
 .layout-option-noheader #page-header,
@@ -9205,9 +9214,6 @@ textarea.path-admin .roleassigntable input[type="text"] {
 }
 .path-course-view .single-section .completionprogress {
   margin-right: 5px;
-}
-.path-course-view .section .summary {
-  line-height: normal;
 }
 .path-course-view li.activity span.autocompletion img {
   vertical-align: text-bottom;
@@ -13839,6 +13845,7 @@ ol {
 }
 .block .content {
   padding: 4px 14px;
+  word-wrap: break-word;
 }
 .block .content hr {
   margin: 5px 0;
