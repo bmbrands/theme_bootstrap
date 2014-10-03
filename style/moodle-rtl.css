@@ -7962,6 +7962,16 @@ img.icon.hide {
   text-align: center;
 }
 
+.atto_image_size input[type="text"] {
+  width: auto;
+}
+
+div[role="main"] ul,
+div[role="main"] ol {
+  padding-right: 20px;
+  overflow: hidden;
+}
+
 /** core.less */
 
 /** Page layout CSS starts **/
@@ -9693,110 +9703,6 @@ body.jsenabled .formlisting {
   /** JS is enabled, we'll be using it so return display to normal **/
   opacity: 0.5;
   filter: alpha(opacity=50);
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #333333;
-  background-color: #ffffff;
-  border-color: #cccccc;
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-  display: block;
-  margin-right: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:focus,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active:focus,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:hover,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:focus {
-  color: #333333;
-  text-decoration: none;
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled],
-fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:hover,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:focus,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active,
-.open > .dropdown-toggle.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
-  color: #333333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active,
-.open > .dropdown-toggle.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
-  background-image: none;
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled],
-fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled:hover,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled]:hover,
-fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:hover,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled:focus,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled]:focus,
-fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:focus,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled:active,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled]:active,
-fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu:active,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.disabled.active,
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu[disabled].active,
-fieldset[disabled] .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu.active {
-  background-color: #ffffff;
-  border-color: #cccccc;
-}
-
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .badge {
-  color: #ffffff;
-  background-color: #333333;
 }
 
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .iconsmall {
@@ -17762,9 +17668,7 @@ textareaselect.singleselect {
   .form-item .form-setting > input[type="text"],
   .mform .fcontainer .fitem .felement > input[type="text"],
   .form-item .form-setting > input[type="password"],
-  .mform .fcontainer .fitem .felement > input[type="password"],
-  .form-item .form-setting > select,
-  .mform .fcontainer .fitem .felement > select {
+  .mform .fcontainer .fitem .felement > input[type="password"] {
     width: auto;
     min-width: 480px;
     margin-bottom: 5px;
