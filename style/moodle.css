@@ -6043,8 +6043,6 @@ button.close {
 .box.message .contactselector form#usergroupform fieldset:after,
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:before,
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
-.userprofile .userprofilebox:before,
-.userprofile .userprofilebox:after,
 .mform .fitem_actionbuttons:before,
 .mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:before,
@@ -6075,7 +6073,6 @@ button.close {
 .modal-footer:after,
 .box.message .contactselector form#usergroupform fieldset:after,
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
-.userprofile .userprofilebox:after,
 .mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:after,
@@ -13124,47 +13121,115 @@ body.path-question-type .mform fieldset.hidden {
 .userprofile > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ddd;
 }
-.userprofile .userprofilebox {
-  margin-right: -15px;
-  margin-left: -15px;
-}
 .userprofile .userprofilebox .profilepicture {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-@media (min-width: 992px) {
-  .userprofile .userprofilebox .profilepicture {
-    float: left;
-    width: 16.66666667%;
-  }
+  float: left;
 }
 .userprofile .userprofilebox .profilepicture a {
-  display: block;
+  display: inline-block;
   margin: 10px;
 }
 .userprofile .userprofilebox .profilepicture a img {
   border-radius: 6px;
 }
-.userprofile .userprofilebox .descriptionbox {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-@media (min-width: 992px) {
-  .userprofile .userprofilebox .descriptionbox {
-    float: left;
-    width: 83.33333333%;
-  }
-}
 .userprofile .userprofilebox .descriptionbox .description {
   margin: 10px;
+}
+.userprofile .userprofilebox .descriptionbox .list {
+  margin: 0 10px;
 }
 .userprofile .fullprofilelink {
   margin: 10px;
   text-align: center;
+}
+.userprofile .messagebox {
+  margin: 10px;
+}
+.userprofile .messagebox a {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid transparent;
+  border-color: #ccc;
+  border-radius: 4px;
+}
+.userprofile .messagebox a:focus,
+.userprofile .messagebox a:active:focus,
+.userprofile .messagebox a.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.userprofile .messagebox a:hover,
+.userprofile .messagebox a:focus {
+  color: #333;
+  text-decoration: none;
+}
+.userprofile .messagebox a:active,
+.userprofile .messagebox a.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.userprofile .messagebox a.disabled,
+.userprofile .messagebox a[disabled],
+fieldset[disabled] .userprofile .messagebox a {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .65;
+}
+.userprofile .messagebox a:hover,
+.userprofile .messagebox a:focus,
+.userprofile .messagebox a:active,
+.userprofile .messagebox a.active,
+.open > .dropdown-toggle.userprofile .messagebox a {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.userprofile .messagebox a:active,
+.userprofile .messagebox a.active,
+.open > .dropdown-toggle.userprofile .messagebox a {
+  background-image: none;
+}
+.userprofile .messagebox a.disabled,
+.userprofile .messagebox a[disabled],
+fieldset[disabled] .userprofile .messagebox a,
+.userprofile .messagebox a.disabled:hover,
+.userprofile .messagebox a[disabled]:hover,
+fieldset[disabled] .userprofile .messagebox a:hover,
+.userprofile .messagebox a.disabled:focus,
+.userprofile .messagebox a[disabled]:focus,
+fieldset[disabled] .userprofile .messagebox a:focus,
+.userprofile .messagebox a.disabled:active,
+.userprofile .messagebox a[disabled]:active,
+fieldset[disabled] .userprofile .messagebox a:active,
+.userprofile .messagebox a.disabled.active,
+.userprofile .messagebox a[disabled].active,
+fieldset[disabled] .userprofile .messagebox a.active {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.userprofile .messagebox a .badge {
+  color: #fff;
+  background-color: #333;
 }
 .loginbox {
   margin-bottom: 15px;
