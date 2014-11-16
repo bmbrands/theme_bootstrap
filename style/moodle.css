@@ -17640,4 +17640,16 @@ fieldset[disabled] #rubric-rubric.gradingform_rubric .addcriterion {
 .path-grade-report-grader .grade_icons {
   display: inline;
 }
+/* Grader report */
+.path-grade-report-grader .gradeparent tr:nth-of-type(even) .cell {
+  background-color: #f9f9f9;
+}
+.path-grade-report-grader .gradeparent .floater .cell:nth-of-type(odd),
+.path-grade-report-grader .gradeparent .floater.lastrow .cell.header {
+  background-color: #fff;
+}
+.path-grade-report-grader .gradeparent .floater .cell:nth-of-type(even),
+.path-grade-report-grader .gradeparent .floater .cell.header {
+  background-color: #f9f9f9;
+}
 /*# sourceMappingURL=/theme/bootstrap/style/moodle.css.map */
