@@ -9417,7 +9417,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd {
   margin: 0;
-  padding: 5px;
+  padding: 2px 5px;
   font-size: 12px;
   font-weight: normal;
   letter-spacing: 1px;
@@ -12492,7 +12492,7 @@ span.editinstructions {
   overflow: auto;
   display: inline-block;
   float: right;
-  height: 525px;
+  height: 490px;
   border-left: 1px solid #bbb;
 }
 
@@ -12504,15 +12504,15 @@ span.editinstructions {
 .file-picker .fp-navbar {
   background: #f2f2f2;
   border-bottom: 1px solid #bbb;
-  min-height: 40px;
+  min-height: 36px;
 }
 
 .file-picker .fp-navbar .fp-viewbar {
-  margin: 4px;
+  margin: 2px 4px;
 }
 
 .file-picker .fp-content {
-  padding-top: 15px;
+  padding-top: 0px;
   overflow: auto;
   height: 452px;
 }
@@ -13171,7 +13171,7 @@ a.ygtvspacer:hover {
 }
 
 .file-picker .fp-toolbar {
-  padding: 4px;
+  padding: 2px 4px;
 }
 
 .fp-toolbar .fp-btn-add,
