@@ -233,3 +233,17 @@
 .path-grade-report-grader .grade_icons {
     display: inline;
 }
+
+/* Grader report */
+.path-grade-report-grader .gradeparent tr:nth-of-type(even) .cell {
+    background-color: #f9f9f9;
+}
+
+.path-grade-report-grader .gradeparent .floater {
+    .cell:nth-of-type(odd), &.lastrow .cell.header {
+        background-color: #fff;
+    }
+    .cell:nth-of-type(even), .cell.header {
+        background-color: #f9f9f9;
+    }
+}
