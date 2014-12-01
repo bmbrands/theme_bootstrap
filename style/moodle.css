@@ -17283,7 +17283,7 @@ fieldset[disabled] #dock .dockedtitle.active {
   margin-right: 1px;
   vertical-align: middle;
 }
-#dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img {
+#dockeditempanel .dockeditempanel_hd .commands .hidepanelicon img {
   cursor: pointer;
 }
 .dir-rtl.has_dock #page,
