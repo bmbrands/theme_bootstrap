@@ -94,10 +94,10 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
             }
             if (is_enrolled(context_course::instance($course->id))) {
                 $arrow = html_writer::tag('span', '', array('class' => ' glyphicon glyphicon-arrow-'.$icondirection));
-                $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
-                $coursebtn = html_writer::link(new moodle_url('/course/view.php',
-                    array('id' => $course->id)), $btn, array('class' => 'btn btn-info btn-sm pull-right'));
-                $content .= html_writer::tag('div', $coursebtn, array('class' => 'coursebtn'));
+                $visit = html_writer::tag('span', get_string('course') . ' ' . $arrow);
+                $visitlink = html_writer::link(new moodle_url('/course/view.php',
+                    array('id' => $course->id)), $visit);
+                $content .= html_writer::tag('div', $visitlink, array('class' => 'visitlink'));
             }
         }
         $content .= html_writer::end_tag('div'); // .content
