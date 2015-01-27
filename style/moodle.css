@@ -17443,6 +17443,20 @@ fieldset[disabled] #page-grade-grading-manage .actions .action {
   margin-right: 5px;
   margin-left: 12px;
 }
+.mform.gradingform_rubric_editform .fitem .felement .hiddenelement {
+  display: none;
+}
+.mform.gradingform_rubric_editform .fitem .felement .pseudotablink {
+  position: relative;
+  float: right;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  color: transparent;
+  background-color: transparent;
+  border: 0 solid;
+}
 #rubric-rubric.gradingform_rubric #rubric-criteria {
   margin-bottom: 1em;
 }
@@ -17492,11 +17506,11 @@ fieldset[disabled] #page-grade-grading-manage .actions .action {
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .scorevalue input {
   float: none;
-  width: 2em;
+  width: 3em;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .scorevalue input.hiddenelement,
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .scorevalue input.pseudotablink {
-  width: 0;
+  width: 0 !important;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel {
   vertical-align: middle;

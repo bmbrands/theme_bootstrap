@@ -21008,6 +21008,22 @@ fieldset[disabled] #page-grade-grading-manage .actions .action {
   margin-left: 5px;
 }
 
+.mform.gradingform_rubric_editform .fitem .felement .hiddenelement {
+  display: none;
+}
+
+.mform.gradingform_rubric_editform .fitem .felement .pseudotablink {
+  background-color: transparent;
+  border: 0 solid;
+  height: 1px;
+  width: 1px;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  float: left;
+}
+
 #rubric-rubric.gradingform_rubric #rubric-criteria {
   margin-bottom: 1em;
 }
@@ -21067,12 +21083,12 @@ fieldset[disabled] #page-grade-grading-manage .actions .action {
 
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .scorevalue input {
   float: none;
-  width: 2em;
+  width: 3em;
 }
 
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .scorevalue input.hiddenelement,
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .scorevalue input.pseudotablink {
-  width: 0;
+  width: 0 !important;
 }
 
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel {
