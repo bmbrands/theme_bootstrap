@@ -8103,10 +8103,14 @@ img.icon.hide {
   width: auto;
 }
 
+.pagelayout-admin .show {
+  display: inline !important;
+}
+
 div[role="main"] ul,
 div[role="main"] ol {
   padding-right: 20px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 div[role="main"] ul.section,
@@ -11688,7 +11692,8 @@ span.editinstructions {
 .coursebox .content .summary,
 .coursebox .content .courseimage,
 .coursebox .content .coursefile,
-.coursebox .content .teachers {
+.coursebox .content .teachers,
+.coursebox .content .visitlink {
   margin: 3px 5px;
   padding: 0;
 }

@@ -6630,10 +6630,13 @@ img.icon.hide {
 .atto_image_size input[type="text"] {
   width: auto;
 }
+.pagelayout-admin .show {
+  display: inline !important;
+}
 div[role="main"] ul,
 div[role="main"] ol {
   padding-left: 20px;
-  overflow: hidden;
+  overflow: visible;
 }
 div[role="main"] ul.section,
 div[role="main"] ol.section,
@@ -9552,7 +9555,8 @@ span.editinstructions {
 .coursebox .content .summary,
 .coursebox .content .courseimage,
 .coursebox .content .coursefile,
-.coursebox .content .teachers {
+.coursebox .content .teachers,
+.coursebox .content .visitlink {
   padding: 0;
   margin: 3px 5px;
 }
