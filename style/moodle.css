@@ -12630,6 +12630,7 @@ body.path-question-type .mform fieldset.hidden {
 .formulation input[type="text"],
 .formulation select {
   width: auto;
+  vertical-align: baseline;
 }
 .path-mod-quiz input[size] {
   width: auto;
@@ -17505,6 +17506,7 @@ fieldset[disabled] #page-grade-grading-manage .actions .action {
   background-color: #ddd;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .scorevalue input {
+  display: inline;
   float: none;
   width: 3em;
 }
