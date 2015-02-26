@@ -14545,6 +14545,7 @@ textarea.mform .fitem .felement input[type="password"] {
 }
 .mform span.error {
   color: #a94442;
+  background-color: #f2dede;
 }
 .mform fieldset.error {
   border: 1px solid #ebccd1;
