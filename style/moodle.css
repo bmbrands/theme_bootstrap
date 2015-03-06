@@ -6516,6 +6516,9 @@ div[role="main"] ul,
 div[role="main"] ol {
   padding: 0 20px;
 }
+pre {
+  white-space: pre-wrap;
+}
 /* some very targetted corrections to roll back nameclashes between
  * Moodle and Bootstrap like .row, .label, .content, .controls
  *
