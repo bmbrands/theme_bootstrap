@@ -328,7 +328,7 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]#glyphicons_halflingsregular') format('svg');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff2]]') format('woff2'), url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]#glyphicons_halflingsregular') format('svg');
 }
 
 .glyphicon {
@@ -1144,6 +1144,254 @@ th {
   content: "\e200";
 }
 
+.glyphicon-cd:before {
+  content: "\e201";
+}
+
+.glyphicon-save-file:before {
+  content: "\e202";
+}
+
+.glyphicon-open-file:before {
+  content: "\e203";
+}
+
+.glyphicon-level-up:before {
+  content: "\e204";
+}
+
+.glyphicon-copy:before {
+  content: "\e205";
+}
+
+.glyphicon-paste:before {
+  content: "\e206";
+}
+
+.glyphicon-alert:before {
+  content: "\e209";
+}
+
+.glyphicon-equalizer:before {
+  content: "\e210";
+}
+
+.glyphicon-king:before {
+  content: "\e211";
+}
+
+.glyphicon-queen:before {
+  content: "\e212";
+}
+
+.glyphicon-pawn:before {
+  content: "\e213";
+}
+
+.glyphicon-bishop:before {
+  content: "\e214";
+}
+
+.glyphicon-knight:before {
+  content: "\e215";
+}
+
+.glyphicon-baby-formula:before {
+  content: "\e216";
+}
+
+.glyphicon-tent:before {
+  content: "\26fa";
+}
+
+.glyphicon-blackboard:before {
+  content: "\e218";
+}
+
+.glyphicon-bed:before {
+  content: "\e219";
+}
+
+.glyphicon-apple:before {
+  content: "\f8ff";
+}
+
+.glyphicon-erase:before {
+  content: "\e221";
+}
+
+.glyphicon-hourglass:before {
+  content: "\231b";
+}
+
+.glyphicon-lamp:before {
+  content: "\e223";
+}
+
+.glyphicon-duplicate:before {
+  content: "\e224";
+}
+
+.glyphicon-piggy-bank:before {
+  content: "\e225";
+}
+
+.glyphicon-scissors:before {
+  content: "\e226";
+}
+
+.glyphicon-bitcoin:before {
+  content: "\e227";
+}
+
+.glyphicon-btc:before {
+  content: "\e227";
+}
+
+.glyphicon-xbt:before {
+  content: "\e227";
+}
+
+.glyphicon-yen:before {
+  content: "\00a5";
+}
+
+.glyphicon-jpy:before {
+  content: "\00a5";
+}
+
+.glyphicon-ruble:before {
+  content: "\20bd";
+}
+
+.glyphicon-rub:before {
+  content: "\20bd";
+}
+
+.glyphicon-scale:before {
+  content: "\e230";
+}
+
+.glyphicon-ice-lolly:before {
+  content: "\e231";
+}
+
+.glyphicon-ice-lolly-tasted:before {
+  content: "\e232";
+}
+
+.glyphicon-education:before {
+  content: "\e233";
+}
+
+.glyphicon-option-horizontal:before {
+  content: "\e234";
+}
+
+.glyphicon-option-vertical:before {
+  content: "\e235";
+}
+
+.glyphicon-menu-hamburger:before {
+  content: "\e236";
+}
+
+.glyphicon-modal-window:before {
+  content: "\e237";
+}
+
+.glyphicon-oil:before {
+  content: "\e238";
+}
+
+.glyphicon-grain:before {
+  content: "\e239";
+}
+
+.glyphicon-sunglasses:before {
+  content: "\e240";
+}
+
+.glyphicon-text-size:before {
+  content: "\e241";
+}
+
+.glyphicon-text-color:before {
+  content: "\e242";
+}
+
+.glyphicon-text-background:before {
+  content: "\e243";
+}
+
+.glyphicon-object-align-top:before {
+  content: "\e244";
+}
+
+.glyphicon-object-align-bottom:before {
+  content: "\e245";
+}
+
+.glyphicon-object-align-horizontal:before {
+  content: "\e246";
+}
+
+.glyphicon-object-align-left:before {
+  content: "\e247";
+}
+
+.glyphicon-object-align-vertical:before {
+  content: "\e248";
+}
+
+.glyphicon-object-align-right:before {
+  content: "\e249";
+}
+
+.glyphicon-triangle-right:before {
+  content: "\e250";
+}
+
+.glyphicon-triangle-left:before {
+  content: "\e251";
+}
+
+.glyphicon-triangle-bottom:before {
+  content: "\e252";
+}
+
+.glyphicon-triangle-top:before {
+  content: "\e253";
+}
+
+.glyphicon-console:before {
+  content: "\e254";
+}
+
+.glyphicon-superscript:before {
+  content: "\e255";
+}
+
+.glyphicon-subscript:before {
+  content: "\e256";
+}
+
+.glyphicon-menu-left:before {
+  content: "\e257";
+}
+
+.glyphicon-menu-right:before {
+  content: "\e258";
+}
+
+.glyphicon-menu-down:before {
+  content: "\e259";
+}
+
+.glyphicon-menu-up:before {
+  content: "\e260";
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1265,6 +1513,10 @@ a.skip {
   margin: 0;
   overflow: visible;
   clip: auto;
+}
+
+[role="button"] {
+  cursor: pointer;
 }
 
 h1,
@@ -2807,7 +3059,7 @@ th {
   border-bottom-width: 2px;
 }
 
-.table-striped > tbody > tr:nth-child(odd) {
+.table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }
 
@@ -3116,9 +3368,13 @@ output {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.form-control[disabled],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
 }
 
 textarea.form-control {
@@ -3140,14 +3396,22 @@ input[type="search"] {
   input[type="date"].input-sm,
   input[type="time"].input-sm,
   input[type="datetime-local"].input-sm,
-  input[type="month"].input-sm {
+  input[type="month"].input-sm,
+  .input-group-sm input[type="date"],
+  .input-group-sm input[type="time"],
+  .input-group-sm input[type="datetime-local"],
+  .input-group-sm input[type="month"] {
     line-height: 30px;
   }
 
   input[type="date"].input-lg,
   input[type="time"].input-lg,
   input[type="datetime-local"].input-lg,
-  input[type="month"].input-lg {
+  input[type="month"].input-lg,
+  .input-group-lg input[type="date"],
+  .input-group-lg input[type="time"],
+  .input-group-lg input[type="datetime-local"],
+  .input-group-lg input[type="month"] {
     line-height: 46px;
   }
 }
@@ -3195,6 +3459,7 @@ input[type="search"] {
 
 .radio-inline,
 .checkbox-inline {
+  position: relative;
   display: inline-block;
   padding-right: 20px;
   margin-bottom: 0;
@@ -3236,6 +3501,7 @@ fieldset[disabled] .checkbox label {
   padding-top: 7px;
   padding-bottom: 7px;
   margin-bottom: 0;
+  min-height: 34px;
 }
 
 .form-control-static.input-lg,
@@ -3244,7 +3510,24 @@ fieldset[disabled] .checkbox label {
   padding-left: 0;
 }
 
-.input-sm,
+.input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+select.input-sm {
+  height: 30px;
+  line-height: 30px;
+}
+
+textarea.input-sm,
+select[multiple].input-sm {
+  height: auto;
+}
+
 .form-group-sm .form-control {
   height: 30px;
   padding: 5px 10px;
@@ -3253,39 +3536,66 @@ fieldset[disabled] .checkbox label {
   border-radius: 3px;
 }
 
-select.input-sm,
 select.form-group-sm .form-control {
   height: 30px;
   line-height: 30px;
 }
 
-textarea.input-sm,
 textarea.form-group-sm .form-control,
-select[multiple].input-sm,
 select[multiple].form-group-sm .form-control {
   height: auto;
 }
 
-.input-lg,
-.form-group-lg .form-control {
+.form-group-sm .form-control-static {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  min-height: 32px;
+}
+
+.input-lg {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 6px;
 }
 
-select.input-lg,
-select.form-group-lg .form-control {
+select.input-lg {
   height: 46px;
   line-height: 46px;
 }
 
 textarea.input-lg,
+select[multiple].input-lg {
+  height: auto;
+}
+
+.form-group-lg .form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+select.form-group-lg .form-control {
+  height: 46px;
+  line-height: 46px;
+}
+
 textarea.form-group-lg .form-control,
-select[multiple].input-lg,
 select[multiple].form-group-lg .form-control {
   height: auto;
+}
+
+.form-group-lg .form-control-static {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  min-height: 38px;
 }
 
 .has-feedback {
@@ -3537,7 +3847,7 @@ select[multiple].form-group-lg .form-control {
 
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
-    padding-top: 14.3px;
+    padding-top: 14.333333px;
   }
 }
 
@@ -3948,7 +4258,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 6px;
 }
 
@@ -3996,12 +4306,10 @@ input[type="button"].btn-block {
 
 .collapse {
   display: none;
-  visibility: hidden;
 }
 
 .collapse.in {
   display: block;
-  visibility: visible;
 }
 
 tr.collapse.in {
@@ -4033,11 +4341,12 @@ tbody.collapse.in {
   height: 0;
   margin-right: 2px;
   vertical-align: middle;
-  border-top: 4px solid;
+  border-top: 4px dashed;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
 }
 
+.dropup,
 .dropdown {
   position: relative;
 }
@@ -4174,7 +4483,7 @@ tbody.collapse.in {
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   top: auto;
   bottom: 100%;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 @media (min-width: 768px) {
@@ -4262,13 +4571,13 @@ tbody.collapse.in {
   border-radius: 0;
 }
 
-.btn-group > .btn-group:first-child > .btn:last-child,
-.btn-group > .btn-group:first-child > .dropdown-toggle {
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 
-.btn-group > .btn-group:last-child > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -4420,7 +4729,7 @@ tbody.collapse.in {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 6px;
 }
 
@@ -4867,12 +5176,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 .tab-content > .tab-pane {
   display: none;
-  visibility: hidden;
 }
 
 .tab-content > .active {
   display: block;
-  visibility: visible;
 }
 
 .nav-tabs .dropdown-menu {
@@ -4924,7 +5231,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
   .navbar-collapse.collapse {
     display: block !important;
-    visibility: visible !important;
     height: auto !important;
     padding-bottom: 0;
     overflow: visible !important;
@@ -5223,6 +5529,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  margin-bottom: 0;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   border-bottom-left-radius: 0;
@@ -5808,7 +6115,8 @@ a.label:focus {
   top: -1px;
 }
 
-.btn-xs .badge {
+.btn-xs .badge,
+.btn-group-xs > .btn .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -6130,6 +6438,20 @@ a.thumbnail.active {
   margin-top: 0;
 }
 
+.media,
+.media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+
+.media-body {
+  width: 10000px;
+}
+
+.media-object {
+  display: block;
+}
+
 .media-right,
 .media > .pull-right {
   padding-right: 10px;
@@ -6403,7 +6725,11 @@ a.list-group-item-danger.active:focus {
   color: inherit;
 }
 
-.panel-title > a {
+.panel-title > a,
+.panel-title > small,
+.panel-title > .small,
+.panel-title > small > a,
+.panel-title > .small > a {
   color: inherit;
 }
 
@@ -6803,11 +7129,11 @@ a.list-group-item-danger.active:focus {
   border: 0;
 }
 
-.embed-responsive.embed-responsive-16by9 {
+.embed-responsive-16by9 {
   padding-bottom: 56.25%;
 }
 
-.embed-responsive.embed-responsive-4by3 {
+.embed-responsive-4by3 {
   padding-bottom: 75%;
 }
 
@@ -6877,7 +7203,7 @@ button.close {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 1040;
+  z-index: 1050;
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
@@ -6924,10 +7250,12 @@ button.close {
 }
 
 .modal-backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   right: 0;
+  z-index: 1040;
   background-color: #000000;
 }
 
@@ -7014,7 +7342,6 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  visibility: visible;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
@@ -7438,6 +7765,7 @@ button.close {
   width: 20px;
   height: 20px;
   margin-top: -10px;
+  line-height: 1;
   font-family: serif;
 }
 
@@ -7639,7 +7967,6 @@ button.close {
 
 .hidden {
   display: none !important;
-  visibility: hidden !important;
 }
 
 .affix {
@@ -10409,9 +10736,13 @@ img.iconsmall {
 .path-admin .roleassigntable input[type="text"][disabled],
 .path-admin .roleassigntable input[type="text"][readonly],
 fieldset[disabled] .path-admin .roleassigntable input[type="text"] {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.path-admin .roleassigntable input[type="text"][disabled],
+fieldset[disabled] .path-admin .roleassigntable input[type="text"] {
+  cursor: not-allowed;
 }
 
 textarea.path-admin .roleassigntable input[type="text"] {
@@ -13663,9 +13994,13 @@ a.ygtvspacer:hover {
 .box.message .message_form input[type="text"][disabled],
 .box.message .message_form input[type="text"][readonly],
 fieldset[disabled] .box.message .message_form input[type="text"] {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.box.message .message_form input[type="text"][disabled],
+fieldset[disabled] .box.message .message_form input[type="text"] {
+  cursor: not-allowed;
 }
 
 textarea.box.message .message_form input[type="text"] {
@@ -13976,9 +14311,13 @@ textarea.box.message .message_form input[type="text"] {
 .box.message .contactselector form#usergroupform fieldset select[disabled],
 .box.message .contactselector form#usergroupform fieldset select[readonly],
 fieldset[disabled] .box.message .contactselector form#usergroupform fieldset select {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.box.message .contactselector form#usergroupform fieldset select[disabled],
+fieldset[disabled] .box.message .contactselector form#usergroupform fieldset select {
+  cursor: not-allowed;
 }
 
 textarea.box.message .contactselector form#usergroupform fieldset select {
@@ -15011,9 +15350,13 @@ textarea::-webkit-input-placeholder {
 textarea[disabled],
 textarea[readonly],
 fieldset[disabled] textarea {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+textarea[disabled],
+fieldset[disabled] textarea {
+  cursor: not-allowed;
 }
 
 textareatextarea {
@@ -16563,9 +16906,15 @@ fieldset[disabled] .userprofile .messagebox a.active {
 .loginbox .loginform .form-input input[type="password"][readonly],
 fieldset[disabled] .loginbox .loginform .form-input input[type="text"],
 fieldset[disabled] .loginbox .loginform .form-input input[type="password"] {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.loginbox .loginform .form-input input[type="text"][disabled],
+.loginbox .loginform .form-input input[type="password"][disabled],
+fieldset[disabled] .loginbox .loginform .form-input input[type="text"],
+fieldset[disabled] .loginbox .loginform .form-input input[type="password"] {
+  cursor: not-allowed;
 }
 
 textarea.loginbox .loginform .form-input input[type="text"],
@@ -16898,7 +17247,7 @@ table.collection > thead > tr > td {
   border-bottom-width: 2px;
 }
 
-table.collection > tbody > tr:nth-child(odd) {
+table.collection > tbody > tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }
 
@@ -17172,7 +17521,11 @@ ol {
   color: inherit;
 }
 
-.block .header h2 > a {
+.block .header h2 > a,
+.block .header h2 > small,
+.block .header h2 > .small,
+.block .header h2 > small > a,
+.block .header h2 > .small > a {
   color: inherit;
 }
 
@@ -17282,9 +17635,13 @@ ol {
 .block .singleselect select[disabled],
 .block .singleselect select[readonly],
 fieldset[disabled] .block .singleselect select {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.block .singleselect select[disabled],
+fieldset[disabled] .block .singleselect select {
+  cursor: not-allowed;
 }
 
 textarea.block .singleselect select {
@@ -17389,9 +17746,15 @@ textarea.block .singleselect select {
 .searchform input[type="text"][readonly],
 fieldset[disabled] .blogsearchform input[type="text"],
 fieldset[disabled] .searchform input[type="text"] {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.blogsearchform input[type="text"][disabled],
+.searchform input[type="text"][disabled],
+fieldset[disabled] .blogsearchform input[type="text"],
+fieldset[disabled] .searchform input[type="text"] {
+  cursor: not-allowed;
 }
 
 textarea.blogsearchform input[type="text"],
@@ -17561,9 +17924,17 @@ textarea.searchform input[type="text"] {
 fieldset[disabled] .mform .fitem .felement select,
 fieldset[disabled] .mform .fitem .felement input[type="text"],
 fieldset[disabled] .mform .fitem .felement input[type="password"] {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.mform .fitem .felement select[disabled],
+.mform .fitem .felement input[type="text"][disabled],
+.mform .fitem .felement input[type="password"][disabled],
+fieldset[disabled] .mform .fitem .felement select,
+fieldset[disabled] .mform .fitem .felement input[type="text"],
+fieldset[disabled] .mform .fitem .felement input[type="password"] {
+  cursor: not-allowed;
 }
 
 textarea.mform .fitem .felement select,
@@ -17803,9 +18174,17 @@ textarea.mform .fitem .felement input[type="password"] {
 fieldset[disabled] .form-item .form-setting select,
 fieldset[disabled] .form-item .form-setting input[type="text"],
 fieldset[disabled] .form-item .form-setting input[type="password"] {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+.form-item .form-setting select[disabled],
+.form-item .form-setting input[type="text"][disabled],
+.form-item .form-setting input[type="password"][disabled],
+fieldset[disabled] .form-item .form-setting select,
+fieldset[disabled] .form-item .form-setting input[type="text"],
+fieldset[disabled] .form-item .form-setting input[type="password"] {
+  cursor: not-allowed;
 }
 
 textarea.form-item .form-setting select,
@@ -17923,9 +18302,21 @@ fieldset[disabled] form input[type="text"],
 fieldset[disabled] form input[type="password"],
 fieldset[disabled] form.atto_form input[type="url"],
 fieldset[disabled] select.singleselect {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+form select[disabled],
+form input[type="text"][disabled],
+form input[type="password"][disabled],
+form.atto_form input[type="url"][disabled],
+select.singleselect[disabled],
+fieldset[disabled] form select,
+fieldset[disabled] form input[type="text"],
+fieldset[disabled] form input[type="password"],
+fieldset[disabled] form.atto_form input[type="url"],
+fieldset[disabled] select.singleselect {
+  cursor: not-allowed;
 }
 
 textareaform select,
@@ -18308,9 +18699,13 @@ select {
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol .singleselect select.singleselect[disabled],
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol .singleselect select.singleselect[readonly],
 fieldset[disabled] #page-mod-forum-discuss .discussioncontrols .discussioncontrol .singleselect select.singleselect {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol .singleselect select.singleselect[disabled],
+fieldset[disabled] #page-mod-forum-discuss .discussioncontrols .discussioncontrol .singleselect select.singleselect {
+  cursor: not-allowed;
 }
 
 textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol .singleselect select.singleselect {
@@ -18365,9 +18760,13 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol .singlese
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion select.urlselect[disabled],
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion select.urlselect[readonly],
 fieldset[disabled] #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion select.urlselect {
-  cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
+}
+
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion select.urlselect[disabled],
+fieldset[disabled] #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion select.urlselect {
+  cursor: not-allowed;
 }
 
 textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion select.urlselect {
@@ -18965,19 +19364,19 @@ table.flexible .table,
   background-color: #ffffff;
 }
 
-.path-rating .ratingtable > tbody > tr:nth-child(odd),
-table#explaincaps > tbody > tr:nth-child(odd),
-table#defineroletable > tbody > tr:nth-child(odd),
-table.grading-report > tbody > tr:nth-child(odd),
-table#listdirectories > tbody > tr:nth-child(odd),
-table.rolecaps > tbody > tr:nth-child(odd),
-table.userenrolment > tbody > tr:nth-child(odd),
-table#form > tbody > tr:nth-child(odd),
-form#movecourses table > tbody > tr:nth-child(odd),
-#page-admin-course-index .editcourse > tbody > tr:nth-child(odd),
-.forumheaderlist > tbody > tr:nth-child(odd),
-table.flexible > tbody > tr:nth-child(odd),
-.generaltable > tbody > tr:nth-child(odd) {
+.path-rating .ratingtable > tbody > tr:nth-of-type(odd),
+table#explaincaps > tbody > tr:nth-of-type(odd),
+table#defineroletable > tbody > tr:nth-of-type(odd),
+table.grading-report > tbody > tr:nth-of-type(odd),
+table#listdirectories > tbody > tr:nth-of-type(odd),
+table.rolecaps > tbody > tr:nth-of-type(odd),
+table.userenrolment > tbody > tr:nth-of-type(odd),
+table#form > tbody > tr:nth-of-type(odd),
+form#movecourses table > tbody > tr:nth-of-type(odd),
+#page-admin-course-index .editcourse > tbody > tr:nth-of-type(odd),
+.forumheaderlist > tbody > tr:nth-of-type(odd),
+table.flexible > tbody > tr:nth-of-type(odd),
+.generaltable > tbody > tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }
 
@@ -20809,7 +21208,11 @@ fieldset[disabled] #dock .dockedtitle.active {
   color: inherit;
 }
 
-#dockeditempanel .dockeditempanel_hd h2 > a {
+#dockeditempanel .dockeditempanel_hd h2 > a,
+#dockeditempanel .dockeditempanel_hd h2 > small,
+#dockeditempanel .dockeditempanel_hd h2 > .small,
+#dockeditempanel .dockeditempanel_hd h2 > small > a,
+#dockeditempanel .dockeditempanel_hd h2 > .small > a {
   color: inherit;
 }
 
@@ -20905,7 +21308,7 @@ fieldset[disabled] #dock .dockedtitle.active {
   user-select: none;
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 6px;
   display: inline-block;
   position: relative;
