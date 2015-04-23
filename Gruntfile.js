@@ -379,17 +379,20 @@ module.exports = function(grunt) {
                 src: 'style/moodle.css',
                     overwrite: true,
                     replacements: [{
-                        from: 'glyphicons-halflings-regular.eot',
-                        to: 'glyphicons-halflings-regular.eot]]',
+                        from: "glyphicons-halflings-regular.eot",
+                        to:   "glyphicons-halflings-regular.eot]]",
                     }, {
-                        from: 'glyphicons-halflings-regular.svg',
-                        to: 'glyphicons-halflings-regular.svg]]',
+                        from: "glyphicons-halflings-regular.svg",
+                        to:   "glyphicons-halflings-regular.svg]]",
                     }, {
-                        from: 'glyphicons-halflings-regular.ttf',
-                        to: 'glyphicons-halflings-regular.ttf]]',
+                        from: "glyphicons-halflings-regular.ttf",
+                        to:   "glyphicons-halflings-regular.ttf]]",
                     }, {
-                        from: 'glyphicons-halflings-regular.woff',
-                        to: 'glyphicons-halflings-regular.woff]]',
+                        from: "glyphicons-halflings-regular.woff2'",
+                        to:   "glyphicons-halflings-regular.woff2]]'",
+                    }, {
+                        from: "glyphicons-halflings-regular.woff'",
+                        to:   "glyphicons-halflings-regular.woff]]'",
                     }]
             },
             sourcemap: {
