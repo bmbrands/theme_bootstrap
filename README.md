@@ -21,9 +21,8 @@ theme.
 
 Modify this theme
 -----------------
-Do not modify or clone this theme. If you want to customize this theme create a 
-child theme, a simple child theme is available on:
-https://github.com/bmbrands/theme_cerulean
+I advise you to not modify or clone this theme. If you want to customize this theme create a child theme, a simple child theme is available on:
+https://github.com/bmbrands/theme_cerulean. (of course you are permitted to customize it)
 
 Moodle versions
 ---------------
@@ -49,15 +48,7 @@ information read /less/README
 JavaScript Libraries
 ====================
 
-This theme only uses YUI libraries. If you would like to used any of the advance
-Bootstrap3 JavaScript you can create a child theme that requires jQuery
-
-html5shiv.js
-------------
-To provide backwards compatibility for HTML5 for Internet Explorer 7 (IE7) and Internet
-Explorer 8 (IE8) a javascript library call /javascript/html5shiv.js was added. This
-JavaScript converts HTML tags and CSS into Tag that are understood by IE7 and IE8.
-The config.php makes sure these libraries are only loaded for IE7 and IE8.
+This theme the Boostrap 3 jQuery libraries. 
 
 
 Updating Bootstrap and Libraries
@@ -65,7 +56,7 @@ Updating Bootstrap and Libraries
 
 bootstrap
 -----------------
-This theme uses the original unmodified version 3.1.1 Bootstrap less files. These are
+This theme uses the original unmodified version 3.3.4 Bootstrap less files. These are
 Object Oriented CSS files. The bootstrap repository is available on:
 
 https://github.com/twbs/bootstrap.git

@@ -27,6 +27,8 @@ if ($knownregionpre || $knownregionpost) {
     theme_bootstrap_initialise_zoom($PAGE);
 }
 $setzoom = theme_bootstrap_get_zoom();
+$PAGE->requires->jquery();
+$PAGE->requires->jquery_plugin('bootstrap', 'theme_bootstrap');
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
