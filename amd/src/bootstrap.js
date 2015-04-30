@@ -1,10 +1,10 @@
 /* jshint ignore:start */
-define(['jquery'], function($) {
+define(['jquery', 'core/log'], function($, log) {
   $('.h1').hide();
 
   "use strict"; // jshint ;_;
 
-  console.log('Bootstrap AMD initialised');
+  log.debug('Bootstrap AMD initialised');
   /* https://github.com/InvisiLabs/bootstrap-amd/releases */
 
 /* ========================================================================
