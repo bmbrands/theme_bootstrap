@@ -50,6 +50,9 @@
  *                                 when your theme is not in the
  *                                 standard location.
  *
+ * grunt amd     Create the Asynchronous Module Definition JavaScript files.  See: MDL-49046.
+ *               Done here as core Gruntfile.js currently *nix only.
+ *
  * grunt swatch  Task for working with bootswatch files. Expects a
  *               convention to be followed - bootswatch files are
  *               contained within a directory providing the name
@@ -187,6 +190,7 @@ module.exports = function(grunt) {
         moodleroot = path.resolve(dirrootopt);
     }
 
+    var PWD = process.cwd();
     configfile = path.join(moodleroot, 'config.php');
 
     decachephp += 'define(\'CLI_SCRIPT\', true);';
@@ -430,6 +434,27 @@ module.exports = function(grunt) {
                     // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
                 }]
             }
+        },
+        jshint: {
+            options: {jshintrc: moodleroot + '/.jshintrc'},
+            files: ['**/amd/src/*.js']
+        },
+        uglify: {
+            dynamic_mappings: {
+                files: grunt.file.expandMapping(
+                    ['**/src/*.js', '!**/node_modules/**'],
+                    '',
+                    {
+                        cwd: PWD,
+                        rename: function(destBase, destPath) {
+                            destPath = destPath.replace('src', 'build');
+                            destPath = destPath.replace('.js', '.min.js');
+                            destPath = path.resolve(PWD, destPath);
+                            return destPath;
+                        }
+                    }
+                )
+            }
         }
     });
 
@@ -512,6 +537,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-csscomb');
     grunt.loadNpmTasks('grunt-svgmin');
 
+    // Load core tasks.
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
@@ -522,4 +551,5 @@ module.exports = function(grunt) {
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
     grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
+    grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };
