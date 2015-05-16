@@ -82,7 +82,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     protected function render_custom_menu(custom_menu $menu) {
-        global $CFG, $USER;
 
         // TODO: eliminate this duplicated logic, it belongs in core, not
         // here. See MDL-39565.
@@ -96,13 +95,12 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     public function user_menu($user = null, $withlinks = null) {
-        global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
     }
 
     protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER, $DB;
+        global $CFG, $USER;
 
         $addusermenu = true;
         $addlangmenu = true;

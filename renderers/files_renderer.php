@@ -85,7 +85,6 @@ class theme_bootstrap_core_files_renderer extends core_files_renderer {
         $restrictions = $this->fm_print_restrictions($fm);
         $strdndnotsupported = get_string('dndnotsupported_insentence', 'moodle').$OUTPUT->help_icon('dndnotsupported');
         $strdndenabledinbox = get_string('dndenabled_inbox', 'moodle');
-        $loading = get_string('loading', 'repository');
 
         $html = '
 <div id="filemanager-'.$clientid.'" class="filemanager fm-loading">
