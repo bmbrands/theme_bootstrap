@@ -380,8 +380,9 @@ class theme_bootstrap_core_files_renderer extends core_files_renderer {
         $classmethods = get_class_methods($this);
         $templates = array();
         foreach ($classmethods as $methodname) {
-            if (preg_match('/^fm_js_template_(.*)$/', $methodname, $matches))
-            $templates[$matches[1]] = $this->$methodname();
+            if (preg_match('/^fm_js_template_(.*)$/', $methodname, $matches)) {
+                $templates[$matches[1]] = $this->$methodname();
+            }
         }
         return $templates;
     }
@@ -904,8 +905,9 @@ class theme_bootstrap_core_files_renderer extends core_files_renderer {
         $classmethods = get_class_methods($this);
         $templates = array();
         foreach ($classmethods as $methodname) {
-            if (preg_match('/^fp_js_template_(.*)$/', $methodname, $matches))
-            $templates[$matches[1]] = $this->$methodname();
+            if (preg_match('/^fp_js_template_(.*)$/', $methodname, $matches)) {
+                $templates[$matches[1]] = $this->$methodname();
+            }
         }
         return $templates;
     }

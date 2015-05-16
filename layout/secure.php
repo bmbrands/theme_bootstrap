@@ -81,13 +81,13 @@ echo $OUTPUT->doctype() ?>
         </div>
 
         <?php
-        if ($knownregionpre) {
-            echo $OUTPUT->blocks('side-pre', $regions['pre']);
-        }?>
+if ($knownregionpre) {
+    echo $OUTPUT->blocks('side-pre', $regions['pre']);
+}?>
         <?php
-        if ($knownregionpost) {
-            echo $OUTPUT->blocks('side-post', $regions['post']);
-        }?>
+if ($knownregionpost) {
+    echo $OUTPUT->blocks('side-post', $regions['post']);
+}?>
     </div>
 
     <footer id="page-footer">
