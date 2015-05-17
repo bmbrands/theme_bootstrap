@@ -5,6 +5,7 @@ define(['jquery', 'core/log'], function($, log) {
   "use strict"; // jshint ;_;
 
   log.debug('Bootstrap AMD initialised');
+
   /* https://github.com/InvisiLabs/bootstrap-amd/releases */
 
 /* ========================================================================
@@ -120,7 +121,7 @@ define(['jquery', 'core/log'], function($, log) {
   // ALERT PLUGIN DEFINITION
   // =======================
 
-  function Plugin(option) {
+  function ALERTPlugin(option) {
     return this.each(function () {
       var $this = $(this)
       var data  = $this.data('bs.alert')
@@ -132,7 +133,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.alert
 
-  $.fn.alert             = Plugin
+  $.fn.alert             = ALERTPlugin
   $.fn.alert.Constructor = Alert
 
 
@@ -219,7 +220,7 @@ define(['jquery', 'core/log'], function($, log) {
   // BUTTON PLUGIN DEFINITION
   // ========================
 
-  function Plugin(option) {
+  function BTNPlugin(option) {
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.button')
@@ -234,7 +235,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.button
 
-  $.fn.button             = Plugin
+  $.fn.button             = BTNPlugin
   $.fn.button.Constructor = Button
 
 
@@ -254,7 +255,7 @@ define(['jquery', 'core/log'], function($, log) {
     .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
       var $btn = $(e.target)
       if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
-      Plugin.call($btn, 'toggle')
+      BTNPlugin.call($btn, 'toggle')
       e.preventDefault()
     })
     .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
@@ -432,7 +433,7 @@ define(['jquery', 'core/log'], function($, log) {
   // CAROUSEL PLUGIN DEFINITION
   // ==========================
 
-  function Plugin(option) {
+  function CAROUSELPlugin(option) {
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.carousel')
@@ -448,7 +449,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.carousel
 
-  $.fn.carousel             = Plugin
+  $.fn.carousel             = CAROUSELPlugin
   $.fn.carousel.Constructor = Carousel
 
 
@@ -473,7 +474,7 @@ define(['jquery', 'core/log'], function($, log) {
     var slideIndex = $this.attr('data-slide-to')
     if (slideIndex) options.interval = false
 
-    Plugin.call($target, options)
+    CAROUSELPlugin.call($target, options)
 
     if (slideIndex) {
       $target.data('bs.carousel').to(slideIndex)
@@ -489,7 +490,7 @@ define(['jquery', 'core/log'], function($, log) {
   $(window).on('load', function () {
     $('[data-ride="carousel"]').each(function () {
       var $carousel = $(this)
-      Plugin.call($carousel, $carousel.data())
+      CAROUSELPlugin.call($carousel, $carousel.data())
     })
   })
 
@@ -549,7 +550,7 @@ define(['jquery', 'core/log'], function($, log) {
     if (startEvent.isDefaultPrevented()) return
 
     if (actives && actives.length) {
-      Plugin.call(actives, 'hide')
+      COLLAPSEPlugin.call(actives, 'hide')
       activesData || actives.data('bs.collapse', null)
     }
 
@@ -657,7 +658,7 @@ define(['jquery', 'core/log'], function($, log) {
   // COLLAPSE PLUGIN DEFINITION
   // ==========================
 
-  function Plugin(option) {
+  function COLLAPSEPlugin(option) {
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.collapse')
@@ -671,7 +672,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.collapse
 
-  $.fn.collapse             = Plugin
+  $.fn.collapse             = COLLAPSEPlugin
   $.fn.collapse.Constructor = Collapse
 
 
@@ -696,7 +697,7 @@ define(['jquery', 'core/log'], function($, log) {
     var data    = $target.data('bs.collapse')
     var option  = data ? 'toggle' : $this.data()
 
-    Plugin.call($target, option)
+    COLLAPSEPlugin.call($target, option)
   })
 
 /* ========================================================================
@@ -824,7 +825,7 @@ define(['jquery', 'core/log'], function($, log) {
   // DROPDOWN PLUGIN DEFINITION
   // ==========================
 
-  function Plugin(option) {
+  function DROPDOWNPlugin(option) {
     return this.each(function () {
       var $this = $(this)
       var data  = $this.data('bs.dropdown')
@@ -836,7 +837,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.dropdown
 
-  $.fn.dropdown             = Plugin
+  $.fn.dropdown             = DROPDOWNPlugin
   $.fn.dropdown.Constructor = Dropdown
 
 
@@ -1148,7 +1149,7 @@ define(['jquery', 'core/log'], function($, log) {
   // MODAL PLUGIN DEFINITION
   // =======================
 
-  function Plugin(option, _relatedTarget) {
+  function MODALPlugin(option, _relatedTarget) {
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.modal')
@@ -1162,7 +1163,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.modal
 
-  $.fn.modal             = Plugin
+  $.fn.modal             = MODALPlugin
   $.fn.modal.Constructor = Modal
 
 
@@ -1192,7 +1193,7 @@ define(['jquery', 'core/log'], function($, log) {
         $this.is(':visible') && $this.trigger('focus')
       })
     })
-    Plugin.call($target, option, this)
+    MODALPlugin.call($target, option, this)
   })
 
 /* ========================================================================
@@ -1640,7 +1641,7 @@ define(['jquery', 'core/log'], function($, log) {
   // TOOLTIP PLUGIN DEFINITION
   // =========================
 
-  function Plugin(option) {
+  function TOOLTIPPlugin(option) {
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.tooltip')
@@ -1654,7 +1655,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.tooltip
 
-  $.fn.tooltip             = Plugin
+  $.fn.tooltip             = TOOLTIPPlugin
   $.fn.tooltip.Constructor = Tooltip
 
 
@@ -1743,7 +1744,7 @@ define(['jquery', 'core/log'], function($, log) {
   // POPOVER PLUGIN DEFINITION
   // =========================
 
-  function Plugin(option) {
+  function POPOVERPlugin(option) {
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.popover')
@@ -1757,7 +1758,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.popover
 
-  $.fn.popover             = Plugin
+  $.fn.popover             = POPOVERPlugin
   $.fn.popover.Constructor = Popover
 
 
@@ -1900,7 +1901,7 @@ define(['jquery', 'core/log'], function($, log) {
   // SCROLLSPY PLUGIN DEFINITION
   // ===========================
 
-  function Plugin(option) {
+  function SCROLLSPYPlugin(option) {
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.scrollspy')
@@ -1913,7 +1914,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.scrollspy
 
-  $.fn.scrollspy             = Plugin
+  $.fn.scrollspy             = SCROLLSPYPlugin
   $.fn.scrollspy.Constructor = ScrollSpy
 
 
@@ -1932,7 +1933,7 @@ define(['jquery', 'core/log'], function($, log) {
   $(window).on('load.bs.scrollspy.data-api', function () {
     $('[data-spy="scroll"]').each(function () {
       var $spy = $(this)
-      Plugin.call($spy, $spy.data())
+      SCROLLSPYPlugin.call($spy, $spy.data())
     })
   })
 
@@ -2047,7 +2048,7 @@ define(['jquery', 'core/log'], function($, log) {
   // TAB PLUGIN DEFINITION
   // =====================
 
-  function Plugin(option) {
+  function TABPlugin(option) {
     return this.each(function () {
       var $this = $(this)
       var data  = $this.data('bs.tab')
@@ -2059,7 +2060,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.tab
 
-  $.fn.tab             = Plugin
+  $.fn.tab             = TABPlugin
   $.fn.tab.Constructor = Tab
 
 
@@ -2077,7 +2078,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var clickHandler = function (e) {
     e.preventDefault()
-    Plugin.call($(this), 'show')
+    TABPlugin.call($(this), 'show')
   }
 
   $(document)
@@ -2198,7 +2199,7 @@ define(['jquery', 'core/log'], function($, log) {
   // AFFIX PLUGIN DEFINITION
   // =======================
 
-  function Plugin(option) {
+  function AFFIXPlugin(option) {
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.affix')
@@ -2211,7 +2212,7 @@ define(['jquery', 'core/log'], function($, log) {
 
   var old = $.fn.affix
 
-  $.fn.affix             = Plugin
+  $.fn.affix             = AFFIXPlugin
   $.fn.affix.Constructor = Affix
 
 
@@ -2237,7 +2238,7 @@ define(['jquery', 'core/log'], function($, log) {
       if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom
       if (data.offsetTop    != null) data.offset.top    = data.offsetTop
 
-      Plugin.call($spy, data)
+      AFFIXPlugin.call($spy, data)
     })
   })
 
