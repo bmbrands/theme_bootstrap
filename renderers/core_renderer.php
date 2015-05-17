@@ -58,7 +58,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
     public function navbar() {
         $items = $this->page->navbar->get_items();
-        if (empty($items)) { // MDL-46107
+        if (empty($items)) { // MDL-46107.
             return '';
         }
         $breadcrumbs = '';
@@ -74,7 +74,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         // are configured in the global theme settings page.
         global $CFG;
 
-        if (empty($custommenuitems) && !empty($CFG->custommenuitems)) { // MDL-45507
+        if (empty($custommenuitems) && !empty($CFG->custommenuitems)) { // MDL-45507.
             $custommenuitems = $CFG->custommenuitems;
         }
         $custommenu = new custom_menu($custommenuitems, current_language());
@@ -82,7 +82,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     protected function render_custom_menu(custom_menu $menu) {
-        global $CFG, $USER;
 
         // TODO: eliminate this duplicated logic, it belongs in core, not
         // here. See MDL-39565.
@@ -95,14 +94,13 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return $content.'</ul>';
     }
 
-    public function user_menu($user = NULL, $withlinks = NULL) {
-        global $CFG;
+    public function user_menu($user = null, $withlinks = null) {
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
     }
 
     protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER, $DB;
+        global $CFG, $USER;
 
         $addusermenu = true;
         $addlangmenu = true;
