@@ -18,7 +18,7 @@
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_bootstrap
+ * @package    theme_bootstrap3base
  * @copyright  2014 Bas Brands, www.basbrands.nl
  * @authors    Bas Brands, David Scotson
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,7 +26,7 @@
 
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
-$THEME->name = 'bootstrap';
+$THEME->name = 'bootstrap3base';
 $THEME->parents = array();
 if ('ltr' === get_string('thisdirection', 'langconfig')) {
     $THEME->sheets = array('moodle');
@@ -164,12 +164,9 @@ $THEME->layouts = array(
 
 $THEME->javascripts = array(
 );
+
 $THEME->javascripts_footer = array(
     'moodlebootstrap', 'dock'
 );
-
-if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
-    $THEME->javascripts[] = 'html5shiv';
-}
 
 $THEME->hidefromselector = false;

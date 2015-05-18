@@ -18,7 +18,7 @@
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_bootstrap
+ * @package    theme_bootstrap3base
  * @copyright  2014 Bas Brands, www.basbrands.nl
  * @authors    Bas Brands, David Scotson
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -27,7 +27,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 
-function bootstrap_grid($hassidepre, $hassidepost) {
+function bootstrap3base_grid($hassidepre, $hassidepost) {
 
     if ($hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-6 col-sm-push-3 col-lg-8 col-lg-push-2');
@@ -62,21 +62,4 @@ function bootstrap_grid($hassidepre, $hassidepost) {
         }
     }
     return $regions;
-}
-
-/**
- * Loads the JavaScript for the zoom function.
- *
- * @param moodle_page $page Pass in $PAGE.
- */
-function theme_bootstrap_initialise_zoom(moodle_page $page) {
-    user_preference_allow_ajax_update('theme_bootstrap_zoom', PARAM_TEXT);
-    $page->requires->yui_module('moodle-theme_bootstrap-zoom', 'M.theme_bootstrap.zoom.init', array());
-}
-
-/**
- * Get the user preference for the zoom function.
- */
-function theme_bootstrap_get_zoom() {
-    return get_user_preferences('theme_bootstrap_zoom', '');
 }

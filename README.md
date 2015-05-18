@@ -3,7 +3,7 @@ About this theme
 
 ![image1](pix/screenshot.jpg "Moodle Bootstrap Screenshot")
 
-This is the Bootstrap theme for Moodle.
+This is the Bootstrap3base theme for Moodle.
 
 * package   Moodle Bootstrap 3 theme
 * copyright 2014 Bas Brands. www.sonsbeekmedia.nl
@@ -27,12 +27,8 @@ https://github.com/bmbrands/theme_cerulean
 
 Moodle versions
 ---------------
-This theme works on Moodle 2.6 and Moodle 2.7
+This theme works on Moodle 2.9 and newer
 
-Warning
--------
-This is a Beta theme in development. It does not support:
-Internet Explorer8 & Right-to-Left laguages
 
 Supported browsers
 ------------------
@@ -52,13 +48,6 @@ JavaScript Libraries
 This theme only uses YUI libraries. If you would like to used any of the advance
 Bootstrap3 JavaScript you can create a child theme that requires jQuery
 
-html5shiv.js
-------------
-To provide backwards compatibility for HTML5 for Internet Explorer 7 (IE7) and Internet
-Explorer 8 (IE8) a javascript library call /javascript/html5shiv.js was added. This
-JavaScript converts HTML tags and CSS into Tag that are understood by IE7 and IE8.
-The config.php makes sure these libraries are only loaded for IE7 and IE8.
-
 
 Updating Bootstrap and Libraries
 ================================
@@ -74,16 +63,6 @@ To update to the latest release of Bootstrap remove all files from less/bootstra
 download the new less files and store them in less/bootstrap
 Inclusion of bootstrap files is configured in less/moodle.less. To generate the new
 Moodle CSS read /less/README
-
-html5shiv.js
-------------
-This theme uses the original unmodified html5shiv.js JavaScript library to enable HTML5 tags in IE7 and IE8.
-This library is available on:
-
-https://github.com/aFarkas/html5shiv/blob/master/src/html5shiv.js
-
-To update to the latest release of html5shiv download and replace:
-javascript/html5shiv.js
 
 
 Licenses & Authors
@@ -108,9 +87,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-Html5shiv.js
-------------
-Author: Sjoerd Visscher
-URL: http://en.wikipedia.org/wiki/HTML5_Shiv, https://github.com/aFarkas/html5shiv
-License: MIT/GPL2 Licensedc

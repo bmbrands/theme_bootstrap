@@ -53,40 +53,6 @@
  * grunt amd     Create the Asynchronous Module Definition JavaScript files.  See: MDL-49046.
  *               Done here as core Gruntfile.js currently *nix only.
  *
- * grunt swatch  Task for working with bootswatch files. Expects a
- *               convention to be followed - bootswatch files are
- *               contained within a directory providing the name
- *               by which the swatch is identified. By default the
- *               directory these should be placed in is less/bootswatch
- *               however the user may optionally override this.
- *               e.g. swatch files contained within a directory
- *               located at less/bootswatch/squib will be associated
- *               with the swatch name 'squib'.
- *
- *               Switches the current bootswatch files compiled with
- *               the theme to those of a given bootswatch, recompiles
- *               less and clears the theme cache.
- *
- *               Options:
- *
- *               --name=<swatchname>    Required. Name (as defined by
- *                                      the convention) of the swatch
- *                                      to activate.
- *
- *               --swatches-dir=<path>  Optional. Explicitly define
- *                                      the path to the directory
- *                                      containing your bootswatches
- *                                      (default is less/bootswatch).
- *
- *               --vars-only            Optional. Copy the swatch's
- *                                      variables.less file only
- *                                      and empty custom-bootswatch.less
- *                                      Due to issues with grunt's
- *                                      handling of boolean options
- *                                      if not explicitly set e.g.
- *                                      `--vars-only=true` this option
- *                                      should be passed last.
- *
  *
  *
  * Plumbing tasks & targets:
@@ -109,33 +75,6 @@
  *                                      directory when your theme is
  *                                      not in the standard location.
  *
- * grunt swatch  Switch the theme less/bootswatch/custom-bootswatch.less
- *                   and less/bootswatch/custom-variables.less files for
- *                   those of a given bootswatch theme using convention
- *                   described in swatch task.
- *
- *                   Options:
- *
- *                   --name=<swatchname>    Required. Name (as defined by
- *                                          the convention) of the swatch
- *                                          to activate.
- *
- *                   --swatches-dir=<path>  Optional. Explicitly define
- *                                          the path to the directory
- *                                          containing your bootswatches
- *                                          (default is less/bootswatch).
- *
- *                   --vars-only            Optional. Copy the swatch's
- *                                          variables.less file only
- *                                          and empty custom-bootswatch.less
- *                                          Due to issues with grunt's
- *                                          handling of boolean options
- *                                          if not explicitly set e.g.
- *                                          `--vars-only=true` this option
- *                                          should be passed last.
- *
- *                   --none                 Optional. Reset bootswatch to
- *                                          plain Bootstrap (no swatch).
  *
  * grunt replace             Run all text replace tasks.
  *
@@ -146,16 +85,6 @@
  * grunt replace:font_fix    Correct the format for the Moodle font
  *                           loader to pick up the Glyphicon font.
  *
- * grunt replace:svg_colours Change the colour of the SVGs in pix_core by
- *                           text replacing #999 with a new hex colour.
- *                           Note this requires the SVGs to be #999 to
- *                           start with or the replace will do nothing
- *                           so should usually be preceded by copying
- *                           a fresh set of the original SVGs.
- *
- *                           Options:
- *
- *                           --svgcolour=<hexcolour> Hex colour to use for SVGs
  *
  * grunt cssflip    Create moodle-rtl.css by flipping the direction styles
  *                  in moodle.css.
@@ -175,8 +104,6 @@ module.exports = function(grunt) {
     // Theme Bootstrap constants.
     var LESSDIR         = 'less',
         BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'),
-        BOOTSWATCHFILE  = path.join(BOOTSWATCHDIR, 'custom-bootswatch.less'),
-        BOOTSWATCHVARS  = path.join(BOOTSWATCHDIR, 'custom-variables.less'),
         THEMEDIR        = path.basename(path.resolve('.'));
 
     // PHP strings for exec task.
@@ -196,31 +123,6 @@ module.exports = function(grunt) {
     decachephp += 'define(\'CLI_SCRIPT\', true);';
     decachephp += 'require(\'' + configfile  + '\');';
     decachephp += 'theme_reset_all_caches();';
-
-    var swatchname = grunt.option('name') || '';
-    var defaultsvgcolour = {
-        amelia: '#e8d069',
-        bootstrap: '#428bca',
-        classic: '#428bca',
-        cerulean: '#2fa4e7',
-        classic: '#428bca',
-        cosmo: '#007fff',
-        cupid: '#56caef',
-        cyborg: '#2a9fd6',
-        darkly: '#0ce3ac',
-        flatly: '#18bc9c',
-        journal: '#eb6864',
-        lumen: '#158cba',
-        readable: '#4582ec',
-        shamrock: '#f8e33c',
-        simplex: '#d9230f',
-        slate: '#fff',
-        spacelab: '#446e9b',
-        superhero: '#df691a',
-        united: '#dd4814',
-        yeti: '#008cba',
-    };
-    var svgcolour = grunt.option('svgcolour') || defaultsvgcolour[swatchname] || '#999';
 
     grunt.initConfig({
         less: {
@@ -322,20 +224,6 @@ module.exports = function(grunt) {
                 dest: 'style/moodle-rtl.css'
             }
         },
-        copy: {
-            svg_core: {
-                 expand: true,
-                 cwd: 'pix_core_originals/',
-                 src: '**',
-                 dest: 'pix_core/',
-            },
-            svg_plugins: {
-                 expand: true,
-                 cwd: 'pix_plugins_originals/',
-                 src: '**',
-                 dest: 'pix_plugins/',
-            }
-        },
         replace: {
             rtl_images: {
                 src: 'style/moodle-rtl.css',
@@ -361,22 +249,6 @@ module.exports = function(grunt) {
                     }, {
                         from: '[[pix:y/lp]]',
                         to: '[[pix:y/lp_rtl]]'
-                    }]
-            },
-            svg_colours_core: {
-                src: 'pix_core/**/*.svg',
-                    overwrite: true,
-                    replacements: [{
-                        from: '#999',
-                        to: svgcolour
-                    }]
-            },
-            svg_colours_plugins: {
-                src: 'pix_plugins/**/*.svg',
-                    overwrite: true,
-                    replacements: [{
-                        from: '#999',
-                        to: svgcolour
                     }]
             },
             font_fix: {
@@ -405,36 +277,6 @@ module.exports = function(grunt) {
                     }]
             }
         },
-        svgmin: {                       // Task
-            options: {                  // Configuration that will be passed directly to SVGO
-                plugins: [{
-                    removeViewBox: false
-                }, {
-                    removeUselessStrokeAndFill: false
-                }, {
-                    convertPathData: { 
-                        straightCurves: false // advanced SVGO plugin option
-                   }
-                }]
-            },
-            dist: {                     // Target
-                files: [{               // Dictionary of files
-                    expand: true,       // Enable dynamic expansion.
-                    cwd: 'pix_core',     // Src matches are relative to this path.
-                    src: ['**/*.svg'],  // Actual pattern(s) to match.
-                    dest: 'pix_core/',       // Destination path prefix.
-                    ext: '.svg'     // Dest filepaths will have this extension.
-                    // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
-                }, {               // Dictionary of files
-                    expand: true,       // Enable dynamic expansion.
-                    cwd: 'pix_plugins',     // Src matches are relative to this path.
-                    src: ['**/*.svg'],  // Actual pattern(s) to match.
-                    dest: 'pix_plugins/',       // Destination path prefix.
-                    ext: '.svg'     // Dest filepaths will have this extension.
-                    // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
-                }]
-            }
-        },
         jshint: {
             options: {jshintrc: moodleroot + '/.jshintrc'},
             files: ['**/amd/src/*.js']
@@ -458,72 +300,6 @@ module.exports = function(grunt) {
         }
     });
 
-    // Local task functions.
-    var _bootswatch = function() {
-        var swatchname = grunt.option('name') || '',
-            swatchroot = grunt.option('swatches-dir') || '',
-            varsonly   = grunt.option('vars-only'),
-            noswatch   = grunt.option('none');
-
-
-        // Reset bootwatches for default boootstrap.
-        if (noswatch) {
-            grunt.file.write(BOOTSWATCHFILE, '');
-            grunt.file.write(BOOTSWATCHVARS, '');
-            grunt.log.writeln('Cleared bootswatch.');
-            return;
-        }
-
-        // Required option.
-        if ('' === swatchname) {
-            grunt.fail.fatal('You must provide a swatch name.');
-        }
-
-        var swatchpath = path.join(BOOTSWATCHDIR, swatchname);
-
-        // Allow user to explicitly define source swatches dir.
-        if ('' !== swatchroot) {
-           swatchpath = path.resolve(swatchroot);
-           swatchpath = path.join(swatchpath, swatchname);
-        }
-
-        var swatchless = path.join(swatchpath, 'bootswatch.less'),
-            varsless   = path.join(swatchpath, 'variables.less'),
-            message    = '';
-
-        // Ensure the swatch directory exists.
-        if (!grunt.file.isDir(swatchpath)) {
-            message = "The swatch directory '" + swatchpath + "' ";
-            message += 'does not exist or is not accessible.';
-            grunt.fail.fatal(message);
-        }
-
-        // Ensure the bootswatch.less file exists.
-        if (!varsonly) {
-            if (!grunt.file.isFile(swatchless)) {
-                message = "The required file '" + swatchless + "' ";
-                message += 'does not exist or is not accessible.';
-                grunt.fail.fatal(message);
-            }
-        } else {
-            grunt.file.write(BOOTSWATCHFILE, '');
-        }
-
-        // Ensure the variables.less file exists.
-        if (!grunt.file.isFile(varsless)) {
-            message = "The required file '" + varsless + "' ";
-            message += 'does not exist or is not accessible.';
-            grunt.fail.fatal(message);
-        }
-
-        // Copy in new swatch files.
-        if (!varsonly) {
-            grunt.file.copy(swatchless, BOOTSWATCHFILE);
-        }
-        grunt.file.copy(varsless, BOOTSWATCHVARS);
-        grunt.log.writeln('Swatch copied.');
-
-    };
 
     // Load contrib tasks.
     grunt.loadNpmTasks("grunt-autoprefixer");
@@ -535,7 +311,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-csscomb');
-    grunt.loadNpmTasks('grunt-svgmin');
 
     // Load core tasks.
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -545,11 +320,6 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("bootswatch", _bootswatch);
     grunt.registerTask("compile", ["less", "replace:font_fix", "cssflip", "replace:rtl_images", "autoprefixer", 'csscomb', 'cssmin', "replace:sourcemap", "decache"]);
-    grunt.registerTask("swatch", ["bootswatch", "svg", "compile"]);
-    grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
-    grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
-    grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
     grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };

@@ -19,12 +19,12 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_bootstrap
+ * @package    theme_bootstrap3base
  * @copyright  2012
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-class theme_bootstrap_core_renderer extends core_renderer {
+class theme_bootstrap3base_core_renderer extends core_renderer {
 
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);

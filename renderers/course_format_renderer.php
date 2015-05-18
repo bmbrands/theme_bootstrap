@@ -27,7 +27,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . "/course/format/topics/renderer.php");
-class theme_bootstrap_format_topics_renderer extends format_topics_renderer {
+class theme_bootstrap3base_format_topics_renderer extends format_topics_renderer {
     /**
      * Generate the content to displayed on the left part of a section
      * before course modules are included
@@ -52,7 +52,7 @@ class theme_bootstrap_format_topics_renderer extends format_topics_renderer {
 }
 
 require_once($CFG->dirroot . "/course/format/weeks/renderer.php");
-class theme_bootstrap_format_weeks_renderer extends format_weeks_renderer {
+class theme_bootstrap3base_format_weeks_renderer extends format_weeks_renderer {
     /**
      * Generate the content to displayed on the left part of a section
      * before course modules are included

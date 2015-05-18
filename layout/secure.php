@@ -21,7 +21,7 @@ $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $knownregionpre = $PAGE->blocks->is_known_region('side-pre');
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
-$regions = bootstrap_grid($hassidepre, $hassidepost);
+$regions = bootstrap3base_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
 if ($knownregionpre || $knownregionpost) {
     theme_bootstrap_initialise_zoom($PAGE);

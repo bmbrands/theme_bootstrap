@@ -21,7 +21,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Bootstrap 3';
+$string['pluginname'] = 'Bootstrap3base';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 $string['fullscreen'] = 'Full screen';
@@ -32,7 +32,7 @@ $string['choosereadme'] = '
 <img class=img-polaroid src="bootstrap/pix/screenshot.jpg" />
 <h3>Theme Credits</h3>
 <p>
-<h3>Moodle Bootstrap 3 theme</h3>
+<h3>Moodle bootstrap3base theme</h3>
 <p>
 This theme is based on the Bootstrap CSS framework, version 3.0
 </p>

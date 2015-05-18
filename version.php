@@ -17,7 +17,7 @@
 /**
  * Theme version info
  *
- * @package    theme_bootstrap
+ * @package    theme_bootstrap3base3base
  * @copyright  2014 Bas Brands, www.basbrands.nl
  * @authors    Bas Brands, David Scotson
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -29,4 +29,4 @@ $plugin->version   = 2014120803;
 $plugin->requires  = 2015042400.00; // 2.9beta+ (Build: 20150424).
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->release   = 2014120803;
-$plugin->component = 'theme_bootstrap';
+$plugin->component = 'theme_bootstrap3base';

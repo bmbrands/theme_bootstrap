@@ -21,12 +21,8 @@ $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $knownregionpre = $PAGE->blocks->is_known_region('side-pre');
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
-$regions = bootstrap_grid($hassidepre, $hassidepost);
+$regions = bootstrap3base_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
-if ($knownregionpre || $knownregionpost) {
-    theme_bootstrap_initialise_zoom($PAGE);
-}
-$setzoom = theme_bootstrap_get_zoom();
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -37,7 +33,7 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 </head>
 
-<body <?php echo $OUTPUT->body_attributes($setzoom); ?>>
+<body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
@@ -74,9 +70,6 @@ echo $OUTPUT->doctype() ?>
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
             <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-            <?php if ($knownregionpre || $knownregionpost) { ?>
-                <div class="breadcrumb-button"> <?php echo $OUTPUT->content_zoom(); ?></div>
-            <?php } ?>
         </div>
 
         <div id="course-header">
