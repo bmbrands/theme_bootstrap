@@ -48,7 +48,7 @@ $THEME->plugins_exclude_sheets = array(
 );
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->csspostprocess = 'theme_bootstrap_process_css';
+$THEME->csspostprocess = 'theme_bootstrap3base_process_css';
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.

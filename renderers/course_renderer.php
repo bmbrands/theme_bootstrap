@@ -87,19 +87,6 @@ class theme_bootstrap3base_core_course_renderer extends core_course_renderer {
         $content .= html_writer::start_tag('div', array('class' => 'content panel-body'));
         $content .= $this->coursecat_coursebox_content($chelper, $course);
 
-        if ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_EXPANDED) {
-            $icondirection = 'left';
-            if ('ltr' === get_string('thisdirection', 'langconfig')) {
-                $icondirection = 'right';
-            }
-            if (is_enrolled(context_course::instance($course->id))) {
-                $arrow = html_writer::tag('span', '', array('class' => ' glyphicon glyphicon-arrow-'.$icondirection));
-                $visit = html_writer::tag('span', get_string('course') . ' ' . $arrow);
-                $visitlink = html_writer::link(new moodle_url('/course/view.php',
-                    array('id' => $course->id)), $visit);
-                $content .= html_writer::tag('div', $visitlink, array('class' => 'visitlink'));
-            }
-        }
         $content .= html_writer::end_tag('div'); // End .content div.
 
         $content .= html_writer::end_tag('div'); // End .coursebox div.
