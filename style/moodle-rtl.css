@@ -13597,12 +13597,16 @@ a.ygtvspacer:hover {
 
 .fp-forminset .control-group label.control-label {
   width: 105px;
+  font-weight: normal;
+  float: right;
 }
 
 .fp-forminset .control-group label.control-radio {
+  padding-top: 0;
   float: left;
   text-align: right;
   width: 215px;
+  font-weight: normal;
 }
 
 .fp-forminset .control-group .controls {

@@ -11126,11 +11126,15 @@ a.ygtvspacer:hover {
   margin-bottom: 0;
 }
 .fp-forminset .control-group label.control-label {
+  float: left;
   width: 105px;
+  font-weight: normal;
 }
 .fp-forminset .control-group label.control-radio {
   float: right;
   width: 215px;
+  padding-top: 0;
+  font-weight: normal;
   text-align: left;
 }
 .fp-forminset .control-group .controls {
