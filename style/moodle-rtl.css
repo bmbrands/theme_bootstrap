@@ -12379,6 +12379,12 @@ span.editinstructions {
   }
 }
 
+.filemanager,
+.filepicker,
+.file-picker {
+  font-size: 11px;
+}
+
 .filemanager a,
 .file-picker a,
 .filemanager a:hover,
@@ -12403,6 +12409,9 @@ span.editinstructions {
 }
 
 .fp-content-center {
+  height: 100%;
+  width: 100%;
+  display: table-cell;
   vertical-align: middle;
 }
 
@@ -12454,6 +12463,12 @@ span.editinstructions {
   box-shadow: -2px 2px 3px .1px #999;
 }
 
+.moodle-dialogue h3 {
+  font-size: 14px;
+  margin: 0;
+  line-height: 20px;
+}
+
 .moodle-dialogue-base .filepicker .moodle-dialogue-wrap .moodle-dialogue-bd {
   padding: 0px;
 }
@@ -12476,22 +12491,31 @@ span.editinstructions {
 }
 
 .file-picker .fp-repo-items {
-  float: right;
-  width: 693px;
+  float: none;
+  width: auto;
+  margin-right: 181px;
+}
+
+.dir-rtl .moodle-dialogue-fullscreen .file-picker .fp-repo-items {
+  margin-right: 0px;
+  margin-left: 0px;
+  float: left;
 }
 
 .file-picker .fp-navbar {
   background: #f2f2f2;
   border-bottom: 1px solid #bbb;
-  min-height: 36px;
+  min-height: 40px;
+  overflow: hidden;
 }
 
 .file-picker .fp-navbar .fp-viewbar {
-  margin: 2px 4px;
+  margin: 4px;
 }
 
 .file-picker .fp-content {
-  padding-top: 0px;
+  background: #fff;
+  clear: none;
   overflow: auto;
   height: 452px;
 }
@@ -12641,9 +12665,7 @@ span.editinstructions {
 }
 
 .fp-pathbar .fp-path-folder {
-  background-image: url('[[pix:theme|fp/path_folder_rtl]]');
-  background-position: right;
-  background-repeat: no-repeat;
+  background: url('[[pix:theme|fp/path_folder_rtl]]') no-repeat 0 0;
   width: 27px;
   height: 12px;
   margin-right: 4px;
@@ -12728,28 +12750,22 @@ span.editinstructions {
 
 .file-picker .ygtvtn,
 .filemanager .ygtvtn {
-  background-image: url('[[pix:y/tn_rtl]]');
-  background-position: right;
-  background-repeat: no-repeat;
+  background: url('[[pix:y/tn_rtl]]') 0 0 no-repeat;
   width: 17px;
   height: 22px;
 }
 
 .file-picker .ygtvtm,
 .filemanager .ygtvtm {
-  background-image: url('[[pix:y/tm]]');
-  background-position: right 10px;
-  background-repeat: no-repeat;
-  width: 13px;
-  height: 12px;
+  background: url('[[pix:y/tm]]') 0 0 no-repeat;
+  width: 17px;
+  height: 22px;
   cursor: pointer;
 }
 
 .file-picker .ygtvtmh,
 .filemanager .ygtvtmh {
-  background-image: url('[[pix:y/tm]]');
-  background-position: right 10px;
-  background-repeat: no-repeat;
+  background: url('[[pix:y/tm]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -12757,9 +12773,7 @@ span.editinstructions {
 
 .file-picker .ygtvtp,
 .filemanager .ygtvtp {
-  background-image: url('[[pix:y/tp_rtl]]');
-  background-position: right 10px;
-  background-repeat: no-repeat;
+  background-image: url('[[pix:y/tp_rtl]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -12767,9 +12781,7 @@ span.editinstructions {
 
 .file-picker .ygtvtph,
 .filemanager .ygtvtph {
-  background-image: url('[[pix:y/tp_rtl]]');
-  background-position: right 10px;
-  background-repeat: no-repeat;
+  background-image: url('[[pix:y/tp_rtl]]') 0 10px no-repeat;
   width: 13px;
   height: 22px;
   cursor: pointer;
@@ -12777,18 +12789,14 @@ span.editinstructions {
 
 .file-picker .ygtvln,
 .filemanager .ygtvln {
-  background-image: url('[[pix:y/ln_rtl]]');
-  background-position: right;
-  background-repeat: no-repeat;
+  background-image: url('[[pix:y/ln_rtl]]') 0 0 no-repeat;
   width: 17px;
   height: 22px;
 }
 
 .file-picker .ygtvlm,
 .filemanager .ygtvlm {
-  background-image: url('[[pix:y/lm]]');
-  background-position: right 10px;
-  background-repeat: no-repeat;
+  background-image: url('[[pix:y/lm]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -12796,9 +12804,7 @@ span.editinstructions {
 
 .file-picker .ygtvlmh,
 .filemanager .ygtvlmh {
-  background-image: url('[[pix:y/lm]]');
-  background-position: right 10px;
-  background-repeate: no-repeat;
+  background-image: url('[[pix:y/lm]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -12806,9 +12812,7 @@ span.editinstructions {
 
 .file-picker .ygtvlp,
 .filemanager .ygtvlp {
-  background-image: url('[[pix:y/lp_rtl]]');
-  background-position: right 10px;
-  background-repeat: no-repeat;
+  background-image: url('[[pix:y/lp_rtl]]') 0 0 no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
@@ -12816,7 +12820,7 @@ span.editinstructions {
 
 .file-picker .ygtvlph,
 .filemanager .ygtvlph {
-  background-image: url('[[pix:y/lp_rtl]]');
+  background-image: url('[[pix:y/lp_rtl]]') 0 10px no-repeat;
   background-position: right 10px;
   background-repeat: no-repeat;
   width: 13px;
@@ -13572,6 +13576,7 @@ a.ygtvspacer:hover {
 .fp-formset .control-label {
   font-size: 14px;
   line-height: 1.42857143;
+  font-weight: normal;
 }
 
 .fp-formset {
@@ -21259,4 +21264,4 @@ fieldset[disabled] #rubric-rubric.gradingform_rubric .addcriterion {
 .path-grade-report-grader .grade_icons {
   display: inline;
 }
-/*# sourceMappingURL=/theme/bootstrap/style/moodle-rtl.css.map */
+/*# sourceMappingURL=/theme/bootstrap3base/style/moodle-rtl.css.map */
