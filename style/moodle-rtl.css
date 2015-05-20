@@ -13586,6 +13586,46 @@ a.ygtvspacer:hover {
   margin: 0 15px;
 }
 
+.fp-forminset {
+  max-width: 400px;
+  padding: 0 10px;
+}
+
+.fp-forminset .control-group.control-radio {
+  margin-bottom: 0;
+}
+
+.fp-forminset .control-group label.control-label {
+  width: 105px;
+}
+
+.fp-forminset .control-group label.control-radio {
+  float: left;
+  text-align: right;
+  width: 215px;
+}
+
+.fp-forminset .control-group .controls {
+  margin-right: 125px;
+}
+
+.fp-forminset .control-group .controls.control-radio input {
+  margin-top: 3px;
+}
+
+.fp-forminset .fp-select-buttons {
+  float: none;
+}
+
+.fp-forminset input[type="text"] {
+  width: 228px;
+}
+
+.fp-fileinfo .fp-value {
+  display: inline-block;
+  padding-right: 5px;
+}
+
 .box.message .mdl-align {
   text-align: right;
 }
