@@ -1,5 +1,5 @@
 <?php
-// This file is part of The Bootstrap 3 Moodle theme
+// This file is part of The Bootstrap Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_bootstrap3base
+ * @package    theme_bootstrap
  * @copyright  2014 Bas Brands, www.basbrands.nl
  * @authors    Bas Brands, David Scotson
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -27,7 +27,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 
-function bootstrap3base_grid($hassidepre, $hassidepost) {
+function bootstrap_grid($hassidepre, $hassidepost) {
 
     if ($hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-6 col-sm-push-3 col-lg-8 col-lg-push-2');

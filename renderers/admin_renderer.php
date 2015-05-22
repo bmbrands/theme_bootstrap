@@ -1,5 +1,5 @@
 <?php
-// This file is part of The Bootstrap 3 Moodle theme
+// This file is part of The Bootstrap Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_bootstrap3base
+ * @package    theme_bootstrap
  * @copyright  2012
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . "/admin/renderer.php");
 
 
-class theme_bootstrap3base_core_admin_renderer extends core_admin_renderer {
+class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
 
     protected function maturity_info($maturity) {
         if ($maturity == MATURITY_STABLE) {

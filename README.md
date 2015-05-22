@@ -3,9 +3,9 @@ About this theme
 
 ![image1](pix/screenshot.jpg "Moodle Bootstrap Screenshot")
 
-This is the Bootstrap3base theme for Moodle.
+This is the bootstrap theme for Moodle.
 
-* package   Moodle Bootstrap 3 theme
+* package   Moodle Bootstrap theme
 * copyright 2014 Bas Brands. www.sonsbeekmedia.nl
 * authors   Bas Brands, David Scotson
 * license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
