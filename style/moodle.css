@@ -16512,37 +16512,66 @@ input.fp-btn-choose {
   width: 100%;
   border-collapse: collapse;
 }
+.userenrolment tr {
+  vertical-align: top;
+}
+.userenrolment td {
+  height: 41px;
+  padding: 0;
+}
+.userenrolment .subfield {
+  margin-right: 5px;
+}
 .userenrolment .col_userdetails .subfield_picture {
   float: left;
-  margin: 0 5px;
 }
-.userenrolment .col_role a,
-.userenrolment .col_role span {
-  display: inline-block;
-  vertical-align: middle;
+.userenrolment .col_lastseen {
+  width: 150px;
 }
-.userenrolment .col_role a {
-  float: right;
-}
-.userenrolment .col_role .addrole {
-  text-align: center;
+.userenrolment .col_role {
+  width: 262px;
 }
 .userenrolment .hasAllRoles .col_role .addrole {
   display: none;
 }
+.userenrolment .col_enrol .enrolment {
+  float: left;
+  padding: 3px;
+  margin: 3px;
+}
+.userenrolment .col_enrol .enrolment a {
+  float: right;
+  margin-left: 3px;
+}
+.userenrolment .col_role .roles,
+.userenrolment .col_group .groups {
+  margin-right: 30px;
+}
+.userenrolment .col_role .role,
 .userenrolment .col_group .group {
   float: left;
+  padding: 3px;
+  margin: 3px;
   white-space: nowrap;
 }
+.userenrolment .col_role .role a,
 .userenrolment .col_group .group a {
   margin-left: 3px;
   cursor: pointer;
 }
+.userenrolment .col_role .addrole,
 .userenrolment .col_group .addgroup {
-  text-align: center;
+  float: right;
+  padding: 3px;
+  margin: 3px;
 }
-.userenrolment .col_group .addgroup a img {
-  vertical-align: bottom;
+.userenrolment .col_role .addrole > *:hover,
+.userenrolment .col_group .addgroup > *:hover {
+  border-bottom: 1px solid #666;
+}
+.userenrolment .col_role .addrole img,
+.userenrolment .col_group .addgroup img {
+  vertical-align: baseline;
 }
 .enrolpanel.roleassign.visible {
   position: absolute;
@@ -16899,51 +16928,6 @@ input.fp-btn-choose {
 #page-footer .purgecaches,
 #page-footer .performanceinfo {
   text-align: center;
-}
-.moodlezoom {
-  display: none;
-}
-@media (min-width: 768px) {
-  .moodlezoom {
-    display: block;
-  }
-  .moodlezoom {
-    margin-left: 10px;
-  }
-  .moodlezoom span.zoomout {
-    display: none;
-  }
-  .dir-rtl .moodlezoom {
-    margin-right: 10px;
-    margin-left: 0;
-  }
-  body.zoomin {
-    padding-top: 0;
-  }
-  body.zoomin .moodlezoom span.zoomout {
-    display: block;
-  }
-  body.zoomin .moodlezoom span.zoomin {
-    display: none;
-  }
-  body.zoomin .block-region {
-    display: none;
-  }
-  body.zoomin #region-main,
-  body.zoomin #region-bs-main-and-pre {
-    left: 0 !important;
-    width: 100% !important;
-  }
-  body.zoomin header.navbar {
-    display: none;
-  }
-  body.zoomin #page-header h1,
-  body.zoomin #page-footer {
-    display: none;
-  }
-}
-.nonsense {
-  left: 0;
 }
 /**
  * This styles the H2 node the dock creates to test the width before making its title rotation.

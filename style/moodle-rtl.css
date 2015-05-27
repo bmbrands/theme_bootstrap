@@ -19918,45 +19918,80 @@ input.fp-btn-choose {
   border-collapse: collapse;
 }
 
+.userenrolment tr {
+  vertical-align: top;
+}
+
+.userenrolment td {
+  padding: 0;
+  height: 41px;
+}
+
+.userenrolment .subfield {
+  margin-left: 5px;
+}
+
 .userenrolment .col_userdetails .subfield_picture {
   float: right;
-  margin: 0 5px;
 }
 
-.userenrolment .col_role a,
-.userenrolment .col_role span {
-  display: inline-block;
-  vertical-align: middle;
+.userenrolment .col_lastseen {
+  width: 150px;
 }
 
-.userenrolment .col_role a {
-  float: left;
-}
-
-.userenrolment .col_role .addrole {
-  text-align: center;
+.userenrolment .col_role {
+  width: 262px;
 }
 
 .userenrolment .hasAllRoles .col_role .addrole {
   display: none;
 }
 
+.userenrolment .col_enrol .enrolment {
+  float: right;
+  padding: 3px;
+  margin: 3px;
+}
+
+.userenrolment .col_enrol .enrolment a {
+  float: left;
+  margin-right: 3px;
+}
+
+.userenrolment .col_role .roles,
+.userenrolment .col_group .groups {
+  margin-left: 30px;
+}
+
+.userenrolment .col_role .role,
 .userenrolment .col_group .group {
   float: right;
+  padding: 3px;
+  margin: 3px;
   white-space: nowrap;
 }
 
+.userenrolment .col_role .role a,
 .userenrolment .col_group .group a {
   margin-right: 3px;
   cursor: pointer;
 }
 
+.userenrolment .col_role .addrole,
 .userenrolment .col_group .addgroup {
-  text-align: center;
+  float: left;
+  padding: 3px;
+  margin: 3px;
 }
 
-.userenrolment .col_group .addgroup a img {
-  vertical-align: bottom;
+.userenrolment .col_role .addrole > *:hover,
+.userenrolment .col_group .addgroup > *:hover {
+  border-bottom: 1px solid #666;
+}
+
+.userenrolment .col_role .addrole img,
+.userenrolment .col_group .addgroup img {
+  vertical-align: baseline;
 }
 
 .enrolpanel.roleassign.visible {
@@ -20380,64 +20415,6 @@ input.fp-btn-choose {
 #page-footer .purgecaches,
 #page-footer .performanceinfo {
   text-align: center;
-}
-
-.moodlezoom {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .moodlezoom {
-    display: block;
-  }
-
-  .moodlezoom {
-    margin-right: 10px;
-  }
-
-  .moodlezoom span.zoomout {
-    display: none;
-  }
-
-  .dir-rtl .moodlezoom {
-    margin-right: 0px;
-    margin-left: 10px;
-  }
-
-  body.zoomin {
-    padding-top: 0;
-  }
-
-  body.zoomin .moodlezoom span.zoomout {
-    display: block;
-  }
-
-  body.zoomin .moodlezoom span.zoomin {
-    display: none;
-  }
-
-  body.zoomin .block-region {
-    display: none;
-  }
-
-  body.zoomin #region-main,
-  body.zoomin #region-bs-main-and-pre {
-    width: 100% !important;
-    right: 0 !important;
-  }
-
-  body.zoomin header.navbar {
-    display: none;
-  }
-
-  body.zoomin #page-header h1,
-  body.zoomin #page-footer {
-    display: none;
-  }
-}
-
-.nonsense {
-  right: 0;
 }
 
 /**
