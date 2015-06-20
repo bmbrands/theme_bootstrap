@@ -8242,6 +8242,9 @@ ul.dragdrop-keyboard-drag li {
   width: 12px;
   height: 12px;
 }
+a:focus {
+  outline: none;
+}
 /* admin.less  */
 .path-admin .incompatibleblockstable td.c0 {
   font-weight: bold;
