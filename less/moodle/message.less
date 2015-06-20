@@ -1,328 +1,341 @@
-.box.message {
-    .mdl-align {
-        text-align: left;
+/** Message **/
+.message-discussion-noframes h1 {
+    font-size: 1em;
+}
+.message-discussion-noframes #userinfo .commands,
+.message .noframesjslink,
+.message .link {
+    font-size: @font-size-small;
+}
+.message .heading {
+    font-size: 1em;
+    font-weight: bold;
+    clear: both;
+}
+.message .author {
+    font-weight: bold;
+}
+.message .time {
+    font-style: italic;
+}
+#page-message-user .commands span {
+    font-size: 0.7em;
+}
+#page-message-user .name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.message .time {
+    .text-muted;
+}
+#page-message-messages {
+    padding: 10px;
+}
+#page-message-send .notifysuccess {
+    padding: 1px;
+}
+#page-message-send td.fixeditor {
+    text-align: center;
+}
+.message .note {
+    padding: 10px;
+}
+table.message .searchresults td {
+    padding: 5px;
+}
+.message .contactselector {
+    @media screen and (min-width: 1000px) {
+        width: 24%;
     }
-    table {
-        tr {
-            &:nth-child(odd) {
-                > td,
-                > th {
-                  background-color: @table-bg-accent;
-                }
-            }
-            border-bottom: 1px solid @table-border-color;
-        }
-        td.heading{
-            &:extend(.panel-default > .panel-heading);
-            padding: 5px 10px;
-            font-size: @font-size-base;
-        }
+    float: left;
+    .dir-rtl & {
+        float:right;
     }
-    tbody {
-        margin: 5px 10px;
-        padding: 5px 10px;
-    }
-    tbody {
-        display: table;
-        margin: 5px 0;
-        padding: 5px 0;
-        width: 100%;
-    }
-    .message_form {
-        width: 100%;
-        tr {
-            border: 0;
-        }
-        td {
-            background-color: inherit !important;
-        }
-        input[type="text"] {
-            .form-control;
-            display: inline-block;
-        }
-    }
-    .contactselector {
-        .panel;
-        .panel-default;
-        .heading {
-            margin: 10px 15px;
-            color: @headings-color;
-        }
-        form#usergroupform {
-            padding: 5px 10px;
-            fieldset {
-                .make-row();
-                margin-left: 0;
-                margin-right: 0;
-                .fitem {
-                    margin-left: 0;
-                    margin-right: 0;
-                }
-                label {
-                    .make-md-column(4);
-                    display: block !important;
-                }
-                select {
-                    .make-md-column(7);
-                    float: left;
-                    .form-control;
-                    width: auto;
-                }
-            }
-        }
-        table#message_contacts,
-        table#message_participants {      
-            
-            float: none !important;
-            display: block;
-            margin: 5px 5px;
+}
+.message .contactselector .paging {
+    z-index: 1;
+    position: relative;
+}
 
-            td.pix {
-                padding: 10px;
-                width: 30px;
-            }
-            td.contact {
-                width: 100px;
-                padding: 10px;
-                a.messageselecteduser {
-                    
-                }
-            }
-            td.link {
-                padding: 10px;
-                width: 100px;
-                span.removecontact {
+.message .message-contacts {
+    list-style-type: none;
+    margin: 0;
 
-                }
-                span.blockcontact{
+    li {
+        clear: both;
+        position: relative;
+        min-height: 23px;
 
-                }
-                span.history{
-
-                }
-            }
+        .pix {
+            left: 0;
+            position: absolute;
         }
-    }
-    .messagearea {
-        .panel;
-        .panel-default;
-
-        p.heading {
-            margin: 10px 15px;
-            font-size: @font-size-h2;
-            color: @headings-color;
+        .contact {
+            margin: 0 24% 0 25px;
+            text-align: left;
         }
-
-        #personsearch {
-            margin: 10px 15px;
-            input[type="text"] {
-                width: 150px;
-                margin-bottom: 10px;
-                margin-right: 10px;
-            }
-            input[type="submit"] {
-                margin-left: 0px;
-            }
-
+        .contact.nolinks {
+            margin-right: 5px;
         }
-        .mdl-left {
-            .heading {
-                font-size: @font-size-base;
-            }
-            .messagesearchresults {
-                width: 100%;
-                margin: 10px 0;
-                padding: 0px 15px;
-                display: block;
-                td.pix {
-                    padding: 10px;
-                    width: 30px;
-                }
-                td.contact {
-                    width: 30px;
-                    img {
-                       margin: 10px; 
-                    }
-                }
-            }
-
+        .link {
+            float: right;
+            max-width: 30%;
         }
-        .messagerecent {
-            .singlemessage {
-                margin: 10px 15px;
-                
-                .panel;
-                .panel-default;
-                .otheruser {
-                    &:extend(.panel-default > .panel-heading);
-                    padding: 10px 15px;
-                    display: block;
-                    width: 100%;
-                    .pix {
-                        margin: 5px;
-                    }
-                }
-                .themessage {
-                    border: 2px solid @state-warning-border;
-                    padding: 5px 10px;
-                    margin: 10px 15px;
-                    display: block;
-                }
-                .messagedate {
-                    margin: 10px 15px 0;
-                }
-                .messagecontext {
-                    margin: 0px 15px 10px;
-                }
-            }
-
-        }
-
-        .messagehistory {
-            .messagehistory {
-                border-top: 1px solid @nav-tabs-border-color;
-                margin: 0 15px 20px;
-                padding: 15px;
-                clear: both;
-                .mdl-left {
-                    .make-row();
-                }
-                .mdl-left.left .message {
-                    .make-md-column(7);
-                    .text {
-                        border: 2px solid @state-success-border;
-                    }
-
-                }
-                .mdl-left.right .message {
-                    .make-md-column(7);
-                    .make-md-column-push(5);
-                    .text {
-                        border: 2px solid @state-info-border;
-                    }
-                }
-                .message {
-                    display: block;
-                    .text {
-                        border-radius: @border-radius-base;
-                        padding: 5px 10px;
-                        display: block;
-                    }
-                }
-                    
-            }
-            .box.center {
-                table.message_user_pictures {
-                    .make-md-column-push(2);
-                    .make-md-column(8);
-                    float: none !important;
-                    tr {
-                        border: 0;
-                    }
-                    td {
-                        background-color: @body-bg;
-                    }
-                    td#user1,
-                    td#user2 {
-                        display: block;
-                        height: 160px;
-                        img.userpicture {
-                            .img-circle;
-                        }
-                    }
-                    td#user1 img.userpicture {
-                        border: 3px solid @state-success-border;
-                    }
-                    td#user2 img.userpicture {
-                        border: 3px solid @state-info-border;
-                    }
-                }
-            }
-            .messagehistorytype {
-                color: #fff;
-                padding: 5px 15px;
-                .nav-tabs;
-                border: 0;
-                .hiddenelement {
-                    display: none;
-                }
-                
-                span.visible {
-                    color: @text-color;
-                    &:extend(.nav > li > a);
-                    &:extend(.nav-tabs > li);
-                    &:extend(.nav-tabs > li > a);
-                    &:extend(.nav-tabs > li.active > a);
-                }
-                a.visible {
-                    &:extend(.nav > li > a);
-                    &:extend(.nav-tabs > li);
-                    &:extend(.nav-tabs > li > a);
-                    color: @link-color;
-                    &:hover {
-                        &:extend(.nav-tabs > li > a:hover);
-                    }
-                }
-            }
-        }
-        .messagesend {
-            .mform {
-                margin: 0 20px;
-                fieldset .fitem .felement,
-                fieldset.hidden > div {
-                    margin-left: 0;
-                    float: none;
-                    width: 100%;
-                }
-                .fitemtitle, .form-label {
-                    .h3;
-                    float: none;
-                    text-align: left;
-                }
-                fieldset .fitem {
-                    margin-left: 0;
-                    margin-right: 0;
-                    margin-bottom: 0 !important;
-                }
-                .fitem_ftextarea {
-                    margin: 15px;
-                }
-            }
-        }
-
     }
 }
 
+.dir-rtl .message .message-contacts li {
+    .pix {
+        right: 0;
+        left: auto;
+    }
+    .contact {
+        margin: 0 25px 0 24%;
+    }
+    .contact.nolinks {
+        margin-right: 25px;
+        margin-left: 5px;
+    }
+    .link {
+        float: left;
+    }
+}
+
+.message .messagearea  {
+    @media screen and (min-width: 1000px) {
+        width: 74%;
+        border-left: 1px solid @table-border-color;
+        padding-left: 1%;
+    }
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+    }
+    float: right;
+    min-height: 200px;
+}
+.message .messagearea .messagehistorytype {
+    clear: both;
+    padding-bottom: 20px;
+}
+.message .messagearea .messagehistory .user {
+    vertical-align: top;
+    width: 45%;
+    min-width: 100px;
+    float: left;
+}
+.message .messagearea .messagehistory .user > div {
+    text-align: center;
+}
+.message .messagearea .messagehistory .between {
+    float: left;
+    width: 16px;
+    margin: 0 1%;
+    padding-top: 40px;
+}
+@media screen and (min-width: 800px) {
+    .message .messagearea .messagehistory .between {
+        margin: 0 3%;
+    }
+    .message .messagearea .messagehistory .user {
+        width: 32%
+    }
+    .message .messagearea .messagehistory .user:first-child {
+        margin-left: 13%;
+    }
+    .message .messagearea .messagehistory .user:last-child {
+        margin-right: 13%;
+    }
+    .dir-rtl .message .messagearea .messagehistory .user:first-child {
+        margin-right: 13%;
+        margin-left: 0%
+    }
+    .dir-rtl .message .messagearea .messagehistory .user:last-child {
+        margin-left: 13%;
+        margin-right: 0%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .message .messagearea .messagehistory .user {
+        width: 25%
+    }
+    .message .messagearea .messagehistory .user:first-child {
+        margin-left: 20%;
+    }
+    .message .messagearea .messagehistory .user:last-child {
+        margin-right: 20%;
+    }
+    .dir-rtl .message .messagearea .messagehistory .user:first-child {
+        margin-left: 0;
+        margin-right: 20%;
+    }
+    .dir-rtl .message .messagearea .messagehistory .user:last-child {
+        margin-right: 0%;
+        margin-left: 20%;
+    }
+}
+.dir-rtl .message .messagearea .messagehistory .between,
+.dir-rtl .message .messagearea .messagehistory .user {
+    float: right;
+}
+.message .messagearea .messagehistory .heading {
+    width: 100%;
+    clear: both;
+}
+.message .messagearea .messagehistory .left {
+    padding-bottom: 10px;
+    width: 50%;
+    float: left;
+    clear: both;
+}
+.dir-rtl .message .messagearea .messagehistory .left {
+    float:right;
+}
+.message .messagearea .messagehistory .right {
+    padding-bottom: 10px;
+    width: 50%;
+    float: right;
+    clear: both;
+}
+.dir-rtl .message .messagearea .messagehistory .right {
+    float:left;
+}
+.message .messagearea .messagehistory .notification {
+    .well;
+    .well-sm;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+.message .messagearea .messagesend {
+    padding-top: 20px;
+    clear: both;
+}
+.message .messagearea .messagesend .messagesendbox {
+    width: 100%;
+}
+.message .messagearea .messagesend fieldset {
+    padding: 0;
+    margin: 0;
+}
+// Bring the message send button closer to the message box.
+.message .messagearea .messagerecent {
+    text-align: left;
+    width: 100%;
+}
+.message .messagearea .messagerecent .singlemessage {
+    border-bottom: 1px solid @table-border-color;
+    padding: 10px;
+}
+.message .messagearea .messagerecent .singlemessage .otheruser span {
+    padding: 5px;
+}
+.message .messagearea .messagerecent .singlemessage .messagedate {
+    float: right;
+}
+.message .hiddenelement  {
+    display: none;
+}
+// not just using hidden as mform adds that class to its fieldset */
+.message .visible {
+    display: inline;
+}
+.message #usergroupselector.fieldset, .message #viewing {
+    width: 100%;
+}
+.messagesearchresults {
+    margin-bottom: 40px;
+}
+.messagesearchresults td {
+    padding: 0 10px 0 20px;
+}
+.messagesearchresults td span {
+    white-space: nowrap;
+}
+.messagesearchresults td img.userpicture {
+    padding-right: .45em;
+    vertical-align: text-bottom;
+}
+.dir-rtl .messagesearchresults td img.userpicture {
+    padding-left: .45em;
+    padding-right: 0;
+}
+.messagesearchresults td span img {
+    padding: 0 0 0 .45em;
+    vertical-align: text-bottom;
+}
+.dir-rtl .messagesearchresults td span img {
+    padding: 0 .45em 0 0;
+}
 #newmessageoverlay {
-    //fix for yui absolute positioning
-    width: @popover-max-width;
-    .popover;
+    .well;
+    margin: 0 1em;
     position: fixed;
-    top: inherit;
-    left: inherit;
-    bottom: 5px;
-    right: 5px;
-    a {
-        text-decoration: underline;
-    }
-    display: block;
-    #newmessagetext {
-        .popover-title;
-
-    }
-    #usermessage {
-        .popover-content;
-        border: 1px dotted @popover-border-color;
-        border-radius: @border-radius-base;
-        margin-top: 5px;
-        background-color: (lighten(@popover-bg, 10%));
-    }
-    #newmessagelinks {
-        margin: 5px 14px;
-    }
+    bottom: 0;
+    right: 0;
+}
+#newmessageoverlay #usermessage {
+    padding: 10px;
+}
+/* Widen the plain text editor on the bulk message screen */
+#page-user-action_redir #edit-messagebody {
+    width:auto;
 }
 
-textarea {
-    .form-control;
-    height: 200px;
+/** Messenger send message dialog */
+.core_message-messenger-sendmessage-hidden {
+    display:none;
+}
+.core_message-messenger-sendmessage {
+    .message-actions {
+        position: relative;
+    }
+    .message-area {
+        height: 240px;
+        max-height: 100%;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .message-input {
+        width: 100%;
+        height: 100%;
+        .box-sizing(border-box);
+    }
+    .message-send {
+        margin: 0;
+        float: right;
+    }
+    .message-notice-area {
+        display: table;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .message-notice {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        > div {
+            background: #eee;
+            padding: 5px;
+            font-size: 12px;
+        }
+    }
+    .message-footer {
+        margin-top: 3px;
+        line-height: 20px;
+    }
+    .message-history {
+        position: absolute;
+        bottom: 0;
+    }
+}
+.dir-rtl {
+    .core_message-messenger-sendmessage {
+        .message-send {
+            float: left;
+        }
+    }
 }
