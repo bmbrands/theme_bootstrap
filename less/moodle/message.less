@@ -1,4 +1,5 @@
 .box.message {
+    .make-row();
     .mdl-align {
         text-align: left;
     }
@@ -42,12 +43,7 @@
         }
     }
     .contactselector {
-        .panel;
-        .panel-default;
-        .heading {
-            margin: 10px 15px;
-            color: @headings-color;
-        }
+        .make-md-column(4);
         form#usergroupform {
             padding: 5px 10px;
             fieldset {
@@ -102,10 +98,27 @@
                 }
             }
         }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .message-contacts {
+            .pix,
+            .link,
+            .contact {
+                display: inline-block;
+            }
+            .link {
+                .pull-right;
+            }
+            .pix {
+                margin-right: 5px;
+            }
+        }
     }
     .messagearea {
-        .panel;
-        .panel-default;
+        .make-md-column(8);
 
         p.heading {
             margin: 10px 15px;
@@ -181,8 +194,6 @@
         .messagehistory {
             .messagehistory {
                 border-top: 1px solid @nav-tabs-border-color;
-                margin: 0 15px 20px;
-                padding: 15px;
                 clear: both;
                 .mdl-left {
                     .make-row();
@@ -211,37 +222,21 @@
                 }
                     
             }
-            .box.center {
-                table.message_user_pictures {
-                    .make-md-column-push(2);
-                    .make-md-column(8);
-                    float: none !important;
-                    tr {
-                        border: 0;
-                    }
-                    td {
-                        background-color: @body-bg;
-                    }
-                    td#user1,
-                    td#user2 {
-                        display: block;
-                        height: 160px;
-                        img.userpicture {
-                            .img-circle;
-                        }
-                    }
-                    td#user1 img.userpicture {
-                        border: 3px solid @state-success-border;
-                    }
-                    td#user2 img.userpicture {
-                        border: 3px solid @state-info-border;
-                    }
+
+            #message_user_pictures {
+                .make-row();
+                .box.user {
+                    .make-md-column(5);
+                    text-align: center;
+                }
+                .box.between {
+                    .make-md-column(2);
+                    text-align: center;
                 }
             }
             .messagehistorytype {
                 color: #fff;
-                padding: 5px 15px;
-                .nav-tabs;
+                //.nav-tabs;
                 border: 0;
                 .hiddenelement {
                     display: none;
@@ -267,12 +262,15 @@
         }
         .messagesend {
             .mform {
-                margin: 0 20px;
                 fieldset .fitem .felement,
                 fieldset.hidden > div {
-                    margin-left: 0;
+                    padding: 0;
+                    margin: 0;
                     float: none;
                     width: 100%;
+                    #id_submitbutton {
+                        margin: 5px 0 0 0;
+                    }
                 }
                 .fitemtitle, .form-label {
                     .h3;
@@ -280,9 +278,7 @@
                     text-align: left;
                 }
                 fieldset .fitem {
-                    margin-left: 0;
-                    margin-right: 0;
-                    margin-bottom: 0 !important;
+                    margin: 0;
                 }
                 .fitem_ftextarea {
                     margin: 15px;
