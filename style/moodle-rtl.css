@@ -11055,6 +11055,32 @@ textarea.path-admin .roleassigntable input[type="text"] {
   padding-right: 20px;
 }
 
+.block.block_calendar_month th,
+.block.block_calendar_month td {
+  border: 1px solid #ddd;
+}
+
+.block.block_calendar_month .content {
+  padding: 11px 0 0 0;
+}
+
+.block.block_calendar_month td.today {
+  background-color: #337ab7;
+  color: #FFF;
+}
+
+.block.block_calendar_month td.today a {
+  color: #FFF;
+}
+
+.block.block_calendar_month td.today .calendar-event-panel {
+  color: #333333;
+}
+
+.block.block_calendar_month td {
+  width: (100/7)*1%;
+}
+
 .block .minicalendar {
   max-width: 280px;
   margin: 0 auto;
@@ -14543,6 +14569,73 @@ fieldset[disabled] textarea {
 
 textareatextarea {
   height: auto;
+}
+
+/** Messenger send message dialog */
+
+.core_message-messenger-sendmessage-hidden {
+  display: none;
+}
+
+.core_message-messenger-sendmessage .message-actions {
+  position: relative;
+}
+
+.core_message-messenger-sendmessage .message-area {
+  height: 240px;
+  max-height: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.core_message-messenger-sendmessage .message-input {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.core_message-messenger-sendmessage .message-send {
+  margin: 0;
+  float: left;
+}
+
+.core_message-messenger-sendmessage .message-notice-area {
+  display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.core_message-messenger-sendmessage .message-notice {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.core_message-messenger-sendmessage .message-notice > div {
+  background: #eee;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.core_message-messenger-sendmessage .message-footer {
+  margin-top: 3px;
+  line-height: 20px;
+}
+
+.core_message-messenger-sendmessage .message-history {
+  position: absolute;
+  bottom: 0;
+}
+
+.dir-rtl .core_message-messenger-sendmessage .message-send {
+  float: right;
 }
 
 /* Question */
