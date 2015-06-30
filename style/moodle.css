@@ -10109,6 +10109,11 @@ span.editinstructions {
     border: 1px solid #e1e1e8;
   }
 }
+.filemanager,
+.filepicker,
+.file-picker {
+  font-size: 11px;
+}
 .filemanager a,
 .file-picker a,
 .filemanager a:hover,
@@ -10129,6 +10134,9 @@ span.editinstructions {
   max-width: 100%;
 }
 .fp-content-center {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
   vertical-align: middle;
 }
 .fp-content-hidden {
@@ -10175,6 +10183,11 @@ span.editinstructions {
   -webkit-box-shadow: 2px 2px 3px .1px #999;
           box-shadow: 2px 2px 3px .1px #999;
 }
+.moodle-dialogue h3 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
 .moodle-dialogue-base .filepicker .moodle-dialogue-wrap .moodle-dialogue-bd {
   padding: 0;
 }
@@ -10194,21 +10207,29 @@ span.editinstructions {
   border-right: 1px solid #bbb;
 }
 .file-picker .fp-repo-items {
-  float: left;
-  width: 693px;
+  float: none;
+  width: auto;
+  margin-left: 181px;
+}
+.dir-rtl .moodle-dialogue-fullscreen .file-picker .fp-repo-items {
+  float: right;
+  margin-right: 0;
+  margin-left: 0;
 }
 .file-picker .fp-navbar {
-  min-height: 36px;
+  min-height: 40px;
+  overflow: hidden;
   background: #f2f2f2;
   border-bottom: 1px solid #bbb;
 }
 .file-picker .fp-navbar .fp-viewbar {
-  margin: 2px 4px;
+  margin: 4px;
 }
 .file-picker .fp-content {
   height: 452px;
-  padding-top: 0;
   overflow: auto;
+  clear: none;
+  background: #fff;
 }
 .filepicker.moodle-dialogue-fullscreen .file-picker .fp-content {
   width: 100%;
@@ -10274,6 +10295,9 @@ span.editinstructions {
 .fp-viewbar {
   float: right;
   height: 30px;
+  -webkit-box-sizing: unset;
+     -moz-box-sizing: unset;
+          box-sizing: unset;
   background: white;
   border: 1px solid #ccc;
   border-bottom: 1px solid #b3b3b3;
@@ -10332,9 +10356,7 @@ span.editinstructions {
   width: 27px;
   height: 12px;
   margin-left: 4px;
-  background-image: url('[[pix:theme|fp/path_folder]]');
-  background-repeat: no-repeat;
-  background-position: left;
+  background: url('[[pix:theme|fp/path_folder]]') no-repeat 0 0;
 }
 .fp-pathbar .fp-path-folder-name {
   margin-left: 32px;
@@ -10405,88 +10427,69 @@ span.editinstructions {
 .filemanager .ygtvtn {
   width: 17px;
   height: 22px;
-  background-image: url('[[pix:y/tn]]');
-  background-repeat: no-repeat;
-  background-position: left;
+  background: url('[[pix:y/tn]]') 0 0 no-repeat;
 }
 .file-picker .ygtvtm,
 .filemanager .ygtvtm {
-  width: 13px;
-  height: 12px;
+  width: 17px;
+  height: 22px;
   cursor: pointer;
-  background-image: url('[[pix:y/tm]]');
-  background-repeat: no-repeat;
-  background-position: left 10px;
+  background: url('[[pix:y/tm]]') 0 0 no-repeat;
 }
 .file-picker .ygtvtmh,
 .filemanager .ygtvtmh {
   width: 13px;
   height: 12px;
   cursor: pointer;
-  background-image: url('[[pix:y/tm]]');
-  background-repeat: no-repeat;
-  background-position: left 10px;
+  background: url('[[pix:y/tm]]') 0 10px no-repeat;
 }
 .file-picker .ygtvtp,
 .filemanager .ygtvtp {
   width: 13px;
   height: 12px;
   cursor: pointer;
-  background-image: url('[[pix:y/tp]]');
-  background-repeat: no-repeat;
-  background-position: left 10px;
+  background-image: url('[[pix:y/tp]]') 0 10px no-repeat;
 }
 .file-picker .ygtvtph,
 .filemanager .ygtvtph {
   width: 13px;
   height: 22px;
   cursor: pointer;
-  background-image: url('[[pix:y/tp]]');
-  background-repeat: no-repeat;
-  background-position: left 10px;
+  background-image: url('[[pix:y/tp]]') 0 10px no-repeat;
 }
 .file-picker .ygtvln,
 .filemanager .ygtvln {
   width: 17px;
   height: 22px;
-  background-image: url('[[pix:y/ln]]');
-  background-repeat: no-repeat;
-  background-position: left;
+  background-image: url('[[pix:y/ln]]') 0 0 no-repeat;
 }
 .file-picker .ygtvlm,
 .filemanager .ygtvlm {
   width: 13px;
   height: 12px;
   cursor: pointer;
-  background-image: url('[[pix:y/lm]]');
-  background-repeat: no-repeat;
-  background-position: left 10px;
+  background-image: url('[[pix:y/lm]]') 0 10px no-repeat;
 }
 .file-picker .ygtvlmh,
 .filemanager .ygtvlmh {
   width: 13px;
   height: 12px;
   cursor: pointer;
-  background-image: url('[[pix:y/lm]]');
-  background-position: left 10px;
-
-  background-repeate: no-repeat;
+  background-image: url('[[pix:y/lm]]') 0 10px no-repeat;
 }
 .file-picker .ygtvlp,
 .filemanager .ygtvlp {
   width: 13px;
   height: 12px;
   cursor: pointer;
-  background-image: url('[[pix:y/lp]]');
-  background-repeat: no-repeat;
-  background-position: left 10px;
+  background-image: url('[[pix:y/lp]]') 0 0 no-repeat;
 }
 .file-picker .ygtvlph,
 .filemanager .ygtvlph {
   width: 13px;
   height: 12px;
   cursor: pointer;
-  background-image: url('[[pix:y/lp]]');
+  background-image: url('[[pix:y/lp]]') 0 10px no-repeat;
   background-repeat: no-repeat;
   background-position: left 10px;
 }
@@ -11109,10 +11112,46 @@ a.ygtvspacer:hover {
 }
 .fp-formset .control-label {
   font-size: 14px;
+  font-weight: normal;
   line-height: 1.42857143;
 }
 .fp-formset {
   margin: 0 15px;
+}
+.fp-forminset {
+  max-width: 400px;
+  padding: 0 10px;
+}
+.fp-forminset .control-group.control-radio {
+  margin-bottom: 0;
+}
+.fp-forminset .control-group label.control-label {
+  float: left;
+  width: 105px;
+  font-weight: normal;
+}
+.fp-forminset .control-group label.control-radio {
+  float: right;
+  width: 215px;
+  padding-top: 0;
+  font-weight: normal;
+  text-align: left;
+}
+.fp-forminset .control-group .controls {
+  margin-left: 125px;
+}
+.fp-forminset .control-group .controls.control-radio input {
+  margin-top: 3px;
+}
+.fp-forminset .fp-select-buttons {
+  float: none;
+}
+.fp-forminset input[type="text"] {
+  width: 228px;
+}
+.fp-fileinfo .fp-value {
+  display: inline-block;
+  padding-left: 5px;
 }
 .box.message .mdl-align {
   text-align: left;
@@ -16473,37 +16512,66 @@ input.fp-btn-choose {
   width: 100%;
   border-collapse: collapse;
 }
+.userenrolment tr {
+  vertical-align: top;
+}
+.userenrolment td {
+  height: 41px;
+  padding: 0;
+}
+.userenrolment .subfield {
+  margin-right: 5px;
+}
 .userenrolment .col_userdetails .subfield_picture {
   float: left;
-  margin: 0 5px;
 }
-.userenrolment .col_role a,
-.userenrolment .col_role span {
-  display: inline-block;
-  vertical-align: middle;
+.userenrolment .col_lastseen {
+  width: 150px;
 }
-.userenrolment .col_role a {
-  float: right;
-}
-.userenrolment .col_role .addrole {
-  text-align: center;
+.userenrolment .col_role {
+  width: 262px;
 }
 .userenrolment .hasAllRoles .col_role .addrole {
   display: none;
 }
+.userenrolment .col_enrol .enrolment {
+  float: left;
+  padding: 3px;
+  margin: 3px;
+}
+.userenrolment .col_enrol .enrolment a {
+  float: right;
+  margin-left: 3px;
+}
+.userenrolment .col_role .roles,
+.userenrolment .col_group .groups {
+  margin-right: 30px;
+}
+.userenrolment .col_role .role,
 .userenrolment .col_group .group {
   float: left;
+  padding: 3px;
+  margin: 3px;
   white-space: nowrap;
 }
+.userenrolment .col_role .role a,
 .userenrolment .col_group .group a {
   margin-left: 3px;
   cursor: pointer;
 }
+.userenrolment .col_role .addrole,
 .userenrolment .col_group .addgroup {
-  text-align: center;
+  float: right;
+  padding: 3px;
+  margin: 3px;
 }
-.userenrolment .col_group .addgroup a img {
-  vertical-align: bottom;
+.userenrolment .col_role .addrole > *:hover,
+.userenrolment .col_group .addgroup > *:hover {
+  border-bottom: 1px solid #666;
+}
+.userenrolment .col_role .addrole img,
+.userenrolment .col_group .addgroup img {
+  vertical-align: baseline;
 }
 .enrolpanel.roleassign.visible {
   position: absolute;
@@ -16860,51 +16928,6 @@ input.fp-btn-choose {
 #page-footer .purgecaches,
 #page-footer .performanceinfo {
   text-align: center;
-}
-.moodlezoom {
-  display: none;
-}
-@media (min-width: 768px) {
-  .moodlezoom {
-    display: block;
-  }
-  .moodlezoom {
-    margin-left: 10px;
-  }
-  .moodlezoom span.zoomout {
-    display: none;
-  }
-  .dir-rtl .moodlezoom {
-    margin-right: 10px;
-    margin-left: 0;
-  }
-  body.zoomin {
-    padding-top: 0;
-  }
-  body.zoomin .moodlezoom span.zoomout {
-    display: block;
-  }
-  body.zoomin .moodlezoom span.zoomin {
-    display: none;
-  }
-  body.zoomin .block-region {
-    display: none;
-  }
-  body.zoomin #region-main,
-  body.zoomin #region-bs-main-and-pre {
-    left: 0 !important;
-    width: 100% !important;
-  }
-  body.zoomin header.navbar {
-    display: none;
-  }
-  body.zoomin #page-header h1,
-  body.zoomin #page-footer {
-    display: none;
-  }
-}
-.nonsense {
-  left: 0;
 }
 /**
  * This styles the H2 node the dock creates to test the width before making its title rotation.
