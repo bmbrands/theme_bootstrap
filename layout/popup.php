@@ -34,6 +34,5 @@ echo $OUTPUT->doctype() ?>
         </section>
     </div>
 
-</div>
 </body>
 </html>
