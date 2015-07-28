@@ -23,10 +23,6 @@ $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
 $regions = bootstrap_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
-if ($knownregionpre || $knownregionpost) {
-    theme_bootstrap_initialise_zoom($PAGE);
-}
-$setzoom = theme_bootstrap_get_zoom();
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -37,7 +33,7 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 </head>
 
-<body <?php echo $OUTPUT->body_attributes($setzoom); ?>>
+<body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
@@ -50,14 +46,13 @@ echo $OUTPUT->doctype() ?>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+        <span class="navbar-brand"><?php echo $SITE->shortname; ?></span>
     </div>
 
     <div id="moodle-navbar" class="navbar-collapse collapse">
-        <?php echo $OUTPUT->custom_menu(); ?>
-        <?php echo $OUTPUT->user_menu(); ?>
         <ul class="nav pull-right">
             <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+            <li class="navbar-text"><?php echo $OUTPUT->login_info(false) ?></li>
         </ul>
     </div>
     </div>
@@ -69,6 +64,17 @@ echo $OUTPUT->doctype() ?>
     </div>
 </header>
 
+<div id="page" class="container-fluid">
+    <header id="page-header" class="clearfix">
+        <div id="page-navbar" class="clearfix">
+            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+        </div>
+
+        <div id="course-header">
+            <?php echo $OUTPUT->course_header(); ?>
+        </div>
+    </header>
 
     <div id="page-content" class="row">
         <div id="region-main" class="<?php echo $regions['content']; ?>">
@@ -81,24 +87,14 @@ echo $OUTPUT->doctype() ?>
         </div>
 
         <?php
-if ($knownregionpre) {
-    echo $OUTPUT->blocks('side-pre', $regions['pre']);
-}?>
+        if ($knownregionpre) {
+            echo $OUTPUT->blocks('side-pre', $regions['pre']);
+        }?>
         <?php
-if ($knownregionpost) {
-    echo $OUTPUT->blocks('side-post', $regions['post']);
-}?>
+        if ($knownregionpost) {
+            echo $OUTPUT->blocks('side-post', $regions['post']);
+        }?>
     </div>
-
-    <footer id="page-footer">
-        <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-        <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
-        <?php
-        echo $OUTPUT->login_info();
-        echo $OUTPUT->home_link();
-        echo $OUTPUT->standard_footer_html();
-        ?>
-    </footer>
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
