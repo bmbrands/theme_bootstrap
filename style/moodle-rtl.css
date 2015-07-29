@@ -11912,6 +11912,11 @@ span.editinstructions {
   /** Three column layout */
 }
 
+#course-category-listings ul.ml ul.ml {
+  margin: 0;
+  padding: 0;
+}
+
 #course-category-listings.columns-2 > #course-listing > div {
   position: relative;
   right: -1px;

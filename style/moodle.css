@@ -9737,6 +9737,10 @@ span.editinstructions {
   /** Two column layout */
   /** Three column layout */
 }
+#course-category-listings ul.ml ul.ml {
+  padding: 0;
+  margin: 0;
+}
 #course-category-listings.columns-2 > #course-listing > div {
   position: relative;
   left: -1px;
