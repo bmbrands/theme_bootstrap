@@ -155,7 +155,15 @@ select {
 .navbar-fixed-bottom {
     z-index: 4030;
 }
-
+@media (max-width: @grid-float-breakpoint) {
+    .navbar-collapse.collapse,
+    .navbar-collapse.collapsing {
+        margin-top: @navbar-height;
+        .nav {
+            float: none !important;
+        }
+    }
+}
 .langmenu form {
     margin: 0;
 }

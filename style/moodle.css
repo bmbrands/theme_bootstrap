@@ -12663,7 +12663,6 @@ body.path-question-type .mform fieldset.hidden {
   padding: 0;
   margin: .7em 0 0;
 }
-/* user.less */
 .user-box {
   float: left;
   width: 115px;
@@ -12687,35 +12686,30 @@ body.path-question-type .mform fieldset.hidden {
 .userlist table#participants {
   text-align: center;
 }
-.userlist table#participants td,
-.userlist table#participants th {
-  padding: 4px;
-  text-align: left;
-  vertical-align: middle;
-}
 .userlist table.controls {
   width: 100%;
 }
 .userlist table.controls tr {
   vertical-align: top;
 }
+.userlist table.controls .right {
+  text-align: right;
+}
+.userlist table#participants td,
+.userlist table#participants th {
+  padding: 4px;
+  text-align: left;
+  vertical-align: middle;
+}
 .userlist table.controls td.right,
 .userlist table.controls td.left {
   padding: 4px;
-}
-.userlist table.controls .right {
-  text-align: right;
 }
 .userinfobox {
   width: 100%;
   padding: 10px;
   border-collapse: separate;
   border: 1px solid;
-}
-.userinfobox .left,
-.userinfobox .side {
-  width: 100px;
-  vertical-align: top;
 }
 .userinfobox .userpicture {
   width: 100px;
@@ -12743,6 +12737,11 @@ body.path-question-type .mform fieldset.hidden {
   font-weight: bold;
   text-align: right;
   white-space: nowrap;
+  vertical-align: top;
+}
+.userinfobox .left,
+.userinfobox .side {
+  width: 100px;
   vertical-align: top;
 }
 .groupinfobox {
@@ -12792,7 +12791,6 @@ body.path-question-type .mform fieldset.hidden {
 .userselector div label {
   margin-right: .3em;
 }
-/* Next style does not work in all browsers but looks nicer when it does */
 .userselector .userselector-infobelow {
   font-size: .8em;
 }
@@ -12803,17 +12801,37 @@ body.path-question-type .mform fieldset.hidden {
   margin: .2em 0;
   text-align: left;
 }
-/** user full profile */
 #page-user-profile .messagebox {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
 }
-/** user course profile */
 #page-course-view-weeks .messagebox {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+}
+.preferences-group ul {
+  margin-right: 0;
+  margin-left: 0;
+  list-style: none;
+}
+#page-user-profile .node_category .contentnode,
+.path-user .node_category .contentnode {
+  margin-left: -20px;
+}
+.usermenu {
+  float: right;
+}
+.usermenu .username {
+  margin-right: 5px;
+}
+.usermenu .dropdown-toggle {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.usermenu .dropdown-menu > li > a {
+  padding: 3px 10px;
 }
 .userprofile .fullprofilelink {
   margin: 10px;
@@ -14646,6 +14664,16 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   z-index: 4030;
+}
+@media (max-width: 768px) {
+  .navbar-collapse.collapse,
+  .navbar-collapse.collapsing {
+    margin-top: 50px;
+  }
+  .navbar-collapse.collapse .nav,
+  .navbar-collapse.collapsing .nav {
+    float: none !important;
+  }
 }
 .langmenu form {
   margin: 0;

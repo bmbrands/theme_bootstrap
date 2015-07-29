@@ -86,7 +86,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         // TODO: eliminate this duplicated logic, it belongs in core, not
         // here. See MDL-39565.
 
-        $content = '<ul class="nav navbar-nav">';
+        $content = '<ul class="nav navbar-nav pull-right">';
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
@@ -96,63 +96,102 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
     public function user_menu($user = null, $withlinks = null) {
         $usermenu = new custom_menu('', current_language());
-        return $this->render_user_menu($usermenu);
+        return $this->render_user_menu($usermenu, $user);
     }
 
-    protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER;
+    protected function render_user_menu(custom_menu $menu, $user) {
+        global $USER, $DB, $SESSION;
 
-        $addusermenu = true;
-        $addlangmenu = true;
-
-        $langs = get_string_manager()->get_list_of_translations();
-        if (count($langs) < 2
-        or empty($CFG->langmenu)
-        or ($this->page->course != SITEID and !empty($this->page->course->lang))) {
-            $addlangmenu = false;
+        if (empty($user)) {
+            $user = $USER;
         }
 
-        if ($addlangmenu) {
-            $language = $menu->add(get_string('language'), new moodle_url('#'), get_string('language'), 10000);
-            foreach ($langs as $langtype => $langname) {
-                $language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
-            }
+        $menuclass = 'guest';
+
+        if (isloggedin() && !isguestuser()) {
+            $menuclass = 'loggedin';
+            $userpicture = new user_picture($user);
+            $userpicture->link = false;
+            $userpicture->size = 30;
+            $picture = html_writer::tag('span', $this->render($userpicture), array('class' => 'picspan'));
+            $name = fullname($user);
+            $name = html_writer::tag('span', $name, array('class' => 'username hidden-sm'));
+            $usermenu = $menu->add($name . $picture, new moodle_url('#'), fullname($user), 10001);
+
+  
+            $usermenu->add(
+                $this->glyphicon('dashboard')  . get_string('myhome'),
+                new moodle_url('/my'),
+                get_string('myhome')
+            );
+
+            $usermenu->add(
+                'divider',
+                new moodle_url('/'),
+                'divider'
+            );
+
+            $usermenu->add(
+                $this->glyphicon('user') . get_string('profile'),
+                new moodle_url('/user/profile.php', array('id' => $user->id)),
+
+                get_string('profile')
+            );
+
+            $usermenu->add(
+                $this->glyphicon('list-alt') . get_string('grades'),
+                new moodle_url('/grade/report/overview/index.php'),
+                get_string('grades')
+            );
+        
+            $usermenu->add(
+                $this->glyphicon('inbox') . get_string('messages', 'message'),
+                new moodle_url('/message/index.php'),
+
+                get_string('messages', 'message')
+            );
+
+            $usermenu->add(
+                $this->glyphicon('cog') . get_string('preferences'),
+                new moodle_url('/user/preferences.php'),
+
+                get_string('preferences')
+            );
+        
+            $usermenu->add(
+                'divider',
+                new moodle_url('/'),
+                'divider'
+            );
+
+            $usermenu->add(
+                $this->glyphicon('sign-out') . get_string('logout'),
+                new moodle_url('/login/logout.php', array('sesskey' => sesskey(), 'alt' => 'logout')),
+                get_string('logout')
+            );
+        } else {
+            $menu->add(
+                $this->glyphicon('sign-in')  . get_string('login'),
+                new moodle_url('/login/index.php', array('alt' => get_string('login'))),
+                get_string('login')
+            );
         }
 
-        if ($addusermenu) {
-            if (isloggedin()) {
-                $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
-                $usermenu->add(
-                    '<span class="glyphicon glyphicon-off"></span>' . get_string('logout'),
-                    new moodle_url('/login/logout.php', array('sesskey' => sesskey(), 'alt' => 'logout')),
-                    get_string('logout')
-                );
-
-                $usermenu->add(
-                    '<span class="glyphicon glyphicon-user"></span>' . get_string('viewprofile'),
-                    new moodle_url('/user/profile.php', array('id' => $USER->id)),
-                    get_string('viewprofile')
-                );
-
-                $usermenu->add(
-                    '<span class="glyphicon glyphicon-cog"></span>' . get_string('editmyprofile'),
-                    new moodle_url('/user/edit.php', array('id' => $USER->id)),
-                    get_string('editmyprofile')
-                );
-            } else {
-                $usermenu = $menu->add(get_string('login'), new moodle_url('/login/index.php'), get_string('login'), 10001);
-            }
-        }
-
-        $content = '<ul class="nav navbar-nav navbar-right">';
+        $content = html_writer::start_tag('ul', array('class' => 'nav pull-left usermenu ' . $menuclass, 'role' => 'menubar'));
         foreach ($menu->get_children() as $item) {
-            $content .= $this->render_custom_menu_item($item, 1);
+            $content .= $this->render_custom_menu_item($item, 1, 'pull-right');
         }
+        $content .= html_writer::end_tag('ul');
 
-        return $content.'</ul>';
+        return $content;
     }
 
-    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+    private function glyphicon($icon) {
+        $icon = html_writer::tag('i', '', array('class' => 'glyphicon glyphicon-' . $icon));
+        return html_writer::tag('span', $icon, array('class' => 'iconwrapper'));
+    }
+
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0, $direction = '' ) {
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -183,7 +222,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 $content .= '<b class="caret"></b>';
             }
             $content .= '</a>';
-            $content .= '<ul class="dropdown-menu">';
+            $content .= '<ul class="dropdown-menu '.$direction.'">';
             foreach ($menunode->get_children() as $menunode) {
                 $content .= $this->render_custom_menu_item($menunode, 0);
             }
@@ -191,12 +230,19 @@ class theme_bootstrap_core_renderer extends core_renderer {
         } else {
             $content = '<li>';
             // The node doesn't have children so produce a final menuitem.
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
-            } else {
-                $url = '#';
+            $class = $menunode->get_title();
+            if ($class == 'divider') {
+                $content = '<li class="divider" role="presentation">';
+            } else  {
+                $content = '<li>';
+            // The node doesn't have children so produce a final menuitem.
+                if ($menunode->get_url() !== null) {
+                    $url = $menunode->get_url();
+                } else {
+                    $url = '#';
+                }
+                $content .= html_writer::link($url, $menunode->get_text(), array('class' => $class, 'title' => $menunode->get_title()));
             }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
         }
         return $content;
     }

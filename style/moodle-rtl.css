@@ -15443,8 +15443,6 @@ body.path-question-type .mform fieldset.hidden {
   margin: 0.7em 0 0;
 }
 
-/* user.less */
-
 .user-box {
   margin: 8px;
   width: 115px;
@@ -15474,13 +15472,6 @@ body.path-question-type .mform fieldset.hidden {
   text-align: center;
 }
 
-.userlist table#participants td,
-.userlist table#participants th {
-  vertical-align: middle;
-  text-align: right;
-  padding: 4px;
-}
-
 .userlist table.controls {
   width: 100%;
 }
@@ -15489,13 +15480,20 @@ body.path-question-type .mform fieldset.hidden {
   vertical-align: top;
 }
 
-.userlist table.controls td.right,
-.userlist table.controls td.left {
+.userlist table.controls .right {
+  text-align: left;
+}
+
+.userlist table#participants td,
+.userlist table#participants th {
+  vertical-align: middle;
+  text-align: right;
   padding: 4px;
 }
 
-.userlist table.controls .right {
-  text-align: left;
+.userlist table.controls td.right,
+.userlist table.controls td.left {
+  padding: 4px;
 }
 
 .userinfobox {
@@ -15503,12 +15501,6 @@ body.path-question-type .mform fieldset.hidden {
   border: 1px solid;
   border-collapse: separate;
   padding: 10px;
-}
-
-.userinfobox .left,
-.userinfobox .side {
-  width: 100px;
-  vertical-align: top;
 }
 
 .userinfobox .userpicture {
@@ -15544,6 +15536,12 @@ body.path-question-type .mform fieldset.hidden {
   white-space: nowrap;
   vertical-align: top;
   font-weight: bold;
+}
+
+.userinfobox .left,
+.userinfobox .side {
+  width: 100px;
+  vertical-align: top;
 }
 
 .groupinfobox {
@@ -15603,8 +15601,6 @@ body.path-question-type .mform fieldset.hidden {
   margin-left: 0.3em;
 }
 
-/* Next style does not work in all browsers but looks nicer when it does */
-
 .userselector .userselector-infobelow {
   font-size: 0.8em;
 }
@@ -15618,20 +15614,44 @@ body.path-question-type .mform fieldset.hidden {
   text-align: right;
 }
 
-/** user full profile */
-
 #page-user-profile .messagebox {
   text-align: center;
   margin-right: auto;
   margin-left: auto;
 }
 
-/** user course profile */
-
 #page-course-view-weeks .messagebox {
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+}
+
+.preferences-group ul {
+  list-style: none;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#page-user-profile .node_category .contentnode,
+.path-user .node_category .contentnode {
+  margin-right: -20px;
+}
+
+.usermenu {
+  float: left;
+}
+
+.usermenu .username {
+  margin-left: 5px;
+}
+
+.usermenu .dropdown-toggle {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.usermenu .dropdown-menu > li > a {
+  padding: 3px 10px;
 }
 
 .userprofile .fullprofilelink {
@@ -17824,6 +17844,18 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   z-index: 4030;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse.collapse,
+  .navbar-collapse.collapsing {
+    margin-top: 50px;
+  }
+
+  .navbar-collapse.collapse .nav,
+  .navbar-collapse.collapsing .nav {
+    float: none !important;
+  }
 }
 
 .langmenu form {
