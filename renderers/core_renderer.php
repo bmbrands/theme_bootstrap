@@ -283,12 +283,4 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
         return parent::box($contents, $classes, $id, $attributes);
     }
-
-    public function content_zoom() {
-        $zoomin = html_writer::span(get_string('fullscreen', 'theme_bootstrap'), 'zoomin');
-        $zoomout = html_writer::span(get_string('closefullscreen', 'theme_bootstrap'), 'zoomout');
-        $content = html_writer::link('#',  $zoomin . $zoomout,
-            array('class' => 'btn btn-default pull-right moodlezoom'));
-        return $content;
-    }
 }
