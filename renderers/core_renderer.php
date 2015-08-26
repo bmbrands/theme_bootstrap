@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 class theme_bootstrap_core_renderer extends core_renderer {
 
     public function notification($message, $classes = 'notifyproblem') {
-        $message = clean_text($message);
+        //$message = clean_text($message);
 
         if ($classes == 'notifyproblem') {
             return html_writer::div($message, 'alert alert-danger');

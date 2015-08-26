@@ -8657,7 +8657,7 @@ textarea.path-admin .roleassigntable input[type="text"] {
   border: 1px solid #000;
   border-top-width: 0;
 }
-#page-admin-index #notice .checkforupdates {
+#page-admin-index .alert .singlebutton {
   text-align: center;
 }
 #plugins-check-info {
@@ -12831,10 +12831,6 @@ body.path-question-type .mform fieldset.hidden {
   margin-left: 0;
   list-style: none;
 }
-#page-user-profile .node_category .contentnode,
-.path-user .node_category .contentnode {
-  margin-left: -20px;
-}
 .usermenu {
   float: right;
 }
@@ -13627,20 +13623,6 @@ ol {
   margin: 0 2px;
   vertical-align: baseline;
 }
-.block .header .commands {
-  clear: both;
-  text-align: right;
-}
-.block .header .commands > a {
-  margin: 0 3px;
-}
-.block .header .commands .icon img {
-  width: 12px;
-  height: 12px;
-}
-.block .header .commands img.actionmenu {
-  width: auto;
-}
 .block .content {
   padding: 4px 14px;
   word-wrap: break-word;
@@ -13713,6 +13695,20 @@ fieldset[disabled] .block .singleselect select {
 }
 textarea.block .singleselect select {
   height: auto;
+}
+.editing .block .header .commands {
+  clear: both;
+  text-align: right;
+}
+.editing .block .header .commands > a {
+  margin: 0 3px;
+}
+.editing .block .header .commands .icon img {
+  width: 12px;
+  height: 12px;
+}
+.editing .block .header .commands img.actionmenu {
+  width: auto;
 }
 .block.list_block .unlist > li > .column {
   display: inline-block;
@@ -16238,7 +16234,7 @@ input.fp-btn-choose {
   width: 237px;
 }
 /* responsive.less */
-@media (max-width: 873px) {
+@media (max-width: 767px) {
   .file-picker .fp-repo-area {
     float: none;
     width: 100%;

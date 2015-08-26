@@ -67,6 +67,16 @@ class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
         }
     }
 
+    /**
+     * Output a warning message, of the type that appears on the admin notifications page.
+     * @param string $message the message to display.
+     * @param string $type type class
+     * @return string HTML to output.
+     */
+    // protected function warning($message, $type = 'warning') {
+    //     return $this->box($message, 'generalbox admin' . $type);
+    // }
+
     protected function test_site_warning($testsite) {
         if (!$testsite) {
             return '';
