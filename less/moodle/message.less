@@ -43,6 +43,9 @@
         }
     }
     .contactselector {
+        .singleselect select {
+            width: 100%;
+        }
         .make-md-column(4);
         form#usergroupform {
             padding: 5px 10px;
@@ -104,16 +107,24 @@
             list-style: none;
         }
         .message-contacts {
-            .pix,
-            .link,
+            @media (max-width: @screen-md) {
+                max-width: 270px;
+                margin: 0 auto;
+                position: relative;
+            }
+            li {
+                line-height: 26px;
+            }
             .contact {
-                display: inline-block;
+                margin: 0 24% 0 25px;
+                text-align: left;
             }
             .link {
                 .pull-right;
             }
             .pix {
-                margin-right: 5px;
+                position: absolute;
+                left: 0;
             }
         }
     }

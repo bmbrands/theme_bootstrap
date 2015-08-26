@@ -7975,11 +7975,6 @@ button.close {
   border-radius: 0 6px 6px 6px;
 }
 
-div[role="main"] ul,
-div[role="main"] ol {
-  padding: 0 20px;
-}
-
 pre {
   white-space: pre-wrap;
 }
@@ -8134,22 +8129,6 @@ img.icon.hide {
 
 .pagelayout-admin .show {
   display: inline !important;
-}
-
-div[role="main"] ul,
-div[role="main"] ol {
-  padding-right: 20px;
-  overflow: visible;
-}
-
-div[role="main"] ul.section,
-div[role="main"] ol.section,
-div[role="main"] ul.weeks,
-div[role="main"] ol.weeks,
-div[role="main"] ul.topics,
-div[role="main"] ol.topics {
-  padding: 0;
-  overflow: visible;
 }
 
 /** core.less */
@@ -8807,6 +8786,12 @@ form.popupform div {
 .action-icon img.smallicon {
   vertical-align: text-bottom;
   margin: 0 0.3em;
+}
+
+.smallicon {
+  -webkit-box-sizing: initial;
+  -moz-box-sizing: initial;
+  box-sizing: initial;
 }
 
 .no-overflow {
@@ -9652,7 +9637,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 /* Center the submit buttons within the area */
 
 .choosercontainer #chooseform .submitbuttons {
-  margin: 0.7em 0;
+  padding: 0.7em 0;
   text-align: center;
 }
 
@@ -13792,6 +13777,10 @@ textarea.box.message .message_form input[type="text"] {
   padding-left: 15px;
 }
 
+.box.message .contactselector .singleselect select {
+  width: 100%;
+}
+
 @media (min-width: 992px) {
   .box.message .contactselector {
     float: right;
@@ -13925,10 +13914,21 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   list-style: none;
 }
 
-.box.message .contactselector .message-contacts .pix,
-.box.message .contactselector .message-contacts .link,
+@media (max-width: 992px) {
+  .box.message .contactselector .message-contacts {
+    max-width: 270px;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+.box.message .contactselector .message-contacts li {
+  line-height: 26px;
+}
+
 .box.message .contactselector .message-contacts .contact {
-  display: inline-block;
+  margin: 0 25px 0 24%;
+  text-align: right;
 }
 
 .box.message .contactselector .message-contacts .link {
@@ -13936,7 +13936,8 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 }
 
 .box.message .contactselector .message-contacts .pix {
-  margin-left: 5px;
+  position: absolute;
+  right: 0;
 }
 
 .box.message .messagearea {
@@ -15762,9 +15763,8 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
   }
 }
 
-.userprofile dl,
-.userprofile ul {
-  margin: 0;
+.userprofile dd {
+  margin-right: 10px;
 }
 
 #page-user-profile .node_category li,

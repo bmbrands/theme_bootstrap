@@ -6521,10 +6521,6 @@ button.close {
   margin-left: 10px;
   border-radius: 6px 0 6px 6px;
 }
-div[role="main"] ul,
-div[role="main"] ol {
-  padding: 0 20px;
-}
 pre {
   white-space: pre-wrap;
 }
@@ -6659,20 +6655,6 @@ img.icon.hide {
 }
 .pagelayout-admin .show {
   display: inline !important;
-}
-div[role="main"] ul,
-div[role="main"] ol {
-  padding-left: 20px;
-  overflow: visible;
-}
-div[role="main"] ul.section,
-div[role="main"] ol.section,
-div[role="main"] ul.weeks,
-div[role="main"] ol.weeks,
-div[role="main"] ul.topics,
-div[role="main"] ol.topics {
-  padding: 0;
-  overflow: visible;
 }
 /** core.less */
 /** Page layout CSS starts **/
@@ -7220,6 +7202,11 @@ form.popupform div {
 .action-icon img.smallicon {
   margin: 0 .3em;
   vertical-align: text-bottom;
+}
+.smallicon {
+  -webkit-box-sizing: initial;
+     -moz-box-sizing: initial;
+          box-sizing: initial;
 }
 .no-overflow {
   margin-bottom: 15px;
@@ -7892,7 +7879,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 }
 /* Center the submit buttons within the area */
 .choosercontainer #chooseform .submitbuttons {
-  margin: .7em 0;
+  padding: .7em 0;
   text-align: center;
 }
 .choosercontainer #chooseform .submitbuttons input {
@@ -11289,6 +11276,9 @@ textarea.box.message .message_form input[type="text"] {
   padding-right: 15px;
   padding-left: 15px;
 }
+.box.message .contactselector .singleselect select {
+  width: 100%;
+}
 @media (min-width: 992px) {
   .box.message .contactselector {
     float: left;
@@ -11403,16 +11393,26 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   margin: 0;
   list-style: none;
 }
-.box.message .contactselector .message-contacts .pix,
-.box.message .contactselector .message-contacts .link,
+@media (max-width: 992px) {
+  .box.message .contactselector .message-contacts {
+    position: relative;
+    max-width: 270px;
+    margin: 0 auto;
+  }
+}
+.box.message .contactselector .message-contacts li {
+  line-height: 26px;
+}
 .box.message .contactselector .message-contacts .contact {
-  display: inline-block;
+  margin: 0 24% 0 25px;
+  text-align: left;
 }
 .box.message .contactselector .message-contacts .link {
   float: right !important;
 }
 .box.message .contactselector .message-contacts .pix {
-  margin-right: 5px;
+  position: absolute;
+  left: 0;
 }
 .box.message .messagearea {
   position: relative;
@@ -12928,9 +12928,8 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
     margin-left: 180px;
   }
 }
-.userprofile dl,
-.userprofile ul {
-  margin: 0;
+.userprofile dd {
+  margin-left: 10px;
 }
 #page-user-profile .node_category li,
 .path-user .node_category li {
