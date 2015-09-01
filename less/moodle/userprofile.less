@@ -27,14 +27,19 @@
     dl.list {
         .dl-horizontal;
     }
-    dd {
+    dd, dt {
+        margin-left: 0px;
+    }
+    ul {
         margin-left: 10px;
+    }
+    ul > li ul {
+        margin-left: 0;
     }
 }
 #page-user-profile .node_category, .path-user .node_category {
     li {
-        list-style-type: square;
-
+        list-style-type: none;
         &.contentnode {
             list-style-type: none;
         }

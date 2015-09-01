@@ -13914,16 +13914,20 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   list-style: none;
 }
 
-@media (max-width: 992px) {
-  .box.message .contactselector .message-contacts {
-    max-width: 270px;
-    margin: 0 auto;
-    position: relative;
-  }
+.box.message .contactselector .message-contacts {
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 10px;
+}
+
+.box.message .contactselector .message-contacts li:nth-child(odd) {
+  background-color: #f9f9f9;
 }
 
 .box.message .contactselector .message-contacts li {
+  padding: 5px 0;
   line-height: 26px;
+  border-top: 1px solid #dddddd;
 }
 
 .box.message .contactselector .message-contacts .contact {
@@ -14306,32 +14310,22 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 
 .box.message .messagearea .messagehistory #message_user_pictures .box.user {
   position: relative;
+  float: right;
+  width: 41.66666667%;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
   text-align: center;
-}
-
-@media (min-width: 992px) {
-  .box.message .messagearea .messagehistory #message_user_pictures .box.user {
-    float: right;
-    width: 41.66666667%;
-  }
 }
 
 .box.message .messagearea .messagehistory #message_user_pictures .box.between {
   position: relative;
+  float: right;
+  width: 16.66666667%;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
   text-align: center;
-}
-
-@media (min-width: 992px) {
-  .box.message .messagearea .messagehistory #message_user_pictures .box.between {
-    float: right;
-    width: 16.66666667%;
-  }
 }
 
 .box.message .messagearea .messagehistory .messagehistorytype {
@@ -15763,13 +15757,22 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
   }
 }
 
-.userprofile dd {
+.userprofile dd,
+.userprofile dt {
+  margin-right: 0px;
+}
+
+.userprofile ul {
   margin-right: 10px;
+}
+
+.userprofile ul > li ul {
+  margin-right: 0;
 }
 
 #page-user-profile .node_category li,
 .path-user .node_category li {
-  list-style-type: square;
+  list-style-type: none;
 }
 
 #page-user-profile .node_category li.contentnode,

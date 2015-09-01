@@ -11393,15 +11393,18 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   margin: 0;
   list-style: none;
 }
-@media (max-width: 992px) {
-  .box.message .contactselector .message-contacts {
-    position: relative;
-    max-width: 270px;
-    margin: 0 auto;
-  }
+.box.message .contactselector .message-contacts {
+  position: relative;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.box.message .contactselector .message-contacts li:nth-child(odd) {
+  background-color: #f9f9f9;
 }
 .box.message .contactselector .message-contacts li {
+  padding: 5px 0;
   line-height: 26px;
+  border-top: 1px solid #ddd;
 }
 .box.message .contactselector .message-contacts .contact {
   margin: 0 24% 0 25px;
@@ -11725,29 +11728,21 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 }
 .box.message .messagearea .messagehistory #message_user_pictures .box.user {
   position: relative;
+  float: left;
+  width: 41.66666667%;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
   text-align: center;
-}
-@media (min-width: 992px) {
-  .box.message .messagearea .messagehistory #message_user_pictures .box.user {
-    float: left;
-    width: 41.66666667%;
-  }
 }
 .box.message .messagearea .messagehistory #message_user_pictures .box.between {
   position: relative;
+  float: left;
+  width: 16.66666667%;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
   text-align: center;
-}
-@media (min-width: 992px) {
-  .box.message .messagearea .messagehistory #message_user_pictures .box.between {
-    float: left;
-    width: 16.66666667%;
-  }
 }
 .box.message .messagearea .messagehistory .messagehistorytype {
   color: #fff;
@@ -12928,12 +12923,19 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
     margin-left: 180px;
   }
 }
-.userprofile dd {
+.userprofile dd,
+.userprofile dt {
+  margin-left: 0;
+}
+.userprofile ul {
   margin-left: 10px;
+}
+.userprofile ul > li ul {
+  margin-left: 0;
 }
 #page-user-profile .node_category li,
 .path-user .node_category li {
-  list-style-type: square;
+  list-style-type: none;
 }
 #page-user-profile .node_category li.contentnode,
 .path-user .node_category li.contentnode {
