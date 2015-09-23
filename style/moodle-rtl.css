@@ -8131,6 +8131,10 @@ img.icon.hide {
   display: inline !important;
 }
 
+.gradingform_rubric {
+  max-width: none !important;
+}
+
 /** core.less */
 
 /** Page layout CSS starts **/
@@ -20326,6 +20330,10 @@ fieldset[disabled] #dock .dockedtitle.active {
   margin: 0.5em;
   padding: 1em;
   border: 1px solid #aaa;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  white-space: normal;
 }
 
 #page-grade-grading-manage .actions .action:focus,

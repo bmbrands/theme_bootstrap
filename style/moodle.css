@@ -6656,6 +6656,9 @@ img.icon.hide {
 .pagelayout-admin .show {
   display: inline !important;
 }
+.gradingform_rubric {
+  max-width: none !important;
+}
 /** core.less */
 /** Page layout CSS starts **/
 .layout-option-noheader #page-header,
@@ -16818,6 +16821,9 @@ fieldset[disabled] #dock .dockedtitle.active {
   position: relative;
   display: inline-block;
   width: 150px;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
   padding: 6px 12px;
   padding: 10px 16px;
   padding: 1em;
@@ -16831,6 +16837,7 @@ fieldset[disabled] #dock .dockedtitle.active {
   line-height: 1.33;
   text-align: center;
   white-space: nowrap;
+  white-space: normal;
   vertical-align: middle;
   vertical-align: top;
   -ms-touch-action: manipulation;
