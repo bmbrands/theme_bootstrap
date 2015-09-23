@@ -11321,6 +11321,7 @@ textarea.path-admin .roleassigntable input[type="text"] {
 
 .section {
   padding: 0;
+  margin: 0;
 }
 
 .section .activity .commands {
@@ -16514,6 +16515,7 @@ img#persona_signin {
 ul,
 ol {
   padding: 0;
+  margin: 0 25px 10px 0;
 }
 
 .container .moodleSkin img.mceIcon {
