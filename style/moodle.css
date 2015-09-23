@@ -12941,6 +12941,10 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
 .path-user .node_category li.contentnode {
   list-style-type: none;
 }
+.path-user .node_category:first-child li span {
+  display: block;
+  margin-bottom: 10px;
+}
 .page-context-header {
   overflow: hidden;
 }
@@ -14063,7 +14067,6 @@ textarea.mform .fitem .felement input[type="password"] {
   cursor: help;
 }
 .mform .iconhelp {
-  margin-right: -16px;
   margin-left: 4px;
 }
 .form-item .form-label {
