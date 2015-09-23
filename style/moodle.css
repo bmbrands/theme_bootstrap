@@ -9243,9 +9243,6 @@ textarea.path-admin .roleassigntable input[type="text"] {
 .editing .course-content ul li.section.main .right {
   display: inherit;
 }
-.editing ul.weeks h3.sectionname {
-  white-space: normal;
-}
 .editing_show + .editing_assign,
 .editing_hide + .editing_assign {
   margin-left: 20px;
@@ -9413,9 +9410,6 @@ textarea.path-admin .roleassigntable input[type="text"] {
 li.section.hidden span.commands a.editing_hide,
 li.section.hidden span.commands a.editing_show {
   cursor: default;
-}
-ul.weeks h3.sectionname {
-  white-space: nowrap;
 }
 .single-section h3.sectionname {
   clear: both;
