@@ -7209,7 +7209,7 @@ form.popupform div {
           box-sizing: initial;
 }
 .no-overflow {
-  margin-bottom: 15px;
+  margin-bottom: 1px;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
