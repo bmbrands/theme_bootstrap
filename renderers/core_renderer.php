@@ -126,9 +126,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
             );
 
             $usermenu->add(
-                'divider',
+                '#######',
                 new moodle_url('/'),
-                'divider'
+                '#######'
             );
 
             $usermenu->add(
@@ -159,9 +159,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
             );
         
             $usermenu->add(
-                'divider',
+                '#######',
                 new moodle_url('/'),
-                'divider'
+                '#######'
             );
 
             $usermenu->add(
@@ -177,7 +177,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             );
         }
 
-        $content = html_writer::start_tag('ul', array('class' => 'nav pull-left usermenu ' . $menuclass, 'role' => 'menubar'));
+        $content = html_writer::start_tag('ul', array('class' => 'nav navbar-nav pull-left usermenu ' . $menuclass, 'role' => 'menubar'));
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1, 'pull-right');
         }
@@ -231,7 +231,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $content = '<li>';
             // The node doesn't have children so produce a final menuitem.
             $class = $menunode->get_title();
-            if ($class == 'divider') {
+            if (preg_match("/^#+$/", $menunode->get_text())) {
                 $content = '<li class="divider" role="presentation">';
             } else  {
                 $content = '<li>';
