@@ -6,12 +6,12 @@ About this theme
 This is the bootstrap theme for Moodle.
 
 * package   Moodle Bootstrap theme
-* copyright 2014 Bas Brands. www.sonsbeekmedia.nl
+* copyright 2015 Bas Brands. www.sonsbeekmedia.nl
 * authors   Bas Brands, David Scotson
 * license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 
 This theme has been created with the help of:
-Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans, Joby Harding, Gareth J Barnard
+Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans, Joby Harding, Gareth J Barnard, Howard Miller
 
 This theme is based on the Bootstrap CSS framework version 3.2.0
 It contains all unmodified less* CSS sources from the Bootstrap CSS
