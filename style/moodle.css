@@ -269,8 +269,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'), url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'), url('[[font:theme|glyphicons-halflings-regular.svg]]#glyphicons_halflingsregular') format('svg');
+  src: url('[[font:theme|glyphicons-halflings-regular]].eot');
+  src: url('[[font:theme|glyphicons-halflings-regular]].eot?#iefix') format('embedded-opentype'), url('[[font:theme|glyphicons-halflings-regular]].woff') format('woff'), url('[[font:theme|glyphicons-halflings-regular]].ttf') format('truetype'), url('[[font:theme|glyphicons-halflings-regular]].svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -8210,7 +8210,7 @@ body.jsenabled .formlisting {
   left: 100%;
 }
 .moodle-actionmenu[data-enhanced].show .menu.align-tr-br {
-  top: 100% !important;
+  top: 100%;
   right: 0;
   left: inherit;
   margin-top: 4px;
