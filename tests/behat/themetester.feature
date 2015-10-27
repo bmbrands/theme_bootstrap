@@ -25,7 +25,7 @@ Feature: When the moodle theme is set to bootstrap, can visit theme tester witho
 
   Background:
     Given the following config values are set as admin:
-      | theme | elegance |
+      | theme | bootstrap |
     And I log in as "admin"
 
   @javascript
