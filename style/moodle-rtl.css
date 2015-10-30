@@ -307,8 +307,7 @@ th {
   .statusok,
   .statuswarning,
   .statusserious,
-  .statuscritical,
-  #plugins-control-panel .statusmsg {
+  .statuscritical {
     border: 1px solid #000;
   }
 
@@ -6174,8 +6173,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .statusok,
 .statuswarning,
 .statusserious,
-.statuscritical,
-#plugins-control-panel .statusmsg {
+.statuscritical {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 75%;
@@ -6223,8 +6221,7 @@ a.label:focus {
 }
 
 .label-success,
-.statusok,
-#plugins-control-panel .status-new .statusmsg {
+.statusok {
   background-color: #5cb85c;
 }
 
@@ -6254,8 +6251,7 @@ a.label:focus {
 
 .label-danger,
 .statusserious,
-.statuscritical,
-#plugins-control-panel .status-missing .statusmsg {
+.statuscritical {
   background-color: #d9534f;
 }
 
@@ -6909,6 +6905,7 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel,
+.userprofile .profile_tree section,
 .block,
 .forumpost {
   margin-bottom: 20px;
@@ -7185,6 +7182,7 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-default,
+.userprofile .profile_tree section,
 .block,
 .forumpost {
   border-color: #dddddd;
@@ -8146,6 +8144,8 @@ button.close {
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:before,
 .path-backup .mform .grouped_settings .fitem:after,
+.row-fluid:before,
+.row-fluid:after,
 .mform .fitem:before,
 .mform .fitem:after,
 .form-item:before,
@@ -8177,6 +8177,7 @@ button.close {
 .mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:after,
+.row-fluid:after,
 .mform .fitem:after,
 .form-item:after {
   clear: both;
@@ -8702,6 +8703,12 @@ img.icon.hide {
 
 .gradingform_rubric {
   max-width: none !important;
+}
+
+.input-group .form-control,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group {
+  z-index: initial;
 }
 
 /** core.less */
@@ -9359,12 +9366,6 @@ form.popupform div {
 .action-icon img.smallicon {
   vertical-align: text-bottom;
   margin: 0 0.3em;
-}
-
-.smallicon {
-  -webkit-box-sizing: initial;
-  -moz-box-sizing: initial;
-  box-sizing: initial;
 }
 
 .no-overflow {
@@ -10407,6 +10408,53 @@ body.jsenabled .formlisting {
   margin: 0;
 }
 
+/** Header-bar styles **/
+
+.page-context-header {
+  overflow: hidden;
+}
+
+.page-context-header .page-header-image,
+.page-context-header .page-header-headings {
+  display: block;
+  position: relative;
+}
+
+.page-context-header .page-header-image {
+  margin-bottom: 1em;
+  float: right;
+  margin-left: 1em;
+}
+
+.page-context-header .page-header-headings {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.page-context-header .page-header-headings h1 {
+  display: block;
+}
+
+.page-context-header .page-header-headings,
+.page-context-header .header-button-group {
+  position: relative;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+.page-context-header .header-button-group {
+  float: left;
+}
+
+.page-context-header .header-button-group {
+  display: block;
+}
+
+.page-context-header .header-button-group a {
+  position: relative;
+  top: -0.4em;
+}
+
 /** Action menu component styles **/
 
 .moodle-actionmenu,
@@ -10571,7 +10619,8 @@ body.jsenabled .formlisting {
   vertical-align: middle;
 }
 
-.moodle-actionmenu[data-enhanced].show .menu .iconsmall {
+.moodle-actionmenu[data-enhanced].show .menu .iconsmall,
+.moodle-actionmenu[data-enhanced].show .menu .smallicon {
   margin: 4px -10px 4px 4px;
 }
 
@@ -10919,8 +10968,7 @@ img.iconsmall {
   margin-bottom: 0.5em;
 }
 
-#page-admin-index .updateplugin .updatepluginconfirmexternal,
-#page-admin-plugins .updateplugin .updatepluginconfirmexternal {
+#page-admin-index .updateplugin .updatepluginconfirmexternal {
   padding: 1em;
   background-color: #f2dede;
   border: 1px solid #ebccd1;
@@ -11166,116 +11214,227 @@ textarea.path-admin .roleassigntable input[type="text"] {
   font-weight: bold;
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity100 .info.release,
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity150 .info.release,
-.pluginupdateinfo.maturity100,
-.pluginupdateinfo.maturity150 {
+#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity150 .info.release {
   background-color: #fcf8e3;
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release,
-.pluginupdateinfo.maturity50,
-#plugins-check .requires-failed {
+#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release {
   background-color: #f2dede;
 }
 
-#plugins-check .standard .source,
-#plugins-check .status-nodb .status,
-#plugins-check .status-uptodate .status,
-#plugins-check .requires-ok {
-  color: #777777;
-}
-
-#plugins-check .requires ul {
-  font-size: 12px;
-  margin: 0;
-}
-
-#plugins-check .status .pluginupdateinfo {
-  padding: 5px 10px;
-  margin: 10px;
-  background-color: #d9edf7;
-  border-radius: 10px;
-}
-
-#plugins-check .status .pluginupdateinfo span,
-#plugins-check .status .pluginupdateinfo a {
-  padding-left: 1em;
-}
-
-#plugins-control-panel .pluginicon.noicon {
-  display: none;
-}
-
-#plugins-control-panel .status-missing .pluginname {
-  background-color: #f2dede;
-}
-
-#plugins-control-panel .status-new .pluginname {
-  background-color: #dff0d8;
-}
-
-#plugins-control-panel .disabled .availability {
-  background-color: #eeeeee;
-}
-
-#plugins-control-panel .requiredby,
-#plugins-control-panel .pluginname .componentname {
-  font-size: 12px;
-  color: #777777;
-}
-
-#plugins-control-panel .msg td {
-  text-align: center;
-}
-
-#plugins-control-panel .notes .pluginupdateinfo {
-  padding: 5px 10px;
-  margin: 10px;
-  background-color: #d9edf7;
-  border-radius: 10px;
-}
-
-#plugins-control-panel .notes .pluginupdateinfo span,
-#plugins-control-panel .notes .pluginupdateinfo a {
-  padding-left: 1em;
-}
-
-#page-admin-index .upgradepluginsinfo {
-  text-align: center;
+#page-admin-plugins #plugins-overview-panel .info {
+  display: inline-block;
+  margin-left: 1em;
 }
 
 #page-admin-plugins .checkforupdates {
-  margin: 0 auto 1em;
-  text-align: center;
+  margin: 10px 0;
 }
 
-#plugins-overview-filter .filter-item,
-#plugins-overview-panel .info {
-  padding: 0 10px;
+#page-admin-plugins .checkforupdates .singlebutton {
+  margin: 5px 0;
+  padding: 0;
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo .separator,
-#plugins-check .status .pluginupdateinfo .separator,
-#page-admin-plugins .separator {
-  border-right: 1px dotted #dddddd;
+#page-admin-plugins .checkforupdates .singlebutton div,
+#page-admin-plugins .checkforupdates .singlebutton input {
+  margin: 0 0 0 3px;
 }
 
-#plugins-overview-filter,
-#plugins-overview-panel {
-  margin: 1em auto;
-  text-align: center;
+#page-admin-plugins .updateavailableinstallall {
+  margin: 5px 0;
+  padding: 0;
 }
 
-#plugins-overview-panel .info.updatable {
-  margin-right: 10px;
+#page-admin-plugins .updateavailableinstallall div,
+#page-admin-plugins .updateavailableinstallall input {
+  margin: 0 0 5px 3px;
+}
+
+#page-admin-plugins #plugins-control-panel .status-missing td {
+  background-color: #f2dede;
+}
+
+#page-admin-plugins #plugins-control-panel .pluginname .displayname img.icon {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#page-admin-plugins #plugins-control-panel .pluginname .componentname {
+  font-size: 12px;
+  color: #777777;
+  margin-right: 22px;
+}
+
+#page-admin-plugins #plugins-control-panel .version .versionnumber {
+  font-size: 12px;
+  color: #777777;
+}
+
+#page-admin-plugins #plugins-control-panel .uninstall a {
+  color: #a94442;
+}
+
+#page-admin-plugins #plugins-control-panel .notes .label {
+  margin-left: 3px;
+}
+
+#page-admin-plugins #plugins-control-panel .notes .requiredby {
+  font-size: 12px;
+  color: #777777;
+}
+
+#plugins-check-page .page-description {
+  color: #777777;
+}
+
+#plugins-check-page .checkforupdates .singlebutton {
+  margin: 5px 0;
+  padding: 0;
+}
+
+#plugins-check-page .checkforupdates .singlebutton div,
+#plugins-check-page .checkforupdates .singlebutton input {
+  margin: 0 0 0 3px;
+}
+
+#plugins-check-page #plugins-check-info .actions > div {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+#plugins-check-page #plugins-check-info .actions .singlebutton {
+  margin: 5px 0;
+  padding: 0;
+}
+
+#plugins-check-page #plugins-check-info .actions .singlebutton div,
+#plugins-check-page #plugins-check-info .actions .singlebutton input {
+  margin: 0 0 0 3px;
+}
+
+#plugins-check-page #plugins-check .requires-ok {
+  color: #777777;
+}
+
+#plugins-check-page #plugins-check .status-missing td,
+#plugins-check-page #plugins-check .status-downgrade td {
+  background-color: #f2dede;
+}
+
+#plugins-check-page #plugins-check .displayname .pluginicon {
+  margin-left: 5px;
+  width: 16px;
+}
+
+#plugins-check-page #plugins-check .displayname .plugindir {
+  color: #777777;
+  font-size: 12px;
+}
+
+#plugins-check-page #plugins-check .requires ul {
+  margin-right: 13px;
+}
+
+#plugins-check-page #plugins-check .status .actionbutton {
+  margin: 5px 0px;
+  padding: 0;
+}
+
+#plugins-check-page #plugins-check .status .actionbutton input {
+  margin: 0;
+}
+
+#plugins-check-page .plugins-check-dependencies-actions > div {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+#plugins-check-page .plugins-check-dependencies-actions .singlebutton {
+  margin: 5px 0;
+  padding: 0;
+}
+
+#plugins-check-page .plugins-check-dependencies-actions .singlebutton div,
+#plugins-check-page .plugins-check-dependencies-actions .singlebutton input {
+  margin: 0 0 0 3px;
+}
+
+#plugins-check-page #plugins-check-available-dependencies .displayname .component {
+  font-size: 12px;
+  color: #777777;
+}
+
+#plugins-check-page #plugins-check-available-dependencies .info .actions > div {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+#plugins-check-page #plugins-check-available-dependencies .info .actions .dependencyinstall {
+  display: block;
+  margin: 5px 0;
+  padding: 0;
+}
+
+#plugins-check-page #plugins-check-available-dependencies .info .actions .dependencyinstall input {
+  margin: 0;
+}
+
+#plugins-check-page .pluginupdateinfo,
+#plugins-control-panel .pluginupdateinfo {
   background-color: #d9edf7;
-  font-weight: bold;
-  border-radius: 10px;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 5px;
 }
 
-#plugins-overview-filter .filter-item.active {
-  font-weight: bold;
+#plugins-check-page .pluginupdateinfo.maturity50,
+#plugins-control-panel .pluginupdateinfo.maturity50 {
+  background-color: #f2dede;
+}
+
+#plugins-check-page .pluginupdateinfo.maturity100,
+#plugins-control-panel .pluginupdateinfo.maturity100,
+#plugins-check-page .pluginupdateinfo.maturity150,
+#plugins-control-panel .pluginupdateinfo.maturity150 {
+  background-color: #fcf8e3;
+}
+
+#plugins-check-page .pluginupdateinfo .info,
+#plugins-control-panel .pluginupdateinfo .info {
+  display: inline-block;
+}
+
+#plugins-check-page .pluginupdateinfo .separator:after,
+#plugins-control-panel .pluginupdateinfo .separator:after {
+  content: " | ";
+}
+
+#plugins-check-page .pluginupdateinfo .singlebutton,
+#plugins-control-panel .pluginupdateinfo .singlebutton {
+  margin: 5px 0;
+  padding: 0;
+}
+
+#plugins-check-page .pluginupdateinfo .singlebutton div,
+#plugins-control-panel .pluginupdateinfo .singlebutton div,
+#plugins-check-page .pluginupdateinfo .singlebutton input,
+#plugins-control-panel .pluginupdateinfo .singlebutton input {
+  margin: 0 0 0 3px;
+}
+
+.plugins-management-confirm-buttons > div {
+  display: inline-block;
+  margin: 1em 0 1em 1em;
+}
+
+.plugins-management-confirm-buttons .continue {
+  padding: 0;
+}
+
+.plugins-management-confirm-buttons .continue div,
+.plugins-management-confirm-buttons .continue input {
+  margin: 0;
 }
 
 /** MNet networking */
@@ -11780,6 +11939,14 @@ textarea.path-admin .roleassigntable input[type="text"] {
   display: inline;
 }
 
+.section .side.left {
+  float: right;
+}
+
+.section .side.right {
+  float: left;
+}
+
 .section .spinner {
   height: 16px;
   width: 16px;
@@ -12015,9 +12182,13 @@ textarea.path-admin .roleassigntable input[type="text"] {
   display: none;
 }
 
-.course-content ul li.section.hidden {
+.course-content ul li.section.hidden .sectionname > span,
+.course-content ul li.section.hidden .content > div,
+.course-content ul li.section.hidden .activity .activityinstance {
   opacity: 0.5;
   filter: alpha(opacity=50);
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .course-content ul.topics li.section .content,
@@ -12140,7 +12311,7 @@ span.editinstructions {
   box-shadow: -2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 #dndupload-status h4 {
@@ -12462,7 +12633,8 @@ span.editinstructions {
   vertical-align: text-bottom;
 }
 
-.section .moodle-actionmenu .iconsmall {
+.section .moodle-actionmenu .iconsmall,
+.section .moodle-actionmenu .smallicon {
   max-width: none !important;
   /** reset sets 100% !important which breaks on IE8 without this !important */
   width: 21px;
@@ -16278,6 +16450,7 @@ body.path-question-type .mform fieldset.hidden {
 .userprofile .profile_tree section {
   display: inline-block;
   width: 100%;
+  padding: 0 15px;
 }
 
 .userprofile .header-button-group {
@@ -16391,6 +16564,18 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
   margin-right: 0;
 }
 
+@media (max-width: 480px) {
+  .userprofile .profile_tree {
+    /** Display the profile on one column on phones. */
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+  }
+}
+
 #page-user-profile .node_category li,
 .path-user .node_category li {
   list-style-type: none;
@@ -16404,29 +16589,6 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
 .path-user .node_category:first-child li span {
   margin-bottom: 10px;
   display: block;
-}
-
-.page-context-header {
-  overflow: hidden;
-}
-
-.page-context-header:after {
-  clear: both;
-}
-
-.page-context-header .page-header-image {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 10px;
-}
-
-.page-context-header .page-header-headings {
-  display: table-cell;
-  vertical-align: bottom;
-}
-
-.page-context-header .page-header-headings h1 {
-  margin: 0;
 }
 
 .core_message-messenger-sendmessage-content .message-send {
@@ -16749,74 +16911,45 @@ ul#tag-cloud-list li {
   list-style: none;
 }
 
+tr.flagged-tag,
 span.flagged-tag,
+tr.flagged-tag a,
 span.flagged-tag a {
   color: #a94442;
 }
 
-.tag-management-form {
-  text-align: center;
+.tag-management-table td,
+.tag-management-table th {
+  vertical-align: middle;
+  padding: 4px;
 }
 
-table#tag-management-list {
-  text-align: right;
+.tag-management-table tr td.tageditingon .displaytagname,
+.tag-management-table td .edittagname {
+  display: none;
 }
 
-#relatedtags-autocomplete-container {
-  margin-right: auto;
-  margin-left: auto;
-  min-height: 4.6em;
-  width: 100%;
-}
-
-#relatedtags-autocomplete {
+.tag-management-table tr td.tageditingon .edittagname {
+  display: inherit;
   position: relative;
-  display: block;
-  width: 60%;
-  margin-right: auto;
-  margin-left: auto;
 }
 
-#relatedtags-autocomplete .yui-ac-content {
-  position: absolute;
-  width: 420px;
-  right: 20%;
-  border: 1px solid #404040;
-  background: #fff;
-  overflow: hidden;
-  z-index: 9050;
+.tag-management-table tr td.tageditingon .edittagname .editinstructions {
+  margin-left: -300px;
+  margin-right: 0;
 }
 
-#relatedtags-autocomplete .ysearchquery {
-  position: absolute;
-  left: 10px;
-  color: #808080;
-  z-index: 10;
+.tag-management-table tr td .tagnameedit img {
+  opacity: 0.2;
 }
 
-#relatedtags-autocomplete .yui-ac-shadow {
-  position: absolute;
-  margin: .3em;
-  width: 100%;
-  background: #a0a0a0;
-  z-index: 9049;
+.tag-management-table tr:hover td .tagnameedit img,
+.tag-management-table tr td .tagnameedit:focus img {
+  opacity: 1;
 }
 
-#relatedtags-autocomplete ul {
-  padding: 0;
-  width: 100%;
-  margin: 0;
-  list-style-type: none;
-}
-
-#relatedtags-autocomplete li {
-  padding: 0 5px;
-  cursor: default;
-  white-space: nowrap;
-}
-
-#relatedtags-autocomplete li.yui-ac-highlight {
-  background: #ffc;
+.tag-management-table tr:hover td.tageditingon .tagnameedit img {
+  opacity: 0.2;
 }
 
 h2.tag-heading,
@@ -18279,6 +18412,66 @@ input[type="checkbox"] {
   margin-top: 4px;
 }
 
+/* Custom styles for autocomplete form element */
+
+.form-autocomplete-selection {
+  margin: 0.2em;
+  min-height: 21px;
+}
+
+.form-autocomplete-multiple [role=listitem] {
+  cursor: pointer;
+}
+
+.form-autocomplete-suggestions {
+  position: absolute;
+  background-color: white;
+  border: 2px solid #eeeeee;
+  border-radius: 3px;
+  min-width: 206px;
+  max-height: 20em;
+  overflow: auto;
+  margin: 0px;
+  padding: 0px;
+  margin-top: -0.2em;
+  z-index: 1;
+}
+
+.form-autocomplete-suggestions li {
+  list-style-type: none;
+  padding: 0.2em;
+  margin: 0;
+  cursor: pointer;
+  color: #333333;
+}
+
+.form-autocomplete-suggestions li:hover {
+  background-color: #64a0d3;
+  color: #ffffff;
+}
+
+.form-autocomplete-suggestions li[aria-selected=true] {
+  background-color: #ebebeb;
+  color: #555555;
+}
+
+.form-autocomplete-downarrow {
+  color: #333333;
+  position: relative;
+  top: -0.3em;
+  right: -1.5em;
+  cursor: pointer;
+}
+
+.form-autocomplete-selection:focus {
+  outline: none;
+}
+
+.form-autocomplete-selection [data-active-selection=true] {
+  padding: 0.5em;
+  font-size: large;
+}
+
 /* modules.less */
 
 select {
@@ -18526,6 +18719,11 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 .breadcrumb-button {
   float: left;
   margin-top: 4px;
+}
+
+.breadcrumb-button .singlebutton {
+  float: right;
+  margin-right: 4px;
 }
 
 .navbar-inverse .logininfo a {
@@ -20613,6 +20811,180 @@ input.fp-btn-choose {
     margin-left: 5px;
     float: none;
     max-width: 100%;
+  }
+}
+
+.row-fluid {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.row-fluid .span1 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span1 {
+    float: right;
+    width: 8.33333333%;
+  }
+}
+
+.row-fluid .span2 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span2 {
+    float: right;
+    width: 16.66666667%;
+  }
+}
+
+.row-fluid .span3 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span3 {
+    float: right;
+    width: 25%;
+  }
+}
+
+.row-fluid .span4 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span4 {
+    float: right;
+    width: 33.33333333%;
+  }
+}
+
+.row-fluid .span5 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span5 {
+    float: right;
+    width: 41.66666667%;
+  }
+}
+
+.row-fluid .span6 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span6 {
+    float: right;
+    width: 50%;
+  }
+}
+
+.row-fluid .span7 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span7 {
+    float: right;
+    width: 58.33333333%;
+  }
+}
+
+.row-fluid .span8 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span8 {
+    float: right;
+    width: 66.66666667%;
+  }
+}
+
+.row-fluid .span9 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span9 {
+    float: right;
+    width: 75%;
+  }
+}
+
+.row-fluid .span10 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span10 {
+    float: right;
+    width: 83.33333333%;
+  }
+}
+
+.row-fluid .span11 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span11 {
+    float: right;
+    width: 91.66666667%;
+  }
+}
+
+.row-fluid .span12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .row-fluid .span12 {
+    float: right;
+    width: 100%;
   }
 }
 

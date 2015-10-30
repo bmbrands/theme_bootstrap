@@ -192,8 +192,7 @@ img.iconsmall {
     margin-bottom: 0.5em;
 }
 
-#page-admin-index .updateplugin .updatepluginconfirmexternal,
-#page-admin-plugins .updateplugin .updatepluginconfirmexternal {
+#page-admin-index .updateplugin .updatepluginconfirmexternal {
     padding: 1em;
     background-color: @state-danger-bg;
     border: 1px solid @state-danger-border;
@@ -394,129 +393,240 @@ img.iconsmall {
     font-weight: bold;
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity100 .info.release,
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity150 .info.release,
-.pluginupdateinfo.maturity100,
-.pluginupdateinfo.maturity150 {
+#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity150 .info.release {
     background-color: @state-warning-bg;
 }
 
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release,
-.pluginupdateinfo.maturity50,
-#plugins-check .requires-failed {
+#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo.maturity50 .info.release {
     background-color: @state-danger-bg;
 }
 
-#plugins-check .standard .source,
-#plugins-check .status-nodb .status,
-#plugins-check .status-uptodate .status,
-#plugins-check .requires-ok {
-    .text-muted;
+// Plugins overview page at admin/plugins.php
+#page-admin-plugins {
+
+    #plugins-overview-panel {
+        .info {
+            display: inline-block;
+            margin-right: 1em;
+        }
+    }
+
+    .checkforupdates {
+        margin: 10px 0;
+        .singlebutton {
+            margin: 5px 0;
+            padding: 0;
+            div, input {
+                margin: 0 3px 0 0;
+            }
+        }
+    }
+
+    .updateavailableinstallall {
+        margin: 5px 0;
+        padding: 0;
+        div, input {
+            margin: 0 3px 5px 0;
+        }
+    }
+
+    #plugins-control-panel {
+        .status-missing td {
+            background-color: @state-danger-bg;
+        }
+        .pluginname {
+            .displayname img.icon {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .componentname {
+                font-size: @font-size-small;
+                .text-muted;
+                margin-left: 22px;
+            }
+        }
+        .version {
+            .versionnumber {
+                font-size: @font-size-small;
+                .text-muted;
+            }
+            .release {
+            }
+        }
+        .availability {
+        }
+        .settings {
+        }
+        .uninstall {
+            a {
+                color: @state-danger-text;
+            }
+        }
+        .notes {
+            .label {
+                margin-right: 3px;
+            }
+            .requiredby {
+                font-size: @font-size-small;
+                .text-muted;
+            }
+        }
+    }
 }
 
-#plugins-check .requires ul {
-    font-size: @font-size-small;
-    margin: 0;
+// Plugins check page displayed during upgrade.
+#plugins-check-page {
+
+    .page-description {
+        .text-muted;
+    }
+
+    // Check for updates.
+    .checkforupdates {
+        .singlebutton {
+            margin: 5px 0;
+            padding: 0;
+            div, input {
+                margin: 0 3px 0 0;
+            }
+        }
+    }
+
+    // Section before the plugins check table.
+    #plugins-check-info {
+        .actions {
+            > div {
+                display: inline-block;
+                margin-right: 1em;
+            }
+            .singlebutton {
+                margin: 5px 0;
+                padding: 0;
+                div, input {
+                    margin: 0 3px 0 0;
+                }
+            }
+        }
+    }
+
+    // Plugins check table.
+    #plugins-check {
+        .requires-ok {
+            .text-muted;
+        }
+
+        .status-missing, .status-downgrade {
+            td {
+                background-color: @state-danger-bg;
+            }
+        }
+
+        .displayname {
+            .pluginicon {
+                margin-right: 5px;
+                width: 16px;
+            }
+            .plugindir {
+                .text-muted;
+                font-size: @font-size-small;
+            }
+        }
+
+        .requires ul {
+            margin-left: 13px; // To undo the default 25px, does not look that great inside a table cell;
+        }
+
+        .status {
+            .actionbutton {
+                margin: 5px 0px;
+                padding: 0;
+                input {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .plugins-check-dependencies-actions {
+        > div {
+            display: inline-block;
+            margin-right: 1em;
+        }
+        .singlebutton {
+            margin: 5px 0;
+            padding: 0;
+            div, input {
+                margin: 0 3px 0 0;
+            }
+        }
+    }
+
+    // List of available dependencies on the plugins check page.
+    #plugins-check-available-dependencies {
+        .displayname .component {
+            font-size: @font-size-small;
+            .text-muted;
+        }
+        .info .actions {
+            > div {
+                display: inline-block;
+                margin-right: 1em;
+            }
+            .dependencyinstall {
+                display: block;
+                margin: 5px 0;
+                padding: 0;
+                input {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
 
-#plugins-check .status .pluginupdateinfo {
-    padding: 5px 10px;
-    margin: 10px;
-    background-color: @state-info-bg;
-    border-radius: 10px;
+// Available plugin update notification.
+
+#plugins-check-page,
+#plugins-control-panel {
+    .pluginupdateinfo {
+        background-color: @state-info-bg;
+        &.maturity50 {
+            background-color: @state-danger-bg;
+        }
+        &.maturity100, 
+        &.maturity150 {
+            background-color: @state-warning-bg;
+        }
+        padding: 5px;
+        margin: 10px 0;
+        border-radius: 5px;
+        .info {
+            display: inline-block;
+        }
+        .separator:after {
+            content: " | ";
+        }
+        .singlebutton {
+            margin: 5px 0;
+            padding: 0;
+            div, input {
+                margin: 0 3px 0 0;
+            }
+        }
+    }
 }
 
-#plugins-check .status .pluginupdateinfo span,
-#plugins-check .status .pluginupdateinfo a {
-    padding-right: 1em;
-}
-
-#plugins-control-panel .pluginicon.noicon {
-    display: none;
-}
-
-#plugins-control-panel .status-missing .pluginname {
-    background-color: @state-danger-bg;
-}
-
-#plugins-control-panel .status-new .pluginname {
-    background-color: @state-success-bg;
-}
-
-#plugins-control-panel .statusmsg {
-    &:extend(.label);
-}
-
-#plugins-control-panel .status-missing .statusmsg {
-    &:extend(.label-danger);
-}
-
-#plugins-control-panel .status-new .statusmsg {
-    &:extend(.label-success);
-}
-
-#plugins-control-panel .disabled .availability {
-    background-color: @input-bg-disabled;
-}
-
-
-#plugins-control-panel .requiredby,
-#plugins-control-panel .pluginname .componentname {
-    font-size: @font-size-small;
-    .text-muted;
-}
-
-#plugins-control-panel .msg td {
-    text-align: center;
-}
-
-#plugins-control-panel .notes .pluginupdateinfo {
-    padding: 5px 10px;
-    margin: 10px;
-    background-color: @state-info-bg;
-    border-radius: 10px;
-}
-
-#plugins-control-panel .notes .pluginupdateinfo span,
-#plugins-control-panel .notes .pluginupdateinfo a {
-    padding-right: 1em;
-}
-
-#page-admin-index .upgradepluginsinfo {
-    text-align: center;
-}
-
-#page-admin-plugins .checkforupdates {
-    margin: 0 auto 1em;
-    text-align: center;
-}
-
-#plugins-overview-filter .filter-item,
-#plugins-overview-panel .info {
-    padding: 0 10px;
-}
-
-#page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo .separator,
-#plugins-check .status .pluginupdateinfo .separator,
-#page-admin-plugins .separator {
-    border-left: 1px dotted @table-border-color;
-}
-
-#plugins-overview-filter,
-#plugins-overview-panel {
-    margin: 1em auto;
-    text-align: center;
-}
-
-#plugins-overview-panel .info.updatable {
-    margin-left: 10px;
-    background-color: @state-info-bg;
-    font-weight: bold;
-    border-radius: 10px;
-}
-
-#plugins-overview-filter .filter-item.active {
-    font-weight: bold;
+.plugins-management-confirm-buttons {
+    > div {
+        display: inline-block;
+        margin: 1em 1em 1em 0;
+    }
+    .continue {
+        padding: 0;
+        div, input {
+            margin: 0;
+        }
+    }
 }
 
 

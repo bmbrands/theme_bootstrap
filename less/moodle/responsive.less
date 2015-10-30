@@ -91,7 +91,47 @@
         }
     }
 }
-
+// Backward compatible grid Bootstrap 2
+.row-fluid {
+    .make-row();
+    .span1 {
+        .make-md-column(1);
+    }
+    .span2 {
+        .make-md-column(2);
+    }
+    .span3 {
+        .make-md-column(3);
+    }
+    .span4 {
+        .make-md-column(4);
+    }
+    .span5 {
+        .make-md-column(5);
+    }
+    .span6 {
+        .make-md-column(6);
+    }
+    .span7 {
+        .make-md-column(7);
+    }
+    .span8 {
+        .make-md-column(8);
+    }
+    .span9 {
+        .make-md-column(9);
+    }
+    .span10 {
+        .make-md-column(10);
+    }
+    .span11 {
+        .make-md-column(11);
+    }
+    .span12 {
+        .make-md-column(12);
+        padding: 0;
+    }
+}
 
 @media (max-width: @screen-sm) {
 // Resize, reflow file-picker on small devices

@@ -379,9 +379,6 @@ form.popupform div {
     vertical-align: text-bottom;
     margin: 0 0.3em;
 }
-.smallicon {
-    box-sizing: initial;
-}
 
 .no-overflow {
     margin-bottom: 1px;
@@ -1232,6 +1229,55 @@ body.jsenabled .formlisting {
     margin: 0;
 }
 
+/** Header-bar styles **/
+.page-context-header {
+    // We need to be explicit about the height of the header.
+
+    // Do not remove these rules.
+    overflow: hidden;
+
+    .page-header-image,
+    .page-header-headings {
+        display: block;
+        position: relative;
+    }
+    .page-header-image {
+        margin-bottom: 1em;
+        float: left;
+        margin-right: 1em;
+
+    }
+    .page-header-headings {
+        margin-top: 30px;
+        margin-bottom: 10px;
+
+        h1 {
+            display: block;
+        }
+    }
+
+    .page-header-headings,
+    .header-button-group {
+        position: relative;
+        line-height: 24px;
+        vertical-align: middle;
+    }
+    .header-button-group{
+        float: right;
+    }
+
+    .header-button-group {
+        display: block;
+
+        a {
+            position: relative;
+
+            // Don't touch it unless you know exactly what you are doing.
+            top: -0.4em;
+        }
+    }
+}
+
 /** Action menu component styles **/
 .moodle-actionmenu,
 .moodle-actionmenu > ul,
@@ -1245,6 +1291,14 @@ body.jsenabled .formlisting {
     list-style-type: none;
     line-height: 30px;
 }
+
+// .section_action_menu .moodle-actionmenu ul.menubar {
+//     margin: 0;
+// }
+
+// .section_action_menu .moodle-actionmenu ul.menu {
+//     margin: 0 10px 10px 0;
+// }
 
 .moodle-actionmenu .toggle-display,
 .moodle-actionmenu .menu-action-text {
@@ -1325,7 +1379,8 @@ body.jsenabled .formlisting {
         img {
             vertical-align: middle;
         }
-        .iconsmall {
+        .iconsmall,
+        .smallicon {
             margin: 4px 4px 4px -10px;
         }
         > li {

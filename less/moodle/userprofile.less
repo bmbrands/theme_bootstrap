@@ -13,6 +13,9 @@
     .profile_tree section {
         display: inline-block;
         width: 100%;
+        padding: 0 15px;
+        &:extend(.panel);
+        &:extend(.panel-default);
     }
     .header-button-group {
         .pull-right;
@@ -37,6 +40,12 @@
         margin-left: 0;
     }
 }
+@media (max-width: 480px) {
+    .userprofile .profile_tree {
+        /** Display the profile on one column on phones. */
+        .content-columns(1);
+    }
+}
 #page-user-profile .node_category, .path-user .node_category {
     li {
         list-style-type: none;
@@ -49,24 +58,7 @@
     margin-bottom: 10px;
     display: block;
 }
-.page-context-header {
-    overflow: hidden;
-    &:after {
-        clear: both;
-    }
-    .page-header-image {
-        display: table-cell;
-        vertical-align: top;
-        padding-right: 10px;
-    }
-    .page-header-headings {
-        display: table-cell;
-        vertical-align: bottom;
-        h1 {
-            margin: 0;
-        }
-    }
-}
+
 .core_message-messenger-sendmessage-content {
     .message-send {
         margin: 5px 5px 0 0;

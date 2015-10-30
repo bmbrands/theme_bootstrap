@@ -81,10 +81,54 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return $this->render_custom_menu($custommenu);
     }
 
+    /**
+     * This code renders the navbar button to control the display of the custom menu
+     * on smaller screens.
+     *
+     * Do not display the button if the menu is empty.
+     *
+     * @return string HTML fragment
+     */
+    protected function navbar_button() {
+        global $CFG;
+
+        if (empty($CFG->custommenuitems) && $this->lang_menu() == '') {
+            return '';
+        }
+
+        $iconbar = html_writer::tag('span', '', array('class' => 'icon-bar'));
+        $sronly = html_writer::tag('span', 'Toggle navigation', array('class' => 'sr-only'));
+        $button = html_writer::tag('button', $iconbar . "\n" . $iconbar. "\n" . $iconbar, array(
+            'class'       => 'navbar-toggle',
+            'type'        => 'button',
+            'data-toggle' => 'collapse',
+            'data-target' => '#moodle-navbar'
+        ));
+        return $button;
+    }
+
     protected function render_custom_menu(custom_menu $menu) {
 
-        // TODO: eliminate this duplicated logic, it belongs in core, not
-        // here. See MDL-39565.
+        $langs = get_string_manager()->get_list_of_translations();
+        $haslangmenu = $this->lang_menu() != '';
+
+        if (!$menu->has_children() && !$haslangmenu) {
+            return '';
+        }
+
+        if ($haslangmenu) {
+            $strlang =  get_string('language');
+            $currentlang = current_language();
+            if (isset($langs[$currentlang])) {
+                $currentlang = $langs[$currentlang];
+            } else {
+                $currentlang = $strlang;
+            }
+            $this->language = $menu->add($currentlang, new moodle_url('#'), $strlang, 10000);
+            foreach ($langs as $langtype => $langname) {
+                $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+            }
+        }
 
         $content = '<ul class="nav navbar-nav pull-right">';
         foreach ($menu->get_children() as $item) {
@@ -177,7 +221,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             );
         }
 
-        $content = html_writer::start_tag('ul', array('class' => 'nav navbar-nav pull-left usermenu ' . $menuclass, 'role' => 'menubar'));
+        $content = html_writer::start_tag('ul', array('class' => 'nav pull-left usermenu ' . $menuclass, 'role' => 'menubar'));
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1, 'pull-right');
         }

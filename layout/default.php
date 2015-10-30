@@ -44,12 +44,7 @@ echo $OUTPUT->doctype() ?>
     </div>
     <div class="navbar-header pull-right">
         <?php echo $OUTPUT->user_menu(); ?>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+        <?php echo $OUTPUT->navbar_button(); ?>
     </div>
     <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
         <?php echo $OUTPUT->custom_menu(); ?>
@@ -60,24 +55,9 @@ echo $OUTPUT->doctype() ?>
     
     </div>
 </nav>
-<header class="moodleheader">
-    <div class="container-fluid">
-    <a href="<?php echo $CFG->wwwroot ?>" class="logo"></a>
-    <?php echo $OUTPUT->page_heading(); ?>
-    </div>
-</header>
 
 <div id="page" class="container-fluid">
-    <header id="page-header" class="clearfix">
-        <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        </div>
-
-        <div id="course-header">
-            <?php echo $OUTPUT->course_header(); ?>
-        </div>
-    </header>
+    <?php echo $OUTPUT->full_header(); ?>
 
     <div id="page-content" class="row">
         <div id="region-main" class="<?php echo $regions['content']; ?>">
