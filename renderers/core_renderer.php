@@ -177,7 +177,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             );
         }
 
-        $content = html_writer::start_tag('ul', array('class' => 'nav navbar-nav pull-left usermenu ' . $menuclass, 'role' => 'menubar'));
+        $content = html_writer::start_tag('ul', array('class' => 'nav pull-left usermenu ' . $menuclass, 'role' => 'menubar'));
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1, 'pull-right');
         }
