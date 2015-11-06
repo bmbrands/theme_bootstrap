@@ -3,6 +3,10 @@ About this theme
 
 ![image1](pix/screenshot.jpg "Moodle Bootstrap Screenshot")
 
+Changelog:
+
+version 2015110600: Fixed issue on group selection boxes in courses (thanks Emma Ridchardson).
+
 This is the bootstrap theme for Moodle.
 
 * package   Moodle Bootstrap theme
