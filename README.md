@@ -1,6 +1,16 @@
 About this theme
 ================
 
+Release Notes
+-------------
+
+Version 2015103000 (BETA)
+
+* copy over changes from bootstrapbase 2.9 - 3.0
+* added in backward compatible grid (.row-fluid .spanx)
+* hiden navbar toggle button when no custom menu
+* add language dropdown back in
+
 ![image1](pix/screenshot.jpg "Moodle Bootstrap Screenshot")
 
 This is the bootstrap theme for Moodle.
