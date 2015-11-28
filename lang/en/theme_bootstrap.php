@@ -43,7 +43,7 @@ This theme is based on the Bootstrap CSS framework, version 3.0
 This is a GPL theme that is available on GitHub:
 </p>
 <p>
-<a href=https://github.com/bmbrands/theme_bootstrap">https://github.com/bmbrands/theme_bootstrap</a>
+<a href="https://github.com/bmbrands/theme_bootstrap">https://github.com/bmbrands/theme_bootstrap</a>
 </p>
 <p>
 Feel free to modify / improve / share
