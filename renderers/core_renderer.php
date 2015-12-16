@@ -100,7 +100,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     protected function render_user_menu(custom_menu $menu, $user) {
-        global $USER, $DB, $SESSION;
+        global $USER, $DB, $SESSION, $CFG;
 
         if (empty($user)) {
             $user = $USER;
@@ -143,13 +143,14 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 new moodle_url('/grade/report/overview/index.php'),
                 get_string('grades')
             );
-        
-            $usermenu->add(
-                $this->glyphicon('inbox') . get_string('messages', 'message'),
-                new moodle_url('/message/index.php'),
 
-                get_string('messages', 'message')
-            );
+            if ($CFG->messaging) {
+                $usermenu->add(
+                    $this->glyphicon('inbox') . get_string('messages', 'message'),
+                    new moodle_url('/message/index.php'),
+                    get_string('messages', 'message')
+                );
+            }
 
             $usermenu->add(
                 $this->glyphicon('cog') . get_string('preferences'),
