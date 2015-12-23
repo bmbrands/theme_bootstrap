@@ -96,32 +96,32 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-module.exports = function(grunt) {
+module.exports = function(grunt) { // jshint ignore:line
 
     // Import modules.
     var path = require('path');
 
     // Theme Bootstrap constants.
     var LESSDIR         = 'less',
-        BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'),
+        BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'), // jshint ignore:line
         THEMEDIR        = path.basename(path.resolve('.'));
 
     // PHP strings for exec task.
-    var moodleroot = path.dirname(path.dirname(__dirname)),
+    var moodleroot = path.dirname(path.dirname(__dirname)), // jshint ignore:line
         configfile = '',
         decachephp = '',
-        dirrootopt = grunt.option('dirroot') || process.env.MOODLE_DIR || '';
+        dirrootopt = grunt.option('dirroot') || process.env.MOODLE_DIR || ''; // jshint ignore:line
 
     // Allow user to explicitly define Moodle root dir.
     if ('' !== dirrootopt) {
         moodleroot = path.resolve(dirrootopt);
     }
 
-    var PWD = process.cwd();
+    var PWD = process.cwd(); // jshint ignore:line
     configfile = path.join(moodleroot, 'config.php');
 
     decachephp += 'define(\'CLI_SCRIPT\', true);';
-    decachephp += 'require(\'' + configfile  + '\');';
+    decachephp += 'require(\'' + configfile + '\');';
     decachephp += 'theme_reset_all_caches();';
 
     grunt.initConfig({
@@ -178,7 +178,7 @@ module.exports = function(grunt) {
                 compatibility: 'ie8',
                 keepSpecialComments: '*',
                 noAdvanced: true
-            }, 
+            },
             core: {
                 files: {
                     'style/moodle_min.css': 'style/moodle.css',
@@ -200,7 +200,7 @@ module.exports = function(grunt) {
         exec: {
             decache: {
                 cmd: 'php -r "' + decachephp + '"',
-                callback: function(error, stdout, stderror) {
+                callback: function(error) {
                     // exec will output error messages
                     // just add one to confirm success.
                     if (!error) {
@@ -256,7 +256,7 @@ module.exports = function(grunt) {
                     overwrite: true,
                     replacements: [{
                         from: 'sourceMappingURL=',
-                        to: 'sourceMappingURL=/theme/'+ THEMEDIR + '/style/'
+                        to: 'sourceMappingURL=/theme/' + THEMEDIR + '/style/'
                     }]
             }
         },
@@ -283,7 +283,6 @@ module.exports = function(grunt) {
         }
     });
 
-
     // Load contrib tasks.
     grunt.loadNpmTasks("grunt-autoprefixer");
     grunt.loadNpmTasks("grunt-contrib-less");
@@ -303,6 +302,14 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("compile", ["less", "cssflip", "replace:rtl_images", "autoprefixer", 'csscomb', 'cssmin', "replace:sourcemap", "decache"]);
+    grunt.registerTask("compile", [
+        "less",
+        "cssflip",
+        "replace:rtl_images",
+        "autoprefixer",
+        'csscomb',
+        'cssmin',
+        "replace:sourcemap",
+        "decache"]);
     grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };
