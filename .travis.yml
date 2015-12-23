@@ -20,9 +20,8 @@ matrix:
 env:
  global:
   - MOODLE_BRANCH=MOODLE_30_STABLE
-  - IGNORE_PATHS=amd/build,amd/src/bootstrap.js,amd/src/fitvids.js,javascript/syntaxhighlighter_3_0_83/
-  # Ignore custom.css until CSSlint can be instructed to ignore lines for '[[setting:customcss]]'.
-  - IGNORE_NAMES=*.txt,custom.css,moodle.css,chartist_min.css,editor.css
+  - IGNORE_PATHS=amd/build,amd/src/bootstrap.js
+  - IGNORE_NAMES=*.txt,moodle.css,moodle-rtl.css,moodle_min.css,editor.css,editor_min.css
  matrix:
   - DB=pgsql
   - DB=mysqli
