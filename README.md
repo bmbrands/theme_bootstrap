@@ -3,6 +3,8 @@ About this theme
 
 ![image1](pix/screenshot.jpg "Moodle Bootstrap Screenshot")
 
+[![Build Status](https://travis-ci.org/bmbrands/theme_bootstrap.svg?branch=master)](https://travis-ci.org/bmbrands/theme_bootstrap)
+
 Changelog:
 
 version 2015110600: Fixed issue on group selection boxes in courses (thanks Emma Ridchardson).
