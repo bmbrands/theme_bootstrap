@@ -5063,7 +5063,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: block;
 }
 
-.nav > li > a {
+.nav > li > a,
+.box.message .messagearea .messagehistory .messagehistorytype span.visible,
+.box.message .messagearea .messagehistory .messagehistorytype a.visible {
   position: relative;
   display: block;
   padding: 10px 15px;
@@ -5109,25 +5111,31 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid #dddddd;
 }
 
-.nav-tabs > li {
+.nav-tabs > li,
+.box.message .messagearea .messagehistory .messagehistorytype span.visible,
+.box.message .messagearea .messagehistory .messagehistorytype a.visible {
   float: right;
   margin-bottom: -1px;
 }
 
-.nav-tabs > li > a {
+.nav-tabs > li > a,
+.box.message .messagearea .messagehistory .messagehistorytype span.visible,
+.box.message .messagearea .messagehistory .messagehistorytype a.visible {
   margin-left: 2px;
   line-height: 1.42857143;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
 }
 
-.nav-tabs > li > a:hover {
+.nav-tabs > li > a:hover,
+.box.message .messagearea .messagehistory .messagehistorytype a.visible:hover {
   border-color: #eeeeee #eeeeee #dddddd;
 }
 
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
+.nav-tabs > li.active > a:focus,
+.box.message .messagearea .messagehistory .messagehistorytype span.visible {
   color: #555555;
   background-color: #ffffff;
   border: 1px solid #dddddd;
@@ -7181,6 +7189,8 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-default > .panel-heading,
+.box.message table td.heading,
+.box.message .messagearea .messagerecent .singlemessage .otheruser,
 .block .header,
 #dockeditempanel .dockeditempanel_hd {
   color: #333333;
@@ -8118,6 +8128,14 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
+.box.message:before,
+.box.message:after,
+.box.message .contactselector form#usergroupform fieldset:before,
+.box.message .contactselector form#usergroupform fieldset:after,
+.box.message .messagearea .messagehistory .messagehistory .mdl-left:before,
+.box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
+.box.message .messagearea .messagehistory #message_user_pictures:before,
+.box.message .messagearea .messagehistory #message_user_pictures:after,
 .userprofile dl.list dd:before,
 .userprofile dl.list dd:after,
 .mform .fitem_actionbuttons:before,
@@ -8151,6 +8169,10 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
+.box.message:after,
+.box.message .contactselector form#usergroupform fieldset:after,
+.box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
+.box.message .messagearea .messagehistory #message_user_pictures:after,
 .userprofile dl.list dd:after,
 .mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:after,
@@ -14389,6 +14411,1012 @@ a.ygtvspacer:hover {
 .fp-fileinfo .fp-value {
   display: inline-block;
   padding-right: 5px;
+}
+
+.box.message {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.box.message .mdl-align {
+  text-align: right;
+}
+
+.box.message table tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.box.message table tr:nth-child(odd) > td,
+.box.message table tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+.box.message table td.heading {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.box.message tbody {
+  margin: 5px 10px;
+  padding: 5px 10px;
+}
+
+.box.message tbody {
+  display: table;
+  margin: 5px 0;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.box.message .message_form {
+  width: 100%;
+}
+
+.box.message .message_form tr {
+  border: 0;
+}
+
+.box.message .message_form td {
+  background-color: inherit !important;
+}
+
+.box.message .message_form input[type="text"] {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  display: inline-block;
+}
+
+.box.message .message_form input[type="text"]:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.box.message .message_form input[type="text"]::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.box.message .message_form input[type="text"]:-ms-input-placeholder {
+  color: #999999;
+}
+
+.box.message .message_form input[type="text"]::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.box.message .message_form input[type="text"][disabled],
+.box.message .message_form input[type="text"][readonly],
+fieldset[disabled] .box.message .message_form input[type="text"] {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+
+.box.message .message_form input[type="text"][disabled],
+fieldset[disabled] .box.message .message_form input[type="text"] {
+  cursor: not-allowed;
+}
+
+textarea.box.message .message_form input[type="text"] {
+  height: auto;
+}
+
+.box.message .contactselector {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.box.message .contactselector .singleselect select {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .box.message .contactselector {
+    float: right;
+    width: 33.33333333%;
+  }
+}
+
+.box.message .contactselector form#usergroupform {
+  padding: 5px 10px;
+}
+
+.box.message .contactselector form#usergroupform fieldset {
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.box.message .contactselector form#usergroupform fieldset .fitem {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.box.message .contactselector form#usergroupform fieldset label {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: block !important;
+}
+
+@media (min-width: 992px) {
+  .box.message .contactselector form#usergroupform fieldset label {
+    float: right;
+    width: 33.33333333%;
+  }
+}
+
+.box.message .contactselector form#usergroupform fieldset select {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: right;
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  width: auto;
+}
+
+@media (min-width: 992px) {
+  .box.message .contactselector form#usergroupform fieldset select {
+    float: right;
+    width: 58.33333333%;
+  }
+}
+
+.box.message .contactselector form#usergroupform fieldset select:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.box.message .contactselector form#usergroupform fieldset select::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.box.message .contactselector form#usergroupform fieldset select:-ms-input-placeholder {
+  color: #999999;
+}
+
+.box.message .contactselector form#usergroupform fieldset select::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.box.message .contactselector form#usergroupform fieldset select[disabled],
+.box.message .contactselector form#usergroupform fieldset select[readonly],
+fieldset[disabled] .box.message .contactselector form#usergroupform fieldset select {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+
+.box.message .contactselector form#usergroupform fieldset select[disabled],
+fieldset[disabled] .box.message .contactselector form#usergroupform fieldset select {
+  cursor: not-allowed;
+}
+
+textarea.box.message .contactselector form#usergroupform fieldset select {
+  height: auto;
+}
+
+.box.message .contactselector table#message_contacts,
+.box.message .contactselector table#message_participants {
+  float: none !important;
+  display: block;
+  margin: 5px 5px;
+}
+
+.box.message .contactselector table#message_contacts td.pix,
+.box.message .contactselector table#message_participants td.pix {
+  padding: 10px;
+  width: 30px;
+}
+
+.box.message .contactselector table#message_contacts td.contact,
+.box.message .contactselector table#message_participants td.contact {
+  width: 100px;
+  padding: 10px;
+}
+
+.box.message .contactselector table#message_contacts td.link,
+.box.message .contactselector table#message_participants td.link {
+  padding: 10px;
+  width: 100px;
+}
+
+.box.message .contactselector ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.box.message .contactselector .message-contacts {
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 10px;
+}
+
+.box.message .contactselector .message-contacts li:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.box.message .contactselector .message-contacts li {
+  padding: 5px 0;
+  line-height: 26px;
+  border-top: 1px solid #dddddd;
+}
+
+.box.message .contactselector .message-contacts .contact {
+  margin: 0 25px 0 24%;
+  text-align: right;
+}
+
+.box.message .contactselector .message-contacts .link {
+  float: left !important;
+}
+
+.box.message .contactselector .message-contacts .pix {
+  position: absolute;
+  right: 0;
+}
+
+.box.message .messagearea {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .box.message .messagearea {
+    float: right;
+    width: 66.66666667%;
+  }
+}
+
+.box.message .messagearea textarea {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 200px;
+}
+
+.box.message .messagearea textarea:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.box.message .messagearea textarea::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.box.message .messagearea textarea:-ms-input-placeholder {
+  color: #999999;
+}
+
+.box.message .messagearea textarea::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.box.message .messagearea textarea[disabled],
+.box.message .messagearea textarea[readonly],
+fieldset[disabled] .box.message .messagearea textarea {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+
+.box.message .messagearea textarea[disabled],
+fieldset[disabled] .box.message .messagearea textarea {
+  cursor: not-allowed;
+}
+
+textarea.box.message .messagearea textarea {
+  height: auto;
+}
+
+.box.message .messagearea p.heading {
+  margin: 10px 15px;
+  font-size: 30px;
+  color: inherit;
+}
+
+.box.message .messagearea #personsearch {
+  margin: 10px 15px;
+}
+
+.box.message .messagearea #personsearch input[type="text"] {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.box.message .messagearea #personsearch input[type="submit"] {
+  margin-right: 0px;
+}
+
+.box.message .messagearea .mdl-left .heading {
+  font-size: 14px;
+}
+
+.box.message .messagearea .mdl-left .messagesearchresults {
+  width: 100%;
+  margin: 10px 0;
+  padding: 0px 15px;
+  display: block;
+}
+
+.box.message .messagearea .mdl-left .messagesearchresults td.pix {
+  padding: 10px;
+  width: 30px;
+}
+
+.box.message .messagearea .mdl-left .messagesearchresults td.contact {
+  width: 30px;
+}
+
+.box.message .messagearea .mdl-left .messagesearchresults td.contact img {
+  margin: 10px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage {
+  margin: 10px 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-color: #dddddd;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .list-group,
+.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .list-group {
+  margin-bottom: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .list-group .list-group-item,
+.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .list-group:first-child .list-group-item:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .list-group:last-child .list-group-item:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table,
+.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table caption,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table caption,
+.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .table caption {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-right-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-left-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-right-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-left-radius: 3px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .panel-body + .table,
+.box.message .messagearea .messagerecent .singlemessage > .panel-body + .table-responsive,
+.box.message .messagearea .messagerecent .singlemessage > .table + .panel-body,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive + .panel-body {
+  border-top: 1px solid #dddddd;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table > tbody:first-child > tr:first-child th,
+.box.message .messagearea .messagerecent .singlemessage > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered {
+  border: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr > th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr > th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr > th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr > td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr > td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr > td:first-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-right: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr > th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr > th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr > th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr > td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr > td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr > td:last-child,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-left: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr:first-child > td,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr:first-child > td,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr:first-child > th,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr:first-child > th,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr:last-child > td,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr:last-child > td,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr:last-child > th,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr:last-child > th,
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #dddddd;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #dddddd;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333333;
+}
+
+.box.message .messagearea .messagerecent .singlemessage > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #dddddd;
+}
+
+.box.message .messagearea .messagerecent .singlemessage .otheruser {
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+}
+
+.box.message .messagearea .messagerecent .singlemessage .otheruser .pix {
+  margin: 5px;
+}
+
+.box.message .messagearea .messagerecent .singlemessage .themessage {
+  border: 2px solid #faebcc;
+  padding: 5px 10px;
+  margin: 10px 15px;
+  display: block;
+}
+
+.box.message .messagearea .messagerecent .singlemessage .messagedate {
+  margin: 10px 15px 0;
+}
+
+.box.message .messagearea .messagerecent .singlemessage .messagecontext {
+  margin: 0px 15px 10px;
+}
+
+.box.message .messagearea .messagehistory .messagehistory {
+  border-top: 1px solid #dddddd;
+  clear: both;
+}
+
+.box.message .messagearea .messagehistory .messagehistory .mdl-left {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.box.message .messagearea .messagehistory .messagehistory .mdl-left.left .message {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .box.message .messagearea .messagehistory .messagehistory .mdl-left.left .message {
+    float: right;
+    width: 58.33333333%;
+  }
+}
+
+.box.message .messagearea .messagehistory .messagehistory .mdl-left.left .message .text {
+  border: 2px solid #d6e9c6;
+}
+
+.box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message {
+    float: right;
+    width: 58.33333333%;
+  }
+}
+
+@media (min-width: 992px) {
+  .box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message {
+    right: 41.66666667%;
+  }
+}
+
+.box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message .text {
+  border: 2px solid #bce8f1;
+}
+
+.box.message .messagearea .messagehistory .messagehistory .message {
+  display: block;
+}
+
+.box.message .messagearea .messagehistory .messagehistory .message .text {
+  border-radius: 4px;
+  padding: 5px 10px;
+  display: block;
+}
+
+.box.message .messagearea .messagehistory #message_user_pictures {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.box.message .messagearea .messagehistory #message_user_pictures .box.user {
+  position: relative;
+  float: right;
+  width: 41.66666667%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+}
+
+.box.message .messagearea .messagehistory #message_user_pictures .box.between {
+  position: relative;
+  float: right;
+  width: 16.66666667%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+}
+
+.box.message .messagearea .messagehistory .messagehistorytype {
+  color: #fff;
+  border: 0;
+}
+
+.box.message .messagearea .messagehistory .messagehistorytype .hiddenelement {
+  display: none;
+}
+
+.box.message .messagearea .messagehistory .messagehistorytype span.visible {
+  color: #333333;
+}
+
+.box.message .messagearea .messagehistory .messagehistorytype a.visible {
+  color: #337ab7;
+}
+
+.box.message .messagearea .messagesend .mform fieldset .fitem .felement,
+.box.message .messagearea .messagesend .mform fieldset.hidden > div {
+  padding: 0;
+  margin: 0;
+  float: none;
+  width: 100%;
+}
+
+.box.message .messagearea .messagesend .mform fieldset .fitem .felement #id_submitbutton,
+.box.message .messagearea .messagesend .mform fieldset.hidden > div #id_submitbutton {
+  margin: 5px 0 0 0;
+}
+
+.box.message .messagearea .messagesend .mform .fitemtitle,
+.box.message .messagearea .messagesend .mform .form-label {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  float: none;
+  text-align: right;
+}
+
+.box.message .messagearea .messagesend .mform .fitemtitle small,
+.box.message .messagearea .messagesend .mform .form-label small,
+.box.message .messagearea .messagesend .mform .fitemtitle .small,
+.box.message .messagearea .messagesend .mform .form-label .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
+}
+
+.box.message .messagearea .messagesend .mform .fitemtitle small,
+.box.message .messagearea .messagesend .mform .form-label small,
+.box.message .messagearea .messagesend .mform .fitemtitle .small,
+.box.message .messagearea .messagesend .mform .form-label .small {
+  font-size: 65%;
+}
+
+.box.message .messagearea .messagesend .mform fieldset .fitem {
+  margin: 0;
+}
+
+.box.message .messagearea .messagesend .mform .fitem_ftextarea {
+  margin: 15px;
+}
+
+#newmessageoverlay {
+  width: 276px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1060;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.42857143;
+  text-align: right;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 14px;
+  background-color: #ffffff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: inherit;
+  right: inherit;
+  bottom: 5px;
+  left: 5px;
+  display: block;
+}
+
+#newmessageoverlay.top {
+  margin-top: -10px;
+}
+
+#newmessageoverlay.right {
+  margin-right: 10px;
+}
+
+#newmessageoverlay.bottom {
+  margin-top: 10px;
+}
+
+#newmessageoverlay.left {
+  margin-right: -10px;
+}
+
+#newmessageoverlay.top > .arrow {
+  right: 50%;
+  margin-right: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+
+#newmessageoverlay.top > .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-right: -10px;
+  border-bottom-width: 0;
+  border-top-color: #ffffff;
+}
+
+#newmessageoverlay.right > .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+
+#newmessageoverlay.right > .arrow:after {
+  content: " ";
+  right: 1px;
+  bottom: -10px;
+  border-right-width: 0;
+  border-left-color: #ffffff;
+}
+
+#newmessageoverlay.bottom > .arrow {
+  right: 50%;
+  margin-right: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+
+#newmessageoverlay.bottom > .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-right: -10px;
+  border-top-width: 0;
+  border-bottom-color: #ffffff;
+}
+
+#newmessageoverlay.left > .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+
+#newmessageoverlay.left > .arrow:after {
+  content: " ";
+  left: 1px;
+  border-left-width: 0;
+  border-right-color: #ffffff;
+  bottom: -10px;
+}
+
+#newmessageoverlay a {
+  text-decoration: underline;
+}
+
+#newmessageoverlay #newmessagetext {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+
+#newmessageoverlay #usermessage {
+  padding: 9px 14px;
+  border: 1px dotted rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-top: 5px;
+  background-color: #ffffff;
+}
+
+#newmessageoverlay #newmessagelinks {
+  margin: 5px 14px;
+}
+
+/** Messenger send message dialog */
+
+.core_message-messenger-sendmessage-hidden {
+  display: none;
+}
+
+.core_message-messenger-sendmessage .message-actions {
+  position: relative;
+}
+
+.core_message-messenger-sendmessage .message-area {
+  height: 240px;
+  max-height: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.core_message-messenger-sendmessage .message-input {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.core_message-messenger-sendmessage .message-send {
+  margin: 0;
+  float: left;
+}
+
+.core_message-messenger-sendmessage .message-notice-area {
+  display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.core_message-messenger-sendmessage .message-notice {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.core_message-messenger-sendmessage .message-notice > div {
+  background: #eee;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.core_message-messenger-sendmessage .message-footer {
+  margin-top: 3px;
+  line-height: 20px;
+}
+
+.core_message-messenger-sendmessage .message-history {
+  position: absolute;
+  bottom: 0;
 }
 
 /* Question */
