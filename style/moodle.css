@@ -11918,6 +11918,54 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   font-size: 30px;
   color: inherit;
 }
+.box.message .messagearea textarea {
+  display: block;
+  width: 100%;
+  height: 34px;
+  height: 200px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.box.message .messagearea textarea:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.box.message .messagearea textarea::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.box.message .messagearea textarea:-ms-input-placeholder {
+  color: #999;
+}
+.box.message .messagearea textarea::-webkit-input-placeholder {
+  color: #999;
+}
+.box.message .messagearea textarea[disabled],
+.box.message .messagearea textarea[readonly],
+fieldset[disabled] .box.message .messagearea textarea {
+  background-color: #eee;
+  opacity: 1;
+}
+.box.message .messagearea textarea[disabled],
+fieldset[disabled] .box.message .messagearea textarea {
+  cursor: not-allowed;
+}
+textarea.box.message .messagearea textarea {
+  height: auto;
+}
 .box.message .messagearea #personsearch {
   margin: 10px 15px;
 }
@@ -12421,54 +12469,6 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 }
 #newmessageoverlay #newmessagelinks {
   margin: 5px 14px;
-}
-textarea {
-  display: block;
-  width: 100%;
-  height: 34px;
-  height: 200px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
-textarea:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-}
-textarea::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-}
-textarea:-ms-input-placeholder {
-  color: #999;
-}
-textarea::-webkit-input-placeholder {
-  color: #999;
-}
-textarea[disabled],
-textarea[readonly],
-fieldset[disabled] textarea {
-  background-color: #eee;
-  opacity: 1;
-}
-textarea[disabled],
-fieldset[disabled] textarea {
-  cursor: not-allowed;
-}
-textareatextarea {
-  height: auto;
 }
 /** Messenger send message dialog */
 .core_message-messenger-sendmessage-hidden {
@@ -15335,6 +15335,78 @@ div#dock {
 .path-mod-survey .reportbuttons,
 .path-mod-survey .centerpara {
   text-align: center;
+}
+.path-mod-assign .assignfeedback_editpdf_widget .pageheader button,
+.path-mod-assign .assignfeedback_editpdf_widget .pageheader select {
+  height: 28px;
+  padding: 3px 7px;
+  line-height: 24px;
+}
+.path-mod-assign a.btn {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.path-mod-assign a.btn:focus,
+.path-mod-assign a.btn.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.path-mod-assign a.btn:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.path-mod-assign a.btn:active,
+.path-mod-assign a.btn.active,
+.open > .dropdown-toggle.path-mod-assign a.btn {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.path-mod-assign a.btn:active:hover,
+.path-mod-assign a.btn.active:hover,
+.open > .dropdown-toggle.path-mod-assign a.btn:hover,
+.path-mod-assign a.btn:active:focus,
+.path-mod-assign a.btn.active:focus,
+.open > .dropdown-toggle.path-mod-assign a.btn:focus,
+.path-mod-assign a.btn:active.focus,
+.path-mod-assign a.btn.active.focus,
+.open > .dropdown-toggle.path-mod-assign a.btn.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.path-mod-assign a.btn:active,
+.path-mod-assign a.btn.active,
+.open > .dropdown-toggle.path-mod-assign a.btn {
+  background-image: none;
+}
+.path-mod-assign a.btn.disabled,
+.path-mod-assign a.btn[disabled],
+fieldset[disabled] .path-mod-assign a.btn,
+.path-mod-assign a.btn.disabled:hover,
+.path-mod-assign a.btn[disabled]:hover,
+fieldset[disabled] .path-mod-assign a.btn:hover,
+.path-mod-assign a.btn.disabled:focus,
+.path-mod-assign a.btn[disabled]:focus,
+fieldset[disabled] .path-mod-assign a.btn:focus,
+.path-mod-assign a.btn.disabled.focus,
+.path-mod-assign a.btn[disabled].focus,
+fieldset[disabled] .path-mod-assign a.btn.focus,
+.path-mod-assign a.btn.disabled:active,
+.path-mod-assign a.btn[disabled]:active,
+fieldset[disabled] .path-mod-assign a.btn:active,
+.path-mod-assign a.btn.disabled.active,
+.path-mod-assign a.btn[disabled].active,
+fieldset[disabled] .path-mod-assign a.btn.active {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.path-mod-assign a.btn .badge {
+  color: #fff;
+  background-color: #333;
 }
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax {
   background-color: #fff;
