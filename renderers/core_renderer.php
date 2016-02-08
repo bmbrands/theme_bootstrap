@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 class theme_bootstrap_core_renderer extends core_renderer {
 
     public function notification($message, $classes = 'notifyproblem') {
-        //$message = clean_text($message);
+        /* $message = clean_text($message); */
 
         if ($classes == 'notifyproblem') {
             return html_writer::div($message, 'alert alert-danger');
@@ -144,7 +144,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     protected function render_user_menu(custom_menu $menu, $user) {
-        global $USER, $DB, $SESSION;
+        global $USER;
 
         if (empty($user)) {
             $user = $USER;
@@ -162,7 +162,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $name = html_writer::tag('span', $name, array('class' => 'username hidden-sm'));
             $usermenu = $menu->add($name . $picture, new moodle_url('#'), fullname($user), 10001);
 
-  
             $usermenu->add(
                 $this->glyphicon('dashboard')  . get_string('myhome'),
                 new moodle_url('/my'),
@@ -187,7 +186,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 new moodle_url('/grade/report/overview/index.php'),
                 get_string('grades')
             );
-        
+
             $usermenu->add(
                 $this->glyphicon('inbox') . get_string('messages', 'message'),
                 new moodle_url('/message/index.php'),
@@ -201,7 +200,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
 
                 get_string('preferences')
             );
-        
+
             $usermenu->add(
                 '#######',
                 new moodle_url('/'),
@@ -277,15 +276,16 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $class = $menunode->get_title();
             if (preg_match("/^#+$/", $menunode->get_text())) {
                 $content = '<li class="divider" role="presentation">';
-            } else  {
+            } else {
                 $content = '<li>';
-            // The node doesn't have children so produce a final menuitem.
+                // The node doesn't have children so produce a final menuitem.
                 if ($menunode->get_url() !== null) {
                     $url = $menunode->get_url();
                 } else {
                     $url = '#';
                 }
-                $content .= html_writer::link($url, $menunode->get_text(), array('class' => $class, 'title' => $menunode->get_title()));
+                $content .= html_writer::link($url, $menunode->get_text(), array('class' => $class,
+                    'title' => $menunode->get_title()));
             }
         }
         return $content;

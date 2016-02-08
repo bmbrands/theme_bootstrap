@@ -4,7 +4,7 @@ About this theme
 Release Notes
 -------------
 
-Version 2015103000 (BETA)
+Version 2015103000 
 
 * copy over changes from bootstrapbase 2.9 - 3.0
 * added in backward compatible grid (.row-fluid .spanx)
@@ -12,6 +12,12 @@ Version 2015103000 (BETA)
 * add language dropdown back in
 
 ![image1](pix/screenshot.jpg "Moodle Bootstrap Screenshot")
+
+[![Build Status](https://travis-ci.org/bmbrands/theme_bootstrap.svg?branch=master)](https://travis-ci.org/bmbrands/theme_bootstrap)
+
+Changelog:
+
+version 2015110600: Fixed issue on group selection boxes in courses (thanks Emma Ridchardson).
 
 This is the bootstrap theme for Moodle.
 

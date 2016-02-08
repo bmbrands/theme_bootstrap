@@ -6655,6 +6655,8 @@ button.close {
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
 .box.message .messagearea .messagehistory #message_user_pictures:before,
 .box.message .messagearea .messagehistory #message_user_pictures:after,
+.groupmanagementtable:before,
+.groupmanagementtable:after,
 .userprofile dl.list dd:before,
 .userprofile dl.list dd:after,
 .mform .fitem_actionbuttons:before,
@@ -6691,6 +6693,7 @@ button.close {
 .box.message .contactselector form#usergroupform fieldset:after,
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
 .box.message .messagearea .messagehistory #message_user_pictures:after,
+.groupmanagementtable:after,
 .userprofile dl.list dd:after,
 .mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:after,
@@ -12099,6 +12102,54 @@ textarea.box.message .messagearea textarea {
   font-size: 30px;
   color: inherit;
 }
+.box.message .messagearea textarea {
+  display: block;
+  width: 100%;
+  height: 34px;
+  height: 200px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.box.message .messagearea textarea:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.box.message .messagearea textarea::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.box.message .messagearea textarea:-ms-input-placeholder {
+  color: #999;
+}
+.box.message .messagearea textarea::-webkit-input-placeholder {
+  color: #999;
+}
+.box.message .messagearea textarea[disabled],
+.box.message .messagearea textarea[readonly],
+fieldset[disabled] .box.message .messagearea textarea {
+  background-color: #eee;
+  opacity: 1;
+}
+.box.message .messagearea textarea[disabled],
+fieldset[disabled] .box.message .messagearea textarea {
+  cursor: not-allowed;
+}
+textarea.box.message .messagearea textarea {
+  height: auto;
+}
 .box.message .messagearea #personsearch {
   margin: 10px 15px;
 }
@@ -13460,6 +13511,24 @@ body.path-question-type .mform fieldset.hidden {
   margin-right: 0;
   margin-left: 0;
   list-style: none;
+}
+.groupmanagementtable {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.groupmanagementtable .groups,
+.groupmanagementtable .members {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 768px) {
+  .groupmanagementtable .groups,
+  .groupmanagementtable .members {
+    float: left;
+    width: 50%;
+  }
 }
 .usermenu {
   float: right;
