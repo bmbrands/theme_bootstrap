@@ -10559,8 +10559,7 @@ body.jsenabled .formlisting {
   line-height: 1.42857143;
 }
 
-.moodle-actionmenu[data-enhanced].show .menu a:hover,
-.moodle-actionmenu[data-enhanced].show .menu a:focus {
+.moodle-actionmenu[data-enhanced].show .menu a:hover {
   color: #ffffff;
   background-color: #337ab7;
   text-decoration: none;
@@ -10574,8 +10573,16 @@ body.jsenabled .formlisting {
   vertical-align: middle;
 }
 
-.moodle-actionmenu[data-enhanced].show .menu .iconsmall {
+.moodle-actionmenu[data-enhanced].show .menu .iconsmall,
+.moodle-actionmenu[data-enhanced].show .menu .smallicon {
   margin: 4px -10px 4px 4px;
+}
+
+.moodle-actionmenu[data-enhanced].show .menu .smallicon {
+  padding: 4px;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .moodle-actionmenu[data-enhanced].show .menu > li {
