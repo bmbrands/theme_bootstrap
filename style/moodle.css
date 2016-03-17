@@ -9726,6 +9726,12 @@ textarea.path-admin .roleassigntable input[type="text"] {
 .editing .course-content ul li.section.main .right {
   display: inherit;
 }
+.editing .course-content ul li.section.main .left {
+  float: left;
+}
+.editing .course-content ul li.section.main .right {
+  float: right;
+}
 .editing_show + .editing_assign,
 .editing_hide + .editing_assign {
   margin-left: 20px;
