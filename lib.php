@@ -63,3 +63,7 @@ function bootstrap_grid($hassidepre, $hassidepost) {
     }
     return $regions;
 }
+
+function theme_bootstrap_page_init(moodle_page $page) {
+    $page->requires->jquery();
+}
