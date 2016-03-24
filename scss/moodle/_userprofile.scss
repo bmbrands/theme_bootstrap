@@ -16,7 +16,12 @@
             @extend .btn-primary;
         }
     }
-
+    .profile_keyinfo {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
     a {
         text-decoration: none;
     }

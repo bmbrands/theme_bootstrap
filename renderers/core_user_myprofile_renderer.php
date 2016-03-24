@@ -65,8 +65,9 @@ class theme_bootstrap_core_user_myprofile_renderer extends \core_user\output\myp
                 $contactinfo .= $this->render($tree->nodes[$contactfield]);
             }
         }
-        $contact = \html_writer::tag('ul', $contactinfo);
-        $keyinfo = $this->output->container($picture . $contact, 'profile_keyinfo');
+        $picture = \html_writer::tag('div', $picture, array('class'=>'card-header bg-faded'));
+        $contact = \html_writer::tag('ul', $contactinfo, array('class'=>'card-block'));
+        $keyinfo = $this->output->container($picture . $contact, 'profile_keyinfo card');
         return $keyinfo;
     }
 
