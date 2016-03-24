@@ -22236,6 +22236,10 @@ ol {
   padding-right: 0px;
 }
 
+.mform .fitem {
+  clear: both;
+}
+
 .mform .fitem .fitemtitle {
   position: relative;
   float: right;

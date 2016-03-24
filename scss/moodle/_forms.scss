@@ -2,6 +2,7 @@
 .mform {
     .fitem {
         @extend .form-group;
+        clear: both;
         .fitemtitle {
             @include make-col();
             @include media-breakpoint-up(lg) {
