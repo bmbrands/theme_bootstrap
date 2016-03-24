@@ -21405,6 +21405,13 @@ body.path-question-type .mform fieldset.hidden {
   margin-right: 0;
 }
 
+#page-user-profile .node_category,
+.path-user .node_category {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid-column;
+}
+
 #page-user-profile .node_category li,
 .path-user .node_category li {
   list-style-type: none;

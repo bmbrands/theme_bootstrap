@@ -42,6 +42,9 @@
 }
 #page-user-profile .node_category, .path-user .node_category {
     @extend .card;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
     h3 {
         @extend .card-header;
     }
