@@ -10,7 +10,8 @@
   "contributors": [
     { "name": "David Scotson" },
     { "name": "Bas Brands", "url": "http://www.basbrands.nl" },
-    { "name": "Gareth J Barnard", "url": "http://about.me/gjbarnard" }
+    { "name": "Gareth J Barnard", "url": "http://about.me/gjbarnard" },
+    { "name": "Andrew Davidson", "url": "http://synergy-learning.com" }
   ],
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   "dependencies": {
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "~0.7.6",
-    "grunt-contrib-less": "~0.11.3",
+    "grunt-sass": "~1.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-exec": "~0.4.5",
     "grunt-text-replace": "~0.3.11",

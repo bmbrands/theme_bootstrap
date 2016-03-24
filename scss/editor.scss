@@ -1,0 +1,7 @@
+// Strip down core bootstrap for editor.
+
+// Core variables and mixins.
+@import "bootstrap4/bootstrap"; // Modify this for custom colors, font-sizes, etc.
+
+// Moodle override.
+@import "moodle/editor"; // The final override.

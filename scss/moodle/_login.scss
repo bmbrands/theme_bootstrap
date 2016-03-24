@@ -1,0 +1,72 @@
+.loginbox {
+    border-radius: 3px;
+    @extend .form-group;
+    &.onecolumn  {
+        @include make-col();
+        @include media-breakpoint-up(md) {
+            @include make-col-span(6);
+            @include make-col-push(4);
+        }
+        @include media-breakpoint-up(lg) {
+            @include make-col-span(4);
+            @include make-col-push(4);
+        }
+        @extend .card;
+    }
+
+    &.twocolumns .loginpanel {
+        @include make-col();
+        @include media-breakpoint-up(md) {
+            @include make-col-span(4);
+        }
+        @include media-breakpoint-up(xl) {
+            @include make-col-span(3);
+        }
+        @extend .card;
+    }
+
+    &.twocolumns .signuppanel {
+        @include make-col();
+        @include media-breakpoint-up(md) {
+            @include make-col-span(7);
+            @include make-col-push(1);
+        }
+        @include media-breakpoint-up(xl) {
+            @include make-col-span(8);
+            @include make-col-push(1);
+        }
+    }
+
+    .loginform {
+        .form-label {
+            text-align: left;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .form-input {
+            width: 100%;
+            margin-bottom: 5px;
+            input[type="text"],
+            input[type="password"] {
+                @extend .form-control;
+                width: 100%;
+                max-width: none;
+            }
+            input[type="submit"] {
+                margin: 10px 0 0;
+            }
+        }
+    }
+    input[type="submit"] {
+        margin: 10px 0 0;
+    }
+    .desc {
+        line-height: 30px;
+        color: $body-color;
+    }
+
+    .subcontent {
+        padding: 0;
+        margin: 0;
+    }
+}

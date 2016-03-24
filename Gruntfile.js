@@ -102,8 +102,8 @@ module.exports = function(grunt) { // jshint ignore:line
     var path = require('path');
 
     // Theme Bootstrap constants.
-    var LESSDIR         = 'less',
-        BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'), // jshint ignore:line
+    var SCSSDIR         = 'scss',
+        BOOTSWATCHDIR   = path.join(SCSSDIR, 'bootswatch'), // jshint ignore:line
         THEMEDIR        = path.basename(path.resolve('.'));
 
     // PHP strings for exec task.
@@ -125,32 +125,28 @@ module.exports = function(grunt) { // jshint ignore:line
     decachephp += 'theme_reset_all_caches();';
 
     grunt.initConfig({
-        less: {
+        sass: {
             // Compile moodle styles.
             moodle: {
                 options: {
                     compress: false,
-                    strictMath: true,
-                    outputSourceFiles: true,
-                    sourceMap: true,
-                    sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/moodle.css'
+                    sourcemap: 'auto',
                 },
-                src: 'less/moodle.less',
-                dest: 'style/moodle.css'
+                files: [{
+                    src: 'scss/moodle.scss',
+                    dest: 'style/moodle.css'
+                }]
             },
             // Compile editor styles.
             editor: {
                 options: {
                     compress: false,
-                    strictMath: true,
-                    outputSourceFiles: true,
-                    sourceMap: true,
-                    sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/editor.css'
+                    sourcemap: 'auto',
                 },
-                src: 'less/editor.less',
-                dest: 'style/editor.css'
+                files: [{
+                    src: 'scss/editor.scss',
+                    dest: 'style/editor.css'
+                }]
             }
         },
         autoprefixer: {
@@ -211,7 +207,7 @@ module.exports = function(grunt) { // jshint ignore:line
         },
         watch: {
             // Watch for any changes to less files and compile.
-            files: ["less/**/*.less"],
+            files: ["scss/**/*.scss"],
             tasks: ["compile"],
             options: {
                 spawn: false,
@@ -285,7 +281,7 @@ module.exports = function(grunt) { // jshint ignore:line
 
     // Load contrib tasks.
     grunt.loadNpmTasks("grunt-autoprefixer");
-    grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("grunt-sass");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-exec");
     grunt.loadNpmTasks("grunt-text-replace");
@@ -303,7 +299,7 @@ module.exports = function(grunt) { // jshint ignore:line
     grunt.registerTask("decache", ["exec:decache"]);
 
     grunt.registerTask("compile", [
-        "less",
+        "sass",
         "cssflip",
         "replace:rtl_images",
         "autoprefixer",

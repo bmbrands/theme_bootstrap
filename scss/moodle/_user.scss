@@ -1,0 +1,186 @@
+.user-box {
+    margin: 8px;
+    width: 115px;
+    height: 160px;
+    text-align: center;
+    float: left;
+    clear: none;
+}
+.userlist {
+    .action-icon {
+        img {
+            vertical-align: middle;
+        }
+    }
+    #showall {
+        margin: 10px 0;
+    }
+    .buttons {
+        text-align: center;
+        label {
+            padding: 0 3px;
+        }
+    }
+    table#participants {
+        text-align: center;
+    }
+    table.controls {
+        width: 100%;
+        tr {
+            vertical-align: top;
+        }
+        .right {
+            text-align: right;
+        }
+    }
+}
+.userlist table#participants td,.userlist table#participants th {
+    vertical-align: middle;
+    text-align: left;
+    padding: 4px;
+}
+.userlist table.controls td.right,.userlist table.controls td.left {
+    padding: 4px;
+}
+.userinfobox {
+    width: 100%;
+    border: 1px solid;
+    border-collapse: separate;
+    padding: 10px;
+    .userpicture {
+        width: 100px;
+        height: 100px;
+    }
+    .content {
+        vertical-align: top;
+    }
+    .links {
+        width: 100px;
+        padding: 5px;
+        vertical-align: bottom;
+        a {
+            display: block;
+        }
+    }
+    .list {
+        td {
+            padding: 3px;
+        }
+    }
+    .username {
+        padding-bottom: 20px;
+        font-weight: bold;
+    }
+    td.label {
+        text-align: right;
+        white-space: nowrap;
+        vertical-align: top;
+        font-weight: bold;
+    }
+}
+.userinfobox .left,.userinfobox .side {
+    width: 100px;
+    vertical-align: top;
+}
+.groupinfobox {
+    @extend .card;
+    .left {
+        padding: 10px;
+        width: 100px;
+        vertical-align: top;
+    }
+}
+.course-participation {
+    #showall {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+#user-policy {
+    .noticebox {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 250px;
+    }
+    #policyframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+.iplookup {
+    #map {
+        margin: auto;
+    }
+}
+.userselector {
+    select {
+        width: 100%;
+    }
+    div {
+        margin-top: 0.2em;
+        label {
+            margin-right: 0.3em;
+        }
+    }
+    .userselector-infobelow {
+        font-size: 0.8em;
+    }
+}
+#userselector_options {
+    .collapsibleregioncaption {
+        font-weight: bold;
+    }
+    p {
+        margin: 0.2em 0;
+        text-align: left;
+    }
+}
+#page-user-profile {
+    .messagebox {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+#page-course-view-weeks {
+    .messagebox {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.preferences-group {
+    ul {
+        list-style: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.groupmanagementtable {
+    @include make-row();
+    .groups,
+    .members {
+        @include make-col();
+        @include media-breakpoint-up(md) {
+            @include make-col-span(6);
+        }
+    }
+}
+
+.usermenu {
+    float: right;
+    .username {
+        margin-right: 5px;
+    }
+    .dropdown-toggle {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .dropdown-menu > li > a {
+        padding: 3px 10px;
+    }
+}
