@@ -41,6 +41,13 @@
     }
 }
 #page-user-profile .node_category, .path-user .node_category {
+    @extend .card;
+    h3 {
+        @extend .card-header;
+    }
+    ul {
+        @extend .card-block;
+    }
     li {
         list-style-type: none;
         &.contentnode {

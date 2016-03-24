@@ -10,9 +10,10 @@
        }
     }
     .header {
-        @extend .card-heading;
+        @extend .card-header;
         h2 {
             @extend .card-title;
+            font-size: $font-size-h4;
         }
         .block_action {
             float: right;

@@ -37,14 +37,14 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<nav role="navigation" class="navbar navbar-default">
+<nav role="navigation" class="navbar navbar-light bg-faded">
     <div class="container-fluid">
-    <div class="navbar-header pull-left">
+    <div class="navbar-header pull-xs-left">
         <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
     </div>
-    <div class="navbar-header pull-right">
+    <div class="navbar-header pull-xs-right">
         <?php echo $OUTPUT->user_menu(); ?>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#moodle-navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -53,11 +53,11 @@ echo $OUTPUT->doctype() ?>
     </div>
     <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
         <?php echo $OUTPUT->custom_menu(); ?>
-        <ul class="nav pull-right">
+        <ul class="nav pull-xs-right">
             <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
         </ul>
     </div>
-    
+
     </div>
 </nav>
 <header class="moodleheader">

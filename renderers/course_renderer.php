@@ -40,7 +40,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
             $course = new course_in_list($course);
         }
         $content = '';
-        $classes = trim('panel panel-default coursebox clearfix '. $additionalclasses);
+        $classes = trim('card coursebox clearfix '. $additionalclasses);
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $classes .= ' collapsed';
         }
@@ -52,7 +52,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
             'data-type' => self::COURSECAT_TYPE_COURSE,
         ));
 
-        $content .= html_writer::start_tag('div', array('class' => 'panel-heading info'));
+        $content .= html_writer::start_tag('div', array('class' => 'card-header info'));
 
         // Course name.
         $coursename = $chelper->get_course_formatted_name($course);
@@ -84,7 +84,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
 
         $content .= html_writer::end_tag('div'); // End .info div.
 
-        $content .= html_writer::start_tag('div', array('class' => 'content panel-body'));
+        $content .= html_writer::start_tag('div', array('class' => 'content card-block'));
         $content .= $this->coursecat_coursebox_content($chelper, $course);
 
         $content .= html_writer::end_tag('div'); // End .content div.

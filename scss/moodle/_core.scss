@@ -1,5 +1,9 @@
 /** core.less */
 
+.hidden {
+    visibility: hidden;
+}
+
 /** Page layout CSS starts **/
 .layout-option-noheader #page-header,
 .layout-option-nonavbar #page-navbar,
