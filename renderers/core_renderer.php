@@ -86,12 +86,12 @@ class theme_bootstrap_core_renderer extends core_renderer {
         // TODO: eliminate this duplicated logic, it belongs in core, not
         // here. See MDL-39565.
 
-        $content = '<ul class="nav navbar-nav pull-right">';
+        $content = '<nav id="moodle-navbar" class="nav navbar-nav collapse navbar-toggleable-sm">';
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
 
-        return $content.'</ul>';
+        return $content.'</nav>';
     }
 
     public function user_menu($user = null, $withlinks = null) {
@@ -196,9 +196,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
         if ($menunode->has_children()) {
 
             if ($level == 1) {
-                $dropdowntype = 'dropdown';
+                $dropdowntype = 'dropdown nav-item';
             } else {
-                $dropdowntype = 'dropdown-submenu';
+                $dropdowntype = 'dropdown-submenu dropdown-item';
             }
 
             $content = html_writer::start_tag('li', array('class' => $dropdowntype));
@@ -211,7 +211,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             }
             $linkattributes = array(
                 'href' => $url,
-                'class' => 'dropdown-toggle',
+                'class' => 'dropdown-toggle nav-link',
                 'data-toggle' => 'dropdown',
                 'title' => $menunode->get_title(),
             );
@@ -231,16 +231,20 @@ class theme_bootstrap_core_renderer extends core_renderer {
             // The node doesn't have children so produce a final menuitem.
             $class = $menunode->get_title();
             if (preg_match("/^#+$/", $menunode->get_text())) {
-                $content = '<li class="divider" role="presentation">';
+                $content = '<li class="nav-item divider" role="presentation">';
             } else {
-                $content = '<li>';
+                if ($level == 1) {
+                    $content = '<li class="nav-item">';
+                } else {
+                    $content = '<li class="dropdown-item">';
+                }
                 // The node doesn't have children so produce a final menuitem.
                 if ($menunode->get_url() !== null) {
                     $url = $menunode->get_url();
                 } else {
                     $url = '#';
                 }
-                $content .= html_writer::link($url, $menunode->get_text(), array('class' => $class,
+                $content .= html_writer::link($url, $menunode->get_text(), array('class' => $class.' nav-link',
                     'title' => $menunode->get_title()));
             }
         }

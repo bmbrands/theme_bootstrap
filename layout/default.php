@@ -43,20 +43,16 @@ echo $OUTPUT->doctype() ?>
         <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
     </div>
     <div class="navbar-header pull-xs-right">
-        <?php echo $OUTPUT->user_menu(); ?>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#moodle-navbar">
+        <button type="button" class="navbar-toggler hidden-md-up" data-toggle="collapse" data-target="#moodle-navbar">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            ☰
         </button>
+        <?php echo $OUTPUT->user_menu(); ?>
     </div>
-    <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
-        <?php echo $OUTPUT->custom_menu(); ?>
-        <ul class="nav pull-xs-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-        </ul>
-    </div>
+    <?php echo $OUTPUT->custom_menu(); ?>
+    <ul class="nav pull-xs-right">
+        <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+    </ul>
 
     </div>
 </nav>

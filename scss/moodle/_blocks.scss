@@ -1,13 +1,13 @@
 .block {
     @extend .card;
-     &.invisible {
-         border-color: lighten($card-border-color, 5%);
-         .header {
-             background-color: lighten($card-cap-bg, 5%);
-             h2 {
-               color: lighten($body-color, 20%);
-           }
-       }
+    &.invisible {
+        border-color: lighten($card-border-color, 5%);
+        .header {
+            background-color: lighten($card-cap-bg, 5%);
+            h2 {
+                color: lighten($body-color, 20%);
+            }
+        }
     }
     .header {
         @extend .card-header;
@@ -56,6 +56,28 @@
     }
     .singleselect select {
         @extend .form-control;
+    }
+    &.block_settings {
+        .block_tree {
+            li.item_with_icon {
+                > p {
+                    img {
+                        top: 4px;
+                    }
+                }
+            }
+            .tree_item.branch {
+                background-position: 0 50%;
+            }
+        }
+    }
+    &.block_calendar_month {
+        caption {
+            caption-side: top;
+        }
+        th, td {
+            border: none;
+        }
     }
 }
 

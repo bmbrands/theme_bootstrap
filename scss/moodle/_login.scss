@@ -11,29 +11,61 @@
             @include make-col-span(4);
             @include make-col-push(4);
         }
-        @extend .card;
+        .loginpanel {
+            @extend .card;
+            h2 {
+                @extend .card-header;
+            }
+            .loginsub {
+                @extend .card-block;
+            }
+            .guestsub {
+                @extend .card-block;
+            }
+        }
     }
 
-    &.twocolumns .loginpanel {
-        @include make-col();
-        @include media-breakpoint-up(md) {
-            @include make-col-span(4);
+    &.twocolumns {
+        .loginpanel {
+            @extend .card;
+            @include make-col();
+            @include media-breakpoint-up(md) {
+                @include make-col-span(4);
+            }
+            @include media-breakpoint-up(xl) {
+                @include make-col-span(3);
+            }
+            padding-left: 0;
+            padding-right: 0;
+            h2 {
+                @extend .card-header;
+            }
+            .loginsub {
+                @extend .card-block;
+            }
+            .guestsub {
+                @extend .card-block;
+            }
         }
-        @include media-breakpoint-up(xl) {
-            @include make-col-span(3);
-        }
-        @extend .card;
-    }
-
-    &.twocolumns .signuppanel {
-        @include make-col();
-        @include media-breakpoint-up(md) {
-            @include make-col-span(7);
-            @include make-col-push(1);
-        }
-        @include media-breakpoint-up(xl) {
-            @include make-col-span(8);
-            @include make-col-push(1);
+        .signuppanel {
+            @extend .card;
+            @include make-col();
+            @include media-breakpoint-up(md) {
+                @include make-col-span(7);
+                @include make-col-push(1);
+            }
+            @include media-breakpoint-up(xl) {
+                @include make-col-span(8);
+                @include make-col-push(1);
+            }
+            padding-left: 0;
+            padding-right: 0;
+            h2 {
+                @extend .card-header;
+            }
+            .subcontent {
+                @extend .card-block;
+            }
         }
     }
 

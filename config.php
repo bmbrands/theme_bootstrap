@@ -169,7 +169,7 @@ $THEME->javascripts = array(
 );
 
 $THEME->javascripts_footer = array(
-    'moodlebootstrap', 'dock'
+    'tether', 'moodlebootstrap', 'dock'
 );
 
 $THEME->hidefromselector = false;
