@@ -14,7 +14,7 @@
             label {
                 margin-top: 0;
                 margin-bottom: 0;
-                padding-top: ($input-padding-y + 1); // Default padding plus a border
+                padding-top: $input-padding-y; // Default padding plus a border
             }
         }
         .felement {
