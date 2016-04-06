@@ -554,3 +554,25 @@ img.iconsmall {
     @extend .alert;
     @extend .alert-danger;
 }
+
+.backup-section {
+    @extend .card;
+    .header {
+        @extend .card-block;
+        @extend .card-title;
+        @extend .bg-faded;
+    }
+    .detail-pair {
+        @extend .list-group;
+        @extend .list-group-flush;
+        @extend .list-group-item;
+        margin-right: -1px;
+        margin-left: -1px;
+        .detail-pair-label {
+            font-weight: bold;
+        }
+        .detail-pair-value {
+            padding-left: 15px;
+        }
+    }
+}

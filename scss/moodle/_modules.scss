@@ -33,6 +33,7 @@ select {
         }
         .topic, .topic.starter, .picture, .author, .replies, .lastpost {
             vertical-align: top;
+            padding: 10px;
         }
     }
 }
@@ -43,13 +44,26 @@ select {
 
 .forumpost {
     @extend .card;
-    padding: 6px;
     .header {
+        @extend .card-header;
         margin-bottom: 3px;
     }
     .maincontent {
+        @extend .card-block;
         .left {
             padding: 0 10px 0 10px;
+        }
+    }
+    .side {
+        @extend .card-footer;
+        .commands {
+            font-size: 0;
+            a {
+                @extend .btn;
+                @extend .btn-sm;
+                @extend .btn-primary;
+                margin-left: 3px;
+            }
         }
     }
 }

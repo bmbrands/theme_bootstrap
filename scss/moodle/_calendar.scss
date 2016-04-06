@@ -312,6 +312,9 @@
                 color: $text-muted;
             }
         }
+        caption {
+            caption-side: top;
+        }
     }
     .calendar-event-panel {
         background-color: $gray-lighter;

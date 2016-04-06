@@ -904,6 +904,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     background-size: 100%;
 }
 .moodle-dialogue-base .moodle-dialogue {
+
     padding: 0;
     margin: 0;
     background: none;
@@ -912,28 +913,14 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     outline: #000 dotted 0;
 }
 .moodle-dialogue-base .moodle-dialogue-wrap {
-    margin-top: -3px;
-    margin-left: -3px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 5px 5px 20px 0 #666;
+    @extend .modal-content;
 }
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd {
-    margin: 0;
-    padding: 2px 5px;
-    font-size: 12px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    color: #333;
-    text-align: center;
-    text-shadow: 1px 1px 1px #fff;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid #bbb;
-    background: #ccc;
-    @include gradient-vertical(#fff, #ccc);
-    filter: 0;
+    @extend .modal-header;
+    @extend .modal-title;
+    color: $body-color;
+    background: none;
 }
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h1 {
     margin: 0;
@@ -958,10 +945,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     border-style: none;
 }
 .moodle-dialogue-base .moodle-dialogue .moodle-dialogue-bd {
-    padding: 1em;
-    line-height: 2em;
-    color: #555;
-    font-size: 12px;
+    @extend .modal-body;
+    background: none;
 }
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-content {
     padding: 0;
@@ -1022,11 +1007,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     border-bottom: 1px solid #eee;
 }
 .moodle-dialogue-base .moodle-dialogue .moodle-dialogue-content .moodle-dialogue-ft {
-    padding: 0;
-    margin: 0.7em 1em;
-    text-align: right;
-    background-color: #fff;
-    font-size: 12px;
+    @extend .modal-footer;
+    background: none;
 }
 .moodle-dialogue-confirm .confirmation-message {
     margin: 0.5em 1em;
@@ -1413,3 +1395,11 @@ ul.dragdrop-keyboard-drag li {
     height: 12px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header.moodleheader {
+    padding-top: 10px;
+}

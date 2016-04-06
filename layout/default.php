@@ -37,7 +37,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<nav role="navigation" class="navbar navbar-light bg-faded">
+<nav role="navigation" class="navbar navbar-full navbar-dark bg-primary">
     <div class="container-fluid">
     <div class="navbar-header pull-xs-left">
         <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>

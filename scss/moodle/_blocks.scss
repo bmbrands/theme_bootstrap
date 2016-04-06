@@ -79,6 +79,15 @@
             border: none;
         }
     }
+    &.block_navigation {
+        .block_tree {
+            .tree_item.hasicon {
+                .item-content-wrap {
+                    max-width: calc(100% - 16px);
+                }
+            }
+        }
+    }
 }
 
 .editing {

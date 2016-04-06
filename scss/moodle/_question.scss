@@ -195,54 +195,98 @@ body.path-question-type .fitem_fgroup .accesshide {
     clear: left;
     text-align: left;
     margin: 0 auto 1.8em auto;
-}
-.que .info {
-    float: left;
-    width: 7em;
-    padding: 0.5em;
-    margin-bottom: 1.8em;
-    background-color: $gray-lighter;
-    border: 1px solid darken(adjust-hue($gray-lighter, -10), 7%);
-    border-radius: 2px;
-}
-.que h3.no {
-    margin: 0;
-    font-size: 0.8em;
-    line-height: 1;
-}
-.que span.qno {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-.que .info > div {
-    font-size: 0.8em;
-    margin-top: 0.7em;
+    .info {
+        @include make-col();
+        @include make-col-span(2);
+        padding: 0.5em;
+        background-color: $gray-lighter;
+        border: 1px solid darken(adjust-hue($gray-lighter, -10), 7%);
+        border-radius: 2px;
+        > div {
+            font-size: 0.8em;
+            margin-top: 0.7em;
+        }
+        .questionflag.editable {
+            cursor: pointer;
+        }
+        .editquestion img,
+        .questionflag img,
+        .questionflag input {
+            vertical-align: bottom;
+        }
+        .questionflagtext {
+            color: $state-danger-text
+        }
+    }
+    h3.no {
+        margin: 0;
+        font-size: 0.8em;
+        line-height: 1;
+    }
+    span.qno {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    .content {
+        @include make-col();
+        @include make-col-span(10);
+    }
+    .formulation,
+    .outcome,
+    .comment {
+        @extend .alert;
+    }
+    .formulation {
+        @extend .alert-info;
+        color: $body-color;
+    }
+    .comment {
+        @extend .alert-success;
+    }
+    .history {
+        @extend .card;
+    }
+    .ablock {
+        margin: 0.7em 0 0.3em 0;
+    }
+    .im-controls {
+        margin-top: 0.5em;
+        text-align: left;
+    }
+    .specificfeedback,
+    .generalfeedback,
+    .rightanswer,
+    .im-feedback,
+    .feedback,
+    p {
+        margin: 0 0 0.5em;
+    }
+    .qtext {
+        margin-bottom: 1.5em;
+    }
+    .correctness {
+        @extend .label;
+        &.correct {
+            background-color: $label-success-bg;
+        }
+        &.partiallycorrect {
+            background-color: $label-warning-bg;
+        }
+        &.notanswered,
+        &.incorrect {
+            background-color: $label-danger-bg;
+        }
+    }
+    .validationerror {
+        color: $state-danger-text;
+    }
 }
 
 body.path-question-type .mform fieldset.hidden {
     padding: 0;
     margin: 0.7em 0 0;
 }
-.que .info .questionflag.editable {
-    cursor: pointer;
-}
-.que .info .editquestion img,
-.que .info .questionflag img,
-.que .info .questionflag input {
-    vertical-align: bottom;
-}
-.que .content {
-    margin: 0 0 0 8.5em;
-}
-.que .formulation,
-.que .outcome,
-.que .comment {
-    @extend .alert
-}
-.que .formulation {
-    @extend .alert-info;
-    color: $body-color;
-}
+
 .formulation input[type="text"],
 .formulation select {
     width: auto;
@@ -251,48 +295,7 @@ body.path-question-type .mform fieldset.hidden {
 .path-mod-quiz input[size] {
     width: auto;
 }
-.que .outcome {
-}
-.que .comment {
-    @extend .alert-success;
-}
-.que .history {
-    @extend .card;
-}
-.que .ablock {
-    margin: 0.7em 0 0.3em 0;
-}
-.que .im-controls {
-    margin-top: 0.5em;
-    text-align: left;
-}
-.que .specificfeedback,
-.que .generalfeedback,
-.que .rightanswer,
-.que .im-feedback,
-.que .feedback,
-.que p {
-    margin: 0 0 0.5em;
-}
-.que .qtext {
-    margin-bottom: 1.5em;
-}
-.que .correctness {
-    @extend .label;
-    &.correct {
-        background-color: $label-success-bg;
-    }
-    &.partiallycorrect {
-        background-color: $label-warning-bg;
-    }
-    &.notanswered,
-    &.incorrect {
-        background-color: $label-danger-bg;
-    }
-}
-.que .validationerror {
-    color: $state-danger-text;
-}
+
 // copied from .formFieldState in mixin.less
 // and made more specific
 @mixin answerState($body-color, $backgroundColor)

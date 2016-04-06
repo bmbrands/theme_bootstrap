@@ -27,6 +27,103 @@ require_once($CFG->dirroot . "/course/renderer.php");
 
 class theme_bootstrap_core_course_renderer extends core_course_renderer {
 
+    /**
+     * Renders the list of courses
+     *
+     * This is internal function, please use {@link core_course_renderer::courses_list()} or another public
+     * method from outside of the class
+     *
+     * If list of courses is specified in $courses; the argument $chelper is only used
+     * to retrieve display options and attributes, only methods get_show_courses(),
+     * get_courses_display_option() and get_and_erase_attributes() are called.
+     *
+     * @param coursecat_helper $chelper various display options
+     * @param array $courses the list of courses to display
+     * @param int|null $totalcount total number of courses (affects display mode if it is AUTO or pagination if applicable),
+     *     defaulted to count($courses)
+     * @return string
+     */
+    protected function coursecat_courses(coursecat_helper $chelper, $courses, $totalcount = null) {
+        global $CFG;
+        if ($totalcount === null) {
+            $totalcount = count($courses);
+        }
+        if (!$totalcount) {
+            // Courses count is cached during courses retrieval.
+            return '';
+        }
+
+        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_AUTO) {
+            // In 'auto' course display mode we analyse if number of courses is more or less than $CFG->courseswithsummarieslimit
+            if ($totalcount <= $CFG->courseswithsummarieslimit) {
+                $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED);
+            } else {
+                $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_COLLAPSED);
+            }
+        }
+
+        // prepare content of paging bar if it is needed
+        $paginationurl = $chelper->get_courses_display_option('paginationurl');
+        $paginationallowall = $chelper->get_courses_display_option('paginationallowall');
+        if ($totalcount > count($courses)) {
+            // there are more results that can fit on one page
+            if ($paginationurl) {
+                // the option paginationurl was specified, display pagingbar
+                $perpage = $chelper->get_courses_display_option('limit', $CFG->coursesperpage);
+                $page = $chelper->get_courses_display_option('offset') / $perpage;
+                $pagingbar = $this->paging_bar($totalcount, $page, $perpage,
+                        $paginationurl->out(false, array('perpage' => $perpage)));
+                if ($paginationallowall) {
+                    $pagingbar .= html_writer::tag('div', html_writer::link($paginationurl->out(false, array('perpage' => 'all')),
+                            get_string('showall', '', $totalcount)), array('class' => 'paging paging-showall'));
+                }
+            } else if ($viewmoreurl = $chelper->get_courses_display_option('viewmoreurl')) {
+                // the option for 'View more' link was specified, display more link
+                $viewmoretext = $chelper->get_courses_display_option('viewmoretext', new lang_string('viewmore'));
+                $morelink = html_writer::tag('div', html_writer::link($viewmoreurl, $viewmoretext),
+                        array('class' => 'paging paging-morelink'));
+            }
+        } else if (($totalcount > $CFG->coursesperpage) && $paginationurl && $paginationallowall) {
+            // there are more than one page of results and we are in 'view all' mode, suggest to go back to paginated view mode
+            $pagingbar = html_writer::tag('div', html_writer::link($paginationurl->out(false, array('perpage' => $CFG->coursesperpage)),
+                get_string('showperpage', '', $CFG->coursesperpage)), array('class' => 'paging paging-showperpage'));
+        }
+
+        // display list of courses
+        $attributes = $chelper->get_and_erase_attributes('courses');
+        $content = html_writer::start_tag('div', $attributes);
+
+        $content .= html_writer::start_tag('div', array('class'=>'card-columns'));
+
+        if (!empty($pagingbar)) {
+            $content .= $pagingbar;
+        }
+
+        $coursecount = 0;
+        foreach ($courses as $course) {
+            $coursecount ++;
+            $classes = ($coursecount%2) ? 'odd' : 'even';
+            if ($coursecount == 1) {
+                $classes .= ' first';
+            }
+            if ($coursecount >= count($courses)) {
+                $classes .= ' last';
+            }
+            $content .= $this->coursecat_coursebox($chelper, $course, $classes);
+        }
+
+        if (!empty($pagingbar)) {
+            $content .= $pagingbar;
+        }
+        if (!empty($morelink)) {
+            $content .= $morelink;
+        }
+
+        $content .= html_writer::end_tag('div'); // .card-columns
+        $content .= html_writer::end_tag('div'); // .courses
+        return $content;
+    }
+
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG;
         if (!isset($this->strings->summary)) {
@@ -53,15 +150,21 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
         ));
 
         $content .= html_writer::start_tag('div', array('class' => 'card-header info'));
-
         // Course name.
         $coursename = $chelper->get_course_formatted_name($course);
         $coursenamelink = html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
                                             $coursename, array('class' => $course->visible ? '' : 'dimmed'));
-        $content .= html_writer::tag('span', $coursenamelink, array('class' => 'coursename'));
+        $content .= html_writer::tag('h5', $coursenamelink, array('class' => 'card-title coursename'));
+        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_EXPANDED_WITH_CAT || true) {
+            $cat = coursecat::get($course->category, IGNORE_MISSING);
+            $coursecategory = get_string('category').': '.
+                            html_writer::link(new moodle_url('/course/index.php', array('categoryid' => $cat->id)),
+                                    $cat->get_formatted_name(), array('class' => $cat->visible ? '' : 'dimmed'));
+            $content .= html_writer::tag('p', $coursecategory, array('class'=>'card-subtitle text-muted'));
+        }
         // If we display course in collapsed form but the course has summary or course contacts, display the link to the info page.
-        $content .= html_writer::start_tag('span', array('class' => 'moreinfo'));
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
+            $content .= html_writer::start_tag('span', array('class' => 'moreinfo'));
             if ($course->has_summary() || $course->has_course_contacts() || $course->has_course_overviewfiles()) {
                 $url = new moodle_url('/course/info.php', array('id' => $course->id));
                 $image = html_writer::empty_tag('img', array('src' => $this->output->pix_url('i/info'),
@@ -70,8 +173,8 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
                 // Make sure JS file to expand course content is included.
                 $this->coursecat_include_js();
             }
+            $content .= html_writer::end_tag('span'); // End .moreinfo span.
         }
-        $content .= html_writer::end_tag('span'); // End .moreinfo span.
 
         // Print enrolmenticons.
         if ($icons = enrol_get_course_info_icons($course)) {
@@ -84,10 +187,25 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
 
         $content .= html_writer::end_tag('div'); // End .info div.
 
-        $content .= html_writer::start_tag('div', array('class' => 'content card-block'));
-        $content .= $this->coursecat_coursebox_content($chelper, $course);
+        // Display course overview files.
+        $image = '';
+        foreach ($course->get_course_overviewfiles() as $file) {
+            $isimage = $file->is_valid_image();
+            $url = file_encode_url("$CFG->wwwroot/pluginfile.php",
+                    '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
+                    $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
+            if ($isimage) {
+                $image = html_writer::empty_tag('img', array('src' => $url, 'alt' => 'Course Image '. $course->fullname,
+                    'class' => 'cardimage', 'style'=>'width: 100%; height: auto;'));
+            }
+        }
+        $image = html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)), $image);
+        $content .= $image;
 
-        $content .= html_writer::end_tag('div'); // End .content div.
+        $courseboxcontent = $this->coursecat_coursebox_content($chelper, $course);
+        if ($courseboxcontent) {
+            $content .= html_writer::tag('div', $courseboxcontent, array('class' => 'content card-block'));
+        }
 
         $content .= html_writer::end_tag('div'); // End .coursebox div.
         return $content;
@@ -112,13 +230,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
                     '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
                     $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
             if ($isimage) {
-                    $contentimages .= html_writer::start_tag('div', array('class' => 'imagebox'));
-
-                    $images = html_writer::empty_tag('img', array('src' => $url, 'alt' => 'Course Image '. $course->fullname,
-                        'class' => 'courseimage'));
-                    $contentimages .= html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)), $images);
-
-                    $contentimages .= html_writer::end_tag('div');
+                continue;
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
                 $filename = html_writer::tag('span', $image, array('class' => 'fp-icon')).
@@ -128,7 +240,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
                         array('class' => 'coursefile fp-filename-icon'));
             }
         }
-        $content .= $contentimages. $contentfiles;
+        $content .= $contentfiles;
 
         // Display course summary.
         if ($course->has_summary()) {

@@ -331,6 +331,10 @@ li.section.hidden span.commands a.editing_hide,li.section.hidden span.commands a
     cursor: default;
 }
 
+h3.sectionname {
+    @extend .card-header;
+}
+
 .single-section {
     h3.sectionname {
         text-align: center;
@@ -544,7 +548,6 @@ span.editinstructions {
             font-size: $font-size-sm;
         }
         & > .info {
-            @extend .card;
             min-height:0;
             padding:0;
             margin:3px 0;
