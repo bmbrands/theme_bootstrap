@@ -183,7 +183,7 @@
     .dropdown-menu > li > a {
         padding: 3px 10px;
     }
-    a {
+    a.dropdown-toggle {
         color: $navbar-dark-color;
     }
 }
