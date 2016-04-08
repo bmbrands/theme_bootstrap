@@ -101,11 +101,6 @@ module.exports = function(grunt) { // jshint ignore:line
     // Import modules.
     var path = require('path');
 
-    // Theme Bootstrap constants.
-    var LESSDIR         = 'less',
-        BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'), // jshint ignore:line
-        THEMEDIR        = path.basename(path.resolve('.'));
-
     // PHP strings for exec task.
     var moodleroot = path.dirname(path.dirname(__dirname)), // jshint ignore:line
         configfile = '',
