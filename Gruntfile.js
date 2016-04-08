@@ -159,9 +159,9 @@ module.exports = function(grunt) { // jshint ignore:line
                 ]
             },
             core: {
-            options: {
-                map: false
-            },
+                options: {
+                    map: false
+                },
                 src: ['style/moodle.css', 'style/moodle-rtl.css', 'style/editor.css'],
             },
         },
@@ -219,29 +219,29 @@ module.exports = function(grunt) { // jshint ignore:line
         replace: {
             rtl_images: {
                 src: 'style/moodle-rtl.css',
-                    overwrite: true,
-                    replacements: [{
-                        from: '[[pix:theme|fp/path_folder]]',
-                        to: '[[pix:theme|fp/path_folder_rtl]]'
-                    }, {
-                        from: '[[pix:t/collapsed]]',
-                        to: '[[pix:t/collapsed_rtl]]'
-                    }, {
-                        from: '[[pix:t/collapsed_empty]]',
-                        to: '[[pix:t/collapsed_empty_rtl]]'
-                    }, {
-                        from: '[[pix:y/tn]]',
-                        to: '[[pix:y/tn_rtl]]'
-                    }, {
-                        from: '[[pix:y/tp]]',
-                        to: '[[pix:y/tp_rtl]]'
-                    }, {
-                        from: '[[pix:y/ln]]',
-                        to: '[[pix:y/ln_rtl]]'
-                    }, {
-                        from: '[[pix:y/lp]]',
-                        to: '[[pix:y/lp_rtl]]'
-                    }]
+                overwrite: true,
+                replacements: [{
+                    from: '[[pix:theme|fp/path_folder]]',
+                    to: '[[pix:theme|fp/path_folder_rtl]]'
+                }, {
+                    from: '[[pix:t/collapsed]]',
+                    to: '[[pix:t/collapsed_rtl]]'
+                }, {
+                    from: '[[pix:t/collapsed_empty]]',
+                    to: '[[pix:t/collapsed_empty_rtl]]'
+                }, {
+                    from: '[[pix:y/tn]]',
+                    to: '[[pix:y/tn_rtl]]'
+                }, {
+                    from: '[[pix:y/tp]]',
+                    to: '[[pix:y/tp_rtl]]'
+                }, {
+                    from: '[[pix:y/ln]]',
+                    to: '[[pix:y/ln_rtl]]'
+                }, {
+                    from: '[[pix:y/lp]]',
+                    to: '[[pix:y/lp_rtl]]'
+                }]
             }
         },
         jshint: {
