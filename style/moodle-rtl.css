@@ -21706,4 +21706,7 @@ fieldset[disabled] a#rubric-rubric.gradingform_rubric .addcriterion {
 .path-grade-report-grader .grade_icons {
   display: inline;
 }
-/*# sourceMappingURL=/theme/bootstrap/style/moodle-rtl.css.map */
+
+.editor_atto_content .img-responsive {
+  display: inline-block;
+}

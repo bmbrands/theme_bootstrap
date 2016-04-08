@@ -130,11 +130,7 @@ module.exports = function(grunt) { // jshint ignore:line
             moodle: {
                 options: {
                     compress: false,
-                    strictMath: true,
-                    outputSourceFiles: true,
-                    sourceMap: true,
-                    sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/moodle.css'
+                    strictMath: true
                 },
                 src: 'less/moodle.less',
                 dest: 'style/moodle.css'
@@ -143,11 +139,7 @@ module.exports = function(grunt) { // jshint ignore:line
             editor: {
                 options: {
                     compress: false,
-                    strictMath: true,
-                    outputSourceFiles: true,
-                    sourceMap: true,
-                    sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/editor.css'
+                    strictMath: true
                 },
                 src: 'less/editor.less',
                 dest: 'style/editor.css'
@@ -168,7 +160,7 @@ module.exports = function(grunt) { // jshint ignore:line
           },
           core: {
             options: {
-              map: true
+              map: false
             },
             src: ['style/moodle.css', 'style/moodle-rtl.css', 'style/editor.css'],
           },
@@ -250,14 +242,6 @@ module.exports = function(grunt) { // jshint ignore:line
                         from: '[[pix:y/lp]]',
                         to: '[[pix:y/lp_rtl]]'
                     }]
-            },
-            sourcemap: {
-                src: ['style/moodle.css', 'style/moodle-rtl.css', 'style/editor.css'],
-                    overwrite: true,
-                    replacements: [{
-                        from: 'sourceMappingURL=',
-                        to: 'sourceMappingURL=/theme/' + THEMEDIR + '/style/'
-                    }]
             }
         },
         jshint: {
@@ -309,7 +293,6 @@ module.exports = function(grunt) { // jshint ignore:line
         "autoprefixer",
         'csscomb',
         'cssmin',
-        "replace:sourcemap",
         "decache"]);
     grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };
