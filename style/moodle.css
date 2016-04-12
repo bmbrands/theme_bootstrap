@@ -2654,7 +2654,8 @@ input[type="search"] {
 }
 .form-group,
 .mform .fitem,
-.form-item {
+.form-item,
+.path-mod-feedback .feedback_item_box_left {
   margin-bottom: 15px;
 }
 .radio,
@@ -3006,7 +3007,8 @@ select[multiple].input-lg {
 }
 .form-horizontal .form-group,
 .mform .fitem,
-.form-item {
+.form-item,
+.path-mod-feedback .feedback_item_box_left {
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -6670,7 +6672,9 @@ button.close {
 .mform .fitem:before,
 .mform .fitem:after,
 .form-item:before,
-.form-item:after {
+.form-item:after,
+.path-mod-feedback .feedback_item_box_left:before,
+.path-mod-feedback .feedback_item_box_left:after {
   display: table;
   content: " ";
 }
@@ -6699,7 +6703,8 @@ button.close {
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:after,
 .mform .fitem:after,
-.form-item:after {
+.form-item:after,
+.path-mod-feedback .feedback_item_box_left:after {
   clear: both;
 }
 .center-block {
@@ -18041,4 +18046,496 @@ fieldset[disabled] a#rubric-rubric.gradingform_rubric .addcriterion {
 }
 .editor_atto_content .img-responsive {
   display: inline-block;
+}
+span.feedback_info {
+  font-weight: bold;
+}
+div.feedback_depend {
+  background: #ddd;
+}
+div.feedback_complete_depend {
+  background: #eee;
+}
+span.feedback_depend {
+  color: #f00;
+}
+li.feedback_item_check_h_left {
+  display: inline;
+  list-style-type: none;
+}
+li.feedback_item_check_h_right {
+  display: inline;
+  list-style-type: none;
+}
+li.feedback_item_radio_h_left {
+  display: inline;
+  list-style-type: none;
+}
+li.feedback_item_radio_h_right {
+  display: inline;
+  list-style-type: none;
+}
+li.feedback_item_check_v_left {
+  display: block;
+  list-style-type: none;
+}
+li.feedback_item_check_v_right {
+  display: block;
+  list-style-type: none;
+}
+li.feedback_item_radio_v_left {
+  display: block;
+  list-style-type: none;
+}
+li.feedback_item_radio_v_right {
+  display: block;
+  list-style-type: none;
+}
+div.feedback_item_captcha_text_left {
+  display: inline;
+  margin: 5px;
+}
+div.feedback_item_captcha_img_left {
+  display: inline;
+  margin: 5px;
+}
+div.feedback_item_captcha_text_right {
+  display: inline;
+  margin: 5px;
+}
+div.feedback_item_captcha_img_right {
+  display: inline;
+  margin: 5px;
+}
+hr.feedback_pagebreak {
+  height: 8px;
+  color: #aaa;
+  background-color: #aaa;
+  border: 0;
+}
+.drag_target_active {
+  opacity: .25;
+}
+.drag_item_active {
+  opacity: .5;
+}
+ul#feedback_draglist {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+div#feedback_dragarea {
+  width: 95%;
+}
+div img.feedback_bar_image {
+  height: 10px;
+}
+.path-mod-feedback input {
+  width: auto;
+}
+.path-mod-feedback textarea {
+  width: auto;
+}
+.path-mod-feedback .uneditable-input {
+  width: auto;
+}
+.path-mod-feedback .feedback_itemlist {
+  padding-top: 5px;
+  margin: 10px 0;
+  border-top: 1px solid #eee;
+}
+.path-mod-feedback .feedback_itemlist .itemhandle {
+  position: absolute;
+  z-index: 1;
+  display: block;
+}
+.path-mod-feedback .feedback_item_box_left {
+  margin-right: 0;
+  margin-left: 0;
+}
+.path-mod-feedback .feedback_item_box_left .boxalign_left .no-overflow {
+  width: 100%;
+  padding: 0 15px;
+}
+.path-mod-feedback #feedback_dragarea .feedback_item_box_left {
+  margin-left: 20px;
+}
+.path-mod-feedback div.feedback_item_label_left {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0;
+}
+@media (min-width: 992px) {
+  .path-mod-feedback div.feedback_item_label_left {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .path-mod-feedback div.feedback_item_label_left {
+    float: left;
+    width: 25%;
+  }
+}
+.path-mod-feedback div.feedback_item_label_left label {
+  font-weight: normal;
+}
+.path-mod-feedback div.feedback_item_presentation_left {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0;
+}
+@media (min-width: 992px) {
+  .path-mod-feedback div.feedback_item_presentation_left {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .path-mod-feedback div.feedback_item_presentation_left {
+    float: left;
+    width: 75%;
+  }
+}
+.path-mod-feedback div.feedback_item_presentation_left ul {
+  padding-top: 5px;
+  margin: 0;
+}
+.path-mod-feedback div.feedback_item_presentation_left .boxalignleft {
+  padding-top: 5px;
+  margin-left: 0;
+}
+.path-mod-feedback .feedback_form input[type="submit"] {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.path-mod-feedback .feedback_form input[type="submit"]:focus,
+.path-mod-feedback .feedback_form input[type="submit"].focus {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+.path-mod-feedback .feedback_form input[type="submit"]:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.path-mod-feedback .feedback_form input[type="submit"]:active,
+.path-mod-feedback .feedback_form input[type="submit"].active,
+.open > .dropdown-toggle.path-mod-feedback .feedback_form input[type="submit"] {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.path-mod-feedback .feedback_form input[type="submit"]:active:hover,
+.path-mod-feedback .feedback_form input[type="submit"].active:hover,
+.open > .dropdown-toggle.path-mod-feedback .feedback_form input[type="submit"]:hover,
+.path-mod-feedback .feedback_form input[type="submit"]:active:focus,
+.path-mod-feedback .feedback_form input[type="submit"].active:focus,
+.open > .dropdown-toggle.path-mod-feedback .feedback_form input[type="submit"]:focus,
+.path-mod-feedback .feedback_form input[type="submit"]:active.focus,
+.path-mod-feedback .feedback_form input[type="submit"].active.focus,
+.open > .dropdown-toggle.path-mod-feedback .feedback_form input[type="submit"].focus {
+  color: #fff;
+  background-color: #398439;
+  border-color: #255625;
+}
+.path-mod-feedback .feedback_form input[type="submit"]:active,
+.path-mod-feedback .feedback_form input[type="submit"].active,
+.open > .dropdown-toggle.path-mod-feedback .feedback_form input[type="submit"] {
+  background-image: none;
+}
+.path-mod-feedback .feedback_form input[type="submit"].disabled,
+.path-mod-feedback .feedback_form input[type="submit"][disabled],
+fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"],
+.path-mod-feedback .feedback_form input[type="submit"].disabled:hover,
+.path-mod-feedback .feedback_form input[type="submit"][disabled]:hover,
+fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"]:hover,
+.path-mod-feedback .feedback_form input[type="submit"].disabled:focus,
+.path-mod-feedback .feedback_form input[type="submit"][disabled]:focus,
+fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"]:focus,
+.path-mod-feedback .feedback_form input[type="submit"].disabled.focus,
+.path-mod-feedback .feedback_form input[type="submit"][disabled].focus,
+fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"].focus,
+.path-mod-feedback .feedback_form input[type="submit"].disabled:active,
+.path-mod-feedback .feedback_form input[type="submit"][disabled]:active,
+fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"]:active,
+.path-mod-feedback .feedback_form input[type="submit"].disabled.active,
+.path-mod-feedback .feedback_form input[type="submit"][disabled].active,
+fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"].active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.path-mod-feedback .feedback_form input[type="submit"] .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+.path-mod-feedback #id_save_item,
+.path-mod-feedback #id_update_item {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.path-mod-feedback #id_save_item:focus,
+.path-mod-feedback #id_update_item:focus,
+.path-mod-feedback #id_save_item.focus,
+.path-mod-feedback #id_update_item.focus {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+.path-mod-feedback #id_save_item:hover,
+.path-mod-feedback #id_update_item:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.path-mod-feedback #id_save_item:active,
+.path-mod-feedback #id_update_item:active,
+.path-mod-feedback #id_save_item.active,
+.path-mod-feedback #id_update_item.active,
+.open > .dropdown-toggle.path-mod-feedback #id_save_item,
+.open > .dropdown-toggle.path-mod-feedback #id_update_item {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.path-mod-feedback #id_save_item:active:hover,
+.path-mod-feedback #id_update_item:active:hover,
+.path-mod-feedback #id_save_item.active:hover,
+.path-mod-feedback #id_update_item.active:hover,
+.open > .dropdown-toggle.path-mod-feedback #id_save_item:hover,
+.open > .dropdown-toggle.path-mod-feedback #id_update_item:hover,
+.path-mod-feedback #id_save_item:active:focus,
+.path-mod-feedback #id_update_item:active:focus,
+.path-mod-feedback #id_save_item.active:focus,
+.path-mod-feedback #id_update_item.active:focus,
+.open > .dropdown-toggle.path-mod-feedback #id_save_item:focus,
+.open > .dropdown-toggle.path-mod-feedback #id_update_item:focus,
+.path-mod-feedback #id_save_item:active.focus,
+.path-mod-feedback #id_update_item:active.focus,
+.path-mod-feedback #id_save_item.active.focus,
+.path-mod-feedback #id_update_item.active.focus,
+.open > .dropdown-toggle.path-mod-feedback #id_save_item.focus,
+.open > .dropdown-toggle.path-mod-feedback #id_update_item.focus {
+  color: #fff;
+  background-color: #398439;
+  border-color: #255625;
+}
+.path-mod-feedback #id_save_item:active,
+.path-mod-feedback #id_update_item:active,
+.path-mod-feedback #id_save_item.active,
+.path-mod-feedback #id_update_item.active,
+.open > .dropdown-toggle.path-mod-feedback #id_save_item,
+.open > .dropdown-toggle.path-mod-feedback #id_update_item {
+  background-image: none;
+}
+.path-mod-feedback #id_save_item.disabled,
+.path-mod-feedback #id_update_item.disabled,
+.path-mod-feedback #id_save_item[disabled],
+.path-mod-feedback #id_update_item[disabled],
+fieldset[disabled] .path-mod-feedback #id_save_item,
+fieldset[disabled] .path-mod-feedback #id_update_item,
+.path-mod-feedback #id_save_item.disabled:hover,
+.path-mod-feedback #id_update_item.disabled:hover,
+.path-mod-feedback #id_save_item[disabled]:hover,
+.path-mod-feedback #id_update_item[disabled]:hover,
+fieldset[disabled] .path-mod-feedback #id_save_item:hover,
+fieldset[disabled] .path-mod-feedback #id_update_item:hover,
+.path-mod-feedback #id_save_item.disabled:focus,
+.path-mod-feedback #id_update_item.disabled:focus,
+.path-mod-feedback #id_save_item[disabled]:focus,
+.path-mod-feedback #id_update_item[disabled]:focus,
+fieldset[disabled] .path-mod-feedback #id_save_item:focus,
+fieldset[disabled] .path-mod-feedback #id_update_item:focus,
+.path-mod-feedback #id_save_item.disabled.focus,
+.path-mod-feedback #id_update_item.disabled.focus,
+.path-mod-feedback #id_save_item[disabled].focus,
+.path-mod-feedback #id_update_item[disabled].focus,
+fieldset[disabled] .path-mod-feedback #id_save_item.focus,
+fieldset[disabled] .path-mod-feedback #id_update_item.focus,
+.path-mod-feedback #id_save_item.disabled:active,
+.path-mod-feedback #id_update_item.disabled:active,
+.path-mod-feedback #id_save_item[disabled]:active,
+.path-mod-feedback #id_update_item[disabled]:active,
+fieldset[disabled] .path-mod-feedback #id_save_item:active,
+fieldset[disabled] .path-mod-feedback #id_update_item:active,
+.path-mod-feedback #id_save_item.disabled.active,
+.path-mod-feedback #id_update_item.disabled.active,
+.path-mod-feedback #id_save_item[disabled].active,
+.path-mod-feedback #id_update_item[disabled].active,
+fieldset[disabled] .path-mod-feedback #id_save_item.active,
+fieldset[disabled] .path-mod-feedback #id_update_item.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.path-mod-feedback #id_save_item .badge,
+.path-mod-feedback #id_update_item .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+.path-mod-feedback .fitem_fgroup input[type="checkbox"] {
+  vertical-align: middle;
+}
+.path-mod-feedback div.error {
+  display: inline-block;
+  background-color: #faa;
+}
+.path-mod-feedback .feedback_complete_cancel button[type="submit"] {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.path-mod-feedback .feedback_complete_cancel button[type="submit"]:focus,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].focus {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #985f0d;
+}
+.path-mod-feedback .feedback_complete_cancel button[type="submit"]:hover {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.path-mod-feedback .feedback_complete_cancel button[type="submit"]:active,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].active,
+.open > .dropdown-toggle.path-mod-feedback .feedback_complete_cancel button[type="submit"] {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.path-mod-feedback .feedback_complete_cancel button[type="submit"]:active:hover,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].active:hover,
+.open > .dropdown-toggle.path-mod-feedback .feedback_complete_cancel button[type="submit"]:hover,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"]:active:focus,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].active:focus,
+.open > .dropdown-toggle.path-mod-feedback .feedback_complete_cancel button[type="submit"]:focus,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"]:active.focus,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].active.focus,
+.open > .dropdown-toggle.path-mod-feedback .feedback_complete_cancel button[type="submit"].focus {
+  color: #fff;
+  background-color: #d58512;
+  border-color: #985f0d;
+}
+.path-mod-feedback .feedback_complete_cancel button[type="submit"]:active,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].active,
+.open > .dropdown-toggle.path-mod-feedback .feedback_complete_cancel button[type="submit"] {
+  background-image: none;
+}
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled],
+fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"],
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled:hover,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled]:hover,
+fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"]:hover,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled:focus,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled]:focus,
+fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"]:focus,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled.focus,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled].focus,
+fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"].focus,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled:active,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled]:active,
+fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"]:active,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled.active,
+.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled].active,
+fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"].active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.path-mod-feedback .feedback_complete_cancel button[type="submit"] .badge {
+  color: #f0ad4e;
+  background-color: #fff;
+}
+.path-mod-feedback .boxalign_left {
+  position: relative;
+}
+.path-mod-feedback textarea {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#page-mod-feedback-analysis th {
+  text-align: left;
+  background: #f7f7f7;
+}
+#page-mod-feedback-analysis div.form-buttons {
+  padding-top: 10px;
+  margin-left: 0;
+  border-top: #eee 1px solid;
+}
+#page-mod-feedback-edit input[type="submit"] {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+#page-mod-feedback-edit input[type="submit"]:focus,
+#page-mod-feedback-edit input[type="submit"].focus {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #985f0d;
+}
+#page-mod-feedback-edit input[type="submit"]:hover {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+#page-mod-feedback-edit input[type="submit"]:active,
+#page-mod-feedback-edit input[type="submit"].active,
+.open > .dropdown-toggle#page-mod-feedback-edit input[type="submit"] {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+#page-mod-feedback-edit input[type="submit"]:active:hover,
+#page-mod-feedback-edit input[type="submit"].active:hover,
+.open > .dropdown-toggle#page-mod-feedback-edit input[type="submit"]:hover,
+#page-mod-feedback-edit input[type="submit"]:active:focus,
+#page-mod-feedback-edit input[type="submit"].active:focus,
+.open > .dropdown-toggle#page-mod-feedback-edit input[type="submit"]:focus,
+#page-mod-feedback-edit input[type="submit"]:active.focus,
+#page-mod-feedback-edit input[type="submit"].active.focus,
+.open > .dropdown-toggle#page-mod-feedback-edit input[type="submit"].focus {
+  color: #fff;
+  background-color: #d58512;
+  border-color: #985f0d;
+}
+#page-mod-feedback-edit input[type="submit"]:active,
+#page-mod-feedback-edit input[type="submit"].active,
+.open > .dropdown-toggle#page-mod-feedback-edit input[type="submit"] {
+  background-image: none;
+}
+#page-mod-feedback-edit input[type="submit"].disabled,
+#page-mod-feedback-edit input[type="submit"][disabled],
+fieldset[disabled] #page-mod-feedback-edit input[type="submit"],
+#page-mod-feedback-edit input[type="submit"].disabled:hover,
+#page-mod-feedback-edit input[type="submit"][disabled]:hover,
+fieldset[disabled] #page-mod-feedback-edit input[type="submit"]:hover,
+#page-mod-feedback-edit input[type="submit"].disabled:focus,
+#page-mod-feedback-edit input[type="submit"][disabled]:focus,
+fieldset[disabled] #page-mod-feedback-edit input[type="submit"]:focus,
+#page-mod-feedback-edit input[type="submit"].disabled.focus,
+#page-mod-feedback-edit input[type="submit"][disabled].focus,
+fieldset[disabled] #page-mod-feedback-edit input[type="submit"].focus,
+#page-mod-feedback-edit input[type="submit"].disabled:active,
+#page-mod-feedback-edit input[type="submit"][disabled]:active,
+fieldset[disabled] #page-mod-feedback-edit input[type="submit"]:active,
+#page-mod-feedback-edit input[type="submit"].disabled.active,
+#page-mod-feedback-edit input[type="submit"][disabled].active,
+fieldset[disabled] #page-mod-feedback-edit input[type="submit"].active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+#page-mod-feedback-edit input[type="submit"] .badge {
+  color: #f0ad4e;
+  background-color: #fff;
+}
+div.feedback_item_commands_left {
+  text-align: right;
 }

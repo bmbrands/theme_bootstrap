@@ -45,6 +45,9 @@ $THEME->plugins_exclude_sheets = array(
     'tool' => array(
         'customlang'
     ),
+    'mod' => array(
+        'feedback'
+    ),
 );
 
 $THEME->lessvariablescallback = 'theme_elegance_less_variables';
