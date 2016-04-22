@@ -106,7 +106,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $user = $USER;
         }
 
-        $menuclass = 'guest';
+        $menuclass = 'navbar-nav guest';
 
         if (isloggedin() && !isguestuser()) {
             $menuclass = 'loggedin';
