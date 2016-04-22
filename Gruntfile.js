@@ -101,11 +101,6 @@ module.exports = function(grunt) { // jshint ignore:line
     // Import modules.
     var path = require('path');
 
-    // Theme Bootstrap constants.
-    var LESSDIR         = 'less',
-        BOOTSWATCHDIR   = path.join(LESSDIR, 'bootswatch'), // jshint ignore:line
-        THEMEDIR        = path.basename(path.resolve('.'));
-
     // PHP strings for exec task.
     var moodleroot = path.dirname(path.dirname(__dirname)), // jshint ignore:line
         configfile = '',
@@ -130,11 +125,7 @@ module.exports = function(grunt) { // jshint ignore:line
             moodle: {
                 options: {
                     compress: false,
-                    strictMath: true,
-                    outputSourceFiles: true,
-                    sourceMap: true,
-                    sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/moodle.css'
+                    strictMath: true
                 },
                 src: 'less/moodle.less',
                 dest: 'style/moodle.css'
@@ -143,35 +134,31 @@ module.exports = function(grunt) { // jshint ignore:line
             editor: {
                 options: {
                     compress: false,
-                    strictMath: true,
-                    outputSourceFiles: true,
-                    sourceMap: true,
-                    sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/editor.css'
+                    strictMath: true
                 },
                 src: 'less/editor.less',
                 dest: 'style/editor.css'
             }
         },
         autoprefixer: {
-          options: {
-            browsers: [
-              'Android 2.3',
-              'Android >= 4',
-              'Chrome >= 20',
-              'Firefox >= 24', // Firefox 24 is the latest ESR
-              'Explorer >= 8',
-              'iOS >= 6',
-              'Opera >= 12',
-              'Safari >= 6'
-            ]
-          },
-          core: {
             options: {
-              map: true
+                browsers: [
+                    'Android 2.3',
+                    'Android >= 4',
+                    'Chrome >= 20',
+                    'Firefox >= 24', // Firefox 24 is the latest ESR
+                    'Explorer >= 8',
+                    'iOS >= 6',
+                    'Opera >= 12',
+                    'Safari >= 6'
+                ]
             },
-            src: ['style/moodle.css', 'style/moodle-rtl.css', 'style/editor.css'],
-          },
+            core: {
+                options: {
+                    map: false
+                },
+                src: ['style/moodle.css', 'style/moodle-rtl.css', 'style/editor.css'],
+            },
         },
         cssmin: {
             options: {
@@ -227,37 +214,29 @@ module.exports = function(grunt) { // jshint ignore:line
         replace: {
             rtl_images: {
                 src: 'style/moodle-rtl.css',
-                    overwrite: true,
-                    replacements: [{
-                        from: '[[pix:theme|fp/path_folder]]',
-                        to: '[[pix:theme|fp/path_folder_rtl]]'
-                    }, {
-                        from: '[[pix:t/collapsed]]',
-                        to: '[[pix:t/collapsed_rtl]]'
-                    }, {
-                        from: '[[pix:t/collapsed_empty]]',
-                        to: '[[pix:t/collapsed_empty_rtl]]'
-                    }, {
-                        from: '[[pix:y/tn]]',
-                        to: '[[pix:y/tn_rtl]]'
-                    }, {
-                        from: '[[pix:y/tp]]',
-                        to: '[[pix:y/tp_rtl]]'
-                    }, {
-                        from: '[[pix:y/ln]]',
-                        to: '[[pix:y/ln_rtl]]'
-                    }, {
-                        from: '[[pix:y/lp]]',
-                        to: '[[pix:y/lp_rtl]]'
-                    }]
-            },
-            sourcemap: {
-                src: ['style/moodle.css', 'style/moodle-rtl.css', 'style/editor.css'],
-                    overwrite: true,
-                    replacements: [{
-                        from: 'sourceMappingURL=',
-                        to: 'sourceMappingURL=/theme/' + THEMEDIR + '/style/'
-                    }]
+                overwrite: true,
+                replacements: [{
+                    from: '[[pix:theme|fp/path_folder]]',
+                    to: '[[pix:theme|fp/path_folder_rtl]]'
+                }, {
+                    from: '[[pix:t/collapsed]]',
+                    to: '[[pix:t/collapsed_rtl]]'
+                }, {
+                    from: '[[pix:t/collapsed_empty]]',
+                    to: '[[pix:t/collapsed_empty_rtl]]'
+                }, {
+                    from: '[[pix:y/tn]]',
+                    to: '[[pix:y/tn_rtl]]'
+                }, {
+                    from: '[[pix:y/tp]]',
+                    to: '[[pix:y/tp_rtl]]'
+                }, {
+                    from: '[[pix:y/ln]]',
+                    to: '[[pix:y/ln_rtl]]'
+                }, {
+                    from: '[[pix:y/lp]]',
+                    to: '[[pix:y/lp_rtl]]'
+                }]
             }
         },
         jshint: {
@@ -309,7 +288,6 @@ module.exports = function(grunt) { // jshint ignore:line
         "autoprefixer",
         'csscomb',
         'cssmin',
-        "replace:sourcemap",
         "decache"]);
     grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };

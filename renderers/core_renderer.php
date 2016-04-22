@@ -149,7 +149,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $user = $USER;
         }
 
-        $menuclass = 'guest';
+        $menuclass = 'navbar-nav guest';
 
         if (isloggedin() && !isguestuser()) {
             $menuclass = 'loggedin';
@@ -301,7 +301,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 $secondrow = $this->tabtree($tab->subtree);
             }
         }
-        return html_writer::tag('ul', $firstrow, array('class' => 'nav nav-tabs nav-justified')) . $secondrow;
+        return html_writer::tag('ul', $firstrow, array('class' => 'nav nav-tabs')) . $secondrow;
     }
 
     protected function render_tabobject(tabobject $tab) {

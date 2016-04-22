@@ -1436,7 +1436,6 @@ a.thumbnail.active {
 .affix {
   position: fixed;
 }
-body {
-  margin: 8px;
+.editor_atto_content .img-responsive {
+  display: inline-block;
 }
-/*# sourceMappingURL=/theme/bootstrap/style/editor.css.map */
