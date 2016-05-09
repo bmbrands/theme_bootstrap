@@ -266,7 +266,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
             array('class' => 'sr-only'));
         $iconbar = html_writer::tag('span', '', array('class' => 'icon-bar'));
         $button = html_writer::tag('button', $accessibility . "\n" . $iconbar . "\n" . $iconbar. "\n" . $iconbar,
-            array('class' => 'navbar-toggle', 'data-toggle' => 'collapse', 'data-target' => '#moodle-navbar'));
+            array('class' => 'navbar-toggle', 'data-toggle' => 'collapse', 'data-target' => '#moodle-navbar', 'type' => 'button'));
         return $button;
     }
 
