@@ -262,15 +262,11 @@ class theme_bootstrap_core_renderer extends core_renderer {
             return '';
         }
 
-        $accessibility = html_writer::tag('span', get_string('togglenav', 'theme_bootstrap'), array('class' => 'sr-only'));
+        $accessibility = html_writer::tag('span', get_string('togglenav', 'theme_bootstrap'),
+            array('class' => 'sr-only'));
         $iconbar = html_writer::tag('span', '', array('class' => 'icon-bar'));
-        $button = html_writer::tag('button',
-            $accessibility . "\n" . $iconbar . "\n" . $iconbar. "\n" . $iconbar,
-            array(
-                'class'       => 'navbar-toggle',
-                'data-toggle' => 'collapse',
-                'data-target' => '#moodle-navbar'
-            ));
+        $button = html_writer::tag('button', $accessibility . "\n" . $iconbar . "\n" . $iconbar. "\n" . $iconbar,
+            array('class' => 'navbar-toggle', 'data-toggle' => 'collapse', 'data-target' => '#moodle-navbar'));
         return $button;
     }
 
