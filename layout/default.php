@@ -44,12 +44,7 @@ echo $OUTPUT->doctype() ?>
     </div>
     <div class="navbar-header pull-right">
         <?php echo $OUTPUT->user_menu(); ?>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+        <?php echo $OUTPUT->navbar_button(); ?>
     </div>
     <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
         <?php echo $OUTPUT->custom_menu(); ?>

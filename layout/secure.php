@@ -40,12 +40,7 @@ echo $OUTPUT->doctype() ?>
 <nav role="navigation" class="navbar navbar-default">
     <div class="container-fluid">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+        <?php echo $OUTPUT->navbar_button(); ?>
         <span class="navbar-brand"><?php echo $SITE->shortname; ?></span>
     </div>
 
