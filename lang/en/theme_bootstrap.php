@@ -26,6 +26,7 @@ $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 $string['fullscreen'] = 'Full screen';
 $string['closefullscreen'] = 'Close full screen';
+$string['togglenav'] = 'Toggle navigation';
 
 $string['choosereadme'] = '
 <div class="clearfix"><div class="theme_screenshot"><h2>Bootstrap Base</h2>

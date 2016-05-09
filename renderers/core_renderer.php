@@ -247,6 +247,33 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return $content;
     }
 
+    /**
+     * This code renders the navbar button to control the display of the custom menu
+     * on smaller screens.
+     *
+     * Do not display the button if the menu is empty.
+     *
+     * @return string HTML fragment
+     */
+    protected function navbar_button() {
+        global $CFG;
+
+        if (empty($CFG->custommenuitems)) {
+            return '';
+        }
+
+        $accessibility = html_writer::tag('span', get_string('togglenav', 'theme_bootstrap'), array('class' => 'sr-only'));
+        $iconbar = html_writer::tag('span', '', array('class' => 'icon-bar'));
+        $button = html_writer::tag('button',
+            $accessibility . "\n" . $iconbar . "\n" . $iconbar. "\n" . $iconbar,
+            array(
+                'class'       => 'navbar-toggle',
+                'data-toggle' => 'collapse',
+                'data-target' => '#moodle-navbar'
+            ));
+        return $button;
+    }
+
     protected function render_tabtree(tabtree $tabtree) {
         if (empty($tabtree->subtree)) {
             return '';
