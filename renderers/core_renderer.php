@@ -64,7 +64,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         $breadcrumbs = '';
         foreach ($items as $item) {
             $item->hideicon = true;
-            $breadcrumbs .= '<li>'.$this->render($item).'</li>';
+            $breadcrumbs .= '<li class="breadcrumb-item">'.$this->render($item).'</li>';
         }
         return "<ol class=breadcrumb>$breadcrumbs</ol>";
     }
