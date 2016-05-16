@@ -55,7 +55,7 @@
     letter-spacing: 1px;
     text-shadow: 1px 1px 1px #fff;
     filter: dropshadow(color=#fff, offx=1, offy=1);
-    @include gradient-vertical(#fff, #ccc);
+    @include gradient-y(#fff, #ccc);
 }
 .fp-panel-button {
     background: #fff;
@@ -1045,7 +1045,7 @@ a.ygtvspacer:hover {
 
 .fp-formset .control-label {
     font-size: $font-size-base;
-    line-height: $line-height;
+    line-height: $line-height-base;
     font-weight: normal;
 }
 .fp-formset .controls {

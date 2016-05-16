@@ -15,28 +15,25 @@
 
 .dir-ltr.editing.used-region-side-post.used-region-side-pre {
     #region-main {
-        @include make-col();
-        @include make-col-span(6);
+        @include make-col(6);
         @include make-col-push(3);
         @include media-breakpoint-up(xl) {
-            @include make-col-span(8);
+            @include make-col(8);
             @include make-col-push(2);
         }
     }
     #block-region-side-post {
-        @include make-col();
-        @include make-col-span(3);
+        @include make-col(3);
         @include media-breakpoint-up(xl) {
-            @include make-col-span(2);
+            @include make-col(2);
         }
         min-height: 100px;
     }
     #block-region-side-pre {
-        @include make-col();
-        @include make-col-span(3);
+        @include make-col(3);
         @include make-col-pull(6);
         @include media-breakpoint-up(xl) {
-            @include make-col-span(2);
+            @include make-col(2);
             @include make-col-pull(8);
         }
         min-height: 100px;
@@ -45,30 +42,27 @@
 
 .dir-rtl.editing.used-region-side-post.used-region-side-pre {
     #region-main {
-        @include make-col();
-        @include make-col-span(6);
+        @include make-col(6);
         @include make-col-push(3);
         @include media-breakpoint-up(xl) {
-            @include make-col-span(8);
+            @include make-col(8);
             @include make-col-push(2);
         }
     }
     #block-region-side-pre {
-        @include make-col();
-        @include make-col-span(3);
+        @include make-col(3);
         @include make-col-push(3);
         @include media-breakpoint-up(xl) {
-            @include make-col-span(2);
+            @include make-col(2);
             @include make-col-push(2);
         }
         min-height: 100px;
     }
     #block-region-side-post {
-        @include make-col();
-        @include make-col-span(3);
+        @include make-col(3);
         @include make-col-pull(9);
         @include media-breakpoint-up(xl) {
-            @include make-col-span(2);
+            @include make-col(2);
             @include make-col-pull(10);
         }
         min-height: 100px;
@@ -77,21 +71,19 @@
 
 .has_dock {
     &.empty-region-side-pre #region-main, &.empty-region-side-post #region-main {
-        @include make-col();
-        @include make-col-span(12);
+        @include make-col(12);
         @include make-col-push(0);
         @include media-breakpoint-up(xl) {
-            @include make-col-span(12);
+            @include make-col(12);
             @include make-col-push(0);
         }
     }
 
     &.empty-region-side-pre.used-region-side-post #region-main,
     &.empty-region-side-post.used-region-side-pre #region-main {
-        @include make-col();
-        @include make-col-span(9);
+        @include make-col(9);
         @include media-breakpoint-up(xl) {
-            @include make-col-span(10);
+            @include make-col(10);
         }
     }
 
@@ -1335,7 +1327,7 @@ body.jsenabled .formlisting {
             white-space: nowrap;
             color: $dropdown-link-color;
             padding: 3px 20px;
-            line-height: $line-height;
+            line-height: $line-height-base;
             &:hover {
                 color: $dropdown-link-active-color;
                 background-color: $dropdown-link-active-bg;

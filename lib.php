@@ -30,12 +30,12 @@ defined('MOODLE_INTERNAL') || die();
 function bootstrap_grid($hassidepre, $hassidepost) {
 
     if ($hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-6 col-sm-push-3 col-lg-8 col-lg-push-2');
-        $regions['pre'] = 'col-sm-3 col-sm-pull-6 col-lg-2 col-lg-pull-8';
+        $regions = array('content' => 'col-sm-6 push-sm-3 col-lg-8 push-lg-2');
+        $regions['pre'] = 'col-sm-3 pull-sm-6 col-lg-2 pull-lg-8';
         $regions['post'] = 'col-sm-3 col-lg-2';
     } else if ($hassidepre && !$hassidepost) {
-        $regions = array('content' => 'col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-2');
-        $regions['pre'] = 'col-sm-3 col-sm-pull-9 col-lg-2 col-lg-pull-10';
+        $regions = array('content' => 'col-sm-9 push-sm-3 col-lg-10 push-lg-2');
+        $regions['pre'] = 'col-sm-3 pull-sm-9 col-lg-2 pull-lg-10';
         $regions['post'] = 'emtpy';
     } else if (!$hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-9 col-lg-10');
@@ -49,16 +49,16 @@ function bootstrap_grid($hassidepre, $hassidepost) {
 
     if ('rtl' === get_string('thisdirection', 'langconfig')) {
         if ($hassidepre && $hassidepost) {
-            $regions['pre'] = 'col-sm-3  col-sm-push-3 col-lg-2 col-lg-push-2';
-            $regions['post'] = 'col-sm-3 col-sm-pull-9 col-lg-2 col-lg-pull-10';
+            $regions['pre'] = 'col-sm-3  push-sm-3 col-lg-2 push-lg-2';
+            $regions['post'] = 'col-sm-3 pull-sm-9 col-lg-2 pull-lg-10';
         } else if ($hassidepre && !$hassidepost) {
             $regions = array('content' => 'col-sm-9 col-lg-10');
             $regions['pre'] = 'col-sm-3 col-lg-2';
             $regions['post'] = 'empty';
         } else if (!$hassidepre && $hassidepost) {
-            $regions = array('content' => 'col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-2');
+            $regions = array('content' => 'col-sm-9 push-sm-3 col-lg-10 push-lg-2');
             $regions['pre'] = 'empty';
-            $regions['post'] = 'col-sm-3 col-sm-pull-9 col-lg-2 col-lg-pull-10';
+            $regions['post'] = 'col-sm-3 pull-sm-9 col-lg-2 pull-lg-10';
         }
     }
     return $regions;

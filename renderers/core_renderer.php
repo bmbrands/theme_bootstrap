@@ -230,6 +230,8 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $content = '<li>';
             // The node doesn't have children so produce a final menuitem.
             $class = $menunode->get_title();
+            $class = preg_replace('/\s*/', '', $class);
+            $class = strtolower($class);
             if (preg_match("/^#+$/", $menunode->get_text())) {
                 $content = '<li class="nav-item divider" role="presentation">';
             } else {

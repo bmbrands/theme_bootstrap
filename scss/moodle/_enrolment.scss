@@ -135,7 +135,7 @@
             white-space: nowrap;
             label {
                 display: inline;
-                line-height: $line-height;
+                line-height: $line-height-base;
                 padding-right: .3em;
             }
             :before,

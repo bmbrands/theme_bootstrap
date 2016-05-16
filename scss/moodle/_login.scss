@@ -2,13 +2,12 @@
     border-radius: 3px;
     @extend .form-group;
     &.onecolumn  {
-        @include make-col();
         @include media-breakpoint-up(md) {
-            @include make-col-span(6);
+            @include make-col(6);
             @include make-col-push(4);
         }
         @include media-breakpoint-up(lg) {
-            @include make-col-span(4);
+            @include make-col(4);
             @include make-col-push(4);
         }
         .loginpanel {
@@ -28,12 +27,15 @@
     &.twocolumns {
         .loginpanel {
             @extend .card;
-            @include make-col();
             @include media-breakpoint-up(md) {
-                @include make-col-span(4);
+                @include make-col(4);
+                padding-left: 0;
+                padding-right: 0;
             }
             @include media-breakpoint-up(xl) {
-                @include make-col-span(3);
+                @include make-col(3);
+                padding-left: 0;
+                padding-right: 0;
             }
             padding-left: 0;
             padding-right: 0;
@@ -49,14 +51,17 @@
         }
         .signuppanel {
             @extend .card;
-            @include make-col();
             @include media-breakpoint-up(md) {
-                @include make-col-span(7);
+                @include make-col(7);
                 @include make-col-push(1);
+                padding-left: 0;
+                padding-right: 0;
             }
             @include media-breakpoint-up(xl) {
-                @include make-col-span(8);
+                @include make-col(8);
                 @include make-col-push(1);
+                padding-left: 0;
+                padding-right: 0;
             }
             padding-left: 0;
             padding-right: 0;

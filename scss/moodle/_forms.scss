@@ -4,12 +4,11 @@
         @extend .form-group;
         clear: both;
         .fitemtitle {
-            @include make-col();
             @include media-breakpoint-up(lg) {
-                @include make-col-span(4);
+                @include make-col(4);
             }
             @include media-breakpoint-up(xl) {
-                @include make-col-span(3);
+                @include make-col(3);
             }
             label {
                 margin-top: 0;
@@ -18,12 +17,11 @@
             }
         }
         .felement {
-            @include make-col();
             @include media-breakpoint-up(lg) {
-                @include make-col-span(8);
+                @include make-col(8);
             }
             @include media-breakpoint-up(xl) {
-                @include make-col-span(9);
+                @include make-col(9);
             }
             select,
             input[type="text"],
@@ -65,13 +63,12 @@
     .fitem_actionbuttons {
             @extend .form-group;
             > div.felement {
-                @include make-col();
                 @include media-breakpoint-up(lg) {
-                    @include make-col-span(8);
+                    @include make-col(8);
                     @include make-col-offset(4);
                 }
                 @include media-breakpoint-up(xl) {
-                    @include make-col-span(9);
+                    @include make-col(9);
                     @include make-col-offset(3);
                 }
             }
@@ -139,9 +136,8 @@
 .form-item {
     @extend .form-group;
     .form-label {
-        @include make-col();
         @include media-breakpoint-up(lg) {
-            @include make-col-span(4);
+            @include make-col(4);
         }
         label {
             margin-top: 0;
@@ -150,9 +146,8 @@
         }
     }
     .form-setting {
-        @include make-col();
         @include media-breakpoint-up(lg) {
-            @include make-col-span(8);
+            @include make-col(8);
         }
         select,
         input[type="text"],
@@ -169,9 +164,8 @@
         }
     }
     .form-description {
-        @include make-col();
         @include media-breakpoint-up(lg) {
-            @include make-col-span(8);
+            @include make-col(8);
             @include make-col-offset(4);
         }
         clear: left;
@@ -193,9 +187,8 @@ select.singleselect {
 
 .path-admin .buttons,
 .form-buttons {
-    @include make-col();
     @include media-breakpoint-up(lg) {
-        @include make-col-span(8);
+        @include make-col(8);
         @include make-col-offset(4);
     }
     margin-left: -15px; // There's no row container, needs negative margin at small sizes

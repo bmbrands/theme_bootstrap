@@ -164,9 +164,9 @@
     @include make-row();
     .groups,
     .members {
-        @include make-col();
+        @include make-col(12);
         @include media-breakpoint-up(md) {
-            @include make-col-span(6);
+            @include make-col(6);
         }
     }
 }
@@ -184,6 +184,9 @@
         padding: 3px 10px;
     }
     a.dropdown-toggle {
+        color: $navbar-dark-color;
+    }
+    .nav-link {
         color: $navbar-dark-color;
     }
 }

@@ -51,7 +51,7 @@
     @include border-top-radius(10px);
     border: 1px solid #ccc;
     border-bottom: 1px solid #bbb;
-    @include gradient-vertical(#fff, #ccc);
+    @include gradient-y(#fff, #ccc);
 }
 #qtypechoicecontainer {
     font-size: 12px;
@@ -196,8 +196,7 @@ body.path-question-type .fitem_fgroup .accesshide {
     text-align: left;
     margin: 0 auto 1.8em auto;
     .info {
-        @include make-col();
-        @include make-col-span(2);
+        @include make-col(2);
         padding: 0.5em;
         background-color: $gray-lighter;
         border: 1px solid darken(adjust-hue($gray-lighter, -10), 7%);
@@ -228,8 +227,7 @@ body.path-question-type .fitem_fgroup .accesshide {
         font-weight: bold;
     }
     .content {
-        @include make-col();
-        @include make-col-span(10);
+        @include make-col(10);
     }
     .formulation,
     .outcome,
@@ -267,14 +265,14 @@ body.path-question-type .fitem_fgroup .accesshide {
     .correctness {
         @extend .label;
         &.correct {
-            background-color: $label-success-bg;
+            background-color: $tag-success-bg;
         }
         &.partiallycorrect {
-            background-color: $label-warning-bg;
+            background-color: $tag-warning-bg;
         }
         &.notanswered,
         &.incorrect {
-            background-color: $label-danger-bg;
+            background-color: $tag-danger-bg;
         }
     }
     .validationerror {

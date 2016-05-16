@@ -71,3 +71,11 @@
     }
   }
 }
+
+.dropdown-menu {
+  .dropdown-item {
+    a {
+      color: $navbar-light-color;
+    }
+  }
+}

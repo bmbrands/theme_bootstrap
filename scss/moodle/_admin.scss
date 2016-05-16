@@ -29,14 +29,14 @@
     @extend .label;
 }
 .statusok {
-    @extend .label-success;
+    @extend .tag-success;
 }
 .statuswarning {
-    @extend .label-warning;
+    @extend .tag-warning;
 }
 .statusserious,
 .statuscritical {
-    @extend .label-danger;
+    @extend .tag-danger;
 }
 
 #page-admin-report-capability-index #capabilitysearch {
@@ -448,11 +448,11 @@ img.iconsmall {
 }
 
 #plugins-control-panel .status-missing .statusmsg {
-    @extend .label-danger;
+    @extend .tag-danger;
 }
 
 #plugins-control-panel .status-new .statusmsg {
-    @extend .label-success;
+    @extend .tag-success;
 }
 
 #plugins-control-panel .disabled .availability {

@@ -46,10 +46,9 @@
         .singleselect select {
             width: 100%;
         }
-        @include make-col();
-        @include make-col-span(12);
+        @include make-col(12);
         @include media-breakpoint-up(lg) {
-            @include make-col-span(4);
+            @include make-col(4);
         }
         form#usergroupform {
             padding: 5px 10px;
@@ -62,18 +61,16 @@
                     margin-right: 0;
                 }
                 label {
-                    @include make-col();
-                    @include make-col-span(12);
+                    @include make-col(12);
                     @include media-breakpoint-up(lg) {
-                        @include make-col-span(4);
+                        @include make-col(4);
                     }
                     display: block !important;
                 }
                 select {
-                    @include make-col();
-                    @include make-col-span(12);
+                    @include make-col(12);
                     @include media-breakpoint-up(lg) {
-                        @include make-col-span(7);
+                        @include make-col(7);
                     }
                     float: left;
                     @extend .form-control;
@@ -146,10 +143,9 @@
         }
     }
     .messagearea {
-        @include make-col();
-        @include make-col-span(12);
+        @include make-col(12);
         @include media-breakpoint-up(lg) {
-            @include make-col-span(8);
+            @include make-col(8);
         }
         p.heading {
             margin: 10px 15px;
@@ -234,10 +230,9 @@
                     @include make-row();
                 }
                 .mdl-left.left .message {
-                    @include make-col();
-                    @include make-col-span(12);
+                    @include make-col(12);
                     @include media-breakpoint-up(lg) {
-                        @include make-col-span(7);
+                        @include make-col(7);
                     }
                     .text {
                         border: 2px solid $state-success-border;
@@ -245,10 +240,9 @@
 
                 }
                 .mdl-left.right .message {
-                    @include make-col();
-                    @include make-col-span(12);
+                    @include make-col(12);
                     @include media-breakpoint-up(lg) {
-                        @include make-col-span(7);
+                        @include make-col(7);
                         @include make-col-push(5);
                     }
                     .text {
@@ -269,13 +263,11 @@
             #message_user_pictures {
                 @include make-row();
                 .box.user {
-                    @include make-col();
-                    @include make-col-span(5);
+                    @include make-col(5);
                     text-align: center;
                 }
                 .box.between {
-                    @include make-col();
-                    @include make-col-span(2);
+                    @include make-col(2);
                     text-align: center;
                 }
             }
