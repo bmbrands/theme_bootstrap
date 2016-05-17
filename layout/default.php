@@ -40,7 +40,7 @@ echo $OUTPUT->doctype() ?>
 <nav role="navigation" class="navbar navbar-default">
     <div class="container-fluid">
     <div class="navbar-header pull-left">
-        <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+        <?php echo $OUTPUT->navbar_brand(); ?>
     </div>
     <div class="navbar-header pull-right">
         <?php echo $OUTPUT->user_menu(); ?>

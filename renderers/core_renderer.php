@@ -275,6 +275,17 @@ class theme_bootstrap_core_renderer extends core_renderer {
     }
 
     /**
+     * This code renders the navbar brand link displayed in the left navbar
+     * on smaller screens.
+     *
+     * @return string HTML fragment
+     */
+    protected function navbar_brand() {
+        global $CFG, $SITE;
+        return html_writer::link($CFG->wwwroot, $SITE->shortname, array('class' => 'navbar-brand'));
+    }
+
+    /**
      * This code renders the navbar button to control the display of the custom menu
      * on smaller screens.
      *
