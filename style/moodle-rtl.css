@@ -17706,6 +17706,10 @@ textarea.mform .fitem .felement textarea {
   height: auto;
 }
 
+.mform .fitem .felement textarea {
+  height: auto;
+}
+
 .mform .fitem select[multiple],
 .mform .fitem select[size] {
   height: auto;
@@ -18167,6 +18171,77 @@ textareaselect.singleselect {
   .mform .fcontainer .fitem .felement > input[type="password"] {
     width: auto;
     margin-bottom: 5px;
+  }
+
+  .form-item .form-setting textarea,
+  .mform .fcontainer .fitem .felement textarea {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .form-item .form-setting textarea:focus,
+  .mform .fcontainer .fitem .felement textarea:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  }
+
+  .form-item .form-setting textarea::-moz-placeholder,
+  .mform .fcontainer .fitem .felement textarea::-moz-placeholder {
+    color: #999999;
+    opacity: 1;
+  }
+
+  .form-item .form-setting textarea:-ms-input-placeholder,
+  .mform .fcontainer .fitem .felement textarea:-ms-input-placeholder {
+    color: #999999;
+  }
+
+  .form-item .form-setting textarea::-webkit-input-placeholder,
+  .mform .fcontainer .fitem .felement textarea::-webkit-input-placeholder {
+    color: #999999;
+  }
+
+  .form-item .form-setting textarea[disabled],
+  .mform .fcontainer .fitem .felement textarea[disabled],
+  .form-item .form-setting textarea[readonly],
+  .mform .fcontainer .fitem .felement textarea[readonly],
+  fieldset[disabled] .form-item .form-setting textarea,
+  fieldset[disabled] .mform .fcontainer .fitem .felement textarea {
+    background-color: #eeeeee;
+    opacity: 1;
+  }
+
+  .form-item .form-setting textarea[disabled],
+  .mform .fcontainer .fitem .felement textarea[disabled],
+  fieldset[disabled] .form-item .form-setting textarea,
+  fieldset[disabled] .mform .fcontainer .fitem .felement textarea {
+    cursor: not-allowed;
+  }
+
+  textarea.form-item .form-setting textarea,
+  textarea.mform .fcontainer .fitem .felement textarea {
+    height: auto;
+  }
+
+  .form-item .form-setting textarea,
+  .mform .fcontainer .fitem .felement textarea {
+    height: auto;
   }
 
   #page-mod-quiz-mod #id_reviewoptionshdr .fitem.fitem_fgroup {
