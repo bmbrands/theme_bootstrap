@@ -8,13 +8,13 @@ define(['jquery', 'core/log'], function($, log) {
 
     /* https://github.com/InvisiLabs/bootstrap-amd/releases */
 
-/* ========================================================================
- * Bootstrap: transition.js v3.3.4
- * http://getbootstrap.com/javascript/#transitions
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: transition.js v3.3.4
+     * http://getbootstrap.com/javascript/#transitions
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
     // ============================================================
@@ -62,13 +62,13 @@ define(['jquery', 'core/log'], function($, log) {
         }
     })
 
-/* ========================================================================
- * Bootstrap: alert.js v3.3.4
- * http://getbootstrap.com/javascript/#alerts
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: alert.js v3.3.4
+     * http://getbootstrap.com/javascript/#alerts
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // ALERT CLASS DEFINITION
     // ======================
@@ -151,13 +151,13 @@ define(['jquery', 'core/log'], function($, log) {
 
     $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
-/* ========================================================================
- * Bootstrap: button.js v3.3.4
- * http://getbootstrap.com/javascript/#buttons
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: button.js v3.3.4
+     * http://getbootstrap.com/javascript/#buttons
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // BUTTON PUBLIC CLASS DEFINITION
     // ==============================
@@ -262,13 +262,13 @@ define(['jquery', 'core/log'], function($, log) {
             $(e.target).closest('.btn').toggleClass('focus', /^focus(in)?$/.test(e.type))
         })
 
-/* ========================================================================
- * Bootstrap: carousel.js v3.3.4
- * http://getbootstrap.com/javascript/#carousel
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: carousel.js v3.3.4
+     * http://getbootstrap.com/javascript/#carousel
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // CAROUSEL CLASS DEFINITION
     // =========================
@@ -494,13 +494,13 @@ define(['jquery', 'core/log'], function($, log) {
         })
     })
 
-/* ========================================================================
- * Bootstrap: collapse.js v3.3.4
- * http://getbootstrap.com/javascript/#collapse
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: collapse.js v3.3.4
+     * http://getbootstrap.com/javascript/#collapse
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // COLLAPSE PUBLIC CLASS DEFINITION
     // ================================
@@ -700,13 +700,13 @@ define(['jquery', 'core/log'], function($, log) {
         COLLAPSEPlugin.call($target, option)
     })
 
-/* ========================================================================
- * Bootstrap: dropdown.js v3.3.4
- * http://getbootstrap.com/javascript/#dropdowns
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: dropdown.js v3.3.4
+     * http://getbootstrap.com/javascript/#dropdowns
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // DROPDOWN CLASS DEFINITION
     // =========================
@@ -861,13 +861,13 @@ define(['jquery', 'core/log'], function($, log) {
         .on('keydown.bs.dropdown.data-api', '[role="menu"]', Dropdown.prototype.keydown)
         .on('keydown.bs.dropdown.data-api', '[role="listbox"]', Dropdown.prototype.keydown)
 
-/* ========================================================================
- * Bootstrap: modal.js v3.3.4
- * http://getbootstrap.com/javascript/#modals
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: modal.js v3.3.4
+     * http://getbootstrap.com/javascript/#modals
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // MODAL CLASS DEFINITION
     // ======================
@@ -1196,14 +1196,14 @@ define(['jquery', 'core/log'], function($, log) {
         MODALPlugin.call($target, option, this)
     })
 
-/* ========================================================================
- * Bootstrap: tooltip.js v3.3.4
- * http://getbootstrap.com/javascript/#tooltip
- * Inspired by the original jQuery.tipsy by Jason Frame
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: tooltip.js v3.3.4
+     * http://getbootstrap.com/javascript/#tooltip
+     * Inspired by the original jQuery.tipsy by Jason Frame
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // TOOLTIP PUBLIC CLASS DEFINITION
     // ===============================
@@ -1937,13 +1937,13 @@ define(['jquery', 'core/log'], function($, log) {
         })
     })
 
-/* ========================================================================
- * Bootstrap: tab.js v3.3.4
- * http://getbootstrap.com/javascript/#tabs
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: tab.js v3.3.4
+     * http://getbootstrap.com/javascript/#tabs
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // TAB CLASS DEFINITION
     // ====================
@@ -2085,13 +2085,13 @@ define(['jquery', 'core/log'], function($, log) {
         .on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler)
         .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
 
-/* ========================================================================
- * Bootstrap: affix.js v3.3.4
- * http://getbootstrap.com/javascript/#affix
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    /* ========================================================================
+     * Bootstrap: affix.js v3.3.4
+     * http://getbootstrap.com/javascript/#affix
+     * ========================================================================
+     * Copyright 2011-2015 Twitter, Inc.
+     * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+     * ======================================================================== */
 
     // AFFIX CLASS DEFINITION
     // ======================

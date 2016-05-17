@@ -17620,7 +17620,8 @@ textarea.searchform input[type="text"] {
 
 .mform .fitem .felement select,
 .mform .fitem .felement input[type="text"],
-.mform .fitem .felement input[type="password"] {
+.mform .fitem .felement input[type="password"],
+.mform .fitem .felement textarea {
   display: block;
   width: 100%;
   height: 34px;
@@ -17641,7 +17642,8 @@ textarea.searchform input[type="text"] {
 
 .mform .fitem .felement select:focus,
 .mform .fitem .felement input[type="text"]:focus,
-.mform .fitem .felement input[type="password"]:focus {
+.mform .fitem .felement input[type="password"]:focus,
+.mform .fitem .felement textarea:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -17650,32 +17652,38 @@ textarea.searchform input[type="text"] {
 
 .mform .fitem .felement select::-moz-placeholder,
 .mform .fitem .felement input[type="text"]::-moz-placeholder,
-.mform .fitem .felement input[type="password"]::-moz-placeholder {
+.mform .fitem .felement input[type="password"]::-moz-placeholder,
+.mform .fitem .felement textarea::-moz-placeholder {
   color: #999999;
   opacity: 1;
 }
 
 .mform .fitem .felement select:-ms-input-placeholder,
 .mform .fitem .felement input[type="text"]:-ms-input-placeholder,
-.mform .fitem .felement input[type="password"]:-ms-input-placeholder {
+.mform .fitem .felement input[type="password"]:-ms-input-placeholder,
+.mform .fitem .felement textarea:-ms-input-placeholder {
   color: #999999;
 }
 
 .mform .fitem .felement select::-webkit-input-placeholder,
 .mform .fitem .felement input[type="text"]::-webkit-input-placeholder,
-.mform .fitem .felement input[type="password"]::-webkit-input-placeholder {
+.mform .fitem .felement input[type="password"]::-webkit-input-placeholder,
+.mform .fitem .felement textarea::-webkit-input-placeholder {
   color: #999999;
 }
 
 .mform .fitem .felement select[disabled],
 .mform .fitem .felement input[type="text"][disabled],
 .mform .fitem .felement input[type="password"][disabled],
+.mform .fitem .felement textarea[disabled],
 .mform .fitem .felement select[readonly],
 .mform .fitem .felement input[type="text"][readonly],
 .mform .fitem .felement input[type="password"][readonly],
+.mform .fitem .felement textarea[readonly],
 fieldset[disabled] .mform .fitem .felement select,
 fieldset[disabled] .mform .fitem .felement input[type="text"],
-fieldset[disabled] .mform .fitem .felement input[type="password"] {
+fieldset[disabled] .mform .fitem .felement input[type="password"],
+fieldset[disabled] .mform .fitem .felement textarea {
   background-color: #eeeeee;
   opacity: 1;
 }
@@ -17683,15 +17691,18 @@ fieldset[disabled] .mform .fitem .felement input[type="password"] {
 .mform .fitem .felement select[disabled],
 .mform .fitem .felement input[type="text"][disabled],
 .mform .fitem .felement input[type="password"][disabled],
+.mform .fitem .felement textarea[disabled],
 fieldset[disabled] .mform .fitem .felement select,
 fieldset[disabled] .mform .fitem .felement input[type="text"],
-fieldset[disabled] .mform .fitem .felement input[type="password"] {
+fieldset[disabled] .mform .fitem .felement input[type="password"],
+fieldset[disabled] .mform .fitem .felement textarea {
   cursor: not-allowed;
 }
 
 textarea.mform .fitem .felement select,
 textarea.mform .fitem .felement input[type="text"],
-textarea.mform .fitem .felement input[type="password"] {
+textarea.mform .fitem .felement input[type="password"],
+textarea.mform .fitem .felement textarea {
   height: auto;
 }
 
