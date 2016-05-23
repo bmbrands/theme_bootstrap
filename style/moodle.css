@@ -7626,7 +7626,6 @@ img.icon-post {
 }
 #maincontent {
   display: block;
-  height: 1px;
   overflow: hidden;
 }
 img.uihint {
@@ -9756,7 +9755,6 @@ textarea.path-admin .roleassigntable input[type="text"] {
 }
 .section .activity.modtype_label.label {
   font-weight: normal;
-  padding: .2em;
 }
 .section li.activity {
   padding: .2em;
