@@ -9757,6 +9757,7 @@ textarea.path-admin .roleassigntable input[type="text"] {
   font-weight: normal;
 }
 .section li.activity {
+  padding: 0;
   clear: both;
 }
 .section img.movetarget {
