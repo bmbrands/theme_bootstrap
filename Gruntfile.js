@@ -270,7 +270,7 @@ module.exports = function(grunt) { // jshint ignore:line
     grunt.loadNpmTasks("grunt-text-replace");
     grunt.loadNpmTasks("grunt-css-flip");
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    //grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-csscomb');
 
     // Load core tasks.
@@ -283,11 +283,11 @@ module.exports = function(grunt) { // jshint ignore:line
 
     grunt.registerTask("compile", [
         "less",
-        "cssflip",
-        "replace:rtl_images",
+        //"cssflip",
+        //"replace:rtl_images",
         "autoprefixer",
-        'csscomb',
-        'cssmin',
+        //"csscomb",
+        //"cssmin",
         "decache"]);
     grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };
