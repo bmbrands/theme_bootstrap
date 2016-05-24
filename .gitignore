@@ -9,3 +9,5 @@ Thumbs.db
 *.swp
 sourcemap-moodle.json
 sourcemap-editor.json
+.idea
+*.iml
