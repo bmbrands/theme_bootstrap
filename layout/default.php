@@ -38,7 +38,7 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <nav role="navigation" class="navbar navbar-default">
-    <div class="container">
+    <div class="container-fluid">
     <div class="navbar-header pull-left">
         <?php echo $OUTPUT->navbar_brand(); ?>
     </div>
@@ -56,13 +56,13 @@ echo $OUTPUT->doctype() ?>
     </div>
 </nav>
 <header class="moodleheader">
-    <div class="container">
+    <div class="container-fluid">
     <a href="<?php echo $CFG->wwwroot ?>" class="logo"></a>
     <?php echo $OUTPUT->page_heading(); ?>
     </div>
 </header>
 
-<div id="page" class="container">
+<div id="page" class="container-fluid">
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
