@@ -12050,6 +12050,13 @@ textarea.path-admin .roleassigntable input[type="text"] {
   padding: 0;
 }
 
+/* Collapsed Topics support */
+
+.course-content ul.ctopics li.section.main,
+.course-content ul.ctopics li.tcsection {
+  margin: 0;
+}
+
 .path-course-view .completionprogress {
   margin-right: 25px;
   display: block;
@@ -18191,6 +18198,7 @@ textareaselect.singleselect {
     -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    height: auto;
   }
 
   .form-item .form-setting textarea:focus,
@@ -18236,11 +18244,6 @@ textareaselect.singleselect {
 
   textarea.form-item .form-setting textarea,
   textarea.mform .fcontainer .fitem .felement textarea {
-    height: auto;
-  }
-
-  .form-item .form-setting textarea,
-  .mform .fcontainer .fitem .felement textarea {
     height: auto;
   }
 
