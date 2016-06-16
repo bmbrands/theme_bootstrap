@@ -50,10 +50,6 @@
  *                                 when your theme is not in the
  *                                 standard location.
  *
- * grunt amd     Create the Asynchronous Module Definition JavaScript files.  See: MDL-49046.
- *               Done here as core Gruntfile.js currently *nix only.
- *
- *
  *
  * Plumbing tasks & targets:
  * -------------------------
@@ -102,6 +98,7 @@ module.exports = function(grunt) {
 
     // Import modules.
     var path = require('path');
+    var os = require('os');
 
     // PHP strings for exec task.
     var moodleroot = path.dirname(path.dirname(__dirname)),
@@ -290,6 +287,18 @@ module.exports = function(grunt) {
         "autoprefixer",
         'csscomb',
         'cssmin',
-        "decache"]);
-    grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
+        "decache"
+    ]);
+
+    grunt.registerTask('amd', function() {
+        grunt.fail.warn([
+            "The task 'amd' is not configured in the theme Gruntfile.",
+            'Specify the path to your $CFG->dirroot Gruntfile e.g.',
+            '',
+            'grunt amd --gruntfile="/path/to/dirroot/Gruntfile.js"',
+            '',
+            ''
+        ].join(os.EOL));
+    });
+
 };
