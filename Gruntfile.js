@@ -50,10 +50,6 @@
  *                                 when your theme is not in the
  *                                 standard location.
  *
- * grunt amd     Create the Asynchronous Module Definition JavaScript files.  See: MDL-49046.
- *               Done here as core Gruntfile.js currently *nix only.
- *
- *
  *
  * Plumbing tasks & targets:
  * -------------------------
@@ -102,6 +98,7 @@ module.exports = function(grunt) {
 
     // Import modules.
     var path = require('path');
+    var os = require('os');
 
     // PHP strings for exec task.
     var moodleroot = path.dirname(path.dirname(__dirname)),
@@ -114,7 +111,6 @@ module.exports = function(grunt) {
         moodleroot = path.resolve(dirrootopt);
     }
 
-    var PWD = process.cwd();
     configfile = path.join(moodleroot, 'config.php');
 
     decachephp += 'define(\'CLI_SCRIPT\', true);';
@@ -240,27 +236,6 @@ module.exports = function(grunt) {
                     to: '[[pix:y/lp_rtl]]'
                 }]
             }
-        },
-        jshint: {
-            options: {jshintrc: moodleroot + '/.jshintrc'},
-            files: ['**/amd/src/*.js']
-        },
-        uglify: {
-            dynamic_mappings: {
-                files: grunt.file.expandMapping(
-                    ['**/src/*.js', '!**/node_modules/**'],
-                    '',
-                    {
-                        cwd: PWD,
-                        rename: function(destBase, destPath) {
-                            destPath = destPath.replace('src', 'build');
-                            destPath = destPath.replace('.js', '.min.js');
-                            destPath = path.resolve(PWD, destPath);
-                            return destPath;
-                        }
-                    }
-                )
-            }
         }
     });
 
@@ -275,10 +250,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-csscomb');
 
-    // Load core tasks.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
@@ -290,6 +261,18 @@ module.exports = function(grunt) {
         "autoprefixer",
         'csscomb',
         'cssmin',
-        "decache"]);
-    grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
+        "decache"
+    ]);
+
+    grunt.registerTask('amd', function() {
+        grunt.fail.warn([
+            "The task 'amd' is not configured in the theme Gruntfile.",
+            'Specify the path to your $CFG->dirroot Gruntfile e.g.',
+            '',
+            'grunt amd --gruntfile="/path/to/dirroot/Gruntfile.js"',
+            '',
+            ''
+        ].join(os.EOL));
+    });
+
 };
