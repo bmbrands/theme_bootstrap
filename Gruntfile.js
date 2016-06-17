@@ -111,7 +111,6 @@ module.exports = function(grunt) {
         moodleroot = path.resolve(dirrootopt);
     }
 
-    var PWD = process.cwd();
     configfile = path.join(moodleroot, 'config.php');
 
     decachephp += 'define(\'CLI_SCRIPT\', true);';
