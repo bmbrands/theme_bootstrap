@@ -66,7 +66,15 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $item->hideicon = true;
             $breadcrumbs .= '<li>'.$this->render($item).'</li>';
         }
-        return "<ol class=breadcrumb>$breadcrumbs</ol>";
+
+        $title = html_writer::tag('span', get_string('pagepath'), array('class' => 'accesshide', 'id' => 'navbar-label'));
+        return $title.html_writer::start_tag('nav',
+            array('aria-labelledby' => 'navbar-label',
+                'aria-label' => 'breadcrumb',
+                'class' => 'breadcrumb-nav',
+                'role' => 'navigation')).
+            html_writer::tag('ul', "$breadcrumbs", array('class' => 'breadcrumb')).
+            html_writer::end_tag('nav');
     }
 
     public function custom_menu($custommenuitems = '') {
