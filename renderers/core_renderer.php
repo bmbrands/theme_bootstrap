@@ -211,10 +211,15 @@ class theme_bootstrap_core_renderer extends core_renderer {
             }
             $linkattributes = array(
                 'href' => $url,
-                'class' => 'dropdown-toggle nav-link',
+                'class' => 'dropdown-toggle',
                 'data-toggle' => 'dropdown',
                 'title' => $menunode->get_title(),
             );
+
+            if ($level == 1) {
+                $linkattributes['class'] .= ' nav-link';
+            }
+
             $content .= html_writer::start_tag('a', $linkattributes);
             $content .= $menunode->get_text();
             if ($level == 1) {
@@ -237,8 +242,10 @@ class theme_bootstrap_core_renderer extends core_renderer {
             } else {
                 if ($level == 1) {
                     $content = '<li class="nav-item">';
+                    $class .= ' nav-link';
                 } else {
                     $content = '<li class="dropdown-item">';
+                    $class .= ' dropdown-item';
                 }
                 // The node doesn't have children so produce a final menuitem.
                 if ($menunode->get_url() !== null) {
@@ -246,7 +253,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
                 } else {
                     $url = '#';
                 }
-                $content .= html_writer::link($url, $menunode->get_text(), array('class' => $class.' nav-link',
+                $content .= html_writer::link($url, $menunode->get_text(), array('class' => $class,
                     'title' => $menunode->get_title()));
             }
         }

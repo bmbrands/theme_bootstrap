@@ -98,6 +98,8 @@
 
 module.exports = function(grunt) { // jshint ignore:line
 
+    require('time-grunt')(grunt);
+
     // Import modules.
     var path = require('path');
 
