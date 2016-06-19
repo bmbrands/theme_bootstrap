@@ -50,10 +50,6 @@
  *                                 when your theme is not in the
  *                                 standard location.
  *
- * grunt amd     Create the Asynchronous Module Definition JavaScript files.  See: MDL-49046.
- *               Done here as core Gruntfile.js currently *nix only.
- *
- *
  *
  * Plumbing tasks & targets:
  * -------------------------
@@ -96,23 +92,25 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-module.exports = function(grunt) { // jshint ignore:line
+// jshint node: true, strict: false
+
+module.exports = function(grunt) {
 
     // Import modules.
     var path = require('path');
+    var os = require('os');
 
     // PHP strings for exec task.
-    var moodleroot = path.dirname(path.dirname(__dirname)), // jshint ignore:line
+    var moodleroot = path.dirname(path.dirname(__dirname)),
         configfile = '',
         decachephp = '',
-        dirrootopt = grunt.option('dirroot') || process.env.MOODLE_DIR || ''; // jshint ignore:line
+        dirrootopt = grunt.option('dirroot') || process.env.MOODLE_DIR || '';
 
     // Allow user to explicitly define Moodle root dir.
     if ('' !== dirrootopt) {
         moodleroot = path.resolve(dirrootopt);
     }
 
-    var PWD = process.cwd(); // jshint ignore:line
     configfile = path.join(moodleroot, 'config.php');
 
     decachephp += 'define(\'CLI_SCRIPT\', true);';
@@ -238,27 +236,6 @@ module.exports = function(grunt) { // jshint ignore:line
                     to: '[[pix:y/lp_rtl]]'
                 }]
             }
-        },
-        jshint: {
-            options: {jshintrc: moodleroot + '/.jshintrc'},
-            files: ['**/amd/src/*.js']
-        },
-        uglify: {
-            dynamic_mappings: {
-                files: grunt.file.expandMapping(
-                    ['**/src/*.js', '!**/node_modules/**'],
-                    '',
-                    {
-                        cwd: PWD,
-                        rename: function(destBase, destPath) {
-                            destPath = destPath.replace('src', 'build');
-                            destPath = destPath.replace('.js', '.min.js');
-                            destPath = path.resolve(PWD, destPath);
-                            return destPath;
-                        }
-                    }
-                )
-            }
         }
     });
 
@@ -273,10 +250,6 @@ module.exports = function(grunt) { // jshint ignore:line
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-csscomb');
 
-    // Load core tasks.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
@@ -288,6 +261,18 @@ module.exports = function(grunt) { // jshint ignore:line
         "autoprefixer",
         'csscomb',
         'cssmin',
-        "decache"]);
-    grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
+        "decache"
+    ]);
+
+    grunt.registerTask('amd', function() {
+        grunt.fail.warn([
+            "The task 'amd' is not configured in the theme Gruntfile.",
+            'Specify the path to your $CFG->dirroot Gruntfile e.g.',
+            '',
+            'grunt amd --gruntfile="/path/to/dirroot/Gruntfile.js"',
+            '',
+            ''
+        ].join(os.EOL));
+    });
+
 };

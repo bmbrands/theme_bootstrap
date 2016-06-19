@@ -65,7 +65,7 @@ echo $OUTPUT->doctype() ?>
 <div id="page" class="container-fluid">
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+            <?php echo $OUTPUT->navbar(); ?>
             <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
         </div>
 
