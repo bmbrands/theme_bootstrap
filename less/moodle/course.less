@@ -264,6 +264,11 @@
     }
 }
 
+/* Collapsed Topics support */
+.course-content ul.ctopics li.section.main, .course-content ul.ctopics li.tcsection {
+    margin: 0;
+}
+
 .path-course-view {
     .completionprogress {
         margin-left: 25px;
@@ -420,6 +425,9 @@ span.editinstructions {
 
 .coursebox {
     position: relative;
+    img {
+        max-width: 100%;
+    }
     img.courseimage {
         .img-rounded;
         float: left;
@@ -427,6 +435,7 @@ span.editinstructions {
         margin-right: 10px;
         max-width: 140px;
     }
+
     .teachers {
         li {
             list-style-type:none;
@@ -449,22 +458,6 @@ span.editinstructions {
         }
     }
 }
-
-// .coursebox {
-//    .panel;
-//    .panel-default;
-//    .info {
-//           .panel-heading;
-//           padding: 10px 15px;
-//           border-bottom: 1px solid transparent;
-//           .border-top-radius(@panel-border-radius - 1);
-//         .coursename {
-//             .panel-title;
-//             display: inline-block;
-//         }
-//     }
-// }
-
 
 .coursebox.remotehost {
     & > .info {
