@@ -8451,662 +8451,6 @@ button.close {
   }
 }
 
-/*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
-.btn-default,
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-
-.btn-default:active,
-.btn-primary:active,
-.btn-success:active,
-.btn-info:active,
-.btn-warning:active,
-.btn-danger:active,
-.btn-default.active,
-.btn-primary.active,
-.btn-success.active,
-.btn-info.active,
-.btn-warning.active,
-.btn-danger.active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.btn-default.disabled,
-.btn-primary.disabled,
-.btn-success.disabled,
-.btn-info.disabled,
-.btn-warning.disabled,
-.btn-danger.disabled,
-.btn-default[disabled],
-.btn-primary[disabled],
-.btn-success[disabled],
-.btn-info[disabled],
-.btn-warning[disabled],
-.btn-danger[disabled],
-fieldset[disabled] .btn-default,
-fieldset[disabled] .btn-primary,
-fieldset[disabled] .btn-success,
-fieldset[disabled] .btn-info,
-fieldset[disabled] .btn-warning,
-fieldset[disabled] .btn-danger {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.btn-default .badge,
-.btn-primary .badge,
-.btn-success .badge,
-.btn-info .badge,
-.btn-warning .badge,
-.btn-danger .badge {
-  text-shadow: none;
-}
-
-.btn:active,
-.btn.active {
-  background-image: none;
-}
-
-.btn-default {
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0));
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #dbdbdb;
-  text-shadow: 0 1px 0 #fff;
-  border-color: #ccc;
-}
-
-.btn-default:hover,
-.btn-default:focus {
-  background-color: #e0e0e0;
-  background-position: 0 -15px;
-}
-
-.btn-default:active,
-.btn-default.active {
-  background-color: #e0e0e0;
-  border-color: #dbdbdb;
-}
-
-.btn-default.disabled,
-.btn-default[disabled],
-fieldset[disabled] .btn-default,
-.btn-default.disabled:hover,
-.btn-default[disabled]:hover,
-fieldset[disabled] .btn-default:hover,
-.btn-default.disabled:focus,
-.btn-default[disabled]:focus,
-fieldset[disabled] .btn-default:focus,
-.btn-default.disabled.focus,
-.btn-default[disabled].focus,
-fieldset[disabled] .btn-default.focus,
-.btn-default.disabled:active,
-.btn-default[disabled]:active,
-fieldset[disabled] .btn-default:active,
-.btn-default.disabled.active,
-.btn-default[disabled].active,
-fieldset[disabled] .btn-default.active {
-  background-color: #e0e0e0;
-  background-image: none;
-}
-
-.btn-primary {
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #265a88 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#265a88));
-  background-image: linear-gradient(to bottom, #337ab7 0%, #265a88 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff265a88', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #245580;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #265a88;
-  background-position: 0 -15px;
-}
-
-.btn-primary:active,
-.btn-primary.active {
-  background-color: #265a88;
-  border-color: #245580;
-}
-
-.btn-primary.disabled,
-.btn-primary[disabled],
-fieldset[disabled] .btn-primary,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled.focus,
-.btn-primary[disabled].focus,
-fieldset[disabled] .btn-primary.focus,
-.btn-primary.disabled:active,
-.btn-primary[disabled]:active,
-fieldset[disabled] .btn-primary:active,
-.btn-primary.disabled.active,
-.btn-primary[disabled].active,
-fieldset[disabled] .btn-primary.active {
-  background-color: #265a88;
-  background-image: none;
-}
-
-.btn-success {
-  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
-  background-image: -o-linear-gradient(top, #5cb85c 0%, #419641 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641));
-  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #3e8f3e;
-}
-
-.btn-success:hover,
-.btn-success:focus {
-  background-color: #419641;
-  background-position: 0 -15px;
-}
-
-.btn-success:active,
-.btn-success.active {
-  background-color: #419641;
-  border-color: #3e8f3e;
-}
-
-.btn-success.disabled,
-.btn-success[disabled],
-fieldset[disabled] .btn-success,
-.btn-success.disabled:hover,
-.btn-success[disabled]:hover,
-fieldset[disabled] .btn-success:hover,
-.btn-success.disabled:focus,
-.btn-success[disabled]:focus,
-fieldset[disabled] .btn-success:focus,
-.btn-success.disabled.focus,
-.btn-success[disabled].focus,
-fieldset[disabled] .btn-success.focus,
-.btn-success.disabled:active,
-.btn-success[disabled]:active,
-fieldset[disabled] .btn-success:active,
-.btn-success.disabled.active,
-.btn-success[disabled].active,
-fieldset[disabled] .btn-success.active {
-  background-color: #419641;
-  background-image: none;
-}
-
-.btn-info {
-  background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
-  background-image: -o-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#5bc0de), to(#2aabd2));
-  background-image: linear-gradient(to bottom, #5bc0de 0%, #2aabd2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2aabd2', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #28a4c9;
-}
-
-.btn-info:hover,
-.btn-info:focus {
-  background-color: #2aabd2;
-  background-position: 0 -15px;
-}
-
-.btn-info:active,
-.btn-info.active {
-  background-color: #2aabd2;
-  border-color: #28a4c9;
-}
-
-.btn-info.disabled,
-.btn-info[disabled],
-fieldset[disabled] .btn-info,
-.btn-info.disabled:hover,
-.btn-info[disabled]:hover,
-fieldset[disabled] .btn-info:hover,
-.btn-info.disabled:focus,
-.btn-info[disabled]:focus,
-fieldset[disabled] .btn-info:focus,
-.btn-info.disabled.focus,
-.btn-info[disabled].focus,
-fieldset[disabled] .btn-info.focus,
-.btn-info.disabled:active,
-.btn-info[disabled]:active,
-fieldset[disabled] .btn-info:active,
-.btn-info.disabled.active,
-.btn-info[disabled].active,
-fieldset[disabled] .btn-info.active {
-  background-color: #2aabd2;
-  background-image: none;
-}
-
-.btn-warning {
-  background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: -o-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0ad4e), to(#eb9316));
-  background-image: linear-gradient(to bottom, #f0ad4e 0%, #eb9316 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffeb9316', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #e38d13;
-}
-
-.btn-warning:hover,
-.btn-warning:focus {
-  background-color: #eb9316;
-  background-position: 0 -15px;
-}
-
-.btn-warning:active,
-.btn-warning.active {
-  background-color: #eb9316;
-  border-color: #e38d13;
-}
-
-.btn-warning.disabled,
-.btn-warning[disabled],
-fieldset[disabled] .btn-warning,
-.btn-warning.disabled:hover,
-.btn-warning[disabled]:hover,
-fieldset[disabled] .btn-warning:hover,
-.btn-warning.disabled:focus,
-.btn-warning[disabled]:focus,
-fieldset[disabled] .btn-warning:focus,
-.btn-warning.disabled.focus,
-.btn-warning[disabled].focus,
-fieldset[disabled] .btn-warning.focus,
-.btn-warning.disabled:active,
-.btn-warning[disabled]:active,
-fieldset[disabled] .btn-warning:active,
-.btn-warning.disabled.active,
-.btn-warning[disabled].active,
-fieldset[disabled] .btn-warning.active {
-  background-color: #eb9316;
-  background-image: none;
-}
-
-.btn-danger {
-  background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
-  background-image: -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c12e2a));
-  background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #b92c28;
-}
-
-.btn-danger:hover,
-.btn-danger:focus {
-  background-color: #c12e2a;
-  background-position: 0 -15px;
-}
-
-.btn-danger:active,
-.btn-danger.active {
-  background-color: #c12e2a;
-  border-color: #b92c28;
-}
-
-.btn-danger.disabled,
-.btn-danger[disabled],
-fieldset[disabled] .btn-danger,
-.btn-danger.disabled:hover,
-.btn-danger[disabled]:hover,
-fieldset[disabled] .btn-danger:hover,
-.btn-danger.disabled:focus,
-.btn-danger[disabled]:focus,
-fieldset[disabled] .btn-danger:focus,
-.btn-danger.disabled.focus,
-.btn-danger[disabled].focus,
-fieldset[disabled] .btn-danger.focus,
-.btn-danger.disabled:active,
-.btn-danger[disabled]:active,
-fieldset[disabled] .btn-danger:active,
-.btn-danger.disabled.active,
-.btn-danger[disabled].active,
-fieldset[disabled] .btn-danger.active {
-  background-color: #c12e2a;
-  background-image: none;
-}
-
-.thumbnail,
-.img-thumbnail {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
-}
-
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
-  background-image: -o-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e8e8e8));
-  background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
-  background-color: #e8e8e8;
-}
-
-.dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #2e6da4 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #2e6da4 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2e6da4));
-  background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);
-  background-color: #2e6da4;
-}
-
-.navbar-default {
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f8f8f8));
-  background-image: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff8f8f8', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
-}
-
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .active > a {
-  background-image: -webkit-linear-gradient(top, #dbdbdb 0%, #e2e2e2 100%);
-  background-image: -o-linear-gradient(top, #dbdbdb 0%, #e2e2e2 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#dbdbdb), to(#e2e2e2));
-  background-image: linear-gradient(to bottom, #dbdbdb 0%, #e2e2e2 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdbdbdb', endColorstr='#ffe2e2e2', GradientType=0);
-  -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
-}
-
-.navbar-brand,
-.navbar-nav > li > a {
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-.navbar-inverse {
-  background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
-  background-image: -o-linear-gradient(top, #3c3c3c 0%, #222222 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222222));
-  background-image: linear-gradient(to bottom, #3c3c3c 0%, #222222 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  border-radius: 4px;
-}
-
-.navbar-inverse .navbar-nav > .open > a,
-.navbar-inverse .navbar-nav > .active > a {
-  background-image: -webkit-linear-gradient(top, #080808 0%, #0f0f0f 100%);
-  background-image: -o-linear-gradient(top, #080808 0%, #0f0f0f 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#080808), to(#0f0f0f));
-  background-image: linear-gradient(to bottom, #080808 0%, #0f0f0f 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff080808', endColorstr='#ff0f0f0f', GradientType=0);
-  -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
-}
-
-.navbar-inverse .navbar-brand,
-.navbar-inverse .navbar-nav > li > a {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-
-.navbar-static-top,
-.navbar-fixed-top,
-.navbar-fixed-bottom {
-  border-radius: 0;
-}
-
-@media (max-width: 767px) {
-  .navbar .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #fff;
-    background-image: -webkit-linear-gradient(top, #337ab7 0%, #2e6da4 100%);
-    background-image: -o-linear-gradient(top, #337ab7 0%, #2e6da4 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2e6da4));
-    background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);
-  }
-}
-
-.alert {
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.alert-success {
-  background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
-  background-image: -o-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#dff0d8), to(#c8e5bc));
-  background-image: linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
-  border-color: #b2dba1;
-}
-
-.alert-info {
-  background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
-  background-image: -o-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#b9def0));
-  background-image: linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
-  border-color: #9acfea;
-}
-
-.alert-warning {
-  background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #f8efc0 100%);
-  background-image: -o-linear-gradient(top, #fcf8e3 0%, #f8efc0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcf8e3), to(#f8efc0));
-  background-image: linear-gradient(to bottom, #fcf8e3 0%, #f8efc0 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fff8efc0', GradientType=0);
-  border-color: #f5e79e;
-}
-
-.alert-danger {
-  background-image: -webkit-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
-  background-image: -o-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f2dede), to(#e7c3c3));
-  background-image: linear-gradient(to bottom, #f2dede 0%, #e7c3c3 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);
-  border-color: #dca7a7;
-}
-
-.progress {
-  background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
-}
-
-.progress-bar {
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #286090 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #286090 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#286090));
-  background-image: linear-gradient(to bottom, #337ab7 0%, #286090 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff286090', GradientType=0);
-}
-
-.progress-bar-success {
-  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #449d44 100%);
-  background-image: -o-linear-gradient(top, #5cb85c 0%, #449d44 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#449d44));
-  background-image: linear-gradient(to bottom, #5cb85c 0%, #449d44 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff449d44', GradientType=0);
-}
-
-.progress-bar-info {
-  background-image: -webkit-linear-gradient(top, #5bc0de 0%, #31b0d5 100%);
-  background-image: -o-linear-gradient(top, #5bc0de 0%, #31b0d5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#5bc0de), to(#31b0d5));
-  background-image: linear-gradient(to bottom, #5bc0de 0%, #31b0d5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff31b0d5', GradientType=0);
-}
-
-.progress-bar-warning {
-  background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #ec971f 100%);
-  background-image: -o-linear-gradient(top, #f0ad4e 0%, #ec971f 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0ad4e), to(#ec971f));
-  background-image: linear-gradient(to bottom, #f0ad4e 0%, #ec971f 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffec971f', GradientType=0);
-}
-
-.progress-bar-danger {
-  background-image: -webkit-linear-gradient(top, #d9534f 0%, #c9302c 100%);
-  background-image: -o-linear-gradient(top, #d9534f 0%, #c9302c 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c9302c));
-  background-image: linear-gradient(to bottom, #d9534f 0%, #c9302c 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc9302c', GradientType=0);
-}
-
-.progress-bar-striped {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-}
-
-.list-group {
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
-}
-
-.list-group-item.active,
-.list-group-item.active:hover,
-.list-group-item.active:focus {
-  text-shadow: 0 -1px 0 #286090;
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #2b669a 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #2b669a 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2b669a));
-  background-image: linear-gradient(to bottom, #337ab7 0%, #2b669a 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2b669a', GradientType=0);
-  border-color: #2b669a;
-}
-
-.list-group-item.active .badge,
-.list-group-item.active:hover .badge,
-.list-group-item.active:focus .badge {
-  text-shadow: none;
-}
-
-.panel,
-.block,
-.forumpost {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.panel-default > .panel-heading,
-.box.message table td.heading,
-.box.message .messagearea .messagerecent .singlemessage .otheruser,
-.block .header,
-#dockeditempanel .dockeditempanel_hd {
-  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
-  background-image: -o-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e8e8e8));
-  background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
-}
-
-.panel-primary > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #2e6da4 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #2e6da4 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2e6da4));
-  background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);
-}
-
-.panel-success > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #dff0d8 0%, #d0e9c6 100%);
-  background-image: -o-linear-gradient(top, #dff0d8 0%, #d0e9c6 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#dff0d8), to(#d0e9c6));
-  background-image: linear-gradient(to bottom, #dff0d8 0%, #d0e9c6 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffd0e9c6', GradientType=0);
-}
-
-.panel-info > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #d9edf7 0%, #c4e3f3 100%);
-  background-image: -o-linear-gradient(top, #d9edf7 0%, #c4e3f3 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#c4e3f3));
-  background-image: linear-gradient(to bottom, #d9edf7 0%, #c4e3f3 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);
-}
-
-.panel-warning > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #faf2cc 100%);
-  background-image: -o-linear-gradient(top, #fcf8e3 0%, #faf2cc 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcf8e3), to(#faf2cc));
-  background-image: linear-gradient(to bottom, #fcf8e3 0%, #faf2cc 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fffaf2cc', GradientType=0);
-}
-
-.panel-danger > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #f2dede 0%, #ebcccc 100%);
-  background-image: -o-linear-gradient(top, #f2dede 0%, #ebcccc 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f2dede), to(#ebcccc));
-  background-image: linear-gradient(to bottom, #f2dede 0%, #ebcccc 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffebcccc', GradientType=0);
-}
-
-.well {
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
 /**
  * bootstrapoverride.less
  *
@@ -9188,12 +8532,6 @@ pre {
   -webkit-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #286090 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #286090 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#286090));
-  background-image: linear-gradient(to bottom, #337ab7 0%, #286090 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff286090', GradientType=0);
 }
 
 /* some very targetted corrections to roll back nameclashes between
@@ -11468,9 +10806,6 @@ img.iconsmall {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
   width: 60%;
   min-width: 220px;
   margin: auto;
@@ -11520,13 +10855,6 @@ img.iconsmall {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
-  background-image: -webkit-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
-  background-image: -o-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f2dede), to(#e7c3c3));
-  background-image: linear-gradient(to bottom, #f2dede 0%, #e7c3c3 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);
-  border-color: #dca7a7;
 }
 
 #page-admin-index .maturitywarning hr,
@@ -11546,13 +10874,6 @@ img.iconsmall {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #31708f;
-  background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
-  background-image: -o-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#b9def0));
-  background-image: linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
-  border-color: #9acfea;
 }
 
 #page-admin-index .adminwarning.availableupdatesinfo hr,
@@ -11972,19 +11293,9 @@ textarea.path-admin .roleassigntable input[type="text"] {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
-  background-image: -webkit-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
-  background-image: -o-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f2dede), to(#e7c3c3));
-  background-image: linear-gradient(to bottom, #f2dede 0%, #e7c3c3 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);
-  border-color: #dca7a7;
 }
 
 #page-admin-roles-assign div.box.generalbox h4 {
@@ -12814,19 +12125,9 @@ span.editinstructions {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #31708f;
-  background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
-  background-image: -o-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#b9def0));
-  background-image: linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
-  border-color: #9acfea;
   right: 50%;
   width: 30em;
   margin-right: -15em;
@@ -12884,12 +12185,6 @@ span.editinstructions {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
 }
 
 .dndupload-progress-inner {
@@ -12906,12 +12201,6 @@ span.editinstructions {
   -webkit-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #286090 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #286090 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#286090));
-  background-image: linear-gradient(to bottom, #337ab7 0%, #286090 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff286090', GradientType=0);
 }
 
 .dndupload-hidden {
@@ -13068,15 +12357,6 @@ span.editinstructions {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
   min-height: 0;
   padding: 0;
   margin: 3px 0;
@@ -15378,8 +14658,6 @@ textarea.box.message .messagearea textarea {
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   border-color: #dddddd;
 }
 
@@ -16284,9 +15562,6 @@ body.path-question-type .mform fieldset.hidden {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .que .formulation h4,
@@ -16321,13 +15596,6 @@ body.path-question-type .mform fieldset.hidden {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #31708f;
-  background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
-  background-image: -o-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#b9def0));
-  background-image: linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
-  border-color: #9acfea;
   color: #333333;
 }
 
@@ -16353,13 +15621,6 @@ body.path-question-type .mform fieldset.hidden {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #3c763d;
-  background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
-  background-image: -o-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#dff0d8), to(#c8e5bc));
-  background-image: linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
-  border-color: #b2dba1;
 }
 
 .que .comment hr {
@@ -16379,15 +15640,6 @@ body.path-question-type .mform fieldset.hidden {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .que .history blockquote {
@@ -16923,15 +16175,6 @@ body.path-question-type .mform fieldset.hidden {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .groupinfobox blockquote {
@@ -17188,19 +16431,6 @@ body.path-question-type .mform fieldset.hidden {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0));
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #dbdbdb;
-  text-shadow: 0 1px 0 #fff;
-  border-color: #ccc;
 }
 
 .userprofile .header-button-group .btn:focus,
@@ -17260,57 +16490,6 @@ fieldset[disabled] .userprofile .header-button-group .btn.focus {
 .userprofile .header-button-group .btn .badge {
   color: #ffffff;
   background-color: #333333;
-}
-
-.userprofile .header-button-group .btn:active,
-.userprofile .header-button-group .btn.active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.userprofile .header-button-group .btn.disabled,
-.userprofile .header-button-group .btn[disabled],
-fieldset[disabled] .userprofile .header-button-group .btn {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.userprofile .header-button-group .btn .badge {
-  text-shadow: none;
-}
-
-.userprofile .header-button-group .btn:hover,
-.userprofile .header-button-group .btn:focus {
-  background-color: #e0e0e0;
-  background-position: 0 -15px;
-}
-
-.userprofile .header-button-group .btn:active,
-.userprofile .header-button-group .btn.active {
-  background-color: #e0e0e0;
-  border-color: #dbdbdb;
-}
-
-.userprofile .header-button-group .btn.disabled,
-.userprofile .header-button-group .btn[disabled],
-fieldset[disabled] .userprofile .header-button-group .btn,
-.userprofile .header-button-group .btn.disabled:hover,
-.userprofile .header-button-group .btn[disabled]:hover,
-fieldset[disabled] .userprofile .header-button-group .btn:hover,
-.userprofile .header-button-group .btn.disabled:focus,
-.userprofile .header-button-group .btn[disabled]:focus,
-fieldset[disabled] .userprofile .header-button-group .btn:focus,
-.userprofile .header-button-group .btn.disabled.focus,
-.userprofile .header-button-group .btn[disabled].focus,
-fieldset[disabled] .userprofile .header-button-group .btn.focus,
-.userprofile .header-button-group .btn.disabled:active,
-.userprofile .header-button-group .btn[disabled]:active,
-fieldset[disabled] .userprofile .header-button-group .btn:active,
-.userprofile .header-button-group .btn.disabled.active,
-.userprofile .header-button-group .btn[disabled].active,
-fieldset[disabled] .userprofile .header-button-group .btn.active {
-  background-color: #e0e0e0;
-  background-image: none;
 }
 
 .userprofile a {
@@ -17406,15 +16585,6 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -17461,15 +16631,6 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -19747,19 +18908,6 @@ div#dock {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0));
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #dbdbdb;
-  text-shadow: 0 1px 0 #fff;
-  border-color: #ccc;
 }
 
 .path-mod-assign a.btn:focus,
@@ -19821,57 +18969,6 @@ fieldset[disabled] .path-mod-assign a.btn.focus {
   background-color: #333333;
 }
 
-.path-mod-assign a.btn:active,
-.path-mod-assign a.btn.active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.path-mod-assign a.btn.disabled,
-.path-mod-assign a.btn[disabled],
-fieldset[disabled] .path-mod-assign a.btn {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.path-mod-assign a.btn .badge {
-  text-shadow: none;
-}
-
-.path-mod-assign a.btn:hover,
-.path-mod-assign a.btn:focus {
-  background-color: #e0e0e0;
-  background-position: 0 -15px;
-}
-
-.path-mod-assign a.btn:active,
-.path-mod-assign a.btn.active {
-  background-color: #e0e0e0;
-  border-color: #dbdbdb;
-}
-
-.path-mod-assign a.btn.disabled,
-.path-mod-assign a.btn[disabled],
-fieldset[disabled] .path-mod-assign a.btn,
-.path-mod-assign a.btn.disabled:hover,
-.path-mod-assign a.btn[disabled]:hover,
-fieldset[disabled] .path-mod-assign a.btn:hover,
-.path-mod-assign a.btn.disabled:focus,
-.path-mod-assign a.btn[disabled]:focus,
-fieldset[disabled] .path-mod-assign a.btn:focus,
-.path-mod-assign a.btn.disabled.focus,
-.path-mod-assign a.btn[disabled].focus,
-fieldset[disabled] .path-mod-assign a.btn.focus,
-.path-mod-assign a.btn.disabled:active,
-.path-mod-assign a.btn[disabled]:active,
-fieldset[disabled] .path-mod-assign a.btn:active,
-.path-mod-assign a.btn.disabled.active,
-.path-mod-assign a.btn[disabled].active,
-fieldset[disabled] .path-mod-assign a.btn.active {
-  background-color: #e0e0e0;
-  background-image: none;
-}
-
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax {
   background-color: #fff;
 }
@@ -19894,15 +18991,6 @@ fieldset[disabled] .path-mod-assign a.btn.active {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
   border-radius: 0;
 }
 
@@ -20015,15 +19103,6 @@ fieldset[disabled] .path-mod-assign a.btn.active {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .path-backup .mform .grouped_settings.section_level blockquote {
@@ -20500,19 +19579,6 @@ input[type="reset"] {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0));
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #dbdbdb;
-  text-shadow: 0 1px 0 #fff;
-  border-color: #ccc;
   margin: 0 5px 3px 0;
 }
 
@@ -20619,19 +19685,6 @@ fieldset[disabled] ainput[type="button"],
 fieldset[disabled] ainput[type="submit"],
 fieldset[disabled] ainput[type="reset"] {
   pointer-events: none;
-}
-
-button:active,
-input.form-submit:active,
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-button.active,
-input.form-submit.active,
-input[type="button"].active,
-input[type="submit"].active,
-input[type="reset"].active {
-  background-image: none;
 }
 
 button:focus,
@@ -20805,169 +19858,6 @@ input[type="reset"] .badge {
   background-color: #333333;
 }
 
-button:active,
-input.form-submit:active,
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-button.active,
-input.form-submit.active,
-input[type="button"].active,
-input[type="submit"].active,
-input[type="reset"].active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-button.disabled,
-input.form-submit.disabled,
-input[type="button"].disabled,
-input[type="submit"].disabled,
-input[type="reset"].disabled,
-button[disabled],
-input.form-submit[disabled],
-input[type="button"][disabled],
-input[type="submit"][disabled],
-input[type="reset"][disabled],
-fieldset[disabled] button,
-fieldset[disabled] input.form-submit,
-fieldset[disabled] input[type="button"],
-fieldset[disabled] input[type="submit"],
-fieldset[disabled] input[type="reset"] {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-button .badge,
-input.form-submit .badge,
-input[type="button"] .badge,
-input[type="submit"] .badge,
-input[type="reset"] .badge {
-  text-shadow: none;
-}
-
-button:hover,
-input.form-submit:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-button:focus,
-input.form-submit:focus,
-input[type="button"]:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus {
-  background-color: #e0e0e0;
-  background-position: 0 -15px;
-}
-
-button:active,
-input.form-submit:active,
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-button.active,
-input.form-submit.active,
-input[type="button"].active,
-input[type="submit"].active,
-input[type="reset"].active {
-  background-color: #e0e0e0;
-  border-color: #dbdbdb;
-}
-
-button.disabled,
-input.form-submit.disabled,
-input[type="button"].disabled,
-input[type="submit"].disabled,
-input[type="reset"].disabled,
-button[disabled],
-input.form-submit[disabled],
-input[type="button"][disabled],
-input[type="submit"][disabled],
-input[type="reset"][disabled],
-fieldset[disabled] button,
-fieldset[disabled] input.form-submit,
-fieldset[disabled] input[type="button"],
-fieldset[disabled] input[type="submit"],
-fieldset[disabled] input[type="reset"],
-button.disabled:hover,
-input.form-submit.disabled:hover,
-input[type="button"].disabled:hover,
-input[type="submit"].disabled:hover,
-input[type="reset"].disabled:hover,
-button[disabled]:hover,
-input.form-submit[disabled]:hover,
-input[type="button"][disabled]:hover,
-input[type="submit"][disabled]:hover,
-input[type="reset"][disabled]:hover,
-fieldset[disabled] button:hover,
-fieldset[disabled] input.form-submit:hover,
-fieldset[disabled] input[type="button"]:hover,
-fieldset[disabled] input[type="submit"]:hover,
-fieldset[disabled] input[type="reset"]:hover,
-button.disabled:focus,
-input.form-submit.disabled:focus,
-input[type="button"].disabled:focus,
-input[type="submit"].disabled:focus,
-input[type="reset"].disabled:focus,
-button[disabled]:focus,
-input.form-submit[disabled]:focus,
-input[type="button"][disabled]:focus,
-input[type="submit"][disabled]:focus,
-input[type="reset"][disabled]:focus,
-fieldset[disabled] button:focus,
-fieldset[disabled] input.form-submit:focus,
-fieldset[disabled] input[type="button"]:focus,
-fieldset[disabled] input[type="submit"]:focus,
-fieldset[disabled] input[type="reset"]:focus,
-button.disabled.focus,
-input.form-submit.disabled.focus,
-input[type="button"].disabled.focus,
-input[type="submit"].disabled.focus,
-input[type="reset"].disabled.focus,
-button[disabled].focus,
-input.form-submit[disabled].focus,
-input[type="button"][disabled].focus,
-input[type="submit"][disabled].focus,
-input[type="reset"][disabled].focus,
-fieldset[disabled] button.focus,
-fieldset[disabled] input.form-submit.focus,
-fieldset[disabled] input[type="button"].focus,
-fieldset[disabled] input[type="submit"].focus,
-fieldset[disabled] input[type="reset"].focus,
-button.disabled:active,
-input.form-submit.disabled:active,
-input[type="button"].disabled:active,
-input[type="submit"].disabled:active,
-input[type="reset"].disabled:active,
-button[disabled]:active,
-input.form-submit[disabled]:active,
-input[type="button"][disabled]:active,
-input[type="submit"][disabled]:active,
-input[type="reset"][disabled]:active,
-fieldset[disabled] button:active,
-fieldset[disabled] input.form-submit:active,
-fieldset[disabled] input[type="button"]:active,
-fieldset[disabled] input[type="submit"]:active,
-fieldset[disabled] input[type="reset"]:active,
-button.disabled.active,
-input.form-submit.disabled.active,
-input[type="button"].disabled.active,
-input[type="submit"].disabled.active,
-input[type="reset"].disabled.active,
-button[disabled].active,
-input.form-submit[disabled].active,
-input[type="button"][disabled].active,
-input[type="submit"][disabled].active,
-input[type="reset"][disabled].active,
-fieldset[disabled] button.active,
-fieldset[disabled] input.form-submit.active,
-fieldset[disabled] input[type="button"].active,
-fieldset[disabled] input[type="submit"].active,
-fieldset[disabled] input[type="reset"].active {
-  background-color: #e0e0e0;
-  background-image: none;
-}
-
 input.form-submit,
 input#id_submitbutton,
 input#id_submitbutton2,
@@ -20976,17 +19866,6 @@ td.submit input {
   color: #ffffff;
   background-color: #337ab7;
   border-color: #2e6da4;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #265a88 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#265a88));
-  background-image: linear-gradient(to bottom, #337ab7 0%, #265a88 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff265a88', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #245580;
 }
 
 input.form-submit:focus,
@@ -21160,169 +20039,6 @@ td.submit input .badge {
   background-color: #ffffff;
 }
 
-input.form-submit:active,
-input#id_submitbutton:active,
-input#id_submitbutton2:active,
-.path-admin .buttons input[type="submit"]:active,
-td.submit input:active,
-input.form-submit.active,
-input#id_submitbutton.active,
-input#id_submitbutton2.active,
-.path-admin .buttons input[type="submit"].active,
-td.submit input.active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-input.form-submit.disabled,
-input#id_submitbutton.disabled,
-input#id_submitbutton2.disabled,
-.path-admin .buttons input[type="submit"].disabled,
-td.submit input.disabled,
-input.form-submit[disabled],
-input#id_submitbutton[disabled],
-input#id_submitbutton2[disabled],
-.path-admin .buttons input[type="submit"][disabled],
-td.submit input[disabled],
-fieldset[disabled] input.form-submit,
-fieldset[disabled] input#id_submitbutton,
-fieldset[disabled] input#id_submitbutton2,
-fieldset[disabled] .path-admin .buttons input[type="submit"],
-fieldset[disabled] td.submit input {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-input.form-submit .badge,
-input#id_submitbutton .badge,
-input#id_submitbutton2 .badge,
-.path-admin .buttons input[type="submit"] .badge,
-td.submit input .badge {
-  text-shadow: none;
-}
-
-input.form-submit:hover,
-input#id_submitbutton:hover,
-input#id_submitbutton2:hover,
-.path-admin .buttons input[type="submit"]:hover,
-td.submit input:hover,
-input.form-submit:focus,
-input#id_submitbutton:focus,
-input#id_submitbutton2:focus,
-.path-admin .buttons input[type="submit"]:focus,
-td.submit input:focus {
-  background-color: #265a88;
-  background-position: 0 -15px;
-}
-
-input.form-submit:active,
-input#id_submitbutton:active,
-input#id_submitbutton2:active,
-.path-admin .buttons input[type="submit"]:active,
-td.submit input:active,
-input.form-submit.active,
-input#id_submitbutton.active,
-input#id_submitbutton2.active,
-.path-admin .buttons input[type="submit"].active,
-td.submit input.active {
-  background-color: #265a88;
-  border-color: #245580;
-}
-
-input.form-submit.disabled,
-input#id_submitbutton.disabled,
-input#id_submitbutton2.disabled,
-.path-admin .buttons input[type="submit"].disabled,
-td.submit input.disabled,
-input.form-submit[disabled],
-input#id_submitbutton[disabled],
-input#id_submitbutton2[disabled],
-.path-admin .buttons input[type="submit"][disabled],
-td.submit input[disabled],
-fieldset[disabled] input.form-submit,
-fieldset[disabled] input#id_submitbutton,
-fieldset[disabled] input#id_submitbutton2,
-fieldset[disabled] .path-admin .buttons input[type="submit"],
-fieldset[disabled] td.submit input,
-input.form-submit.disabled:hover,
-input#id_submitbutton.disabled:hover,
-input#id_submitbutton2.disabled:hover,
-.path-admin .buttons input[type="submit"].disabled:hover,
-td.submit input.disabled:hover,
-input.form-submit[disabled]:hover,
-input#id_submitbutton[disabled]:hover,
-input#id_submitbutton2[disabled]:hover,
-.path-admin .buttons input[type="submit"][disabled]:hover,
-td.submit input[disabled]:hover,
-fieldset[disabled] input.form-submit:hover,
-fieldset[disabled] input#id_submitbutton:hover,
-fieldset[disabled] input#id_submitbutton2:hover,
-fieldset[disabled] .path-admin .buttons input[type="submit"]:hover,
-fieldset[disabled] td.submit input:hover,
-input.form-submit.disabled:focus,
-input#id_submitbutton.disabled:focus,
-input#id_submitbutton2.disabled:focus,
-.path-admin .buttons input[type="submit"].disabled:focus,
-td.submit input.disabled:focus,
-input.form-submit[disabled]:focus,
-input#id_submitbutton[disabled]:focus,
-input#id_submitbutton2[disabled]:focus,
-.path-admin .buttons input[type="submit"][disabled]:focus,
-td.submit input[disabled]:focus,
-fieldset[disabled] input.form-submit:focus,
-fieldset[disabled] input#id_submitbutton:focus,
-fieldset[disabled] input#id_submitbutton2:focus,
-fieldset[disabled] .path-admin .buttons input[type="submit"]:focus,
-fieldset[disabled] td.submit input:focus,
-input.form-submit.disabled.focus,
-input#id_submitbutton.disabled.focus,
-input#id_submitbutton2.disabled.focus,
-.path-admin .buttons input[type="submit"].disabled.focus,
-td.submit input.disabled.focus,
-input.form-submit[disabled].focus,
-input#id_submitbutton[disabled].focus,
-input#id_submitbutton2[disabled].focus,
-.path-admin .buttons input[type="submit"][disabled].focus,
-td.submit input[disabled].focus,
-fieldset[disabled] input.form-submit.focus,
-fieldset[disabled] input#id_submitbutton.focus,
-fieldset[disabled] input#id_submitbutton2.focus,
-fieldset[disabled] .path-admin .buttons input[type="submit"].focus,
-fieldset[disabled] td.submit input.focus,
-input.form-submit.disabled:active,
-input#id_submitbutton.disabled:active,
-input#id_submitbutton2.disabled:active,
-.path-admin .buttons input[type="submit"].disabled:active,
-td.submit input.disabled:active,
-input.form-submit[disabled]:active,
-input#id_submitbutton[disabled]:active,
-input#id_submitbutton2[disabled]:active,
-.path-admin .buttons input[type="submit"][disabled]:active,
-td.submit input[disabled]:active,
-fieldset[disabled] input.form-submit:active,
-fieldset[disabled] input#id_submitbutton:active,
-fieldset[disabled] input#id_submitbutton2:active,
-fieldset[disabled] .path-admin .buttons input[type="submit"]:active,
-fieldset[disabled] td.submit input:active,
-input.form-submit.disabled.active,
-input#id_submitbutton.disabled.active,
-input#id_submitbutton2.disabled.active,
-.path-admin .buttons input[type="submit"].disabled.active,
-td.submit input.disabled.active,
-input.form-submit[disabled].active,
-input#id_submitbutton[disabled].active,
-input#id_submitbutton2[disabled].active,
-.path-admin .buttons input[type="submit"][disabled].active,
-td.submit input[disabled].active,
-fieldset[disabled] input.form-submit.active,
-fieldset[disabled] input#id_submitbutton.active,
-fieldset[disabled] input#id_submitbutton2.active,
-fieldset[disabled] .path-admin .buttons input[type="submit"].active,
-fieldset[disabled] td.submit input.active {
-  background-color: #265a88;
-  background-image: none;
-}
-
 #notice .singlebutton + .singlebutton input,
 .submit.buttons input[name="cancel"] {
   display: inline-block;
@@ -21347,19 +20063,6 @@ fieldset[disabled] td.submit input.active {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0));
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #dbdbdb;
-  text-shadow: 0 1px 0 #fff;
-  border-color: #ccc;
 }
 
 #notice .singlebutton + .singlebutton input:focus,
@@ -21417,13 +20120,6 @@ a.submit.buttons input[name="cancel"].disabled,
 fieldset[disabled] a#notice .singlebutton + .singlebutton input,
 fieldset[disabled] a.submit.buttons input[name="cancel"] {
   pointer-events: none;
-}
-
-#notice .singlebutton + .singlebutton input:active,
-.submit.buttons input[name="cancel"]:active,
-#notice .singlebutton + .singlebutton input.active,
-.submit.buttons input[name="cancel"].active {
-  background-image: none;
 }
 
 #notice .singlebutton + .singlebutton input:focus,
@@ -21513,85 +20209,6 @@ fieldset[disabled] .submit.buttons input[name="cancel"].focus {
   background-color: #333333;
 }
 
-#notice .singlebutton + .singlebutton input:active,
-.submit.buttons input[name="cancel"]:active,
-#notice .singlebutton + .singlebutton input.active,
-.submit.buttons input[name="cancel"].active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-#notice .singlebutton + .singlebutton input.disabled,
-.submit.buttons input[name="cancel"].disabled,
-#notice .singlebutton + .singlebutton input[disabled],
-.submit.buttons input[name="cancel"][disabled],
-fieldset[disabled] #notice .singlebutton + .singlebutton input,
-fieldset[disabled] .submit.buttons input[name="cancel"] {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-#notice .singlebutton + .singlebutton input .badge,
-.submit.buttons input[name="cancel"] .badge {
-  text-shadow: none;
-}
-
-#notice .singlebutton + .singlebutton input:hover,
-.submit.buttons input[name="cancel"]:hover,
-#notice .singlebutton + .singlebutton input:focus,
-.submit.buttons input[name="cancel"]:focus {
-  background-color: #e0e0e0;
-  background-position: 0 -15px;
-}
-
-#notice .singlebutton + .singlebutton input:active,
-.submit.buttons input[name="cancel"]:active,
-#notice .singlebutton + .singlebutton input.active,
-.submit.buttons input[name="cancel"].active {
-  background-color: #e0e0e0;
-  border-color: #dbdbdb;
-}
-
-#notice .singlebutton + .singlebutton input.disabled,
-.submit.buttons input[name="cancel"].disabled,
-#notice .singlebutton + .singlebutton input[disabled],
-.submit.buttons input[name="cancel"][disabled],
-fieldset[disabled] #notice .singlebutton + .singlebutton input,
-fieldset[disabled] .submit.buttons input[name="cancel"],
-#notice .singlebutton + .singlebutton input.disabled:hover,
-.submit.buttons input[name="cancel"].disabled:hover,
-#notice .singlebutton + .singlebutton input[disabled]:hover,
-.submit.buttons input[name="cancel"][disabled]:hover,
-fieldset[disabled] #notice .singlebutton + .singlebutton input:hover,
-fieldset[disabled] .submit.buttons input[name="cancel"]:hover,
-#notice .singlebutton + .singlebutton input.disabled:focus,
-.submit.buttons input[name="cancel"].disabled:focus,
-#notice .singlebutton + .singlebutton input[disabled]:focus,
-.submit.buttons input[name="cancel"][disabled]:focus,
-fieldset[disabled] #notice .singlebutton + .singlebutton input:focus,
-fieldset[disabled] .submit.buttons input[name="cancel"]:focus,
-#notice .singlebutton + .singlebutton input.disabled.focus,
-.submit.buttons input[name="cancel"].disabled.focus,
-#notice .singlebutton + .singlebutton input[disabled].focus,
-.submit.buttons input[name="cancel"][disabled].focus,
-fieldset[disabled] #notice .singlebutton + .singlebutton input.focus,
-fieldset[disabled] .submit.buttons input[name="cancel"].focus,
-#notice .singlebutton + .singlebutton input.disabled:active,
-.submit.buttons input[name="cancel"].disabled:active,
-#notice .singlebutton + .singlebutton input[disabled]:active,
-.submit.buttons input[name="cancel"][disabled]:active,
-fieldset[disabled] #notice .singlebutton + .singlebutton input:active,
-fieldset[disabled] .submit.buttons input[name="cancel"]:active,
-#notice .singlebutton + .singlebutton input.disabled.active,
-.submit.buttons input[name="cancel"].disabled.active,
-#notice .singlebutton + .singlebutton input[disabled].active,
-.submit.buttons input[name="cancel"][disabled].active,
-fieldset[disabled] #notice .singlebutton + .singlebutton input.active,
-fieldset[disabled] .submit.buttons input[name="cancel"].active {
-  background-color: #e0e0e0;
-  background-image: none;
-}
-
 #notice .singlebutton + .singlebutton input,
 .submit.buttons input[name="cancel"] {
   margin: 0 5px 3px 0;
@@ -21602,17 +20219,6 @@ input[type="reset"] {
   color: #ffffff;
   background-color: #f0ad4e;
   border-color: #eea236;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: -o-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0ad4e), to(#eb9316));
-  background-image: linear-gradient(to bottom, #f0ad4e 0%, #eb9316 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffeb9316', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #e38d13;
 }
 
 input[id$="_clearbutton"]:focus,
@@ -21700,85 +20306,6 @@ input[id$="_clearbutton"] .badge,
 input[type="reset"] .badge {
   color: #f0ad4e;
   background-color: #ffffff;
-}
-
-input[id$="_clearbutton"]:active,
-input[type="reset"]:active,
-input[id$="_clearbutton"].active,
-input[type="reset"].active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-input[id$="_clearbutton"].disabled,
-input[type="reset"].disabled,
-input[id$="_clearbutton"][disabled],
-input[type="reset"][disabled],
-fieldset[disabled] input[id$="_clearbutton"],
-fieldset[disabled] input[type="reset"] {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-input[id$="_clearbutton"] .badge,
-input[type="reset"] .badge {
-  text-shadow: none;
-}
-
-input[id$="_clearbutton"]:hover,
-input[type="reset"]:hover,
-input[id$="_clearbutton"]:focus,
-input[type="reset"]:focus {
-  background-color: #eb9316;
-  background-position: 0 -15px;
-}
-
-input[id$="_clearbutton"]:active,
-input[type="reset"]:active,
-input[id$="_clearbutton"].active,
-input[type="reset"].active {
-  background-color: #eb9316;
-  border-color: #e38d13;
-}
-
-input[id$="_clearbutton"].disabled,
-input[type="reset"].disabled,
-input[id$="_clearbutton"][disabled],
-input[type="reset"][disabled],
-fieldset[disabled] input[id$="_clearbutton"],
-fieldset[disabled] input[type="reset"],
-input[id$="_clearbutton"].disabled:hover,
-input[type="reset"].disabled:hover,
-input[id$="_clearbutton"][disabled]:hover,
-input[type="reset"][disabled]:hover,
-fieldset[disabled] input[id$="_clearbutton"]:hover,
-fieldset[disabled] input[type="reset"]:hover,
-input[id$="_clearbutton"].disabled:focus,
-input[type="reset"].disabled:focus,
-input[id$="_clearbutton"][disabled]:focus,
-input[type="reset"][disabled]:focus,
-fieldset[disabled] input[id$="_clearbutton"]:focus,
-fieldset[disabled] input[type="reset"]:focus,
-input[id$="_clearbutton"].disabled.focus,
-input[type="reset"].disabled.focus,
-input[id$="_clearbutton"][disabled].focus,
-input[type="reset"][disabled].focus,
-fieldset[disabled] input[id$="_clearbutton"].focus,
-fieldset[disabled] input[type="reset"].focus,
-input[id$="_clearbutton"].disabled:active,
-input[type="reset"].disabled:active,
-input[id$="_clearbutton"][disabled]:active,
-input[type="reset"][disabled]:active,
-fieldset[disabled] input[id$="_clearbutton"]:active,
-fieldset[disabled] input[type="reset"]:active,
-input[id$="_clearbutton"].disabled.active,
-input[type="reset"].disabled.active,
-input[id$="_clearbutton"][disabled].active,
-input[type="reset"][disabled].active,
-fieldset[disabled] input[id$="_clearbutton"].active,
-fieldset[disabled] input[type="reset"].active {
-  background-color: #eb9316;
-  background-image: none;
 }
 
 button.yui3-button.closebutton,
@@ -22150,15 +20677,6 @@ input.fp-btn-choose {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-  border-color: #dcdcdc;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
   display: inline-block;
 }
 
@@ -22465,19 +20983,6 @@ body.has_dock div#dock {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0));
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #dbdbdb;
-  text-shadow: 0 1px 0 #fff;
-  border-color: #ccc;
   display: block;
   width: 36px;
   margin: 3px;
@@ -22524,11 +21029,6 @@ fieldset[disabled] #dock .dockedtitle {
 a#dock .dockedtitle.disabled,
 fieldset[disabled] a#dock .dockedtitle {
   pointer-events: none;
-}
-
-#dock .dockedtitle:active,
-#dock .dockedtitle.active {
-  background-image: none;
 }
 
 #dock .dockedtitle:focus,
@@ -22590,57 +21090,6 @@ fieldset[disabled] #dock .dockedtitle.focus {
   background-color: #333333;
 }
 
-#dock .dockedtitle:active,
-#dock .dockedtitle.active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-#dock .dockedtitle.disabled,
-#dock .dockedtitle[disabled],
-fieldset[disabled] #dock .dockedtitle {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-#dock .dockedtitle .badge {
-  text-shadow: none;
-}
-
-#dock .dockedtitle:hover,
-#dock .dockedtitle:focus {
-  background-color: #e0e0e0;
-  background-position: 0 -15px;
-}
-
-#dock .dockedtitle:active,
-#dock .dockedtitle.active {
-  background-color: #e0e0e0;
-  border-color: #dbdbdb;
-}
-
-#dock .dockedtitle.disabled,
-#dock .dockedtitle[disabled],
-fieldset[disabled] #dock .dockedtitle,
-#dock .dockedtitle.disabled:hover,
-#dock .dockedtitle[disabled]:hover,
-fieldset[disabled] #dock .dockedtitle:hover,
-#dock .dockedtitle.disabled:focus,
-#dock .dockedtitle[disabled]:focus,
-fieldset[disabled] #dock .dockedtitle:focus,
-#dock .dockedtitle.disabled.focus,
-#dock .dockedtitle[disabled].focus,
-fieldset[disabled] #dock .dockedtitle.focus,
-#dock .dockedtitle.disabled:active,
-#dock .dockedtitle[disabled]:active,
-fieldset[disabled] #dock .dockedtitle:active,
-#dock .dockedtitle.disabled.active,
-#dock .dockedtitle[disabled].active,
-fieldset[disabled] #dock .dockedtitle.active {
-  background-color: #e0e0e0;
-  background-image: none;
-}
-
 #dock .dockedtitle h2 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
@@ -22691,8 +21140,6 @@ fieldset[disabled] #dock .dockedtitle.active {
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 #dockeditempanel .dockeditempanel_content > .list-group,
@@ -23070,11 +21517,6 @@ fieldset[disabled] a#page-grade-grading-manage .actions .action {
   pointer-events: none;
 }
 
-#page-grade-grading-manage .actions .action:active,
-#page-grade-grading-manage .actions .action.active {
-  background-image: none;
-}
-
 #page-grade-grading-manage .actions .action .action-icon {
   display: inline-block;
   position: relative;
@@ -23254,11 +21696,6 @@ fieldset[disabled] a#rubric-rubric.gradingform_rubric #rubric-criteria .criterio
   pointer-events: none;
 }
 
-#rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input:active,
-#rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input.active {
-  background-image: none;
-}
-
 #rubric-rubric.gradingform_rubric .addcriterion {
   margin-right: 5px;
   display: inline-block;
@@ -23323,11 +21760,6 @@ fieldset[disabled] #rubric-rubric.gradingform_rubric .addcriterion {
 a#rubric-rubric.gradingform_rubric .addcriterion.disabled,
 fieldset[disabled] a#rubric-rubric.gradingform_rubric .addcriterion {
   pointer-events: none;
-}
-
-#rubric-rubric.gradingform_rubric .addcriterion:active,
-#rubric-rubric.gradingform_rubric .addcriterion.active {
-  background-image: none;
 }
 
 #rubric-rubric.gradingform_rubric .addcriterion input {
@@ -23573,17 +22005,6 @@ div img.feedback_bar_image {
   color: #ffffff;
   background-color: #5cb85c;
   border-color: #4cae4c;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
-  background-image: -o-linear-gradient(top, #5cb85c 0%, #419641 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641));
-  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #3e8f3e;
 }
 
 .path-mod-feedback .feedback_form input[type="submit"]:focus,
@@ -23645,73 +22066,11 @@ fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"].focus 
   background-color: #ffffff;
 }
 
-.path-mod-feedback .feedback_form input[type="submit"]:active,
-.path-mod-feedback .feedback_form input[type="submit"].active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.path-mod-feedback .feedback_form input[type="submit"].disabled,
-.path-mod-feedback .feedback_form input[type="submit"][disabled],
-fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"] {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.path-mod-feedback .feedback_form input[type="submit"] .badge {
-  text-shadow: none;
-}
-
-.path-mod-feedback .feedback_form input[type="submit"]:hover,
-.path-mod-feedback .feedback_form input[type="submit"]:focus {
-  background-color: #419641;
-  background-position: 0 -15px;
-}
-
-.path-mod-feedback .feedback_form input[type="submit"]:active,
-.path-mod-feedback .feedback_form input[type="submit"].active {
-  background-color: #419641;
-  border-color: #3e8f3e;
-}
-
-.path-mod-feedback .feedback_form input[type="submit"].disabled,
-.path-mod-feedback .feedback_form input[type="submit"][disabled],
-fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"],
-.path-mod-feedback .feedback_form input[type="submit"].disabled:hover,
-.path-mod-feedback .feedback_form input[type="submit"][disabled]:hover,
-fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"]:hover,
-.path-mod-feedback .feedback_form input[type="submit"].disabled:focus,
-.path-mod-feedback .feedback_form input[type="submit"][disabled]:focus,
-fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"]:focus,
-.path-mod-feedback .feedback_form input[type="submit"].disabled.focus,
-.path-mod-feedback .feedback_form input[type="submit"][disabled].focus,
-fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"].focus,
-.path-mod-feedback .feedback_form input[type="submit"].disabled:active,
-.path-mod-feedback .feedback_form input[type="submit"][disabled]:active,
-fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"]:active,
-.path-mod-feedback .feedback_form input[type="submit"].disabled.active,
-.path-mod-feedback .feedback_form input[type="submit"][disabled].active,
-fieldset[disabled] .path-mod-feedback .feedback_form input[type="submit"].active {
-  background-color: #419641;
-  background-image: none;
-}
-
 .path-mod-feedback #id_save_item,
 .path-mod-feedback #id_update_item {
   color: #ffffff;
   background-color: #5cb85c;
   border-color: #4cae4c;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
-  background-image: -o-linear-gradient(top, #5cb85c 0%, #419641 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641));
-  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #3e8f3e;
 }
 
 .path-mod-feedback #id_save_item:focus,
@@ -23801,85 +22160,6 @@ fieldset[disabled] .path-mod-feedback #id_update_item.focus {
   background-color: #ffffff;
 }
 
-.path-mod-feedback #id_save_item:active,
-.path-mod-feedback #id_update_item:active,
-.path-mod-feedback #id_save_item.active,
-.path-mod-feedback #id_update_item.active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.path-mod-feedback #id_save_item.disabled,
-.path-mod-feedback #id_update_item.disabled,
-.path-mod-feedback #id_save_item[disabled],
-.path-mod-feedback #id_update_item[disabled],
-fieldset[disabled] .path-mod-feedback #id_save_item,
-fieldset[disabled] .path-mod-feedback #id_update_item {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.path-mod-feedback #id_save_item .badge,
-.path-mod-feedback #id_update_item .badge {
-  text-shadow: none;
-}
-
-.path-mod-feedback #id_save_item:hover,
-.path-mod-feedback #id_update_item:hover,
-.path-mod-feedback #id_save_item:focus,
-.path-mod-feedback #id_update_item:focus {
-  background-color: #419641;
-  background-position: 0 -15px;
-}
-
-.path-mod-feedback #id_save_item:active,
-.path-mod-feedback #id_update_item:active,
-.path-mod-feedback #id_save_item.active,
-.path-mod-feedback #id_update_item.active {
-  background-color: #419641;
-  border-color: #3e8f3e;
-}
-
-.path-mod-feedback #id_save_item.disabled,
-.path-mod-feedback #id_update_item.disabled,
-.path-mod-feedback #id_save_item[disabled],
-.path-mod-feedback #id_update_item[disabled],
-fieldset[disabled] .path-mod-feedback #id_save_item,
-fieldset[disabled] .path-mod-feedback #id_update_item,
-.path-mod-feedback #id_save_item.disabled:hover,
-.path-mod-feedback #id_update_item.disabled:hover,
-.path-mod-feedback #id_save_item[disabled]:hover,
-.path-mod-feedback #id_update_item[disabled]:hover,
-fieldset[disabled] .path-mod-feedback #id_save_item:hover,
-fieldset[disabled] .path-mod-feedback #id_update_item:hover,
-.path-mod-feedback #id_save_item.disabled:focus,
-.path-mod-feedback #id_update_item.disabled:focus,
-.path-mod-feedback #id_save_item[disabled]:focus,
-.path-mod-feedback #id_update_item[disabled]:focus,
-fieldset[disabled] .path-mod-feedback #id_save_item:focus,
-fieldset[disabled] .path-mod-feedback #id_update_item:focus,
-.path-mod-feedback #id_save_item.disabled.focus,
-.path-mod-feedback #id_update_item.disabled.focus,
-.path-mod-feedback #id_save_item[disabled].focus,
-.path-mod-feedback #id_update_item[disabled].focus,
-fieldset[disabled] .path-mod-feedback #id_save_item.focus,
-fieldset[disabled] .path-mod-feedback #id_update_item.focus,
-.path-mod-feedback #id_save_item.disabled:active,
-.path-mod-feedback #id_update_item.disabled:active,
-.path-mod-feedback #id_save_item[disabled]:active,
-.path-mod-feedback #id_update_item[disabled]:active,
-fieldset[disabled] .path-mod-feedback #id_save_item:active,
-fieldset[disabled] .path-mod-feedback #id_update_item:active,
-.path-mod-feedback #id_save_item.disabled.active,
-.path-mod-feedback #id_update_item.disabled.active,
-.path-mod-feedback #id_save_item[disabled].active,
-.path-mod-feedback #id_update_item[disabled].active,
-fieldset[disabled] .path-mod-feedback #id_save_item.active,
-fieldset[disabled] .path-mod-feedback #id_update_item.active {
-  background-color: #419641;
-  background-image: none;
-}
-
 .path-mod-feedback .fitem_fgroup input[type="checkbox"] {
   vertical-align: middle;
 }
@@ -23893,17 +22173,6 @@ fieldset[disabled] .path-mod-feedback #id_update_item.active {
   color: #ffffff;
   background-color: #f0ad4e;
   border-color: #eea236;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: -o-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0ad4e), to(#eb9316));
-  background-image: linear-gradient(to bottom, #f0ad4e 0%, #eb9316 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffeb9316', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #e38d13;
 }
 
 .path-mod-feedback .feedback_complete_cancel button[type="submit"]:focus,
@@ -23965,57 +22234,6 @@ fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="sub
   background-color: #ffffff;
 }
 
-.path-mod-feedback .feedback_complete_cancel button[type="submit"]:active,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled],
-fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"] {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.path-mod-feedback .feedback_complete_cancel button[type="submit"] .badge {
-  text-shadow: none;
-}
-
-.path-mod-feedback .feedback_complete_cancel button[type="submit"]:hover,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"]:focus {
-  background-color: #eb9316;
-  background-position: 0 -15px;
-}
-
-.path-mod-feedback .feedback_complete_cancel button[type="submit"]:active,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].active {
-  background-color: #eb9316;
-  border-color: #e38d13;
-}
-
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled],
-fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"],
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled:hover,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled]:hover,
-fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"]:hover,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled:focus,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled]:focus,
-fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"]:focus,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled.focus,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled].focus,
-fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"].focus,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled:active,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled]:active,
-fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"]:active,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"].disabled.active,
-.path-mod-feedback .feedback_complete_cancel button[type="submit"][disabled].active,
-fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="submit"].active {
-  background-color: #eb9316;
-  background-image: none;
-}
-
 .path-mod-feedback .boxalign_left {
   position: relative;
 }
@@ -24042,17 +22260,6 @@ fieldset[disabled] .path-mod-feedback .feedback_complete_cancel button[type="sub
   color: #ffffff;
   background-color: #f0ad4e;
   border-color: #eea236;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: -o-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0ad4e), to(#eb9316));
-  background-image: linear-gradient(to bottom, #f0ad4e 0%, #eb9316 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffeb9316', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #e38d13;
 }
 
 #page-mod-feedback-edit input[type="submit"]:focus,
@@ -24112,57 +22319,6 @@ fieldset[disabled] #page-mod-feedback-edit input[type="submit"].focus {
 #page-mod-feedback-edit input[type="submit"] .badge {
   color: #f0ad4e;
   background-color: #ffffff;
-}
-
-#page-mod-feedback-edit input[type="submit"]:active,
-#page-mod-feedback-edit input[type="submit"].active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-#page-mod-feedback-edit input[type="submit"].disabled,
-#page-mod-feedback-edit input[type="submit"][disabled],
-fieldset[disabled] #page-mod-feedback-edit input[type="submit"] {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-#page-mod-feedback-edit input[type="submit"] .badge {
-  text-shadow: none;
-}
-
-#page-mod-feedback-edit input[type="submit"]:hover,
-#page-mod-feedback-edit input[type="submit"]:focus {
-  background-color: #eb9316;
-  background-position: 0 -15px;
-}
-
-#page-mod-feedback-edit input[type="submit"]:active,
-#page-mod-feedback-edit input[type="submit"].active {
-  background-color: #eb9316;
-  border-color: #e38d13;
-}
-
-#page-mod-feedback-edit input[type="submit"].disabled,
-#page-mod-feedback-edit input[type="submit"][disabled],
-fieldset[disabled] #page-mod-feedback-edit input[type="submit"],
-#page-mod-feedback-edit input[type="submit"].disabled:hover,
-#page-mod-feedback-edit input[type="submit"][disabled]:hover,
-fieldset[disabled] #page-mod-feedback-edit input[type="submit"]:hover,
-#page-mod-feedback-edit input[type="submit"].disabled:focus,
-#page-mod-feedback-edit input[type="submit"][disabled]:focus,
-fieldset[disabled] #page-mod-feedback-edit input[type="submit"]:focus,
-#page-mod-feedback-edit input[type="submit"].disabled.focus,
-#page-mod-feedback-edit input[type="submit"][disabled].focus,
-fieldset[disabled] #page-mod-feedback-edit input[type="submit"].focus,
-#page-mod-feedback-edit input[type="submit"].disabled:active,
-#page-mod-feedback-edit input[type="submit"][disabled]:active,
-fieldset[disabled] #page-mod-feedback-edit input[type="submit"]:active,
-#page-mod-feedback-edit input[type="submit"].disabled.active,
-#page-mod-feedback-edit input[type="submit"][disabled].active,
-fieldset[disabled] #page-mod-feedback-edit input[type="submit"].active {
-  background-color: #eb9316;
-  background-image: none;
 }
 
 div.feedback_item_commands_left {
