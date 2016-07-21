@@ -13737,6 +13737,18 @@ span.editinstructions
 
     filter: alpha(opacity=50);
 }
+#coursesearch
+{
+    text-align: left;
+}
+#coursesearch label.hidden
+{
+    display: none;
+}
+.searchhelp
+{
+    text-align: left;
+}
 /**
  * Display sizes:
  * Large displays                   1200        +
@@ -17412,6 +17424,11 @@ body.path-question-type .mform fieldset.hidden
         width: 50%;
     }
 }
+.notloggedin .usermenu
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .jsenabled .usermenu .moodle-actionmenu .usertext
 {
     line-height: 1em;
@@ -19116,6 +19133,10 @@ textarea.mform .fitem .felement textarea
 {
     height: auto;
 }
+.mform .fitem .felement.fautocomplete input[type='text']
+{
+    display: inline-block;
+}
 .mform .fitem .felement.fduration input[type='text']
 {
     display: inline-block;
@@ -19885,6 +19906,77 @@ input[type='checkbox']
     margin-top: 4px;
     margin-right: 1em;
     margin-left: 1em;
+}
+/* Custom styles for autocomplete form element */
+.form-autocomplete-selection
+{
+    min-height: 21px;
+    margin: .2em;
+}
+.form-autocomplete-selection .label-info
+{
+    display: inline-block;
+}
+.form-autocomplete-multiple [role=listitem]
+{
+    cursor: pointer;
+}
+.form-autocomplete-suggestions
+{
+    position: absolute;
+    z-index: 1;
+
+    overflow: auto;
+
+    min-width: 206px;
+    max-height: 20.4em;
+    margin: 0;
+    padding: 0;
+
+    border: 2px solid #eee;
+    border-radius: 3px;
+    background-color: white;
+}
+.form-autocomplete-suggestions li
+{
+    margin: 0;
+    padding: .2em;
+
+    list-style-type: none;
+
+    cursor: pointer;
+
+    color: #333;
+}
+.form-autocomplete-suggestions li:hover
+{
+    color: #fff;
+    background-color: #64a0d3;
+}
+.form-autocomplete-suggestions li[aria-selected=true]
+{
+    color: #555;
+    background-color: #f2f2f2;
+}
+.form-autocomplete-downarrow
+{
+    position: relative;
+    left: -1.5em;
+
+    cursor: pointer;
+
+    color: #333;
+}
+.form-autocomplete-downarrow.dir-rtl
+{
+    right: -1.5em;
+    left: inherit;
+}
+.form-autocomplete-selection [data-active-selection=true]
+{
+    font-size: large;
+
+    padding: .5em;
 }
 /* modules.less */
 select
@@ -21918,8 +22010,8 @@ input.fp-btn-choose
     margin: 3px;
     padding: 3px;
 }
-.userenrolment .col_role .addrole > *:hover,
-.userenrolment .col_group .addgroup > *:hover
+.userenrolment .col_role .addrole > a:hover,
+.userenrolment .col_group .addgroup > a:hover
 {
     border-bottom: 1px solid #666;
 }
