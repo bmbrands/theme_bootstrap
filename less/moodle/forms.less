@@ -28,6 +28,9 @@
         select[multiple], select[size] {
             height: auto;
         }
+        .felement.fautocomplete input[type="text"] {
+            display: inline-block;
+        }
         .felement.fduration input[type="text"] {
             min-width: 0;
             width: 5em;
@@ -394,4 +397,64 @@ input[type="checkbox"] {
         margin-right: 1em;
         margin-top: 4px;
     }
+}
+
+/* Custom styles for autocomplete form element */
+.form-autocomplete-selection {
+    margin: 0.2em;
+    min-height: 21px;
+    .label-info {
+        display: inline-block;
+    }
+}
+
+.form-autocomplete-multiple [role=listitem] {
+    cursor: pointer;
+}
+
+.form-autocomplete-suggestions {
+    position: absolute;
+    background-color: white;
+    border: 2px solid @gray-lighter;
+    border-radius: 3px;
+    min-width: 206px;
+    max-height: 20.4em;
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+}
+.form-autocomplete-suggestions li {
+    list-style-type: none;
+    padding: 0.2em;
+    margin: 0;
+    cursor: pointer;
+    color: @text-color;
+}
+.form-autocomplete-suggestions li:hover {
+    background-color: lighten(@dropdown-link-active-bg, 15%);
+    color: @dropdown-link-active-color;
+}
+.form-autocomplete-suggestions li[aria-selected=true] {
+    background-color: darken(white, 5%);
+    color: @gray;
+}
+
+.form-autocomplete-downarrow {
+    color: @text-color;
+    position: relative;
+    left: -1.5em;
+    cursor: pointer;
+}
+.dir-rtl .form-autocomplete-downarrow {
+    right: -1.5em;
+    left: inherit;
+}
+
+.form-autocomplete-selection:focus {
+    outline: none;
+}
+.form-autocomplete-selection [data-active-selection=true] {
+    padding: 0.5em;
+    font-size: large;
 }
