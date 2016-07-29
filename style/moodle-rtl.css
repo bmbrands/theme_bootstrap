@@ -21880,6 +21880,20 @@ fieldset[disabled] a#rubric-rubric.gradingform_rubric .addcriterion {
   display: inline;
 }
 
+#page-mod-assign-grader .span4 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+@media (min-width: 992px) {
+  #page-mod-assign-grader .span4 {
+    float: right;
+    width: 33.33333333%;
+  }
+}
+
 .editor_atto_content .img-responsive {
   display: inline-block;
 }
