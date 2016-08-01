@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * Strings for component 'theme_bootstrap', language 'en', branch 'MOODLE_23_STABLE'
+ * Strings for component 'theme_bootstrap', language 'en', branch 'MOODLE_31_STABLE'
  *
  * @package   Bootstrap theme
  * @copyright 2012 Bas Brands, www.basbrands.nl
