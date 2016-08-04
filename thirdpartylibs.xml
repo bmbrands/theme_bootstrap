@@ -3,8 +3,8 @@
   <library>
     <location>less/bootstrap3-3-6</location>
     <name>Bootstrap</name>
-    <license>Apache</license>
+    <license>MIT</license>
     <version>3.3.6</version>
-    <licenseversion>2.0</licenseversion>
+    <licenseversion></licenseversion>
   </library>
 </libraries>
