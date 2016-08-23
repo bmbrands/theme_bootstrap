@@ -264,6 +264,33 @@
     }
 }
 
+.course-content li {
+    &.section {
+        ul {
+            list-style: disc;
+            ul {
+                list-style: circle;
+                ul {
+                    list-style: square;
+                }
+            }
+        }
+        li {
+            &.activity {
+                ul {
+                    list-style: disc;
+                    ul {
+                        list-style: circle;
+                        ul {
+                            list-style: square;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* Collapsed Topics support */
 .course-content ul.ctopics li.section.main, .course-content ul.ctopics li.tcsection {
     margin: 0;
