@@ -251,7 +251,11 @@
             }
         }
         li.section.hidden {
-            .opacity(.5);
+            .sectionname > span,
+            .content > div,
+            .activity .activityinstance {
+                opacity: .5;
+            }
         }
     }
 }
