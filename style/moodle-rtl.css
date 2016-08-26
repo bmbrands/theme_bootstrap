@@ -12003,9 +12003,10 @@ textarea.path-admin .roleassigntable input[type="text"] {
   display: none;
 }
 
-.course-content ul li.section.hidden {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+.course-content ul li.section.hidden .sectionname > span,
+.course-content ul li.section.hidden .content > div,
+.course-content ul li.section.hidden .activity .activityinstance {
+  opacity: .5;
 }
 
 .course-content ul.topics li.section .content,
