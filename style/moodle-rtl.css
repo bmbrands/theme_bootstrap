@@ -1,6 +1,6 @@
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
@@ -1441,7 +1441,6 @@ a:focus {
 }
 
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3323,7 +3322,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3910,7 +3908,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -19697,7 +19694,6 @@ input.form-submit.active.focus,
 input[type="button"].active.focus,
 input[type="submit"].active.focus,
 input[type="reset"].active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -20162,7 +20158,6 @@ td.submit input .badge {
 .submit.buttons input[name="cancel"]:active.focus,
 #notice .singlebutton + .singlebutton input.active.focus,
 .submit.buttons input[name="cancel"].active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -21081,7 +21076,6 @@ body.has_dock div#dock {
 #dock .dockedtitle.focus,
 #dock .dockedtitle:active.focus,
 #dock .dockedtitle.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -21567,7 +21561,6 @@ fieldset[disabled] #dock .dockedtitle.focus {
 #page-grade-grading-manage .actions .action.focus,
 #page-grade-grading-manage .actions .action:active.focus,
 #page-grade-grading-manage .actions .action.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -21746,7 +21739,6 @@ fieldset[disabled] a#page-grade-grading-manage .actions .action {
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input.focus,
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input:active.focus,
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -21812,7 +21804,6 @@ fieldset[disabled] a#rubric-rubric.gradingform_rubric #rubric-criteria .criterio
 #rubric-rubric.gradingform_rubric .addcriterion.focus,
 #rubric-rubric.gradingform_rubric .addcriterion:active.focus,
 #rubric-rubric.gradingform_rubric .addcriterion.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
