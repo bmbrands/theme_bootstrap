@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <libraries>
   <library>
-    <location>less/bootstrap3-3-6</location>
+    <location>less/bootstrap3-3-7</location>
     <name>Bootstrap</name>
     <license>Apache</license>
-    <version>3.3.6</version>
+    <version>3.3.7</version>
     <licenseversion>2.0</licenseversion>
   </library>
 </libraries>
