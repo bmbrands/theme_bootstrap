@@ -12015,6 +12015,35 @@ textarea.path-admin .roleassigntable input[type="text"] {
   padding: 0;
 }
 
+.course-content li.activity ul,
+.course-content li.activity ol {
+  margin-right: 25px;
+}
+
+.course-content li.section ul {
+  list-style: disc;
+}
+
+.course-content li.section ul ul {
+  list-style: circle;
+}
+
+.course-content li.section ul ul ul {
+  list-style: square;
+}
+
+.course-content li.section li.activity ul {
+  list-style: disc;
+}
+
+.course-content li.section li.activity ul ul {
+  list-style: circle;
+}
+
+.course-content li.section li.activity ul ul ul {
+  list-style: square;
+}
+
 /* Collapsed Topics support */
 
 .course-content ul.ctopics li.section.main,
