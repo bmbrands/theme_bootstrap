@@ -4,7 +4,7 @@
     <location>less/bootstrap3-3-7</location>
     <name>Bootstrap</name>
     <license>MIT</license>
-    <version>3.3.6</version>
+    <version>3.3.7</version>
     <licenseversion></licenseversion>
   </library>
 </libraries>
