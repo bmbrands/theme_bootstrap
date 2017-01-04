@@ -98,7 +98,6 @@ module.exports = function(grunt) {
 
     // Import modules.
     var path = require('path');
-    var os = require('os');
 
     // PHP strings for exec task.
     var moodleroot = path.dirname(path.dirname(__dirname)),
