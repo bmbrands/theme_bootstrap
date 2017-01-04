@@ -42,4 +42,3 @@ script:
   - moodle-plugin-ci codechecker
   - moodle-plugin-ci csslint
   - moodle-plugin-ci jshint
-  - moodle-plugin-ci phpunit
