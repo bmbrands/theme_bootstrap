@@ -43,7 +43,9 @@ echo $OUTPUT->doctype() ?>
         <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
     </div>
     <div class="navbar-header pull-right">
+        <?php echo $OUTPUT->navbar_plugin_output(); ?>
         <?php echo $OUTPUT->user_menu(); ?>
+
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>

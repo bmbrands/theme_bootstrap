@@ -4064,9 +4064,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
 }
-.nav > li > a,
-.box.message .messagearea .messagehistory .messagehistorytype span.visible,
-.box.message .messagearea .messagehistory .messagehistorytype a.visible {
+.nav > li > a {
   position: relative;
   display: block;
   padding: 10px 15px;
@@ -4104,28 +4102,22 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs {
   border-bottom: 1px solid #ddd;
 }
-.nav-tabs > li,
-.box.message .messagearea .messagehistory .messagehistorytype span.visible,
-.box.message .messagearea .messagehistory .messagehistorytype a.visible {
+.nav-tabs > li {
   float: left;
   margin-bottom: -1px;
 }
-.nav-tabs > li > a,
-.box.message .messagearea .messagehistory .messagehistorytype span.visible,
-.box.message .messagearea .messagehistory .messagehistorytype a.visible {
+.nav-tabs > li > a {
   margin-right: 2px;
   line-height: 1.42857143;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
 }
-.nav-tabs > li > a:hover,
-.box.message .messagearea .messagehistory .messagehistorytype a.visible:hover {
+.nav-tabs > li > a:hover {
   border-color: #eee #eee #ddd;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus,
-.box.message .messagearea .messagehistory .messagehistorytype span.visible {
+.nav-tabs > li.active > a:focus {
   color: #555;
   cursor: default;
   background-color: #fff;
@@ -5842,8 +5834,6 @@ button.list-group-item-danger.active:focus {
   border-color: #ddd;
 }
 .panel-default > .panel-heading,
-.box.message table td.heading,
-.box.message .messagearea .messagerecent .singlemessage .otheruser,
 .block .header,
 #dockeditempanel .dockeditempanel_hd {
   color: #333;
@@ -6651,14 +6641,6 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-.box.message:before,
-.box.message:after,
-.box.message .contactselector form#usergroupform fieldset:before,
-.box.message .contactselector form#usergroupform fieldset:after,
-.box.message .messagearea .messagehistory .messagehistory .mdl-left:before,
-.box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
-.box.message .messagearea .messagehistory #message_user_pictures:before,
-.box.message .messagearea .messagehistory #message_user_pictures:after,
 .groupmanagementtable:before,
 .groupmanagementtable:after,
 .userprofile dl.list dd:before,
@@ -6693,10 +6675,6 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-.box.message:after,
-.box.message .contactselector form#usergroupform fieldset:after,
-.box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
-.box.message .messagearea .messagehistory #message_user_pictures:after,
 .groupmanagementtable:after,
 .userprofile dl.list dd:after,
 .mform .fitem_actionbuttons:after,
@@ -8342,6 +8320,9 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .moodle-dialogue-base .moodle-dialogue.moodle-dialogue-tooltip .moodle-dialogue-bd {
   overflow: auto;
 }
+.modal.show {
+  display: block;
+}
 /**
 * Chooser Dialogues (moodle-core-chooserdialogue)
 *
@@ -8756,6 +8737,64 @@ ul.dragdrop-keyboard-drag li {
 .block-control-actions .moodle-core-dragdrop-draghandle img {
   width: 12px;
   height: 12px;
+}
+.hover-tooltip-container {
+  position: relative;
+}
+.hover-tooltip-container .hover-tooltip {
+  position: absolute;
+  top: -webkit-calc(-50% - 5px);
+  top:         calc(-50% - 5px);
+  /*rtl:ignore*/
+  left: 50%;
+  z-index: 1000;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+  white-space: nowrap;
+  visibility: hidden;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .3rem;
+  opacity: 0;
+  -webkit-transition: opacity .15s, visibility .15s;
+       -o-transition: opacity .15s, visibility .15s;
+          transition: opacity .15s, visibility .15s;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.hover-tooltip-container .hover-tooltip:before {
+  position: absolute;
+  bottom: -8px;
+  left: -webkit-calc(50% - 8px);
+  left:         calc(50% - 8px);
+  display: inline-block;
+  content: '';
+  border-top: 8px solid rgba(0, 0, 0, .2);
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+.hover-tooltip-container .hover-tooltip:after {
+  position: absolute;
+  bottom: -6px;
+  left: -webkit-calc(50% - 7px);
+  left:         calc(50% - 7px);
+  z-index: 2;
+  display: inline-block;
+  content: '';
+  border-top: 7px solid #fff;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+}
+.hover-tooltip-container:hover .hover-tooltip {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity .15s .5s, visibility .15s .5s;
+       -o-transition: opacity .15s .5s, visibility .15s .5s;
+          transition: opacity .15s .5s, visibility .15s .5s;
 }
 /* admin.less  */
 .path-admin .incompatibleblockstable td.c0 {
@@ -11683,861 +11722,1042 @@ a.ygtvspacer:hover {
   display: inline-block;
   padding-left: 5px;
 }
-.box.message {
-  margin-right: -15px;
-  margin-left: -15px;
+/** The message area **/
+.messaging-area-container {
+  margin-bottom: 30px;
 }
-.box.message .mdl-align {
-  text-align: left;
+.messaging-area-container .status .online-text {
+  display: none;
+  color: #7d7;
 }
-.box.message table tr {
-  border-bottom: 1px solid #ddd;
+.messaging-area-container .status .offline-text {
+  color: #ff6961;
 }
-.box.message table tr:nth-child(odd) > td,
-.box.message table tr:nth-child(odd) > th {
-  background-color: #f9f9f9;
-}
-.box.message table td.heading {
-  padding: 5px 10px;
-  font-size: 14px;
-}
-.box.message tbody {
-  padding: 5px 10px;
-  margin: 5px 10px;
-}
-.box.message tbody {
-  display: table;
-  width: 100%;
-  padding: 5px 0;
-  margin: 5px 0;
-}
-.box.message .message_form {
-  width: 100%;
-}
-.box.message .message_form tr {
-  border: 0;
-}
-.box.message .message_form td {
-  background-color: inherit !important;
-}
-.box.message .message_form input[type="text"] {
+.messaging-area-container .status.online .online-text {
   display: block;
+}
+.messaging-area-container .status.online .offline-text {
+  display: none;
+}
+.messaging-area-container a,
+.messaging-area-container .btn.btn-link {
+  color: #4f94cd;
+}
+.messaging-area-container .messaging-area {
+  clear: both;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+}
+.messaging-area-container .messaging-area img {
+  max-width: 100%;
+}
+.messaging-area-container .messaging-area .contacts-area {
   display: inline-block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
+  width: 280px;
+  height: 600px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  border-right: 1px solid #e3e3e3;
+}
+@media (max-height: 670px) {
+  .messaging-area-container .messaging-area .contacts-area {
+    height: 500px;
+  }
+}
+.messaging-area-container .messaging-area .contacts-area.searchfilter .searchtextarea {
+  height: 80px;
+}
+.messaging-area-container .messaging-area .contacts-area.searchfilter .searcharea {
+  height: 470px;
+}
+.messaging-area-container .messaging-area .contacts-area .searchtextarea {
+  height: 50px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 9px 5px;
+  line-height: auto;
+  text-align: center;
   background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: background-color linear .2s;
+       -o-transition: background-color linear .2s;
+          transition: background-color linear .2s;
 }
-.box.message .message_form input[type="text"]:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+.messaging-area-container .messaging-area .contacts-area .searchtextarea input {
+  width: 90%;
+  line-height: 30px;
+  background-color: #f5f5f5;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color linear .2s;
+       -o-transition: background-color linear .2s;
+          transition: background-color linear .2s;
 }
-.box.message .message_form input[type="text"]::-moz-placeholder {
-  color: #999;
-  opacity: 1;
+.messaging-area-container .messaging-area .contacts-area .searchtextarea input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
-.box.message .message_form input[type="text"]:-ms-input-placeholder {
-  color: #999;
+.messaging-area-container .messaging-area .contacts-area .searchtextarea.searching {
+  background-color: #f5f5f5;
+  -webkit-transition: background-color linear .2s;
+       -o-transition: background-color linear .2s;
+          transition: background-color linear .2s;
 }
-.box.message .message_form input[type="text"]::-webkit-input-placeholder {
-  color: #999;
+.messaging-area-container .messaging-area .contacts-area .searchtextarea.searching input {
+  background-color: #fff;
+  -webkit-transition: background-color linear .2s;
+       -o-transition: background-color linear .2s;
+          transition: background-color linear .2s;
 }
-.box.message .message_form input[type="text"][disabled],
-.box.message .message_form input[type="text"][readonly],
-fieldset[disabled] .box.message .message_form input[type="text"] {
-  background-color: #eee;
-  opacity: 1;
+.messaging-area-container .messaging-area .contacts-area .searchtextarea .searchfilterarea {
+  line-height: 20px;
+  cursor: pointer;
 }
-.box.message .message_form input[type="text"][disabled],
-fieldset[disabled] .box.message .message_form input[type="text"] {
-  cursor: not-allowed;
-}
-textarea.box.message .message_form input[type="text"] {
-  height: auto;
-}
-.box.message .contactselector {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.box.message .contactselector .singleselect select {
-  width: 100%;
-}
-@media (min-width: 992px) {
-  .box.message .contactselector {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-.box.message .contactselector form#usergroupform {
-  padding: 5px 10px;
-}
-.box.message .contactselector form#usergroupform fieldset {
-  margin-right: -15px;
-  margin-right: 0;
-  margin-left: -15px;
-  margin-left: 0;
-}
-.box.message .contactselector form#usergroupform fieldset .fitem {
-  margin-right: 0;
-  margin-left: 0;
-}
-.box.message .contactselector form#usergroupform fieldset label {
-  position: relative;
-  display: block !important;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-@media (min-width: 992px) {
-  .box.message .contactselector form#usergroupform fieldset label {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-.box.message .contactselector form#usergroupform fieldset select {
-  position: relative;
-  display: block;
+.messaging-area-container .messaging-area .contacts-area .searchtextarea .searchfilterarea .searchfilter {
   float: left;
-  width: 100%;
-  width: auto;
-  height: 34px;
-  min-height: 1px;
-  padding: 6px 12px;
-  padding-right: 15px;
-  padding-left: 15px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-@media (min-width: 992px) {
-  .box.message .contactselector form#usergroupform fieldset select {
-    float: left;
-    width: 58.33333333%;
+.messaging-area-container .messaging-area .contacts-area .searchtextarea .searchfilterarea .searchfilterdelete {
+  float: left;
+  margin-left: 5px;
+}
+.messaging-area-container .messaging-area .contacts-area .searcharea .heading {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.messaging-area-container .messaging-area .contacts-area .searcharea .course {
+  text-align: center;
+}
+.messaging-area-container .messaging-area .contacts-area .searcharea .course:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #4f94cd;
+  border: none;
+}
+.messaging-area-container .messaging-area .contacts-area .searcharea .noresults {
+  padding-top: 20px;
+  text-align: center;
+}
+.messaging-area-container .messaging-area .contacts-area .contacts {
+  height: 500px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-height: 670px) {
+  .messaging-area-container .messaging-area .contacts-area .contacts {
+    height: 400px;
   }
 }
-.box.message .contactselector form#usergroupform fieldset select:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+.messaging-area-container .messaging-area .contacts-area .contacts .nocontacts {
+  padding-top: 20px;
+  text-align: center;
 }
-.box.message .contactselector form#usergroupform fieldset select::-moz-placeholder {
-  color: #999;
-  opacity: 1;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact {
+  height: 66px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  border-bottom: 1px solid #e3e3e3;
 }
-.box.message .contactselector form#usergroupform fieldset select:-ms-input-placeholder {
-  color: #999;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.unread {
+  background-color: #f1f1f1;
 }
-.box.message .contactselector form#usergroupform fieldset select::-webkit-input-placeholder {
-  color: #999;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.unread .picture {
+  border-color: #f1f1f1;
 }
-.box.message .contactselector form#usergroupform fieldset select[disabled],
-.box.message .contactselector form#usergroupform fieldset select[readonly],
-fieldset[disabled] .box.message .contactselector form#usergroupform fieldset select {
-  background-color: #eee;
-  opacity: 1;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.unread .information {
+  width: 60%;
 }
-.box.message .contactselector form#usergroupform fieldset select[disabled],
-fieldset[disabled] .box.message .contactselector form#usergroupform fieldset select {
-  cursor: not-allowed;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.unread .unread-count-container {
+  display: inline-block;
+  float: left;
+  width: 15%;
 }
-textarea.box.message .contactselector form#usergroupform fieldset select {
-  height: auto;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact:hover {
+  color: #fff;
+  background-color: #4f94cd;
+  background-color: #79b5e6;
+  border: none;
 }
-.box.message .contactselector table#message_contacts,
-.box.message .contactselector table#message_participants {
-  display: block;
-  float: none !important;
-  margin: 5px 5px;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact:hover .information .lastmessage {
+  color: #fff;
 }
-.box.message .contactselector table#message_contacts td.pix,
-.box.message .contactselector table#message_participants td.pix {
-  width: 30px;
-  padding: 10px;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact:hover .picture {
+  border: none;
 }
-.box.message .contactselector table#message_contacts td.contact,
-.box.message .contactselector table#message_participants td.contact {
-  width: 100px;
-  padding: 10px;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.selected {
+  color: #fff;
+  background-color: #4f94cd;
+  border: none;
 }
-.box.message .contactselector table#message_contacts td.link,
-.box.message .contactselector table#message_participants td.link {
-  width: 100px;
-  padding: 10px;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.selected .information .lastmessage {
+  color: #fff;
 }
-.box.message .contactselector ul {
-  padding: 0;
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.selected .picture {
+  border: none;
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .contact .picture {
+  display: inline-block;
+  float: left;
+  width: 25%;
+  height: 66px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 66px;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .contact .picture img {
+  height: 54px;
+  border-radius: 50%;
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .contact .information {
+  display: inline-block;
+  float: left;
+  width: 75%;
+  height: 66px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 6px 0;
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .contact .information .name {
+  font-weight: bold;
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .contact .information .name img {
+  vertical-align: baseline;
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .contact .information .lastmessage {
+  height: 40px;
+  padding-right: 10px;
   margin: 0;
+  overflow: hidden;
+  line-height: 17px;
+  color: #a1a1a1;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .contact .unread-count-container {
+  display: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 66px;
+  text-align: center;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs {
+  height: 50px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 1px solid #e3e3e3;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs .tab {
+  float: left;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs .tab:hover {
+  color: #4f94cd;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs .tab .tabimage {
+  height: 30px;
+  line-height: 30px;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs .tab .tabimage img {
+  height: 20px;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs .tab.selected {
+  color: #4f94cd;
+}
+.messaging-area-container .messaging-area .messages-area {
+  position: relative;
+  float: right;
+  width: -webkit-calc(100% - 280px);
+  width:         calc(100% - 280px);
+  height: 600px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+@media (max-height: 670px) {
+  .messaging-area-container .messaging-area .messages-area {
+    height: 500px;
+  }
+}
+.messaging-area-container .messaging-area .messages-area .btn-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 15px;
+  font-weight: normal;
+}
+.messaging-area-container .messaging-area .messages-area .btn-container.view-toggle {
+  display: none;
+}
+.messaging-area-container .messaging-area .messages-area .btn-container.delete-all {
+  display: none;
+}
+.messaging-area-container .messaging-area .messages-area .profile-header {
+  display: none;
+  height: 50px;
+  line-height: 50px;
+}
+.messaging-area-container .messaging-area .messages-area .profile-header .btn-container {
+  display: block;
+}
+.messaging-area-container .messaging-area .messages-area .profile-header .btn-container .btn-link {
+  padding: 0;
+  line-height: inherit;
+}
+.messaging-area-container .messaging-area .messages-area .profile {
+  height: 600px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size: 16px;
+}
+@media (max-height: 670px) {
+  .messaging-area-container .messaging-area .messages-area .profile {
+    height: 500px;
+  }
+}
+.messaging-area-container .messaging-area .messages-area .profile .user-container {
+  height: 100px;
+}
+.messaging-area-container .messaging-area .messages-area .profile .user-container .profile-picture {
+  display: inline-block;
+  max-height: 100px;
+  border-radius: 50%;
+}
+.messaging-area-container .messaging-area .messages-area .profile .user-container .name-container {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 10px;
+  vertical-align: top;
+}
+.messaging-area-container .messaging-area .messages-area .profile .user-container .name-container .name {
+  display: block;
+  font-weight: bold;
+}
+.messaging-area-container .messaging-area .messages-area .profile .user-container .name-container .status {
+  display: block;
+  font-size: 14px;
+}
+.messaging-area-container .messaging-area .messages-area .profile .information {
+  display: inline-block;
+  float: right;
+  margin: 0;
+  margin-top: 20px;
+  font-size: 14px;
   list-style: none;
 }
-.box.message .contactselector .message-contacts {
-  position: relative;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-}
-.box.message .contactselector .message-contacts li:nth-child(odd) {
-  background-color: #f9f9f9;
-}
-.box.message .contactselector .message-contacts li {
-  padding: 5px 0;
-  line-height: 26px;
-  border-top: 1px solid #ddd;
-}
-.box.message .contactselector .message-contacts .contact {
-  margin: 0 24% 0 25px;
-  text-align: left;
-}
-.box.message .contactselector .message-contacts .link {
-  float: right !important;
-}
-.box.message .contactselector .message-contacts .pix {
-  position: absolute;
-  left: 0;
-}
-.box.message .messagearea {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-@media (min-width: 992px) {
-  .box.message .messagearea {
-    float: left;
-    width: 66.66666667%;
-  }
-}
-.box.message .messagearea p.heading {
-  margin: 10px 15px;
-  font-size: 30px;
-  color: inherit;
-}
-.box.message .messagearea textarea {
-  display: block;
-  width: 100%;
-  height: 34px;
-  height: 200px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
-.box.message .messagearea textarea:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-}
-.box.message .messagearea textarea::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-}
-.box.message .messagearea textarea:-ms-input-placeholder {
-  color: #999;
-}
-.box.message .messagearea textarea::-webkit-input-placeholder {
-  color: #999;
-}
-.box.message .messagearea textarea[disabled],
-.box.message .messagearea textarea[readonly],
-fieldset[disabled] .box.message .messagearea textarea {
-  background-color: #eee;
-  opacity: 1;
-}
-.box.message .messagearea textarea[disabled],
-fieldset[disabled] .box.message .messagearea textarea {
-  cursor: not-allowed;
-}
-textarea.box.message .messagearea textarea {
-  height: auto;
-}
-.box.message .messagearea #personsearch {
-  margin: 10px 15px;
-}
-.box.message .messagearea #personsearch input[type="text"] {
-  width: 150px;
+.messaging-area-container .messaging-area .messages-area .profile .information .name {
+  display: inline-block;
   margin-right: 10px;
-  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: right;
 }
-.box.message .messagearea #personsearch input[type="submit"] {
-  margin-left: 0;
+.messaging-area-container .messaging-area .messages-area .profile .information .value {
+  display: inline-block;
 }
-.box.message .messagearea .mdl-left .heading {
-  font-size: 14px;
+.messaging-area-container .messaging-area .messages-area .profile .actions {
+  padding-top: 80px;
 }
-.box.message .messagearea .mdl-left .messagesearchresults {
-  display: block;
-  width: 100%;
-  padding: 0 15px;
-  margin: 10px 0;
-}
-.box.message .messagearea .mdl-left .messagesearchresults td.pix {
-  width: 30px;
-  padding: 10px;
-}
-.box.message .messagearea .mdl-left .messagesearchresults td.contact {
-  width: 30px;
-}
-.box.message .messagearea .mdl-left .messagesearchresults td.contact img {
-  margin: 10px;
-}
-.box.message .messagearea .messagerecent .singlemessage {
-  margin: 10px 15px;
+.messaging-area-container .messaging-area .messages-area .profile .actions .separator {
+  padding-bottom: 5px;
   margin-bottom: 20px;
-  background-color: #fff;
-  border: 1px solid transparent;
-  border-color: #ddd;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  border-bottom: 1px solid #e3e3e3;
 }
-.box.message .messagearea .messagerecent .singlemessage > .list-group,
-.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .list-group {
-  margin-bottom: 0;
+.messaging-area-container .messaging-area .messages-area .profile .actions .separator a.danger {
+  color: #ff6961;
 }
-.box.message .messagearea .messagerecent .singlemessage > .list-group .list-group-item,
-.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .list-group .list-group-item {
-  border-width: 1px 0;
-  border-radius: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .list-group:first-child .list-group-item:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .list-group:first-child .list-group-item:first-child {
-  border-top: 0;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .list-group:last-child .list-group-item:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .list-group:last-child .list-group-item:last-child {
-  border-bottom: 0;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table,
-.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .table {
-  margin-bottom: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table caption,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table caption,
-.box.message .messagearea .messagerecent .singlemessage > .panel-collapse > .table caption {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
-  border-top-left-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > thead:first-child > tr:first-child th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
-  border-top-right-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child {
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
-  border-bottom-left-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
-  border-bottom-right-radius: 3px;
-}
-.box.message .messagearea .messagerecent .singlemessage > .panel-body + .table,
-.box.message .messagearea .messagerecent .singlemessage > .panel-body + .table-responsive,
-.box.message .messagearea .messagerecent .singlemessage > .table + .panel-body,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive + .panel-body {
-  border-top: 1px solid #ddd;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table > tbody:first-child > tr:first-child th,
-.box.message .messagearea .messagerecent .singlemessage > .table > tbody:first-child > tr:first-child td {
-  border-top: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered {
-  border: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr > th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr > th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr > th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr > th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr > th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr > td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr > td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr > td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr > td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr > td:first-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
-  border-left: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr > th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr > th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr > th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr > th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr > th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr > td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr > td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr > td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr > td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr > td:last-child,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
-  border-right: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr:first-child > td,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr:first-child > td,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr:first-child > td,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr:first-child > td,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > thead > tr:first-child > th,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > thead > tr:first-child > th,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr:first-child > th,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr:first-child > th {
-  border-bottom: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr:last-child > td,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr:last-child > td,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr:last-child > td,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tbody > tr:last-child > th,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tbody > tr:last-child > th,
-.box.message .messagearea .messagerecent .singlemessage > .table-bordered > tfoot > tr:last-child > th,
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
-  border-bottom: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .table-responsive {
-  margin-bottom: 0;
-  border: 0;
-}
-.box.message .messagearea .messagerecent .singlemessage > .panel-heading {
-  color: #333;
-  background-color: #f5f5f5;
-  border-color: #ddd;
-}
-.box.message .messagearea .messagerecent .singlemessage > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #ddd;
-}
-.box.message .messagearea .messagerecent .singlemessage > .panel-heading .badge {
-  color: #f5f5f5;
-  background-color: #333;
-}
-.box.message .messagearea .messagerecent .singlemessage > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #ddd;
-}
-.box.message .messagearea .messagerecent .singlemessage .otheruser {
-  display: block;
-  width: 100%;
-  padding: 10px 15px;
-}
-.box.message .messagearea .messagerecent .singlemessage .otheruser .pix {
-  margin: 5px;
-}
-.box.message .messagearea .messagerecent .singlemessage .themessage {
-  display: block;
-  padding: 5px 10px;
-  margin: 10px 15px;
-  border: 2px solid #faebcc;
-}
-.box.message .messagearea .messagerecent .singlemessage .messagedate {
-  margin: 10px 15px 0;
-}
-.box.message .messagearea .messagerecent .singlemessage .messagecontext {
-  margin: 0 15px 10px;
-}
-.box.message .messagearea .messagehistory .messagehistory {
-  clear: both;
-  border-top: 1px solid #ddd;
-}
-.box.message .messagearea .messagehistory .messagehistory .mdl-left {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-.box.message .messagearea .messagehistory .messagehistory .mdl-left.left .message {
+.messaging-area-container .messaging-area .messages-area .messages-header {
   position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-@media (min-width: 992px) {
-  .box.message .messagearea .messagehistory .messagehistory .mdl-left.left .message {
-    float: left;
-    width: 58.33333333%;
-  }
-}
-.box.message .messagearea .messagehistory .messagehistory .mdl-left.left .message .text {
-  border: 2px solid #d6e9c6;
-}
-.box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-@media (min-width: 992px) {
-  .box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message {
-    float: left;
-    width: 58.33333333%;
-  }
-}
-@media (min-width: 992px) {
-  .box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message {
-    left: 41.66666667%;
-  }
-}
-.box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message .text {
-  border: 2px solid #bce8f1;
-}
-.box.message .messagearea .messagehistory .messagehistory .message {
-  display: block;
-}
-.box.message .messagearea .messagehistory .messagehistory .message .text {
-  display: block;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-.box.message .messagearea .messagehistory #message_user_pictures {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-.box.message .messagearea .messagehistory #message_user_pictures .box.user {
-  position: relative;
-  float: left;
-  width: 41.66666667%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  height: 50px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: bold;
+  line-height: 50px;
   text-align: center;
+  border-bottom: 1px solid #e3e3e3;
 }
-.box.message .messagearea .messagehistory #message_user_pictures .box.between {
-  position: relative;
-  float: left;
-  width: 16.66666667%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  text-align: center;
+.messaging-area-container .messaging-area .messages-area .messages-header .btn-link {
+  padding: 0;
+  line-height: inherit;
 }
-.box.message .messagearea .messagehistory .messagehistorytype {
-  color: #fff;
-  border: 0;
-}
-.box.message .messagearea .messagehistory .messagehistorytype .hiddenelement {
+.messaging-area-container .messaging-area .messages-area .messages-header .delete-instructions {
   display: none;
 }
-.box.message .messagearea .messagehistory .messagehistorytype span.visible {
-  color: #333;
+.messaging-area-container .messaging-area .messages-area .messages-header .name-container {
+  display: inline-block;
+  padding-top: 9px;
 }
-.box.message .messagearea .messagehistory .messagehistorytype a.visible {
-  color: #337ab7;
+.messaging-area-container .messaging-area .messages-area .messages-header .name-container .name {
+  line-height: 20px;
 }
-.box.message .messagearea .messagesend .mform fieldset .fitem .felement,
-.box.message .messagearea .messagesend .mform fieldset.hidden > div {
-  float: none;
+.messaging-area-container .messaging-area .messages-area .messages-header .name-container .status {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 12px;
+}
+.messaging-area-container .messaging-area .messages-area .messages-header .actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 15px;
+  font-weight: normal;
+}
+.messaging-area-container .messaging-area .messages-area .messages-header .actions .cancel-messages-delete {
+  display: none;
+}
+.messaging-area-container .messaging-area .messages-area .messages {
+  height: 500px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-height: 670px) {
+  .messaging-area-container .messaging-area .messages-area .messages {
+    height: 400px;
+  }
+}
+.messaging-area-container .messaging-area .messages-area .messages .blocktime {
+  margin: 5px 0;
+  clear: both;
+  font-size: 12px;
+  color: #a1a1a1;
+  text-align: center;
+}
+.messaging-area-container .messaging-area .messages-area .messages .message .deletemessagecheckbox {
+  display: none;
+  padding-top: 5px;
+  text-align: center;
+}
+.messaging-area-container .messaging-area .messages-area .messages .message .content {
+  position: relative;
+  max-width: 55%;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  word-wrap: break-word;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+}
+.messaging-area-container .messaging-area .messages-area .messages .message .content .text {
+  display: block;
+}
+.messaging-area-container .messaging-area .messages-area .messages .message .content .text p {
+  margin: 0;
+}
+.messaging-area-container .messaging-area .messages-area .messages .message .content .timesent {
+  float: right;
+  font-size: 10px;
+  color: #a1a1a1;
+}
+.messaging-area-container .messaging-area .messages-area .messages .message .content.left {
+  float: left;
+}
+.messaging-area-container .messaging-area .messages-area .messages .message .content.right {
+  float: right;
+}
+.messaging-area-container .messaging-area .messages-area .response {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: table;
   width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 10px 9px;
+  line-height: 28px;
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #e3e3e3;
+  border-bottom-right-radius: 4px;
+  -webkit-transition: background-color linear .2s;
+       -o-transition: background-color linear .2s;
+          transition: background-color linear .2s;
+}
+.messaging-area-container .messaging-area .messages-area .response .delete-confirmation {
+  display: none;
+}
+.messaging-area-container .messaging-area .messages-area .response .delete-confirmation .btn.btn-link.confirm {
+  border: 1px solid #4f94cd;
+  border-radius: 4px;
+}
+.messaging-area-container .messaging-area .messages-area .response .delete-confirmation .btn.btn-link.confirm:hover {
+  color: #fff;
+  text-shadow: none;
+  background-color: #4f94cd;
+}
+.messaging-area-container .messaging-area .messages-area .response .message-box {
+  display: table-row;
+}
+.messaging-area-container .messaging-area .messages-area .response .message-box .message-text-container {
+  display: table-cell;
+}
+.messaging-area-container .messaging-area .messages-area .response .message-box .message-text-container textarea {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 4px 6px;
+  margin: 0;
+  line-height: 20px;
+  vertical-align: middle;
+  resize: none;
+  background-color: #f5f5f5;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color linear .2s;
+       -o-transition: background-color linear .2s;
+          transition: background-color linear .2s;
+}
+.messaging-area-container .messaging-area .messages-area .response .message-box .message-text-container textarea:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.messaging-area-container .messaging-area .messages-area .response .message-box .send-button-container {
+  display: table-cell;
+  width: 1px;
+}
+.messaging-area-container .messaging-area .messages-area .response .message-box .send-button-container button {
+  height: 30px;
+}
+.messaging-area-container .messaging-area .messages-area .response.messaging {
+  background-color: #f5f5f5;
+  -webkit-transition: background-color linear .2s;
+       -o-transition: background-color linear .2s;
+          transition: background-color linear .2s;
+}
+.messaging-area-container .messaging-area .messages-area .response.messaging .message-box .message-text-container textarea {
+  background-color: #fff;
+  -webkit-transition: background-color linear .2s;
+       -o-transition: background-color linear .2s;
+          transition: background-color linear .2s;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages-header .btn-container.view-all {
+  display: none;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages-header .btn-container.delete-all {
+  display: block;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages-header .delete-instructions {
+  display: block;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages-header .name-container {
+  display: none;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages-header .actions .messages-delete {
+  display: none;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages-header .actions .cancel-messages-delete {
+  display: block;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages .message {
+  cursor: pointer;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages .message[aria-checked="true"] .content {
+  color: #fff;
+  background-color: #4f94cd;
+  border-color: #4f94cd;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages .message[aria-checked="true"] .content .timesent {
+  color: #fff;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages .message[aria-checked="false"] .content:hover {
+  color: #fff;
+  background-color: #79b5e6;
+}
+.messaging-area-container .messaging-area .messages-area.editing .messages .message[aria-checked="false"] .content:hover .timesent {
+  color: #fff;
+}
+.messaging-area-container .messaging-area .messages-area.editing .response .delete-confirmation {
+  display: block;
+}
+.messaging-area-container .messaging-area .messages-area.editing .response .message-box {
+  display: none;
+}
+.preferences-container .container-fluid {
+  padding: 0;
+}
+.preferences-container .container-fluid .span6 {
+  min-height: 20px;
+}
+.preferences-container .align-bottom {
+  vertical-align: bottom;
+}
+.preferences-container .preference-table {
+  border: 1px solid #ddd;
+}
+.preferences-container .preference-table thead th {
+  text-align: center;
+}
+.preferences-container .preference-table thead th .config-warning {
+  display: none;
+}
+.preferences-container .preference-table thead th.unconfigured .config-warning {
+  display: inline-block;
+}
+.preferences-container .preference-table tr td:not(:first-child) {
+  width: 150px;
+  text-align: center;
+}
+.preferences-container .preference-table tr td:nth-child(even) {
+  background-color: #f7f7f7;
+}
+.preferences-container .preference-table tr th:nth-child(even) {
+  background-color: #f7f7f7;
+}
+.preferences-container .preference-table .preference-row .hover-tooltip-container {
+  display: inline-block;
+}
+.preferences-container .preference-table .preference-row .preference-name {
+  vertical-align: middle;
+}
+.preferences-container .preference-table .preference-row .disabled-message {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.preferences-container .preference-table .preference-row .preference-state {
+  display: inline-block;
   padding: 0;
   margin: 0;
+  vertical-align: middle;
 }
-.box.message .messagearea .messagesend .mform fieldset .fitem .felement #id_submitbutton,
-.box.message .messagearea .messagesend .mform fieldset.hidden > div #id_submitbutton {
-  margin: 5px 0 0 0;
+.preferences-container .preference-table .preference-row .preference-state input[type="checkbox"]:checked + .preference-state-status-container {
+  background-color: #5cb85c;
 }
-.box.message .messagearea .messagesend .mform .fitemtitle,
-.box.message .messagearea .messagesend .mform .form-label {
-  float: none;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-family: inherit;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
-  text-align: left;
+.preferences-container .preference-table .preference-row .preference-state input[type="checkbox"]:checked + .preference-state-status-container .on-text {
+  display: inline-block;
 }
-.box.message .messagearea .messagesend .mform .fitemtitle small,
-.box.message .messagearea .messagesend .mform .form-label small,
-.box.message .messagearea .messagesend .mform .fitemtitle .small,
-.box.message .messagearea .messagesend .mform .form-label .small {
-  font-weight: normal;
-  line-height: 1;
-  color: #777;
-}
-.box.message .messagearea .messagesend .mform .fitemtitle small,
-.box.message .messagearea .messagesend .mform .form-label small,
-.box.message .messagearea .messagesend .mform .fitemtitle .small,
-.box.message .messagearea .messagesend .mform .form-label .small {
-  font-size: 65%;
-}
-.box.message .messagearea .messagesend .mform fieldset .fitem {
-  margin: 0;
-}
-.box.message .messagearea .messagesend .mform .fitem_ftextarea {
-  margin: 15px;
-}
-#newmessageoverlay {
-  position: absolute;
-  position: fixed;
-  top: 0;
-  top: inherit;
-  right: 5px;
-  bottom: 5px;
-  left: 0;
-  left: inherit;
-  z-index: 1060;
+.preferences-container .preference-table .preference-row .preference-state input[type="checkbox"]:checked + .preference-state-status-container .off-text {
   display: none;
-  display: block;
-  width: 276px;
-  max-width: 276px;
-  padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: left;
-  text-align: start;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-break: normal;
-  word-spacing: normal;
-  word-wrap: normal;
-  white-space: normal;
-  background-color: #fff;
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, .2);
-  border-radius: 6px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-
-  line-break: auto;
 }
-#newmessageoverlay.top {
-  margin-top: -10px;
-}
-#newmessageoverlay.right {
-  margin-left: 10px;
-}
-#newmessageoverlay.bottom {
-  margin-top: 10px;
-}
-#newmessageoverlay.left {
-  margin-left: -10px;
-}
-#newmessageoverlay.top > .arrow {
-  bottom: -11px;
-  left: 50%;
-  margin-left: -11px;
-  border-top-color: #999;
-  border-top-color: rgba(0, 0, 0, .25);
-  border-bottom-width: 0;
-}
-#newmessageoverlay.top > .arrow:after {
-  bottom: 1px;
-  margin-left: -10px;
-  content: " ";
-  border-top-color: #fff;
-  border-bottom-width: 0;
-}
-#newmessageoverlay.right > .arrow {
-  top: 50%;
-  left: -11px;
-  margin-top: -11px;
-  border-right-color: #999;
-  border-right-color: rgba(0, 0, 0, .25);
-  border-left-width: 0;
-}
-#newmessageoverlay.right > .arrow:after {
-  bottom: -10px;
-  left: 1px;
-  content: " ";
-  border-right-color: #fff;
-  border-left-width: 0;
-}
-#newmessageoverlay.bottom > .arrow {
-  top: -11px;
-  left: 50%;
-  margin-left: -11px;
-  border-top-width: 0;
-  border-bottom-color: #999;
-  border-bottom-color: rgba(0, 0, 0, .25);
-}
-#newmessageoverlay.bottom > .arrow:after {
-  top: 1px;
-  margin-left: -10px;
-  content: " ";
-  border-top-width: 0;
-  border-bottom-color: #fff;
-}
-#newmessageoverlay.left > .arrow {
-  top: 50%;
-  right: -11px;
-  margin-top: -11px;
-  border-right-width: 0;
-  border-left-color: #999;
-  border-left-color: rgba(0, 0, 0, .25);
-}
-#newmessageoverlay.left > .arrow:after {
-  right: 1px;
-  bottom: -10px;
-  content: " ";
-  border-right-width: 0;
-  border-left-color: #fff;
-}
-#newmessageoverlay a {
-  text-decoration: underline;
-}
-#newmessageoverlay #newmessagetext {
-  padding: 8px 14px;
-  margin: 0;
-  font-size: 14px;
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #ebebeb;
-  border-radius: 5px 5px 0 0;
-}
-#newmessageoverlay #usermessage {
-  padding: 9px 14px;
-  margin-top: 5px;
-  background-color: #fff;
-  border: 1px dotted rgba(0, 0, 0, .2);
+.preferences-container .preference-table .preference-row .preference-state .preference-state-status-container {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  background-color: #d9534f;
   border-radius: 4px;
 }
-#newmessageoverlay #newmessagelinks {
-  margin: 5px 14px;
-}
-/** Messenger send message dialog */
-.core_message-messenger-sendmessage-hidden {
+.preferences-container .preference-table .preference-row .preference-state .preference-state-status-container .loading-icon {
   display: none;
 }
-.core_message-messenger-sendmessage .message-actions {
+.preferences-container .preference-table .preference-row .preference-state .preference-state-status-container .on-text {
+  display: none;
+}
+.preferences-container .preference-table .preference-row .preference-state .preference-state-status-container .off-text {
+  display: inline-block;
+}
+.preferences-container .preference-table .preference-row .preference-state.loading input[type="checkbox"]:checked + .preference-state-status-container .on-text,
+.preferences-container .preference-table .preference-row .preference-state.loading input[type="checkbox"]:checked + .preference-state-status-container .off-text {
+  display: none;
+}
+.preferences-container .preference-table .preference-row .preference-state.loading .preference-state-status-container .on-text,
+.preferences-container .preference-table .preference-row .preference-state.loading .preference-state-status-container .off-text {
+  display: none;
+}
+.preferences-container .preference-table .preference-row .preference-state.loading .preference-state-status-container .loading-icon {
+  display: block;
+}
+.preferences-container .preference-table .preference-row.loading .preference-name .loading-icon {
+  display: block;
+}
+.disabled-message {
+  display: none;
+}
+.disabled .disabled-message {
+  display: block;
+}
+.disabled .disabled-message + form {
+  display: none;
+}
+.general-settings-container .loading-icon {
+  display: none;
+}
+.general-settings-container .loading .loading-icon {
+  display: inline-block;
+}
+.general-settings-container label {
+  display: inline-block;
+}
+.processor-container {
   position: relative;
 }
-.core_message-messenger-sendmessage .message-area {
-  position: relative;
-  height: 240px;
-  max-height: 100%;
-  margin-bottom: 10px;
-}
-.core_message-messenger-sendmessage .message-input {
+.processor-container .loading-container {
+  position: absolute;
+  display: none;
   width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .5);
+}
+.processor-container .loading-container .vertical-align {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+.processor-container.loading .loading-container {
+  display: block;
+}
+.preferences-page-container .checkbox-container {
+  margin: 30px 5px;
+  line-height: 20px;
+}
+.preferences-page-container .checkbox-container input {
+  margin: 0;
+  line-height: 20px;
+}
+.preferences-page-container .checkbox-container .loading-icon {
+  display: none;
+}
+.preferences-page-container .checkbox-container.loading .loading-icon {
+  display: inline-block;
+}
+.notification-area {
+  height: 600px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 30px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+}
+@media (max-height: 670px) {
+  .notification-area {
+    height: 500px;
+  }
+}
+.notification-area .control-area {
+  display: inline-block;
+  width: 300px;
   height: 100%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-right: 1px solid #e3e3e3;
 }
-.core_message-messenger-sendmessage .message-send {
-  float: right;
-  margin: 0;
+.notification-area .control-area .content {
+  position: relative;
 }
-.core_message-messenger-sendmessage .message-notice-area {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: table;
-  width: 100%;
-  height: 100%;
+.notification-area .control-area .content .content-item-container {
+  cursor: pointer;
 }
-.core_message-messenger-sendmessage .message-notice {
-  display: table-cell;
+.notification-area .control-area .content:empty + .empty-text {
+  display: block;
+}
+.notification-area .control-area .loading-icon {
+  display: none;
+}
+.notification-area .control-area .empty-text {
+  display: none;
+  padding-top: 20px;
   text-align: center;
-  vertical-align: middle;
 }
-.core_message-messenger-sendmessage .message-notice > div {
+.notification-area .control-area.loading .loading-icon {
+  display: block;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 5px;
-  font-size: 12px;
-  background: #eee;
+  text-align: center;
 }
-.core_message-messenger-sendmessage .message-footer {
-  margin-top: 3px;
-  line-height: 20px;
+.notification-area .control-area.loading .content:empty + .empty-text {
+  display: none;
 }
-.core_message-messenger-sendmessage .message-history {
-  position: absolute;
-  bottom: 0;
+.notification-area .content-area {
+  display: inline-block;
+  float: right;
+  width: -webkit-calc(100% - 300px);
+  width:         calc(100% - 300px);
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.notification-area .content-area .toggle-mode {
+  display: none;
+}
+.notification-area .content-area .header {
+  height: 50px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.notification-area .content-area .header .image-container {
+  display: inline-block;
+  float: left;
+  width: 24px;
+  height: 25px;
+}
+.notification-area .content-area .header .subject-container {
+  display: inline-block;
+  max-width: -webkit-calc(100% - 24px);
+  max-width:         calc(100% - 24px);
+  height: 25px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.notification-area .content-area .header .timestamp {
+  margin: 0;
+  margin-left: 30px;
+  font-size: 10px;
+  line-height: 10px;
+  color: #666;
+}
+.notification-area .content-area .header:empty {
+  display: none;
+}
+.notification-area .content-area > .content {
+  height: 500px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-height: 670px) {
+  .notification-area .content-area > .content {
+    height: 400px;
+  }
+}
+.notification-area .content-area > .content:empty {
+  display: none;
+}
+.notification-area .content-area > .content:empty + .empty-text {
+  display: block;
+  padding-top: 100px;
+  text-align: center;
+}
+.notification-area .content-area .empty-text {
+  display: none;
+}
+.notification-area .content-area .footer {
+  height: 50px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+.notification-area .content-area .footer a {
+  line-height: 50px;
+}
+.notification-area .content-area .footer:empty {
+  display: none;
+}
+@media (max-width: 979px) {
+  .messaging-area-container .messaging-area {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+  }
+  .messaging-area-container .messaging-area .messages-area .messages-header .btn-container.view-toggle {
+    display: block;
+  }
+  .messaging-area-container .messaging-area .messages-area .messages-header .btn-container.delete-all {
+    display: none;
+  }
+  .messaging-area-container .messaging-area .messages-area .profile-header {
+    display: block;
+  }
+  .messaging-area-container .messaging-area .messages-area .profile {
+    height: 550px;
+  }
+  .messaging-area-container .messaging-area .messages-area.editing .messages-header .btn-container.view-toggle {
+    display: none;
+  }
+  .messaging-area-container .messaging-area .messages-area.editing .messages-header .btn-container.delete-all {
+    display: block;
+  }
+  .messaging-area-container .messaging-area .contacts-area {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    border-right: none;
+  }
+  .messaging-area-container .messaging-area .messages-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+  }
+  .messaging-area-container .messaging-area.show-messages .contacts-area {
+    left: -100%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: left .25s, opacity .25s, visibility .25s;
+         -o-transition: left .25s, opacity .25s, visibility .25s;
+            transition: left .25s, opacity .25s, visibility .25s;
+  }
+  .messaging-area-container .messaging-area.show-messages .messages-area {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: right .25s, opacity .25s, visibility .25s;
+         -o-transition: right .25s, opacity .25s, visibility .25s;
+            transition: right .25s, opacity .25s, visibility .25s;
+  }
+  .messaging-area-container .messaging-area.hide-messages .contacts-area {
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: left .25s, opacity .25s, visibility .25s;
+         -o-transition: left .25s, opacity .25s, visibility .25s;
+            transition: left .25s, opacity .25s, visibility .25s;
+  }
+  .messaging-area-container .messaging-area.hide-messages .contacts-area .contact.selected {
+    color: inherit;
+    background-color: inherit;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .messaging-area-container .messaging-area.hide-messages .contacts-area .contact.selected:hover {
+    color: #fff;
+    background-color: #4f94cd;
+    background-color: #79b5e6;
+    border: none;
+  }
+  .messaging-area-container .messaging-area.hide-messages .contacts-area .contact.selected:hover .information .lastmessage {
+    color: #fff;
+  }
+  .messaging-area-container .messaging-area.hide-messages .contacts-area .contact.selected:hover .picture {
+    border: none;
+  }
+  .messaging-area-container .messaging-area.hide-messages .contacts-area .contact.selected .picture {
+    border-bottom: 1px solid #fff;
+  }
+  .messaging-area-container .messaging-area.hide-messages .contacts-area .contact.selected .information .lastmessage {
+    color: #a1a1a1;
+  }
+  .messaging-area-container .messaging-area.hide-messages .messages-area {
+    right: -100%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: right .25s, opacity .25s, visibility .25s;
+         -o-transition: right .25s, opacity .25s, visibility .25s;
+            transition: right .25s, opacity .25s, visibility .25s;
+  }
+  .notification-area {
+    position: relative;
+    overflow: hidden;
+  }
+  .notification-area .control-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: visible;
+    border-right: none;
+    opacity: 1;
+    -webkit-transition: left .25s;
+         -o-transition: left .25s;
+            transition: left .25s;
+  }
+  .notification-area .content-area {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: right .25s, opacity .25s, visibility .25s;
+         -o-transition: right .25s, opacity .25s, visibility .25s;
+            transition: right .25s, opacity .25s, visibility .25s;
+  }
+  .notification-area .content-area .toggle-mode {
+    display: inline-block;
+    float: left;
+    width: 70px;
+    height: 50px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    line-height: 50px;
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .notification-area .content-area .header {
+    display: inline-block;
+    width: -webkit-calc(100% - 70px);
+    width:         calc(100% - 70px);
+  }
+  .notification-area.show-content-area .control-area {
+    left: -100%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: left .25s, opacity .25s, visibility .25s;
+         -o-transition: left .25s, opacity .25s, visibility .25s;
+            transition: left .25s, opacity .25s, visibility .25s;
+  }
+  .notification-area.show-content-area .content-area {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: right .25s;
+         -o-transition: right .25s;
+            transition: right .25s;
+  }
+}
+@media (max-width: 979px) and (max-height: 670px) {
+  .messaging-area-container .messaging-area {
+    height: 500px;
+  }
+}
+@media (max-width: 480px) {
+  .messaging-area-container .messaging-area .messages-area.editing .messages-header {
+    height: 80px;
+  }
+  .messaging-area-container .messaging-area .messages-area.editing .messages-header .delete-all {
+    top: 30px;
+  }
+  .messaging-area-container .messaging-area .messages-area.editing .messages-header .actions {
+    top: 30px;
+  }
+  .messaging-area-container .messaging-area .messages-area.editing .messages {
+    height: 470px;
+  }
 }
 /* Question */
 .questionbank h2 {
@@ -14615,7 +14835,7 @@ textarea.mform .fitem .felement input[type="password"] {
   display: none;
 }
 .mform .containsadvancedelements .advanced.show {
-  display: block;
+  display: block !important;
 }
 .mform fieldset.group {
   margin-bottom: 0;
@@ -18538,4 +18758,570 @@ fieldset[disabled] #page-mod-feedback-edit input[type="submit"].active {
 }
 div.feedback_item_commands_left {
   text-align: right;
+}
+.popover-region {
+  position: relative;
+  float: right;
+}
+.popover-region.collapsed .popover-region-toggle:before,
+.popover-region.collapsed .popover-region-toggle:after {
+  display: none;
+}
+.popover-region.collapsed .popover-region-container {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: height .25s, opacity 101ms .25s, visibility 101ms .25s;
+       -o-transition: height .25s, opacity 101ms .25s, visibility 101ms .25s;
+          transition: height .25s, opacity 101ms .25s, visibility 101ms .25s;
+}
+.popover-region-toggle {
+  cursor: pointer;
+}
+.popover-region-toggle::before {
+  position: absolute;
+  right: 7px;
+  bottom: 0;
+  display: inline-block;
+  content: '';
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ddd;
+  border-left: 10px solid transparent;
+}
+.popover-region-toggle::after {
+  position: absolute;
+  right: 8px;
+  bottom: -1px;
+  z-index: 2;
+  display: inline-block;
+  content: '';
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #fff;
+  border-left: 9px solid transparent;
+}
+.count-container {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  padding: 2px;
+  font-size: 10px;
+  line-height: 10px;
+  color: white;
+  background-color: red;
+  border-radius: 2px;
+}
+.popover-region-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 380px;
+  height: 500px;
+  visibility: visible;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  opacity: 1;
+  -webkit-transition: height .25s;
+       -o-transition: height .25s;
+          transition: height .25s;
+}
+.popover-region-header-container {
+  height: 25px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-right: 5px;
+  padding-left: 5px;
+  line-height: 25px;
+  border-bottom: 1px solid #ddd;
+}
+.popover-region-footer-container {
+  height: 30px;
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+.popover-region-footer-container .popover-region-seeall-text {
+  padding-top: 4px;
+}
+.popover-region-header-text {
+  float: left;
+  margin: 0;
+  font-size: 14px;
+  line-height: 25px;
+}
+.popover-region-header-actions {
+  float: right;
+}
+.popover-region-header-actions > * {
+  display: inline-block;
+  min-width: 20px;
+  margin-left: 10px;
+}
+.popover-region-header-actions .loading-icon {
+  display: none;
+  width: 12px;
+  height: 12px;
+}
+.popover-region-header-actions .newmessage-link {
+  margin-right: 10px;
+}
+.popover-region-header-actions label {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+}
+.popover-region-content-container {
+  width: 100%;
+  height: -webkit-calc(100% - 56px);
+  height:         calc(100% - 56px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.popover-region-content-container > .loading-icon {
+  display: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+  text-align: center;
+}
+.popover-region-content-container .empty-message {
+  display: none;
+  padding: 10px;
+  text-align: center;
+}
+.popover-region-content-container.loading > .loading-icon {
+  display: block;
+}
+.popover-region-content-container.loading .empty-message {
+  display: none;
+}
+.navbar .popover-region {
+  float: left;
+}
+.navbar .popover-region.collapsed .popover-region-container {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: height .25s, opacity 101ms .25s, visibility 101ms .25s;
+       -o-transition: height .25s, opacity 101ms .25s, visibility 101ms .25s;
+          transition: height .25s, opacity 101ms .25s, visibility 101ms .25s;
+}
+.navbar .popover-region-toggle {
+  height: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  line-height: 50px;
+}
+.navbar .popover-region-toggle img {
+  width: 16px;
+  height: 16px;
+}
+.navbar .count-container {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  padding: 2px;
+  font-size: 10px;
+  line-height: 10px;
+  color: white;
+  background-color: red;
+  border-radius: 2px;
+}
+.navbar .popover-region-container {
+  top: 50px;
+}
+.content-item-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+  margin: 0;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+.content-item-container:hover {
+  color: #fff;
+  background-color: #79b5e6;
+}
+.content-item-container:hover .content-item-footer .timestamp {
+  color: #fff;
+}
+.content-item-container.unread {
+  margin: 0;
+  background-color: #f4f4f4;
+}
+.content-item-container.unread:hover {
+  color: #fff;
+  background-color: #79b5e6;
+}
+.content-item-container.unread .content-item-body .notification-message {
+  font-weight: 600;
+}
+.content-item-container .context-link {
+  color: inherit;
+  text-decoration: none;
+}
+.content-item-container .content-item-body {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 5px;
+}
+.content-item-container .content-item-footer {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: left;
+}
+.content-item-container .content-item-footer .timestamp {
+  margin: 0;
+  margin-left: 24px;
+  font-size: 10px;
+  line-height: 10px;
+  color: #666;
+}
+.content-item-container .view-more {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: 12px;
+  line-height: 12px;
+}
+.content-item-container.notification .content-item-body .notification-image {
+  display: inline-block;
+  float: left;
+  width: 24px;
+  height: 24px;
+}
+.content-item-container.notification .content-item-body .notification-image img {
+  height: 75%;
+}
+.content-item-container.notification .content-item-body .notification-message {
+  display: inline-block;
+  width: -webkit-calc(100% - 24px);
+  width:         calc(100% - 24px);
+  font-size: 12px;
+}
+.content-item-container.selected {
+  color: #fff;
+  background-color: #4f94cd;
+  border-color: #4f94cd;
+}
+.content-item-container.selected .content-item-footer .timestamp {
+  color: #fff;
+}
+.popover-region-notifications .popover-region-header-container .mark-all-read-button .normal-icon {
+  display: inline-block;
+}
+.popover-region-notifications .popover-region-header-container .mark-all-read-button.loading .normal-icon {
+  display: none;
+}
+.popover-region-notifications .popover-region-header-container .mark-all-read-button.loading .loading-icon {
+  display: inline-block;
+}
+.popover-region-notifications .all-notifications {
+  height: auto;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+}
+.popover-region-notifications .all-notifications:empty + .empty-message {
+  display: block;
+}
+.popover-region-notifications .notification-image {
+  display: inline-block;
+  width: 8%;
+  vertical-align: top;
+}
+.popover-region-notifications .notification-image img {
+  height: 75%;
+}
+.popover-region-notifications .notification-message {
+  display: inline-block;
+  width: 90%;
+  font-size: 12px;
+}
+.popover-region-notifications .popover-region-content-container.loading .all-notifications:empty + .empty-message {
+  display: none;
+}
+.popover-region-messages .mark-all-read-button .normal-icon {
+  display: inline-block;
+}
+.popover-region-messages .mark-all-read-button.loading .normal-icon {
+  display: none;
+}
+.popover-region-messages .mark-all-read-button.loading .loading-icon {
+  display: inline-block;
+}
+.popover-region-messages .popover-region-content-container.loading .popover-region-content .messages:empty + .empty-message {
+  display: none;
+}
+.popover-region-messages .messages:empty + .empty-message {
+  display: block;
+}
+.popover-region-messages .content-item-container.unread .content-item-body {
+  width: -webkit-calc(90% - 30px);
+  width:         calc(90% - 30px);
+  font-weight: 600;
+}
+.popover-region-messages .content-item-container.unread .unread-count-container {
+  display: inline-block;
+  float: right;
+  width: 10%;
+  text-align: center;
+}
+.popover-region-messages .content-item {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.popover-region-messages .profile-image-container {
+  display: inline-block;
+  float: left;
+  width: 30px;
+  text-align: center;
+}
+.popover-region-messages .profile-image-container img {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.popover-region-messages .content-item-body {
+  display: inline-block;
+  width: -webkit-calc(100% - 30px);
+  width:         calc(100% - 30px);
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 10px;
+  overflow: hidden;
+  font-size: 12px;
+}
+.popover-region-messages .content-item-body h3 {
+  width: 100%;
+  margin: 0;
+  font-size: 12px;
+  line-height: 12px;
+}
+.popover-region-messages .content-item-body p {
+  margin: 0;
+}
+.popover-region-messages .unread-count-container {
+  display: none;
+}
+.dir-rtl .popover-region .popover-region-container {
+  right: auto;
+  left: 0;
+}
+.dir-rtl .popover-region .popover-region-header-text {
+  float: right;
+}
+.dir-rtl .popover-region .popover-region-header-actions {
+  float: left;
+}
+.dir-rtl .popover-region .popover-region-header-actions .newmessage-link {
+  margin-left: 10px;
+}
+.dir-rtl .navbar .popover-region {
+  float: left;
+}
+.dir-rtl .navbar .popover-region-container::before {
+  right: auto;
+  left: 7px;
+}
+.dir-rtl .navbar .popover-region-container::after {
+  right: auto;
+  left: 8px;
+}
+.dir-rtl .navbar .popover-region-header-text {
+  float: right;
+}
+.dir-rtl .navbar .popover-region-header-actions {
+  float: left;
+}
+.dir-rtl .popover-region-messages .profile-image-container {
+  float: right;
+}
+.dir-rtl .popover-region-messages .content-item-body {
+  padding-right: 10px;
+  padding-left: 0;
+}
+.dir-rtl .popover-region-messages .unread-count-container {
+  float: left;
+}
+@media (max-width: 767px) {
+  .navbar .popover-region .popover-region-container {
+    right: -70px;
+  }
+}
+@media (max-width: 480px) {
+  .navbar .popover-region .popover-region-container {
+    position: fixed;
+    top: 46px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+  }
+}
+/**
+ * Tour step must sit above all other UI components.
+ * The backdrop is the lowest point in the tour.
+ * Everything else is in the container, and the target background should be at the same z-index.
+ * ----- moodle
+ *  ---- step backdrop
+ *   --- step container
+ *   --- step target background
+ */
+div[data-flexitour="backdrop"] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  z-index: 4030;
+  background-color: #000;
+}
+div[data-flexitour="backdrop"].fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+div[data-flexitour="backdrop"].in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+div[data-flexitour="step-background-fader"],
+div[data-flexitour="step-background"] {
+  z-index: 4031;
+  border-radius: 4px;
+}
+span[data-flexitour="container"],
+div[data-flexitour="step-background-fader"],
+[data-flexitour="step-backdrop"] > td,
+[data-flexitour="step-backdrop"] {
+  z-index: 4032;
+}
+span[data-flexitour="container"] .modal-dialog {
+  /**
+         * Remove all margins to:
+         * 1) ensure that the arrow touches the target; and
+         * 2) ensure that the focus border touches the modal.
+         */
+  margin: 0;
+}
+span[data-flexitour="container"] div[data-role="flexitour-step"] {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+span[data-flexitour="container"] div[data-role="flexitour-step"] > div {
+  display: block;
+  margin: 0;
+}
+span[data-flexitour="container"] div[data-role="arrow"] {
+  border-width: 11px;
+}
+span[data-flexitour="container"] div[data-role="arrow"]:after {
+  content: " ";
+}
+span[data-flexitour="container"] div[data-role="arrow"],
+span[data-flexitour="container"] div[data-role="arrow"]:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 10px;
+}
+span[data-flexitour="container"][x-placement="top"],
+span[data-flexitour="container"][x-placement="top-start"] {
+  margin-bottom: 10px;
+}
+span[data-flexitour="container"][x-placement="top"] div[data-role="arrow"],
+span[data-flexitour="container"][x-placement="top-start"] div[data-role="arrow"] {
+  bottom: -10px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-color: rgba(0, 0, 0, .25);
+  border-bottom-width: 0;
+}
+span[data-flexitour="container"][x-placement="top"] div[data-role="arrow"]:after,
+span[data-flexitour="container"][x-placement="top-start"] div[data-role="arrow"]:after {
+  bottom: 1px;
+  margin-left: -10px;
+  border-top-color: #fff;
+  border-bottom-width: 0;
+}
+span[data-flexitour="container"][x-placement="bottom"],
+span[data-flexitour="container"][x-placement="bottom-start"] {
+  margin-top: 10px;
+}
+span[data-flexitour="container"][x-placement="bottom"] div[data-role="arrow"],
+span[data-flexitour="container"][x-placement="bottom-start"] div[data-role="arrow"] {
+  top: -10px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: rgba(0, 0, 0, .25);
+}
+span[data-flexitour="container"][x-placement="bottom"] div[data-role="arrow"]:after,
+span[data-flexitour="container"][x-placement="bottom-start"] div[data-role="arrow"]:after {
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: #fff;
+}
+span[data-flexitour="container"][x-placement="left"],
+span[data-flexitour="container"][x-placement="left-start"] {
+  margin-right: 10px;
+}
+span[data-flexitour="container"][x-placement="left"] div[data-role="arrow"],
+span[data-flexitour="container"][x-placement="left-start"] div[data-role="arrow"] {
+  top: 50%;
+  right: -10px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: rgba(0, 0, 0, .25);
+}
+span[data-flexitour="container"][x-placement="left"] div[data-role="arrow"]:after,
+span[data-flexitour="container"][x-placement="left-start"] div[data-role="arrow"]:after {
+  right: 1px;
+  margin-top: -10px;
+  border-right-width: 0;
+  border-left-color: #fff;
+}
+span[data-flexitour="container"][x-placement="right"],
+span[data-flexitour="container"][x-placement="right-start"] {
+  margin-left: 10px;
+}
+span[data-flexitour="container"][x-placement="right"] div[data-role="arrow"],
+span[data-flexitour="container"][x-placement="right-start"] div[data-role="arrow"] {
+  top: 50%;
+  left: -10px;
+  margin-top: -11px;
+  border-right-color: rgba(0, 0, 0, .25);
+  border-left-width: 0;
+}
+span[data-flexitour="container"][x-placement="right"] div[data-role="arrow"]:after,
+span[data-flexitour="container"][x-placement="right-start"] div[data-role="arrow"]:after {
+  left: 1px;
+  margin-top: -10px;
+  border-right-color: #fff;
+  border-left-width: 0;
 }
