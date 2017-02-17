@@ -50,10 +50,6 @@
  *                                 when your theme is not in the
  *                                 standard location.
  *
- * grunt amd     Create the Asynchronous Module Definition JavaScript files.  See: MDL-49046.
- *               Done here as core Gruntfile.js currently *nix only.
- *
- *
  *
  * Plumbing tasks & targets:
  * -------------------------
@@ -96,16 +92,18 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-module.exports = function(grunt) { // jshint ignore:line
+// jshint node: true, strict: false
+
+module.exports = function(grunt) {
 
     // Import modules.
     var path = require('path');
 
     // PHP strings for exec task.
-    var moodleroot = path.dirname(path.dirname(__dirname)), // jshint ignore:line
+    var moodleroot = path.dirname(path.dirname(__dirname)),
         configfile = '',
         decachephp = '',
-        dirrootopt = grunt.option('dirroot') || process.env.MOODLE_DIR || ''; // jshint ignore:line
+        dirrootopt = grunt.option('dirroot') || process.env.MOODLE_DIR || '';
 
     // Allow user to explicitly define Moodle root dir.
     if ('' !== dirrootopt) {
@@ -262,6 +260,8 @@ module.exports = function(grunt) { // jshint ignore:line
         }
     });
 
+    require('time-grunt')(grunt); // jshint ignore:line
+
     // Load contrib tasks.
     grunt.loadNpmTasks("grunt-autoprefixer");
     grunt.loadNpmTasks("grunt-contrib-less");
@@ -286,8 +286,10 @@ module.exports = function(grunt) { // jshint ignore:line
         "cssflip",
         "replace:rtl_images",
         "autoprefixer",
-        'csscomb',
-        'cssmin',
-        "decache"]);
+        "csscomb",
+        "cssmin",
+        "decache"
+    ]);
+
     grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };

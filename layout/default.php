@@ -40,18 +40,13 @@ echo $OUTPUT->doctype() ?>
 <nav role="navigation" class="navbar navbar-default">
     <div class="container-fluid">
     <div class="navbar-header pull-left">
-        <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+        <?php echo $OUTPUT->navbar_brand(); ?>
     </div>
     <div class="navbar-header pull-right">
         <?php echo $OUTPUT->navbar_plugin_output(); ?>
         <?php echo $OUTPUT->user_menu(); ?>
+        <?php echo $OUTPUT->navbar_button(); ?>
 
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
     </div>
     <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
         <?php echo $OUTPUT->custom_menu(); ?>
@@ -72,7 +67,7 @@ echo $OUTPUT->doctype() ?>
 <div id="page" class="container-fluid">
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+            <?php echo $OUTPUT->navbar(); ?>
             <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
         </div>
 

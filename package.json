@@ -8,9 +8,17 @@
     "url": "http://www.iamjoby.com"
   },
   "contributors": [
-    { "name": "David Scotson" },
-    { "name": "Bas Brands", "url": "http://www.basbrands.nl" },
-    { "name": "Gareth J Barnard", "url": "http://about.me/gjbarnard" }
+    {
+      "name": "David Scotson"
+    },
+    {
+      "name": "Bas Brands",
+      "url": "http://www.basbrands.nl"
+    },
+    {
+      "name": "Gareth J Barnard",
+      "url": "http://about.me/gjbarnard"
+    }
   ],
   "repository": {
     "type": "git",
@@ -22,17 +30,18 @@
   "dependencies": {
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "~0.7.6",
-    "grunt-contrib-less": "~0.11.3",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-exec": "~0.4.5",
-    "grunt-text-replace": "~0.3.11",
-    "grunt-css-flip": "~0.4.0",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-cssmin": "~0.10.0",
-    "grunt-csscomb": "~2.0.1",
+    "grunt-contrib-less": "~0.11.3",
+    "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-jshint": "~0.11.0",
     "grunt-contrib-uglify": "~0.7.0",
-    "grunt-svgmin": "~0.4.0"
+    "grunt-css-flip": "~0.4.0",
+    "grunt-csscomb": "~2.0.1",
+    "grunt-exec": "~0.4.5",
+    "grunt-svgmin": "~0.4.0",
+    "time-grunt": "^1.2.1",
+    "grunt-text-replace": "~0.3.11"
   },
   "license": "GPL-3.0+"
 }

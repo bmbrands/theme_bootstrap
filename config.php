@@ -50,11 +50,7 @@ $THEME->plugins_exclude_sheets = array(
     ),
 );
 
-$THEME->lessvariablescallback = 'theme_elegance_less_variables';
-$THEME->extralesscallback = 'theme_elegance_extra_less';
-
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->csspostprocess = 'theme_bootstrap_process_css';
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
