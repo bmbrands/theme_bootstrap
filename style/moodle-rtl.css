@@ -23273,6 +23273,7 @@ div[data-flexitour="backdrop"] {
   right: 0;
   z-index: 1040;
   background-color: #000000;
+  opacity: 0.5;
   z-index: 4030;
 }
 

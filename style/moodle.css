@@ -25067,6 +25067,7 @@ div[data-flexitour='backdrop']
     bottom: 0;
     left: 0;
 
+    opacity: .5;
     background-color: #000;
 }
 div[data-flexitour='backdrop'].fade
