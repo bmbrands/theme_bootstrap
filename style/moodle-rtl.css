@@ -14834,6 +14834,12 @@ a.ygtvspacer:hover {
   margin: 5px 0;
 }
 
+.messaging-area-container .messaging-area .messages-area .messages .message:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .messaging-area-container .messaging-area .messages-area .messages .message .deletemessagecheckbox {
   display: none;
   text-align: center;
@@ -16590,6 +16596,10 @@ body.path-question-type .mform fieldset.hidden {
   padding-bottom: 15px;
 }
 
+.jsenabled .usermenu {
+  float: right;
+}
+
 .jsenabled .usermenu .moodle-actionmenu .usertext {
   display: inline-block;
   vertical-align: middle;
@@ -16715,6 +16725,37 @@ body.path-question-type .mform fieldset.hidden {
   height: inherit;
 }
 
+.ajax-contact-button {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ajax-contact-button.loading .loading-icon {
+  display: block;
+}
+
+.ajax-contact-button .loading-icon {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.ajax-contact-button .loading-icon .icon {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .userprofile .fullprofilelink {
   text-align: center;
   margin: 10px;
@@ -16746,6 +16787,7 @@ body.path-question-type .mform fieldset.hidden {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
+  margin-left: 5px;
 }
 
 .userprofile .header-button-group .btn:focus,

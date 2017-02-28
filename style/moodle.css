@@ -15897,6 +15897,13 @@ a.ygtvspacer:hover
 
     color: #a1a1a1;
 }
+.messaging-area-container .messaging-area .messages-area .messages .message:after
+{
+    display: table;
+    clear: both;
+
+    content: '';
+}
 .messaging-area-container .messaging-area .messages-area .messages .message .deletemessagecheckbox
 {
     display: none;
@@ -17820,6 +17827,10 @@ body.path-question-type .mform fieldset.hidden
     padding-top: 15px;
     padding-bottom: 15px;
 }
+.jsenabled .usermenu
+{
+    float: left;
+}
 .jsenabled .usermenu .moodle-actionmenu .usertext
 {
     line-height: 1em;
@@ -17963,6 +17974,42 @@ body.path-question-type .mform fieldset.hidden
     -webkit-box-shadow: -2px -2px 2px rgba(0, 0, 0, .125);
             box-shadow: -2px -2px 2px rgba(0, 0, 0, .125);
 }
+.ajax-contact-button
+{
+    position: relative;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.ajax-contact-button.loading .loading-icon
+{
+    display: block;
+}
+.ajax-contact-button .loading-icon
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(255, 255, 255, .7);
+}
+.ajax-contact-button .loading-icon .icon
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
 .userprofile .fullprofilelink
 {
     margin: 10px;
@@ -17994,6 +18041,8 @@ body.path-question-type .mform fieldset.hidden
 }
 .userprofile .header-button-group .btn
 {
+    margin-right: 5px;
+
     color: #333;
     border-color: #ccc;
     background-color: #fff;
