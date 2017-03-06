@@ -14923,6 +14923,7 @@ a.ygtvspacer:hover {
 }
 
 .messaging-area-container .messaging-area .messages-area .response .message-box .message-text-container textarea {
+  height: auto;
   line-height: 20px;
   padding: 4px 6px;
   vertical-align: middle;
@@ -18963,6 +18964,10 @@ input[type="checkbox"] {
 .form-autocomplete-selection [data-active-selection=true] {
   padding: 0.5em;
   font-size: large;
+}
+
+textarea[data-auto-rows] {
+  overflow-x: hidden;
 }
 
 /* modules.less */

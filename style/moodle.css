@@ -16007,6 +16007,7 @@ a.ygtvspacer:hover
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
+    height: auto;
     margin: 0;
     padding: 4px 6px;
 
@@ -20417,6 +20418,10 @@ input[type='checkbox']
     font-size: large;
 
     padding: .5em;
+}
+textarea[data-auto-rows]
+{
+    overflow-x: hidden;
 }
 /* modules.less */
 select
