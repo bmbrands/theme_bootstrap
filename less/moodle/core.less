@@ -904,16 +904,10 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     padding: 5px;
 }
 .moodle-dialogue-base .closebutton {
-    width: 25px;
-    height: 15px;
-    float: right;
-    vertical-align: middle;
-    display: inline-block;
-    cursor: pointer;
-    padding: 0;
-    background-image: url([[pix:theme|sprite]]);
-    background-repeat: no-repeat;
-    border-style: none;
+    box-shadow: none;
+    &::after {
+        content: "×";
+    }
 }
 .moodle-dialogue-base .moodle-dialogue .moodle-dialogue-bd {
     padding: 1em;
