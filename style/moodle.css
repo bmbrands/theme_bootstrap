@@ -9107,6 +9107,10 @@ img.icon.hide
 {
     display: inline !important;
 }
+.pagelayout-admin .modal.show
+{
+    display: block !important;
+}
 .gradingform_rubric
 {
     max-width: none !important;
