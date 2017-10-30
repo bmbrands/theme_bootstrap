@@ -1,37 +1,3 @@
-.path-backup .mform .grouped_settings {
-    &.section_level {
-        .well;
-        .section_level {
-            padding-left: 0;
-            .fitemtitle {
-                font-size: @font-size-large;
-            }
-        }
-    }
-    .make-row();
-    .include_setting {
-        .make-md-column(7);
-    }
-    .normal_setting {
-        .make-md-column(5);
-    }
-    .fitem {
-        .make-row();
-        .form-group;
-        .fitemtitle {
-             .make-sm-column(9);
-             .make-lg-column(9);
-        }
-        .felement {
-            .make-sm-column(3);
-            .make-lg-column(3);
-        }
-    }
-}
-
-
-
-/*
 .path-backup .mform .grouped_settings.section_level {
     .well;
     padding: 10px 0 0 0;
@@ -49,11 +15,14 @@
 .path-backup .include_setting.section_level label {
     font-weight: bold;
 }
-.path-backup .mform .fitem .fitemtitle {
+.path-backup .mform.unresponsive .fitem .fitemtitle {
     width: 260px;
 }
-*/
-
+.path-backup .mform.unresponsive .fitem .felement {
+    margin-left: 280px;
+    float: none;
+    width: auto;
+}
 .path-backup .notification.dependencies_enforced {
     text-align: center;
     color: @state-danger-text;
@@ -69,8 +38,7 @@
     font-weight: bold;
     color: inherit;
 }
-.path-backup .backup_progress .backup_stage.backup_stage_next {
-}
+
 .path-backup .backup_progress span.backup_stage.backup_stage_complete {
     color: inherit;
 }
@@ -81,7 +49,7 @@
     width: 90%;
     margin: 0.8em auto;
     background-color: @body-bg;
-    border: 1px dotted @table-border-color;
+    border: 1px dotted #666;
 }
 .path-backup .fitem .smallicon {
     vertical-align: text-bottom;
@@ -89,7 +57,16 @@
 
 .backup-restore .backup-section > h2.header,
 .backup-restore .backup-section .backup-sub-section h3 {
-    &:extend(legend);
+    // Copied from bootstrap/forms.less tag legend
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: @line-height-base;
+    font-size: @font-size-base * 1.5;
+    line-height: @line-height-base * 2;
+    color: @gray-dark;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
 }
 .backup-restore .backup-section .noticebox {
     margin: 1em auto;
@@ -141,22 +118,108 @@
 .backup-restore > .singlebutton {
     text-align: right;
 }
-.path-backup .mform .fgroup .proceedbutton {
-    float: right;
-    margin-right: 5%;
+.path-backup .mform .fgroup {
+    .proceedbutton {
+        float: right;
+        margin-right: 5%;
+
+    }
+    .oneclickbackup {
+        float: right;
+    }
 }
 .restore-course-search .rcs-results {
     width: 70%;
     min-width: 400px;
 }
+.restore-course-search .rcs-results table {
+    width: 100%;
+    margin: 0;
+    border-width: 0;
+}
 .restore-course-search .rcs-results table .no-overflow {
     max-width: 600px;
+}
+.restore-course-search .rcs-results .paging {
+    text-align: left;
+    margin: 0;
+    background-color: #eee;
+    padding: 3px;
+}
+.restore-course-category .rcs-results {
+    width: 70%;
+    min-width: 400px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+}
+.restore-course-category .rcs-results table {
+    width: 100%;
+    margin: 0;
+    border-width: 0;
 }
 .restore-course-category .rcs-results table .no-overflow {
     max-width: 600px;
 }
+.restore-course-category .rcs-results .paging {
+    text-align: left;
+    margin: 0;
+    background-color: #eee;
+    padding: 3px;
+}
 .path-backup .wibbler {
-    display: none;
+    width: 500px;
+    margin: 0 auto 10px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    position: relative;
+    min-height: 4px;
+}
+.path-backup .wibbler .wibble {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+}
+.path-backup .wibbler .state0 {
+    background: #eee;
+}
+.path-backup .wibbler .state1 {
+    background: #ddd;
+}
+.path-backup .wibbler .state2 {
+    background: #ccc;
+}
+.path-backup .wibbler .state3 {
+    background: #bbb;
+}
+.path-backup .wibbler .state4 {
+    background: #aaa;
+}
+.path-backup .wibbler .state5 {
+    background: #999;
+}
+.path-backup .wibbler .state6 {
+    background: #888;
+}
+.path-backup .wibbler .state7 {
+    background: #777;
+}
+.path-backup .wibbler .state8 {
+    background: #666;
+}
+.path-backup .wibbler .state9 {
+    background: #555;
+}
+.path-backup .wibbler .state10 {
+    background: #444;
+}
+.path-backup .wibbler .state11 {
+    background: #333;
+}
+.path-backup .wibbler .state12 {
+    background: #222;
 }
 .path-backup .backup_log {
     margin-top: 2em;
@@ -165,7 +228,7 @@
     font-size: 1em;
 }
 .path-backup .backup_log_contents {
-    border: 1px solid @table-border-color;
+    border: 1px solid #ddd;
     padding: 10px;
     height: 300px;
     overflow-y: scroll;

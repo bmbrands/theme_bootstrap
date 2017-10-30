@@ -171,6 +171,8 @@ a.disabled {
 .section li.movehere,
 .tabtree li {
     &:extend(.list-unstyled);
+    margin: 0;
+    padding: 0;
 }
 .inline,
 .inline-list li {
@@ -182,6 +184,14 @@ a.disabled {
 .notifytiny li,
 .notifytiny td {
     font-size: 100%;
+}
+.red,
+.notifyproblem {
+    color: @state-danger-text;
+}
+.green,
+.notifysuccess {
+    color: @state-success-text;
 }
 .highlight { // MDL-41506.
     background: @state-info-bg;
@@ -199,6 +209,9 @@ a.autolink.glossary:hover {
         vertical-align: middle;
     }
 }
+.pagelayout-mydashboard.jsenabled .collapsibleregioncaption {
+    cursor: pointer;
+}
 .jsenabled {
     .hiddenifjs {
         display: none;
@@ -207,7 +220,7 @@ a.autolink.glossary:hover {
         display: inline;
     }
     .collapsibleregion {
-        overflow: hidden;
+        //overflow: hidden;
     }
     .collapsed {
         .collapsibleregioninner {
@@ -285,6 +298,10 @@ img.iconsmall {
     margin-right: 3px;
     vertical-align: middle;
     width: 12px;
+    &.iconsize-big {
+        width: 64px;
+        height: 64px;
+    }
 }
 
 img.iconhelp,
@@ -363,6 +380,13 @@ img.icon-post {
 img.uihint {
     cursor: help;
 }
+#addmembersform table {
+    margin-left: auto;
+    margin-right: auto;
+}
+table.flexible .emptyrow {
+    display: none;
+}
 img.emoticon {
     vertical-align: middle;
     width: 15px;
@@ -384,11 +408,8 @@ form.popupform div {
 }
 
 .no-overflow {
-    margin-bottom: 1px;
-    overflow-y: hidden;
-    overflow-x: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+    padding-bottom: 1px;
 }
 // .pagelayout-report .no-overflow {
 //     overflow: visible;
@@ -466,6 +487,14 @@ a.skip:active {
     min-width: 80%;
     margin: 0 auto;
 }
+.groupmanagementtable #removeselect_wrapper,
+.groupmanagementtable #addselect_wrapper {
+    width: 100%;
+}
+.groupmanagementtable #removeselect_wrapper label,
+.groupmanagementtable #addselect_wrapper label {
+    font-weight: normal;
+}
 #group-usersummary {
     width: 14em;
 }
@@ -506,6 +535,9 @@ a.skip:active {
 /** Modules **/
 .mod_introbox {
     padding: 10px;
+}
+table.mod_index {
+    width: 100%;
 }
 
 /** Comments **/
@@ -634,89 +666,7 @@ a.skip:active {
     text-align: left;
     border: 0 solid black;
 }
-/**
-* Smart Select Element
-*/
-.smartselect {
-    position: absolute;
-}
-.smartselect .smartselect_mask {
-    background-color: #fff;
-}
-.smartselect ul  {
-    padding: 0;
-    margin: 0;
-}
-.smartselect ul li {
-    list-style: none;
-}
-.smartselect .smartselect_menu {
-    margin-right: 5px;
-}
-.safari .smartselect .smartselect_menu {
-    margin-left: 2px;
-}
-.smartselect .smartselect_menu,
-.smartselect .smartselect_submenu {
-    border: 1px solid #000;
-    background-color: #fff;
-    display: none;
-}
-.smartselect .smartselect_menu.visible,
-.smartselect .smartselect_submenu.visible {
-    display: block;
-}
-.smartselect .smartselect_menu_content ul li {
-    position: relative;
-    padding: 2px 5px;
-}
-.smartselect .smartselect_menu_content ul li a {
-    color: #333;
-    text-decoration: none;
-}
-.smartselect .smartselect_menu_content ul li a.selectable {
-    color: inherit;
-}
-.smartselect .smartselect_submenuitem {
-    background-image: url([[pix:t/collapsed]]);
-    background-repeat: no-repeat;
-    background-position: 100%;
-}
-/** Spanning mode */
-.smartselect.spanningmenu .smartselect_submenu {
-    position: absolute;
-    top: -1px;
-    left: 100%;
-}
-.smartselect.spanningmenu .smartselect_submenu a {
-    white-space: nowrap;
-    padding-right: 16px;
-}
-.smartselect.spanningmenu .smartselect_menu_content ul li a.selectable:hover {
-    text-decoration: underline;
-}
-/** Compact mode */
-.smartselect.compactmenu .smartselect_submenu {
-    position: relative;
-    margin: 2px -3px;
-    margin-left: 10px;
-    display: none;
-    border-width: 0;
-    z-index: 1010;
-}
-.smartselect.compactmenu .smartselect_submenu.visible {
-    display: block;
-}
-.smartselect.compactmenu .smartselect_menu {
-    z-index: 1000;
-    overflow: hidden;
-}
-.smartselect.compactmenu .smartselect_submenu .smartselect_submenu {
-    z-index: 1020;
-}
-.smartselect.compactmenu .smartselect_submenuitem:hover > .smartselect_menuitem_label {
-    font-weight: bold;
-}
+
 
 .corelightbox {
     background-color: #ccc;
@@ -830,10 +780,62 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 }
 
 .initialbar {
-    a, strong {
-        padding-left: 3px;
-        padding-right: 3px;
+
+    overflow: auto;
+
+    .initialbarlabel {
+        display: inline-block;
+        width: 6em;
+        float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
+
+    .initialbarall {
+        float: left;
+        width: 4em;
+        margin-bottom: 2px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .initialbargroups {
+        float: left;
+    }
+
+    .initialbargroup {
+        float: left;
+        display: inline-block;
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+
+        li {
+            float: left;
+            list-style: none;
+        }
+    }
+
+    .letter {
+        display: inline-block;
+        height: 1.35em;
+        min-width: 1.35em;
+        text-align: center;
+
+        color: @link-color;
+        background: @pagination-bg;
+        border-width: 1px;
+        border-color: @pagination-border;
+        border-style: solid;
+    }
+    .letter:hover,
+    .letter.active {
+        color: white;
+        background-color: @link-color;
+    }
+
 }
 /* Moodle Dialogue Settings (moodle-core-dialogue)  */
 .moodle-dialogue-base .moodle-dialogue-lightbox {
@@ -1046,6 +1048,12 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     .moodle-dialogue-bd {
         overflow: auto;
     }
+}
+
+// Show is a bootstrap 2 class - but we use it for modals. We don't want to enable it everywhere because they removed
+// it for a reason (conflicts with jquery .show()).
+.modal.show {
+    display: block;
 }
 
 /**
@@ -1370,5 +1378,58 @@ ul.dragdrop-keyboard-drag li {
 .block-control-actions .moodle-core-dragdrop-draghandle img {
     width: 12px;
     height: 12px;
+}
+
+.hover-tooltip-container {
+    position: relative;
+
+    .hover-tooltip {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        /*rtl:ignore*/
+        left: 50%;
+        top: ~"calc(-50% - 5px)";
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: .3rem;
+        box-sizing: border-box;
+        padding: 5px;
+        white-space: nowrap;
+        transition: opacity 0.15s, visibility 0.15s;
+        z-index: 1000;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid rgba(0, 0, 0, .2);
+            position: absolute;
+            bottom: -8px;
+            left: ~"calc(50% - 8px)";
+        }
+
+        &:after {
+            content: '';
+            display: inline-block;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid #fff;
+            position: absolute;
+            bottom: -6px;
+            left: ~"calc(50% - 7px)";
+            z-index: 2;
+        }
+    }
+
+    &:hover {
+        .hover-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.15s 0.5s, visibility 0.15s 0.5s;
+        }
+    }
 }
 

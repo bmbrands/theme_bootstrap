@@ -1,0 +1,16 @@
+
+<a id="{{uniqid}}" href="{{url}}"
+    data-container="body"
+    data-toggle="popover"
+    data-html="true"
+    data-trigger="hover"
+    data-placement="top"
+    data-title="{{title}}"
+    data-content="{{content}}">{{day}}</a>
+{{#js}}
+require(['jquery'], function($) {
+    require(['theme_bootstrap/bootstrap'], function() {
+        $('#{{uniqid}}').popover();
+    });
+});
+{{/js}}

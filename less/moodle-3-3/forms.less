@@ -10,6 +10,7 @@
                 margin-top: 0;
                 margin-bottom: 0;
                 padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+                display: inline-block;
             }
         }
         .felement {
@@ -80,7 +81,7 @@
 }
 
 .mform .containsadvancedelements .advanced.show {
-    display: block;
+    display: block !important;
 }
 
 .mform fieldset.group {
@@ -122,6 +123,11 @@
 .mform label .req,
 .mform label .adv {
     cursor: help;
+    & > .icon {
+        width: 8px;
+        height: 12px;
+        margin-left: 3px;
+    }
 }
 
 .mform .iconhelp {
@@ -272,6 +278,7 @@ select.singleselect {
 .mform .felement.fstatic,
 .form-item .form-description {
     .help-block;
+    margin-top: 0;
     margin-bottom: 0;
     p:last-child {
         margin-bottom: 0;
@@ -454,4 +461,8 @@ input[type="checkbox"] {
 .form-autocomplete-selection [data-active-selection=true] {
     padding: 0.5em;
     font-size: large;
+}
+
+textarea[data-auto-rows] {
+    overflow-x: hidden;
 }

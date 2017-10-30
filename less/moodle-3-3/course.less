@@ -68,15 +68,14 @@
         text-align: left;
         .contentwithoutlink,
         .activityinstance {
-        padding-right: 32px;
-        display: block;
-        height: inherit;
-      }
+            padding-right: 32px;
+            display: block;
+            height: inherit;
+        }
 
-      .mod-indent-outer {
-        padding-left: 0px;
-        display: block;
-      }
+        .mod-indent-outer {
+            padding-left: 0px;
+        }
     }
     // Hide the filler, this makes edit buttons jump
     .filler {
@@ -168,7 +167,7 @@
         // padding: .2em;
     }
     li.activity {
-        padding: 0;
+        padding: 0.2em;
         clear: both;
     }
     img.movetarget {
@@ -251,12 +250,18 @@
             }
         }
         li.section.hidden {
-            .opacity(.5);
+            .activityinstance,
+            .contentafterlink,
+            .sectionname a,
+            .summary {
+                color: @text-muted;
+            }
         }
     }
 }
 .course-content ul.topics,
 .course-content ul.weeks {
+    padding: 0;
     li.section .content { 
         margin-right: 0px;
         margin-left: 0px;
@@ -265,11 +270,11 @@
 }
 
 .course-content li {
-    &.activity {
-        ul,ol {
-            margin-left: 25px;
-        }
-    }
+    // &.activity {
+    //     ul,ol {
+    //         margin-left: 25px;
+    //     }
+    // }
     &.section {
         ul {
             list-style: disc;
