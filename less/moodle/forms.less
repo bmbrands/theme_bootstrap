@@ -4,14 +4,12 @@
         &:extend(.form-group);
         &:extend(.form-horizontal .form-group);
         .fitemtitle {
-            .make-md-column(4);
-            .make-lg-column(3);
+             .make-md-column(4);
+             .make-lg-column(3);
             label {
                 margin-top: 0;
-                margin-bottom: 5px;
+                margin-bottom: 0;
                 padding-top: (@padding-base-vertical + 1); // Default padding plus a border
-                display: inline-block;
-                font-weight: 700;
             }
         }
         .felement {
@@ -82,7 +80,7 @@
 }
 
 .mform .containsadvancedelements .advanced.show {
-    display: block !important;
+    display: block;
 }
 
 .mform fieldset.group {
@@ -124,11 +122,6 @@
 .mform label .req,
 .mform label .adv {
     cursor: help;
-    & > .icon {
-        width: 8px;
-        height: 12px;
-        margin-left: 3px;
-    }
 }
 
 .mform .iconhelp {
@@ -279,7 +272,6 @@ select.singleselect {
 .mform .felement.fstatic,
 .form-item .form-description {
     .help-block;
-    margin-top: 0;
     margin-bottom: 0;
     p:last-child {
         margin-bottom: 0;
@@ -462,8 +454,4 @@ input[type="checkbox"] {
 .form-autocomplete-selection [data-active-selection=true] {
     padding: 0.5em;
     font-size: large;
-}
-
-textarea[data-auto-rows] {
-    overflow-x: hidden;
 }

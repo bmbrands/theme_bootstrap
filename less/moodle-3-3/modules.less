@@ -9,54 +9,212 @@ select {
     width: auto;
 }
 
+// Assign
+.path-mod-assign #page-content [data-region="grade-panel"] .mform:not(.unresponsive) #id_attemptsettings .fitem {
+    .fitemtitle,
+    .felement {
+        display: table-cell;
+        float: none;
+        border-top: 1px solid #ddd;
+        padding: 8px 0;
+    }
+}
+
+// Feedback module
+.path-mod-feedback .mform.feedback_form .fitem .fitemtitle {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    text-align: left;
+    width: 100%;
+}
+
+.path-mod-feedback .mform.feedback_form .fitem .felement {
+    margin-left: 0;
+    width: 100%;
+    float: left;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.path-mod-feedback .mform.feedback_form .fitem .fstatic:empty {
+    display: none;
+}
+
+.path-mod-feedback .mform.feedback_form .fitem .fcheckbox > span,
+.path-mod-feedback .mform.feedback_form .fitem .fradio > span,
+.path-mod-feedback .mform.feedback_form .fitem .fgroup > span {
+    margin-top: 4px;
+}
+
+body.path-mod-feedback #region-main .mform.feedback_form .femptylabel .fitemtitle {
+    display: inline-block;
+    width: auto;
+    margin-right: 0;
+}
+
+.path-mod-feedback .mform.feedback_form .femptylabel .felement {
+    display: inline-block;
+    margin-top: 4px;
+    padding-top: 5px;
+    width: auto;
+}
+
+body.path-mod-feedback #region-main .mform.feedback_form .feedback-item-pagebreak .felement {
+    width: 100%;
+}
+
+.path-mod-feedback .mform.feedback_form .fitem_fcheckbox .fitemtitle,
+.path-mod-feedback .mform.feedback_form .fitem_fcheckbox .felement {
+    display: inline-block;
+    width: auto;
+}
+
+.path-mod-feedback .mform.feedback_form .fitem_fcheckbox .felement {
+    padding: 6px;
+}
+
+.path-mod-feedback .mform.feedback_form#feedback_viewresponse_form .fitem.feedback_hasvalue:not(.feedback-item-captcha) .felement {
+    background: #fbfbf1;
+    min-height: 1em;
+    box-sizing: border-box;
+    padding: 3px;
+    border: 1px solid #ddd;
+}
+
+.path-mod-feedback .mform.feedback_form .fitem.feedback_hasvalue .fstatic:empty {
+    display: inherit;
+}
+
+.path-mod-feedback .mform.feedback_form#feedback_edit_form .fitem:hover {
+    background: #f5f5f5;
+}
+
+.path-mod-feedback .mform.feedback_form#feedback_edit_form .fitem .fitemtitle label {
+    width: 100%;
+}
+
+.path-mod-feedback .mform.feedback_form#feedback_edit_form .fitem .fitemtitle .itemtitle {
+    position: relative;
+    width: 100%;
+}
+
+.path-mod-feedback .mform.feedback_form#feedback_edit_form .fitem .fitemtitle .itemtitle .itemdd,
+.path-mod-feedback .mform.feedback_form#feedback_edit_form .fitem .fitemtitle .itemtitle .itemname {
+    float: left;
+}
+
+.path-mod-feedback .mform.feedback_form#feedback_edit_form .fitem .fitemtitle .itemtitle .itemactions {
+    float: right;
+}
+
+
+
 // Forum
+.path-mod-forum .forumsearch {
+    input,
+    .helptooltip {
+        margin: 0 3px;
+    }
+}
 
 .path-mod-forum .forumheaderlist,
 .path-mod-forum .forumheaderlist td {
     border: none;
 }
 
-.path-mod-forum .forumheaderlist {
-    thead .header {
-        white-space: normal;
-        vertical-align: top;
-    }
-    thead .header.lastpost {
-        text-align: right;
-    }
-    .discussion {
-        .author, .replies, .lastpost {
+.path-mod-forum {
+    .forumheaderlist {
+        thead .header,
+        tbody .discussion td {
             white-space: normal;
+            vertical-align: top;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
         }
-        .replies {
-            text-align: center;
-        }
-        .topic, .topic.starter, .picture, .author, .replies, .lastpost {
+
+        thead .header {
+            white-space: normal;
             vertical-align: top;
         }
-    }
-}
 
-.path-mod-feedback .feedback_bar_image { // MDL-46063
-    height: 5px; // we should remove the bar height specification in core
+        thead .header.replies {
+            text-align: center;
+        }
+        thead .header.lastpost {
+            text-align: right;
+        }
+        thead .header th,
+        tbody .discussion td {
+            &.discussionsubscription {
+                width: 16px;
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
+        }
+        .discussion {
+            .author,
+            .replies,
+            .lastpost {
+                white-space: normal;
+            }
+            .discussionsubscription,
+            .replies {
+                text-align: center;
+            }
+            .topic,
+            .discussionsubscription,
+            .topic.starter,
+            .author,
+            .replies,
+            .lastpost {
+                vertical-align: top;
+            }
+            .picture {
+                margin: 0 20px;
+                float: left;
+            }
+            .unread {
+                img {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
 
 .forumpost {
-    &:extend(.panel);
-    &:extend(.panel-default);
+    .well;
     padding: 6px;
     .header {
         margin-bottom: 3px;
     }
-    .maincontent {
-        .left {
-            padding: 0 10px 0 10px;
+    .picture img {
+        margin: 3px;
+        &.userpicture {
+            margin-left: 3px;
+            margin-right: 10px;
+        }
+    }
+    .content {
+        .posting.fullpost {
+            margin-top: 8px;
+        }
+    }
+    .row {
+        .topic,
+        .content-mask,
+        .options {
+            margin-left: 48px;
+        }
+        &.side {
+            clear: both;
         }
     }
 }
 
 .forumpost .row .left {
-    width: auto;
+    width: 48px;
 }
 
 .forumpost .options .commands {
@@ -69,37 +227,14 @@ select {
 
 // Override hardcoded forum modules styling
 .forumsearch input[type=text] {
-     margin-bottom: 0 !important;
+    margin-bottom: 0 !important; /* stylelint-disable-line declaration-no-important */
 }
 
-#page-mod-forum-discuss .discussioncontrol.displaymode {
-    text-align: left;
+#page-mod-forum-discuss .discussioncontrols {
+    width: auto;
+    margin: 0;
 }
 
-#page-mod-forum-discuss .discussioncontrols .discussioncontrol {
-    float: none;
-    width: 100%;
-    .singleselect {
-        width: 100%;
-        select.singleselect {
-            .form-control;
-        }
-    }
-    &.movediscussion {
-        margin-top: 5px;
-        select.urlselect {
-            .form-control;
-            width: auto;
-            float: left;
-        }
-        input[type="submit"] {
-            float: left;
-        }
-        &.movediscussion {
-            float: left;
-        }
-    }
-}
 
 #page-footer {
     margin-top: 1em;

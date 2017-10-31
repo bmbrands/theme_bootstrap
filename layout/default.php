@@ -23,6 +23,8 @@ $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
 $regions = bootstrap_grid($hassidepre, $hassidepost);
 $PAGE->set_popup_notification_allowed(false);
+$PAGE->requires->jquery();
+$PAGE->requires->js_call_amd('theme_bootstrap/optin', 'init');
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>

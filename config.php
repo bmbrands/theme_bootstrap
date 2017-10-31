@@ -156,7 +156,7 @@ $THEME->javascripts = array(
 );
 
 $THEME->javascripts_footer = array(
-    'moodlebootstrap', 'dock'
+    'dock'
 );
 
 $THEME->hidefromselector = false;
