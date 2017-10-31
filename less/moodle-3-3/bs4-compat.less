@@ -237,3 +237,36 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.hidden-xs-up {
+    @media (min-width: @screen-xs) {
+      display: none !important;
+    }
+}
+.hidden-sm-up {
+    @media (min-width: @screen-sm) {
+      display: none !important;
+    }
+}
+.hidden-md-up {
+    @media (min-width: @screen-md) {
+      display: none !important;
+    }
+}
+
+
+.hidden-xs-down {
+    @media (max-width: @screen-xs-max) {
+      display: none !important;
+    }
+}
+.hidden-sm-down {
+    @media (max-width: @screen-sm-max) {
+      display: none !important;
+    }
+}
+.hidden-md-down {
+    @media (max-width: @screen-md-max) {
+      display: none !important;
+    }
+}

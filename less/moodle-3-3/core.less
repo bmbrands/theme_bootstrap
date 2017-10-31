@@ -1090,11 +1090,23 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     border-bottom: 1px solid #bbb;
 }
 /* Only set these options if we're showing the js container */
-.jsenabled .choosercontainer #chooseform .alloptions {
+.jschooser .choosercontainer #chooseform .alloptions {
     overflow-x: hidden;
     overflow-y: auto;
     max-width: 20.3em;
-    box-shadow: inset 0 0 30px 0px #ccc;
+    .box-shadow(inset 0 0 30px 0 #ccc);
+    .option {
+        input[type=radio] {
+            display: inline-block;
+        }
+        .modicon {
+            display: inline-block;
+        }
+        .typename {
+            display: inline-block;
+            width: 65%;
+        }
+    }
 }
 /* Settings for option rows and option subtypes */
 .choosercontainer #chooseform .moduletypetitle,
@@ -1142,8 +1154,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     margin: 0 0 0 0.2em;
 }
 /* The instruction/help area */
-.jsenabled .choosercontainer #chooseform .instruction,
-.jsenabled .choosercontainer #chooseform .typesummary {
+.jschooser .choosercontainer #chooseform .instruction,
+.jschooser .choosercontainer #chooseform .typesummary {
    display: none;
     position: absolute;
     top: 0;
@@ -1159,7 +1171,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 }
 
 /* Selected option settings */
-.jsenabled .choosercontainer #chooseform .instruction,
+.jschooser .choosercontainer #chooseform .instruction,
 .choosercontainer #chooseform .selected .typesummary {
     display: block;
 }
@@ -1378,6 +1390,11 @@ ul.dragdrop-keyboard-drag li {
 .block-control-actions .moodle-core-dragdrop-draghandle img {
     width: 12px;
     height: 12px;
+}
+
+.progressbar_container {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .hover-tooltip-container {

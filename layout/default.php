@@ -43,7 +43,9 @@ echo $OUTPUT->doctype() ?>
         <?php echo $OUTPUT->navbar_brand(); ?>
     </div>
     <div class="navbar-header pull-right">
+        <?php echo $OUTPUT->navbar_plugin_output(); ?>
         <?php echo $OUTPUT->user_menu(); ?>
+
         <?php echo $OUTPUT->navbar_button(); ?>
     </div>
     <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">

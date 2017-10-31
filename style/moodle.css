@@ -10766,7 +10766,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview
     border-bottom: 1px solid #bbb;
 }
 /* Only set these options if we're showing the js container */
-.jsenabled .choosercontainer #chooseform .alloptions
+.jschooser .choosercontainer #chooseform .alloptions
 {
     overflow-x: hidden;
     overflow-y: auto;
@@ -10775,6 +10775,20 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview
 
     -webkit-box-shadow: inset 0 0 30px 0 #ccc;
             box-shadow: inset 0 0 30px 0 #ccc;
+}
+.jschooser .choosercontainer #chooseform .alloptions .option input[type=radio]
+{
+    display: inline-block;
+}
+.jschooser .choosercontainer #chooseform .alloptions .option .modicon
+{
+    display: inline-block;
+}
+.jschooser .choosercontainer #chooseform .alloptions .option .typename
+{
+    display: inline-block;
+
+    width: 65%;
 }
 /* Settings for option rows and option subtypes */
 .choosercontainer #chooseform .moduletypetitle,
@@ -10834,8 +10848,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview
     margin: 0 0 0 .2em;
 }
 /* The instruction/help area */
-.jsenabled .choosercontainer #chooseform .instruction,
-.jsenabled .choosercontainer #chooseform .typesummary
+.jschooser .choosercontainer #chooseform .instruction,
+.jschooser .choosercontainer #chooseform .typesummary
 {
     line-height: 2em;
 
@@ -10855,7 +10869,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview
     background-color: #fff;
 }
 /* Selected option settings */
-.jsenabled .choosercontainer #chooseform .instruction,
+.jschooser .choosercontainer #chooseform .instruction,
 .choosercontainer #chooseform .selected .typesummary
 {
     display: block;
@@ -11275,6 +11289,11 @@ ul.dragdrop-keyboard-drag li
 {
     width: 12px;
     height: 12px;
+}
+.progressbar_container
+{
+    max-width: 500px;
+    margin: 0 auto;
 }
 .hover-tooltip-container
 {
@@ -12654,7 +12673,7 @@ textarea.path-admin .roleassigntable input[type='text']
 }
 .block.block_calendar_month td
 {
-    width: (100/7)*1%;
+    width: 14.28571429%;
 }
 .block .minicalendar
 {
@@ -13207,7 +13226,7 @@ span.editinstructions
 {
     position: absolute;
     z-index: -1;
-    top: 50px + 2px;
+    top: 52px;
     left: 50%;
 
     width: 30em;
@@ -20017,403 +20036,403 @@ textarea.searchform input[type='text']
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-1
 {
-    stroke-dashoffset: 173 - (1 / 100 * 173);
+    stroke-dashoffset: 171.27;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-2
 {
-    stroke-dashoffset: 173 - (2 / 100 * 173);
+    stroke-dashoffset: 169.54;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-3
 {
-    stroke-dashoffset: 173 - (3 / 100 * 173);
+    stroke-dashoffset: 167.81;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-4
 {
-    stroke-dashoffset: 173 - (4 / 100 * 173);
+    stroke-dashoffset: 166.08;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-5
 {
-    stroke-dashoffset: 173 - (5 / 100 * 173);
+    stroke-dashoffset: 164.35;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-6
 {
-    stroke-dashoffset: 173 - (6 / 100 * 173);
+    stroke-dashoffset: 162.62;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-7
 {
-    stroke-dashoffset: 173 - (7 / 100 * 173);
+    stroke-dashoffset: 160.89;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-8
 {
-    stroke-dashoffset: 173 - (8 / 100 * 173);
+    stroke-dashoffset: 159.16;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-9
 {
-    stroke-dashoffset: 173 - (9 / 100 * 173);
+    stroke-dashoffset: 157.43;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-10
 {
-    stroke-dashoffset: 173 - (10 / 100 * 173);
+    stroke-dashoffset: 155.7;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-11
 {
-    stroke-dashoffset: 173 - (11 / 100 * 173);
+    stroke-dashoffset: 153.97;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-12
 {
-    stroke-dashoffset: 173 - (12 / 100 * 173);
+    stroke-dashoffset: 152.24;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-13
 {
-    stroke-dashoffset: 173 - (13 / 100 * 173);
+    stroke-dashoffset: 150.51;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-14
 {
-    stroke-dashoffset: 173 - (14 / 100 * 173);
+    stroke-dashoffset: 148.78;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-15
 {
-    stroke-dashoffset: 173 - (15 / 100 * 173);
+    stroke-dashoffset: 147.05;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-16
 {
-    stroke-dashoffset: 173 - (16 / 100 * 173);
+    stroke-dashoffset: 145.32;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-17
 {
-    stroke-dashoffset: 173 - (17 / 100 * 173);
+    stroke-dashoffset: 143.59;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-18
 {
-    stroke-dashoffset: 173 - (18 / 100 * 173);
+    stroke-dashoffset: 141.86;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-19
 {
-    stroke-dashoffset: 173 - (19 / 100 * 173);
+    stroke-dashoffset: 140.13;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-20
 {
-    stroke-dashoffset: 173 - (20 / 100 * 173);
+    stroke-dashoffset: 138.4;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-21
 {
-    stroke-dashoffset: 173 - (21 / 100 * 173);
+    stroke-dashoffset: 136.67;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-22
 {
-    stroke-dashoffset: 173 - (22 / 100 * 173);
+    stroke-dashoffset: 134.94;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-23
 {
-    stroke-dashoffset: 173 - (23 / 100 * 173);
+    stroke-dashoffset: 133.21;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-24
 {
-    stroke-dashoffset: 173 - (24 / 100 * 173);
+    stroke-dashoffset: 131.48;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-25
 {
-    stroke-dashoffset: 173 - (25 / 100 * 173);
+    stroke-dashoffset: 129.75;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-26
 {
-    stroke-dashoffset: 173 - (26 / 100 * 173);
+    stroke-dashoffset: 128.02;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-27
 {
-    stroke-dashoffset: 173 - (27 / 100 * 173);
+    stroke-dashoffset: 126.29;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-28
 {
-    stroke-dashoffset: 173 - (28 / 100 * 173);
+    stroke-dashoffset: 124.56;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-29
 {
-    stroke-dashoffset: 173 - (29 / 100 * 173);
+    stroke-dashoffset: 122.83;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-30
 {
-    stroke-dashoffset: 173 - (30 / 100 * 173);
+    stroke-dashoffset: 121.1;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-31
 {
-    stroke-dashoffset: 173 - (31 / 100 * 173);
+    stroke-dashoffset: 119.37;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-32
 {
-    stroke-dashoffset: 173 - (32 / 100 * 173);
+    stroke-dashoffset: 117.64;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-33
 {
-    stroke-dashoffset: 173 - (33 / 100 * 173);
+    stroke-dashoffset: 115.91;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-34
 {
-    stroke-dashoffset: 173 - (34 / 100 * 173);
+    stroke-dashoffset: 114.18;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-35
 {
-    stroke-dashoffset: 173 - (35 / 100 * 173);
+    stroke-dashoffset: 112.45;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-36
 {
-    stroke-dashoffset: 173 - (36 / 100 * 173);
+    stroke-dashoffset: 110.72;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-37
 {
-    stroke-dashoffset: 173 - (37 / 100 * 173);
+    stroke-dashoffset: 108.99;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-38
 {
-    stroke-dashoffset: 173 - (38 / 100 * 173);
+    stroke-dashoffset: 107.26;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-39
 {
-    stroke-dashoffset: 173 - (39 / 100 * 173);
+    stroke-dashoffset: 105.53;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-40
 {
-    stroke-dashoffset: 173 - (40 / 100 * 173);
+    stroke-dashoffset: 103.8;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-41
 {
-    stroke-dashoffset: 173 - (41 / 100 * 173);
+    stroke-dashoffset: 102.07;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-42
 {
-    stroke-dashoffset: 173 - (42 / 100 * 173);
+    stroke-dashoffset: 100.34;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-43
 {
-    stroke-dashoffset: 173 - (43 / 100 * 173);
+    stroke-dashoffset: 98.61;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-44
 {
-    stroke-dashoffset: 173 - (44 / 100 * 173);
+    stroke-dashoffset: 96.88;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-45
 {
-    stroke-dashoffset: 173 - (45 / 100 * 173);
+    stroke-dashoffset: 95.15;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-46
 {
-    stroke-dashoffset: 173 - (46 / 100 * 173);
+    stroke-dashoffset: 93.42;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-47
 {
-    stroke-dashoffset: 173 - (47 / 100 * 173);
+    stroke-dashoffset: 91.69;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-48
 {
-    stroke-dashoffset: 173 - (48 / 100 * 173);
+    stroke-dashoffset: 89.96;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-49
 {
-    stroke-dashoffset: 173 - (49 / 100 * 173);
+    stroke-dashoffset: 88.23;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-50
 {
-    stroke-dashoffset: 173 - (50 / 100 * 173);
+    stroke-dashoffset: 86.5;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-51
 {
-    stroke-dashoffset: 173 - (51 / 100 * 173);
+    stroke-dashoffset: 84.77;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-52
 {
-    stroke-dashoffset: 173 - (52 / 100 * 173);
+    stroke-dashoffset: 83.04;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-53
 {
-    stroke-dashoffset: 173 - (53 / 100 * 173);
+    stroke-dashoffset: 81.31;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-54
 {
-    stroke-dashoffset: 173 - (54 / 100 * 173);
+    stroke-dashoffset: 79.58;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-55
 {
-    stroke-dashoffset: 173 - (55 / 100 * 173);
+    stroke-dashoffset: 77.85;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-56
 {
-    stroke-dashoffset: 173 - (56 / 100 * 173);
+    stroke-dashoffset: 76.12;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-57
 {
-    stroke-dashoffset: 173 - (57 / 100 * 173);
+    stroke-dashoffset: 74.39;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-58
 {
-    stroke-dashoffset: 173 - (58 / 100 * 173);
+    stroke-dashoffset: 72.66;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-59
 {
-    stroke-dashoffset: 173 - (59 / 100 * 173);
+    stroke-dashoffset: 70.93;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-60
 {
-    stroke-dashoffset: 173 - (60 / 100 * 173);
+    stroke-dashoffset: 69.2;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-61
 {
-    stroke-dashoffset: 173 - (61 / 100 * 173);
+    stroke-dashoffset: 67.47;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-62
 {
-    stroke-dashoffset: 173 - (62 / 100 * 173);
+    stroke-dashoffset: 65.74;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-63
 {
-    stroke-dashoffset: 173 - (63 / 100 * 173);
+    stroke-dashoffset: 64.01;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-64
 {
-    stroke-dashoffset: 173 - (64 / 100 * 173);
+    stroke-dashoffset: 62.28;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-65
 {
-    stroke-dashoffset: 173 - (65 / 100 * 173);
+    stroke-dashoffset: 60.55;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-66
 {
-    stroke-dashoffset: 173 - (66 / 100 * 173);
+    stroke-dashoffset: 58.82;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-67
 {
-    stroke-dashoffset: 173 - (67 / 100 * 173);
+    stroke-dashoffset: 57.09;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-68
 {
-    stroke-dashoffset: 173 - (68 / 100 * 173);
+    stroke-dashoffset: 55.36;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-69
 {
-    stroke-dashoffset: 173 - (69 / 100 * 173);
+    stroke-dashoffset: 53.63;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-70
 {
-    stroke-dashoffset: 173 - (70 / 100 * 173);
+    stroke-dashoffset: 51.9;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-71
 {
-    stroke-dashoffset: 173 - (71 / 100 * 173);
+    stroke-dashoffset: 50.17;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-72
 {
-    stroke-dashoffset: 173 - (72 / 100 * 173);
+    stroke-dashoffset: 48.44;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-73
 {
-    stroke-dashoffset: 173 - (73 / 100 * 173);
+    stroke-dashoffset: 46.71;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-74
 {
-    stroke-dashoffset: 173 - (74 / 100 * 173);
+    stroke-dashoffset: 44.98;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-75
 {
-    stroke-dashoffset: 173 - (75 / 100 * 173);
+    stroke-dashoffset: 43.25;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-76
 {
-    stroke-dashoffset: 173 - (76 / 100 * 173);
+    stroke-dashoffset: 41.52;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-77
 {
-    stroke-dashoffset: 173 - (77 / 100 * 173);
+    stroke-dashoffset: 39.79;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-78
 {
-    stroke-dashoffset: 173 - (78 / 100 * 173);
+    stroke-dashoffset: 38.06;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-79
 {
-    stroke-dashoffset: 173 - (79 / 100 * 173);
+    stroke-dashoffset: 36.33;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-80
 {
-    stroke-dashoffset: 173 - (80 / 100 * 173);
+    stroke-dashoffset: 34.6;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-81
 {
-    stroke-dashoffset: 173 - (81 / 100 * 173);
+    stroke-dashoffset: 32.87;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-82
 {
-    stroke-dashoffset: 173 - (82 / 100 * 173);
+    stroke-dashoffset: 31.14;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-83
 {
-    stroke-dashoffset: 173 - (83 / 100 * 173);
+    stroke-dashoffset: 29.41;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-84
 {
-    stroke-dashoffset: 173 - (84 / 100 * 173);
+    stroke-dashoffset: 27.68;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-85
 {
-    stroke-dashoffset: 173 - (85 / 100 * 173);
+    stroke-dashoffset: 25.95;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-86
 {
-    stroke-dashoffset: 173 - (86 / 100 * 173);
+    stroke-dashoffset: 24.22;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-87
 {
-    stroke-dashoffset: 173 - (87 / 100 * 173);
+    stroke-dashoffset: 22.49;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-88
 {
-    stroke-dashoffset: 173 - (88 / 100 * 173);
+    stroke-dashoffset: 20.76;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-89
 {
-    stroke-dashoffset: 173 - (89 / 100 * 173);
+    stroke-dashoffset: 19.03;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-90
 {
-    stroke-dashoffset: 173 - (90 / 100 * 173);
+    stroke-dashoffset: 17.3;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-91
 {
-    stroke-dashoffset: 173 - (91 / 100 * 173);
+    stroke-dashoffset: 15.57;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-92
 {
-    stroke-dashoffset: 173 - (92 / 100 * 173);
+    stroke-dashoffset: 13.84;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-93
 {
-    stroke-dashoffset: 173 - (93 / 100 * 173);
+    stroke-dashoffset: 12.11;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-94
 {
-    stroke-dashoffset: 173 - (94 / 100 * 173);
+    stroke-dashoffset: 10.38;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-95
 {
-    stroke-dashoffset: 173 - (95 / 100 * 173);
+    stroke-dashoffset: 8.65;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-96
 {
-    stroke-dashoffset: 173 - (96 / 100 * 173);
+    stroke-dashoffset: 6.92;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-97
 {
-    stroke-dashoffset: 173 - (97 / 100 * 173);
+    stroke-dashoffset: 5.19;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-98
 {
-    stroke-dashoffset: 173 - (98 / 100 * 173);
+    stroke-dashoffset: 3.46;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-99
 {
-    stroke-dashoffset: 173 - (99 / 100 * 173);
+    stroke-dashoffset: 1.73;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle.percent-100
 {
-    stroke-dashoffset: 173 - (100 / 100 * 173);
+    stroke-dashoffset: 0;
 }
 .progress-chart-container .no-progress
 {
@@ -20510,6 +20529,16 @@ textarea.searchform input[type='text']
     background-color: #fff;
     -webkit-box-shadow: none;
             box-shadow: none;
+}
+.block_login input#login_username,
+.block_login input#login_password
+{
+    width: 100%;
+}
+.block_login input[type='submit']
+{
+    width: 100%;
+    margin-left: 0;
 }
 .mform .fitem .fitemtitle
 {
@@ -22200,8 +22229,8 @@ fieldset[disabled] .path-mod-assign a.btn.focus
 .backup-restore .backup-section > h2.header,
 .backup-restore .backup-section .backup-sub-section h3
 {
-    font-size: 14px * 1.5;
-    line-height: 1.42857143 * 2;
+    font-size: 21px;
+    line-height: 2.85714286;
 
     display: block;
 
@@ -22619,7 +22648,7 @@ p.arrow_button input
 }
 #addcontrols
 {
-    margin-top: 1.42857143 + (1.42857143 / 2);
+    margin-top: 2.14285714;
     margin-bottom: 3em;
 
     text-align: center;
@@ -23285,7 +23314,7 @@ form.search-cohort input[type='text'],
 form.search-cohort input[type='submit'],
 form.search-cohort label
 {
-    margin-top: 1 * 14px !important;
+    margin-top: 14px !important;
 }
 form.search-cohort label
 {
@@ -24527,7 +24556,7 @@ fieldset[disabled] #dock .dockedtitle.focus
 }
 .dir-rtl #dock .dockedtitle h2
 {
-    line-height: 36px - 11px;
+    line-height: 25px;
 }
 .dir-rtl #dockeditempanel
 {
@@ -26048,183 +26077,183 @@ div.feedback_item_commands_left
 /* stylelint-disable declaration-no-important, block-no-empty */
 .p-l-1
 {
-    padding-left: 1 * 14px !important;
+    padding-left: 14px !important;
 }
 .p-r-1
 {
-    padding-right: 1 * 14px !important;
+    padding-right: 14px !important;
 }
 .p-t-1
 {
-    padding-top: 1 * 14px !important;
+    padding-top: 14px !important;
 }
 .p-b-1
 {
-    padding-bottom: 1 * 14px !important;
+    padding-bottom: 14px !important;
 }
 .p-x-1
 {
-    padding-right: 1 * 14px !important;
-    padding-left: 1 * 14px !important;
+    padding-right: 14px !important;
+    padding-left: 14px !important;
 }
 .p-y-1
 {
-    padding-top: 1 * 14px !important;
-    padding-bottom: 1 * 14px !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
 }
 .p-a-1
 {
-    padding: 1 * 14px !important;
+    padding: 14px !important;
 }
 .m-l-1
 {
-    margin-left: 1 * 14px !important;
+    margin-left: 14px !important;
 }
 .m-r-1
 {
-    margin-right: 1 * 14px !important;
+    margin-right: 14px !important;
 }
 .m-t-1
 {
-    margin-top: 1 * 14px !important;
+    margin-top: 14px !important;
 }
 .m-b-1
 {
-    margin-bottom: 1 * 14px !important;
+    margin-bottom: 14px !important;
 }
 .m-x-1
 {
-    margin-right: 1 * 14px !important;
-    margin-left: 1 * 14px !important;
+    margin-right: 14px !important;
+    margin-left: 14px !important;
 }
 .m-y-1
 {
-    margin-top: 1 * 14px !important;
-    margin-bottom: 1 * 14px !important;
+    margin-top: 14px !important;
+    margin-bottom: 14px !important;
 }
 .m-a-1
 {
-    margin: 1 * 14px !important;
+    margin: 14px !important;
 }
 .p-l-2
 {
-    padding-left: 2 * 14px !important;
+    padding-left: 28px !important;
 }
 .p-r-2
 {
-    padding-right: 2 * 14px !important;
+    padding-right: 28px !important;
 }
 .p-t-2
 {
-    padding-top: 2 * 14px !important;
+    padding-top: 28px !important;
 }
 .p-b-2
 {
-    padding-bottom: 2 * 14px !important;
+    padding-bottom: 28px !important;
 }
 .p-x-2
 {
-    padding-right: 2 * 14px !important;
-    padding-left: 2 * 14px !important;
+    padding-right: 28px !important;
+    padding-left: 28px !important;
 }
 .p-y-2
 {
-    padding-top: 2 * 14px !important;
-    padding-bottom: 2 * 14px !important;
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
 }
 .p-a-2
 {
-    padding: 2 * 14px !important;
+    padding: 28px !important;
 }
 .m-l-2
 {
-    margin-left: 2 * 14px !important;
+    margin-left: 28px !important;
 }
 .m-r-2
 {
-    margin-right: 2 * 14px !important;
+    margin-right: 28px !important;
 }
 .m-t-2
 {
-    margin-top: 2 * 14px !important;
+    margin-top: 28px !important;
 }
 .m-b-2
 {
-    margin-bottom: 2 * 14px !important;
+    margin-bottom: 28px !important;
 }
 .m-x-2
 {
-    margin-right: 2 * 14px !important;
-    margin-left: 2 * 14px !important;
+    margin-right: 28px !important;
+    margin-left: 28px !important;
 }
 .m-y-2
 {
-    margin-top: 2 * 14px !important;
-    margin-bottom: 2 * 14px !important;
+    margin-top: 28px !important;
+    margin-bottom: 28px !important;
 }
 .m-a-2
 {
-    margin: 2 * 14px !important;
+    margin: 28px !important;
 }
 .p-l-3
 {
-    padding-left: 3 * 14px !important;
+    padding-left: 42px !important;
 }
 .p-r-3
 {
-    padding-right: 3 * 14px !important;
+    padding-right: 42px !important;
 }
 .p-t-3
 {
-    padding-top: 3 * 14px !important;
+    padding-top: 42px !important;
 }
 .p-b-3
 {
-    padding-bottom: 3 * 14px !important;
+    padding-bottom: 42px !important;
 }
 .p-x-3
 {
-    padding-right: 3 * 14px !important;
-    padding-left: 3 * 14px !important;
+    padding-right: 42px !important;
+    padding-left: 42px !important;
 }
 .p-y-3
 {
-    padding-top: 3 * 14px !important;
-    padding-bottom: 3 * 14px !important;
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
 }
 .p-a-3
 {
-    padding: 3 * 14px !important;
+    padding: 42px !important;
 }
 .m-l-3
 {
-    margin-left: 3 * 14px !important;
+    margin-left: 42px !important;
 }
 .m-r-3
 {
-    margin-right: 3 * 14px !important;
+    margin-right: 42px !important;
 }
 .m-t-3
 {
-    margin-top: 3 * 14px !important;
+    margin-top: 42px !important;
 }
 .m-b-3
 {
-    margin-bottom: 3 * 14px !important;
+    margin-bottom: 42px !important;
 }
 .m-x-3
 {
-    margin-right: 3 * 14px !important;
-    margin-left: 3 * 14px !important;
+    margin-right: 42px !important;
+    margin-left: 42px !important;
 }
 .m-y-3
 {
-    margin-top: 3 * 14px !important;
-    margin-bottom: 3 * 14px !important;
+    margin-top: 42px !important;
+    margin-bottom: 42px !important;
 }
 .m-a-3
 {
-    margin: 3 * 14px !important;
+    margin: 42px !important;
 }
 .d-inline
 {
@@ -26299,6 +26328,55 @@ div.feedback_item_commands_left
 
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+@media (min-width: 480px)
+{
+    .hidden-xs-up
+    {
+        display: none !important;
+    }
+}
+@media (min-width: 768px)
+{
+    .hidden-sm-up
+    {
+        display: none !important;
+    }
+}
+@media (min-width: 992px)
+{
+    .hidden-md-up
+    {
+        display: none !important;
+    }
+}
+@media (max-width: 767px)
+{
+    .hidden-xs-down
+    {
+        display: none !important;
+    }
+}
+@media (max-width: 991px)
+{
+    .hidden-sm-down
+    {
+        display: none !important;
+    }
+}
+@media (max-width: 1199px)
+{
+    .hidden-md-down
+    {
+        display: none !important;
+    }
+}
+@media (max-width: 1200px)
+{
+    .hidden-lg-down
+    {
+        display: none !important;
+    }
 }
 /**
  * Tour step must sit above all other UI components.

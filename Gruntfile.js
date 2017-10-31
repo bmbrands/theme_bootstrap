@@ -122,8 +122,7 @@ module.exports = function(grunt) {
             // Compile moodle styles.
             moodle: {
                 options: {
-                    compress: false,
-                    strictMath: true
+                    compress: false
                 },
                 src: 'less/moodle.less',
                 dest: 'style/moodle.css'
