@@ -5,7 +5,10 @@ define(['jquery', 'theme_bootstrap/bootstrap', 'core/log'], function($, bootstra
 
   return {
     init: function() {
-      log.debug('Bootstrap opt in');
+        log.debug('Bootstrap opt in');
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        });
     }
   }
 });
