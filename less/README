@@ -1,27 +1,16 @@
+Compiling LESS
+--------------
+
 If you want to make changes to the .css generated from these .less files then you
-need to use a LESS Compiler. Details on specific compilers and how to install them
-can be found at http://docs.moodle.org/dev/LESS
+need to use a less compiler to build your changes. The supported way to achieve this
+is using grunt.
 
-Requirements:
-nodejs, npm, grunt-cli.
+See https://docs.moodle.org/dev/Grunt for details of how to install grunt.
 
-Installation:
-node and npm: instructions at http://nodejs.org/
-grunt-cli: `[sudo] npm install -g grunt-cli`
-node dependencies: run `npm install` in the root directory.
+Once grunt is installed run the 'css' task:
 
-Usage:
-Default behaviour is to watch all .less files and compile
-into compressed CSS when a change is detected to any and then
-clear the theme's caches. Invoke either `grunt` or `grunt watch`
-in the theme's root directory.
+ $ grunt css
 
-To separately compile only moodle or editor .less files
-run `grunt less:moodle` or `grunt less:editor` respectively.
+And the css files will be compiled.
 
-To only clear the theme caches invoke `grunt exec:decache` in
-the theme's root directory.
-
-Additional information about the Moodle bootstrap base theme can be found at
-http://docs.moodle.org/dev/Bootstrap
-
+For further info see: https://docs.moodle.org/dev/LESS

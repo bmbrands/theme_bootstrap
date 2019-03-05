@@ -1,29 +1,35 @@
-@import "bootstrap3-3-7/bootstrap.less";
+// Strip down core bootstrap for editor.
 
-body {
-    background-color: @body-bg;
-    font-weight: 300;
-}
+// Core variables and mixins.
+@import "bootstrap/variables.less"; // Modify this for custom colors, font-sizes, etc.
+@import "bootstrap/mixins.less";
 
-h1, h2, h3 {
-    font-weight: normal;
-    letter-spacing: 0.5px;
-}
+// CSS Reset.
+@import "bootstrap/reset.less";
 
-h1, .h1, h2, .h2, h3, .h3 {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-weight: 300;
-}
+// Base CSS.
+@import "bootstrap/scaffolding.less";
+@import "bootstrap/type.less";
+@import "bootstrap/code.less";
+@import "bootstrap/tables.less";
 
-h4, .h4 {
-    font-size: @font-size-h4;
-}
+// Components: common.
+@import "bootstrap/sprites.less";
+@iconSpritePath:          ~"[[pix:theme|glyphicons-halflings]]";
+@iconWhiteSpritePath:     ~"[[pix:theme|glyphicons-halflings-white]]";
 
-h4.categoryname {
-    font-family: @headings-font-family;
-}
+@import "bootstrap/wells.less";
 
-a {
-    text-decoration: underline;
-}
+// Components: Buttons & Alerts.
+@import "bootstrap/buttons.less";
+@import "bootstrap/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less.
+
+// Components: Misc.
+@import "bootstrap/thumbnails.less";
+@import "bootstrap/labels-badges.less";
+
+// Utility classes.
+@import "bootstrap/utilities.less"; // Has to be last to override when necessary.
+
+// Moodle override.
+@import "moodle/editor.less"; // The final override.

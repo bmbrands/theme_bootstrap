@@ -15,42 +15,37 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Settings block renderers
+ * Overriden block settings renderer.
  *
+ * @package    theme_bootstrapbase
+ * @copyright  2016 Frédéric Massart - FMCorz.net
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace theme_bootstrapbase\output;
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . "/blocks/settings/renderer.php");
+require_once($CFG->dirroot . '/blocks/settings/renderer.php');
 
-class theme_bootstrap_block_settings_renderer extends block_settings_renderer {
+use moodle_url;
+
+/**
+ * Overriden block settings renderer.
+ *
+ * @package    theme_bootstrapbase
+ * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class block_settings_renderer extends \block_settings_renderer {
 
     public function search_form(moodle_url $formtarget, $searchvalue) {
-        $content = html_writer::start_tag('form',
-            array(
-                'class' => 'adminsearchform',
-                'method' => 'get',
-                'action' => $formtarget,
-                'role' => 'search',
-            )
-        );
-        $content .= html_writer::start_div('input-group');
-        $content .= html_writer::empty_tag('input',
-            array(
-                'id' => 'adminsearchquery',
-                'type' => 'text',
-                'name' => 'query',
-                'class' => 'form-control',
-                'placeholder' => s(get_string('searchinsettings', 'admin')),
-                'value' => s($searchvalue),
-            )
-        );
-        $content .= html_writer::start_span('input-group-btn');
-        $content .= html_writer::tag('button', s(get_string('go')), array('type' => 'submit', 'class' => 'btn btn-default'));
-        $content .= html_writer::end_span();
-        $content .= html_writer::end_div();
-        $content .= html_writer::end_tag('form');
+        $content = \html_writer::start_tag('form', array('class'=>'adminsearchform', 'method'=>'get', 'action'=>$formtarget, 'role' => 'search'));
+        $content .= \html_writer::start_tag('div');
+        $content .= \html_writer::tag('label', s(get_string('searchinsettings', 'admin')), array('for'=>'adminsearchquery', 'class'=>'accesshide'));
+        $content .= \html_writer::empty_tag('input', array('id'=>'adminsearchquery', 'type'=>'text', 'name'=>'query', 'value'=>s($searchvalue)));
+        $content .= \html_writer::empty_tag('input', array('type'=>'submit', 'value'=>s(get_string('search'))));
+        $content .= \html_writer::end_tag('div');
+        $content .= \html_writer::end_tag('form');
         return $content;
     }
 

@@ -1,5 +1,5 @@
 <?php
-// This file is part of the custom Moodle Bootstrap theme
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -14,28 +14,28 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
- * Renderers to align Moodle's HTML with that expected by Bootstrap
+ * Configuration for Moodle's bootstrap theme.
  *
- * @package    theme_bootstrap
- * @copyright  2014 Bas Brands, www.basbrands.nl
- * @authors    Bas Brands, David Scotson
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * DO NOT MODIFY THIS THEME!
+ * COPY IT FIRST, THEN RENAME THE COPY AND MODIFY IT INSTEAD.
+ *
+ * For full information about creating Moodle themes, see:
+ * http://docs.moodle.org/dev/Themes_2.0
+ *
+ * @package   theme_bootstrapbase
+ * @copyright 2013 Bas Brands. www.sonsbeekmedia.nl
+ * @author    Bas Brands
+ * @author    David Scotson
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
-$THEME->name = 'bootstrap';
+$THEME->name = 'bootstrapbase';
 $THEME->parents = array();
-if ('ltr' === get_string('thisdirection', 'langconfig')) {
-    $THEME->sheets = array('moodle');
-} else {
-    $THEME->sheets = array('moodle-rtl');
-}
-$THEME->enable_dock = true;
-$THEME->supportscssoptimisation = false;
-
+$THEME->sheets = array('moodle');
+$THEME->enable_dock = false;
 $THEME->editor_sheets = array('editor');
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
@@ -43,64 +43,63 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
-        'file' => 'default.php',
+        'file' => 'columns1.php',
         'regions' => array(),
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
-        'file' => 'default.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
     ),
     // Main course page.
     'course' => array(
-        'file' => 'default.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
     'coursecategory' => array(
-        'file' => 'default.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
     ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
-        'file' => 'default.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
     ),
     // The site home page.
     'frontpage' => array(
-        'file' => 'default.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
     ),
     // Server administration scripts.
     'admin' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
-        'options' => array('fluid' => true),
     ),
     // My dashboard page.
     'mydashboard' => array(
-        'file' => 'default.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
-        'options' => array('langmenu' => true),
+        'options' => array('langmenu' => true, 'nocontextheader' => true),
     ),
     // My public page.
     'mypublic' => array(
-        'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
+        'file' => 'columns2.php',
+        'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
     'login' => array(
-        'file' => 'default.php',
+        'file' => 'columns1.php',
         'regions' => array(),
-        'options' => array('langmenu' => true, 'nonavbar' => true),
+        'options' => array('langmenu' => true),
     ),
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
@@ -111,7 +110,7 @@ $THEME->layouts = array(
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
-        'file' => 'default.php',
+        'file' => 'columns1.php',
         'regions' => array(),
         'options' => array('nofooter' => true, 'nocoursefooter' => true),
     ),
@@ -129,7 +128,7 @@ $THEME->layouts = array(
     ),
     // Should display the content and basic headers only.
     'print' => array(
-        'file' => 'default.php',
+        'file' => 'columns1.php',
         'regions' => array(),
         'options' => array('nofooter' => true, 'nonavbar' => false),
     ),
@@ -140,13 +139,13 @@ $THEME->layouts = array(
     ),
     // The pagelayout used for reports.
     'report' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
     // The pagelayout used for safebrowser and securewindow.
     'secure' => array(
-        'file' => 'default.php',
+        'file' => 'secure.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre'
     ),
@@ -154,9 +153,12 @@ $THEME->layouts = array(
 
 $THEME->javascripts = array(
 );
-
 $THEME->javascripts_footer = array(
-    'dock'
+    'moodlebootstrap', 'dock'
 );
 
-$THEME->hidefromselector = false;
+if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
+    $THEME->javascripts[] = 'html5shiv';
+}
+
+$THEME->hidefromselector = true;

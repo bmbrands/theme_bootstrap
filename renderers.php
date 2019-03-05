@@ -1,5 +1,5 @@
 <?php
-// This file is part of The Bootstrap Moodle theme
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -17,17 +17,16 @@
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_bootstrap
- * @copyright  2014 Bas Brands, www.basbrands.nl
- * @authors    Bas Brands, David Scotson, Danny Wahl
+ * @package    theme_bootstrapbase
+ * @copyright  2013
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once('renderers/core_renderer.php');
-require_once('renderers/maintenance_renderer.php');
-require_once('renderers/admin_renderer.php');
-require_once('renderers/course_renderer.php');
-require_once('renderers/course_format_renderer.php');
-require_once('renderers/course_management.php');
-require_once('renderers/block_settings_renderer.php');
-require_once('renderers/enrol_renderer.php');
+require_once($CFG->dirroot . '/theme/bootstrapbase/renderers/core_renderer.php');
+require_once($CFG->dirroot . '/theme/bootstrapbase/renderers/block_settings_renderer.php');
+require_once($CFG->dirroot . '/theme/bootstrapbase/renderers/core_renderer_maintenance.php');
+require_once($CFG->dirroot . '/theme/bootstrapbase/renderers/gradereport_history_renderer.php');
+require_once($CFG->dirroot . '/theme/bootstrapbase/renderers/core/course_renderer.php');
+require_once($CFG->dirroot . '/theme/bootstrapbase/renderers/core/files_renderer.php');
+require_once($CFG->dirroot . '/theme/bootstrapbase/renderers/core_course/management/renderer.php');
+require_once($CFG->dirroot . '/theme/bootstrapbase/renderers/core_question/bank_renderer.php');
