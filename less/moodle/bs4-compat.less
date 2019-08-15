@@ -651,3 +651,51 @@
 .font-weight-bold {
     font-weight: 700 !important;
 }
+
+.row {
+    .row-fluid;
+}
+
+.form-group.row {
+    margin-left: 0;
+    .col-md-3 {
+        font-weight: bold;
+        width: auto;
+        float: none;
+        padding-top: 0px;
+        text-align: left;
+    }
+    @media (max-width: 1199px) and (min-width: 980px) {
+        .col-md-3 {
+            width: 200px;
+            float: left;
+            padding-top: 5px;
+            text-align: right;
+        }
+        .col-md-9 {
+            margin-left: 220px
+        }
+    }
+    @media (min-width: 1200px) {
+        .col-md-3 {
+            width: 245px;
+            float: left;
+            padding-top: 5px;
+            text-align: right;
+        }
+        .col-md-9 {
+            margin-left: 265px
+        }
+    }
+}
+.float-sm-right {
+    float: right;
+}
+
+.mform abbr.initialism .icon {
+    width: 8px;
+    height: 12px;
+    margin-left: 3px;
+}
+
+

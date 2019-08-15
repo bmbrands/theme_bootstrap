@@ -375,6 +375,101 @@ class theme_bootstrapbase_core_renderer extends core_renderer {
     }
 
     /**
+     * Produces a header for a block
+     *
+     * @param block_contents $bc
+     * @return string
+     */
+    protected function block_header(block_contents $bc) {
+
+        $title = '';
+        if ($bc->title) {
+            $attributes = array();
+            if ($bc->blockinstanceid) {
+                $attributes['id'] = 'instance-'.$bc->blockinstanceid.'-header';
+            }
+            $title = html_writer::tag('h2', $bc->title, $attributes);
+        }
+
+        $blockid = null;
+        if (isset($bc->attributes['id'])) {
+            $blockid = $bc->attributes['id'];
+        }
+        $controlshtml = $this->block_controls($bc->controls, $blockid);
+
+        $output = '';
+        if ($title || $controlshtml) {
+            $output .= html_writer::tag('div', html_writer::tag('div', html_writer::tag('div', '', array('class'=>'block_action')). $title . $controlshtml, array('class' => 'title')), array('class' => 'header'));
+        }
+        return $output;
+    }
+
+    /**
+     * Produces the content area for a block
+     *
+     * @param block_contents $bc
+     * @return string
+     */
+    protected function block_content(block_contents $bc) {
+        $output = html_writer::start_tag('div', array('class' => 'content'));
+        if (!$bc->title && !$this->block_controls($bc->controls)) {
+            $output .= html_writer::tag('div', '', array('class'=>'block_action notitle'));
+        }
+        $output .= $bc->content;
+        $output .= $this->block_footer($bc);
+        $output .= html_writer::end_tag('div');
+
+        return $output;
+    }
+
+    /**
+     * Produces the footer for a block
+     *
+     * @param block_contents $bc
+     * @return string
+     */
+    protected function block_footer(block_contents $bc) {
+        $output = '';
+        if ($bc->footer) {
+            $output .= html_writer::tag('div', $bc->footer, array('class' => 'footer'));
+        }
+        return $output;
+    }
+
+    /**
+     * Produces the annotation for a block
+     *
+     * @param block_contents $bc
+     * @return string
+     */
+    protected function block_annotation(block_contents $bc) {
+        $output = '';
+        if ($bc->annotation) {
+            $output .= html_writer::tag('div', $bc->annotation, array('class' => 'blockannotation'));
+        }
+        return $output;
+    }
+
+    /**
+     * Calls the JS require function to hide a block.
+     *
+     * @param block_contents $bc A block_contents object
+     */
+    protected function init_block_hider_js(block_contents $bc) {
+        if (!empty($bc->attributes['id']) and $bc->collapsible != block_contents::NOT_HIDEABLE) {
+            $config = new stdClass;
+            $config->id = $bc->attributes['id'];
+            $config->title = strip_tags($bc->title);
+            $config->preference = 'block' . $bc->blockinstanceid . 'hidden';
+            $config->tooltipVisible = get_string('hideblocka', 'access', $config->title);
+            $config->tooltipHidden = get_string('showblocka', 'access', $config->title);
+
+            $this->page->requires->js_init_call('M.util.init_block_hider', array($config));
+            user_preference_allow_ajax_update($config->preference, PARAM_BOOL);
+        }
+    }
+
+    /**
      * Returns the CSS classes to apply to the body tag.
      *
      * @since Moodle 2.5.1 2.6
